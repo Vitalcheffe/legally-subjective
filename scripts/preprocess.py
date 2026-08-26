@@ -426,9 +426,100 @@ def build_record(raw: dict[str, Any], text: str,
     }
 
 
+def run(cfg: dict[str, Any], mode: str = "sample", *, use_llm: bool = False,
+        llm_fields_file: str | None = None,
+        dump_texts: str | None = None) -> int:
+    """Deterministic (+ optional LLM) extraction over one dataset mode.
+
+    Paths come from config: "paths" + "preprocess" for the sample,
+    "paths_corpus" + "preprocess_corpus" for the corpus.
+    """
+    paths = cfg["paths"] if mode == "sample" else cfg["paths_corpus"]
+    pre = cfg["preprocess"] if mode == "sample" else cfg["preprocess_corpus"]
+    input_path = REPO_ROOT / paths["cases_jsonl"]
+    output_path = REPO_ROOT / pre["structured_jsonl"]
+    max_chars = int(pre.get("max_text_chars", 9000))
+
+    raw_cases = [json.loads(line) for line in
+                 input_path.open(encoding="utf-8")]
+
+    if dump_texts:
+        dump = {}
+        for raw in raw_cases:
+            if raw.get("document_format") not in ("html", "txt"):
+                continue
+            doc_path = REPO_ROOT / raw["document_path"]
+            dump[f"{raw['court_id']}-{raw['cluster_id']}"] = html_to_text(
+                doc_path.read_text(encoding="utf-8", errors="ignore")) \
+                if raw["document_format"] == "html" else \
+                doc_path.read_text(encoding="utf-8", errors="ignore")
+        Path(dump_texts).write_text(
+            json.dumps(dump, ensure_ascii=False), encoding="utf-8")
+        print(f"dumped {len(dump)} case texts → {dump_texts}")
+        return 0
+
+    offline_fields: dict[str, Any] = {}
+    offline_backend = None
+    if llm_fields_file:
+        payload = json.loads(
+            Path(llm_fields_file).read_text(encoding="utf-8"))
+        offline_fields = payload.get("fields", {})
+        offline_backend = payload.get("backend", "llm-fields-file")
+
+    extractor = None
+    llm_backend = None
+    if use_llm:
+        from llm_extractor import LLMExtractor
+        extractor = LLMExtractor(pre["llm"] if "llm" in pre
+                                 else cfg["preprocess"]["llm"])
+        llm_backend = extractor.backend_name
+
+    records: list[dict[str, Any]] = []
+    for raw in raw_cases:
+        case_id = f"{raw['court_id']}-{raw['cluster_id']}"
+        fmt = raw.get("document_format")
+        if fmt == "html":
+            text = html_to_text(
+                (REPO_ROOT / raw["document_path"]).read_text(
+                    encoding="utf-8", errors="ignore"))
+        elif fmt == "txt":
+            text = (REPO_ROOT / raw["document_path"]).read_text(
+                encoding="utf-8", errors="ignore")
+        else:
+            print(f"  ! {raw['case_name']}: document is "
+                  f"{fmt} — deterministic extraction needs text; "
+                  f"skipping")
+            text = ""
+        llm_fields = None
+        if extractor and text:
+            print(f"  extracting LLM fields: {raw['case_name']}")
+            llm_fields = extractor.extract(text, max_chars)
+        elif case_id in offline_fields:
+            llm_fields = offline_fields[case_id]
+            llm_backend = offline_backend
+        record = build_record(raw, text, llm_fields, llm_backend)
+        if not text:
+            record["extraction"]["note"] = (
+                "deterministic fields unavailable (non-text document)")
+        records.append(record)
+        disp = record["disposition"].get("primary")
+        print(f"  → {raw['case_name']}: disposition={disp}, "
+              f"panel={len(record['panel']['judges'])} judges")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8") as fh:
+        for record in records:
+            fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+    print(f"\nwrote {len(records)} structured records → {output_path}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--config", default="config.json")
+    parser.add_argument("--mode", choices=["sample", "corpus"],
+                        default="sample",
+                        help="which dataset to process (default: sample)")
     parser.add_argument("--llm", action="store_true",
                         help="enrich with an LLM backend (requires "
                              "LLM_API_KEY, see .env.example)")
@@ -443,76 +534,9 @@ def main() -> int:
     args = parser.parse_args()
 
     cfg = json.loads((REPO_ROOT / args.config).read_text(encoding="utf-8"))
-    pre = cfg["preprocess"]
-    input_path = REPO_ROOT / cfg["paths"]["cases_jsonl"]
-    output_path = REPO_ROOT / pre["structured_jsonl"]
-    max_chars = int(pre.get("max_text_chars", 9000))
-
-    raw_cases = [json.loads(line) for line in
-                 input_path.open(encoding="utf-8")]
-
-    if args.dump_texts:
-        dump = {}
-        for raw in raw_cases:
-            if raw.get("document_format") != "html":
-                continue
-            doc_path = REPO_ROOT / raw["document_path"]
-            dump[f"{raw['court_id']}-{raw['cluster_id']}"] = html_to_text(
-                doc_path.read_text(encoding="utf-8", errors="ignore"))
-        Path(args.dump_texts).write_text(
-            json.dumps(dump, ensure_ascii=False), encoding="utf-8")
-        print(f"dumped {len(dump)} case texts → {args.dump_texts}")
-        return 0
-
-    offline_fields: dict[str, Any] = {}
-    offline_backend = None
-    if args.llm_fields_file:
-        payload = json.loads(
-            Path(args.llm_fields_file).read_text(encoding="utf-8"))
-        offline_fields = payload.get("fields", {})
-        offline_backend = payload.get("backend", "llm-fields-file")
-
-    extractor = None
-    llm_backend = None
-    if args.llm:
-        from llm_extractor import LLMExtractor
-        extractor = LLMExtractor(pre["llm"])
-        llm_backend = extractor.backend_name
-
-    records: list[dict[str, Any]] = []
-    for raw in raw_cases:
-        case_id = f"{raw['court_id']}-{raw['cluster_id']}"
-        if raw.get("document_format") != "html":
-            print(f"  ! {raw['case_name']}: document is "
-                  f"{raw.get('document_format')} — deterministic "
-                  f"extraction needs HTML; skipping LLM fields")
-            text = ""
-        else:
-            text = html_to_text(
-                (REPO_ROOT / raw["document_path"]).read_text(
-                    encoding="utf-8", errors="ignore"))
-        llm_fields = None
-        if extractor and text:
-            print(f"  extracting LLM fields: {raw['case_name']}")
-            llm_fields = extractor.extract(text, max_chars)
-        elif case_id in offline_fields:
-            llm_fields = offline_fields[case_id]
-            llm_backend = offline_backend
-        record = build_record(raw, text, llm_fields, llm_backend)
-        if not text:
-            record["extraction"]["note"] = (
-                "deterministic fields unavailable (non-HTML document)")
-        records.append(record)
-        disp = record["disposition"].get("primary")
-        print(f"  → {raw['case_name']}: disposition={disp}, "
-              f"panel={len(record['panel']['judges'])} judges")
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as fh:
-        for record in records:
-            fh.write(json.dumps(record, ensure_ascii=False) + "\n")
-    print(f"\nwrote {len(records)} structured records → {output_path}")
-    return 0
+    return run(cfg, args.mode, use_llm=args.llm,
+               llm_fields_file=args.llm_fields_file,
+               dump_texts=args.dump_texts)
 
 
 if __name__ == "__main__":

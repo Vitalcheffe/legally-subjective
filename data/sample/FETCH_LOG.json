@@ -250,5 +250,40 @@
   "url": "https://www.nycourts.gov/reporter/3dseries/2018/2018_00198.htm",
   "status": 200,
   "bytes": 5278
+ },
+ {
+  "timestamp": "2026-08-26T15:15:49+00:00",
+  "purpose": "search:2018:p1",
+  "url": "https://www.courtlistener.com/api/rest/v4/search/?q=%22judgment+of+conviction%22&type=o&court=nyappdiv&filed_after=2018-01-01&filed_before=2018-12-31&order_by=dateFiled+asc&page_size=10&page=1",
+  "status": 200,
+  "bytes": 35129
+ },
+ {
+  "timestamp": "2026-08-26T15:15:51+00:00",
+  "purpose": "search:2016:p1",
+  "url": "https://www.courtlistener.com/api/rest/v4/search/?q=%22judgment+of+conviction%22&type=o&court=nyappdiv&filed_after=2016-01-01&filed_before=2016-12-31&order_by=dateFiled+asc&page_size=10&page=1",
+  "status": 200,
+  "bytes": 38819
+ },
+ {
+  "timestamp": "2026-08-26T15:15:53+00:00",
+  "purpose": "search:2017:p1",
+  "url": "https://www.courtlistener.com/api/rest/v4/search/?q=%22judgment+of+conviction%22&type=o&court=nyappdiv&filed_after=2017-01-01&filed_before=2017-12-31&order_by=dateFiled+asc&page_size=10&page=1",
+  "status": 200,
+  "bytes": 37258
+ },
+ {
+  "timestamp": "2026-08-26T15:15:55+00:00",
+  "purpose": "search:2019:p1",
+  "url": "https://www.courtlistener.com/api/rest/v4/search/?q=%22judgment+of+conviction%22&type=o&court=nyappdiv&filed_after=2019-01-01&filed_before=2019-12-31&order_by=dateFiled+asc&page_size=10&page=1",
+  "status": 200,
+  "bytes": 33697
+ },
+ {
+  "timestamp": "2026-08-26T15:15:57+00:00",
+  "purpose": "search:2020:p1",
+  "url": "https://www.courtlistener.com/api/rest/v4/search/?q=%22judgment+of+conviction%22&type=o&court=nyappdiv&filed_after=2020-01-01&filed_before=2020-12-31&order_by=dateFiled+asc&page_size=10&page=1",
+  "status": 200,
+  "bytes": 34247
  }
 ]
