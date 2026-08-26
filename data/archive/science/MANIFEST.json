@@ -1,0 +1,47 @@
+{
+  "archive": "infinitum-science-archive",
+  "version": 1,
+  "exportedAt": "2026-08-26T21:33:47.776Z",
+  "purpose": "Sauvegarde P0 du registre scientifique (délivrances LLM verbatim + protocoles) — la base SQLite est gitignorée, cet archive est la copie versionnée.",
+  "source": {
+    "database": "db/custom.db (Behavioral Matrix, Phase 3–4)",
+    "databaseSha256": "f77df8f597dca6cdb4e9f5139ee0127af17a382fef252ec73d453494bad3e7b0",
+    "prismaModels": [
+      "AgentRun",
+      "Experiment",
+      "ExperimentCase"
+    ]
+  },
+  "counts": {
+    "agentRuns": 40,
+    "agentRunsOk": 21,
+    "agentRunsError": 19,
+    "experiments": 2,
+    "experimentCases": 25
+  },
+  "files": {
+    "agent_runs.jsonl": {
+      "sha256": "d95627259ab52da7609b7cff5612959c622016a34a8798a46de34d9fa83dcf41",
+      "rows": 40
+    },
+    "experiments.jsonl": {
+      "sha256": "55d96211ea3ba5132c18d0b5a07bc131c32e2ed7a91264ad5ec780e15781b8dd",
+      "rows": 2
+    },
+    "experiment_cases.jsonl": {
+      "sha256": "6ee4102c84769b4fa231df50037616955849798745c06905482f05dfea58988a",
+      "rows": 25
+    }
+  },
+  "fidelity": [
+    "Chaque colonne est exportée telle que stockée, dans l'ordre du schéma Prisma.",
+    "Les sorties LLM (prosecutorOutput / defenderOutput / judgeOutput) sont verbatim — aucun remplacement, aucune simulation.",
+    "Les runs en erreur (épisodes de quota 429, rejoués ensuite) sont archivés comme les autres : l'échec est une donnée.",
+    "Les dates sont sérialisées ISO 8601 ; aucun autre champ n'est transformé.",
+    "Ré-vérification : relancer scripts/archive-science.ts — il refuse d'écrire si les effectifs divergent."
+  ],
+  "knownResults": {
+    "note": "Chiffres publiés pour référence (les valeurs font foi dans la DB/JSONL, pas ici) :",
+    "experimentOfficial": "zero-shot n=20 seed=42 — 13/16 accords à l'aveugle (81,2 %), Brier 0,150"
+  }
+}

@@ -1,0 +1,25 @@
+{"id":1,"experimentId":1,"caseId":"nyappdiv-2800809","position":0,"state":"done","note":null}
+{"id":2,"experimentId":1,"caseId":"nyappdiv-4451203","position":1,"state":"done","note":null}
+{"id":3,"experimentId":1,"caseId":"nyappdiv-2834741","position":2,"state":"done","note":null}
+{"id":4,"experimentId":1,"caseId":"nyappdiv-4248800","position":3,"state":"done","note":null}
+{"id":5,"experimentId":1,"caseId":"nyappdiv-4468080","position":4,"state":"done","note":null}
+{"id":6,"experimentId":2,"caseId":"nyappdiv-3152425","position":0,"state":"done","note":null}
+{"id":7,"experimentId":2,"caseId":"nyappdiv-4613649","position":1,"state":"done","note":null}
+{"id":8,"experimentId":2,"caseId":"nyappdiv-2815894","position":2,"state":"done","note":null}
+{"id":9,"experimentId":2,"caseId":"nyappdiv-9401226","position":3,"state":"done","note":null}
+{"id":10,"experimentId":2,"caseId":"nyappdiv-6469835","position":4,"state":"done","note":null}
+{"id":11,"experimentId":2,"caseId":"nyappdiv-4756635","position":5,"state":"done","note":null}
+{"id":12,"experimentId":2,"caseId":"nyappdiv-4672138","position":6,"state":"done","note":null}
+{"id":13,"experimentId":2,"caseId":"nyappdiv-4680191","position":7,"state":"done","note":null}
+{"id":14,"experimentId":2,"caseId":"nyappdiv-4761795","position":8,"state":"done","note":null}
+{"id":15,"experimentId":2,"caseId":"nyappdiv-4511966","position":9,"state":"done","note":null}
+{"id":16,"experimentId":2,"caseId":"nyappdiv-4529038","position":10,"state":"done","note":null}
+{"id":17,"experimentId":2,"caseId":"nyappdiv-3190053","position":11,"state":"done","note":null}
+{"id":18,"experimentId":2,"caseId":"nyappdiv-3184116","position":12,"state":"done","note":null}
+{"id":19,"experimentId":2,"caseId":"nyappdiv-5305064","position":13,"state":"done","note":null}
+{"id":20,"experimentId":2,"caseId":"nyappdiv-4840366","position":14,"state":"error","note":"Moteur LLM indisponible : API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"}
+{"id":21,"experimentId":2,"caseId":"nyappdiv-9401949","position":15,"state":"error","note":"Moteur LLM indisponible : API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"}
+{"id":22,"experimentId":2,"caseId":"nyappdiv-4672594","position":16,"state":"error","note":"Moteur LLM indisponible : API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"}
+{"id":23,"experimentId":2,"caseId":"nyappdiv-9413266","position":17,"state":"error","note":"Moteur LLM indisponible : API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}"}
+{"id":24,"experimentId":2,"caseId":"nyappdiv-4566582","position":18,"state":"done","note":null}
+{"id":25,"experimentId":2,"caseId":"nyappdiv-6464486","position":19,"state":"done","note":null}
