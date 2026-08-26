@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * Behavioral Matrix — aerospace terminal theme (dark by design).
+ * The console is a supervision terminal: dark, dense, monospaced numerics.
+ * Accent semantics: emerald = confirmation, red = annulation, amber = mixte.
+ */
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.13 0.004 285.8);
+  --foreground: oklch(0.94 0.003 286.4);
+  --card: oklch(0.17 0.005 285.9);
+  --card-foreground: oklch(0.94 0.003 286.4);
+  --popover: oklch(0.15 0.005 285.9);
+  --popover-foreground: oklch(0.94 0.003 286.4);
+  --primary: oklch(0.79 0.15 166.1);
+  --primary-foreground: oklch(0.16 0.02 166.1);
+  --secondary: oklch(0.22 0.006 286);
+  --secondary-foreground: oklch(0.9 0.003 286.4);
+  --muted: oklch(0.21 0.006 286);
+  --muted-foreground: oklch(0.63 0.008 286.3);
+  --accent: oklch(0.83 0.16 83.4);
+  --accent-foreground: oklch(0.18 0.03 83.4);
+  --destructive: oklch(0.68 0.19 22.2);
+  --border: oklch(0.26 0.006 286.1);
+  --input: oklch(0.24 0.006 286.1);
+  --ring: oklch(0.79 0.15 166.1);
+  --chart-1: oklch(0.79 0.15 166.1);
+  --chart-2: oklch(0.68 0.19 22.2);
+  --chart-3: oklch(0.83 0.16 83.4);
+  --chart-4: oklch(0.72 0.14 178.7);
+  --chart-5: oklch(0.7 0.16 76.8);
+  --sidebar: oklch(0.15 0.005 285.9);
+  --sidebar-foreground: oklch(0.94 0.003 286.4);
+  --sidebar-primary: oklch(0.79 0.15 166.1);
+  --sidebar-primary-foreground: oklch(0.16 0.02 166.1);
+  --sidebar-accent: oklch(0.22 0.006 286);
+  --sidebar-accent-foreground: oklch(0.94 0.003 286.4);
+  --sidebar-border: oklch(0.26 0.006 286.1);
+  --sidebar-ring: oklch(0.79 0.15 166.1);
+}
+
+.dark {
+  --background: oklch(0.13 0.004 285.8);
+  --foreground: oklch(0.94 0.003 286.4);
+  --card: oklch(0.17 0.005 285.9);
+  --card-foreground: oklch(0.94 0.003 286.4);
+  --popover: oklch(0.15 0.005 285.9);
+  --popover-foreground: oklch(0.94 0.003 286.4);
+  --primary: oklch(0.79 0.15 166.1);
+  --primary-foreground: oklch(0.16 0.02 166.1);
+  --secondary: oklch(0.22 0.006 286);
+  --secondary-foreground: oklch(0.9 0.003 286.4);
+  --muted: oklch(0.21 0.006 286);
+  --muted-foreground: oklch(0.63 0.008 286.3);
+  --accent: oklch(0.83 0.16 83.4);
+  --accent-foreground: oklch(0.18 0.03 83.4);
+  --destructive: oklch(0.68 0.19 22.2);
+  --border: oklch(0.26 0.006 286.1);
+  --input: oklch(0.24 0.006 286.1);
+  --ring: oklch(0.79 0.15 166.1);
+  --chart-1: oklch(0.79 0.15 166.1);
+  --chart-2: oklch(0.68 0.19 22.2);
+  --chart-3: oklch(0.83 0.16 83.4);
+  --chart-4: oklch(0.72 0.14 178.7);
+  --chart-5: oklch(0.7 0.16 76.8);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+/* ————— Terminal console utilities ————— */
+
+.matrix-grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(52, 211, 153, 0.045), transparent 70%);
+  background-size: 36px 36px, 36px 36px, 100% 100%;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.label-caps {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.625rem;
+}
+
+.panel {
+  background: color-mix(in oklab, var(--card) 62%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.glow-emerald {
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.45);
+}
+.glow-red {
+  text-shadow: 0 0 12px rgba(248, 113, 113, 0.45);
+}
+.glow-amber {
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.blink-cursor {
+  animation: blink-cursor 1.06s step-end infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(2400%); }
+}
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+.scanline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.35), transparent);
+  animation: scan 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-led {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
+  50% { opacity: 0.55; box-shadow: 0 0 2px currentColor; }
+}
+.pulse-led {
+  animation: pulse-led 2.2s ease-in-out infinite;
+}
+
+/* thin terminal scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.32 0.006 286.1) transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: oklch(0.32 0.006 286.1);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

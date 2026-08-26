@@ -1,0 +1,113 @@
+// Behavioral Matrix — knowledge-graph schema.
+// Every row is derived deterministically from the validated corpus of
+// legally-subjective (data/structured/corpus_structured.jsonl + the
+// original official opinion documents). No synthetic records exist here.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// A real Appellate Division panel judge. Identity = normalized surname
+// extracted from the official "Decided on ..." panel line (Phase 2
+// pipeline), with documented normalization rules applied at ingest.
+model Judge {
+  id          Int         @id @default(autoincrement())
+  name        String      @unique
+  rawVariants String      // JSON array of raw spellings observed in source
+  seats       PanelSeat[]
+
+  @@index([name])
+}
+
+// One real appellate opinion (criminal appeal, NY App. Div. 2015-2023).
+model Opinion {
+  id                 Int      @id @default(autoincrement())
+  caseId             String   @unique // nyappdiv-<cluster_id>
+  caseName           String
+  courtId            String
+  docketNumber       String?
+  dateFiled          DateTime
+  year               Int
+  month              Int
+  window             String
+  department         String // 1st | 2nd | 3rd | 4th | unknown
+  citation           String? // primary published citation
+  charge             String?
+  factsExcerpt       String? // verbatim recital excerpt from the opinion
+  dispositionPrimary String?
+  dispositionBinary  String? // affirmed | reversed_vacated
+  binaryEligible     Boolean  @default(false)
+
+  // Stylometry — computed from the official opinion text at ingest time.
+  textChars        Int    @default(0)
+  tokenCount       Int    @default(0)
+  sentenceCount    Int    @default(0)
+  avgSentenceLen   Float  @default(0)
+  typeTokenRatio   Float  @default(0)
+  punitiveHits     Int    @default(0)
+  rehabHits        Int    @default(0)
+  citationMentions Int    @default(0)
+
+  seats            PanelSeat[]
+  citedAuthorities CitedAuthority[]
+  agentRuns        AgentRun[]
+
+  @@index([year])
+  @@index([department])
+  @@index([dispositionPrimary])
+  @@index([dateFiled])
+}
+
+// Membership of a judge on the panel that decided an opinion.
+model PanelSeat {
+  id        Int     @id @default(autoincrement())
+  judgeId   Int
+  opinionId Int
+  role      String // panel | presiding
+  judge     Judge   @relation(fields: [judgeId], references: [id])
+  opinion   Opinion @relation(fields: [opinionId], references: [id])
+
+  @@unique([judgeId, opinionId])
+  @@index([opinionId])
+  @@index([judgeId])
+}
+
+// An authority (case or statute) cited inside a real opinion text.
+// Extraction is regex-based and fully deterministic.
+model CitedAuthority {
+  id        Int     @id @default(autoincrement())
+  opinionId Int
+  target    String // normalized citation target, e.g. "People v Kalvin" | "CPL 440.10"
+  kind      String // case | statute
+  count     Int     @default(1)
+  opinion   Opinion @relation(fields: [opinionId], references: [id])
+
+  @@index([target])
+  @@index([opinionId])
+}
+
+// One multi-agent analysis session (Prosecutor / Defender / AI-Judge)
+// executed against a real case, with verbatim model outputs preserved.
+model AgentRun {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now())
+  caseId           String
+  prosecutorOutput String? // verbatim structured output (full reasoning log)
+  defenderOutput   String?
+  judgeOutput      String?
+  humanDisposition String?
+  aiVerdict        String?
+  aiConfidence     Float?
+  agreement        Boolean?
+  status           String   @default("ok") // ok | error
+  error            String?
+  model            String?
+  opinion          Opinion? @relation(fields: [caseId], references: [caseId])
+
+  @@index([caseId])
+}
