@@ -56,6 +56,25 @@ const WELCOME_ITEM: MailItem = {
 const STARS_KEY = "infinitum-follows";
 const BANNER_KEY = "infinitum-banner-dismissed";
 
+/** Deep-link shell for a shared dossier (?dossier=nyappdiv-…). */
+const CASE_ID_RE = /^nyappdiv-\d+$/;
+
+function sharedShell(caseId: string): MailItem {
+  return {
+    id: caseId,
+    kind: "dossier",
+    fromName: "Dossier partagé",
+    fromDetail: "Ouverture du dossier partagé…",
+    avatar: "D",
+    subject: "Dossier partagé",
+    snippet: "",
+    date: new Date().toISOString(),
+    department: null,
+    disposition: null,
+    flagged: false,
+  };
+}
+
 const BOX_TITLES: Record<string, string> = {
   inbox: "Boîte de réception",
   flagged: "Signaux statistiques — président ou auteur en écart significatif",
@@ -109,7 +128,7 @@ function RailButton({
   );
 }
 
-export function MailApp() {
+export function MailApp({ initialDossier }: { initialDossier?: string }) {
   const [mode, setMode] = useState<"public" | "labo">("public");
   const [box, setBox] = useState("inbox");
   const [query, setQuery] = useState("");
@@ -126,7 +145,8 @@ export function MailApp() {
   const [railOpen, setRailOpen] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(false);
 
-  // Mount: local follows, first-visit banner, auto-open welcome on desktop.
+  // Mount: local follows, first-visit banner, auto-open welcome on desktop,
+  // or the shared dossier of a deep link (?dossier=nyappdiv-…).
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STARS_KEY);
@@ -137,6 +157,10 @@ export function MailApp() {
       if (!localStorage.getItem(BANNER_KEY)) setBannerOpen(true);
     } catch {
       /* stockage local indisponible — les suivis ne fonctionnent pas, sans gravité */
+    }
+    if (initialDossier && CASE_ID_RE.test(initialDossier)) {
+      setSelected(sharedShell(initialDossier));
+      return;
     }
     if (window.matchMedia("(min-width: 768px)").matches) setSelected(WELCOME_ITEM);
   }, []);

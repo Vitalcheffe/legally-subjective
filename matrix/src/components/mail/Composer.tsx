@@ -31,7 +31,7 @@ interface AgentVerdict {
 }
 
 interface SandboxResult {
-  status: "ok" | "error" | "refused";
+  status: "ok" | "error" | "refused" | "rate_limited";
   ephemeral: true;
   title: string;
   prosecutor?: AgentVerdict;
@@ -39,6 +39,8 @@ interface SandboxResult {
   judge?: AgentVerdict;
   error?: string;
   notice: string;
+  retryAfterSeconds?: number;
+  remainingSessions?: number;
 }
 
 const MIN_CHARS = 120;
@@ -199,14 +201,27 @@ export function Composer({
             </div>
           )}
 
-          {result && (result.status === "error" || result.status === "refused") && (
-            <div
-              role="alert"
-              className="rounded-sm border border-neg/40 bg-neg-subtle px-4 py-3 text-sm leading-relaxed text-neg"
-            >
-              {result.error ?? "Erreur inconnue — rapportée telle quelle."}
-            </div>
-          )}
+          {result &&
+            (result.status === "error" ||
+              result.status === "refused" ||
+              result.status === "rate_limited") && (
+              <div
+                role="alert"
+                className={cn(
+                  "rounded-sm border px-4 py-3 text-sm leading-relaxed",
+                  result.status === "rate_limited"
+                    ? "border-primary/40 bg-accent/50 text-accent-foreground"
+                    : "border-neg/40 bg-neg-subtle text-neg",
+                )}
+              >
+                {result.error ?? "Erreur inconnue — rapportée telle quelle."}
+                {result.status === "rate_limited" && result.notice && (
+                  <p className="mt-1 text-[11px] leading-relaxed opacity-80">
+                    {result.notice}
+                  </p>
+                )}
+              </div>
+            )}
 
           {result && result.status === "ok" && (
             <div className="space-y-2">
@@ -217,6 +232,14 @@ export function Composer({
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-pos" />
                 <p className="text-[11px] leading-relaxed text-pos">
                   {result.notice}
+                  {typeof result.remainingSessions === "number" &&
+                    result.remainingSessions > 0 && (
+                      <>
+                        {" "}
+                        Analyses restantes sur cette fenêtre de 10 minutes :{" "}
+                        {result.remainingSessions}.
+                      </>
+                    )}
                 </p>
               </div>
             </div>

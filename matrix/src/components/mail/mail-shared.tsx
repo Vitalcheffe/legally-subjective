@@ -9,6 +9,24 @@ import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DEPT_LABELS, deptColor } from "@/components/analytics/shared";
 
+/**
+ * Client-side mirror of the server's DEPT_FULL map (src/lib/matrix/mailbox.ts).
+ * Kept here — and NOT imported from mailbox.ts — because mailbox.ts sits on a
+ * server-only module chain (agents.ts → z-ai-web-dev-sdk → node:fs); a value
+ * import from a client component would pull that chain into the browser bundle.
+ */
+const DEPT_FULL_CLIENT: Record<string, string> = {
+  "1st": "1re Division",
+  "2nd": "2e Division",
+  "3rd": "3e Division",
+  "4th": "4e Division",
+  unknown: "Département indéterminé",
+};
+
+export function deptFullOf(dept: string | null | undefined): string {
+  return DEPT_FULL_CLIENT[dept ?? "unknown"] ?? "Département indéterminé";
+}
+
 export function initialsOf(name: string | null | undefined): string {
   if (!name) return "··";
   const parts = name.replace(/[^A-Za-zÀ-ÿ' -]/g, "").trim().split(/[\s-]+/).filter(Boolean);

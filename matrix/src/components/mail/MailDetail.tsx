@@ -9,7 +9,9 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   BookOpen,
+  Check,
   ExternalLink,
+  Link2,
   Loader2,
   Scale,
   ShieldAlert,
@@ -22,10 +24,15 @@ import {
   DeptChip,
   MailAvatar,
   SignalBadge,
+  deptFullOf,
   fmtFullDate,
+  initialsOf,
 } from "./mail-shared";
 
 type Detail = DossierDetail | DigestDetail;
+
+/** Real corpus case ids (deep-link share targets). */
+const CASE_ID_RE = /^nyappdiv-\d+$/;
 
 function Section({
   title,
@@ -379,6 +386,27 @@ export function MailDetail({
   const [detail, setDetail] = useState<Detail | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  // Share — copies a public deep link to this exact real dossier.
+  async function shareDossier(caseId: string) {
+    const url = `${window.location.origin}/?dossier=${encodeURIComponent(caseId)}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // Fallback for browsers without the async clipboard API.
+      const ta = document.createElement("textarea");
+      ta.value = url;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  }
 
   useEffect(() => {
     if (!item) {
@@ -427,6 +455,18 @@ export function MailDetail({
   const d = detail && detail.kind === "dossier" ? detail : null;
   const g = detail && detail.kind === "digest" ? detail : null;
 
+  // En-tête résolu : le détail chargé fait foi ; l'élément de liste (ou la
+  // coquille d'un lien partagé) ne comble que l'attente de chargement.
+  const presiding = d
+    ? (d.panel.find((p) => p.role === "presiding")?.name ?? d.panel[0]?.name ?? null)
+    : null;
+  const fromDetail = d
+    ? `${presiding !== null ? `${presiding}, J.${d.panel.length > 1 ? ` (prés.) +${d.panel.length - 1}` : ""}` : deptFullOf(d.department)} — ${deptFullOf(d.department)}`
+    : item.fromDetail;
+  const dept = d ? d.department : item.department;
+  const disposition = d ? d.dispositionBinary : item.disposition;
+  const dateIso = d ? d.dateFiled : item.date;
+
   return (
     <div className="flex h-full min-h-0 flex-col">
       <header className="shrink-0 border-b bg-card/70 px-4 py-4 md:px-6">
@@ -442,18 +482,18 @@ export function MailDetail({
             </button>
           )}
           <MailAvatar
-            initials={item.avatar}
-            department={item.department}
+            initials={d && presiding ? initialsOf(presiding) : item.avatar}
+            department={dept}
             kind={item.kind}
             size="lg"
           />
           <div className="min-w-0 flex-1">
             <h2 className="font-serif text-xl leading-snug break-words md:text-2xl">
-              {isDigest && g ? g.subject : item.subject}
+              {isDigest && g ? g.subject : d ? d.caseName : item.subject}
             </h2>
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-              {item.kind === "dossier" && <VerdictBadge verdict={item.disposition} />}
-              {item.department && <DeptChip department={item.department} />}
+              {item.kind === "dossier" && <VerdictBadge verdict={disposition} />}
+              {dept && <DeptChip department={dept} />}
               {item.flagged && <SignalBadge />}
               {d && d.runs.length > 0 && (
                 <span className="mono rounded-sm border border-primary/30 bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground">
@@ -464,7 +504,7 @@ export function MailDetail({
             <div className="mt-3 space-y-1 text-[13px]">
               <p className="text-muted-foreground">
                 <span className="mono mr-2 text-[10px] tracking-wider uppercase">De</span>
-                <span className="text-foreground">{item.fromDetail}</span>
+                <span className="text-foreground">{fromDetail}</span>
               </p>
               <p className="text-muted-foreground">
                 <span className="mono mr-2 text-[10px] tracking-wider uppercase">À</span>
@@ -474,11 +514,30 @@ export function MailDetail({
               </p>
               <p className="text-muted-foreground">
                 <span className="mono mr-2 text-[10px] tracking-wider uppercase">Date</span>
-                {fmtFullDate(item.date)}
+                {fmtFullDate(dateIso)}
               </p>
             </div>
             {d && (d.docketNumber || d.citation || d.sourceUrl) && (
               <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                {!isDigest && CASE_ID_RE.test(item.id) && (
+                  <button
+                    type="button"
+                    onClick={() => shareDossier(item.id)}
+                    aria-label="Copier le lien public de ce dossier"
+                    title="Copier le lien public de ce dossier"
+                    className="mono inline-flex items-center gap-1.5 rounded-sm border border-primary/30 bg-accent px-2 py-1 text-[11px] font-medium text-accent-foreground transition-colors hover:bg-accent/70"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-3 w-3" /> Lien copié
+                      </>
+                    ) : (
+                      <>
+                        <Link2 className="h-3 w-3" /> Partager le dossier
+                      </>
+                    )}
+                  </button>
+                )}
                 {d.sourceUrl && (
                   <a
                     href={d.sourceUrl}
