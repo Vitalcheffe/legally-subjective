@@ -1,0 +1,34 @@
+{
+  "courtlistener": {
+    "search_url": "https://www.courtlistener.com/api/rest/v4/search/",
+    "auth_token_env": "COURTLISTENER_TOKEN",
+    "timeout_seconds": 60,
+    "min_delay_seconds": 2.0,
+    "max_retries": 4,
+    "backoff_base_seconds": 3.0,
+    "user_agent": "legally-subjective/0.1 (academic research; https://github.com/Vitalcheffe/legally-subjective)",
+    "user_agent_browser_fallback": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+  },
+  "sample": {
+    "query": "\"judgment of conviction\"",
+    "case_type": "o",
+    "court": "nyappdiv",
+    "order_by": "dateFiled asc",
+    "page_size": 10,
+    "criminal_keywords": ["judgment of conviction", "convicted", "defendant"],
+    "require_all_keywords": false,
+    "windows": [
+      {"label": "2011", "filed_after": "2011-01-01", "filed_before": "2011-12-31", "take": 1},
+      {"label": "2013", "filed_after": "2013-01-01", "filed_before": "2013-12-31", "take": 1},
+      {"label": "2015", "filed_after": "2015-01-01", "filed_before": "2015-12-31", "take": 1},
+      {"label": "2017", "filed_after": "2017-01-01", "filed_before": "2017-12-31", "take": 1},
+      {"label": "2019", "filed_after": "2019-01-01", "filed_before": "2019-12-31", "take": 1}
+    ]
+  },
+  "paths": {
+    "cases_jsonl": "data/sample/cases.jsonl",
+    "documents_dir": "data/sample/documents",
+    "fetch_log": "data/sample/FETCH_LOG.json",
+    "checkpoint": "data/sample/.checkpoint.json"
+  }
+}
