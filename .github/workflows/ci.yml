@@ -20,3 +20,5 @@ jobs:
         run: python scripts/tests/test_golden_sample.py
       - name: Validate sample data integrity
         run: python scripts/verify_data.py --mode sample
+      - name: Validate corpus data integrity (1,387 cases)
+        run: python scripts/verify_data.py --mode corpus
