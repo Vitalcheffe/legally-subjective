@@ -1,0 +1,28 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Secrets (never commit credentials) ---
+.env
+*.token
+*.key
+
+# --- Bulk data: the committed sample (5 cases) is intentional evidence;
+#     large-scale fetch outputs stay local until the full dataset is
+#     validated and documented ---
+data/bulk/
+data/raw/
+downloads/
+*.log
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
