@@ -29,16 +29,16 @@ interface NetworkPayload {
   totalPairs: number;
 }
 
-/** z in [-3, +3] → emerald (infirme plus) … zinc … red (confirme plus). */
+/** z in [-3, +3] → forest (infirme plus) … warm gray … carmine (confirme plus). */
 function zColor(z: number): string {
   const t = Math.max(-3, Math.min(3, z)) / 3; // -1..1
   if (t >= 0) {
-    // zinc → red
-    const a = [0x71, 0x71, 0x7a], b = [0xf8, 0x71, 0x71];
+    // warm gray → carmine
+    const a = [0x8b, 0x85, 0x77], b = [0xa8, 0x43, 0x3c];
     const mix = a.map((v, i) => Math.round(v + (b[i] - v) * t));
     return `rgb(${mix[0]},${mix[1]},${mix[2]})`;
   }
-  const a = [0x71, 0x71, 0x7a], b = [0x34, 0xd3, 0x99];
+  const a = [0x8b, 0x85, 0x77], b = [0x2f, 0x7d, 0x51];
   const mix = a.map((v, i) => Math.round(v + (b[i] - v) * -t));
   return `rgb(${mix[0]},${mix[1]},${mix[2]})`;
 }
@@ -82,7 +82,7 @@ export function NeuralMap() {
     <div className="grid grid-cols-1 xl:grid-cols-[1fr_340px] gap-4 min-h-0">
       <ModulePanel
         code="01"
-        title="CARTE NEURO-COGNITIVE — CONSTELLATION DES PANÉLISTES"
+        title="Carte neuro-cognitive — constellation des panélistes"
         subtitle="Graphe de co-siège réel · chaque lien = juges ayant siégé ensemble"
         source="api/matrix/network"
         actions={
@@ -133,9 +133,9 @@ export function NeuralMap() {
                   <span className="label-caps text-muted-foreground">LÉGENDE</span>
                   {colorMode === "z" ? (
                     <>
-                      <span className="mono text-[10px] text-emerald-400">■ INFIRME PLUS QUE LA BASE (z &lt; 0)</span>
+                      <span className="mono text-[10px] text-pos">■ INFIRME PLUS QUE LA BASE (z &lt; 0)</span>
                       <span className="mono text-[10px] text-muted-foreground">■ DANS LA MOYENNE</span>
-                      <span className="mono text-[10px] text-red-400">■ CONFIRME PLUS QUE LA BASE (z &gt; 0)</span>
+                      <span className="mono text-[10px] text-neg">■ CONFIRME PLUS QUE LA BASE (z &gt; 0)</span>
                     </>
                   ) : (
                     Object.entries(DEPT_LABELS).map(([k, v]) => (
@@ -155,10 +155,10 @@ export function NeuralMap() {
       </ModulePanel>
 
       <div className="flex flex-col gap-4 min-h-0">
-        <ModulePanel code="01·B" title="REGISTRE DES JUGES" source="api/matrix/judges" className="flex-1 min-h-0">
+        <ModulePanel code="01·B" title="Registre des juges" source="api/matrix/judges" className="flex-1 min-h-0">
           <div className="flex flex-col h-full min-h-0 gap-3">
             <Input
-              placeholder="RECHERCHER UN JUGE…"
+              placeholder="Rechercher un juge…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="h-8 text-xs mono"
@@ -191,7 +191,7 @@ export function NeuralMap() {
           </div>
         </ModulePanel>
 
-        <ModulePanel code="01·C" title="FICHE CIBLE">
+        <ModulePanel code="01·C" title="Fiche du magistrat">
           {detail ? (
             <div className="space-y-2.5">
               <div className="flex items-center justify-between">
@@ -206,8 +206,8 @@ export function NeuralMap() {
               <dl className="grid grid-cols-2 gap-x-3 gap-y-1.5 mono text-[11px]">
                 <div><dt className="text-muted-foreground">VOLUME</dt><dd>{fmtNum(detail.nOpinions)} opinions</dd></div>
                 <div><dt className="text-muted-foreground">N BINAIRES</dt><dd>{fmtNum(detail.nBinary)}</dd></div>
-                <div><dt className="text-muted-foreground">TAUX CONFIRM.</dt><dd className="text-emerald-400">{fmtPct(detail.rate)}</dd></div>
-                <div><dt className="text-muted-foreground">ÉCART Z</dt><dd className={detail.z >= 0 ? "text-red-400" : "text-emerald-400"}>{fmtSigned(detail.z)}</dd></div>
+                <div><dt className="text-muted-foreground">TAUX CONFIRM.</dt><dd className="text-pos">{fmtPct(detail.rate)}</dd></div>
+                <div><dt className="text-muted-foreground">ÉCART Z</dt><dd className={detail.z >= 0 ? "text-neg" : "text-pos"}>{fmtSigned(detail.z)}</dd></div>
                 <div><dt className="text-muted-foreground">PRÉSIDENCES</dt><dd>{fmtNum(detail.presidingCount)}</dd></div>
                 <div><dt className="text-muted-foreground">CO-JUGES</dt><dd>{fmtNum(detail.uniqueCoJudges)}</dd></div>
                 <div><dt className="text-muted-foreground">VOLATILITÉ</dt><dd>{detail.volatility.toFixed(3)}</dd></div>
@@ -223,7 +223,7 @@ export function NeuralMap() {
             </div>
           ) : (
             <p className="mono text-[10px] text-muted-foreground py-6 text-center">
-              SÉLECTIONNEZ UN NŒUD DANS LA CONSTELLATION
+              Sélectionnez un nœud dans la constellation
             </p>
           )}
         </ModulePanel>

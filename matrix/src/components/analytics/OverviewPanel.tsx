@@ -28,21 +28,21 @@ interface OverviewPayload {
 }
 
 const DISPO_COLORS: Record<string, string> = {
-  affirmed: "#34d399", reversed: "#f87171", modified: "#fbbf24",
-  vacated: "#fb923c", dismissed: "#a1a1aa", remitted: "#d4d4d8",
-  "non classé": "#52525b",
+  affirmed: "#2F7D51", reversed: "#A8433C", modified: "#B8863B",
+  vacated: "#8C6D3F", dismissed: "#9A948A", remitted: "#C4BFB5",
+  "non classé": "#8B8577",
 };
 
 const MODULE_LINKS: { code: string; label: string; module: string }[] = [
-  { code: "01", label: "CARTE NEURO-COGNITIVE", module: "neural" },
-  { code: "02", label: "MATRICE DES ÉCARTS", module: "weakness" },
-  { code: "03", label: "CARTE THERMIQUE DES BIAIS", module: "heatmap" },
-  { code: "04", label: "SIMULATEUR MONTE-CARLO", module: "montecarlo" },
-  { code: "05", label: "SPECTRE STYLOMÉTRIQUE", module: "stylometry" },
-  { code: "06", label: "GRAPHE DE JURISPRUDENCE", module: "precedent" },
-  { code: "07", label: "CHRONOLOGIE COGNITIVE", module: "timeline" },
-  { code: "08", label: "RADAR DE DÉVIATION", module: "radar" },
-  { code: "09", label: "BOUCLIER HUMAIN vs IA", module: "shield" },
+  { code: "01", label: "Carte neuro-cognitive", module: "neural" },
+  { code: "02", label: "Matrice des écarts", module: "weakness" },
+  { code: "03", label: "Carte thermique des biais", module: "heatmap" },
+  { code: "04", label: "Simulateur Monte-Carlo", module: "montecarlo" },
+  { code: "05", label: "Spectre stylométrique", module: "stylometry" },
+  { code: "06", label: "Graphe de jurisprudence", module: "precedent" },
+  { code: "07", label: "Chronologie cognitive", module: "timeline" },
+  { code: "08", label: "Radar de déviation", module: "radar" },
+  { code: "09", label: "Arbitrage humain contre IA", module: "shield" },
 ];
 
 export function OverviewPanel() {
@@ -53,7 +53,7 @@ export function OverviewPanel() {
     <div className="space-y-4">
       <ModulePanel
         code="00"
-        title="SYNOPTIQUE DE MISSION — ÉTAT DU CORPUS RÉEL"
+        title="Synoptique — état du corpus réel"
         subtitle="Appels criminels NY Appellate Division · collecte CourtListener + documents officiels · pipeline validé Phase 2"
         source="api/matrix/overview"
         actions={<ReloadButton onClick={reload} />}
@@ -69,30 +69,30 @@ export function OverviewPanel() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
                 <KpiChip label="DOSSIERS RÉELS" value={fmtNum(d.corpus.records)} sub={`${d.corpus.firstDate} → ${d.corpus.lastDate}`} />
-                <KpiChip label="TAUX DE CONFIRMATION" value={fmtPct(d.binary.rate)} tone="emerald" sub={`IC95 [${fmtPct(d.binary.wilson95.low)} ; ${fmtPct(d.binary.wilson95.high)}]`} />
-                <KpiChip label="ANNULATIONS/INFIRM." value={fmtPct(1 - d.binary.rate)} tone="red" sub={`n binaire = ${fmtNum(d.binary.n)}`} />
+                <KpiChip label="TAUX DE CONFIRMATION" value={fmtPct(d.binary.rate)} tone="pos" sub={`IC95 [${fmtPct(d.binary.wilson95.low)} ; ${fmtPct(d.binary.wilson95.high)}]`} />
+                <KpiChip label="ANNULATIONS/INFIRM." value={fmtPct(1 - d.binary.rate)} tone="neg" sub={`n binaire = ${fmtNum(d.binary.n)}`} />
                 <KpiChip label="JUGES NORMALISÉS" value={fmtNum(d.judges)} sub={`${fmtNum(d.seats)} liens de panel`} />
                 <KpiChip label="AUTORITÉS CITÉES" value={fmtNum(d.citedTargets)} sub={`${fmtNum(d.citedMentions)} mentions extraites`} />
-                <KpiChip label="TEXTES INDEXÉS" value={`${fmtNum(d.corpus.withText)}/${fmtNum(d.corpus.records)}`} tone="amber" sub="opinions officielles complètes" />
+                <KpiChip label="TEXTES INDEXÉS" value={`${fmtNum(d.corpus.withText)}/${fmtNum(d.corpus.records)}`} tone="mix" sub="opinions officielles complètes" />
               </div>
 
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="label-caps text-muted-foreground mb-2">DISTRIBUTION DES DISPOSITIONS (TOUTES OPINIONS)</h3>
-                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                  <h3 className="label-caps text-muted-foreground mb-2">Distribution des dispositions (toutes opinions)</h3>
+                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-card">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={d.dispositions.map((x) => ({ ...x, label: x.key === "non_classé" ? "non classé" : x.key }))} layout="vertical">
-                        <CartesianGrid stroke="#27272a" strokeDasharray="2 4" horizontal={false} />
-                        <XAxis type="number" stroke="#71717a" fontSize={10} tickLine={false} />
-                        <YAxis type="category" dataKey="label" stroke="#71717a" fontSize={10} tickLine={false} width={80} />
+                        <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" horizontal={false} />
+                        <XAxis type="number" stroke="#756F65" fontSize={10} tickLine={false} />
+                        <YAxis type="category" dataKey="label" stroke="#756F65" fontSize={10} tickLine={false} width={80} />
                         <Tooltip
-                          contentStyle={{ background: "#09090b", border: "1px solid #27272a", borderRadius: 2, fontSize: 11, fontFamily: "var(--font-geist-mono)" }}
-                          cursor={{ fill: "#27272a33" }}
+                          contentStyle={{ background: "#FFFFFF", border: "1px solid #D8D3C8", borderRadius: 2, fontSize: 11, fontFamily: "var(--font-geist-mono)" }}
+                          cursor={{ fill: "#8B857733" }}
                           formatter={(v: number, _n, p) => [`${v} (${fmtPct(p.payload.share)})`, "opinions"]}
                         />
                         <Bar dataKey="count" isAnimationActive={false}>
                           {d.dispositions.map((x) => (
-                            <Cell key={x.key} fill={DISPO_COLORS[x.key] ?? "#71717a"} />
+                            <Cell key={x.key} fill={DISPO_COLORS[x.key] ?? "#756F65"} />
                           ))}
                         </Bar>
                       </BarChart>
@@ -101,8 +101,9 @@ export function OverviewPanel() {
                 </div>
 
                 <div>
-                  <h3 className="label-caps text-muted-foreground mb-2">SEGMENTATION PAR DÉPARTEMENT (BINAIRES)</h3>
-                  <table className="w-full text-xs mono border border-border/70 rounded-sm">
+                  <h3 className="label-caps text-muted-foreground mb-2">Segmentation par département (binaires)</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs mono border border-border rounded-sm min-w-[420px]">
                     <thead className="border-b border-border/70">
                       <tr>
                         {["DÉPARTEMENT", "N", "CONFIRMÉS", "TAUX", "IC95 WILSON"].map((h) => (
@@ -118,14 +119,15 @@ export function OverviewPanel() {
                           </td>
                           <td className="px-3 py-2">{fmtNum(dept.n)}</td>
                           <td className="px-3 py-2">{fmtNum(dept.affirmed)}</td>
-                          <td className={`px-3 py-2 ${dept.rate >= 0.7696 ? "text-red-400" : "text-emerald-400"}`}>{fmtPct(dept.rate)}</td>
+                          <td className={`px-3 py-2 ${dept.rate >= 0.7696 ? "text-neg" : "text-pos"}`}>{fmtPct(dept.rate)}</td>
                           <td className="px-3 py-2 w-36">
-                            <WilsonBar rate={dept.rate} low={dept.wilson95.low} high={dept.wilson95.high} tone={dept.rate >= 0.7696 ? "red" : "emerald"} />
+                            <WilsonBar rate={dept.rate} low={dept.wilson95.low} high={dept.wilson95.high} tone={dept.rate >= 0.7696 ? "neg" : "pos"} />
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
+                  </div>
                   <p className="mono text-[9px] text-muted-foreground/70 mt-2">
                     Population : {fmtNum(d.corpus.peopleV)} « People v. … » · {fmtNum(d.corpus.other)} autres (Matter of …, etc.)
                   </p>
@@ -133,7 +135,7 @@ export function OverviewPanel() {
               </div>
 
               <div>
-                <h3 className="label-caps text-muted-foreground mb-2">ACCÈS MODULES</h3>
+                <h3 className="label-caps text-muted-foreground mb-2">Accès modules</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {MODULE_LINKS.map((m) => (
                     <button

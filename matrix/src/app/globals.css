@@ -8,6 +8,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-source-serif);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,69 +45,60 @@
 }
 
 /*
- * Behavioral Matrix — aerospace terminal theme (dark by design).
- * The console is a supervision terminal: dark, dense, monospaced numerics.
- * Accent semantics: emerald = confirmation, red = annulation, amber = mixte.
+ * Behavioral Matrix — "Codex" institutional light theme.
+ * Design contract (trust-first, regulated industry):
+ *   - Warm ivory paper, ink text, ONE institutional accent (ink navy).
+ *   - Verdict semantics are reserved for data: forest = affirmed,
+ *     carmine = reversed, ochre = mixed. Never decoration.
+ *   - Serif display for titles (law-library register), sans for UI,
+ *     mono + tabular numerals for every measured value.
+ *   - Motion budget: opacity/transform only, 120-160ms, no loops.
  */
-:root {
-  --radius: 0.25rem;
-  --background: oklch(0.13 0.004 285.8);
-  --foreground: oklch(0.94 0.003 286.4);
-  --card: oklch(0.17 0.005 285.9);
-  --card-foreground: oklch(0.94 0.003 286.4);
-  --popover: oklch(0.15 0.005 285.9);
-  --popover-foreground: oklch(0.94 0.003 286.4);
-  --primary: oklch(0.79 0.15 166.1);
-  --primary-foreground: oklch(0.16 0.02 166.1);
-  --secondary: oklch(0.22 0.006 286);
-  --secondary-foreground: oklch(0.9 0.003 286.4);
-  --muted: oklch(0.21 0.006 286);
-  --muted-foreground: oklch(0.63 0.008 286.3);
-  --accent: oklch(0.83 0.16 83.4);
-  --accent-foreground: oklch(0.18 0.03 83.4);
-  --destructive: oklch(0.68 0.19 22.2);
-  --border: oklch(0.26 0.006 286.1);
-  --input: oklch(0.24 0.006 286.1);
-  --ring: oklch(0.79 0.15 166.1);
-  --chart-1: oklch(0.79 0.15 166.1);
-  --chart-2: oklch(0.68 0.19 22.2);
-  --chart-3: oklch(0.83 0.16 83.4);
-  --chart-4: oklch(0.72 0.14 178.7);
-  --chart-5: oklch(0.7 0.16 76.8);
-  --sidebar: oklch(0.15 0.005 285.9);
-  --sidebar-foreground: oklch(0.94 0.003 286.4);
-  --sidebar-primary: oklch(0.79 0.15 166.1);
-  --sidebar-primary-foreground: oklch(0.16 0.02 166.1);
-  --sidebar-accent: oklch(0.22 0.006 286);
-  --sidebar-accent-foreground: oklch(0.94 0.003 286.4);
-  --sidebar-border: oklch(0.26 0.006 286.1);
-  --sidebar-ring: oklch(0.79 0.15 166.1);
-}
 
-.dark {
-  --background: oklch(0.13 0.004 285.8);
-  --foreground: oklch(0.94 0.003 286.4);
-  --card: oklch(0.17 0.005 285.9);
-  --card-foreground: oklch(0.94 0.003 286.4);
-  --popover: oklch(0.15 0.005 285.9);
-  --popover-foreground: oklch(0.94 0.003 286.4);
-  --primary: oklch(0.79 0.15 166.1);
-  --primary-foreground: oklch(0.16 0.02 166.1);
-  --secondary: oklch(0.22 0.006 286);
-  --secondary-foreground: oklch(0.9 0.003 286.4);
-  --muted: oklch(0.21 0.006 286);
-  --muted-foreground: oklch(0.63 0.008 286.3);
-  --accent: oklch(0.83 0.16 83.4);
-  --accent-foreground: oklch(0.18 0.03 83.4);
-  --destructive: oklch(0.68 0.19 22.2);
-  --border: oklch(0.26 0.006 286.1);
-  --input: oklch(0.24 0.006 286.1);
-  --ring: oklch(0.79 0.15 166.1);
-  --chart-1: oklch(0.79 0.15 166.1);
-  --chart-2: oklch(0.68 0.19 22.2);
-  --chart-3: oklch(0.83 0.16 83.4);
-  --chart-4: oklch(0.72 0.14 178.7);
-  --chart-5: oklch(0.7 0.16 76.8);
+:root {
+  --radius: 0.3125rem;
+
+  /* Paper & ink */
+  --background: oklch(0.972 0.005 85);
+  --foreground: oklch(0.245 0.008 85);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.245 0.008 85);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.245 0.008 85);
+
+  /* Institutional ink-navy accent (desaturated — reads as ink, not tech blue) */
+  --primary: oklch(0.335 0.055 258);
+  --primary-foreground: oklch(0.975 0.004 85);
+
+  --secondary: oklch(0.938 0.006 85);
+  --secondary-foreground: oklch(0.32 0.01 85);
+  --muted: oklch(0.947 0.005 85);
+  --muted-foreground: oklch(0.42 0.012 85);
+  --accent: oklch(0.925 0.018 258);
+  --accent-foreground: oklch(0.295 0.055 258);
+  --destructive: oklch(0.46 0.16 27);
+  --border: oklch(0.885 0.007 85);
+  --input: oklch(0.885 0.007 85);
+  --ring: oklch(0.335 0.055 258);
+
+  /* Data semantics (verdict palette — professional, desaturated, AA on white) */
+  --pos: oklch(0.43 0.085 155);      /* affirmed — deep forest */
+  --neg: oklch(0.45 0.15 27);        /* reversed — carmine */
+  --mix: oklch(0.48 0.09 75);        /* mixed — ochre */
+  --chart-1: oklch(0.335 0.055 258); /* ink navy */
+  --chart-2: oklch(0.45 0.15 27);    /* carmine */
+  --chart-3: oklch(0.43 0.085 155);  /* forest */
+  --chart-4: oklch(0.55 0.1 75);     /* ochre */
+  --chart-5: oklch(0.42 0.07 300);   /* plum */
+
+  --sidebar: oklch(0.955 0.005 85);
+  --sidebar-foreground: oklch(0.245 0.008 85);
+  --sidebar-primary: oklch(0.335 0.055 258);
+  --sidebar-primary-foreground: oklch(0.975 0.004 85);
+  --sidebar-accent: oklch(0.925 0.018 258);
+  --sidebar-accent-foreground: oklch(0.295 0.055 258);
+  --sidebar-border: oklch(0.885 0.007 85);
+  --sidebar-ring: oklch(0.335 0.055 258);
 }
 
 @layer base {
@@ -117,94 +109,91 @@
     @apply bg-background text-foreground;
     font-feature-settings: "tnum" 1;
   }
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 16%, transparent);
+  }
 }
 
-/* ————— Terminal console utilities ————— */
+/* ————— Institutional primitives ————— */
 
-.matrix-grid-bg {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(52, 211, 153, 0.045), transparent 70%);
-  background-size: 36px 36px, 36px 36px, 100% 100%;
+/* Serif display register: masthead, panel titles, editorial figures. */
+.serif-display {
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", "Liberation Serif", serif;
+  letter-spacing: -0.005em;
 }
 
+/* Monospaced figures for every measured value. */
 .mono {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
 
+/* Small-caps administrative labels (sans, moderate tracking). */
 .label-caps {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.625rem;
+  letter-spacing: 0.09em;
+  font-size: 0.6875rem;
+  font-weight: 600;
 }
 
+/* Document panel: white leaf on paper, hairline rule, quiet shadow. */
 .panel {
-  background: color-mix(in oklab, var(--card) 62%, transparent);
-  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
-  backdrop-filter: blur(2px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px oklch(0.245 0.008 85 / 0.04), 0 4px 16px oklch(0.245 0.008 85 / 0.03);
 }
 
-.glow-emerald {
-  text-shadow: 0 0 12px rgba(52, 211, 153, 0.45);
-}
-.glow-red {
-  text-shadow: 0 0 12px rgba(248, 113, 113, 0.45);
-}
-.glow-amber {
-  text-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
-}
-
-@keyframes blink-cursor {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-.blink-cursor {
-  animation: blink-cursor 1.06s step-end infinite;
-}
-
-@keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(2400%); }
-}
-.scanline {
+/* Subtle paper grain — law-library register, never louder than 3%. */
+.paper-grain {
   position: relative;
-  overflow: hidden;
 }
-.scanline::after {
+.paper-grain::before {
   content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.35), transparent);
-  animation: scan 7s linear infinite;
+  position: fixed;
+  inset: 0;
   pointer-events: none;
+  z-index: 0;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-@keyframes pulse-led {
-  0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
-  50% { opacity: 0.55; box-shadow: 0 0 2px currentColor; }
-}
-.pulse-led {
-  animation: pulse-led 2.2s ease-in-out infinite;
+/* ————— Verdict semantics (data only) ————— */
+@layer utilities {
+  .text-pos { color: var(--pos); }
+  .text-neg { color: var(--neg); }
+  .text-mix { color: var(--mix); }
+  .bg-pos-subtle { background-color: color-mix(in oklab, var(--pos) 9%, transparent); }
+  .bg-neg-subtle { background-color: color-mix(in oklab, var(--neg) 8%, transparent); }
+  .bg-mix-subtle { background-color: color-mix(in oklab, var(--mix) 10%, transparent); }
+  .border-pos { border-color: color-mix(in oklab, var(--pos) 38%, transparent); }
+  .border-neg { border-color: color-mix(in oklab, var(--neg) 38%, transparent); }
+  .border-mix { border-color: color-mix(in oklab, var(--mix) 42%, transparent); }
+  .bg-pos { background-color: var(--pos); }
+  .bg-neg { background-color: var(--neg); }
+  .bg-mix { background-color: var(--mix); }
 }
 
-/* thin terminal scrollbars */
+/* ————— Motion budget (opacity/transform only, 120-160ms) ————— */
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-rise {
+  animation: fade-rise 160ms ease-out both;
+}
+
+/* thin, quiet scrollbars */
 * {
   scrollbar-width: thin;
-  scrollbar-color: oklch(0.32 0.006 286.1) transparent;
+  scrollbar-color: oklch(0.82 0.008 85) transparent;
 }
 *::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 *::-webkit-scrollbar-thumb {
-  background: oklch(0.32 0.006 286.1);
+  background: oklch(0.82 0.008 85);
   border-radius: 3px;
 }
 *::-webkit-scrollbar-track {

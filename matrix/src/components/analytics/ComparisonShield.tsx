@@ -55,9 +55,9 @@ function AgentCard({
   icon, title, agent, tone,
 }: {
   icon: React.ReactNode; title: string; agent?: AgentVerdict;
-  tone: "emerald" | "red" | "amber";
+  tone: "pos" | "neg" | "mix";
 }) {
-  const color = tone === "emerald" ? "text-emerald-400" : tone === "red" ? "text-red-400" : "text-amber-400";
+  const color = tone === "pos" ? "text-pos" : tone === "neg" ? "text-neg" : "text-mix";
   return (
     <AccordionItem value={title}>
       <AccordionTrigger className="py-2 hover:no-underline">
@@ -69,7 +69,7 @@ function AgentCard({
               · {agent.verdict === "affirmed" ? "CONFIRMER" : "INFIRMER"} · conf. {(agent.confidence * 100).toFixed(0)} %
             </span>
           ) : (
-            <span className="mono text-[10px] text-red-400">· SORTIE INVALIDE (conservée brute)</span>
+            <span className="mono text-[10px] text-neg">· SORTIE INVALIDE (conservée brute)</span>
           )}
         </div>
       </AccordionTrigger>
@@ -87,7 +87,7 @@ function AgentCard({
               <div className="label-caps text-muted-foreground mb-1">CONFIANCE AUTO-DÉCLARÉE</div>
               <div className="h-1.5 bg-secondary rounded-sm overflow-hidden max-w-xs">
                 <div
-                  className={tone === "emerald" ? "h-full bg-emerald-400" : tone === "red" ? "h-full bg-red-400" : "h-full bg-amber-400"}
+                  className={tone === "pos" ? "h-full bg-pos" : tone === "neg" ? "h-full bg-neg" : "h-full bg-mix"}
                   style={{ width: `${agent.confidence * 100}%` }}
                 />
               </div>
@@ -160,7 +160,7 @@ export function ComparisonShield() {
     <div className="space-y-4">
       <ModulePanel
         code="09"
-        title="BOUCLIER DE COMPARAISON — HUMAIN vs IA NEUTRE"
+        title="Arbitrage humain contre IA — session multi-agents"
         subtitle="Session multi-agents liée au recital officiel réel · z-ai-web-dev-sdk · sorties verbatim archivées"
         source="api/agents/session"
         actions={<ReloadButton onClick={() => { cases.reload(); runs.reload(); }} />}
@@ -169,7 +169,7 @@ export function ComparisonShield() {
           {/* LEFT — case picker + real recital */}
           <div className="space-y-3 min-w-0">
             <Input
-              placeholder="RECHERCHER UNE AFFAIRE (NOM, CITATION, ACCUSATION)…"
+              placeholder="Rechercher une affaire (nom, citation, accusation)…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="h-8 text-xs mono"
@@ -221,7 +221,7 @@ export function ComparisonShield() {
                   {selected.citation ? <span>{selected.citation}</span> : null}
                 </div>
                 {selected.charge ? (
-                  <p className="mono text-[10px] text-amber-400/90">ACCUSATION : {selected.charge}</p>
+                  <p className="mono text-[10px] text-mix">ACCUSATION : {selected.charge}</p>
                 ) : null}
                 <div>
                   <div className="label-caps text-muted-foreground mb-1">RECITAL OFFICIEL — VERBATIM</div>
@@ -249,13 +249,13 @@ export function ComparisonShield() {
                 <TerminalLoader label="PROCUREUR → DÉFENSE → JUGE-IA · LIAISON LLM RÉELLE" />
               ) : sessionError ? (
                 <div className="border border-destructive/40 bg-destructive/5 rounded-sm p-4">
-                  <p className="label-caps text-red-400">ÉCHEC DE LIAISON</p>
+                  <p className="label-caps text-neg">ÉCHEC DE LIAISON</p>
                   <p className="mono text-[10px] text-muted-foreground mt-1 break-all">{sessionError}</p>
                 </div>
               ) : session ? (
                 session.status === "error" ? (
                   <div className="border border-destructive/40 bg-destructive/5 rounded-sm p-4 space-y-1">
-                    <p className="label-caps text-red-400">SESSION EN ÉCHEC — ÉTAT EXPLICITE</p>
+                    <p className="label-caps text-neg">SESSION EN ÉCHEC — ÉTAT EXPLICITE</p>
                     <p className="mono text-[10px] text-muted-foreground break-all">{session.error}</p>
                     <p className="mono text-[9px] text-muted-foreground/70">
                       Aucune réponse simulée n'est affichée à la place du moteur. Run #{session.runId} archivé.
@@ -287,14 +287,14 @@ export function ComparisonShield() {
                       <div className="panel rounded-sm p-3 space-y-2">
                         <div className="flex items-center justify-between">
                           <span className="label-caps text-muted-foreground">DELTA_HUMAIN</span>
-                          <span className={`mono text-lg ${deltaPct !== null && deltaPct >= 0 ? "text-emerald-400 glow-emerald" : "text-red-400 glow-red"}`}>
+                          <span className={`mono text-lg ${deltaPct !== null && deltaPct >= 0 ? "text-pos" : "text-neg"}`}>
                             {deltaPct !== null ? fmtSigned(deltaPct * 100, 1) : "—"}
                           </span>
                         </div>
                         <div className="relative h-2 bg-secondary rounded-sm">
                           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-muted-foreground/40" />
                           <div
-                            className={`absolute top-0 bottom-0 rounded-sm ${deltaPct !== null && deltaPct >= 0 ? "bg-emerald-400/80" : "bg-red-400/80"}`}
+                            className={`absolute top-0 bottom-0 rounded-sm ${deltaPct !== null && deltaPct >= 0 ? "bg-pos" : "bg-neg"}`}
                             style={
                               deltaPct !== null && deltaPct >= 0
                                 ? { left: "50%", width: `${(deltaPct * 50)}%` }
@@ -310,7 +310,7 @@ export function ComparisonShield() {
                         </p>
                       </div>
                     ) : (
-                      <p className="mono text-[10px] text-amber-400/90">
+                      <p className="mono text-[10px] text-mix">
                         Affaire non binaire ({session.case.humanDisposition ?? "non classée"}) —
                         comparaison stricte accord/divergence indisponible, verdicts affichés à titre d'analyse.
                       </p>
@@ -318,9 +318,9 @@ export function ComparisonShield() {
 
                     {/* agent outputs */}
                     <Accordion type="multiple" className="border border-border/70 rounded-sm px-3">
-                      <AgentCard icon={<ScrollText className="h-3.5 w-3.5" />} title="PROCUREUR (AGENT D'ACCUSATION)" agent={session.prosecutor} tone="red" />
-                      <AgentCard icon={<ShieldCheck className="h-3.5 w-3.5" />} title="DÉFENSE (AGENT DE DÉFENSE)" agent={session.defender} tone="emerald" />
-                      <AgentCard icon={<Gavel className="h-3.5 w-3.5" />} title="JUGE-IA (ARBITRE NEUTRE)" agent={session.judge} tone="amber" />
+                      <AgentCard icon={<ScrollText className="h-3.5 w-3.5" />} title="Procureur — agent d'accusation" agent={session.prosecutor} tone="neg" />
+                      <AgentCard icon={<ShieldCheck className="h-3.5 w-3.5" />} title="Défense — agent de défense" agent={session.defender} tone="pos" />
+                      <AgentCard icon={<Gavel className="h-3.5 w-3.5" />} title="Juge-IA — arbitre neutre" agent={session.judge} tone="mix" />
                     </Accordion>
                     <p className="mono text-[9px] text-muted-foreground/70">
                       Run #{session.runId} · {session.model} · sorties verbatim archivées dans l'index (audit de raisonnement).
@@ -341,7 +341,7 @@ export function ComparisonShield() {
       </ModulePanel>
 
       {/* history */}
-      <ModulePanel code="09·B" title="JOURNAL DES SESSIONS — AUDIT DE RAISONNEMENT" source="api/agents/runs">
+      <ModulePanel code="09·B" title="Journal des sessions — audit de raisonnement" source="api/agents/runs">
         <ModuleBody
           loading={runs.loading}
           error={runs.error}
@@ -350,9 +350,9 @@ export function ComparisonShield() {
           data={runs.data}
         >
           {(d) => (
-            <div className="max-h-64 overflow-y-auto">
+            <div className="max-h-64 overflow-y-auto overflow-x-auto">
               <table className="w-full text-xs mono">
-                <thead className="sticky top-0 bg-zinc-950/95 border-b border-border/70">
+                <thead className="sticky top-0 bg-card border-b border-border/70">
                   <tr>
                     {["#", "HORODATAGE", "AFFAIRE", "HUMAIN", "IA", "ACCORD", "ÉTAT"].map((h) => (
                       <th key={h} className="label-caps text-muted-foreground px-2 py-1.5 text-left">{h}</th>
@@ -371,16 +371,16 @@ export function ComparisonShield() {
                         {r.agreement === null || r.agreement === undefined ? (
                           <span className="text-muted-foreground">n/a</span>
                         ) : r.agreement ? (
-                          <span className="text-emerald-400">OUI</span>
+                          <span className="text-pos">OUI</span>
                         ) : (
-                          <span className="text-red-400">NON</span>
+                          <span className="text-neg">NON</span>
                         )}
                       </td>
                       <td className="px-2 py-1.5">
                         {r.status === "ok" ? (
-                          <span className="text-emerald-400">OK</span>
+                          <span className="text-pos">OK</span>
                         ) : (
-                          <span className="text-red-400" title={r.error ?? ""}>ERREUR</span>
+                          <span className="text-neg" title={r.error ?? ""}>ERREUR</span>
                         )}
                       </td>
                     </tr>

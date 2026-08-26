@@ -90,7 +90,8 @@ export default function ForceGraph3D({
     const width = mount.clientWidth || 800;
     const heightPx = height;
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x0a0a0c, 0.0016);
+    // Paper-fog: distant nodes recede toward the ivory page, not into black.
+    scene.fog = new THREE.FogExp2(0xf4f2ec, 0.0016);
     const camera = new THREE.PerspectiveCamera(55, width / heightPx, 1, 4000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -156,7 +157,7 @@ export default function ForceGraph3D({
       transparent: true,
       depthWrite: false,
       vertexColors: true,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
     });
     const points = new THREE.Points(geometry, material);
     scene.add(points);
@@ -173,8 +174,8 @@ export default function ForceGraph3D({
     const edgeMaterial = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.5,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.55,
+      blending: THREE.NormalBlending,
       depthWrite: false,
     });
     const lines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
@@ -340,12 +341,16 @@ export default function ForceGraph3D({
       alpha *= 0.988;
     };
 
+    // Paper-tone constants: receded elements fade toward the page, never to black.
+    const PAPER = new THREE.Color(0xf4f2ec);
+    const EDGE_BASE = new THREE.Color(0x9a948a);   // warm gray
+    const EDGE_FOCUS = new THREE.Color(0x33497a);  // ink navy (selection)
+
     const applyColors = () => {
       const sel = stateRef.current.selectedId;
       const selIdx = sel != null ? idToIdx.get(sel) : undefined;
       if (selIdx === undefined) {
         displayColors.set(baseColors);
-        sizes.forEach(() => {});
         for (let i = 0; i < n; i++) sizes[i] = nodes[i].size;
       } else {
         const neighbors = new Set<number>();
@@ -356,39 +361,37 @@ export default function ForceGraph3D({
         for (let i = 0; i < n; i++) {
           const isSel = i === selIdx;
           const isNeighbor = neighbors.has(i);
-          const dim = !isSel && !isNeighbor;
-          const factor = isSel ? 1.25 : isNeighbor ? 1 : 0.16;
-          displayColors[i * 3] = baseColors[i * 3] * factor;
-          displayColors[i * 3 + 1] = baseColors[i * 3 + 1] * factor;
-          displayColors[i * 3 + 2] = baseColors[i * 3 + 2] * factor;
+          // fade factor toward paper: selected 1.0, neighbor 0.92, others 0.22
+          const factor = isSel ? 1.0 : isNeighbor ? 0.92 : 0.22;
+          displayColors[i * 3] = PAPER.r + (baseColors[i * 3] - PAPER.r) * factor;
+          displayColors[i * 3 + 1] = PAPER.g + (baseColors[i * 3 + 1] - PAPER.g) * factor;
+          displayColors[i * 3 + 2] = PAPER.b + (baseColors[i * 3 + 2] - PAPER.b) * factor;
           sizes[i] = nodes[i].size * (isSel ? 1.7 : isNeighbor ? 1.15 : 0.85);
         }
       }
-      // edges
+      // edges — strength fades toward paper
       if (selIdx === undefined) {
         for (let e = 0; e < physEdges.length; e++) {
-          const a = physEdges[e].a, b = physEdges[e].b;
           const w = Math.min(1, 0.25 + physEdges[e].w / 40);
-          tmpColor.set(0x8a8a93);
-          edgeColors[e * 6] = tmpColor.r * w;
-          edgeColors[e * 6 + 1] = tmpColor.g * w;
-          edgeColors[e * 6 + 2] = tmpColor.b * w;
-          edgeColors[e * 6 + 3] = tmpColor.r * w;
-          edgeColors[e * 6 + 4] = tmpColor.g * w;
-          edgeColors[e * 6 + 5] = tmpColor.b * w;
+          edgeColors[e * 6] = PAPER.r + (EDGE_BASE.r - PAPER.r) * w;
+          edgeColors[e * 6 + 1] = PAPER.g + (EDGE_BASE.g - PAPER.g) * w;
+          edgeColors[e * 6 + 2] = PAPER.b + (EDGE_BASE.b - PAPER.b) * w;
+          edgeColors[e * 6 + 3] = edgeColors[e * 6];
+          edgeColors[e * 6 + 4] = edgeColors[e * 6 + 1];
+          edgeColors[e * 6 + 5] = edgeColors[e * 6 + 2];
         }
       } else {
         for (let e = 0; e < physEdges.length; e++) {
           const a = physEdges[e].a, b = physEdges[e].b;
           const connected = a === selIdx || b === selIdx;
-          const w = connected ? Math.min(1, 0.5 + physEdges[e].w / 30) : 0.04;
-          tmpColor.set(connected ? 0x34d399 : 0x8a8a93);
-          edgeColors[e * 6] = tmpColor.r * w;
-          edgeColors[e * 6 + 1] = tmpColor.g * w;
-          edgeColors[e * 6 + 2] = tmpColor.b * w;
-          edgeColors[e * 6 + 3] = tmpColor.r * w;
-          edgeColors[e * 6 + 4] = tmpColor.g * w;
-          edgeColors[e * 6 + 5] = tmpColor.b * w;
+          const w = connected ? Math.min(1, 0.5 + physEdges[e].w / 30) : 0.06;
+          const base = connected ? EDGE_FOCUS : EDGE_BASE;
+          edgeColors[e * 6] = PAPER.r + (base.r - PAPER.r) * w;
+          edgeColors[e * 6 + 1] = PAPER.g + (base.g - PAPER.g) * w;
+          edgeColors[e * 6 + 2] = PAPER.b + (base.b - PAPER.b) * w;
+          edgeColors[e * 6 + 3] = edgeColors[e * 6];
+          edgeColors[e * 6 + 4] = edgeColors[e * 6 + 1];
+          edgeColors[e * 6 + 5] = edgeColors[e * 6 + 2];
         }
       }
       geometry.attributes.color.needsUpdate = true;
@@ -497,7 +500,7 @@ export default function ForceGraph3D({
           transition: "opacity 120ms",
           zIndex: 10,
         }}
-        className="mono text-[10px] px-2 py-1 rounded-sm bg-zinc-950/90 border border-emerald-400/30 text-emerald-300 whitespace-nowrap"
+        className="mono text-[10px] px-2 py-1 rounded-sm bg-card border border-pos text-pos whitespace-nowrap"
       />
       <div className="absolute bottom-2 right-2 z-10 flex items-center gap-2">
         <span className="mono text-[9px] text-muted-foreground/60" ref={fpsRef}>
@@ -506,7 +509,7 @@ export default function ForceGraph3D({
       </div>
       <div className="absolute bottom-2 left-2 z-10">
         <span className="mono text-[9px] text-muted-foreground/60">
-          GLISSER = ORBITE · MOLETTE = ZOOM · CLIC = SÉLECTION
+          Glisser : orbite · Molette : zoom · Clic : sélection
         </span>
       </div>
     </div>

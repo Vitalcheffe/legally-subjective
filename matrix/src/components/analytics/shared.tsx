@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * Behavioral Matrix — shared terminal primitives.
- * Data states are honest: loading, error, empty ("EN ATTENTE DE FLUX DE
- * DONNÉES RÉELLES") — never a fabricated placeholder value.
+ * Behavioral Matrix — shared institutional primitives.
+ * Data states are honest: loading, error, empty ("aucune donnée
+ * disponible") — never a fabricated placeholder value.
  */
 import { useCallback, useEffect, useState } from "react";
 import { AlertTriangle, Database, Loader2, RefreshCw } from "lucide-react";
@@ -66,15 +66,19 @@ export function fmtSigned(v: number | null | undefined, digits = 2): string {
   return `${v >= 0 ? "+" : ""}${v.toFixed(digits)}`;
 }
 
+/**
+ * Categorical department palette — muted, print-grade hues that hold
+ * contrast on ivory paper (Economist-register, never neon).
+ */
 export const DEPT_COLORS: Record<string, string> = {
-  "1st": "#e879f9",
-  "2nd": "#fbbf24",
-  "3rd": "#a3e635",
-  "4th": "#fb923c",
-  unknown: "#71717a",
+  "1st": "#6E5380", // plum
+  "2nd": "#B8863B", // ochre gold
+  "3rd": "#4F7A5D", // sage
+  "4th": "#A35555", // brick
+  unknown: "#8B8577", // warm gray
 };
 export function deptColor(dept: string | null | undefined): string {
-  return DEPT_COLORS[dept ?? "unknown"] ?? "#71717a";
+  return DEPT_COLORS[dept ?? "unknown"] ?? "#8B8577";
 }
 export const DEPT_LABELS: Record<string, string> = {
   "1st": "1er dép.",
@@ -105,23 +109,25 @@ export function ModulePanel({
   className?: string;
 }) {
   return (
-    <section className={cn("panel rounded-sm flex flex-col min-h-0", className)} aria-label={title}>
-      <header className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-border/70 px-4 py-3">
-        <span className="mono text-[11px] text-primary/90 tracking-widest border border-primary/30 rounded-sm px-1.5 py-0.5 bg-primary/5">
+    <section className={cn("panel rounded-md flex flex-col min-h-0", className)} aria-label={title}>
+      <header className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-border px-5 py-3.5">
+        <span className="mono text-[11px] font-semibold text-primary border border-primary/25 rounded-sm px-1.5 py-0.5 bg-primary/[0.04]">
           {code}
         </span>
         <div className="min-w-0 flex-1">
-          <h2 className="label-caps text-foreground/90 truncate">{title}</h2>
-          {subtitle ? <p className="text-[11px] text-muted-foreground truncate">{subtitle}</p> : null}
+          <h2 className="serif-display text-[15px] font-semibold leading-snug text-foreground truncate text-balance">
+            {title}
+          </h2>
+          {subtitle ? <p className="text-xs text-muted-foreground truncate">{subtitle}</p> : null}
         </div>
         {actions}
         {source ? (
-          <span className="label-caps text-muted-foreground/70 hidden lg:inline">
-            SRC · {source}
+          <span className="label-caps text-muted-foreground/80 hidden lg:inline">
+            Source · {source}
           </span>
         ) : null}
       </header>
-      <div className="p-4 min-h-0 flex-1">{children}</div>
+      <div className="p-5 min-h-0 flex-1">{children}</div>
     </section>
   );
 }
@@ -136,18 +142,18 @@ export function KpiChip({
   label: string;
   value: React.ReactNode;
   sub?: React.ReactNode;
-  tone?: "neutral" | "emerald" | "red" | "amber";
+  tone?: "neutral" | "pos" | "neg" | "mix";
   className?: string;
 }) {
   const toneClass =
-    tone === "emerald" ? "text-emerald-400 glow-emerald"
-    : tone === "red" ? "text-red-400 glow-red"
-    : tone === "amber" ? "text-amber-400 glow-amber"
+    tone === "pos" ? "text-pos"
+    : tone === "neg" ? "text-neg"
+    : tone === "mix" ? "text-mix"
     : "text-foreground";
   return (
-    <div className={cn("panel rounded-sm px-3 py-2 min-w-0", className)}>
+    <div className={cn("rounded-md border border-border bg-card px-3.5 py-2.5 min-w-0", className)}>
       <div className="label-caps text-muted-foreground truncate">{label}</div>
-      <div className={cn("mono text-lg leading-tight truncate", toneClass)}>{value}</div>
+      <div className={cn("mono text-lg font-medium leading-tight truncate", toneClass)}>{value}</div>
       {sub ? <div className="mono text-[10px] text-muted-foreground truncate">{sub}</div> : null}
     </div>
   );
@@ -156,20 +162,17 @@ export function KpiChip({
 // ---------------------------------------------------------------------------
 // Honest states
 // ---------------------------------------------------------------------------
-export function TerminalLoader({ label = "INTERROGATION DE L'INDEX RÉEL" }: { label?: string }) {
+export function TerminalLoader({ label = "Interrogation de l'index" }: { label?: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-14 text-center" role="status">
-      <Loader2 className="h-5 w-5 animate-spin text-primary" aria-hidden />
-      <p className="label-caps text-muted-foreground">
-        {label}
-        <span className="blink-cursor text-primary">▌</span>
-      </p>
+      <Loader2 className="h-4 w-4 animate-spin text-primary" aria-hidden />
+      <p className="label-caps text-muted-foreground">{label}…</p>
     </div>
   );
 }
 
 export function EmptyState({
-  title = "EN ATTENTE DE FLUX DE DONNÉES RÉELLES",
+  title = "Aucune donnée disponible",
   message,
   hint,
 }: {
@@ -178,22 +181,22 @@ export function EmptyState({
   hint?: string;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 border border-dashed border-border rounded-sm py-14 px-6 text-center max-w-2xl mx-auto">
-      <Database className="h-6 w-6 text-muted-foreground" aria-hidden />
-      <p className="label-caps text-amber-400">{title}</p>
+    <div className="flex flex-col items-center justify-center gap-3 border border-dashed border-border rounded-md py-14 px-6 text-center max-w-2xl mx-auto">
+      <Database className="h-5 w-5 text-muted-foreground" aria-hidden />
+      <p className="label-caps text-mix">{title}</p>
       {message ? (
         <p className="text-xs text-muted-foreground leading-relaxed">{message}</p>
       ) : null}
-      {hint ? <p className="mono text-[10px] text-muted-foreground/70">{hint}</p> : null}
+      {hint ? <p className="mono text-[10px] text-muted-foreground/80">{hint}</p> : null}
     </div>
   );
 }
 
 export function ErrorState({ message }: { message: string }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 border border-destructive/40 bg-destructive/5 rounded-sm py-12 px-6 text-center max-w-2xl mx-auto" role="alert">
-      <AlertTriangle className="h-6 w-6 text-red-400" aria-hidden />
-      <p className="label-caps text-red-400">ERREUR SYSTÈME — FLUX INTERROMPU</p>
+    <div className="flex flex-col items-center justify-center gap-3 border border-destructive/30 bg-destructive/[0.04] rounded-md py-12 px-6 text-center max-w-2xl mx-auto" role="alert">
+      <AlertTriangle className="h-5 w-5 text-neg" aria-hidden />
+      <p className="label-caps text-neg">Erreur de chargement des données</p>
       <p className="text-xs text-muted-foreground leading-relaxed break-all">{message}</p>
     </div>
   );
@@ -226,11 +229,11 @@ export function ReloadButton({ onClick }: { onClick: () => void }) {
       variant="outline"
       size="sm"
       onClick={onClick}
-      className="h-7 px-2 label-caps gap-1.5 border-border/70"
+      className="h-7 px-2.5 label-caps gap-1.5"
       aria-label="Recharger les données réelles"
     >
       <RefreshCw className="h-3 w-3" aria-hidden />
-      RAFRAÎCHIR
+      Rafraîchir
     </Button>
   );
 }
@@ -242,25 +245,25 @@ export function WilsonBar({
   rate,
   low,
   high,
-  tone = "emerald",
+  tone = "pos",
 }: {
   rate: number;
   low: number;
   high: number;
-  tone?: "emerald" | "red" | "amber";
+  tone?: "pos" | "neg" | "mix";
 }) {
-  const color =
-    tone === "emerald" ? "bg-emerald-400/80"
-    : tone === "red" ? "bg-red-400/80"
-    : "bg-amber-400/80";
+  const barClass =
+    tone === "pos" ? "bg-pos"
+    : tone === "neg" ? "bg-neg"
+    : "bg-mix";
   return (
-    <div className="relative h-2 w-full min-w-16 bg-secondary rounded-sm overflow-hidden" title={`IC95 Wilson : [${(low * 100).toFixed(1)}% ; ${(high * 100).toFixed(1)}%]`}>
+    <div className="relative h-2 w-full min-w-16 bg-secondary rounded-sm overflow-hidden" title={`Intervalle de confiance 95 % (Wilson) : [${(low * 100).toFixed(1)} % ; ${(high * 100).toFixed(1)} %]`}>
       <div
-        className="absolute inset-y-0 bg-foreground/20"
+        className="absolute inset-y-0 bg-foreground/15"
         style={{ left: `${low * 100}%`, width: `${Math.max(0.5, (high - low) * 100)}%` }}
       />
       <div
-        className={cn("absolute inset-y-0 w-0.5", color)}
+        className={cn("absolute inset-y-0 w-0.5", barClass)}
         style={{ left: `calc(${rate * 100}% - 1px)` }}
       />
     </div>
@@ -272,17 +275,17 @@ export function VerdictBadge({ verdict }: { verdict: string | null | undefined }
     return <span className="mono text-[10px] text-muted-foreground">non classé</span>;
   }
   const map: Record<string, { label: string; cls: string }> = {
-    affirmed: { label: "CONFIRMÉ", cls: "text-emerald-400 border-emerald-400/40 bg-emerald-400/10" },
-    reversed: { label: "INFIRMÉ", cls: "text-red-400 border-red-400/40 bg-red-400/10" },
-    reversed_vacated: { label: "INFIRMÉ/ANNULÉ", cls: "text-red-400 border-red-400/40 bg-red-400/10" },
-    modified: { label: "MODIFIÉ", cls: "text-amber-400 border-amber-400/40 bg-amber-400/10" },
-    vacated: { label: "ANNULÉ", cls: "text-amber-400 border-amber-400/40 bg-amber-400/10" },
-    dismissed: { label: "REJETÉ", cls: "text-amber-400 border-amber-400/40 bg-amber-400/10" },
-    remitted: { label: "RENVOI", cls: "text-amber-400 border-amber-400/40 bg-amber-400/10" },
+    affirmed: { label: "CONFIRMÉ", cls: "text-pos border-pos bg-pos-subtle" },
+    reversed: { label: "INFIRMÉ", cls: "text-neg border-neg bg-neg-subtle" },
+    reversed_vacated: { label: "INFIRMÉ/ANNULÉ", cls: "text-neg border-neg bg-neg-subtle" },
+    modified: { label: "MODIFIÉ", cls: "text-mix border-mix bg-mix-subtle" },
+    vacated: { label: "ANNULÉ", cls: "text-mix border-mix bg-mix-subtle" },
+    dismissed: { label: "REJETÉ", cls: "text-mix border-mix bg-mix-subtle" },
+    remitted: { label: "RENVOI", cls: "text-mix border-mix bg-mix-subtle" },
   };
   const m = map[verdict] ?? { label: verdict.toUpperCase(), cls: "text-muted-foreground border-border bg-secondary" };
   return (
-    <span className={cn("mono text-[10px] border rounded-sm px-1.5 py-0.5 whitespace-nowrap", m.cls)}>
+    <span className={cn("mono text-[10px] font-medium border rounded-sm px-1.5 py-0.5 whitespace-nowrap", m.cls)}>
       {m.label}
     </span>
   );
@@ -293,10 +296,10 @@ export function ZBadge({ z }: { z: number }) {
   const cls = !significant
     ? "text-muted-foreground border-border"
     : z > 0
-      ? "text-emerald-400 border-emerald-400/40 bg-emerald-400/10"
-      : "text-red-400 border-red-400/40 bg-red-400/10";
+      ? "text-pos border-pos bg-pos-subtle"
+      : "text-neg border-neg bg-neg-subtle";
   return (
-    <span className={cn("mono text-[11px] border rounded-sm px-1.5 py-0.5", cls)} title="Score z vs base du corpus (|z| ≥ 2 = écart significatif)">
+    <span className={cn("mono text-[11px] font-medium border rounded-sm px-1.5 py-0.5", cls)} title="Score z par rapport à la base du corpus (|z| ≥ 2 = écart significatif)">
       {fmtSigned(z)}
     </span>
   );
@@ -304,8 +307,8 @@ export function ZBadge({ z }: { z: number }) {
 
 export function MethodNote({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mono text-[10px] leading-relaxed text-muted-foreground/80 border-l-2 border-border pl-3 mt-4">
-      <span className="text-muted-foreground">MÉTHODE · </span>
+    <p className="text-[11px] leading-[1.75] text-muted-foreground border-l-2 border-border pl-3.5 mt-4 max-w-4xl">
+      <span className="label-caps text-muted-foreground/90">Méthode · </span>
       {children}
     </p>
   );

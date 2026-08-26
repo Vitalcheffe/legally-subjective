@@ -83,7 +83,7 @@ export function WeaknessMatrix() {
     <div className="space-y-4">
       <ModulePanel
         code="02"
-        title="MATRICE D'ANALYSE DES ÉCARTS — RÉTRO-INGÉNIERIE DÉCISIONNELLE"
+        title="Matrice des écarts — rétro-ingénierie décisionnelle"
         subtitle="Taux de confirmation binaires réels · IC95 Wilson · score z vs base du corpus (76,96 %)"
         source="api/matrix/judges"
         actions={
@@ -107,18 +107,18 @@ export function WeaknessMatrix() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <KpiChip label="JUGES ANALYSÉS (N ≥ 30)" value={fmtNum(kpis.eligible.length)} sub={`sur ${fmtNum(judges.length)} identités normalisées`} />
-                <KpiChip label="ÉCARTS SIGNIFICATIFS ↑" value={fmtNum(kpis.up.length)} tone="red" sub="confirment plus que la base (z ≥ +2)" />
-                <KpiChip label="ÉCARTS SIGNIFICATIFS ↓" value={fmtNum(kpis.down.length)} tone="emerald" sub="infirment plus que la base (z ≤ −2)" />
+                <KpiChip label="ÉCARTS SIGNIFICATIFS ↑" value={fmtNum(kpis.up.length)} tone="neg" sub="confirment plus que la base (z ≥ +2)" />
+                <KpiChip label="ÉCARTS SIGNIFICATIFS ↓" value={fmtNum(kpis.down.length)} tone="pos" sub="infirment plus que la base (z ≤ −2)" />
                 <KpiChip
                   label="ÉCART MAXIMAL OBSERVÉ"
                   value={kpis.most ? `${fmtSigned(kpis.most.z)}σ` : "—"}
-                  tone="amber"
+                  tone="mix"
                   sub={kpis.most ? `${kpis.most.name} · n=${kpis.most.nBinary}` : ""}
                 />
               </div>
 
               <Input
-                placeholder="FILTRER PAR NOM…"
+                placeholder="Filtrer par nom…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="h-8 text-xs mono max-w-xs"
@@ -127,7 +127,7 @@ export function WeaknessMatrix() {
 
               <div className="border border-border/70 rounded-sm overflow-x-auto max-h-[520px] overflow-y-auto">
                 <table className="w-full text-xs">
-                  <thead className="sticky top-0 bg-zinc-950/95 backdrop-blur z-10 border-b border-border/70">
+                  <thead className="sticky top-0 bg-card backdrop-blur z-10 border-b border-border/70">
                     <tr>
                       <Th label="JUGE" k="name" />
                       <Th label="DÉPT" />
@@ -160,13 +160,13 @@ export function WeaknessMatrix() {
                         <td className="px-2 py-1.5 mono text-right">{fmtNum(j.nBinary)}</td>
                         <td className="px-2 py-1.5 mono text-right">{fmtNum(j.affirmed)}</td>
                         <td className="px-2 py-1.5 mono">
-                          <span className={j.rate >= 0.7696 ? "text-red-400" : "text-emerald-400"}>
+                          <span className={j.rate >= 0.7696 ? "text-neg" : "text-pos"}>
                             {fmtPct(j.rate)}
                           </span>
                         </td>
                         <td className="px-2 py-1.5 w-32">
                           <WilsonBar rate={j.rate} low={j.wilson95.low} high={j.wilson95.high}
-                            tone={j.rate >= 0.7696 ? "red" : "emerald"} />
+                            tone={j.rate >= 0.7696 ? "neg" : "pos"} />
                         </td>
                         <td className="px-2 py-1.5"><ZBadge z={j.z} /></td>
                         <td
@@ -174,7 +174,7 @@ export function WeaknessMatrix() {
                           title={j.authoredTotal > 0 ? `${j.authoredExplicit} signée(s) · ${j.authoredPresumed} mémo(s) présupposé(s)${j.authoredAffirmedRate !== null ? ` · taux confirmé des écrits : ${(j.authoredAffirmedRate * 100).toFixed(1)} %` : ""}` : "aucune opinion attribuée"}
                         >
                           {j.authoredTotal > 0 ? (
-                            <span className={j.authoredExplicit > 0 ? "text-emerald-400" : "text-amber-400"}>
+                            <span className={j.authoredExplicit > 0 ? "text-pos" : "text-mix"}>
                               {fmtNum(j.authoredTotal)}
                             </span>
                           ) : (
@@ -185,9 +185,9 @@ export function WeaknessMatrix() {
                         <td className="px-2 py-1.5 mono text-right">{j.volatility.toFixed(3)}</td>
                         <td className="px-2 py-1.5">
                           {j.deviatesUp ? (
-                            <span className="mono text-[9px] border border-red-400/40 bg-red-400/10 text-red-400 rounded-sm px-1 py-0.5">DÉVIE ↑</span>
+                            <span className="mono text-[9px] border border-neg bg-neg-subtle text-neg rounded-sm px-1 py-0.5">DÉVIE ↑</span>
                           ) : j.deviatesDown ? (
-                            <span className="mono text-[9px] border border-emerald-400/40 bg-emerald-400/10 text-emerald-400 rounded-sm px-1 py-0.5">DÉVIE ↓</span>
+                            <span className="mono text-[9px] border border-pos bg-pos-subtle text-pos rounded-sm px-1 py-0.5">DÉVIE ↓</span>
                           ) : (
                             <span className="mono text-[9px] text-muted-foreground">conforme</span>
                           )}
@@ -197,7 +197,7 @@ export function WeaknessMatrix() {
                     {rows.length === 0 ? (
                       <tr>
                         <td colSpan={11} className="px-2 py-6 text-center mono text-muted-foreground">
-                          AUCUN JUGE NE CORRESPOND AU FILTRE — les filtres s'appliquent aux données réelles uniquement.
+                          Aucun juge ne correspond au filtre — les filtres s'appliquent aux données réelles uniquement.
                         </td>
                       </tr>
                     ) : null}

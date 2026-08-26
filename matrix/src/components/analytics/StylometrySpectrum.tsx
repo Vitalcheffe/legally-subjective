@@ -34,7 +34,7 @@ interface StyloPayload {
 }
 
 const tooltipStyle = {
-  background: "#09090b", border: "1px solid #27272a", borderRadius: 2,
+  background: "#FFFFFF", border: "1px solid #D8D3C8", borderRadius: 2,
   fontSize: 11, fontFamily: "var(--font-geist-mono)",
 };
 
@@ -45,7 +45,7 @@ export function StylometrySpectrum() {
     <div className="space-y-4">
       <ModulePanel
         code="05"
-        title="SPECTRE STYLOMÉTRIQUE — TÉLÉMÉTRIE LEXICALE DES OPINIONS"
+        title="Spectre stylométrique — télémétrie lexicale des opinions"
         subtitle="Calculée sur le texte officiel intégral de chaque opinion (1 387 documents)"
         source="api/matrix/stylometry"
         actions={<ReloadButton onClick={reload} />}
@@ -61,12 +61,12 @@ export function StylometrySpectrum() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <KpiChip label="OPINIONS ANALYSÉES" value={fmtNum(d.corpus.n)} sub="texte officiel intégral" />
-                <KpiChip label="LONGUEUR MOY. PHRASE" value={`${d.corpus.avgSentenceLen.toFixed(0)} car.`} tone="amber" sub="corpus complet" />
+                <KpiChip label="LONGUEUR MOY. PHRASE" value={`${d.corpus.avgSentenceLen.toFixed(0)} car.`} tone="mix" sub="corpus complet" />
                 <KpiChip label="RICHESSE LEXICALE (TTR)" value={d.corpus.avgTtr.toFixed(3)} sub="types / tokens" />
                 <KpiChip
                   label="RATIO PUNITIF/RÉHAB."
                   value={d.corpus.ratio ? `${d.corpus.ratio.toFixed(1)} : 1` : "—"}
-                  tone="red"
+                  tone="neg"
                   sub={`${fmtNum(d.corpus.punitiveTotal)} vs ${fmtNum(d.corpus.rehabTotal)} occurrences`}
                 />
               </div>
@@ -76,17 +76,17 @@ export function StylometrySpectrum() {
                   <h3 className="label-caps text-muted-foreground mb-2">
                     VOCABULAIRE PUNITIF VS RÉHABILITATIF — POUR 1 000 MOTS, PAR DÉPARTEMENT
                   </h3>
-                  <div className="h-64 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                  <div className="h-64 border border-border/70 rounded-sm p-2 bg-card">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={d.byDepartment.map((r) => ({ ...r, label: DEPT_LABELS[r.department] ?? r.department }))}>
-                        <CartesianGrid stroke="#27272a" strokeDasharray="2 4" />
-                        <XAxis dataKey="label" stroke="#71717a" fontSize={10} tickLine={false} />
-                        <YAxis stroke="#71717a" fontSize={10} tickLine={false} />
-                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#27272a33" }}
+                        <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" />
+                        <XAxis dataKey="label" stroke="#756F65" fontSize={10} tickLine={false} />
+                        <YAxis stroke="#756F65" fontSize={10} tickLine={false} />
+                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#8B857733" }}
                           formatter={(v: number, name: string) => [v.toFixed(2), name === "punitivePer1k" ? "punitif" : "réhabilitatif"]} />
                         <Legend wrapperStyle={{ fontSize: 10 }} formatter={(v: string) => (v === "punitivePer1k" ? "Punitif" : "Réhabilitatif")} />
-                        <Bar dataKey="punitivePer1k" fill="#f87171" isAnimationActive={false} />
-                        <Bar dataKey="rehabPer1k" fill="#34d399" isAnimationActive={false} />
+                        <Bar dataKey="punitivePer1k" fill="#A8433C" isAnimationActive={false} />
+                        <Bar dataKey="rehabPer1k" fill="#2F7D51" isAnimationActive={false} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -96,18 +96,18 @@ export function StylometrySpectrum() {
                   <h3 className="label-caps text-muted-foreground mb-2">
                     ÉVOLUTION TEMPORELLE — LONGUEUR DE PHRASE & RICHESSE LEXICALE
                   </h3>
-                  <div className="h-64 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                  <div className="h-64 border border-border/70 rounded-sm p-2 bg-card">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={d.byYear}>
-                        <CartesianGrid stroke="#27272a" strokeDasharray="2 4" />
-                        <XAxis dataKey="year" stroke="#71717a" fontSize={10} tickLine={false} />
-                        <YAxis yAxisId="len" stroke="#71717a" fontSize={10} tickLine={false} />
-                        <YAxis yAxisId="ttr" orientation="right" stroke="#71717a" fontSize={10} tickLine={false} />
+                        <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" />
+                        <XAxis dataKey="year" stroke="#756F65" fontSize={10} tickLine={false} />
+                        <YAxis yAxisId="len" stroke="#756F65" fontSize={10} tickLine={false} />
+                        <YAxis yAxisId="ttr" orientation="right" stroke="#756F65" fontSize={10} tickLine={false} />
                         <Tooltip contentStyle={tooltipStyle}
                           formatter={(v: number, name: string) => [name === "avgSentenceLen" ? v.toFixed(1) : v.toFixed(3), name === "avgSentenceLen" ? "car./phrase" : "TTR"]} />
                         <Legend wrapperStyle={{ fontSize: 10 }} formatter={(v: string) => (v === "avgSentenceLen" ? "Longueur phrase" : "TTR")} />
-                        <Line yAxisId="len" type="monotone" dataKey="avgSentenceLen" stroke="#fbbf24" strokeWidth={1.5} dot={false} isAnimationActive={false} />
-                        <Line yAxisId="ttr" type="monotone" dataKey="avgTtr" stroke="#34d399" strokeWidth={1.5} dot={false} isAnimationActive={false} />
+                        <Line yAxisId="len" type="monotone" dataKey="avgSentenceLen" stroke="#B8863B" strokeWidth={1.5} dot={false} isAnimationActive={false} />
+                        <Line yAxisId="ttr" type="monotone" dataKey="avgTtr" stroke="#2F7D51" strokeWidth={1.5} dot={false} isAnimationActive={false} />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
@@ -117,17 +117,17 @@ export function StylometrySpectrum() {
                   <h3 className="label-caps text-muted-foreground mb-2">
                     DISTRIBUTION DU RATIO PUNITIF/RÉHAB. PAR OPINION (ÉCHELLE LOG 2)
                   </h3>
-                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-card">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={d.ratioHistogram}>
-                        <CartesianGrid stroke="#27272a" strokeDasharray="2 4" />
-                        <XAxis dataKey="binLabel" stroke="#71717a" fontSize={9} tickLine={false} />
-                        <YAxis stroke="#71717a" fontSize={10} tickLine={false} />
-                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#27272a33" }}
+                        <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" />
+                        <XAxis dataKey="binLabel" stroke="#756F65" fontSize={9} tickLine={false} />
+                        <YAxis stroke="#756F65" fontSize={10} tickLine={false} />
+                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#8B857733" }}
                           formatter={(v: number) => [`${v} opinions`, "effectif"]} />
                         <Bar dataKey="count" isAnimationActive={false}>
                           {d.ratioHistogram.map((_, i) => (
-                            <Cell key={i} fill={i < 4 ? "#34d399" : i > 8 ? "#f87171" : "#a1a1aa"} />
+                            <Cell key={i} fill={i < 4 ? "#2F7D51" : i > 8 ? "#A8433C" : "#9A948A"} />
                           ))}
                         </Bar>
                       </BarChart>
@@ -139,15 +139,15 @@ export function StylometrySpectrum() {
                   <h3 className="label-caps text-muted-foreground mb-2">
                     DISTRIBUTION DE LA LONGUEUR MOYENNE DE PHRASE (CARACTÈRES)
                   </h3>
-                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                  <div className="h-56 border border-border/70 rounded-sm p-2 bg-card">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={d.sentenceHistogram}>
-                        <CartesianGrid stroke="#27272a" strokeDasharray="2 4" />
-                        <XAxis dataKey="binLabel" stroke="#71717a" fontSize={9} tickLine={false} interval={2} />
-                        <YAxis stroke="#71717a" fontSize={10} tickLine={false} />
-                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#27272a33" }}
+                        <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" />
+                        <XAxis dataKey="binLabel" stroke="#756F65" fontSize={9} tickLine={false} interval={2} />
+                        <YAxis stroke="#756F65" fontSize={10} tickLine={false} />
+                        <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "#8B857733" }}
                           formatter={(v: number) => [`${v} opinions`, "effectif"]} />
-                        <Bar dataKey="count" fill="#fbbf24" isAnimationActive={false} />
+                        <Bar dataKey="count" fill="#B8863B" isAnimationActive={false} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -172,8 +172,8 @@ export function StylometrySpectrum() {
                         <td className="px-3 py-1.5">{fmtNum(r.n)}</td>
                         <td className="px-3 py-1.5">{r.avgSentenceLen.toFixed(1)}</td>
                         <td className="px-3 py-1.5">{r.avgTtr.toFixed(3)}</td>
-                        <td className="px-3 py-1.5 text-red-400">{r.punitivePer1k.toFixed(2)}</td>
-                        <td className="px-3 py-1.5 text-emerald-400">{r.rehabPer1k.toFixed(2)}</td>
+                        <td className="px-3 py-1.5 text-neg">{r.punitivePer1k.toFixed(2)}</td>
+                        <td className="px-3 py-1.5 text-pos">{r.rehabPer1k.toFixed(2)}</td>
                         <td className="px-3 py-1.5">{r.ratio ? `${r.ratio.toFixed(1)} : 1` : "—"}</td>
                       </tr>
                     ))}

@@ -49,7 +49,7 @@ export function DeviationRadar() {
     <div className="space-y-4">
       <ModulePanel
         code="08"
-        title="RADAR DE DÉVIATION COMPORTEMENTALE — FORME DÉCISIONNELLE"
+        title="Radar de déviation comportementale — forme décisionnelle"
         subtitle="Percentiles calculés parmi les juges éligibles (n binaire ≥ 30) · superposition médiane corpus"
         source="api/matrix/radar"
         actions={
@@ -87,22 +87,22 @@ export function DeviationRadar() {
               <div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                   <KpiChip label="CIBLE" value={d.judge.name} sub={`${fmtNum(d.judge.nOpinions)} opinions · ${DEPT_LABELS[d.judge.dominantDepartment] ?? d.judge.dominantDepartment}`} />
-                  <KpiChip label="TAUX CONFIRMATION" value={fmtPct(d.judge.rate)} tone="emerald" sub={`n = ${fmtNum(d.judge.nBinary)} binaires`} />
+                  <KpiChip label="TAUX CONFIRMATION" value={fmtPct(d.judge.rate)} tone="pos" sub={`n = ${fmtNum(d.judge.nBinary)} binaires`} />
                   <KpiChip label="ÉCART Z" value={<><ZBadge z={d.judge.z} /></>} sub="vs base corpus 76,96 %" />
-                  <KpiChip label="PRÉSIDENCES" value={fmtNum(d.judge.presidingCount)} tone="amber" sub={d.judge.yearSpan ? `${d.judge.yearSpan[0]}–${d.judge.yearSpan[1]}` : "—"} />
+                  <KpiChip label="PRÉSIDENCES" value={fmtNum(d.judge.presidingCount)} tone="mix" sub={d.judge.yearSpan ? `${d.judge.yearSpan[0]}–${d.judge.yearSpan[1]}` : "—"} />
                 </div>
 
-                <div className="h-80 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                <div className="h-80 border border-border/70 rounded-sm p-2 bg-card">
                   <ResponsiveContainer width="100%" height="100%">
                     <RadarChart data={chartData} outerRadius="72%">
-                      <PolarGrid stroke="#27272a" />
-                      <PolarAngleAxis dataKey="axis" tick={{ fill: "#a1a1aa", fontSize: 9 }} />
-                      <PolarRadiusAxis domain={[0, 100]} tick={{ fill: "#52525b", fontSize: 8 }} angle={90} />
-                      <Radar name="Médiane corpus" dataKey="mediane" stroke="#71717a" fill="#71717a" fillOpacity={0.08} strokeWidth={1} isAnimationActive={false} />
-                      <Radar name="Juge" dataKey="juge" stroke="#34d399" fill="#34d399" fillOpacity={0.22} strokeWidth={1.8} isAnimationActive={false} />
+                      <PolarGrid stroke="#D8D3C8" />
+                      <PolarAngleAxis dataKey="axis" tick={{ fill: "#9A948A", fontSize: 9 }} />
+                      <PolarRadiusAxis domain={[0, 100]} tick={{ fill: "#8B8577", fontSize: 8 }} angle={90} />
+                      <Radar name="Médiane corpus" dataKey="mediane" stroke="#756F65" fill="#756F65" fillOpacity={0.08} strokeWidth={1} isAnimationActive={false} />
+                      <Radar name="Juge" dataKey="juge" stroke="#2F7D51" fill="#2F7D51" fillOpacity={0.22} strokeWidth={1.8} isAnimationActive={false} />
                       <Tooltip
                         contentStyle={{
-                          background: "#09090b", border: "1px solid #27272a",
+                          background: "#FFFFFF", border: "1px solid #D8D3C8",
                           borderRadius: 2, fontSize: 11, fontFamily: "var(--font-geist-mono)",
                         }}
                         formatter={(v: number, name: string) => [name === "juge" ? `P${v.toFixed(1)}` : v, name === "juge" ? "juge" : "médiane"]}
@@ -111,7 +111,7 @@ export function DeviationRadar() {
                   </ResponsiveContainer>
                 </div>
                 <div className="flex items-center gap-4 mt-2">
-                  <span className="mono text-[10px] text-emerald-400">■ JUGE (PERCENTILE)</span>
+                  <span className="mono text-[10px] text-pos">■ JUGE (PERCENTILE)</span>
                   <span className="mono text-[10px] text-muted-foreground">■ MÉDIANE DU CORPUS (P50)</span>
                   <span className="mono text-[10px] text-muted-foreground/70">ÉCHELLE 0-100 = PERCENTILE</span>
                 </div>
@@ -126,7 +126,8 @@ export function DeviationRadar() {
                   </div>
                 </div>
 
-                <table className="w-full text-xs mono border border-border/70 rounded-sm">
+                <div className="overflow-x-auto">
+                <table className="w-full text-xs mono border border-border rounded-sm">
                   <thead className="border-b border-border/70">
                     <tr>
                       {["AXE", "VALEUR", "MÉDIANE", "PERCENTILE"].map((h) => (
@@ -141,7 +142,7 @@ export function DeviationRadar() {
                         <td className="px-2.5 py-1.5 text-foreground">{a.value}</td>
                         <td className="px-2.5 py-1.5 text-muted-foreground">{a.median}</td>
                         <td className="px-2.5 py-1.5">
-                          <span className={a.percentile >= 75 ? "text-red-400" : a.percentile <= 25 ? "text-emerald-400" : "text-foreground"}>
+                          <span className={a.percentile >= 75 ? "text-neg" : a.percentile <= 25 ? "text-pos" : "text-foreground"}>
                             P{a.percentile.toFixed(1)}
                           </span>
                         </td>
@@ -149,6 +150,7 @@ export function DeviationRadar() {
                     ))}
                   </tbody>
                 </table>
+                </div>
 
                 <p className="mono text-[10px] text-muted-foreground">
                   {fmtNum(d.nEligible)} juges éligibles dans la population de comparaison.

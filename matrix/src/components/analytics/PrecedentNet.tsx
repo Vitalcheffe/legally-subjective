@@ -29,8 +29,8 @@ interface PrecedentPayload {
 }
 
 const KIND_COLORS: Record<string, string> = {
-  case: "#fbbf24",
-  statute: "#34d399",
+  case: "#B8863B",
+  statute: "#2F7D51",
 };
 
 export function PrecedentNet() {
@@ -47,7 +47,7 @@ export function PrecedentNet() {
       id: n.target,
       label: n.target,
       size: Math.sqrt(n.citedInOpinions) * 1.5,
-      color: KIND_COLORS[n.kind] ?? "#a1a1aa",
+      color: KIND_COLORS[n.kind] ?? "#9A948A",
     }));
   }, [data]);
 
@@ -62,7 +62,7 @@ export function PrecedentNet() {
     <div className="grid grid-cols-1 xl:grid-cols-[1fr_340px] gap-4">
       <ModulePanel
         code="06"
-        title="GRAPHE DE JURISPRUDENCE RÉSONANTE — CONSTELLATION DES AUTORITÉS"
+        title="Graphe de jurisprudence résonante — constellation des autorités"
         subtitle="Autorités réellement citées dans les opinions · liens = co-citation dans une même opinion (≥ 3)"
         source="api/matrix/precedents"
         actions={
@@ -104,8 +104,8 @@ export function PrecedentNet() {
               />
               <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-3">
                 <span className="label-caps text-muted-foreground">LÉGENDE</span>
-                <span className="mono text-[10px] text-amber-400">■ JURISPRUDENCE (People v X, Matter of X)</span>
-                <span className="mono text-[10px] text-emerald-400">■ TEXTE DE LOI (CPL, Penal Law…)</span>
+                <span className="mono text-[10px] text-mix">■ JURISPRUDENCE (People v X, Matter of X)</span>
+                <span className="mono text-[10px] text-pos">■ TEXTE DE LOI (CPL, Penal Law…)</span>
                 <span className="mono text-[10px] text-muted-foreground/70">TAILLE ∝ √(OPINIONS CITANTES)</span>
               </div>
             </>
@@ -113,10 +113,10 @@ export function PrecedentNet() {
         </ModuleBody>
       </ModulePanel>
 
-      <ModulePanel code="06·B" title="RÉFÉRENTIEL DES AUTORITÉS" className="min-h-0">
+      <ModulePanel code="06·B" title="Référentiel des autorités" className="min-h-0">
         <div className="flex flex-col h-full gap-3 min-h-0">
           <Input
-            placeholder="RECHERCHER (EX. « 440.10 »)…"
+            placeholder="Rechercher (ex. « 440.10 »)…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="h-8 text-xs mono"

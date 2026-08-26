@@ -52,7 +52,7 @@ export function BiasHeatmap() {
     <div className="space-y-4">
       <ModulePanel
         code="03"
-        title="CARTE THERMIQUE DES BIAIS — DÉVIATIONS À LA BASE ANNUELLE"
+        title="Carte thermique des biais — déviations à la base annuelle"
         subtitle="Taux de confirmation binaires réels · rouge = au-dessus de la base annuelle · vert = en-dessous"
         source="api/matrix/heatmap"
         actions={
@@ -113,7 +113,7 @@ export function BiasHeatmap() {
                               {c.rate === null ? (
                                 <span className="text-muted-foreground/50">—</span>
                               ) : (
-                                <span className={c.rate >= base ? "text-red-300" : "text-emerald-300"}>
+                                <span className={c.rate >= base ? "text-neg" : "text-pos"}>
                                   {(c.rate * 100).toFixed(0)}
                                 </span>
                               )}
@@ -128,10 +128,11 @@ export function BiasHeatmap() {
                   </tbody>
                 </table>
               ) : (
+                <div className="overflow-x-auto">
                 <table className="border-collapse text-[11px] mono">
                   <thead>
                     <tr>
-                      <th className="label-caps text-muted-foreground px-2 py-1.5 text-left sticky left-0 bg-zinc-950/95">JUGE</th>
+                      <th className="label-caps text-muted-foreground px-2 py-1.5 text-left sticky left-0 bg-card">JUGE</th>
                       {d.years.map((y) => (
                         <th key={y} className="label-caps text-muted-foreground px-2 py-1.5">{y}</th>
                       ))}
@@ -140,7 +141,7 @@ export function BiasHeatmap() {
                   <tbody>
                     {topJudges.map((j) => (
                       <tr key={j.name}>
-                        <td className="px-2 py-1.5 whitespace-nowrap sticky left-0 bg-zinc-950/95">{j.name}</td>
+                        <td className="px-2 py-1.5 whitespace-nowrap sticky left-0 bg-card">{j.name}</td>
                         {d.years.map((y) => {
                           const cell = j.yearlyRates.find((r) => r.year === Number(y));
                           const base = yearBaseline.get(Number(y)) ?? 0;
@@ -163,7 +164,7 @@ export function BiasHeatmap() {
                               {rate === null ? (
                                 <span className="text-muted-foreground/50">—</span>
                               ) : (
-                                <span className={rate >= base ? "text-red-300" : "text-emerald-300"}>
+                                <span className={rate >= base ? "text-neg" : "text-pos"}>
                                   {(rate * 100).toFixed(0)}
                                 </span>
                               )}
@@ -174,15 +175,16 @@ export function BiasHeatmap() {
                     ))}
                   </tbody>
                 </table>
+                </div>
               )}
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-4">
-                <span className="label-caps text-muted-foreground">ÉCHELLE</span>
-                <span className="mono text-[10px] text-emerald-400">■■■ −25 PTS SOUS LA BASE</span>
-                <span className="mono text-[10px] text-muted-foreground">■ CONFORME</span>
-                <span className="mono text-[10px] text-red-400">■■■ +25 PTS AU-DESSUS</span>
-                <span className="mono text-[10px] text-amber-400">▢ CONTOUR AMBRE = ANOMALIE |z| ≥ 2 (n ≥ 20)</span>
-                <span className="mono text-[10px] text-muted-foreground/70">SURVOL = DÉTAIL COMPLET DE LA CELLULE</span>
+                <span className="label-caps text-muted-foreground">Échelle</span>
+                <span className="mono text-[10px] text-pos">■■■ −25 pts sous la base</span>
+                <span className="mono text-[10px] text-muted-foreground">■ Conforme</span>
+                <span className="mono text-[10px] text-neg">■■■ +25 pts au-dessus</span>
+                <span className="mono text-[10px] text-mix">▢ contour ambre = anomalie |z| ≥ 2 (n ≥ 20)</span>
+                <span className="mono text-[10px] text-muted-foreground/80">Survol = détail complet de la cellule</span>
               </div>
             </div>
           )}

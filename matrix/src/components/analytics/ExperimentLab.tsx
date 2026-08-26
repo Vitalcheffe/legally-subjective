@@ -99,15 +99,15 @@ function CalibrationCurve({
       {/* grid */}
       {[0.25, 0.5, 0.75].map((g) => (
         <g key={g}>
-          <line x1={pad + g * plot} y1={pad} x2={pad + g * plot} y2={size - pad} stroke="#27272a" strokeDasharray="2 4" />
-          <line x1={pad} y1={size - pad - g * plot} x2={size - pad} y2={size - pad - g * plot} stroke="#27272a" strokeDasharray="2 4" />
+          <line x1={pad + g * plot} y1={pad} x2={pad + g * plot} y2={size - pad} stroke="#D8D3C8" strokeDasharray="2 4" />
+          <line x1={pad} y1={size - pad - g * plot} x2={size - pad} y2={size - pad - g * plot} stroke="#D8D3C8" strokeDasharray="2 4" />
         </g>
       ))}
       {/* frame */}
-      <rect x={pad} y={pad} width={plot} height={plot} fill="none" stroke="#3f3f46" />
+      <rect x={pad} y={pad} width={plot} height={plot} fill="none" stroke="#B8B2A6" />
       {/* diagonal = perfect calibration */}
-      <line x1={pad} y1={size - pad} x2={size - pad} y2={pad} stroke="#fbbf24" strokeDasharray="4 3" strokeWidth={1.2} />
-      <text x={size - pad - 4} y={pad + 10} fill="#fbbf24" fontSize={8} textAnchor="end">calibration parfaite</text>
+      <line x1={pad} y1={size - pad} x2={size - pad} y2={pad} stroke="#B8863B" strokeDasharray="4 3" strokeWidth={1.2} />
+      <text x={size - pad - 4} y={pad + 10} fill="#B8863B" fontSize={8} textAnchor="end">calibration parfaite</text>
       {/* points */}
       {active.map((b) => {
         const cx = pad + b.meanConfidence * plot;
@@ -115,20 +115,20 @@ function CalibrationCurve({
         const r = 3 + Math.sqrt(b.n / maxN) * 6;
         return (
           <g key={b.label}>
-            <line x1={cx} y1={cy} x2={cx} y2={size - pad} stroke="#34d399" strokeOpacity={0.25} />
-            <circle cx={cx} cy={cy} r={r} fill="#34d399" fillOpacity={0.75} stroke="#a7f3d0" strokeWidth={1}>
+            <line x1={cx} y1={cy} x2={cx} y2={size - pad} stroke="#2F7D51" strokeOpacity={0.25} />
+            <circle cx={cx} cy={cy} r={r} fill="#2F7D51" fillOpacity={0.75} stroke="#FFFFFF" strokeWidth={1}>
               <title>{`${b.label} · n=${b.n} · confiance ${(b.meanConfidence * 100).toFixed(0)}% vs observé ${(b.observedRate * 100).toFixed(0)}%`}</title>
             </circle>
           </g>
         );
       })}
       {/* axis labels */}
-      <text x={size / 2} y={size - 8} fill="#71717a" fontSize={9} textAnchor="middle">confiance IA (Pconfirmé)</text>
-      <text x={10} y={size / 2} fill="#71717a" fontSize={9} textAnchor="middle" transform={`rotate(-90 10 ${size / 2})`}>fréquence humaine observée</text>
+      <text x={size / 2} y={size - 8} fill="#756F65" fontSize={9} textAnchor="middle">confiance IA (Pconfirmé)</text>
+      <text x={10} y={size / 2} fill="#756F65" fontSize={9} textAnchor="middle" transform={`rotate(-90 10 ${size / 2})`}>fréquence humaine observée</text>
       {[0, 0.5, 1].map((t) => (
         <g key={`t${t}`}>
-          <text x={pad + t * plot} y={size - pad + 12} fill="#71717a" fontSize={8} textAnchor="middle">{t.toFixed(1)}</text>
-          <text x={pad - 8} y={size - pad - t * plot + 3} fill="#71717a" fontSize={8} textAnchor="end">{t.toFixed(1)}</text>
+          <text x={pad + t * plot} y={size - pad + 12} fill="#756F65" fontSize={8} textAnchor="middle">{t.toFixed(1)}</text>
+          <text x={pad - 8} y={size - pad - t * plot + 3} fill="#756F65" fontSize={8} textAnchor="end">{t.toFixed(1)}</text>
         </g>
       ))}
     </svg>
@@ -145,24 +145,24 @@ function ConfusionMatrix({
 }) {
   const cells: { label: string; value: number; cls: string; title: string }[][] = [
     [
-      { label: "IA CONFIRME", value: confusion.aiAffirmedHumanAffirmed, cls: "text-emerald-400", title: "IA et humain confirment" },
-      { label: "IA CONFIRME", value: confusion.aiAffirmedHumanReversed, cls: "text-red-400", title: "IA confirme, humain infirme" },
+      { label: "IA CONFIRME", value: confusion.aiAffirmedHumanAffirmed, cls: "text-pos", title: "IA et humain confirment" },
+      { label: "IA CONFIRME", value: confusion.aiAffirmedHumanReversed, cls: "text-neg", title: "IA confirme, humain infirme" },
     ],
     [
-      { label: "IA INFIRME", value: confusion.aiReversedHumanAffirmed, cls: "text-red-400", title: "IA infirme, humain confirme" },
-      { label: "IA INFIRME", value: confusion.aiReversedHumanReversed, cls: "text-emerald-400", title: "IA et humain infirment" },
+      { label: "IA INFIRME", value: confusion.aiReversedHumanAffirmed, cls: "text-neg", title: "IA infirme, humain confirme" },
+      { label: "IA INFIRME", value: confusion.aiReversedHumanReversed, cls: "text-pos", title: "IA et humain infirment" },
     ],
   ];
   return (
     <div className="grid grid-cols-[auto_1fr_1fr] gap-px bg-border/60 border border-border/70 rounded-sm text-center">
       <div />
-      <div className="label-caps text-[9px] text-muted-foreground bg-zinc-950 px-1 py-1.5">HUMAIN CONFIRME</div>
-      <div className="label-caps text-[9px] text-muted-foreground bg-zinc-950 px-1 py-1.5">HUMAIN INFIRME</div>
+      <div className="label-caps text-[9px] text-muted-foreground bg-card px-1 py-1.5">HUMAIN CONFIRME</div>
+      <div className="label-caps text-[9px] text-muted-foreground bg-card px-1 py-1.5">HUMAIN INFIRME</div>
       {cells.map((row, i) => (
         <div key={i} className="contents">
-          <div className="label-caps text-[9px] text-muted-foreground bg-zinc-950 px-1.5 py-2 flex items-center justify-end">{row[0].label}</div>
+          <div className="label-caps text-[9px] text-muted-foreground bg-card px-1.5 py-2 flex items-center justify-end">{row[0].label}</div>
           {row.map((c, j) => (
-            <div key={j} title={c.title} className="bg-zinc-950 px-1 py-2.5">
+            <div key={j} title={c.title} className="bg-card px-1 py-2.5">
               <div className={cn("mono text-xl leading-none", c.cls)}>{c.value}</div>
             </div>
           ))}
@@ -319,7 +319,7 @@ export function ExperimentLab() {
     <div className="space-y-4">
       <ModulePanel
         code="10"
-        title="LABORATOIRE EXPÉRIMENTAL — PROTOCOLE ZERO-SHOT"
+        title="Laboratoire expérimental — protocole zero-shot"
         subtitle="Échantillon stratifié seedé d'affaires réelles · verdicts multi-agents rendus à l'aveugle de la décision humaine · scoring statistique complet"
         source="api/matrix/experiments"
         actions={<ReloadButton onClick={list.reload} />}
@@ -378,9 +378,9 @@ export function ExperimentLab() {
                   <span className="label-caps text-muted-foreground">PROTOCOLE #{exp.id}</span>
                   <span className={cn(
                     "mono text-[10px] border rounded-sm px-1.5 py-0.5",
-                    exp.status === "done" ? "text-emerald-400 border-emerald-400/40 bg-emerald-400/10"
-                    : exp.status === "running" ? "text-amber-400 border-amber-400/40 bg-amber-400/10"
-                    : "text-red-400 border-red-400/40 bg-red-400/10",
+                    exp.status === "done" ? "text-pos border-pos bg-pos-subtle"
+                    : exp.status === "running" ? "text-mix border-mix bg-mix-subtle"
+                    : "text-neg border-neg bg-neg-subtle",
                   )}>
                     {exp.status === "done" ? "TERMINÉ" : exp.status === "running" ? "EN COURS" : exp.status.toUpperCase()}
                   </span>
@@ -392,25 +392,25 @@ export function ExperimentLab() {
                 </div>
                 <div className="h-1.5 w-full bg-secondary rounded-sm overflow-hidden">
                   <div
-                    className="h-full bg-emerald-400/80 transition-all"
+                    className="h-full bg-pos transition-all"
                     style={{ width: `${exp.targetN > 0 ? Math.min(100, (exp.progress / exp.targetN) * 100) : 0}%` }}
                   />
                 </div>
                 {state?.pending ? (
-                  <p className="mono text-[9px] text-amber-400/90">{state.pending} dossier(s) en attente de session</p>
+                  <p className="mono text-[9px] text-mix">{state.pending} dossier(s) en attente de session</p>
                 ) : null}
                 {state && state.errors.length > 0 && exp?.status === "done" ? (
                   <button
                     onClick={retryErrors}
                     disabled={autoRun || stepping}
-                    className="w-full mono text-[10px] label-caps gap-1.5 border border-red-400/40 text-red-400 hover:bg-red-400/10 rounded-sm px-2 py-1.5 transition-colors disabled:opacity-50"
+                    className="w-full mono text-[10px] label-caps gap-1.5 border border-neg text-neg hover:bg-neg-subtle rounded-sm px-2 py-1.5 transition-colors disabled:opacity-50"
                   >
                     REJOUER LES ÉCHECS ({state.errors.length})
                   </button>
                 ) : null}
                 <div className="flex gap-2 pt-1">
                   {autoRun ? (
-                    <Button onClick={stopAuto} variant="outline" size="sm" className="h-7 flex-1 label-caps gap-1.5 border-amber-400/40 text-amber-400">
+                    <Button onClick={stopAuto} variant="outline" size="sm" className="h-7 flex-1 label-caps gap-1.5 border-mix text-mix">
                       <Pause className="h-3 w-3" aria-hidden /> PAUSE
                     </Button>
                   ) : (
@@ -419,7 +419,7 @@ export function ExperimentLab() {
                       disabled={stepping || exp.status === "done" || !hasScored && exp.progress === 0 ? exp.status === "done" : false}
                       variant="outline"
                       size="sm"
-                      className="h-7 flex-1 label-caps gap-1.5 border-emerald-400/40 text-emerald-400"
+                      className="h-7 flex-1 label-caps gap-1.5 border-pos text-pos"
                     >
                       <Play className="h-3 w-3" aria-hidden /> REPRENDRE
                     </Button>
@@ -457,9 +457,9 @@ export function ExperimentLab() {
                       <span className="mono text-[10px] text-foreground/80 truncate flex-1">{e.label}</span>
                       <span className="mono text-[9px] text-muted-foreground">{e.progress}/{e.targetN}</span>
                       {e.status === "done" ? (
-                        <Square className="h-2.5 w-2.5 text-emerald-400" aria-hidden />
+                        <Square className="h-2.5 w-2.5 text-pos" aria-hidden />
                       ) : (
-                        <span className="h-2 w-2 rounded-full bg-amber-400 pulse-led" aria-hidden />
+                        <span className="h-2 w-2 rounded-full bg-mix pulse-led" aria-hidden />
                       )}
                     </button>
                   ))}
@@ -478,7 +478,7 @@ export function ExperimentLab() {
                 <div className="flex items-center justify-center h-full min-h-64">
                   <div className="max-w-md text-center space-y-2 border border-dashed border-border rounded-sm p-8">
                     <FlaskConical className="h-6 w-6 mx-auto text-muted-foreground" aria-hidden />
-                    <p className="label-caps text-amber-400">AUCUN PROTOCOLE EXÉCUTÉ</p>
+                    <p className="label-caps text-mix">AUCUN PROTOCOLE EXÉCUTÉ</p>
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       Lancez le premier protocole zero-shot : le moteur tirera un échantillon
                       stratifié d'affaires réelles et rendra un verdict IA sur chacune, à
@@ -491,9 +491,9 @@ export function ExperimentLab() {
             ) : (
               <div className="space-y-4">
                 {autoRun || stepping ? (
-                  <div className="panel rounded-sm px-3 py-2 flex items-center gap-3 border-amber-400/30 bg-amber-400/5">
-                    <span className="h-2 w-2 rounded-full bg-amber-400 pulse-led shrink-0" aria-hidden />
-                    <p className="mono text-[10px] text-amber-400">
+                  <div className="panel rounded-sm px-3 py-2 flex items-center gap-3 border-mix bg-mix-subtle">
+                    <span className="h-2 w-2 rounded-full bg-mix pulse-led shrink-0" aria-hidden />
+                    <p className="mono text-[10px] text-mix">
                       SESSION MULTI-AGENTS EN COURS — PROCUREUR → DÉFENSE → JUGE-IA (appels LLM réels, 1 dossier par pas)
                     </p>
                   </div>
@@ -505,25 +505,25 @@ export function ExperimentLab() {
                       <KpiChip
                         label="ACCORD IA-HUMAIN"
                         value={fmtPct(r!.agreement)}
-                        tone="emerald"
+                        tone="pos"
                         sub={`${r!.agreementK}/${r!.nScored} verdicts · IC95 [${fmtPct(r!.wilson.low)} ; ${fmtPct(r!.wilson.high)}]`}
                       />
                       <KpiChip
                         label="BRIER SCORE"
                         value={r!.brier.toFixed(3)}
-                        tone={r!.brier <= r!.brierBaseline ? "emerald" : "red"}
+                        tone={r!.brier <= r!.brierBaseline ? "pos" : "neg"}
                         sub={`prédicteur base ${r!.brierBaseline.toFixed(3)} (0 = parfait)`}
                       />
                       <KpiChip
                         label="MCNEMAR vs TOUJOURS-CONFIRMER"
                         value={`p = ${r!.mcnemar.exactP.toFixed(4)}`}
-                        tone={r!.mcnemar.exactP < 0.05 ? "emerald" : "neutral"}
+                        tone={r!.mcnemar.exactP < 0.05 ? "pos" : "neutral"}
                         sub={`discordants : IA seule juste ${r!.mcnemar.c} · base seule juste ${r!.mcnemar.b}`}
                       />
                       <KpiChip
                         label="BASE AFFIRMÉE (ÉCHANTILLON)"
                         value={fmtPct(r!.baseRate)}
-                        tone="amber"
+                        tone="mix"
                         sub={`baseline toujours-confirmer : ${fmtPct(r!.baselineAccuracy)}`}
                       />
                     </div>
@@ -551,7 +551,7 @@ export function ExperimentLab() {
                               <span className="h-2 w-2 rounded-sm shrink-0" style={{ background: deptColor(d.department) }} aria-hidden />
                               <span className="mono text-[10px] text-muted-foreground w-20">{DEPT_LABELS[d.department] ?? d.department}</span>
                               <div className="flex-1 h-1.5 bg-secondary rounded-sm overflow-hidden">
-                                <div className="h-full bg-emerald-400/70" style={{ width: `${d.agreement * 100}%` }} />
+                                <div className="h-full bg-pos" style={{ width: `${d.agreement * 100}%` }} />
                               </div>
                               <span className="mono text-[10px] text-foreground/80 w-20 text-right">{fmtPct(d.agreement)} · n={d.n}</span>
                             </div>
@@ -564,7 +564,7 @@ export function ExperimentLab() {
                           <div className="flex justify-between"><span>éligibles binaires</span><span className="text-foreground/80">{fmtNum(state.protocol.binaryEligibleTotal)}</span></div>
                           <div className="flex justify-between"><span>échantillon tiré</span><span className="text-foreground/80">{state.protocol.poolSize}</span></div>
                           <div className="flex justify-between"><span>exclus (recital &lt; {state.protocol.minRecitalChars} car.)</span><span className="text-foreground/80">{state.protocol.excludedNoRecital}</span></div>
-                          <div className="flex justify-between"><span>sessions en erreur</span><span className={r!.nError > 0 ? "text-red-400" : "text-foreground/80"}>{r!.nError}</span></div>
+                          <div className="flex justify-between"><span>sessions en erreur</span><span className={r!.nError > 0 ? "text-neg" : "text-foreground/80"}>{r!.nError}</span></div>
                           <div className="flex justify-between"><span>créé le</span><span className="text-foreground/80">{new Date(state.experiment.createdAt).toLocaleString("fr-FR")}</span></div>
                           {state.experiment.completedAt ? (
                             <div className="flex justify-between"><span>terminé le</span><span className="text-foreground/80">{new Date(state.experiment.completedAt).toLocaleString("fr-FR")}</span></div>
@@ -576,9 +576,9 @@ export function ExperimentLab() {
                     {/* runs ledger */}
                     <div className="panel rounded-sm p-3">
                       <p className="label-caps text-muted-foreground mb-2">REGISTRE DES VERDICTS ({r!.runs.length})</p>
-                      <div className="max-h-80 overflow-y-auto thin-scroll">
+                      <div className="max-h-80 overflow-y-auto overflow-x-auto thin-scroll">
                         <table className="w-full text-left">
-                          <thead className="sticky top-0 bg-zinc-950">
+                          <thead className="sticky top-0 bg-card">
                             <tr className="label-caps text-[9px] text-muted-foreground border-b border-border/60">
                               <th className="py-1.5 pr-2 font-normal">Affaire</th>
                               <th className="py-1.5 pr-2 font-normal">Dép.</th>
@@ -598,18 +598,18 @@ export function ExperimentLab() {
                                     {DEPT_LABELS[run.department] ?? run.department}
                                   </span>
                                 </td>
-                                <td className={cn("py-1.5 pr-2", run.human === "affirmed" ? "text-emerald-400" : "text-red-400")}>
+                                <td className={cn("py-1.5 pr-2", run.human === "affirmed" ? "text-pos" : "text-neg")}>
                                   {run.human === "affirmed" ? "CONFIRMÉ" : "INFIRMÉ"}
                                 </td>
-                                <td className={cn("py-1.5 pr-2", run.ai === "affirmed" ? "text-emerald-400" : "text-red-400")}>
+                                <td className={cn("py-1.5 pr-2", run.ai === "affirmed" ? "text-pos" : "text-neg")}>
                                   {run.ai === "affirmed" ? "CONFIRMÉ" : "INFIRMÉ"}
                                 </td>
                                 <td className="py-1.5 pr-2 text-muted-foreground">{(run.confidence * 100).toFixed(0)} %</td>
                                 <td className="py-1.5">
                                   {run.agreement ? (
-                                    <span className="text-emerald-400 border border-emerald-400/40 bg-emerald-400/10 rounded-sm px-1.5 py-0.5">OUI</span>
+                                    <span className="text-pos border border-pos bg-pos-subtle rounded-sm px-1.5 py-0.5">OUI</span>
                                   ) : (
-                                    <span className="text-red-400 border border-red-400/40 bg-red-400/10 rounded-sm px-1.5 py-0.5">NON</span>
+                                    <span className="text-neg border border-neg bg-neg-subtle rounded-sm px-1.5 py-0.5">NON</span>
                                   )}
                                 </td>
                               </tr>
@@ -631,8 +631,8 @@ export function ExperimentLab() {
                 ) : exp?.status === "running" || exp?.progress === 0 ? (
                   <TerminalLoader label="PROTOCOLE ARMÉ — EN ATTENTE DE LA PREMIÈRE SESSION RÉELLE" />
                 ) : (
-                  <div className="border border-red-400/40 bg-red-400/5 rounded-sm p-4 space-y-2">
-                    <p className="label-caps text-red-400">AUCUN VERDICT VALIDE ARCHIVÉ</p>
+                  <div className="border border-neg bg-neg-subtle rounded-sm p-4 space-y-2">
+                    <p className="label-caps text-neg">AUCUN VERDICT VALIDE ARCHIVÉ</p>
                     {state.errors.length > 0 ? (
                       <div className="mono text-[10px] text-muted-foreground space-y-1 max-h-40 overflow-y-auto thin-scroll">
                         {state.errors.map((e) => (

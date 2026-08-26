@@ -96,7 +96,7 @@ export function MonteCarlo() {
     <div className="space-y-4">
       <ModulePanel
         code="04"
-        title="SIMULATEUR DE VERDICT — PROJECTION MONTE-CARLO"
+        title="Simulateur de verdict — projection Monte-Carlo"
         subtitle="Bootstrap non paramétrique sur les issues binaires réelles de la sous-population filtrée"
         source="api/matrix/monte-carlo"
         actions={<ReloadButton onClick={judges.reload} />}
@@ -157,7 +157,7 @@ export function MonteCarlo() {
               <label className="label-caps text-muted-foreground block mb-1" htmlFor="mc-charge">MOT-CLÉ D'ACCUSATION (EX. « weapon »)</label>
               <Input
                 id="mc-charge"
-                placeholder="FACULTATIF…"
+                placeholder="Facultatif…"
                 value={chargeLike}
                 onChange={(e) => setChargeLike(e.target.value)}
                 className="h-8 text-xs mono"
@@ -194,7 +194,7 @@ export function MonteCarlo() {
             ) : result?.empty ? (
               <div className="flex items-center justify-center h-full">
                 <div className="max-w-md text-center space-y-2 border border-dashed border-border rounded-sm p-8">
-                  <p className="label-caps text-amber-400">AUCUN ÉCHANTILLON RÉEL</p>
+                  <p className="label-caps text-mix">AUCUN ÉCHANTILLON RÉEL</p>
                   <p className="text-xs text-muted-foreground">{result.message}</p>
                 </div>
               </div>
@@ -202,46 +202,46 @@ export function MonteCarlo() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   <KpiChip label="ÉCHANTILLON RÉEL" value={fmtNum(result.sampleSize)} sub={`${fmtNum(result.affirmed)} confirmés`} />
-                  <KpiChip label="TAUX OBSERVÉ" value={fmtPct(result.observed)} tone="emerald" sub="dans l'échantillon filtré" />
-                  <KpiChip label="BASE CORPUS" value={fmtPct(result.baseline.rate)} tone="amber" sub={`n = ${fmtNum(result.baseline.n)}`} />
+                  <KpiChip label="TAUX OBSERVÉ" value={fmtPct(result.observed)} tone="pos" sub="dans l'échantillon filtré" />
+                  <KpiChip label="BASE CORPUS" value={fmtPct(result.baseline.rate)} tone="mix" sub={`n = ${fmtNum(result.baseline.n)}`} />
                   <KpiChip label="MÉDIANE BOOTSTRAP" value={fmtPct(result.median)} sub={`moyenne ${fmtPct(result.mean)}`} />
                 </div>
 
-                <div className="h-64 border border-border/70 rounded-sm p-2 bg-zinc-950/40">
+                <div className="h-64 border border-border/70 rounded-sm p-2 bg-card">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData} margin={{ top: 8, right: 12, bottom: 4, left: -12 }}>
                       <defs>
                         <linearGradient id="mcFill" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#34d399" stopOpacity={0.5} />
-                          <stop offset="100%" stopColor="#34d399" stopOpacity={0.04} />
+                          <stop offset="0%" stopColor="#2F7D51" stopOpacity={0.5} />
+                          <stop offset="100%" stopColor="#2F7D51" stopOpacity={0.04} />
                         </linearGradient>
                       </defs>
-                      <CartesianGrid stroke="#27272a" strokeDasharray="2 4" />
+                      <CartesianGrid stroke="#D8D3C8" strokeDasharray="2 4" />
                       <XAxis
                         dataKey="mid"
                         type="number"
                         domain={[0, 1]}
                         tickFormatter={(v: number) => `${Math.round(v * 100)}%`}
-                        stroke="#71717a"
+                        stroke="#756F65"
                         fontSize={10}
                         tickLine={false}
                       />
-                      <YAxis stroke="#71717a" fontSize={10} tickLine={false} />
+                      <YAxis stroke="#756F65" fontSize={10} tickLine={false} />
                       <Tooltip
                         contentStyle={{
-                          background: "#09090b", border: "1px solid #27272a",
+                          background: "#FFFFFF", border: "1px solid #D8D3C8",
                           borderRadius: 2, fontSize: 11, fontFamily: "var(--font-geist-mono)",
                         }}
                         labelFormatter={(v: number) => `Taux ≈ ${(v * 100).toFixed(1)} %`}
                         formatter={(value: number) => [`${value} simulations`, "fréquence"]}
                       />
-                      <ReferenceLine x={result.observed} stroke="#34d399" strokeWidth={1.5}
-                        label={{ value: "OBSERVÉ", fill: "#34d399", fontSize: 9, position: "insideTopLeft" }} />
-                      <ReferenceLine x={result.baseline.rate} stroke="#fbbf24" strokeDasharray="4 3" strokeWidth={1.2}
-                        label={{ value: "BASE", fill: "#fbbf24", fontSize: 9, position: "insideBottomLeft" }} />
-                      <ReferenceLine x={result.p05} stroke="#52525b" strokeDasharray="2 3" />
-                      <ReferenceLine x={result.p95} stroke="#52525b" strokeDasharray="2 3" />
-                      <Area type="monotone" dataKey="count" stroke="#34d399" strokeWidth={1.5} fill="url(#mcFill)" isAnimationActive={false} />
+                      <ReferenceLine x={result.observed} stroke="#2F7D51" strokeWidth={1.5}
+                        label={{ value: "OBSERVÉ", fill: "#2F7D51", fontSize: 9, position: "insideTopLeft" }} />
+                      <ReferenceLine x={result.baseline.rate} stroke="#B8863B" strokeDasharray="4 3" strokeWidth={1.2}
+                        label={{ value: "BASE", fill: "#B8863B", fontSize: 9, position: "insideBottomLeft" }} />
+                      <ReferenceLine x={result.p05} stroke="#8B8577" strokeDasharray="2 3" />
+                      <ReferenceLine x={result.p95} stroke="#8B8577" strokeDasharray="2 3" />
+                      <Area type="monotone" dataKey="count" stroke="#2F7D51" strokeWidth={1.5} fill="url(#mcFill)" isAnimationActive={false} />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>

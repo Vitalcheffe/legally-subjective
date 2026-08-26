@@ -1,12 +1,14 @@
 "use client";
 
 /**
- * Behavioral Matrix — mission control shell.
- * Single visible route (/). Modules are lazy-loaded; the rail switches them.
+ * Behavioral Matrix — institutional shell.
+ * Single visible route (/). Modules are lazy-loaded; the editorial tab
+ * rail switches them. Register: legal journal, quiet authority.
  */
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 import { useMatrixStore } from "./store";
 import { TerminalLoader } from "./shared";
 import { OverviewPanel } from "./OverviewPanel";
@@ -45,17 +47,17 @@ const ExperimentLab = dynamic(() => import("./ExperimentLab").then((m) => m.Expe
 });
 
 const MODULES = [
-  { id: "overview", code: "00", label: "SYNOPTIQUE", hint: "état du corpus réel" },
-  { id: "neural", code: "01", label: "CARTE NEURO-COGNITIVE", hint: "constellation des panélistes · WebGL" },
-  { id: "weakness", code: "02", label: "MATRICE DES ÉCARTS", hint: "rétro-ingénierie décisionnelle" },
-  { id: "heatmap", code: "03", label: "CARTE THERMIQUE DES BIAIS", hint: "déviations à la base annuelle" },
-  { id: "montecarlo", code: "04", label: "SIMULATEUR MONTE-CARLO", hint: "bootstrap sur issues réelles" },
-  { id: "stylometry", code: "05", label: "SPECTRE STYLOMÉTRIQUE", hint: "télémétrie lexicale" },
-  { id: "precedent", code: "06", label: "GRAPHE DE JURISPRUDENCE", hint: "autorités résonantes · WebGL" },
-  { id: "timeline", code: "07", label: "CHRONOLOGIE COGNITIVE", hint: "télémétrie temporelle" },
-  { id: "radar", code: "08", label: "RADAR DE DÉVIATION", hint: "forme comportementale" },
-  { id: "shield", code: "09", label: "BOUCLIER HUMAIN vs IA", hint: "sessions multi-agents LLM" },
-  { id: "lab", code: "10", label: "LABORATOIRE EXPÉRIMENTAL", hint: "protocole zero-shot · Brier · McNemar" },
+  { id: "overview", code: "00", label: "Synoptique", hint: "État du corpus réel" },
+  { id: "neural", code: "01", label: "Carte neuro-cognitive", hint: "Constellation des panélistes · WebGL" },
+  { id: "weakness", code: "02", label: "Matrice des écarts", hint: "Rétro-ingénierie décisionnelle" },
+  { id: "heatmap", code: "03", label: "Carte thermique des biais", hint: "Déviations à la base annuelle" },
+  { id: "montecarlo", code: "04", label: "Simulateur Monte-Carlo", hint: "Bootstrap sur issues réelles" },
+  { id: "stylometry", code: "05", label: "Spectre stylométrique", hint: "Télémétrie lexicale" },
+  { id: "precedent", code: "06", label: "Graphe de jurisprudence", hint: "Autorités résonantes · WebGL" },
+  { id: "timeline", code: "07", label: "Chronologie cognitive", hint: "Télémétrie temporelle" },
+  { id: "radar", code: "08", label: "Radar de déviation", hint: "Forme comportementale" },
+  { id: "shield", code: "09", label: "Arbitrage humain contre IA", hint: "Sessions multi-agents LLM" },
+  { id: "lab", code: "10", label: "Laboratoire expérimental", hint: "Protocole zero-shot · Brier · McNemar" },
 ] as const;
 
 function LiveClock() {
@@ -66,7 +68,7 @@ function LiveClock() {
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, []);
-  return <span className="mono text-[11px] text-muted-foreground">{now} UTC+1</span>;
+  return <span className="mono text-[11px] text-muted-foreground">{now}</span>;
 }
 
 export function Console() {
@@ -77,61 +79,63 @@ export function Console() {
   const active = MODULES.find((m) => m.id === activeModuleId) ?? MODULES[0];
 
   return (
-    <div className="min-h-screen flex flex-col matrix-grid-bg">
-      {/* header */}
-      <header className="border-b border-border/70 bg-zinc-950/80 backdrop-blur sticky top-0 z-40">
-        <div className="mx-auto max-w-[1600px] px-4 py-3 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 pulse-led shrink-0" aria-hidden />
-            <div className="min-w-0">
-              <h1 className="mono text-sm text-foreground tracking-wide truncate">
-                LEGALLY SUBJECTIVE <span className="text-muted-foreground/60">·</span>{" "}
-                <span className="text-emerald-400 glow-emerald">BEHAVIORAL MATRIX</span>
-              </h1>
-              <p className="label-caps text-muted-foreground/80">
-                CONSOLE D'ANALYSE COGNITIVE JUDICIAIRE — GRADE AÉROSPATIAL
-              </p>
-            </div>
+    <div className="min-h-screen flex flex-col bg-background paper-grain">
+      {/* masthead */}
+      <header className="border-b border-border bg-background/95 backdrop-blur sticky top-0 z-40">
+        <div className="mx-auto max-w-[1600px] px-5 pt-4 pb-3 flex flex-wrap items-end gap-x-6 gap-y-2">
+          <div className="min-w-0">
+            <h1 className="serif-display text-xl font-bold leading-none text-foreground tracking-tight">
+              Legally Subjective
+              <span className="text-muted-foreground/50 font-normal mx-2">·</span>
+              <span className="font-semibold italic text-primary">Behavioral Matrix</span>
+            </h1>
+            <p className="text-[11.5px] text-muted-foreground mt-1.5">
+              Analyse décisionnelle judiciaire — Appellate Division de New York, corpus criminel 2015–2023
+            </p>
           </div>
-          <div className="ml-auto flex items-center gap-4">
-            <span className="mono text-[10px] text-muted-foreground hidden md:inline">
-              SRC · COURTLISTENER + DOCUMENTS OFFICIELS NY
+          <div className="ml-auto flex items-center gap-5 pb-0.5">
+            <span className="label-caps text-muted-foreground/75 hidden md:inline">
+              CourtListener + documents officiels NY
             </span>
-            <span className="mono text-[10px] text-emerald-400/90 hidden lg:inline">
-              ● FLUX RÉEL — ZÉRO DONNÉE FICTIVE
+            <span className="label-caps text-pos hidden lg:inline">
+              Données réelles · zéro donnée fictive
             </span>
             <LiveClock />
           </div>
         </div>
-        {/* module rail */}
-        <nav className="mx-auto max-w-[1600px] px-4 pb-2 flex gap-1.5 overflow-x-auto" aria-label="Modules d'analyse">
-          {MODULES.map((m) => (
-            <button
-              key={m.id}
-              onClick={() => setModule(m.id)}
-              title={m.hint}
-              className={`shrink-0 flex items-center gap-2 px-2.5 py-1.5 rounded-sm border transition-colors ${
-                m.id === activeModuleId
-                  ? "border-primary/50 bg-primary/10 text-foreground"
-                  : "border-border/60 text-muted-foreground hover:text-foreground hover:border-border"
-              }`}
-              aria-current={m.id === activeModuleId ? "page" : undefined}
-            >
-              <span className={`mono text-[9px] ${m.id === activeModuleId ? "text-primary" : "text-muted-foreground/60"}`}>{m.code}</span>
-              <span className="label-caps">{m.label}</span>
-            </button>
-          ))}
+        {/* editorial tab rail */}
+        <nav className="mx-auto max-w-[1600px] px-5 flex gap-0 overflow-x-auto" aria-label="Modules d'analyse">
+          {MODULES.map((m) => {
+            const isActive = m.id === activeModuleId;
+            return (
+              <button
+                key={m.id}
+                onClick={() => setModule(m.id)}
+                title={m.hint}
+                className={`shrink-0 flex items-baseline gap-1.5 px-2.5 py-2 border-b-2 -mb-px transition-colors ${
+                  isActive
+                    ? "border-primary text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
+                }`}
+                aria-current={m.id === activeModuleId ? "page" : undefined}
+              >
+                <span className={`mono text-[10px] ${isActive ? "text-primary" : "text-muted-foreground/70"}`}>{m.code}</span>
+                <span className="label-caps text-[10px]">{m.label}</span>
+              </button>
+            );
+          })}
         </nav>
         {selectedJudge ? (
-          <div className="border-t border-border/50 bg-primary/5">
-            <div className="mx-auto max-w-[1600px] px-4 py-1 flex items-center gap-2">
-              <span className="label-caps text-muted-foreground">CIBLE VERROUILLÉE</span>
-              <span className="mono text-[11px] text-emerald-400">{selectedJudge}</span>
+          <div className="border-t border-border bg-accent/60">
+            <div className="mx-auto max-w-[1600px] px-5 py-1.5 flex items-center gap-3">
+              <span className="label-caps text-muted-foreground">Magistrat à l'étude</span>
+              <span className="serif-display text-[13px] font-semibold text-accent-foreground">{selectedJudge}</span>
               <button
                 onClick={() => useMatrixStore.getState().setSelectedJudge(null)}
-                className="mono text-[9px] text-muted-foreground hover:text-red-400 ml-2"
+                className="ml-auto inline-flex items-center gap-1 label-caps text-muted-foreground hover:text-neg transition-colors px-2 py-0.5"
               >
-                [DÉVERROUILLER]
+                <X className="h-3 w-3" aria-hidden />
+                Retirer
               </button>
             </div>
           </div>
@@ -139,14 +143,14 @@ export function Console() {
       </header>
 
       {/* workspace */}
-      <main className="flex-1 mx-auto w-full max-w-[1600px] px-4 py-5 min-w-0">
+      <main className="relative z-[1] flex-1 mx-auto w-full max-w-[1600px] px-5 py-6 min-w-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.18 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
           >
             {active.id === "overview" ? <OverviewPanel /> : null}
             {active.id === "neural" ? <NeuralMap /> : null}
@@ -163,17 +167,17 @@ export function Console() {
         </AnimatePresence>
       </main>
 
-      {/* footer */}
-      <footer className="mt-auto border-t border-border/70 bg-zinc-950/90">
-        <div className="mx-auto max-w-[1600px] px-4 py-3 flex flex-wrap items-center gap-x-6 gap-y-1.5">
-          <span className="mono text-[9px] text-muted-foreground">
-            PROVENANCE · 1 387 APPELS CRIMINELS RÉELS (NY APP. DIV. 2015-2023) · PIPELINE PHASE 2 VALIDÉ · SHA256 PAR DOCUMENT
+      {/* colophon */}
+      <footer className="mt-auto border-t border-border bg-card/60">
+        <div className="mx-auto max-w-[1600px] px-5 py-3.5 flex flex-wrap items-center gap-x-8 gap-y-1.5">
+          <span className="text-[10.5px] text-muted-foreground">
+            Provenance · 1 387 appels criminels réels (NY App. Div. 2015–2023) · pipeline Phase 2 validé · empreinte SHA-256 par document
           </span>
-          <span className="mono text-[9px] text-muted-foreground/70">
-            REPRODUCIBILITÉ · bun scripts/ingest.ts (RECONSTRUIT L'INDEX + VALIDATION CROISÉE)
+          <span className="text-[10.5px] text-muted-foreground/80">
+            Reproductibilité · bun scripts/ingest.ts (reconstruit l'index + validation croisée)
           </span>
-          <span className="mono text-[9px] text-emerald-400/80 ml-auto">
-            CONTRAT ZÉRO-MOCK EN VIGUEUR
+          <span className="label-caps text-pos ml-auto">
+            Contrat d'intégrité : aucune donnée fictive
           </span>
         </div>
       </footer>
