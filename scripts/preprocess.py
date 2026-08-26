@@ -41,6 +41,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 SCHEMA = "legally-subjective/structured-case/0.1"
 PIPELINE_VERSION = "0.1.0"
 
+# LLM enum vocabularies (mirror of the frozen prompt's allowed values).
+# Anything else the model answers ('unknown', invented labels) maps to
+# None — the honest "not determined" — instead of leaking into the data.
+_LLM_CRIME_TYPES = {"violent", "drug", "property", "financial",
+                    "sexual", "weapons", "dui_traffic", "other"}
+_LLM_GENDERS = {"male", "female"}
+_LLM_OUTCOMES = {"affirmed", "reversed", "vacated", "modified",
+                 "dismissed", "remitted", "mixed"}
+
+
+def _norm_llm_enum(value: Any, valid: set[str]) -> Any:
+    return value if value in valid else None
+
 # --------------------------------------------------------------------------
 # HTML → text (stdlib only; the official slip opinions are simple documents)
 # --------------------------------------------------------------------------
@@ -376,7 +389,8 @@ def build_record(raw: dict[str, Any], text: str,
 
     if llm_fields:
         rule_value = disposition.get("primary")
-        llm_value = llm_fields.get("outcome_check")
+        llm_value = _norm_llm_enum(llm_fields.get("outcome_check"),
+                                   _LLM_OUTCOMES)
         disposition["llm_check"] = llm_value
         disposition["agreement"] = (
             None if rule_value is None or llm_value is None
@@ -398,11 +412,13 @@ def build_record(raw: dict[str, Any], text: str,
             "summary": (llm_fields or {}).get("facts"),
         },
         "crime_type": {
-            "value": (llm_fields or {}).get("crime_type"),
+            "value": _norm_llm_enum((llm_fields or {}).get("crime_type"),
+                                    _LLM_CRIME_TYPES),
             "method": "llm" if llm_fields else "not_extracted",
         },
         "defendant_gender": {
-            "value": (llm_fields or {}).get("defendant_gender"),
+            "value": _norm_llm_enum((llm_fields or {}).get("defendant_gender"),
+                                    _LLM_GENDERS),
             "method": "llm" if llm_fields else "not_extracted",
         },
         "disposition": disposition,
