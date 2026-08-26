@@ -20,6 +20,7 @@ model Judge {
   name        String      @unique
   rawVariants String      // JSON array of raw spellings observed in source
   seats       PanelSeat[]
+  authoredOpinions Opinion[] @relation("OpinionAuthor")
 
   @@index([name])
 }
@@ -57,10 +58,24 @@ model Opinion {
   citedAuthorities CitedAuthority[]
   agentRuns        AgentRun[]
 
+  // Author attribution (rule R7, applied at ingest on the official text).
+  //   explicit           — signed opinion ("NAME, J." signature in the body)
+  //   presumed-presiding — unsigned memorandum; presiding judge presumed
+  //                        author per NY Law Reporting Bureau convention
+  //   per-curiam        — institutional opinion, no individual author
+  //   unresolved        — no attribution derivable from the source document
+  authorRaw     String?
+  authorMethod  String?
+  authorJudgeId Int?
+  authorJudge   Judge?  @relation("OpinionAuthor", fields: [authorJudgeId], references: [id])
+
+  experimentCases ExperimentCase[]
+
   @@index([year])
   @@index([department])
   @@index([dispositionPrimary])
   @@index([dateFiled])
+  @@index([authorJudgeId])
 }
 
 // Membership of a judge on the panel that decided an opinion.
@@ -108,6 +123,45 @@ model AgentRun {
   error            String?
   model            String?
   opinion          Opinion? @relation(fields: [caseId], references: [caseId])
+  experimentId     Int?
+  experiment       Experiment? @relation(fields: [experimentId], references: [id])
 
   @@index([caseId])
+  @@index([experimentId])
+}
+
+// A zero-shot experimental protocol run: a seeded stratified sample of real
+// binary-eligible cases is drawn from the corpus, and the multi-agent engine
+// renders an AI verdict on each (the human decision is NEVER shown to the
+// agents). Aggregation lives in src/lib/matrix/experiments.ts.
+model Experiment {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  label       String
+  seed        Int
+  targetN     Int
+  status      String   @default("running") // running | done | error
+  caseIds     String   // JSON ordered array of sampled real case ids
+  progress    Int      @default(0)
+  completedAt DateTime?
+  runs        AgentRun[]
+  cases       ExperimentCase[]
+
+  @@index([status])
+}
+
+// Per-case protocol ledger: which sampled case is pending / done / failed.
+// The run link is set once the multi-agent session for that case exists.
+model ExperimentCase {
+  id            Int       @id @default(autoincrement())
+  experimentId  Int
+  caseId        String
+  position      Int
+  state         String    @default("pending") // pending | done | error
+  note          String?
+  experiment    Experiment @relation(fields: [experimentId], references: [id])
+  opinion       Opinion   @relation(fields: [caseId], references: [caseId])
+
+  @@unique([experimentId, caseId])
+  @@index([experimentId])
 }

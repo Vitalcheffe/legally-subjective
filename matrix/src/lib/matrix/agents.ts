@@ -112,7 +112,38 @@ async function callAgent(
   return { raw, parsed: parseAgentJson(raw) };
 }
 
-export async function runAgentSession(caseId: string): Promise<AgentSessionResult> {
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Rate-limit resilient call: on a 429 (engine quota) the call is retried with
+ * exponential backoff (3 attempts: ~20s, ~45s). The verbatim 429 is archived
+ * only when every retry is exhausted — the session is then recorded as an
+ * error, never simulated.
+ */
+async function callAgentResilient(
+  zai: Awaited<ReturnType<typeof import("z-ai-web-dev-sdk").default.create>>,
+  system: string,
+  user: string,
+): Promise<{ raw: string; parsed: ReturnType<typeof parseAgentJson> }> {
+  const waits = [20000, 45000];
+  let lastError: Error | null = null;
+  for (let attempt = 0; attempt <= waits.length; attempt++) {
+    if (attempt > 0) await sleep(waits[attempt - 1]);
+    try {
+      return await callAgent(zai, system, user);
+    } catch (e) {
+      lastError = e as Error;
+      const msg = (e as Error).message ?? "";
+      if (!msg.includes("429")) throw e; // only rate limits are retried
+    }
+  }
+  throw lastError ?? new Error("appel moteur échoué");
+}
+
+export async function runAgentSession(
+  caseId: string,
+  experimentId?: number,
+): Promise<AgentSessionResult> {
   const opinion = await db.opinion.findUnique({ where: { caseId } });
   if (!opinion) {
     throw new Error(`Affaire inconnue dans l'index réel : ${caseId}`);
@@ -136,6 +167,7 @@ export async function runAgentSession(caseId: string): Promise<AgentSessionResul
     const run = await db.agentRun.create({
       data: {
         caseId,
+        experimentId: experimentId ?? null,
         humanDisposition: opinion.dispositionPrimary,
         status: "error",
         error: "Recital des faits insuffisant dans la source officielle — session refusée (aucune donnée inventée).",
@@ -155,14 +187,14 @@ export async function runAgentSession(caseId: string): Promise<AgentSessionResul
     const brief = buildCaseBrief(caseInfo);
 
     // 1 — PROCUREUR : argues the conviction must stand
-    const prosecutor = await callAgent(
+    const prosecutor = await callAgentResilient(
       zai,
       `Tu es le PROCUREUR (agent d'accusation) dans une cour d'appel criminelle américaine. Ton analyse est froide, procédurale, fondée uniquement sur le dossier. Tu pléides pour la confirmation de la condamnation en identifiant les points procéduraux et factuels solides. ${JSON_INSTRUCTION}`,
       brief,
     );
 
     // 2 — DÉFENSE : argues the conviction must fall
-    const defender = await callAgent(
+    const defender = await callAgentResilient(
       zai,
       `Tu es l'AVOCAT DE LA DÉFENSE (agent de défense) dans une cour d'appel criminelle américaine. Ton analyse est froide, procédurale, fondée uniquement sur le dossier. Tu pléides pour l'annulation/infirmation en identifiant vices de procédure, erreurs de droit et failles factuelles. ${JSON_INSTRUCTION}`,
       brief,
@@ -174,7 +206,7 @@ export async function runAgentSession(caseId: string): Promise<AgentSessionResul
         ? `\n\nARGUMENTS DU PROCUREUR :\n${prosecutor.parsed.value.key_arguments.map((a, i) => `${i + 1}. ${a}`).join("\n")}` +
           `\n\nARGUMENTS DE LA DÉFENSE :\n${defender.parsed.value.key_arguments.map((a, i) => `${i + 1}. ${a}`).join("\n")}`
         : "";
-    const judge = await callAgent(
+    const judge = await callAgentResilient(
       zai,
       `Tu es le JUGE-IA : arbitre neutre et déterministe d'une cour d'appel criminelle. Tu rends un verdict purement juridique, sans considération émotionnelle, en pesant les arguments des deux parties sur le dossier. ${JSON_INSTRUCTION}`,
       brief + duel,
@@ -202,6 +234,7 @@ export async function runAgentSession(caseId: string): Promise<AgentSessionResul
     const run = await db.agentRun.create({
       data: {
         caseId,
+        experimentId: experimentId ?? null,
         prosecutorOutput: prosecutor.raw,
         defenderOutput: defender.raw,
         judgeOutput: judge.raw,
@@ -232,6 +265,7 @@ export async function runAgentSession(caseId: string): Promise<AgentSessionResul
     const run = await db.agentRun.create({
       data: {
         caseId,
+        experimentId: experimentId ?? null,
         humanDisposition: opinion.dispositionPrimary,
         status: "error",
         error: message,

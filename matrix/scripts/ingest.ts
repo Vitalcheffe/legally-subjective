@@ -17,6 +17,15 @@
  *   R1  Judge identity = normalized surname of the official panel line.
  *       Junk tokens (P.J., J.P., JJ, AND, Department prefixes) dropped;
  *       casing normalized; suffixes normalized (Jr → Jr., III...).
+ *   R1b Panel completion (documented discovery, 2024 run): for the 1st/4th
+ *       Dept formats the Phase 2 structured corpus OMITS the presiding
+ *       judge from panel.judges[] even though the official panel line
+ *       (panel.evidence) carries him with the J.P./P.J. title — e.g.
+ *       "Decided on January 7, 2016 Tom, J.P., Mazzarelli, Richter, Gische JJ."
+ *       with judges=[Mazzarelli, Richter, Gische] (Tom missing). The
+ *       presiding surname is therefore re-extracted from the evidence line
+ *       and ADDED as a presiding seat when absent (598 records healed —
+ *       this is real official-panel data, not inference).
  *   R2  Department = first "Appellate Division, <ord> Department" match in
  *       the official document header — byte-identical behavior to the repo's
  *       analyze_base_rate block (same regex, same normalization map), so the
@@ -31,6 +40,21 @@
  *   R6  Cross-validation against data/analysis/base_rate_corpus.json:
  *       record counts, binary split, per-year and per-department figures
  *       must match the official analysis or the script exits non-zero.
+ *   R7  Author attribution (from the official text):
+ *       R7a explicit — a signed opinion carries a "NAME, J." signature
+ *           (optionally after a "MEMORANDUM AND ORDER" header) in the first
+ *           6 000 chars; the captured surname MUST match a panel member of
+ *           that exact opinion (cross-validated — no false positives).
+ *       R7b presumed-presiding — unsigned memorandum: the presiding judge
+ *           (J.P.) is the presumed author per NY Law Reporting Bureau
+ *           convention; the presiding surname is read from the tail
+ *           concurrence line ("X, J.P., ... JJ., concur") or the header
+ *           panel line ("X, P.J. ..." / "Before: X, P.J., ...").
+ *       R7c per-curiam — "Opinion Per Curiam" explicitly stated: no
+ *           individual author recorded.
+ *       Anything else is recorded as method="unresolved", author=null.
+ *       Attribution method is stored per opinion and surfaced in the UI —
+ *       presumed authorship is never presented as signed authorship.
  */
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, existsSync, readdirSync } from "node:fs";
@@ -227,6 +251,70 @@ export function extractCitations(text: string): { targets: CitedTarget[]; caseMe
 }
 
 // ---------------------------------------------------------------------------
+// R7 — author attribution
+// ---------------------------------------------------------------------------
+const HEADER_WORDS_RX = /^(?:(?:memorandum|decision|order|judgment|opinion|and|entered?)\s+)+/i;
+const AUTHOR_SIG_RX =
+  /(?:MEMORANDUM AND ORDER\s+)?([A-Z][A-Za-z’'\-]+(?:\s+[A-Z][A-Za-z’'\-]+)*(?:\s+Jr\.?)?),\s*(?:P\.J\.|J\.)\s+/g;
+const PRESIDING_TAIL_RX =
+  /([A-Z][A-Za-z’'\-]+(?:\s+[A-Z][A-Za-z’'\-]+)*(?:\s+Jr\.?)?),\s*(?:P\.J\.|J\.)\s*,/;
+const PRESIDING_HEAD_RX =
+  /([A-Z][A-Za-z’'\-]+(?:\s+[A-Z][A-Za-z’'\-]+)*(?:\s+Jr\.?)?),\s*(?:P\.J\.|J\.P\.)(?:\s|,|$)/;
+const PER_CURIAM_RX = /opinion per curiam/i;
+
+export interface AuthorAttribution {
+  raw: string | null;
+  method: "explicit" | "presumed-presiding" | "per-curiam" | "unresolved";
+}
+
+/**
+ * Deterministic author attribution on the whitespace-collapsed official text.
+ * `panelNormNames` = normalized panel member names of THIS opinion — an
+ * explicit signature that does not match a panel member is rejected.
+ */
+export function extractAuthor(
+  text: string,
+  panelNormNames: string[],
+): AuthorAttribution {
+  const flat = text.replace(/\s+/g, " ");
+
+  // R7a — explicit signed authorship (validated against panel membership)
+  for (const m of flat.slice(0, 6000).matchAll(AUTHOR_SIG_RX)) {
+    let captured = m[1].trim();
+    captured = captured.replace(HEADER_WORDS_RX, "").trim();
+    const norm = normalizeJudgeName(captured);
+    if (norm && panelNormNames.includes(norm)) {
+      return { raw: captured, method: "explicit" };
+    }
+  }
+
+  // R7c — explicit per curiam statement
+  if (PER_CURIAM_RX.test(flat.slice(-800))) {
+    return { raw: null, method: "per-curiam" };
+  }
+
+  // R7b — unsigned memorandum: presiding judge presumed author
+  const tail = flat.slice(-700);
+  const tailM = tail.match(PRESIDING_TAIL_RX);
+  if (tailM) {
+    const norm = normalizeJudgeName(tailM[1]);
+    if (norm && (panelNormNames.length === 0 || panelNormNames.includes(norm))) {
+      return { raw: tailM[1], method: "presumed-presiding" };
+    }
+  }
+  const head = flat.slice(0, 1500);
+  const headM = head.match(PRESIDING_HEAD_RX);
+  if (headM) {
+    const norm = normalizeJudgeName(headM[1]);
+    if (norm && (panelNormNames.length === 0 || panelNormNames.includes(norm))) {
+      return { raw: headM[1], method: "presumed-presiding" };
+    }
+  }
+
+  return { raw: null, method: "unresolved" };
+}
+
+// ---------------------------------------------------------------------------
 // Ingestion
 // ---------------------------------------------------------------------------
 interface RawStructured {
@@ -283,26 +371,35 @@ async function main() {
   await db.citedAuthority.deleteMany();
   await db.panelSeat.deleteMany();
   await db.agentRun.deleteMany();
+  await db.experimentCase.deleteMany();
+  await db.experiment.deleteMany();
   await db.opinion.deleteMany();
   await db.judge.deleteMany();
 
   // Pass 1 — judges
   const judgeRaws = new Map<string, Set<string>>();
   const seatRows: { judgeName: string; caseId: string; role: string }[] = [];
+  // R1b — presiding surname from the official panel evidence line. Handles
+  // all three evidence formats ("Decided on <date> X, J.P., ..." |
+  // "X, J.P., ... JJ." | structured presiding field when present).
+  const EVIDENCE_PRESIDING_RX = /([A-Z][A-Za-z'’\-]+(?:\s+Jr\.?)?)\s*,\s*(?:J\.P\.|P\.J\.)/;
   const presidingFromEvidence = (r: RawStructured): string | null => {
     const p = r.panel?.presiding;
     if (p) return p;
     const ev = r.panel?.evidence ?? "";
-    const m = ev.match(/Decided on [^.]+\s+([A-Z][A-Za-z.'’\- ]+?),\s*J\.P\./);
+    const m = ev.match(EVIDENCE_PRESIDING_RX);
     return m ? m[1] : null;
   };
+  let healedPresiding = 0;
 
   for (const r of records) {
     const presidingRaw = presidingFromEvidence(r);
     const presidingNorm = presidingRaw ? normalizeJudgeName(presidingRaw) : null;
+    const panelNormSet = new Set<string>();
     for (const j of r.panel?.judges ?? []) {
       const norm = normalizeJudgeName(j.name);
       if (!norm) continue;
+      panelNormSet.add(norm);
       if (!judgeRaws.has(norm)) judgeRaws.set(norm, new Set());
       judgeRaws.get(norm)!.add(j.name);
       seatRows.push({
@@ -311,9 +408,18 @@ async function main() {
         role: presidingNorm && norm === presidingNorm ? "presiding" : "panel",
       });
     }
+    // R1b — heal the panel: add the presiding judge when the structured
+    // judges list omitted him but the official evidence line carries him.
+    if (presidingNorm && !panelNormSet.has(presidingNorm)) {
+      if (!judgeRaws.has(presidingNorm)) judgeRaws.set(presidingNorm, new Set());
+      judgeRaws.get(presidingNorm)!.add(presidingRaw!);
+      seatRows.push({ judgeName: presidingNorm, caseId: r.case_id, role: "presiding" });
+      healedPresiding += 1;
+    }
   }
   console.log(
-    `[ingest] judges: ${judgeRaws.size} normalized identities from ${seatRows.length} panel seats`,
+    `[ingest] judges: ${judgeRaws.size} normalized identities from ${seatRows.length} panel seats ` +
+    `(R1b healed presiding seats: ${healedPresiding})`,
   );
 
   const judgeIdByName = new Map<string, number>();
@@ -324,11 +430,26 @@ async function main() {
     judgeIdByName.set(name, j.id);
   }
 
-  // Pass 2 — opinions (+ stylometry + citations from the official documents)
+  // Pass 2 — opinions (+ stylometry + citations + author attribution)
   const opinionIdByCase = new Map<string, number>();
   const citationRows: { caseId: string; target: string; kind: string; count: number }[] = [];
   let missingDocs = 0, unknownDept = 0;
   const stylometryAccum = { opinionsWithText: 0 };
+  // Panel membership per case (for R7 cross-validation)
+  const panelNormsByCase = new Map<string, string[]>();
+  for (const s of seatRows) {
+    const arr = panelNormsByCase.get(s.caseId) ?? [];
+    arr.push(s.judgeName);
+    panelNormsByCase.set(s.caseId, arr);
+  }
+  // R7 authorship accumulators
+  const authorStats = {
+    explicit: 0,
+    "presumed-presiding": 0,
+    "per-curiam": 0,
+    unresolved: 0,
+    linked: 0,
+  };
 
   for (const r of records) {
     const cluster = Number(r.case_id.split("-")[1]);
@@ -353,6 +474,8 @@ async function main() {
       avgSentenceLen: 0, typeTokenRatio: 0, punitiveHits: 0, rehabHits: 0,
     };
     let citationMentions = 0;
+    let author: AuthorAttribution = { raw: null, method: "unresolved" };
+    let authorJudgeId: number | null = null;
     if (rawHtml) {
       const text = htmlToText(rawHtml);
       styl = computeStylometry(text);
@@ -362,6 +485,16 @@ async function main() {
       for (const t of targets) {
         citationRows.push({ caseId: r.case_id, target: t.target, kind: t.kind, count: t.count });
       }
+      // R7 — author attribution on the official text
+      author = extractAuthor(text, panelNormsByCase.get(r.case_id) ?? []);
+      if (author.raw) {
+        const norm = normalizeJudgeName(author.raw);
+        authorJudgeId = norm ? judgeIdByName.get(norm) ?? null : null;
+      }
+      authorStats[author.method] += 1;
+      if (authorJudgeId) authorStats.linked += 1;
+    } else {
+      authorStats.unresolved += 1;
     }
 
     const date = new Date(r.date_filed + "T12:00:00Z");
@@ -384,6 +517,9 @@ async function main() {
         binaryEligible: Boolean(r.disposition?.binary_eligible),
         ...styl,
         citationMentions,
+        authorRaw: author.raw,
+        authorMethod: author.method,
+        authorJudgeId,
       },
     });
     opinionIdByCase.set(r.case_id, op.id);
@@ -391,6 +527,12 @@ async function main() {
   console.log(
     `[ingest] opinions: ${opinionIdByCase.size}; missing documents: ${missingDocs}; ` +
     `unknown department: ${unknownDept}; with text: ${stylometryAccum.opinionsWithText}`,
+  );
+  console.log(
+    `[ingest] authorship R7 — explicit: ${authorStats.explicit}; ` +
+    `presumed-presiding: ${authorStats["presumed-presiding"]}; ` +
+    `per-curiam: ${authorStats["per-curiam"]}; unresolved: ${authorStats.unresolved}; ` +
+    `linked to judge id: ${authorStats.linked}`,
   );
 
   // Pass 3 — panel seats

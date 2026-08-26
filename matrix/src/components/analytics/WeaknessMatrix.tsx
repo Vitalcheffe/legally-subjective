@@ -17,7 +17,7 @@ import {
 import type { JudgeMetric } from "@/lib/matrix/queries";
 import { useMatrixStore } from "./store";
 
-type SortKey = "absZ" | "nBinary" | "rate" | "name" | "volatility";
+type SortKey = "absZ" | "nBinary" | "rate" | "name" | "volatility" | "authored";
 
 export function WeaknessMatrix() {
   const { data, loading, error, isEmpty, reload } = useMatrixData<JudgeMetric[]>("/api/matrix/judges");
@@ -40,6 +40,7 @@ export function WeaknessMatrix() {
       rate: (a, b) => a.rate - b.rate,
       name: (a, b) => a.name.localeCompare(b.name),
       volatility: (a, b) => a.volatility - b.volatility,
+      authored: (a, b) => a.authoredTotal - b.authoredTotal,
     };
     return [...filtered].sort((a, b) => cmp[sortKey](a, b) * sortDir);
   }, [judges, minN, search, sortKey, sortDir]);
@@ -60,8 +61,8 @@ export function WeaknessMatrix() {
     }
   };
 
-  const Th = ({ label, k, className }: { label: string; k?: SortKey; className?: string }) => (
-    <th className={`px-2 py-1.5 text-left ${className ?? ""}`}>
+  const Th = ({ label, k, className, title }: { label: string; k?: SortKey; className?: string; title?: string }) => (
+    <th className={`px-2 py-1.5 text-left ${className ?? ""}`} title={title}>
       {k ? (
         <button
           onClick={() => toggleSort(k)}
@@ -135,6 +136,7 @@ export function WeaknessMatrix() {
                       <Th label="TAUX" k="rate" />
                       <Th label="IC95 WILSON" />
                       <Th label="Z" k="absZ" />
+                      <Th label="ÉCRITS" k="authored" className="text-right" title="Opinions rédigées (R7)" />
                       <Th label="PRÉSID." className="text-right" />
                       <Th label="VOLAT." k="volatility" />
                       <Th label="DIAGNOSTIC" />
@@ -167,6 +169,18 @@ export function WeaknessMatrix() {
                             tone={j.rate >= 0.7696 ? "red" : "emerald"} />
                         </td>
                         <td className="px-2 py-1.5"><ZBadge z={j.z} /></td>
+                        <td
+                          className="px-2 py-1.5 mono text-right"
+                          title={j.authoredTotal > 0 ? `${j.authoredExplicit} signée(s) · ${j.authoredPresumed} mémo(s) présupposé(s)${j.authoredAffirmedRate !== null ? ` · taux confirmé des écrits : ${(j.authoredAffirmedRate * 100).toFixed(1)} %` : ""}` : "aucune opinion attribuée"}
+                        >
+                          {j.authoredTotal > 0 ? (
+                            <span className={j.authoredExplicit > 0 ? "text-emerald-400" : "text-amber-400"}>
+                              {fmtNum(j.authoredTotal)}
+                            </span>
+                          ) : (
+                            <span className="text-muted-foreground">0</span>
+                          )}
+                        </td>
                         <td className="px-2 py-1.5 mono text-right">{fmtNum(j.presidingCount)}</td>
                         <td className="px-2 py-1.5 mono text-right">{j.volatility.toFixed(3)}</td>
                         <td className="px-2 py-1.5">
@@ -182,7 +196,7 @@ export function WeaknessMatrix() {
                     ))}
                     {rows.length === 0 ? (
                       <tr>
-                        <td colSpan={10} className="px-2 py-6 text-center mono text-muted-foreground">
+                        <td colSpan={11} className="px-2 py-6 text-center mono text-muted-foreground">
                           AUCUN JUGE NE CORRESPOND AU FILTRE — les filtres s'appliquent aux données réelles uniquement.
                         </td>
                       </tr>
@@ -203,6 +217,10 @@ export function WeaknessMatrix() {
         statistique, pas d'heuristique). La « vulnérabilité » d'une stratégie d'appel devant un juge
         donné se lit comme l'écart mesuré entre son taux observé et la base — jamais comme une
         prédiction déterministe. Volatilité = écart-type des taux annuels (années avec n ≥ 5).
+        Colonne ÉCRITS (règle R7) : opinions dont ce juge est l'AUTEUR — signature explicite
+        (« X, J. ») pour les opinions signées, président présupposé pour les mémos non signés
+        (convention NY LRB, distinction signalée par la couleur). À la différence de N BIN
+        (présence au panel), ÉCRITS isole la plume réelle.
       </MethodNote>
     </div>
   );

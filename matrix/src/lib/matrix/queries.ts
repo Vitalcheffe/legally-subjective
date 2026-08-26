@@ -137,6 +137,11 @@ export interface JudgeMetric {
   rehabHits: number;
   deviatesUp: boolean;
   deviatesDown: boolean;
+  // Authorship (R7) — opinions this judge actually WROTE (vs sat on).
+  authoredTotal: number;
+  authoredExplicit: number; // signed opinions
+  authoredPresumed: number; // unsigned memoranda, presiding presumed author
+  authoredAffirmedRate: number | null; // affirm rate of binary-eligible authored opinions
 }
 
 export async function getJudgeMetrics(): Promise<JudgeMetric[] | EmptyPayload> {
@@ -145,6 +150,7 @@ export async function getJudgeMetrics(): Promise<JudgeMetric[] | EmptyPayload> {
       id: true, year: true, department: true, binaryEligible: true,
       dispositionBinary: true, citationMentions: true,
       punitiveHits: true, rehabHits: true,
+      authorJudgeId: true, authorMethod: true,
     },
   });
   if (opinions.length === 0) return emptyPayload(EMPTY_MESSAGE);
@@ -164,6 +170,8 @@ export async function getJudgeMetrics(): Promise<JudgeMetric[] | EmptyPayload> {
       coJudges: Set<number>; deptCount: Map<string, number>;
       years: Map<number, { n: number; affirmed: number }>;
       citations: number[]; punitive: number; rehab: number;
+      authoredTotal: number; authoredExplicit: number; authoredPresumed: number;
+      authoredBinary: { n: number; affirmed: number };
     }
   >();
 
@@ -180,7 +188,23 @@ export async function getJudgeMetrics(): Promise<JudgeMetric[] | EmptyPayload> {
       opinionIds: new Set(), binaryIds: new Set(), affirmed: 0, presiding: 0,
       coJudges: new Set(), deptCount: new Map(), years: new Map(),
       citations: [], punitive: 0, rehab: 0,
+      authoredTotal: 0, authoredExplicit: 0, authoredPresumed: 0,
+      authoredBinary: { n: 0, affirmed: 0 },
     });
+  }
+
+  // R7 authorship aggregation (independent of panel seats)
+  for (const op of opinions) {
+    if (!op.authorJudgeId) continue;
+    const g = perJudge.get(op.authorJudgeId);
+    if (!g) continue;
+    g.authoredTotal += 1;
+    if (op.authorMethod === "explicit") g.authoredExplicit += 1;
+    if (op.authorMethod === "presumed-presiding") g.authoredPresumed += 1;
+    if (op.binaryEligible) {
+      g.authoredBinary.n += 1;
+      if (op.dispositionBinary === "affirmed") g.authoredBinary.affirmed += 1;
+    }
   }
 
   for (const s of seats) {
@@ -239,6 +263,11 @@ export async function getJudgeMetrics(): Promise<JudgeMetric[] | EmptyPayload> {
       rehabHits: g.rehab,
       deviatesUp: z >= 2 && nBinary >= 30,
       deviatesDown: z <= -2 && nBinary >= 30,
+      authoredTotal: g.authoredTotal,
+      authoredExplicit: g.authoredExplicit,
+      authoredPresumed: g.authoredPresumed,
+      authoredAffirmedRate:
+        g.authoredBinary.n > 0 ? g.authoredBinary.affirmed / g.authoredBinary.n : null,
     });
   }
   return metrics.sort((a, b) => b.nBinary - a.nBinary);

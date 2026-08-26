@@ -157,6 +157,93 @@ export function percentileRank(sample: number[], value: number): number {
   return (below / sample.length) * 100;
 }
 
+// ---------------------------------------------------------------------------
+// Experimental protocol statistics (Phase 4)
+// ---------------------------------------------------------------------------
+
+/**
+ * Brier score for probabilistic binary predictions.
+ * Each item: predicted probability of the observed event (0..1) and the
+ * realized outcome (0|1). Score = mean squared error; 0 = perfect,
+ * 0.25 = the constant-0.5 no-skill prediction.
+ */
+export function brierScore(
+  predictions: { p: number; outcome: 0 | 1 }[],
+): number {
+  if (predictions.length === 0) return 0;
+  return (
+    predictions.reduce((a, x) => a + (x.p - x.outcome) ** 2, 0) /
+    predictions.length
+  );
+}
+
+export interface CalibrationBucket {
+  // e.g. label "0.60–0.70": AI confidence in this range
+  label: string;
+  n: number;
+  meanConfidence: number; // mean predicted probability in the bucket
+  observedRate: number; // observed frequency of the predicted event
+}
+
+/**
+ * Calibration buckets — reliability diagram data. Predictions are bucketed
+ * by confidence into `k` equal-width bins over [0,1]; for each bin we report
+ * the mean confidence and the observed event frequency. A perfectly
+ * calibrated predictor has observedRate == meanConfidence in every bucket.
+ */
+export function calibrationBuckets(
+  predictions: { p: number; outcome: 0 | 1 }[],
+  k = 5,
+): CalibrationBucket[] {
+  const buckets: CalibrationBucket[] = [];
+  for (let b = 0; b < k; b++) {
+    const lo = b / k;
+    const hi = (b + 1) / k;
+    const inBucket = predictions.filter(
+      (x) => (b === 0 ? x.p >= lo : x.p > lo) && x.p <= hi,
+    );
+    const n = inBucket.length;
+    buckets.push({
+      label: `${lo.toFixed(2)}–${hi.toFixed(2)}`,
+      n,
+      meanConfidence: n > 0 ? mean(inBucket.map((x) => x.p)) : 0,
+      observedRate:
+        n > 0 ? inBucket.reduce((a, x) => a + x.outcome, 0) / n : 0,
+    });
+  }
+  return buckets;
+}
+
+export interface McNemarResult {
+  b: number; // AI wrong, baseline right
+  c: number; // AI right, baseline wrong
+  exactP: number; // two-sided exact binomial p-value on discordant pairs
+}
+
+/**
+ * McNemar exact test on paired classifier outcomes (AI vs baseline over the
+ * same real cases). b = discordant pairs where only the baseline is right,
+ * c = discordant pairs where only the AI is right. The exact two-sided
+ * p-value is 2 * P(X <= min(b,c)) with X ~ Binomial(b+c, 0.5), capped at 1.
+ */
+export function mcnemarExact(b: number, c: number): McNemarResult {
+  const n = b + c;
+  if (n === 0) return { b, c, exactP: 1 };
+  // P(X <= x) for X ~ Bin(n, 0.5): sum of C(n,k) for k <= x, over 2^n.
+  // C(n,k) is computed iteratively (exact integer values; the final ratio
+  // stays within float64 precision for the n sizes involved here).
+  const x = Math.min(b, c);
+  let cdf = 0;
+  let binom = 1; // C(n,0)
+  for (let k = 0; k <= x; k++) {
+    if (k > 0) binom = (binom * (n - k + 1)) / k;
+    cdf += binom;
+  }
+  const pLower = cdf / 2 ** n;
+  return { b, c, exactP: Math.min(1, 2 * pLower) };
+}
+
+
 export function clamp(v: number, lo: number, hi: number): number {
   return Math.max(lo, Math.min(hi, v));
 }

@@ -40,6 +40,9 @@ const DeviationRadar = dynamic(() => import("./DeviationRadar").then((m) => m.De
 const ComparisonShield = dynamic(() => import("./ComparisonShield").then((m) => m.ComparisonShield), {
   loading: () => <TerminalLoader />,
 });
+const ExperimentLab = dynamic(() => import("./ExperimentLab").then((m) => m.ExperimentLab), {
+  loading: () => <TerminalLoader />,
+});
 
 const MODULES = [
   { id: "overview", code: "00", label: "SYNOPTIQUE", hint: "état du corpus réel" },
@@ -52,6 +55,7 @@ const MODULES = [
   { id: "timeline", code: "07", label: "CHRONOLOGIE COGNITIVE", hint: "télémétrie temporelle" },
   { id: "radar", code: "08", label: "RADAR DE DÉVIATION", hint: "forme comportementale" },
   { id: "shield", code: "09", label: "BOUCLIER HUMAIN vs IA", hint: "sessions multi-agents LLM" },
+  { id: "lab", code: "10", label: "LABORATOIRE EXPÉRIMENTAL", hint: "protocole zero-shot · Brier · McNemar" },
 ] as const;
 
 function LiveClock() {
@@ -154,6 +158,7 @@ export function Console() {
             {active.id === "timeline" ? <CognitiveTimeline /> : null}
             {active.id === "radar" ? <DeviationRadar /> : null}
             {active.id === "shield" ? <ComparisonShield /> : null}
+            {active.id === "lab" ? <ExperimentLab /> : null}
           </motion.div>
         </AnimatePresence>
       </main>
