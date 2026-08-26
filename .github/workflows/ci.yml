@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   verify:
@@ -15,5 +16,7 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Golden regression test (the sample is the invariant)
+        run: python scripts/tests/test_golden_sample.py
       - name: Validate sample data integrity
-        run: python scripts/verify_data.py
+        run: python scripts/verify_data.py --mode sample

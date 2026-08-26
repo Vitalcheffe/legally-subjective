@@ -20,10 +20,19 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from collections import Counter
+from pathlib import Path
 from typing import Any
 
 from lib.kernel import Block, Context
+
+_DEPT_RX = re.compile(
+    r"(?i)appellate division[,\s]+"
+    r"(first|second|third|fourth|1st|2d|2nd|3d|3rd|4th) department")
+_DEPT_NORM = {"1st": "1st", "first": "1st", "2d": "2nd", "2nd": "2nd",
+              "second": "2nd", "3d": "3rd", "3rd": "3rd",
+              "third": "3rd", "4th": "4th", "fourth": "4th"}
 
 
 def wilson_interval(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
@@ -37,11 +46,29 @@ def wilson_interval(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
     return (max(0.0, center - half), min(1.0, center + half))
 
 
-def _department(court_id: str) -> str:
-    """nyappdiv_1 → 1st Dept, …"""
-    mapping = {"nyappdiv_1": "1st", "nyappdiv_2": "2nd",
-               "nyappdiv_3": "3rd", "nyappdiv_4": "4th"}
-    return mapping.get(court_id or "", "unknown")
+def _department(doc_path: Path) -> str:
+    """Department from the opinion's own header ('Appellate Division,
+    Second Department') — the search metadata only carries the parent
+    court id. Reads the source document; unknown when unreadable."""
+    try:
+        text = doc_path.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return "unknown"
+    m = _DEPT_RX.search(text)
+    if not m:
+        return "unknown"
+    return _DEPT_NORM[m.group(1).lower()]
+
+
+def _case_class(case_name: str) -> str:
+    """Population composition: NY criminal appeals are 'People v. …';
+    'Matter of …' rows are Article 78 / parole-adjacent matters that
+    matched the query — counted separately, never silently mixed."""
+    if (case_name or "").startswith("People v"):
+        return "people_v"
+    if (case_name or "").startswith("Matter of"):
+        return "matter_of"
+    return "other"
 
 
 def _run(ctx: Context, params: dict[str, Any]) -> dict[str, Any]:
@@ -55,11 +82,36 @@ def _run(ctx: Context, params: dict[str, Any]) -> dict[str, Any]:
         "dataset": mode,
         "records": len(records),
         "populations": {},
+        "composition": {},
         "disposition_distribution": {},
         "binary": {},
         "by_year": {},
         "by_department": {},
+        "department_method": ("regex 'Appellate Division, N Department' "
+                              "over the opinion header (search metadata "
+                              "only carries the parent court id)"),
     }
+
+    composition = Counter(_case_class(r.get("case_name", ""))
+                          for r in records)
+    analysis["composition"] = {k: composition.get(k, 0)
+                               for k in ("people_v", "matter_of", "other")}
+
+    # department per record: the raw case records know the document
+    # paths (the structured provenance deliberately does not duplicate
+    # them — the schema is frozen by the golden test)
+    paths = (ctx.config["paths"] if mode == "sample"
+             else ctx.config["paths_corpus"])
+    raw_cases_path = ctx.path(paths["cases_jsonl"])
+    doc_paths: dict[str, Path] = {}
+    if raw_cases_path.exists():
+        for line in raw_cases_path.open(encoding="utf-8"):
+            raw = json.loads(line)
+            doc_paths[f"{raw['court_id']}-{raw['cluster_id']}"] = \
+                ctx.path(raw["document_path"])
+    for r in records:
+        r["_dept"] = _department(doc_paths.get(r["case_id"],
+                                                 Path("/nonexistent")))
 
     extracted = [r for r in records
                  if r["disposition"].get("primary") is not None]
@@ -95,13 +147,11 @@ def _run(ctx: Context, params: dict[str, Any]) -> dict[str, Any]:
     }
 
     # by year and by department (binary rates)
-    for key, extract_key in (("by_year", "window"),
-                             ("by_department", None)):
+    for key, key_fn in (("by_year", lambda r: r.get("window") or "?"),
+                        ("by_department", lambda r: r["_dept"])):
         groups: dict[str, list[dict[str, Any]]] = {}
         for r in binary:
-            g = r[extract_key] if extract_key else \
-                _department(r["court"]["id"])
-            groups.setdefault(g, []).append(r)
+            groups.setdefault(key_fn(r), []).append(r)
         target = analysis[key]
         for g in sorted(groups):
             rows = groups[g]
