@@ -199,7 +199,11 @@ Dept formats omitted the presiding judge from the panel list; 494 seats
 healed from the official evidence lines) and **R7** (per-opinion author
 attribution: explicit signatures cross-validated against panel
 membership, presumed-presiding memoranda surfaced as such — 87 %
-coverage). Validation run n=5: 5/5 blind agreements, Brier 0.004.
+coverage). First measured result (n=20 seed=42, 16 scored after an
+honestly-archived rate-limit episode + replay): **13/16 = 81.2 % blind
+agreement vs 68.8 % for the always-affirm baseline** — the engine beats
+the naive predictor by 12.4 points and never falsely affirmed; Brier
+0.150 vs 0.215 (exact McNemar p = 0.73, n too small for significance).
 
 ## Roadmap
 

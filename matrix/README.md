@@ -99,9 +99,17 @@ The console is now a laboratory, not just an observatory:
   button re-queues them once the window resets.
 
 First validation run (n=5, seed 42): 5/5 agreement, Brier 0.004 (vs 0.160
-for the base-rate predictor). First n=20 run hit the engine rate limit
-after 5 sessions — 15 verbatim 429 errors archived, replayable. Both
-behaviors are by design: no data is ever invented.
+for the base-rate predictor). The official run (n=20, seed 42) hit the
+engine rate limit mid-way — 15 verbatim 429 errors archived, then replayed
+through the REPLAY mechanism once the quota window reset. Final result on
+the 16 scored cases: **13/16 = 81.2 % blind agreement with the human
+panel** (Wilson [57.0 % ; 93.4 %]) vs **68.8 %** for the always-affirm
+baseline — the multi-agent engine beats the naive predictor by 12.4
+points, with a distinctive error profile: it NEVER falsely affirmed (0
+false affirmations); all 3 disagreements are the AI reversing where the
+humans affirmed. Brier 0.150 vs 0.215 for the base-rate predictor. Exact
+McNemar vs baseline: p = 0.73 (n still too small for significance — the
+protocol scales to n=40, quota permitting).
 
 ## Quickstart
 
