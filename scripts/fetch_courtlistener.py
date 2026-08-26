@@ -99,7 +99,6 @@ class HttpClient:
         *,
         purpose: str,
         params: dict[str, Any] | None = None,
-        as_json: bool = False,
     ) -> requests.Response:
         """GET with retry on 429/5xx/network errors. Logs every attempt."""
         last_error: Exception | None = None
@@ -145,15 +144,51 @@ class HttpClient:
 
 
 def pick_opinion(result: dict[str, Any]) -> dict[str, Any] | None:
-    """Choose the opinion entry whose official document we download."""
+    """Choose the opinion entry we can obtain a document for.
+
+    Two channels, in order of preference:
+      1. the official source URL (`download_url`) — NY State Law Reporting
+         Bureau slip opinions. The state migrated its domain from
+         courts.state.ny.us to nycourts.gov; old links are rewritten.
+      2. CourtListener's public copy (`local_path` on
+         storage.courtlistener.com).
+    """
     opinions = result.get("opinions") or []
-    with_url = [o for o in opinions if o.get("download_url")]
+    with_url = [o for o in opinions
+                if o.get("download_url") or o.get("local_path")]
     if not with_url:
         return None
     for op in with_url:
-        if op.get("type") == "combined-opinion":
+        if has_official_url(op) and op.get("type") in ("combined-opinion",
+                                                       "lead-opinion"):
+            return op
+    for op in with_url:
+        if has_official_url(op):
             return op
     return with_url[0]
+
+
+def has_official_url(op: dict[str, Any]) -> bool:
+    return bool(op.get("download_url"))
+
+
+def resolve_document_url(op: dict[str, Any]) -> tuple[str, str]:
+    """Return (resolved_url, channel). channel is 'official' or
+    'courtlistener-storage'."""
+    url = op.get("download_url")
+    if url:
+        # NY courts domain migration: the same paths are served on the
+        # new domain over https; the legacy domain answers 403.
+        url = url.replace("http://www.courts.state.ny.us/",
+                          "https://www.nycourts.gov/")
+        url = url.replace("http://www.nycourts.gov/",
+                          "https://www.nycourts.gov/")
+        return url, "official"
+    local_path = op.get("local_path")
+    if local_path:
+        return f"https://storage.courtlistener.com/{local_path}", \
+            "courtlistener-storage"
+    raise RuntimeError("opinion has neither download_url nor local_path")
 
 
 def criminal_gate(text: str, keywords: list[str],
@@ -211,7 +246,7 @@ def main() -> int:
         print(f"[{label}] searching {params['court']} "
               f"{window['filed_after']} → {window['filed_before']}")
         data = client.get(cl_cfg["search_url"], purpose=f"search:{label}",
-                          params=params, as_json=True).json()
+                          params=params).json()
         results = data.get("results", [])
         print(f"    {data.get('count')} matches, page of {len(results)}")
 
@@ -233,8 +268,23 @@ def main() -> int:
 
             print(f"    downloading {result.get('caseName')} "
                   f"({result.get('dateFiled')})")
-            doc = client.get(op["download_url"],
-                             purpose=f"document:{cid}")
+            doc_url, channel = resolve_document_url(op)
+            try:
+                doc = client.get(doc_url, purpose=f"document:{cid}")
+            except RuntimeError as exc:
+                # some legacy official URLs are dead (403/404): fall back
+                # to CourtListener's public copy when it exists.
+                lp = op.get("local_path")
+                if not lp:
+                    print(f"    official source failed and no copy "
+                          f"({exc}); next candidate")
+                    continue
+                doc_url = f"https://storage.courtlistener.com/{lp}"
+                channel = "courtlistener-storage"
+                print("    official source failed — using CourtListener "
+                      "public copy")
+                doc = client.get(doc_url,
+                                 purpose=f"document:{cid}:storage")
             ctype = doc.headers.get("Content-Type", "")
             is_html = "html" in ctype.lower() or doc.content[:64].lstrip()[:1] == b"<"
             suffix = ".html" if is_html else ".pdf"
@@ -259,7 +309,9 @@ def main() -> int:
                 "citations": result.get("citation") or [],
                 "courtlistener_url":
                     "https://www.courtlistener.com" + result.get("absolute_url", ""),
-                "official_source_url": op["download_url"],
+                "official_source_url": op.get("download_url"),
+                "document_channel": channel,
+                "document_url_used": doc_url,
                 "document_path": str(doc_path.relative_to(REPO_ROOT)),
                 "document_format": "html" if is_html else "pdf",
                 "document_sha256":

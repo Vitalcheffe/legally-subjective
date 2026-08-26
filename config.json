@@ -18,11 +18,11 @@
     "criminal_keywords": ["judgment of conviction", "convicted", "defendant"],
     "require_all_keywords": false,
     "windows": [
-      {"label": "2011", "filed_after": "2011-01-01", "filed_before": "2011-12-31", "take": 1},
-      {"label": "2013", "filed_after": "2013-01-01", "filed_before": "2013-12-31", "take": 1},
-      {"label": "2015", "filed_after": "2015-01-01", "filed_before": "2015-12-31", "take": 1},
+      {"label": "2018", "filed_after": "2018-01-01", "filed_before": "2018-12-31", "take": 1},
+      {"label": "2016", "filed_after": "2016-01-01", "filed_before": "2016-12-31", "take": 1},
       {"label": "2017", "filed_after": "2017-01-01", "filed_before": "2017-12-31", "take": 1},
-      {"label": "2019", "filed_after": "2019-01-01", "filed_before": "2019-12-31", "take": 1}
+      {"label": "2019", "filed_after": "2019-01-01", "filed_before": "2019-12-31", "take": 1},
+      {"label": "2020", "filed_after": "2020-01-01", "filed_before": "2020-12-31", "take": 1}
     ]
   },
   "paths": {
@@ -30,5 +30,20 @@
     "documents_dir": "data/sample/documents",
     "fetch_log": "data/sample/FETCH_LOG.json",
     "checkpoint": "data/sample/.checkpoint.json"
+  },
+  "preprocess": {
+    "structured_jsonl": "data/structured/sample_structured.jsonl",
+    "max_text_chars": 9000,
+    "llm": {
+      "base_url_env": "LLM_BASE_URL",
+      "api_key_env": "LLM_API_KEY",
+      "model_env": "LLM_MODEL",
+      "default_base_url": "https://api.openai.com/v1",
+      "default_model": "gpt-4o-mini",
+      "temperature": 0.0,
+      "max_output_tokens": 700,
+      "timeout_seconds": 90,
+      "max_retries": 3
+    }
   }
 }
