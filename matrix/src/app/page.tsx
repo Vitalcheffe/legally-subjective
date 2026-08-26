@@ -1,5 +1,5 @@
-import { Console } from "@/components/analytics/Console";
+import { MailApp } from "@/components/mail/MailApp";
 
 export default function Home() {
-  return <Console />;
+  return <MailApp />;
 }

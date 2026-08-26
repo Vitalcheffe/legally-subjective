@@ -21,12 +21,13 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Behavioral Matrix — Legally Subjective",
+  title: "INFINITUM — La Boîte de la Cour",
   description:
-    "Plateforme d'analyse décisionnelle judiciaire : 1 387 appels criminels réels (NY Appellate Division, 2015-2023), télémétrie comportementale, stylométrie, inférence bootstrap Monte-Carlo et arbitrage multi-agents humain contre IA. Aucune donnée fictive.",
+    "1 387 décisions criminelles réelles de la Division d'appel de New York (2015-2023), présentées comme une messagerie : panels, taux de confirmation, signaux statistiques, délibérations multi-agents archivées. Zéro donnée fabriquée.",
   keywords: [
     "judicial analytics", "behavioral matrix", "legal telemetry",
     "NY Appellate Division", "CourtListener", "stylometry", "Monte-Carlo",
+    "INFINITUM", "boîte de la cour",
   ],
   authors: [{ name: "VitalCheffe" }],
 };

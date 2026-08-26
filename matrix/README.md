@@ -1,13 +1,17 @@
-# Behavioral Matrix — cognitive analysis console
+# Behavioral Matrix — INFINITUM public console & mailbox
 
-> **Console d'analyse cognitive judiciaire** over the legally-subjective
-> corpus: 1,387 real NY Appellate Division criminal appeals (2015–2023),
-> collected and validated by the Phase 2 pipeline.
+> **Two faces, one real index.** The application now opens on
+> **INFINITUM — « La Boîte de la Cour »**, a public jmail-system
+> interface (the Epstein-files Gmail archive pattern) presenting the
+> whole corpus as a mailbox; the eleven-module analysis console remains
+> one click away (the « Laboratoire » switch). Underneath both: the
+> legally-subjective corpus — 1,387 real NY Appellate Division criminal
+> appeals (2015–2023), collected and validated by the Phase 2 pipeline.
 
 A Next.js 16 + Prisma/SQLite + three.js/WebGL + Recharts application.
-French-language mission-control UI, aerospace-terminal aesthetic, eleven
-modules of real-data telemetry — including a full experimental protocol
-engine (Phase 4).
+French-language institutional UI (light Codex theme — paper, ink navy,
+verdict palette reserved for data), eleven modules of real-data
+ telemetry — including a full experimental protocol engine (Phase 4).
 
 ## The zero-mock contract
 
@@ -34,6 +38,44 @@ This console is structurally incapable of displaying fabricated data:
   exact statistics (Wilson, Brier, calibration buckets, exact McNemar).
   Engine rate-limit failures are retried with backoff, then archived
   verbatim and re-playable — never faked.
+
+## Phase 6 — INFINITUM Mail, the public interface (« La Boîte de la Cour »)
+
+The public lands on a Gmail-style mailbox of the court itself (the
+[jmail](https://jmail.world) system, transposed to judicial analytics):
+
+- **Every opinion is an email**: From = the panel (`Ceresia, J. (prés.)
+  +2`), Subject = the case, date = the real filing date, body = the
+  official recital verbatim + disposition + R7 authorship + panel
+  metrics + cited authorities + archived multi-agent deliberations +
+  stylometric counters. An attachment chip links to the official
+  source on CourtListener (cluster id of the case).
+- **Labels = real filters**: departments (1st–4th), outcomes (confirmed /
+  reversed), authorship nature (signed / presiding memoranda / per
+  curiam), and « Signaux statistiques » — opinions whose presiding judge
+  or attributed author deviates from the corpus baseline (|z| ≥ 2,
+  n ≥ 30).
+- **Contacts = the judges**: a directory of the 149 real identities
+  (signature-parse artifacts like "Memorandum Order …" excluded from
+  the public list, preserved in the scientific index — the exclusion is
+  stated in the UI). Clicking a contact filters the mailbox on their
+  decisions.
+- **Rapports de la Matrice** = system digests computed live from the
+  index: welcome/charter, the blind-agreement protocol result, the
+  inter-department gap, the severity calendar, the corpus stylometry.
+  No number is hard-coded — every figure is recomputed at request time.
+- **The only interactive surface: « Composer »** — a public sandbox.
+  A visitor pastes a recital (≥ 120 chars, same threshold as the
+  scientific protocol); the REAL three-agent engine (Prosecutor →
+  Defense → AI-Judge) deliberates on it. The analysis is **ephemeral**:
+  nothing is written to the archive, the corpus is never modified, no
+  model is touched. Failures are reported verbatim, never simulated.
+- **Local stars** (« Suivis ») live in the visitor's browser only — the
+  server just filters the mailbox by the ids the client sends.
+
+The lab console (modules 00–10) stays reachable through the
+« Laboratoire » switch in the top bar — the director's tested view,
+untouched.
 
 ## Modules
 
