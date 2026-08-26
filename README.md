@@ -172,7 +172,7 @@ channel, cursor pagination, window amendment) and new limitations:
 The committed datasets (5-case sample + 1,387-case corpus) are fully
 attributed, with per-request provenance logs.
 
-## The Behavioral Matrix console (Phase 3)
+## The Behavioral Matrix console (Phases 3–4)
 
 `matrix/` is the analysis layer: a French-language mission-control
 console (aerospace-terminal aesthetic) that turns the Phase 2 corpus
@@ -188,6 +188,19 @@ by `matrix/scripts/ingest.ts`, which cross-validates itself against
 `data/analysis/base_rate_corpus.json` on every run and refuses to start
 on a mismatch. See `matrix/README.md`.
 
+Phase 4 turned the console into a laboratory: **module 10 (Laboratoire
+expérimental)** runs a zero-shot protocol — seeded stratified sampling
+(613-case eligible pool, proportional over department × outcome), blind
+multi-agent adjudication (the human decision is never in the prompt),
+and exact scoring (Wilson CI, Brier, reliability calibration, exact
+McNemar vs the always-affirm baseline). Ingestion gained two rules:
+**R1b** (panel completion — a Phase 2 gap was discovered: the 1st/4th
+Dept formats omitted the presiding judge from the panel list; 494 seats
+healed from the official evidence lines) and **R7** (per-opinion author
+attribution: explicit signatures cross-validated against panel
+membership, presumed-presiding memoranda surfaced as such — 87 %
+coverage). Validation run n=5: 5/5 blind agreements, Brier 0.004.
+
 ## Roadmap
 
 - [x] Phase 0 — precedents, protocol, power analysis, feasibility
@@ -196,9 +209,15 @@ on a mismatch. See `matrix/README.md`.
       validation instrument ready (human review: pending, honestly)
 - [ ] Phase 2b — full-corpus LLM label verification + human review of
       the 30-case sample
-- [x] Phase 3 (console) — Behavioral Matrix: ten modules of real-data
+- [x] Phase 3 (console) — Behavioral Matrix: real-data
       telemetry over the corpus (see `matrix/`)
-- [ ] Phase 3 (experiment) — Experiment A (zero-shot) + prompt calibration
+- [x] Phase 3/4 (experiment) — zero-shot protocol engine shipped as
+      module 10: seeded stratified sampling, blind multi-agent
+      adjudication, Wilson/Brier/calibration/McNemar scoring, R1b panel
+      healing + R7 author attribution; first runs archived (n=5: 5/5
+      agreement; n=20: engine rate-limit honestly archived, replayable)
+- [ ] Phase 3 (experiment, ext) — prompt calibration + full-n replay
+      once the engine quota allows
 - [ ] Phase 4 — Experiment B (QLoRA fine-tuning on a free Colab T4)
 - [ ] Phase 5 — judge profiles, cross-judge counterfactual, bias analysis
 - [ ] Phase 6 — public site, reproducible notebook, preprint
