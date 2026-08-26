@@ -53,6 +53,9 @@ scripts/
   verify_data.py           validation gate CLI (also runs in CI)
   tests/                   golden regression test (the sample invariant)
   planning/power_analysis.py   McNemar power analysis (seeded)
+matrix/          the Behavioral Matrix console (Phase 3): Next.js 16 +
+                 Prisma/SQLite + WebGL — ten modules of real-data
+                 telemetry over the corpus, zero mock by contract
 data/
   sample/        5 real NY Appellate Division criminal appeals —
                  the hand-verified golden reference
@@ -169,6 +172,22 @@ channel, cursor pagination, window amendment) and new limitations:
 The committed datasets (5-case sample + 1,387-case corpus) are fully
 attributed, with per-request provenance logs.
 
+## The Behavioral Matrix console (Phase 3)
+
+`matrix/` is the analysis layer: a French-language mission-control
+console (aerospace-terminal aesthetic) that turns the Phase 2 corpus
+into live telemetry — judge constellations in WebGL, per-judge
+deviation matrices with Wilson CIs and z-scores, bias heatmaps by
+department and year, a seeded Monte-Carlo verdict simulator over the
+real binary outcomes, stylometric spectra computed on the full official
+texts, a precedent co-citation mesh, decision timelines, behavioral
+radars, and a human-vs-neutral-AI comparison shield whose multi-agent
+sessions make real LLM calls on the official case recitals. The console
+inherits the zero-mock contract: its SQLite index is built exclusively
+by `matrix/scripts/ingest.ts`, which cross-validates itself against
+`data/analysis/base_rate_corpus.json` on every run and refuses to start
+on a mismatch. See `matrix/README.md`.
+
 ## Roadmap
 
 - [x] Phase 0 — precedents, protocol, power analysis, feasibility
@@ -177,7 +196,9 @@ attributed, with per-request provenance logs.
       validation instrument ready (human review: pending, honestly)
 - [ ] Phase 2b — full-corpus LLM label verification + human review of
       the 30-case sample
-- [ ] Phase 3 — Experiment A (zero-shot) + prompt calibration
+- [x] Phase 3 (console) — Behavioral Matrix: ten modules of real-data
+      telemetry over the corpus (see `matrix/`)
+- [ ] Phase 3 (experiment) — Experiment A (zero-shot) + prompt calibration
 - [ ] Phase 4 — Experiment B (QLoRA fine-tuning on a free Colab T4)
 - [ ] Phase 5 — judge profiles, cross-judge counterfactual, bias analysis
 - [ ] Phase 6 — public site, reproducible notebook, preprint
