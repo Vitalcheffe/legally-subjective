@@ -11,13 +11,18 @@ when the simulated judge changes.
 > exploratory, not prescriptive. Every public page of this project carries
 > this disclaimer.
 
-**Status: Phase 2 (dataset at scale).** The data pipeline is a
-construction set (kernel + blocks, see `docs/vision.md`): source,
-extract, validate, analyze. Over a thousand real criminal appeals are
-collected, structured with evidence, and validated; the disposition
-base rate is measured with confidence intervals. No model has been
-run yet — no accuracy number exists, and none will be claimed until a
-script reproduces it.
+**Status: Phase 7 (delivered — corpus, laboratory, public interface, hardening).**
+The research core is built and measured: the Phase 2 corpus (1,387 real
+criminal appeals), the Phase 3–4 Behavioral Matrix laboratory (eleven
+modules, zero-mock by contract, first blind result **13/16 = 81.2 %
+agreement vs the 68.8 % always-affirm baseline**), the Phase 5 institutional
+light theme, and since Phase 6 a public read-only interface — **INFINITUM
+Mail, « La Boîte de la Cour »** (every decision reads as an email, judges
+are contacts, published findings are system reports). Phase 7 secured the
+record: the verbatim multi-agent sessions are archived and versioned
+in-repo (`data/archive/science/`), the public sandbox is rate-limited, and
+every dossier is shareable by public deep link. Human review of the
+30-case sample is still pending — honestly.
 
 ## Research questions
 
@@ -53,8 +58,9 @@ scripts/
   verify_data.py           validation gate CLI (also runs in CI)
   tests/                   golden regression test (the sample invariant)
   planning/power_analysis.py   McNemar power analysis (seeded)
-matrix/          the Behavioral Matrix console (Phase 3): Next.js 16 +
-                 Prisma/SQLite + WebGL — ten modules of real-data
+matrix/          the Behavioral Matrix laboratory + INFINITUM Mail, the
+                 public interface (Phases 3–6): Next.js 16 +
+                 Prisma/SQLite + WebGL — eleven modules of real-data
                  telemetry over the corpus, zero mock by contract
 data/
   sample/        5 real NY Appellate Division criminal appeals —
@@ -63,6 +69,11 @@ data/
                  with official documents, sha256 and a full fetch log
   structured/    evidence-based structured records (sample + corpus)
   analysis/      base-rate and other measurements, with CIs
+  archive/       the P0 science archive (Phase 7): every multi-agent
+                 session VERBATIM (40 runs, failures included), the
+                 experiment protocols and ledgers — JSONL + sha256
+                 manifest, versioned in git because the live SQLite
+                 index is gitignored
   validation/    human-review instruments (R10): samples + worksheets
 config.json      all pipeline parameters and named pipelines (no
                  hardcoded data)
@@ -172,21 +183,21 @@ channel, cursor pagination, window amendment) and new limitations:
 The committed datasets (5-case sample + 1,387-case corpus) are fully
 attributed, with per-request provenance logs.
 
-## The Behavioral Matrix console (Phases 3–4)
+## The Behavioral Matrix laboratory (Phases 3–7)
 
-`matrix/` is the analysis layer: a French-language mission-control
-console (aerospace-terminal aesthetic) that turns the Phase 2 corpus
-into live telemetry — judge constellations in WebGL, per-judge
-deviation matrices with Wilson CIs and z-scores, bias heatmaps by
-department and year, a seeded Monte-Carlo verdict simulator over the
-real binary outcomes, stylometric spectra computed on the full official
-texts, a precedent co-citation mesh, decision timelines, behavioral
-radars, and a human-vs-neutral-AI comparison shield whose multi-agent
-sessions make real LLM calls on the official case recitals. The console
-inherits the zero-mock contract: its SQLite index is built exclusively
-by `matrix/scripts/ingest.ts`, which cross-validates itself against
-`data/analysis/base_rate_corpus.json` on every run and refuses to start
-on a mismatch. See `matrix/README.md`.
+`matrix/` is the analysis layer: a French-language institutional console
+(warm ivory paper, ink navy — the « Codex » light theme of Phase 5) that
+turns the Phase 2 corpus into live telemetry — judge constellations in
+WebGL, per-judge deviation matrices with Wilson CIs and z-scores, bias
+heatmaps by department and year, a seeded Monte-Carlo verdict simulator
+over the real binary outcomes, stylometric spectra computed on the full
+official texts, a precedent co-citation mesh, decision timelines,
+behavioral radars, and a human-vs-neutral-AI comparison shield whose
+multi-agent sessions make real LLM calls on the official case recitals.
+The console inherits the zero-mock contract: its SQLite index is built
+exclusively by `matrix/scripts/ingest.ts`, which cross-validates itself
+against `data/analysis/base_rate_corpus.json` on every run and refuses to
+start on a mismatch. See `matrix/README.md`.
 
 Phase 4 turned the console into a laboratory: **module 10 (Laboratoire
 expérimental)** runs a zero-shot protocol — seeded stratified sampling
@@ -205,6 +216,25 @@ agreement vs 68.8 % for the always-affirm baseline** — the engine beats
 the naive predictor by 12.4 points and never falsely affirmed; Brier
 0.150 vs 0.215 (exact McNemar p = 0.73, n too small for significance).
 
+Phase 6 gave the project its public face: **INFINITUM Mail — « La Boîte
+de la Cour »** (the jmail system applied to the judicial record). The
+visitor reads the 1,387 real decisions as an email inbox: panels are
+senders, verdicts are labels, judges are contacts, and the measured
+findings arrive as system reports. The interface is a finished project
+on display — read-only, no button re-runs any analysis. The single
+interactive surface is « Composer », the public sandbox: it runs the
+same real three-agent deliberation on a user-supplied sample,
+ephemerally (zero DB writes, corpus untouched), and reports failures
+verbatim.
+
+Phase 7 hardened the whole: the public sandbox is rate-limited per
+visitor (sliding window, explicit 429 with the exact wait time — nothing
+queued or simulated), every dossier is shareable by public deep link
+(`?dossier=nyappdiv-…` opens the real case in the reading pane), and the
+scientific record itself is now versioned in git — `data/archive/science/`
+carries every multi-agent session verbatim (the 429 failures included),
+with sha256 manifest, because the live SQLite index is gitignored.
+
 ## Roadmap
 
 - [x] Phase 0 — precedents, protocol, power analysis, feasibility
@@ -220,11 +250,21 @@ the naive predictor by 12.4 points and never falsely affirmed; Brier
       adjudication, Wilson/Brier/calibration/McNemar scoring, R1b panel
       healing + R7 author attribution; first runs archived (n=5: 5/5
       agreement; n=20: engine rate-limit honestly archived, replayable)
+- [x] Phase 5 (delivery) — institutional light theme (« Codex »): ivory
+      paper, ink navy, verdict semantics reserved for data
+- [x] Phase 6 (delivery) — INFINITUM Mail, the public interface (jmail
+      system): read-only mailbox over the 1,387 real decisions, judges as
+      contacts, findings as system reports; ephemeral public sandbox as
+      the only interactive surface
+- [x] Phase 7 (delivery) — hardening: science archive versioned in-repo
+      (`data/archive/science/`), public sandbox rate-limited per visitor,
+      shareable dossier deep links
 - [ ] Phase 3 (experiment, ext) — prompt calibration + full-n replay
       once the engine quota allows
 - [ ] Phase 4 — Experiment B (QLoRA fine-tuning on a free Colab T4)
 - [ ] Phase 5 — judge profiles, cross-judge counterfactual, bias analysis
-- [ ] Phase 6 — public site, reproducible notebook, preprint
+- [ ] Phase 6 — reproducible notebook, preprint (the public-site half of
+      this line shipped early as the Phase 6 delivery above)
 - [ ] beyond — the extension slots of `docs/vision.md`: OCR unlocks
       2011–2014, one source brick per new jurisdiction, one extractor
       pattern per new field. The project is designed never to finish.
@@ -282,19 +322,22 @@ journalisées), extraits avec preuve par champ, validés par la CI.
 La mesure exigée par le protocole est faite : **taux de confirmation
 77,0 % [74,4 % ; 79,3 %]**, et un écart brut de 25,6 points entre le
 2e et le 4e département (62,4 % contre 88,0 % de confirmations) — la
-première mesure concrète de la « loterie des juges ». La revue humaine
-de 30 cas (échantillon stratifié, contre-vérifié par LLM à 92 %) est
-prête et en attente — aucun chiffre ne prétend décrire le comportement
-des juges avant elle. Le pipeline est devenu un jeu de construction
-(noyau + briques auto-découvertes, `docs/vision.md`) conçu pour ne
-jamais être fini : OCR des années scannées, autres États, autres
-champs, expériences A/B/C/D — chaque extension est une brique. Aucun
-modèle n'a encore été entraîné : aucun chiffre de performance n'est
-affiché, et il n'y en aura pas avant qu'un script puisse le
-reproduire. Protocole complet, calculs de puissance et faisabilité du
-fine-tuning (Colab gratuit) : `docs/`. Manifeste qualité :
-`docs/MANIFEST.md`. Rapports : `docs/phase1_report.md`,
-`docs/phase2_report.md`.
+première mesure concrète de la « loterie des juges ». Le pipeline est
+devenu un jeu de construction (noyau + briques auto-découvertes,
+`docs/vision.md`) conçu pour ne jamais être fini. La Phase 4 a livré le
+laboratoire complet et le premier résultat à l'aveugle : **13/16 = 81,2 %
+d'accord** (contre 68,8 % pour la baseline « toujours confirmer »),
+sans aucune fausse confirmation. Depuis la Phase 6, le projet a un visage
+public — **INFINITUM Mail, « La Boîte de la Cour »** : les 1 387 décisions
+se lisent comme une messagerie, en lecture seule, seul « Composer »
+lançant une vraie délibération éphémère. La Phase 7 a sécurisé le registre
+scientifique (sessions verbatim versionnées dans `data/archive/science/`)
+et durci l'accès public (limite de débit explicite, liens de partage).
+La revue humaine de 30 cas reste en attente — aucun chiffre ne prétend
+décrire le comportement des juges avant elle. Protocole complet, calculs
+de puissance et faisabilité du fine-tuning (Colab gratuit) : `docs/`.
+Manifeste qualité : `docs/MANIFEST.md`. Rapports : `docs/phase1_report.md`,
+`docs/phase2_report.md`, `matrix/README.md`.
 
 *Avertissement : simulation par IA à but de recherche — ni conseil juridique,
 ni outil de prédiction pour de vraies affaires.*

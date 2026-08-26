@@ -70,12 +70,39 @@ The public lands on a Gmail-style mailbox of the court itself (the
   Defense → AI-Judge) deliberates on it. The analysis is **ephemeral**:
   nothing is written to the archive, the corpus is never modified, no
   model is touched. Failures are reported verbatim, never simulated.
+  Phase 7: the sandbox is **rate-limited per visitor** (sliding window,
+  5 sessions / 10 min) — a blocked request gets an explicit 429 with
+  the exact wait time; nothing is queued or silently substituted,
+  because the quota it protects is the science's own.
 - **Local stars** (« Suivis ») live in the visitor's browser only — the
   server just filters the mailbox by the ids the client sends.
+- **Shareable dossiers** (Phase 7): every real case carries a « Partager
+  le dossier » button that copies a public deep link
+  (`?dossier=nyappdiv-…`); opening it lands directly on that case in the
+  reading pane — same real data, same read-only contract.
 
 The lab console (modules 00–10) stays reachable through the
 « Laboratoire » switch in the top bar — the director's tested view,
 untouched.
+
+## Phase 7 — hardening the record and the door
+
+Two moves, straight from the general report's marching order
+(sécuriser, then durcir):
+
+1. **The science archive is now versioned in git.** The live SQLite
+   index is gitignored, which made every verbatim multi-agent session
+   (the 429 failures included) exist in exactly one place.
+   `../data/archive/science/` now carries the three scientific tables
+   as JSONL (AgentRun 40, Experiment 2, ExperimentCase 25) with a
+   sha256 MANIFEST; regenerate and re-verify with
+   `bun scripts/archive-science.ts` (in the app workspace) — it refuses
+   to write if the database no longer matches.
+2. **The public door is hardened.** The sandbox endpoint is
+   rate-limited per visitor (in-memory sliding window, per instance;
+   the engine keeps its own exponential backoff upstream), and dossier
+   deep links make the public interface shareable without adding any
+   write capability — everything stays read-only.
 
 ## Modules
 
