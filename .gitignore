@@ -18,6 +18,7 @@ venv/
 #     validated and documented ---
 data/bulk/
 data/raw/
+data/runs/
 downloads/
 *.log
 
