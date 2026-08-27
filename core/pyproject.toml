@@ -1,0 +1,19 @@
+[project]
+name = "legally-subjective"
+version = "1.0.0"
+description = "The Subjectivity Fingerprint engine — Standard LS-1.0. Zero fabrication, full determinism."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+legally = "legally_subjective.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/legally_subjective"]

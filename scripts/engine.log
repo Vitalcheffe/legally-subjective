@@ -1,2 +1,10 @@
 [2026-08-27T05:57:44Z] ENGINE START — cycle=20s — GUARD tous les 15 cycles — MODE INFINI
 [2026-08-27T05:57:44Z] cycle 1: TASK E-001 → 12 dossiers créés: core/src/legally_subjective, core/src/legally_subjective/ingest, core/src/legally_subjective/axes, core/src/legally_subjective/glyph, core/src/legally_subjective/docket, core/tests, web, docs, standards, data/dockets, data/sources, data/productions
+[2026-08-27T06:00:13Z] ENGINE START — cycle=20s — GUARD tous les 15 cycles — MODE INFINI
+[2026-08-27T06:00:13Z] cycle 1: TASK E-002 → 1 fichiers créés: data/README.md
+[2026-08-27T06:01:28Z] ENGINE RESUME — cycles cumulés: 1 — mode ONCE
+[2026-08-27T06:01:28Z] cycle 2: TASK E-003 → scan zéro-mock: 210 violation(s) → [{'file': 'skills/image-generation/SKILL.md', 'line': 440, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/prototype/UI.md', 'line': 12, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 10, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 18, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 25, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 30, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 42, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 49, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 56, 'pattern': '\\bmock[A-Za-z]*\\b'}, {'file': 'skills/tdd/SKILL.md', 'line': 16, 'pattern': '\\bmock[A-Za-z]*\\b'}]
+[2026-08-27T06:01:28Z] ENGINE EXIT — mode ONCE terminé, cycle 2
+[2026-08-27T06:03:30Z] ENGINE RESUME — cycles cumulés: 2 — mode ONCE
+[2026-08-27T06:03:30Z] cycle 3: TASK E-004 → 1 fichiers créés: README.md
+[2026-08-27T06:03:30Z] ENGINE EXIT — mode ONCE terminé, cycle 3

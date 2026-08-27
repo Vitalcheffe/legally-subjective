@@ -1,13 +1,22 @@
 {
-  "started": "2026-08-27T05:57:44Z",
-  "cycles": 1,
+  "started": "2026-08-27T06:00:13Z",
+  "cycles": 3,
   "tasks_done": [
     {
-      "id": "E-001",
-      "at": "2026-08-27T05:57:44Z"
+      "id": "E-002",
+      "at": "2026-08-27T06:00:13Z"
+    },
+    {
+      "id": "E-003",
+      "at": "2026-08-27T06:01:28Z"
+    },
+    {
+      "id": "E-004",
+      "at": "2026-08-27T06:03:30Z"
     }
   ],
   "last_guard": null,
-  "status": "running",
-  "last_cycle": "2026-08-27T05:57:44Z"
+  "status": "paused-clean",
+  "last_cycle": "2026-08-27T06:00:13Z",
+  "resumes": 2
 }

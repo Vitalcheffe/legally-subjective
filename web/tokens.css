@@ -1,0 +1,77 @@
+/* LEGALLY SUBJECTIVE — Design Tokens v1.0
+   Palette « Parchemin & Sceau » — 9 couleurs, pas une de plus.
+   Règle 60-30-10 : 60% papier, 30% encre/surfaces, 10% sceau. */
+
+:root {
+  /* — Le papier — */
+  --paper: #FAF6EE;        /* fond ivoire, parchemin tenu à la lumière */
+  --card: #FFFFFF;         /* surfaces / chemises de dossier */
+  --sand: #F1EAD9;         /* surface secondaire, sable */
+  --line: #E4DBC6;         /* séparateurs, lin */
+
+  /* — L'encre — */
+  --ink: #1C1710;          /* texte principal, noir chaud */
+  --ink-2: #5C5244;        /* texte secondaire, taupe */
+
+  /* — Le sceau — */
+  --seal: #7A2E2B;         /* accent unique : oxblood, sang-de-bœuf */
+  --seal-deep: #5E211F;    /* hover, profondeur du sceau */
+  --gold: #A8894C;         /* or vieilli — rarissime, dorures seulement */
+
+  /* — Typographie — */
+  --font-display: "Newsreader", Georgia, serif;      /* titres, italiques */
+  --font-ui: "Inter", system-ui, sans-serif;         /* corps, interface */
+  --font-data: "IBM Plex Mono", monospace;           /* chiffres, cotes */
+
+  /* — Échelle — */
+  --text-display: 3.5rem;   /* 56 — la ligne d'ouverture */
+  --text-h1: 2.25rem;       /* 36 — intitulés d'arrêt */
+  --text-h2: 1.5rem;        /* 24 — sections du dossier */
+  --text-h3: 1.25rem;       /* 20 — exhibits */
+  --text-body: 1.0625rem;   /* 17 — lecture juridique, du souffle */
+  --text-small: 0.875rem;   /* 14 — chain of custody */
+  --leading-body: 1.65;
+
+  /* — Rythme — */
+  --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;
+  --space-4: 1rem;     --space-6: 1.5rem;   --space-8: 2.5rem;
+  --space-12: 4rem;    --space-16: 6rem;
+
+  /* — Mesure de lecture : 68ch, la colonne d'un mémoire — */
+  --measure: 68ch;
+
+  /* — Mouvement : deux animations dans toute la maison — */
+  --motion-seal: 600ms cubic-bezier(0.2, 0, 0, 1);      /* le battement unique */
+  --motion-docket: 300ms cubic-bezier(0.4, 0, 0.2, 1);  /* la séance levée */
+
+  /* — Ramp data-viz (chaleur → alarme), 5 paliers — */
+  --ramp-1: #F1EAD9;
+  --ramp-2: #D9B98A;
+  --ramp-3: #B08A5E;
+  --ramp-4: #9A5A45;
+  --ramp-5: #7A2E2B;
+
+  /* — Catégoriel 6 couleurs (v., Lineage) — */
+  --cat-1: #7A2E2B;  --cat-2: #2E5E4E;  --cat-3: #B08A3E;
+  --cat-4: #3E5C8A;  --cat-5: #6E5C8A;  --cat-6: #8A6A4E;
+}
+
+/* Chiffres tabulaires partout où il y a des données — les colonnes s'alignent, toujours. */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Le sceau ne pulse qu'UNE fois à l'arrivée. Jamais en boucle. */
+@keyframes seal-beat {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+.seal-beat { animation: seal-beat var(--motion-seal) 1 ease-out; }
+
+/* États vides — la phrase sacrée, jamais contournée */
+.empty-truth {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--ink-2);
+  font-style: italic;
+}
+.empty-truth::before { content: "No public data on this point. We fabricate nothing."; }

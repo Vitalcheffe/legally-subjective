@@ -31,7 +31,7 @@
       "owner": "engine",
       "type": "scaffold_files",
       "title": "Fichiers de base (.gitignore, conventions data)",
-      "status": "pending",
+      "status": "done",
       "spec": {
         "files": [
           {
@@ -43,15 +43,36 @@
             "content": "# data/ — Les pièces du dossier\n\n- `dockets/` — les dossiers JSON publiés (format LS-1.0), immuables une fois FILED.\n- `sources/` — les caches bruts sourcés (CourtListener, etc.), avec URI et date de récupération.\n- `productions/` — les exports livrés (JSON, BibTeX, impressions).\n\nRègle absolue : un chiffre sans source n'existe pas. Chiffre inventé = banni.\n"
           }
         ]
-      }
+      },
+      "completed_at": "2026-08-27T06:00:13Z",
+      "result": "1 fichiers créés: data/README.md"
     },
     {
       "id": "E-003",
       "owner": "engine",
       "type": "guard_scan",
       "title": "Premier scan zéro-mock du dépôt",
-      "status": "pending",
-      "spec": {}
+      "status": "done",
+      "spec": {},
+      "completed_at": "2026-08-27T06:01:28Z",
+      "result": "scan zéro-mock: 210 violation(s) → [{'file': 'skills/image-generation/SKILL.md', 'line': 440, 'pattern': '\\\\bmock[A-Za-z]*\\\\b'}, {'file': 'skills/prototype/UI.md', 'line': 12, 'pattern': '\\\\bmock[A-Za-z]*\\\\b'}, {'file': 'skills/tdd/mocking.md', 'line': 10, 'pattern': '\\\\bmock[A-Za-z]*\\\\b'}, {'file':"
+    },
+    {
+      "id": "E-004",
+      "owner": "engine",
+      "type": "scaffold_files",
+      "title": "README du repo (niveau YC)",
+      "status": "done",
+      "spec": {
+        "files": [
+          {
+            "path": "README.md",
+            "content": "# Legally Subjective\n\n**Subjectivity, measured.** The open standard for the measured identity of legal actors.\n\n- The standard: [standards/LS-1.0.md](standards/LS-1.0.md) — the Subjectivity Fingerprint\n- The engine: [core/](core/) — pure Python, deterministic, zero fabrication\n- The window: [web/](web/) — static, 0 EUR/month, prints like a filing\n\n## Zero-fabrication law\nEvery number traces to a public source URI. Missing data is rendered as missing.\nRe-run the build on identical sources: you get bit-identical dockets.\n\n## Reproduce\n    git clone <repo> && cd legally-subjective\n    make setup   # installs kernel + site\n    make build   # ingest -> compute -> file dockets -> export site\n\nLicense: AGPL-3.0. We fabricate nothing.\n"
+          }
+        ]
+      },
+      "completed_at": "2026-08-27T06:03:30Z",
+      "result": "1 fichiers créés: README.md"
     },
     {
       "id": "A-001",

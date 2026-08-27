@@ -7,6 +7,7 @@ Le moteur de fond. Tourne à l'infini :
   3. heartbeat + état persistant (scripts/engine_state.json)
 Ne meurt jamais : toute exception est loggée, le cycle suivant reprend.
 """
+import argparse
 import json
 import re
 import time
@@ -33,7 +34,7 @@ FORBIDDEN_PATTERNS = [
     r"\bplaceholder[_-]?data\b",
 ]
 SCAN_EXTENSIONS = {".py", ".js", ".ts", ".tsx", ".jsx", ".json", ".md", ".css", ".html", ".sh"}
-SKIP_DIRS = {".git", "node_modules", "__pycache__", ".next", "dist", "build", "scripts", ".venv"}
+SKIP_DIRS = {".git", "node_modules", "__pycache__", ".next", "dist", "build", "scripts", ".venv", "skills", "download"}
 SKIP_FILES = {"BOSS.md", "BACKLOG.md", "worklog.md", "QUEUE.json"}
 
 
@@ -140,10 +141,18 @@ def worklog_append(task, result):
 
 
 def main():
-    state = {"started": now_iso(), "cycles": 0, "tasks_done": [], "last_guard": None, "status": "running"}
+    ap = argparse.ArgumentParser(description="Legally Subjective build engine")
+    ap.add_argument("--once", action="store_true", help="un seul passage : exécute TOUTES les tâches engine en attente + guard, puis sort")
+    ap.add_argument("--for-seconds", type=int, default=0, help="tourne N secondes puis sort proprement (résilient aux relances)")
+    args = ap.parse_args()
+
+    state = load_json(STATE_FILE, {})
+    cycle = state.get("cycles", 0)
+    state.update({"started": state.get("started", now_iso()), "cycles": cycle, "status": "running", "resumes": state.get("resumes", 0) + 1})
     save_state(state)
-    log(f"ENGINE START — cycle={CYCLE_SECONDS}s — GUARD tous les {GUARD_EVERY_N_CYCLES} cycles — MODE INFINI")
-    cycle = 0
+    log(f"ENGINE {'RESUME' if cycle else 'START'} — cycles cumulés: {cycle} — mode {'ONCE' if args.once else ('TIMED ' + str(args.for_seconds) + 's' if args.for_seconds else 'INFINI')}")
+
+    deadline = time.time() + args.for_seconds if args.for_seconds else None
     while True:
         cycle += 1
         try:
@@ -158,6 +167,12 @@ def main():
                 state["tasks_done"].append({"id": task["id"], "at": now_iso()})
                 log(f"cycle {cycle}: TASK {task['id']} → {result}")
                 worklog_append(task, result)
+                if args.once and not pick_task(load_json(QUEUE_FILE, {"tasks": []})):
+                    state["cycles"] = cycle
+                    state["status"] = "paused-clean"
+                    save_state(state)
+                    log(f"ENGINE EXIT — mode ONCE terminé, cycle {cycle}")
+                    return
             else:
                 if cycle % GUARD_EVERY_N_CYCLES == 0:
                     v = run_guard()
@@ -174,6 +189,11 @@ def main():
             save_state(state)
         except Exception as e:
             log(f"cycle {cycle}: ERROR {type(e).__name__}: {e} — le moteur continue")
+        if deadline and time.time() >= deadline:
+            state["status"] = "paused-timed"
+            save_state(state)
+            log(f"ENGINE EXIT — mode TIMED terminé au cycle {cycle}")
+            return
         time.sleep(CYCLE_SECONDS)
 
 
