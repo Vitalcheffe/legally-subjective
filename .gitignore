@@ -52,3 +52,17 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# sandbox infrastructure & local artifacts — never ship
+/download/
+/db/
+/Caddyfile
+/bun.lock
+/.zscripts/
+/mini-services/
+/tool-results/
+/upload/
+/cl_recent.json
+/oyez_*.json
+/oyez_href.txt
+/.env
