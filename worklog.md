@@ -80,3 +80,24 @@ Work Log:
 Stage Summary:
 - Fondations réelles posées : standard + tokens + kernel testé + moteur qui tourne
 - Prochain : design system complet, spec The Bench, ingestion CourtListener
+
+---
+Task ID: 3
+Agent: Super Z (main)
+Task: Frontend Legally Subjective — la vitrine ONE DOOR DOWN
+
+Work Log:
+- Initialisation fullstack (Next.js 16, Tailwind 4, shadcn/ui)
+- Palette Parchemin & Sceau gravée dans globals.css (9 tokens, radius 0, dark mode interdit et neutralisé)
+- Typographie : Newsreader (display/italique), Inter (UI), IBM Plex Mono (data) via next/font
+- Composants signature : Seal (§ qui bat UNE fois), Glyph (empreinte LS-1.0 déterministe, sha256 sync pur JS, BigInt mod 360), RotatingLine (la boucle « Would you still »), Reveal (fade-rise IntersectionObserver)
+- Page unique 5 sections : Masthead docket, Hero « Would you still [rotating] » avec marge de pleading-paper numérotée, Loss Portal (6 pertes), The Bench (les Neuf en specimen, ordre protocolaire réel), The Standard (LS-1.0 + specimen), The Record (méthode), footer docket
+- Amélioration standard : tilt mod 60 → mod 360 (collisions sur banc de 9) + tick d'orientation specimen (LS-1.0 §5.6) — appliqué au spec, au TS et au kernel Python (parité + déterminisme testés)
+- Vérification agent-browser : rendu desktop + mobile iPhone 14, boucle rotative (3 valeurs observées), navigation ancres, 9/9 glyphes uniques
+- Revues VLM : « high-concept, well-executed », « production-ready », palette et hiérarchie validées
+- Lint : 0 erreur
+
+Stage Summary:
+- La vitrine existe : hero « Would you still » en boucle, les Neuf en specimen honnête, zéro mock partout
+- État : UI fondatrice livrée, prête pour l'ingestion CourtListener (les specimens deviendront des FILED)
+- Fichiers clés : src/app/page.tsx, src/app/globals.css, src/components/ls/*, src/lib/sha256.ts, standards/LS-1.0.md, core/src/legally_subjective/glyph.py

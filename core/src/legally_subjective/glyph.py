@@ -13,9 +13,9 @@ R = 100.0  # rayon de référence, unités SVG
 
 
 def _tilt_degrees(docket_id: str) -> float:
-    """Rotation offset: (int(sha256(docket_id), 16) mod 60) − 30 degrés."""
+    """Rotation offset: (int(sha256(docket_id), 16) mod 360) degrés — LS-1.0 §5.4."""
     digest = hashlib.sha256(docket_id.encode("utf-8")).hexdigest()
-    return float((int(digest, 16) % 60) - 30)
+    return float(int(digest, 16) % 360)
 
 
 def _catmull_rom(points: list[tuple[float, float]], samples: int = 24) -> str:
@@ -80,11 +80,23 @@ class Glyph:
     def svg(self) -> str:
         """SVG autonome, encre sur papier, monochrome-compatible."""
         ring = self.inner_ring_radius()
+        tilt = math.radians(_tilt_degrees(self.docket_id))
+        is_specimen = all(v is None for v in self.axes.values())
+        tick = ""
+        if is_specimen:
+            # Orientation tick (LS-1.0 §5.6) — le Nord de la boussole, pas une donnée.
+            ax, ay = (R + 7) * math.cos(tilt - math.pi / 2), (R + 7) * math.sin(tilt - math.pi / 2)
+            bx, by = (R + 15) * math.cos(tilt - math.pi / 2), (R + 15) * math.sin(tilt - math.pi / 2)
+            tick = (
+                f'<line x1="{ax:.2f}" y1="{ay:.2f}" x2="{bx:.2f}" y2="{by:.2f}" '
+                f'stroke="var(--seal)" stroke-width="2"/>'
+            )
         return (
-            f'<svg viewBox="{-R-12} {-R-12} {2*R+24} {2*R+24}" xmlns="http://www.w3.org/2000/svg" '
+            f'<svg viewBox="{-R-20} {-R-20} {2*R+40} {2*R+40}" xmlns="http://www.w3.org/2000/svg" '
             f'role="img" aria-label="Subjectivity Fingerprint {self.docket_id}">'
             f'<path d="{self.path()}" fill="none" stroke="var(--seal)" stroke-width="2.5" stroke-linejoin="round"/>'
             f'<circle cx="0" cy="0" r="{ring:.2f}" fill="none" stroke="var(--ink-2)" stroke-width="1" opacity="0.5"/>'
+            f'{tick}'
             f'<circle cx="0" cy="0" r="3" fill="var(--seal)"/>'
             f"</svg>"
         )

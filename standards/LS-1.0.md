@@ -103,8 +103,9 @@ A deterministic radial signature, pure function of `(axes, n, docket_id)`:
 1. Six spokes at 60° intervals, length = `percentile/100 · R` (dashed if `insufficient-data`).
 2. Spoke endpoints joined by a closed Catmull-Rom spline → the ink contour.
 3. Inner ring radius = `log10(n) / log10(max_n) · R/3` — the weight of evidence, visible.
-4. Rotation offset = `(int(sha256(docket_id), 16) mod 60) − 30` degrees — the subject's unique tilt.
+4. Rotation offset = `(int(sha256(docket_id), 16) mod 360)` degrees — the subject's unique tilt. (Draft note: originally mod 60; widened to mod 360 before first filing — 60 discrete values collide on a 9-member bench, 360 does not.)
 5. Center: the seal dot (rendered `--seal`) for FILED dockets only.
+6. Specimen state (no data yet): the Disposition axis carries an orientation tick — the compass North, marking where reading begins. It is not data; it breaks the hexagon's six-fold symmetry so every subject's tilt is visibly distinct even before their record exists.
 
 No randomness. Two identical axis profiles with different docket IDs yield different tilts. The glyph is SVG, print-safe, and monochrome-compatible.
 

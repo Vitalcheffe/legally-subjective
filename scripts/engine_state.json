@@ -1,6 +1,6 @@
 {
   "started": "2026-08-27T06:00:13Z",
-  "cycles": 3,
+  "cycles": 9,
   "tasks_done": [
     {
       "id": "E-002",
@@ -16,7 +16,7 @@
     }
   ],
   "last_guard": null,
-  "status": "paused-clean",
-  "last_cycle": "2026-08-27T06:00:13Z",
-  "resumes": 2
+  "status": "running",
+  "last_cycle": "2026-08-27T06:34:56Z",
+  "resumes": 3
 }
