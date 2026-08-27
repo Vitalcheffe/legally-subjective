@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "*   **Image 1 (Dossier) :** Débordement de texte dans la marge latérale droite : les notes manuscrites en rouge (« Note du greffe... » et « Rappel : aucune mesure... ») dépassent du conteneur principal et se superposent à l'arrière-plan.\n*   **Image 1 (Dossier) :** Chevauchement d'éléments en bas de page : la barre de navigation inférieure noire (« B — LE DOSSIER ») recouvre et masque partiellement la dernière ligne visible du tableau « PIÈCE II-2 » (ligne 1998–2009).\n*   **Image 2 (Gazette) :** Troncature de texte dans la colonne de droite : les champs « Dissidences (session) » et « Prévisibilité » affichent des tirets cadratins (—) qui semblent tronqués ou coupés net sur le bord droit, sans espacement suffisant.\n*   **Image 2 (Gazette) :** Rendu incomplet du graphique : l'axe horizontal du graphique à barres « Dissidences par session » est absent ou invisible, faisant flotter les barres sans ligne de base ni étiquettes d'année clairement alignées sous chaque barre.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1787806038,
+  "id": "20260827124714e5939632801241a3",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20260827124714e5939632801241a3",
+  "usage": {
+    "completion_tokens": 291,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3444,
+    "prompt_tokens_details": {
+      "cached_tokens": 2
+    },
+    "total_tokens": 3735
+  }
+}
