@@ -331,3 +331,24 @@ Stage Summary:
 - Le chemin Manhattan est persisté et exécutable : roadmap complet dans archives/, Phase 1 matériellement avancée — le collecteur a TOURNÉ ce jour (+290 cas réels), la concordance 5/5 est prouvée dans main, le dataset 600/400 est construit avec zéro fuite vérifiée, le notebook Colab est prêt
 - Gate restante de Phase 1 : exécuter le notebook sur Colab T4 (nécessite le GPU de l'utilisateur) et décider : B − A > 5 points → Phase 2 ; sinon résultat négatif documenté
 - Phases 2-8 : non commencées, dépendances et gates posées dans le roadmap
+
+---
+Task ID: 14
+Agent: Super Z (main)
+Task: RAPPORT D'INSTRUCTION — audit hostile A→Z de Légalement Subjective (directive du fondateur : « sois cruel, impartial, contre ton propre projet »)
+
+Work Log:
+- Directive reçue : rapport énorme de A à Z, le juge pesé le pour et le contre, la pire version de nous-mêmes écrite par nous — pour résister aux commentaires des autres
+- État du dépôt vérifié d'abord : mission Manhattan déjà persistée au commit 3ec9f3b (roadmap + manifeste + Phase 1 : corpus 1 677, découpe 600/400, golden 5/5, notebook Colab prêt) — tout pushé
+- PREUVES recalculées par le juge lui-même depuis les fichiers bruts : axe disposition par juge avec IC 95 % (Jackson 58,11 % ± 7,9 sur n=148 → Kavanaugh 68,58 % ± 6,1 sur n=226) ; écart vedette de LA ROUE : z = 2,05, p = 0,040, IC qui se chevauchent ; 36 paires → rien ne survit à Bonferroni ; compteurs réconciliés 342/329/237/232/231 ; puissance de la gate Phase 1 à son propre seuil de 5 points : 42 % ; dissent accuracy B 83,4 % < baseline 84,1 %
+- Rapport rédigé en forme judiciaire française : exposé, expertise (le projet est RÉEL — réponse à l'ancien doute du fondateur), réquisitoire à 8 chefs (certitudes sans intervalles ; gate sans baseline ni McNemar ; erreur de catégorie condamnation/pourvoi ; couture NY/SCOTUS invisible ; troupeau prédit par le troupeau ; module darwinien = machine à p-hacking sans holdout verrouillé ; validation humaine = pilote sans protocole ; exposition éthique + ci95 mensonger dans le schéma + étude israélienne contestée), plaidoirie (7 circonstances atténuantes vérifiées), 3 témoins hostiles simulés avec parades, 6 scénarios de mort avec signaux d'alerte, délibéré, sentence en 12 injonctions chiffrées en effort, 2 annexes (pièces chiffrées + protocole de vérification)
+- 3 figures matplotlib (forêt des IC, courbe de puissance, A/B vs baseline) + 7 tables + 4 callouts statistiques
+- PDF construit selon le pipeline Report complet : palette.cascade seed 20260827, FreeSerif/DejaVu, TocDocTemplate + multiBuild (TOC cliquable 10 entrées, numérotation i/1-19), couverture Template 01 HUD validée par poster_validate + cover_validate (3 itérations de collisions), fusion pypdf normalisée A4, meta.brand, font.check 0 défaut, pages.clean 0 page blanche, pdf_qa --skip-cover : PASS (7 avertissements bénins : tirets de citation volontaires + cellules miroirs), revue VLM 3 pages : « SHIP »
+- Livrable : download/rapport-instruction-legally-subjective.pdf (20 pages, 488 Ko)
+- Archive source dans le dépôt : archives/rapport-instruction-2026-08-27.md + scripts/audit_{figures,content_a,content_b,rapport,merge,to_md}.py + audit_cover.html + 3 figures — l'audit est lui-même reproductible, dans l'esprit du projet
+
+Stage Summary:
+- Le verdict du rapport : le projet est réel et honnête au fond, mais sa vitrine promet plus de certitude statistique que son moteur ne délivre — la gentillesse n'est pas dans les chiffres (exacts), elle est dans leur présentation (entiers sans intervalles)
+- L'asymétrie stratégique formalisée : la couche descriptive (casier, comptes, provenance) est une forteresse ; tout ce qui est inférentiel (rangs, prédictions, simulation) est du verre — ne jamais laisser le verre porter la forteresse
+- La fenêtre critique identifiée : les injonctions 1-7 (< 1 journée) ferment tout le chapitre 3 exposé au public AVANT tout push médiatique ; l'injonction 2 (gate amendée : baseline + McNemar + IC + pré-enregistrement) doit être exécutée AVANT le run Colab — après, ce serait post-hoc
+- Prochaine instruction prévue : au prochain commit majeur, vérifier l'exécution des 12 injonctions et rejuger
