@@ -68,8 +68,8 @@ export default async function CourtPage({
         const a = d.axes[ax];
         return [
           ax,
-          a?.ci95 && a.percentile != null
-            ? Math.abs((a.ci95[1] ?? 0) - (a.ci95[0] ?? 0))
+          a?.rank_band && a.percentile != null
+            ? Math.abs((a.rank_band[1] ?? 0) - (a.rank_band[0] ?? 0))
             : null,
         ];
       }),

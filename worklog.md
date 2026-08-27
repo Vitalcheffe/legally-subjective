@@ -352,3 +352,26 @@ Stage Summary:
 - L'asymétrie stratégique formalisée : la couche descriptive (casier, comptes, provenance) est une forteresse ; tout ce qui est inférentiel (rangs, prédictions, simulation) est du verre — ne jamais laisser le verre porter la forteresse
 - La fenêtre critique identifiée : les injonctions 1-7 (< 1 journée) ferment tout le chapitre 3 exposé au public AVANT tout push médiatique ; l'injonction 2 (gate amendée : baseline + McNemar + IC + pré-enregistrement) doit être exécutée AVANT le run Colab — après, ce serait post-hoc
 - Prochaine instruction prévue : au prochain commit majeur, vérifier l'exécution des 12 injonctions et rejuger
+
+---
+Task ID: 6
+Agent: Super Z (main)
+Task: Exécuter la sentence LS-AUDIT-001 — les 12 injonctions, en grand
+
+Work Log:
+- Inj. 3 (schéma) : kernel v1.py — `ci95` renommé `rank_band` + `value_ci95` Wilson ajouté pour les parts binomiales (disposition, temperament) ; générateur file_dockets.py amendé (révision 1 + supersedes + filed_at préservé) ; 9 dockets régénérés, valeurs identiques au bit près vérifiées avant écriture, 9 scellés sha256 revalidés ; LS-1.0.md amendé (règles 4/4bis/6, schéma §4, note d'immuabilité) ; TS mis en cohérence (lib/dockets.ts, pages juge/cour, route API)
+- Inj. 1+12 (la marque ±) : JusticeDraw porte pm/ciLo/ciHi (Wilson miroir du kernel) ; la roulette affiche « 58 ±8 OUT OF 100 · 148 VOTES » avec ± à l'échelle du chiffre, intervalle Wilson sous le chiffre, titre d'onglet porteur, effectifs sur les 3 portes du contrefactuel ; paire vedette de l'accueil recalculée depuis agreement.json avec n et ±
+- Inj. 4 (réconciliation) : system-state.ts expose oyezInterrogated/oyezMisses/oyezUsable/casesModeled (comptés depuis le dépôt) ; bandeau public sur / (342→329→237→232, 13 misses archivés) + note encadrée sur /paper
+- Inj. 5 (mandat court) : drapeau « Short record » piloté par service_years_window vs max du banc (données, pas de nom en dur) — Jackson 5 sessions vs 7
+- Inj. 6 (antériorité) : encart « Prior work » sur /paper — Martin-Quinn/Spaeth/Empirical SCOTUS + les 4 différences réelles + l'aveu « la nouveauté est dans les reçus »
+- Inj. 7 (machine's call) : « what it saw before predicting » (dossier + momentum des huit autres, ex post) ; note de calibration encadrée modèle 83,4 % vs base 84,1 % ; tampons marqués « ·b »
+- Inj. 2 (gate) : notebook Colab amendé AVANT tout GPU — 3e bras base-majoritaire (majorité du train), McNemar exact apparié (formule validée contre scipy sur le cas classique p=0,0414), IC 95 % apparié sur B−A, gate pré-enregistrée à 3 conditions, rapport enrichi (baseline_majority, mcnemar_p, delta_ci95, verdict) ; roadmap pré-enregistre la règle complète
+- Inj. 8/9/10 (verrous) : étage 4 requalifié générateur d'hypothèses (jeu scellé, FDR, réplication, traduisibilité ≠ preuve) ; couche 3 → UN modèle conditionné au juge (jeton d'identité) ; étage 5 → « pilote » avec 5 conditions de requalification ; tableau des phases harmonisé
+- Inj. 11 (charte) : standards/ETHICS-1.0.md ratifiée (principe, test de capture, table banni/prescrit, corrections par révision) ; « Blind spots » → « Divergence profile » + texte dé-normativisé ; balayage exhaustif du vocabulaire
+- Vérifications : lint 0 erreur ; build complet OK (232 cas, 72 compare, 9 juges, 9 dockets, statique) ; contrôles zéro-fabrication sur le HTML construit (bandeau 342→232 présent, RANK BAND + VALUE 95% CI présents, calibration présente, paire vedette avec n)
+- Rapport d'exécution LS-AUDIT-001-EX rédigé (archives/rapport-execution-2026-08-27.md) : 12/12 constatées, sursis de la vitrine levé
+
+Stage Summary:
+- La sentence est exécutée : le paquet public (inj. 1–7) livré, les verrous de conception (inj. 8–11) gravés avant tout code futur, le ± est devenu un élément de marque (inj. 12)
+- Les dockets sont en révision 1 avec chaîne de correction publique — premier usage du mécanisme d'immuabilité de LS-1.0
+- Prochaine étape inchangée et maintenant verrouillée : le run Colab T4, lu avec la gate à trois conditions pré-enregistrée (B−A > 5 pts ET McNemar p < 0,05 ET B > base-majoritaire), quel que soit le verdict

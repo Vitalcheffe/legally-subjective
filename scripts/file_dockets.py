@@ -33,6 +33,21 @@ AXIS_LABELS = {
     "exposure": "Exposure",
 }
 
+# LS-AUDIT-001, injonction 3 — the schema correction of 2026-08-27:
+# 'ci95' (bootstrap band of the percentile RANK) renamed 'rank_band';
+# 'value_ci95' added (Wilson 95%) where the metric is a binomial share.
+# Filed as revision 1, superseding revision 0, reason recorded in-chain.
+CORRECTION = {
+    "rev": 1,
+    "reason": (
+        "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the "
+        "percentile rank on the bench, not a confidence interval of the "
+        "measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) "
+        "added for binomial-share metrics (disposition, temperament), "
+        "null for means/rates (precedent, exposure)."
+    ),
+}
+
 METRIC_DEFS = {
     "disposition": (
         "Petitioner-alignment rate: of the merits cases this justice voted in, "
@@ -67,24 +82,31 @@ LIMITS = [
 
 def build_dockets() -> list[dict]:
     bench = v1.compute_bench()
-    filed_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     dockets: list[dict] = []
     for slug, name, author_id in v1.THE_NINE:
         r = bench["justices"][slug]
         docket_id = r["docket_id"]
+        # Revision 1 supersedes revision 0 (LS-AUDIT-001 inj.3 schema fix).
+        # The ORIGINAL filing date is preserved from the rev-0 artifact;
+        # computed_at carries this correction's timestamp.
+        prior_path = REPO / "data" / "dockets" / f"{docket_id}.json"
+        prior = json.loads(prior_path.read_text()) if prior_path.exists() else None
+        filed_at = (prior or {}).get("filed_at", now)
         axes: dict = {}
         for axis in ("disposition", "temperament", "precedent", "reversal", "orality", "exposure"):
             if axis in ("reversal", "orality"):
-                axes[axis] = {"percentile": None, "ci95": None, "n": 0, "status": "insufficient-data",
+                axes[axis] = {"percentile": None, "rank_band": None, "value_ci95": None, "n": 0, "status": "insufficient-data",
                               "note": "not computable from current sources"}
                 continue
             a = r["axes"].get(axis)
             if a is None:
-                axes[axis] = {"percentile": None, "ci95": None, "n": 0, "status": "insufficient-data"}
+                axes[axis] = {"percentile": None, "rank_band": None, "value_ci95": None, "n": 0, "status": "insufficient-data"}
                 continue
             axes[axis] = {
                 "percentile": a["percentile"],
-                "ci95": a["ci95"],
+                "rank_band": a["rank_band"],
+                "value_ci95": a["value_ci95"],
                 "n": a["n"],
                 "status": "ok",
                 "value": round(a["value"], 4),
@@ -99,7 +121,12 @@ def build_dockets() -> list[dict]:
         docket = {
             "standard": v1.STANDARD,
             "docket": docket_id,
-            "revision": 0,
+            "revision": CORRECTION["rev"],
+            "supersedes": {
+                "docket": docket_id,
+                "revision": (prior or {}).get("revision", 0),
+                "reason": CORRECTION["reason"],
+            },
             "subject": {
                 "name": name,
                 "slug": slug,
@@ -123,8 +150,9 @@ def build_dockets() -> list[dict]:
             "projections": {"iterations": v1.BOOTSTRAP_ITERS, "seed_basis": "sha256(docket|axis|LS-1.0) truncated to 32 bits", "quantiles": {"p10": None, "p50": None, "p90": None}},
             "limits": LIMITS,
             "chain": {
-                "computed_at": filed_at,
+                "computed_at": now,
                 "pipeline": "legally-subjective/1.0.0",
+                "correction": CORRECTION["reason"],
             },
         }
         dockets.append(docket)

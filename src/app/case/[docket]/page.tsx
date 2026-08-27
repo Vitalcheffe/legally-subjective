@@ -54,6 +54,10 @@ export default async function CasePage({
   );
   const missing = BENCH_ORDER.filter((s) => !(s in c.votes));
   const modelAuc = model?.results.dissent.B.auc ?? null;
+  /* LS-AUDIT-001 inj. 7 — the section must say what the model SAW, and
+     must carry the baseline that the stamps naturally invite. */
+  const modelAcc = model?.results.dissent.B.accuracy ?? null;
+  const baselineAcc = model?.results.dissent.baseline.accuracy ?? null;
 
   return (
     <div className="flex min-h-screen flex-col bg-paper font-display text-ink">
@@ -247,18 +251,41 @@ export default async function CasePage({
           <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
             <p className="micro">[003] The machine&apos;s call — {model?.model_id ?? "—"}</p>
             <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.4rem,2.6vw,2rem)] font-bold uppercase leading-[1.05] tracking-[-0.01em]">
-              What a model expected each justice to do — before this case was scored.
+              What a model expected each justice to do — and exactly what it saw first.
             </h2>
             <p className="mt-4 max-w-[75ch] text-[14px] leading-[1.7] text-ink-2">
-              Trained on the rest of the record under case-grouped
-              cross-validation, the model assigns each justice a probability of
-              dissenting here. It never saw this case&rsquo;s votes while
-              learning. A well-calibrated bar{" "}
-              <em>near the actual outcome</em> means the vote was typical of
-              that justice&apos;s pattern; a bar that missed is the honest
-              residue — the part of the vote the record could not foresee.
+              <strong>What it saw before predicting:</strong> the case file —
+              who the justice is, the term, the originating circuit — plus the
+              momentum of the other eight justices (how far each sat from the
+              majority, which way the bench leaned). It never saw this
+              case&apos;s own votes while learning: trained on the rest of the
+              record under case-grouped cross-validation, it assigns each
+              justice a probability of dissenting here.
+            </p>
+            <p className="mt-3 max-w-[75ch] text-[14px] leading-[1.7] text-ink-2">
+              <strong>The honest part:</strong> its strongest signal — the
+              bench&apos;s momentum — only exists once the others have voted.
+              This is a reading of the court&apos;s coherence, largely ex post;
+              it is not a crystal ball for tomorrow&apos;s ruling. A bar near
+              the actual outcome means the vote was typical of that
+              justice&apos;s pattern; a bar that missed is the honest residue
+              — the part of the vote the record could not foresee.
               {modelAuc != null && ` Pooled discrimination: AUC ${modelAuc.toFixed(3)}.`}
             </p>
+            {/* inj. 7 — the baseline travels WITH the stamps, because the
+                stamps invite exactly this comparison. */}
+            {modelAcc != null && baselineAcc != null && (
+              <p className="mt-4 max-w-[75ch] border-l-4 border-signal px-4 py-2.5 font-data text-[11.5px] leading-relaxed tracking-[0.02em] text-ink-2">
+                CALIBRATION, IN FULL VIEW: on the binary metric these stamps
+                display, the model calls {(modelAcc * 100).toFixed(1)}% of
+                votes correctly — and the per-justice base rate (in effect:
+                “never expect a dissent from this justice”) calls{" "}
+                {(baselineAcc * 100).toFixed(1)}%. On stamps alone, the dumb
+                rule is ahead. The model&apos;s real edge is in the
+                probabilities — ranking, calibration, AUC — not in the
+                binary call. Read the stamps with that baseline in view.
+              </p>
+            )}
             <div className="mt-7 border-t border-rule">
               {BENCH_ORDER.filter((s) => s in c.votes).map((s) => {
                 const m = c.model[s];
@@ -292,12 +319,14 @@ export default async function CasePage({
                             ? "text-ink-2"
                             : "text-signal-deep"
                       }`}
+                      title="Binary call at the 50% line — the per-justice base rate beats the model on this exact metric; see the calibration note above."
                     >
                       {called == null
                         ? "—"
                         : right
                           ? "called it"
                           : "missed it"}
+                      <span className="ml-1 font-medium text-ink-3">·b</span>
                     </p>
                   </div>
                 );
@@ -306,7 +335,12 @@ export default async function CasePage({
             <p className="mt-5 max-w-[75ch] font-data text-[11px] leading-relaxed tracking-[0.02em] text-ink-3">
               METHODOLOGY IN ONE LINE: L2 logistic regression, GroupKFold(5)
               grouped by case — this case&apos;s votes were held out together.
-              Full specification, baselines, and limitations: the research
+              Stamps marked “·b” carry the baseline warning: the
+              per-justice base rate — effectively “never expect a dissent"
+              — scores {(baselineAcc != null ? (baselineAcc * 100).toFixed(1) : "84.1")}%
+              on this binary metric, the model{" "}
+              {(modelAcc != null ? (modelAcc * 100).toFixed(1) : "83.4")}%. Full
+              specification, baselines, and limitations: the research
               article. Bars: red = actually dissented, black = voted with the
               majority; the tick marks 50%.
             </p>

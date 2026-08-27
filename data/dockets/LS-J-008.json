@@ -1,84 +1,97 @@
 {
  "axes": {
   "disposition": {
-   "ci95": [
-    17,
-    94
-   ],
    "metric": "reversal-share",
    "metric_def": "Petitioner-alignment rate: of the merits cases this justice voted in, the share where their side favored the party seeking relief (petitioner/appellant), resolved from the Oyez winning-party record. A directional outcome-orientation proxy — not an affirm/reverse count.",
    "n": 215,
    "percentile": 61,
+   "rank_band": [
+    17,
+    94
+   ],
    "sources": [
     "oyez:api.oyez.org/cases/<term>/<docket> — 220 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
    ],
    "status": "ok",
-   "value": 0.6558
+   "value": 0.6558,
+   "value_ci95": [
+    0.5901,
+    0.7161
+   ]
   },
   "exposure": {
-   "ci95": [
-    6,
-    94
-   ],
    "metric": "publication-rate",
    "metric_def": "Publication rate: authored lead opinions per year of service inside the declared window (service years from Oyez role metadata).",
    "n": 69,
    "percentile": 61,
+   "rank_band": [
+    6,
+    94
+   ],
    "sources": [
     "courtlistener:…/api/rest/v4/search/?judge=… — 69 lead-opinion pages cached under data/sources/courtlistener/judges/barrett/ with manifest"
    ],
    "status": "ok",
-   "value": 9.8571
+   "value": 9.8571,
+   "value_ci95": null
   },
   "orality": {
-   "ci95": null,
    "n": 0,
    "note": "not computable from current sources",
    "percentile": null,
-   "status": "insufficient-data"
+   "rank_band": null,
+   "status": "insufficient-data",
+   "value_ci95": null
   },
   "precedent": {
-   "ci95": [
-    39,
-    83
-   ],
    "metric": "citation-density",
    "metric_def": "Citation density: mean number of authorities cited per authored lead opinion (CourtListener cites arrays). Engagement with precedent, measured by citation volume, not by treatment.",
    "n": 69,
    "percentile": 83,
+   "rank_band": [
+    39,
+    83
+   ],
    "sources": [
     "courtlistener:…/api/rest/v4/search/?judge=… — 69 lead-opinion pages cached under data/sources/courtlistener/judges/barrett/ with manifest"
    ],
    "status": "ok",
-   "value": 37.0725
+   "value": 37.0725,
+   "value_ci95": null
   },
   "reversal": {
-   "ci95": null,
    "n": 0,
    "note": "not computable from current sources",
    "percentile": null,
-   "status": "insufficient-data"
+   "rank_band": null,
+   "status": "insufficient-data",
+   "value_ci95": null
   },
   "temperament": {
-   "ci95": [
-    6,
-    28
-   ],
    "metric": "dissent-rate",
    "metric_def": "Dissent rate: of the merits votes cast, the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
    "n": 220,
    "percentile": 28,
+   "rank_band": [
+    6,
+    28
+   ],
    "sources": [
     "oyez:api.oyez.org/cases/<term>/<docket> — 220 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
    ],
    "status": "ok",
-   "value": 0.0818
+   "value": 0.0818,
+   "value_ci95": [
+    0.0524,
+    0.1256
+   ]
   }
  },
  "chain": {
-  "computed_at": "2026-08-27T07:49:16Z",
+  "computed_at": "2026-08-27T12:00:12Z",
+  "correction": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
   "pipeline": "legally-subjective/1.0.0",
-  "sha256": "7E2B0564039F2D42A09F8493206ACA80083DAB1DB87AB003AED8C3B01F804328"
+  "sha256": "32CC62C8EDB8314B7235E35FB59D8581B12A56683850AA857E3987E9E0E46402"
  },
  "docket": "LS-J-008",
  "filed_at": "2026-08-27T07:49:16Z",
@@ -105,7 +118,7 @@
   "separate_writings": 26,
   "service_years_window": 7
  },
- "revision": 0,
+ "revision": 1,
  "standard": "LS-1.0",
  "status": "FILED",
  "subject": {
@@ -116,6 +129,11 @@
   "role": "associate-justice",
   "slug": "barrett",
   "small_bench": true
+ },
+ "supersedes": {
+  "docket": "LS-J-008",
+  "reason": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
+  "revision": 0
  },
  "window": {
   "end": "2026-08-24",

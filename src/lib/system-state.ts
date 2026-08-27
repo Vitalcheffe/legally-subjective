@@ -20,6 +20,15 @@ export interface SystemState {
   docketsIngested: number;
   /** Decided cases actually read (Oyez files carrying a decision record). */
   casesDecided: number;
+  /** LS-AUDIT-001 inj. 4 — the public counter reconciliation, from the record itself. */
+  /** Total Oyez case files interrogated (valid responses + archived misses). */
+  oyezInterrogated: number;
+  /** Requests that failed and were archived as .miss.json — not hidden. */
+  oyezMisses: number;
+  /** Valid Oyez case responses. */
+  oyezUsable: number;
+  /** Cases that entered the research model (decision + exploitable votes), from model.json. */
+  casesModeled: number;
   /** Human window label, from the agreement production (e.g. OCT 2020 — AUG 2026). */
   windowLabel: string;
   /** Engine cycles from scripts/engine_state.json. */
@@ -94,23 +103,45 @@ export async function getSystemState(): Promise<SystemState> {
 
   /** Decided cases = Oyez files carrying a non-empty decision record. */
   let casesDecided = 0;
+  let oyezMisses = 0;
+  let oyezUsable = 0;
   try {
     const oyezFiles = await listJsonRecursive("data/sources/oyez");
-    casesDecided = (
-      await Promise.all(
-        oyezFiles.map(async (f) => {
-          try {
-            const d = JSON.parse(await readFile(f, "utf8"));
-            const decs = (d as { decisions?: unknown }).decisions;
-            return Array.isArray(decs) && decs.length > 0 ? 1 : 0;
-          } catch {
-            return 0;
-          }
-        }),
-      )
-    ).reduce((a, b) => a + b, 0);
+    oyezMisses = oyezFiles.filter((f) => f.endsWith(".miss.json")).length;
+    const results = await Promise.all(
+      oyezFiles.map(async (f) => {
+        if (f.endsWith(".miss.json")) return 0;
+        try {
+          const d = JSON.parse(await readFile(f, "utf8"));
+          const decs = (d as { decisions?: unknown }).decisions;
+          const usable = d && typeof d === "object" ? 1 : 0;
+          return (Array.isArray(decs) && decs.length > 0 ? 10 : 0) + usable;
+        } catch {
+          return 0;
+        }
+      }),
+    );
+    for (const r of results) {
+      if (r >= 10) casesDecided += 1;
+      if (r >= 1) oyezUsable += 1;
+    }
   } catch {
     /* No Oyez sources — zero decided cases. Honest. */
+  }
+  const oyezInterrogated = oyezUsable + oyezMisses;
+
+  /** Cases that entered the research model — from the model's own artifact. */
+  let casesModeled = 0;
+  try {
+    const model = JSON.parse(
+      await readFile(
+        path.join(process.cwd(), "data", "productions", "model.json"),
+        "utf8",
+      ),
+    ) as { dataset?: { cases?: number } };
+    casesModeled = model?.dataset?.cases ?? 0;
+  } catch {
+    /* No model artifact — nothing modeled yet. Honest. */
   }
 
   /** Human window label from the agreement production. */
@@ -161,6 +192,10 @@ export async function getSystemState(): Promise<SystemState> {
     judgesScored,
     docketsIngested,
     casesDecided,
+    oyezInterrogated,
+    oyezMisses,
+    oyezUsable,
+    casesModeled,
     windowLabel,
     engineCycles,
     engineLast,

@@ -8,7 +8,10 @@ import path from "path";
 
 export interface AxisResult {
   percentile: number | null;
-  ci95: number[] | null;
+  /** Bootstrap band of the percentile RANK on the bench — NOT a CI of the value (LS-AUDIT-001 inj.3). */
+  rank_band: number[] | null;
+  /** Wilson 95% interval of the measured value — present only for binomial-share metrics. */
+  value_ci95?: number[] | null;
   n: number;
   status: string;
   value?: number;
@@ -22,6 +25,7 @@ export interface Docket {
   standard: string;
   docket: string;
   revision: number;
+  supersedes?: { docket: string; revision: number; reason: string };
   subject: {
     name: string;
     slug: string;

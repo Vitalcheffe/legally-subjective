@@ -51,10 +51,11 @@ All axes are expressed as an integer percentile 0–99 against the reference ben
 1. **Ingestion.** Raw records are cached with URI + retrieval timestamp. No live lookups at compute time.
 2. **Metric extraction.** Per-axis raw metrics are computed as pure functions of cached records.
 3. **Normalization.** Percentile = empirical CDF rank within the reference bench: `pct = 100 · (rank − 0.5) / bench_size` (median-rank convention, ties averaged).
-4. **Confidence intervals.** Bootstrap over the actor's decision set: 10,000 resamples, percentile method, seed = `sha256(docket_id + axis_name + standard_version)` truncated to 32 bits. The seed is disclosed in the docket.
+4. **Rank band.** Bootstrap over the actor's decision set: 10,000 resamples, percentile method, seed = `sha256(docket_id + axis_name + standard_version)` truncated to 32 bits. The seed is disclosed in the docket. **What this interval covers is the percentile RANK on the bench, not the measured value** — the field is named `rank_band`, never `ci95`. (Renamed at rev. 1, 2026-08-27 — LS-AUDIT-001 inj. 3: the former label invited readers to believe the measurement was ~10× more precise than it is.)
+4bis. **Value interval.** Where the metric is a binomial share (Disposition, Temperament), the docket additionally carries `value_ci95`: the Wilson score interval at 95% of the measured value itself. Means and rates (Precedent, Exposure) carry `null` — no interval without a model of their sampling process, and the docket says so rather than pretending.
 5. **Insufficient data.** If N < 30 for an axis (or the bench has < 30 members), the axis is `null`, status `insufficient-data`, and the glyph renders that spoke dashed.
-5bis. **Small-bench rule.** A reference bench of ≥ 5 but < 30 members is admissible when: `bench_n` and `small_bench: true` are declared in the docket; the docket's `limits` state the coarse percentile granularity; and the bootstrap CI is computed against the fixed bench as described in rule 4. (Adopted before the first FILED docket.)
-6. **Rounding.** Percentiles integer; CI bounds integer; raw metrics kept at full precision internally.
+5bis. **Small-bench rule.** A reference bench of ≥ 5 but < 30 members is admissible when: `bench_n` and `small_bench: true` are declared in the docket; the docket's `limits` state the coarse percentile granularity; and the rank band is computed against the fixed bench as described in rule 4. (Adopted before the first FILED docket.)
+6. **Rounding.** Percentiles integer; rank band bounds integer; raw metrics kept at full precision internally; Wilson bounds rounded to 4 decimals.
 
 ## 4. The Docket JSON (canonical artifact)
 
@@ -73,18 +74,24 @@ One file per subject: `data/dockets/<docket_id>.json`. Immutable once FILED.
   },
   "status": "FILED",
   "filed_at": "2026-09-15T00:00:00Z",
+  "revision": 1,
+  "supersedes": {
+    "docket": "LS-J-004",
+    "revision": 0,
+    "reason": "LS-AUDIT-001 inj.3: 'ci95' (bootstrap band of the percentile rank) renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics."
+  },
   "axes": {
-    "disposition":  { "percentile": 74, "ci95": [66, 81], "n": 1247, "status": "ok",
+    "disposition":  { "percentile": 74, "rank_band": [66, 81], "value_ci95": [0.712, 0.768], "n": 1247, "status": "ok",
                       "sources": ["courtlistener://opinion-cluster/..."] },
-    "temperament":  { "percentile": 61, "ci95": [52, 70], "n": 412, "status": "ok",
+    "temperament":  { "percentile": 61, "rank_band": [52, 70], "value_ci95": [0.184, 0.241], "n": 412, "status": "ok",
                       "sources": ["courtlistener://opinion-relationship/..."] },
-    "precedent":    { "percentile": 88, "ci95": [80, 93], "n": 1247, "status": "ok",
+    "precedent":    { "percentile": 88, "rank_band": [80, 93], "value_ci95": null, "n": 1247, "status": "ok",
                       "sources": ["courtlistener://citations/..."] },
-    "reversal":     { "percentile": 38, "ci95": [29, 48], "n": 233, "status": "ok",
+    "reversal":     { "percentile": 38, "rank_band": [29, 48], "value_ci95": null, "n": 233, "status": "ok",
                       "sources": ["courtlistener://treatment/..."] },
-    "orality":      { "percentile": 79, "ci95": [70, 86], "n": 96, "status": "ok",
+    "orality":      { "percentile": 79, "rank_band": [70, 86], "value_ci95": null, "n": 96, "status": "ok",
                       "sources": ["oyez://transcript/..."] },
-    "exposure":     { "percentile": 22, "ci95": [15, 31], "n": 15, "status": "ok",
+    "exposure":     { "percentile": 22, "rank_band": [15, 31], "value_ci95": null, "n": 15, "status": "ok",
                       "sources": ["courtlistener://docket/..."] }
   },
   "projections": {
@@ -106,7 +113,7 @@ One file per subject: `data/dockets/<docket_id>.json`. Immutable once FILED.
 
 **Canonicalization.** Keys sorted lexicographically, UTF-8, no trailing whitespace, `sha256` computed over the serialization excluding the `chain.sha256` field itself.
 
-**Immutability.** A FILED docket never changes. Corrections or recomputations produce `revision + 1` with a `supersedes` field pointing to the prior revision.
+**Immutability.** A FILED docket never changes. Corrections or recomputations produce `revision + 1` with a `supersedes` field pointing to the prior revision. *(First use: rev. 1, 2026-08-27 — the `ci95` → `rank_band` renaming ordered by the internal audit LS-AUDIT-001; values unchanged to the bit, only the lying label died.)*
 
 ## 5. The Glyph (visual identity)
 

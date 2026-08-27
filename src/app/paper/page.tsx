@@ -184,6 +184,45 @@ export default async function PaperPage() {
           </header>
 
           <div className="reader-body mt-10">
+            {/* ————— POSITIONING / PRIOR WORK — LS-AUDIT-001 inj. 6 —————
+                The "you reinvented what?" box, written before anyone asks:
+                what exists, and the four real differences — none of them
+                claims to out-science the canon. */}
+            <aside className="mb-10 border-2 border-ink bg-paper-2 px-6 py-5">
+              <p className="font-data text-[10.5px] font-bold tracking-[0.1em] uppercase text-signal-deep">
+                Prior work — read this before calling anything new
+              </p>
+              <div className="mt-3 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr]">
+                <div>
+                  <p className="text-[13px] leading-[1.65] text-ink-2">
+                    <strong>What already exists.</strong> Martin–Quinn ideal
+                    points have placed every justice on a common scale since
+                    2002, estimated from votes back to 1937 and updated each
+                    term<Sup n={1} />. The Spaeth database encodes every
+                    Supreme Court vote since 1946 and is the canonical raw
+                    material of the field. Empirical SCOTUS and the
+                    judicial-politics literature have measured agreement,
+                    ideology and panel effects for two decades — much of it
+                    cited and used in §1. This project did not invent
+                    judicial measurement, and does not claim to.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[13px] leading-[1.65] text-ink-2">
+                    <strong>What is different here.</strong> Four things, all
+                    about access rather than science: a short window in which
+                    every number links to its cached source document, not a
+                    bulk dataset download; measurement anchored in text and
+                    case structure, not votes alone; a per-case
+                    counterfactual — what one vote would have flipped — next
+                    to the aggregate scores; and a public chain of custody
+                    (URI, timestamp, sha256) as the deliverable itself. The
+                    novelty is the receipts, not the statistics.
+                  </p>
+                </div>
+              </div>
+            </aside>
+
             {/* ————— 1. INTRODUCTION ————— */}
             <h2 className="reader-h">1&nbsp;&nbsp;Introduction</h2>
             <p>
@@ -286,6 +325,20 @@ export default async function PaperPage() {
                 </tr>
               </tbody>
             </table></div>
+
+            {/* LS-AUDIT-001 inj. 4 — the counter ladder, reconciled in the
+                science page itself. Five numbers circulate about this
+                project; here is why each exists. */}
+            <p className="mt-4 border-l-4 border-signal pl-4 font-data text-[11.5px] leading-[1.75] tracking-[0.01em] text-ink-2">
+              COUNTER RECONCILIATION — {sys.oyezInterrogated} case files
+              interrogated (including {sys.oyezMisses} failed requests,
+              archived as misses rather than deleted) → {sys.oyezUsable}{" "}
+              readable files → {sys.casesDecided} decided cases (a decision
+              on the record) → {d.cases} modeled here (decided and with
+              every vote machine-readable). The site&rsquo;s header counts
+              the third number, this paper works on the fourth; the
+              difference is a machine-readability filter, not a discrepancy.
+            </p>
 
             <p>
               Three provenance decisions shape everything downstream. First, the

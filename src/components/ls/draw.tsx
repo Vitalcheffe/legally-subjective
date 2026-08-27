@@ -79,7 +79,9 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
       setPhase("LANDED");
       setSpins((n) => n + 1);
       window.history.replaceState(null, "", `#you-drew-${j.slug}`);
-      document.title = `YOU DREW ${j.stamp} — ${pct(j.forTheAsking)} OUT OF 100 · LEGALLY SUBJECTIVE`;
+      /* LS-AUDIT-001 inj. 1 & 12: the tab title carries the interval and
+         the count — what gets screenshotted carries its own doubt. */
+      document.title = `YOU DREW ${j.stamp} — ${pct(j.forTheAsking)} ±${j.pm} OUT OF 100 · ${j.votes} VOTES · LEGALLY SUBJECTIVE`;
     },
     [],
   );
@@ -125,12 +127,14 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
     queueMicrotask(restore);
   }, [bench]);
 
-  /* The tab carries the draw. Re-asserted on every landed change —
-     Next.js re-applies static metadata after hydration and would
-     otherwise overwrite the restore path. The draw wins the race. */
+  /* The tab carries the draw — with its interval and its count
+     (LS-AUDIT-001 inj. 1: a screenshot must not survive without its ±).
+     Re-asserted on every landed change — Next.js re-applies static
+     metadata after hydration and would otherwise overwrite the restore
+     path. The draw wins the race. */
   useEffect(() => {
     if (phase === "LANDED" && landed) {
-      const t = `YOU DREW ${landed.stamp} — ${pct(landed.forTheAsking)} OUT OF 100 · LEGALLY SUBJECTIVE`;
+      const t = `YOU DREW ${landed.stamp} — ${pct(landed.forTheAsking)} ±${landed.pm} OUT OF 100 · ${landed.votes} VOTES · LEGALLY SUBJECTIVE`;
       document.title = t;
       const id = setTimeout(() => {
         document.title = t;
@@ -197,7 +201,9 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
           <p className="mt-7 max-w-[58ch] font-display text-[15.5px] leading-[1.7] text-ink-2">
             A hallway you will never see decides who decides you. Same law,
             same cases — {bench.length} doors, and behind each one a
-            measurably different decider. Spin it. Feel the floor move.
+            measurably different decider. Every number you land on arrives
+            with its vote count and its honest ± — the doubt is printed on
+            the chip, not left in the pocket. Spin it. Feel the floor move.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <button
@@ -246,15 +252,39 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
             YOU DREW {landed.stamp}
           </div>
 
-          {/* the number */}
+          {/* LS-AUDIT-001 inj. 5 — the short-record flag, driven by the
+              docket's own service-years data, never by a hard-coded name. */}
+          {landed.shortMandate && (
+            <p className="mt-4 inline-flex w-fit items-center gap-2 border-2 border-signal-deep px-4 py-2 font-data text-[11px] font-bold tracking-[0.08em] uppercase text-signal-deep">
+              <span className="inline-block h-[7px] w-[7px] bg-signal-deep" />
+              Short record — {landed.serviceYears} terms in this window vs{" "}
+              {landed.benchMaxYears} for the rest of the bench · fewer votes,
+              wider interval, and first-term drift is documented in the
+              literature. Read this door with extra humility.
+            </p>
+          )}
+
+          {/* the number — with its interval at the scale of the number
+              itself (LS-AUDIT-001 inj. 1 & 12: the ± is the brand) */}
           <div className="mt-6 flex flex-wrap items-end gap-x-5 gap-y-1">
             <span className="tabular font-display text-[clamp(4.5rem,13vw,11rem)] font-bold uppercase leading-[0.85] tracking-[-0.04em] text-signal">
               {pct(landed.forTheAsking)}
             </span>
+            <span className="tabular font-display text-[clamp(2rem,5.5vw,4.6rem)] font-bold uppercase leading-[0.85] tracking-[-0.02em] text-signal-deep">
+              ±{landed.pm}
+            </span>
             <span className="pb-3 font-display text-[clamp(1.3rem,3vw,2.4rem)] font-bold uppercase leading-none text-ink">
               out of 100
             </span>
+            <span className="pb-3.5 font-data text-[clamp(0.9rem,1.6vw,1.15rem)] font-semibold tracking-[0.06em] text-ink-2">
+              · {landed.votes} VOTES
+            </span>
           </div>
+          <p className="mt-2 font-data text-[11.5px] tracking-[0.05em] text-ink-3">
+            95% INTERVAL {Math.round(landed.ciLo * 100)}–
+            {Math.round(landed.ciHi * 100)} (WILSON) — THE COUNT AND ITS DOUBT
+            TRAVEL TOGETHER, INCLUDING IN YOUR SCREENSHOT.
+          </p>
 
           <p className="mt-7 max-w-[64ch] font-display text-[clamp(1rem,1.7vw,1.3rem)] leading-[1.6] text-ink">
             When a person stood before this court and asked for relief —
@@ -263,19 +293,21 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
             <strong className="text-signal-deep">
               {pct(landed.forTheAsking)} times in 100
             </strong>
-            . Measured on {landed.votes} recorded votes
-            {windowLabel ? `, ${windowLabel}` : ""}. Not an
-            opinion. A count.
+            , give or take <strong>{landed.pm}</strong> — the honest width of
+            a count made on {landed.votes} recorded votes
+            {windowLabel ? `, ${windowLabel}` : ""}. Not an opinion. A
+            count — with its interval.
           </p>
 
-          {/* the counterfactual */}
+          {/* the counterfactual — every door with its count (inj. 1) */}
           <div className="mt-8 grid max-w-[760px] grid-cols-1 gap-px border border-ink bg-hairline sm:grid-cols-3">
             <div className="bg-paper px-5 py-4">
               <p className="micro">Same bench, lowest door</p>
               <p className="tabular mt-2 font-display text-[1.6rem] font-bold leading-none">
                 {pct(lowest.forTheAsking)}
+                <span className="text-signal-deep"> ±{lowest.pm}</span>
                 <span className="ml-2 font-data text-[11px] font-medium tracking-[0.05em] text-ink-3">
-                  {lowest.stamp}
+                  {lowest.stamp} · {lowest.votes} VOTES
                 </span>
               </p>
             </div>
@@ -292,15 +324,18 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
               <p className="micro">Highest door</p>
               <p className="tabular mt-2 font-display text-[1.6rem] font-bold leading-none">
                 {pct(highest.forTheAsking)}
+                <span className="text-signal-deep"> ±{highest.pm}</span>
                 <span className="ml-2 font-data text-[11px] font-medium tracking-[0.05em] text-ink-3">
-                  {highest.stamp}
+                  {highest.stamp} · {highest.votes} VOTES
                 </span>
               </p>
             </div>
           </div>
           <p className="mt-4 max-w-[64ch] font-display text-[14px] leading-[1.65] text-ink-2">
             Same cases. Same law. The doors run from{" "}
-            {pct(lowest.forTheAsking)} to {pct(highest.forTheAsking)} — the
+            {pct(lowest.forTheAsking)} to {pct(highest.forTheAsking)} — and
+            each of those counts carries ±{lowest.pm}–±{highest.pm} points
+            of its own, so read the spread with those widths in mind. The
             hallway, not the merits, moved you{" "}
             {pct(landed.forTheAsking) - pct(lowest.forTheAsking) >= 0
               ? `up ${pct(landed.forTheAsking) - pct(lowest.forTheAsking)}`
@@ -327,7 +362,9 @@ export function Draw({ bench, windowLabel, casesDecided }: DrawProps) {
           <p className="micro mt-8 max-w-[72ch] normal-case leading-relaxed tracking-[0.02em] text-ink-3">
             Honest limits: the public record does not break this down by
             crime type — this is the overall rate across every merits case
-            the bench heard together. It is a real measurement of real
+            the bench heard together. The ± is the sampling width of the
+            count itself (Wilson, 95%); it does not cover case-to-case
+            variation, which is larger. This is a real measurement of real
             votes, not a prediction of any case. Full method:{" "}
             <a href="/standard" className="underline decoration-hairline underline-offset-4 hover:decoration-signal">
               the standard

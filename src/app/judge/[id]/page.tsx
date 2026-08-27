@@ -69,7 +69,12 @@ function AxisRow({ axis, d }: { axis: string; d: Docket }) {
               <span className="text-[13px] font-medium text-ink-3"> pct</span>
             </p>
             <p className="mt-1.5 font-data text-[11px] text-ink-2 tabular">
-              CI95 [{a.ci95?.[0] ?? "—"}, {a.ci95?.[1] ?? "—"}] · N={a.n.toLocaleString("en-US")}
+              RANK BAND [{a.rank_band?.[0] ?? "—"}, {a.rank_band?.[1] ?? "—"}] · N={a.n.toLocaleString("en-US")}
+              {a.value_ci95 && (
+                <span className="text-signal-deep">
+                  {" ·"} VALUE 95% CI [{(a.value_ci95[0] * 100).toFixed(1)}–{(a.value_ci95[1] * 100).toFixed(1)}%]
+                </span>
+              )}
             </p>
           </>
         ) : (
@@ -113,7 +118,9 @@ export default async function JudgePage({
 
   const slug = d.subject.slug;
 
-  // ——— BLIND SPOTS: where this justice breaks with the bench, per circuit ———
+  // ——— DIVERGENCE PROFILE: where this justice breaks with the bench, per circuit ———
+  // (Renamed from "blind spots" — LS-AUDIT-001 inj. 11: no normative label
+  // on a named judge. A divergence is a fact; a "blind spot" is a verdict.)
   // Real computation from the case record: for each originating court with
   // enough shared cases, the justice's dissent rate vs the bench's on the
   // same cases (self excluded). Divergence = the gap in points.
@@ -247,7 +254,7 @@ export default async function JudgePage({
                     <div key={ax} className="mb-3">
                       <p className="mb-1 flex items-baseline justify-between font-data text-[10.5px] tracking-[0.04em] uppercase">
                         <span className="text-ink-2">{AXIS_LABELS[ax]}</span>
-                        <span className="tabular">{a.percentile} · CI [{a.ci95?.[0]}, {a.ci95?.[1]}]</span>
+                        <span className="tabular">{a.percentile} · RANK [{a.rank_band?.[0]}, {a.rank_band?.[1]}]</span>
                       </p>
                       <PercentileBar pct={a.percentile} />
                     </div>
@@ -257,6 +264,10 @@ export default async function JudgePage({
                 Percentile = median-rank within the declared bench (the sitting
                 Nine). A bench of nine yields nine discrete values — the
                 granularity is coarse by construction and disclosed per §3.5bis.
+                The bracketed band is the bootstrap range of that RANK on the
+                bench — it is not a confidence interval of the measured value;
+                where the value itself admits one (a binomial share), its
+                Wilson 95% interval is shown beside it.
               </p>
             </div>
           </div>
@@ -281,16 +292,17 @@ export default async function JudgePage({
         {blindSpots.length > 0 && (
           <section className="border-b border-rule">
             <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
-              <p className="micro">[003b] Blind spots — where {lastName(d.subject.name)} breaks with the bench</p>
+              <p className="micro">[003b] Divergence profile — where {lastName(d.subject.name)} breaks with the bench</p>
               <h2 className="mt-4 font-display text-[clamp(1.5rem,2.8vw,2.2rem)] font-bold uppercase leading-[1.05] tracking-[-0.01em]">
-                The cases that pull this justice away from the others.
+                The cases where this justice votes apart from the others.
               </h2>
               <p className="mt-4 max-w-[70ch] text-[14px] leading-[1.7] text-ink-2">
                 Grouped by the court the case came up from, each row below
                 compares this justice&apos;s dissent rate with the rate of the
-                other eight on the very same cases. A gap of twenty points is
-                a doorway: walk the same appeal through it, and the room
-                behaves differently around you.
+                other eight on the very same cases. A gap is a measured
+                divergence on shared cases — not a deficiency, not a virtue,
+                and not a prediction: walk the same appeal through it, and
+                the record says the room behaved differently around you.
               </p>
               <div className="mt-7 border-t border-rule">
                 {blindSpots.slice(0, 5).map((b) => (

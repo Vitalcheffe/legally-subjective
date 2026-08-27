@@ -56,13 +56,35 @@ affaires avec leurs vrais verdicts. Méthode : QLoRA, rank 16, learning rate
 affaire d'entraînement, et ajuste ses poids pour mieux prédire. Puis test sur
 les 400 affaires jamais vues.
 
-**Métrique de succès** : accuracy de A vs accuracy de B. Si B bat A de plus
-de 5 points, l'apprentissage fonctionne. Si B ne bat pas A, on arrête et on
-documente — résultat négatif honnête, et les résultats négatifs publient
-aussi.
+**Métrique de succès — règle pré-enregistrée (amendée le 2026-08-27 avant
+tout lancement GPU, sur ordre de l'audit interne LS-AUDIT-001, injonction 2
+— après le run, la même modification s'appellerait une fraude de
+convenance)**. L'expérience oppose TROIS joueurs : le Modèle A (vierge), le
+Modèle B (fine-tuné), et la ligne de base-majoritaire (l'idiot utile qui
+répond toujours « confirmé » — 79,75 % d'accuracy sur ce corpus : ignorer
+ce troisième joueur, c'est organiser un match à deux en prétendant que le
+troisième ne gagne pas sans réfléchir). Les deux modèles jugent les MÊMES
+400 affaires : la différence B − A est donc testée par **McNemar exact
+apparié**, avec **intervalle à 95 %** sur la différence. La gate n'est
+franchie que si les TROIS conditions tiennent :
 
-**Gate de sortie** : accuracies de A et B calculées sur les 400 affaires,
-matrice de confusion produite, biais par type de crime mesuré.
+1. `accuracy(B) − accuracy(A) > 5 points` ;
+2. `p(McNemar exact) < 0,05` ;
+3. `accuracy(B) > accuracy(ligne de base)`.
+
+Pourquoi la condition 3 : à n = 400 et un taux de base de 80 %, un écart
+réel de 5 points ne produit un z observé que de ~1,77 — la gate, à son
+propre seuil, ne détecte l'effet que 42 fois sur 100 quand il est réel.
+Le test apparié regagne la puissance perdue ; la ligne de base empêche de
+célébrer une victoire sur un adversaire plus faible que l'idiot. Si les
+trois conditions ne tiennent pas — y compris partiellement — le résultat
+est un **résultat négatif honnête** : documenté, publié, et l'étage 2 n'est
+pas fondé. Les résultats négatifs publient aussi.
+
+**Gate de sortie** : accuracies de A, B et de la ligne de base-majoritaire
+sur les 400 affaires, McNemar exact apparié + IC 95 % sur B − A, matrice de
+confusion produite, biais par type de crime mesuré — règle complète
+pré-enregistrée ci-dessus, exécutable par le notebook Colab (amendé).
 
 ---
 
@@ -89,13 +111,18 @@ peu est un juge de principe), fréquence des mots émotionnels (« tragic »,
 « pursuant to »). Résultat : un vecteur de personnalité textuelle par juge.
 
 ### Couche 3 — le profil de décision
-Pour chaque juge, fine-tuning d'un modèle séparé sur SES affaires à lui.
-Quand ce juge voit un crime de type X avec des circonstances Y, il décide Z.
-Méthode : QLoRA, un fine-tuning par juge ; split 80/20 ; si le modèle prédit
-les 20 % de test au-dessus du hasard, on a capturé quelque chose du cerveau
-du juge. Plus l'accuracy est haute, plus le profil est précis. Étape la plus
-coûteuse en calcul — 9 modèles pour les Neuf, potentiellement des centaines
-pour les cours d'appel. Le temps n'est pas un problème : on le fait.
+Pour chaque juge, capturer SA logique de décision. **Décision de conception
+(amendée le 2026-08-27, LS-AUDIT-001 injonction 9) : UN SEUL modèle
+conditionné au juge, pas neuf fine-tunages séparés.** L'identité du juge
+entre dans le prompt comme un jeton ; le modèle apprend UNE fois la loi
+commune du corpus, puis les décalages individuels. Pourquoi : neuf
+fine-tunages séparés réapprennent neuf fois les mêmes régularités du
+corpus et étouffent le signal discriminant entre juges — qui ne vit que
+dans la fraction d'affaires disputées. Un modèle conditionné apprend le
+juge marginal avec les mêmes données. Méthode : QLoRA, jeton de juge dans
+le prompt, split 80/20 stratifié PAR JUGE ; si le modèle prédit mieux les
+20 % de test qu'un modèle non conditionné au hasard, on a capturé quelque
+chose du cerveau du juge. Le temps n'est pas un problème : on le fait.
 
 ### Couche 4 — le profil comportemental profond
 Ce que le juge FAIT dans le temps. Évolution du taux de condamnation sur
@@ -136,38 +163,70 @@ roulette.
 
 ---
 
-## ÉTAGE 4 — LE MODULE INFINI : le système qui découvre ses propres variables
+## ÉTAGE 4 — LE MODULE INFINI : le générateur d'hypothèses (protocole verrouillé avant la première ligne de code)
 
-Le composant darwinien. Population initiale de 200 cellules ; chaque cellule
-est une petite fonction qui lit les données et produit un score (mesure une
-corrélation potentielle entre un feature et la décision). À chaque
-génération : la cellule survit et se reproduit (variantes mutées) si son
-feature améliore la prédiction du verdict ; sinon elle meurt. On garde les
-200 meilleures.
+**Amendement LS-AUDIT-001 injonction 8, enregistré le 2026-08-27, AVANT
+toute implémentation.** Le composant darwinien — population initiale de
+200 cellules ; chaque cellule est une petite fonction qui lit les données
+et produit un score — est requalifié officiellement : **générateur
+d'hypothèses**, jamais « découvreur de vérités ». Sans protocole, ce module
+est un générateur garanti de faux positifs : deux cents prédicteurs soumis
+à sélection multiple produisent des survivants même sur des données
+purement aléatoires — c'est la définition même de l'évolution. Le
+protocole, non négociable :
 
-Le système ne sait pas à l'avance qu'il doit chercher « le mot tragic » ou
-« l'heure de l'audience ». Il découvre seul les variables qui prédisent les
-décisions — y compris des variables absurdes, qui meurent parce qu'elles ne
-prédisent rien.
+1. **Jeu de test scellé.** La fitness de chaque cellule est calculée
+   EXCLUSIVEMENT sur un jeu de test tenu à l'écart de la naissance, de la
+   mutation et de toute décision de sélection. Le jeu est évalué UNE fois,
+   à la fin — jamais en boucle.
+2. **Contrôle du taux de faux découvertes.** Le seuil de survie est
+calibré
+   pour 200 prédicteurs concurrents (Bonferroni ou Benjamini-Hochberg,
+   déclaré avant le run). Une cellule qui survit au contrôle n'a fait que
+   survivre au contrôle.
+3. **Réplication sur une deuxième fenêtre.** Toute cellule survivante doit
+   reproduire son signal sur une seconde fenêtre de données, disjointe de
+   la première. Pas de réplication, pas de publication.
+4. **La traduisibilité n'est pas une preuve.** L'humain est une machine à
+   narrativiser le bruit (apophénie). La gate « traduisible en phrase
+   humaine » mesure la rhétorique, pas la réalité — elle est conservée
+   comme exigence de COMMUNICATION, retirée comme critère de VÉRITÉ.
 
-**Gate de l'étage 4** : au moins 3 cellules survivantes traduisibles en
-phrases humaines compréhensibles et non triviales. Si le système ne découvre
-que des évidences (« les juges condamnent plus quand il y a des preuves »),
-échec. Des patterns surprenants, succès.
+**Gate de l'étage 4 (amendée)** : au moins 3 cellules qui survivent au jeu
+scellé, au contrôle des faux découvertes ET à la réplication — et
+l'article les publie comme **hypothèses confirmées à tester**, jamais
+comme résultats. Si le système ne découvre que des évidences (« les juges
+condamnent plus quand il y a des preuves »), échec. Des patterns
+surprenants ET répliqués, succès.
 
 ---
 
-## ÉTAGE 5 — LA VALIDATION CROISÉE HUMAINE
+## ÉTAGE 5 — LE PILOTE DE VALIDATION HUMAINE (requalifié par LS-AUDIT-001 injonction 10)
 
-Le juriste humain (l'ami en droit) reçoit les 400 affaires du set de test,
-sans les verdicts. Il prédit. On compare : le juge réel, le Modèle A, le
-Modèle B, le per-judge, et le juriste.
+**Amendement du 2026-08-27 : l'étage s'appelle « pilote », pas « validation »
+— jusqu'à ce que son protocole complet soit écrit.** Avec un seul
+évaluateur, on mesure autant la personne que la méthode : publier cela
+sous le nom de « validation croisée humaine » offrirait à la critique
+exactement ce que le projet prétend fermer. Le triangle reste l'objectif :
+le juriste humain (l'ami en droit) reçoit les 400 affaires du set de test,
+sans les verdicts ; il prédit ; on compare le juge réel, le Modèle A, le
+Modèle B, le modèle conditionné au juge, et le juriste. Les trois issues
+restent précieuses : l'IA bat le juriste — résultat fort ; le juriste bat
+l'IA — résultat fort aussi ; les deux échouent sur les mêmes affaires —
+peut-être le résultat le plus intéressant : certaines affaires sont
+indécidables par nature.
 
-Le triangle qui rend le projet inattaquable : si l'IA bat le juriste —
-résultat fort. Si le juriste bat l'IA — résultat fort aussi (l'humain
-apporte ce que la machine ne capture pas). Si les deux échouent sur les
-mêmes affaires — preuve que certaines affaires sont indécidables par
-nature ; peut-être le résultat le plus intéressant de tous.
+**Conditions de requalification en « validation »** (toutes obligatoires) :
+- aveuglement décrit par écrit (ce que l'évaluateur voit, ce qu'il ne voit
+  pas, dans quelle ordre) ;
+- au moins deux évaluateurs indépendants ;
+- accord inter-annotateurs rapporté (kappa de Cohen ou équivalent) ;
+- puissance calculée a priori : combien d'affaires faut-il pour distinguer
+  une différence de 5 points entre le juriste et le modèle ;
+- critères d'inclusion des affaires fixés avant la distribution.
+
+Tant que ces conditions ne sont pas réunies, tout livrable de cet étage
+s'appelle **un pilote** — et un pilote publiable comme tel.
 
 ---
 
@@ -192,11 +251,12 @@ correctement les 20 % qu'il n'a pas vues » — le test standard de
 généralisation, la seule métrique qui compte.
 
 **« Est-ce le meilleur moyen ou t'as mieux ? »** — Le meilleur moyen pour la
-prédiction pure est le per-judge fine-tuning (Couche 3). Le meilleur moyen
+prédiction pure est le modèle conditionné au juge (Couche 3, un seul
+fine-tuning avec jeton d'identité — amendé inj. 9). Le meilleur moyen
 pour le produit public est le casier + similarité (Méthode 2 de l'Étage 3).
-On fait les deux : le fine-tuning pour la recherche et le papier, le casier
-pour le site public. Le casier ne ment jamais ; le fine-tuning est marqué
-« simulation » dans le disclaimer.
+On fait les deux : le modèle conditionné pour la recherche et le papier,
+le casier pour le site public. Le casier ne ment jamais ; le modèle
+conditionné est marqué « simulation » dans le disclaimer.
 
 ---
 
@@ -204,13 +264,13 @@ pour le site public. Le casier ne ment jamais ; le fine-tuning est marqué
 
 | Phase | Contenu | Dépend de | Gate de sortie |
 |---|---|---|---|
-| 1 | Dataset complet + Modèle A vs B | — | accuracies A/B sur 400 affaires, matrices de confusion, biais par crime |
+| 1 | Dataset complet + Modèle A vs B + ligne de base (règle pré-enregistrée — inj. 2) | — | A, B, base-majoritaire, McNemar exact + IC 95 % sur B − A, matrices de confusion, biais par crime |
 | 2 | Profilage des 9 juges (statistique + textuel) | 1 | 4 couches amorcées, profils publiés |
-| 3 | Per-judge fine-tuning (9 modèles SCOTUS) | 2 | chaque modèle bat le hasard sur ses 20 % de test |
+| 3 | Modèle conditionné au juge (UN seul, jeton d'identité — inj. 9) | 2 | le modèle conditionné bat le hasard ET le modèle non conditionné sur ses 20 % de test |
 | 4 | Similarité sémantique (le casier public) | 1 | embeddings + retrieval opérationnels |
 | 5 | Simulation croisée (casier + fine-tuning) | 3, 4 | les deux méthodes livrées et disclaimées |
-| 6 | Module infini darwinien | 1 | ≥ 3 cellules survivantes non triviales et traduisibles |
-| 7 | Validation humaine (le juriste) | 1 | triangle comparé : réel / A / B / per-judge / humain |
+| 6 | Module infini darwinien (générateur d'hypothèses — protocole inj. 8) | 1 | ≥ 3 cellules survivant au jeu scellé, au FDR et à la réplication |
+| 7 | Pilote de validation humaine (requalifiable — inj. 10) | 1 | triangle comparé : réel / A / B / conditionné / humain |
 | 8 | Publication + déploiement | toutes | arXiv + site + vidéo + notebook |
 
 ---
@@ -246,16 +306,26 @@ longueur minimale 200 caractères. Rapport complet :
 
 **Fait — le notebook d'entraînement existe.**
 `phase1/colab/manhattan_stage1_ab.ipynb` : Modèle A zero-shot vs Modèle B
-QLoRA (rank 16, lr 2e-4, 3 époques), évaluation sur les 400 affaires,
-matrices de confusion, biais par catégorie de crime, gate ±5 points,
-rapport JSON. Prêt pour Colab T4.
+QLoRA (rank 16, lr 2e-4, 3 époques) vs ligne de base-majoritaire (troisième
+bras — inj. 2), évaluation sur les 400 affaires, McNemar exact apparié + IC
+95 % sur B − A, matrices de confusion, biais par catégorie de crime, gate
+pré-enregistrée à trois conditions, rapport JSON. Prêt pour Colab T4.
 
 **Reste (Phase 1).**
 1. Exécuter le notebook sur Colab T4 (compte utilisateur — le sandbox n'a
-   pas de GPU) et rapporter `results_stage1.json`.
-2. Décider la gate : B − A > 5 points → Étage 2 fondé ; sinon documenter le
-   résultat négatif.
+   pas de GPU) et rapporter `results_stage1.json`. La règle de décision à
+   trois conditions est pré-enregistrée ci-dessus ET dans le notebook :
+   le run ne pourra plus la réécrire.
+2. Lire la gate telle qu'elle est écrite : B − A > 5 points ET McNemar
+   p < 0,05 ET B > ligne de base. Toute autre issue se documente comme
+   résultat négatif — sans réinterprétation.
 3. (Optionnel) Étendre le corpus au-delà de nyappdiv pour la robustesse.
+
+**Amendements de conception enregistrés ce jour (LS-AUDIT-001)** : gate de
+l'étage 1 pré-enregistrée à trois conditions (inj. 2) ; un seul modèle
+conditionné au juge pour l'étage 2-couche 3 (inj. 9) ; le module darwinien
+requalifié générateur d'hypothèses avec protocole scellé (inj. 8) ;
+l'étage 5 requalifié pilote jusqu'à protocole complet (inj. 10).
 
 **Phases 2 à 8** : non commencées — chacune dépend de la gate précédente.
 

@@ -1,84 +1,97 @@
 {
  "axes": {
   "disposition": {
-   "ci95": [
-    61,
-    94
-   ],
    "metric": "reversal-share",
    "metric_def": "Petitioner-alignment rate: of the merits cases this justice voted in, the share where their side favored the party seeking relief (petitioner/appellant), resolved from the Oyez winning-party record. A directional outcome-orientation proxy — not an affirm/reverse count.",
    "n": 226,
    "percentile": 94,
+   "rank_band": [
+    61,
+    94
+   ],
    "sources": [
     "oyez:api.oyez.org/cases/<term>/<docket> — 231 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
    ],
    "status": "ok",
-   "value": 0.6858
+   "value": 0.6858,
+   "value_ci95": [
+    0.6226,
+    0.7428
+   ]
   },
   "exposure": {
-   "ci95": [
-    6,
-    94
-   ],
    "metric": "publication-rate",
    "metric_def": "Publication rate: authored lead opinions per year of service inside the declared window (service years from Oyez role metadata).",
    "n": 63,
    "percentile": 28,
+   "rank_band": [
+    6,
+    94
+   ],
    "sources": [
     "courtlistener:…/api/rest/v4/search/?judge=… — 63 lead-opinion pages cached under data/sources/courtlistener/judges/kavanaugh/ with manifest"
    ],
    "status": "ok",
-   "value": 9.0
+   "value": 9.0,
+   "value_ci95": null
   },
   "orality": {
-   "ci95": null,
    "n": 0,
    "note": "not computable from current sources",
    "percentile": null,
-   "status": "insufficient-data"
+   "rank_band": null,
+   "status": "insufficient-data",
+   "value_ci95": null
   },
   "precedent": {
-   "ci95": [
-    28,
-    83
-   ],
    "metric": "citation-density",
    "metric_def": "Citation density: mean number of authorities cited per authored lead opinion (CourtListener cites arrays). Engagement with precedent, measured by citation volume, not by treatment.",
    "n": 63,
    "percentile": 61,
+   "rank_band": [
+    28,
+    83
+   ],
    "sources": [
     "courtlistener:…/api/rest/v4/search/?judge=… — 63 lead-opinion pages cached under data/sources/courtlistener/judges/kavanaugh/ with manifest"
    ],
    "status": "ok",
-   "value": 34.4127
+   "value": 34.4127,
+   "value_ci95": null
   },
   "reversal": {
-   "ci95": null,
    "n": 0,
    "note": "not computable from current sources",
    "percentile": null,
-   "status": "insufficient-data"
+   "rank_band": null,
+   "status": "insufficient-data",
+   "value_ci95": null
   },
   "temperament": {
-   "ci95": [
-    6,
-    17
-   ],
    "metric": "dissent-rate",
    "metric_def": "Dissent rate: of the merits votes cast, the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
    "n": 231,
    "percentile": 6,
+   "rank_band": [
+    6,
+    17
+   ],
    "sources": [
     "oyez:api.oyez.org/cases/<term>/<docket> — 231 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
    ],
    "status": "ok",
-   "value": 0.0476
+   "value": 0.0476,
+   "value_ci95": [
+    0.0268,
+    0.0832
+   ]
   }
  },
  "chain": {
-  "computed_at": "2026-08-27T07:49:16Z",
+  "computed_at": "2026-08-27T12:00:12Z",
+  "correction": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
   "pipeline": "legally-subjective/1.0.0",
-  "sha256": "D096AD9EDEE88E08666F2C5A15A8E0838B3875E14E2A20EBFEBEEF4D8C49ABA9"
+  "sha256": "258FB7D6A4E5C03EDFF14957E52005645BDC3D1A87E6BE8D48F69CD99BCF32A3"
  },
  "docket": "LS-J-007",
  "filed_at": "2026-08-27T07:49:16Z",
@@ -105,7 +118,7 @@
   "separate_writings": 31,
   "service_years_window": 7
  },
- "revision": 0,
+ "revision": 1,
  "standard": "LS-1.0",
  "status": "FILED",
  "subject": {
@@ -116,6 +129,11 @@
   "role": "associate-justice",
   "slug": "kavanaugh",
   "small_bench": true
+ },
+ "supersedes": {
+  "docket": "LS-J-007",
+  "reason": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
+  "revision": 0
  },
  "window": {
   "end": "2026-08-24",

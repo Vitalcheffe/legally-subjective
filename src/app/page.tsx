@@ -1,6 +1,7 @@
 import { Draw } from "@/components/ls/draw";
 import { getSystemState } from "@/lib/system-state";
 import { getBench } from "@/lib/justices";
+import { listDockets, getAgreement } from "@/lib/dockets";
 
 /* ————————————————————————————————————————————————
    THE FRONT OF THE SHOP — one page, one question,
@@ -14,7 +15,23 @@ import { getBench } from "@/lib/justices";
    Every number the wheel can land on is real and
    traceable: data/dockets/LS-J-00{1..9}.json, axis
    "disposition", measured on recorded votes.
+
+   LS-AUDIT-001, injonction 1: every public percentage
+   below carries its EFFECTIVE N and its Wilson ±,
+   computed here from the FILED record — never typed
+   by hand, never juxtaposed without its base.
    ———————————————————————————————————————————————— */
+
+/** Wilson half-width (percentage points) for a share p over n trials. */
+function wilsonPm(p: number, n: number): number {
+  const z = 1.959964;
+  const denom = 1 + (z * z) / n;
+  const center = (p + (z * z) / (2 * n)) / denom;
+  const half = (z / denom) * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n));
+  const lo = Math.max(0, center - half);
+  const hi = Math.min(1, center + half);
+  return Math.round((hi - lo) * 50);
+}
 
 interface Question {
   n: string;
@@ -25,8 +42,45 @@ interface Question {
 }
 
 export default async function Home() {
-  const [sys, bench] = await Promise.all([getSystemState(), getBench()]);
+  const [sys, bench, dockets, agreement] = await Promise.all([
+    getSystemState(),
+    getBench(),
+    listDockets(),
+    getAgreement(),
+  ]);
   const live = sys.state === "WARM";
+
+  /* ——— The vedette pair, recomputed from the FILED record ———
+     Thomas–Jackson (the most divided pair) vs Roberts–Kavanaugh
+     (the closest), each with its shared-case count and Wilson ±. */
+  const pairs = agreement?.pairs ?? {};
+  const readPair = (a: string, b: string) =>
+    pairs[`${a}|${b}`] ?? pairs[`${b}|${a}`] ?? null;
+  const divided = readPair("thomas", "jackson");
+  const aligned = readPair("roberts", "kavanaugh");
+  const pctDiv = divided?.agree != null ? Math.round(divided.agree * 1000) / 10 : null;
+  const pctAln = aligned?.agree != null ? Math.round(aligned.agree * 1000) / 10 : null;
+
+  /* ——— The dissent range and citation range, from the dockets ——— */
+  const tempers = dockets
+    .map((d) => ({ slug: d.subject.slug, name: d.subject.name, a: d.axes.temperament }))
+    .filter((x) => x.a?.value != null)
+    .map((x) => ({ ...x, v: x.a!.value as number, n: x.a!.n }));
+  const loTemp = tempers.length
+    ? tempers.reduce((m, x) => (x.v < m.v ? x : m), tempers[0])
+    : null;
+  const hiTemp = tempers.length
+    ? tempers.reduce((m, x) => (x.v > m.v ? x : m), tempers[0])
+    : null;
+  const prec = dockets
+    .map((d) => ({ name: d.subject.name, a: d.axes.precedent }))
+    .filter((x) => x.a?.value != null)
+    .map((x) => ({ v: x.a!.value as number, n: x.a!.n }));
+  const loPrec = prec.length ? prec.reduce((m, x) => (x.v < m.v ? x : m), prec[0]) : null;
+  const hiPrec = prec.length ? prec.reduce((m, x) => (x.v > m.v ? x : m), prec[0]) : null;
+
+  const split100 =
+    divided?.agree != null ? Math.round((1 - divided.agree) * 100) : null;
 
   const QUESTIONS: Question[] = [
     {
@@ -34,13 +88,24 @@ export default async function Home() {
       q: "Does it matter which judge you draw?",
       a: (
         <>
-          On the cases they decided together, Clarence Thomas and Ketanji Brown
-          Jackson voted the same way{" "}
-          <strong className="text-signal-deep">56.95%</strong> of the time —
-          they split on nearly half of them. John Roberts and Brett Kavanaugh:
-          <strong className="text-signal-deep"> 95.24%</strong>. Same court.
-          Same cases. Same law. The judge behind the door is part of the
-          outcome.
+          On the cases they decided together ({divided?.n ?? "—"} shared
+          cases), Clarence Thomas and Ketanji Brown Jackson voted the same
+          way{" "}
+          <strong className="text-signal-deep">
+            {pctDiv ?? "—"}%
+          </strong>{" "}
+          <span className="font-data text-[12px] text-ink-3">
+            (±{divided?.agree != null ? wilsonPm(divided.agree, divided.n) : "—"} pts)
+          </span>{" "}
+          — they split on nearly half of them. John Roberts and Brett
+          Kavanaugh:{" "}
+          <strong className="text-signal-deep">{pctAln ?? "—"}%</strong>{" "}
+          <span className="font-data text-[12px] text-ink-3">
+            (±{aligned?.agree != null ? wilsonPm(aligned.agree, aligned.n) : "—"} pts,{" "}
+            {aligned?.n ?? "—"} shared cases)
+          </span>
+          . Same court. Same cases. Same law. Different bases — different
+          counts, which is why each carries its own.
         </>
       ),
       door: "Meet the nine",
@@ -53,13 +118,40 @@ export default async function Home() {
         <>
           Nobody can read a judge&apos;s heart. Behavior can be counted. How
           often a justice stands alone in dissent runs from{" "}
-          <strong className="text-signal-deep">4.8%</strong> to{" "}
-          <strong className="text-signal-deep">25.5%</strong> across this
-          bench — a five-fold gap. How heavily they anchor each opinion in
-          precedent runs from{" "}
-          <strong className="text-signal-deep">23</strong> to{" "}
-          <strong className="text-signal-deep">50</strong> cited authorities.
-          Different judges are, measurably, different deciders.
+          <strong className="text-signal-deep">
+            {loTemp ? (loTemp.v * 100).toFixed(1) : "—"}%
+          </strong>{" "}
+          {loTemp && (
+            <span className="font-data text-[12px] text-ink-3">
+              ({loTemp.n} votes, ±{wilsonPm(loTemp.v, loTemp.n)} pts)
+            </span>
+          )}{" "}
+          to{" "}
+          <strong className="text-signal-deep">
+            {hiTemp ? (hiTemp.v * 100).toFixed(1) : "—"}%
+          </strong>{" "}
+          {hiTemp && (
+            <span className="font-data text-[12px] text-ink-3">
+              ({hiTemp.n} votes, ±{wilsonPm(hiTemp.v, hiTemp.n)} pts)
+            </span>
+          )}{" "}
+          across this bench — a five-fold gap. How heavily they anchor each
+          opinion in precedent runs from{" "}
+          <strong className="text-signal-deep">
+            {loPrec ? Math.round(loPrec.v) : "—"}
+          </strong>{" "}
+          to{" "}
+          <strong className="text-signal-deep">
+            {hiPrec ? Math.round(hiPrec.v) : "—"}
+          </strong>{" "}
+          cited authorities
+          {loPrec && hiPrec && (
+            <span className="font-data text-[12px] text-ink-3">
+              {" "}
+              ({loPrec.n}–{hiPrec.n} opinions; means, no interval)
+            </span>
+          )}
+          . Different judges are, measurably, different deciders.
         </>
       ),
       door: "See what we measure",
@@ -74,8 +166,15 @@ export default async function Home() {
           asserted: where they diverge, by how much, and with what
           uncertainty — all from votes they actually cast on cases they both
           heard. The most divided pair on this Court splits on{" "}
-          <strong className="text-signal-deep">43 of every 100</strong>{" "}
-          common votes.
+          <strong className="text-signal-deep">
+            {split100 ?? "—"} of every 100
+          </strong>{" "}
+          common votes
+          <span className="font-data text-[12px] text-ink-3">
+            {" "}
+            ({divided?.n ?? "—"} shared cases)
+          </span>
+          .
         </>
       ),
       door: "Compare two judges",
@@ -88,7 +187,10 @@ export default async function Home() {
         <>
           Because you don&apos;t have to. Every figure on this site carries its
           own receipt: the exact public filing it came from, the date it was
-          read, and a fingerprint anyone can re-verify at home. If a number
+          read, and a fingerprint anyone can re-verify at home. And since the
+          internal audit of August 2026, every public percentage carries its
+          vote count and its ± — a number without its interval is an opinion
+          in costume, and this project refuses to wear it. If a number
           can&apos;t be traced to a public document, it doesn&apos;t appear
           here. That is the whole method.
         </>
@@ -119,8 +221,55 @@ export default async function Home() {
               The spin makes you feel it; these pages prove it. No opinions —
               only counts from {sys.casesDecided} decided cases read off the
               public record{sys.windowLabel ? ` (${sys.windowLabel})` : ""},
-              Supreme Court of the United States.
+              Supreme Court of the United States — each with its count and
+              its honest width.
             </p>
+
+            {/* LS-AUDIT-001 inj. 4 — the counter reconciliation, public.
+                Five numbers used to circulate unreconciled; now the ladder
+                itself is the display, each step explained in one clause. */}
+            <div className="mt-8 border border-ink bg-paper-2 px-5 py-4">
+              <p className="font-data text-[10.5px] font-bold tracking-[0.1em] uppercase text-signal-deep">
+                The count, reconciled — why five numbers exist
+              </p>
+              <p className="mt-2.5 font-data text-[12px] leading-[1.8] tracking-[0.01em] text-ink-2">
+                <span className="font-bold tabular text-ink">
+                  {sys.oyezInterrogated}
+                </span>{" "}
+                case files pulled from the public record
+                <span className="text-ink-3">
+                  {" "}
+                  — of which {sys.oyezMisses} failed requests were archived
+                  as misses, not hidden
+                </span>{" "}
+                →{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.oyezUsable}
+                </span>{" "}
+                readable files
+                <span className="text-ink-3"> (everything that answered)</span>{" "}
+                →{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.casesDecided}
+                </span>{" "}
+                decided cases
+                <span className="text-ink-3">
+                  {" "}
+                  (carrying a decision on the record)
+                </span>{" "}
+                →{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.casesModeled}
+                </span>{" "}
+                modeled in the research
+                <span className="text-ink-3">
+                  {" "}
+                  (decided AND with every vote machine-readable — the
+                  remainder lost a vote field, not a fact)
+                </span>
+                . Every step is a documented filter, not a loss of truth.
+              </p>
+            </div>
 
             <div className="mt-10 border-t border-rule">
               {QUESTIONS.map((item) => {
@@ -158,7 +307,8 @@ export default async function Home() {
               This is an open measurement project, not a law firm. It does not
               predict any case and does not give legal advice. It counts what
               nine public officials publicly did — so that &ldquo;it depends on
-              the judge&rdquo; stops being a saying and becomes a number.
+              the judge&rdquo; stops being a saying and becomes a number with
+              its interval.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3 font-data text-[11px] font-semibold tracking-[0.08em] uppercase">

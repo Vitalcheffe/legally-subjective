@@ -300,6 +300,23 @@ def _seed(docket_id: str, axis: str) -> int:
     return int(h[:8], 16) % (2**32)
 
 
+def wilson_ci(p: float, n: int) -> list[float] | None:
+    """Wilson score interval (95%) for a binomial share p over n trials.
+
+    LS-AUDIT-001, injonction 3: the measured VALUE gets its own interval
+    where the metric is a binomial share (disposition, temperament).
+    Means and rates (precedent, exposure) carry null — no honest interval
+    without a model of their sampling process, and the docket says so.
+    """
+    if n < 1:
+        return None
+    z = 1.959964  # two-sided 95%
+    denom = 1.0 + z * z / n
+    center = (p + z * z / (2 * n)) / denom
+    half = (z / denom) * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5)
+    return [round(max(0.0, center - half), 4), round(min(1.0, center + half), 4)]
+
+
 def bootstrap_ci(
     docket_id: str,
     axis: str,
@@ -406,9 +423,16 @@ def compute_bench() -> dict:
                         per_year[int(y)] += 1
                 units = [float(per_year[y]) for y in sorted(per_year)]
                 ci = bootstrap_ci(docket_id, axis, units, lambda s: sum(s) / len(s) if s else None, others, value)
+            # LS-AUDIT-001 inj.3: 'ci95' was a lie — this band is the
+            # bootstrap interval of the PERCENTILE RANK on the bench, not
+            # a confidence interval of the measured value. Renamed, and
+            # the value gets its own Wilson interval where it is a share.
             r["axes"][axis] = {
                 "percentile": round(pct),
-                "ci95": ci,
+                "rank_band": ci,
+                "value_ci95": (
+                    wilson_ci(value, n) if axis in ("disposition", "temperament") else None
+                ),
                 "n": n,
                 "status": "ok",
                 "value": value,
