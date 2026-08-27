@@ -193,16 +193,19 @@ export function Interrogation({ judgesScored, docketsIngested }: InterrogationPr
               What do you have to lose?
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="#map" className="btn">
-                Enter the record →
+              <a href={judgesScored > 0 ? "/court/scotus" : "#map"} className="btn">
+                {judgesScored > 0 ? "Open the record →" : "Enter the record →"}
               </a>
               <button type="button" onClick={copyQuestion} className="btn">
                 Copy the question
               </button>
             </div>
             <p className="micro normal-case tracking-[0.04em] text-ink-3">
-              Routes to /court/&#123;id&#125; once ingestion is live. Nothing is
-              estimated.
+              {judgesScored > 0
+                ? `The record is open: ${judgesScored} dockets filed from ${docketsIngested.toLocaleString(
+                    "en-US",
+                  )} cached source files. Nothing is estimated.`
+                : "Routes to /court/&#123;id&#125; once ingestion is live. Nothing is estimated."}
             </p>
           </div>
         </div>

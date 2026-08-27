@@ -12,56 +12,54 @@ const MAP: Array<{
   route: string;
   name: string;
   fn: string;
-  state: "LIVE" | "PENDING DATA";
   href?: string;
 }> = [
   {
     route: "/",
     name: "The Interrogation",
     fn: "Asks the one question. Converts a visitor into a query. Shows the live state of the record — build, counts, clock.",
-    state: "LIVE",
   },
   {
     route: "/judge/{id}",
     name: "The Case File",
-    fn: "One judge. Six axes, percentiles against the bench, confidence intervals, N. The docket list that built the score.",
-    state: "PENDING DATA",
+    fn: "One judge. Six axes, percentiles against the bench, confidence intervals, N. The raw count, the limits, the chain.",
+    href: "/judge/LS-J-001",
   },
   {
     route: "/court/{id}",
     name: "The Bench",
-    fn: "One court, ranked judge by judge, sortable by axis. The spread per axis — proof the bench is not uniform.",
-    state: "PENDING DATA",
+    fn: "One court, ranked judge by judge, sortable by axis. The spread per axis — and the agreement matrix over common votes.",
+    href: "/court/scotus",
   },
   {
     route: "/compare/{a}/{b}",
     name: "The Other Door",
     fn: "Two judges. The quantified counterfactual: what changes — in numbers with intervals — when the door changes.",
-    state: "PENDING DATA",
+    href: "/compare/sotomayor/alito",
   },
   {
     route: "/docket/{id}",
     name: "The Chain of Custody",
     fn: "Every number on this site, traced to the filed document it came from. Click any figure, arrive at the primary record.",
-    state: "PENDING DATA",
+    href: "/docket/LS-J-001",
   },
   {
     route: "/standard",
     name: "The Norm",
     fn: "LS-1.0 itself — the computation, public and replicable. The spec this site obeys, rendered from the repository file.",
-    state: "LIVE",
     href: "/standard",
   },
   {
     route: "/api/*",
     name: "The Interface",
     fn: "Canonical JSON for machines. Versioned, cached, deterministic. The standard is only real if machines can consume it.",
-    state: "PENDING DATA",
+    href: "/api/dockets",
   },
 ];
 
 export default async function Home() {
   const sys = await getSystemState();
+  const live = sys.state === "WARM";
 
   return (
     <div className="flex min-h-screen flex-col bg-paper font-display text-ink">
@@ -88,7 +86,9 @@ export default async function Home() {
             <h2 className="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.9rem)] font-bold uppercase leading-[1.02] tracking-[-0.02em]">
               Seven URLs. Each one computes.
               <br />
-              <span className="text-ink-2">Nothing else ships.</span>
+              <span className="text-ink-2">
+                {live ? "All seven are live." : "Nothing else ships."}
+              </span>
             </h2>
 
             <div className="mt-10 border-t border-rule">
@@ -106,16 +106,16 @@ export default async function Home() {
                     </span>
                     <span
                       className={`font-data text-[10px] font-medium tracking-[0.08em] uppercase sm:justify-self-end ${
-                        r.state === "LIVE" ? "text-signal-deep" : "text-ink-3"
+                        live ? "text-signal-deep" : "text-ink-3"
                       }`}
                     >
-                      {r.state === "LIVE" ? "■ LIVE" : "○ PENDING DATA"}
+                      {live ? "■ LIVE" : "○ PENDING DATA"}
                     </span>
                   </>
                 );
                 const cls =
                   "grid grid-cols-1 gap-x-8 gap-y-1.5 border-b border-hairline py-4 sm:grid-cols-[180px_190px_1fr_120px] sm:items-baseline";
-                return r.href ? (
+                return live && r.href ? (
                   <a key={r.route} href={r.href} className={`${cls} hover:bg-row-hover`}>
                     {row}
                   </a>
@@ -129,9 +129,12 @@ export default async function Home() {
 
             <p className="micro mt-7 normal-case leading-relaxed tracking-[0.04em] text-ink-3">
               A URL that computes nothing does not ship. No about page. No
-              blog. No team. No press kit. The presentation is the data —
-              the four data routes open when the first dockets are FILED,
-              and not one day before.
+              blog. No team. No press kit. The presentation is the data —{" "}
+              {live
+                ? `the record is open: ${sys.judgesScored} dockets FILED from ${sys.docketsIngested.toLocaleString(
+                    "en-US",
+                  )} cached source files.`
+                : "the four data routes open when the first dockets are FILED, and not one day before."}
             </p>
           </div>
         </section>

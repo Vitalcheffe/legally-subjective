@@ -35,6 +35,17 @@ All axes are expressed as an integer percentile 0–99 against the reference ben
 
 **Reference bench.** Each docket declares its bench: the population of actors used for percentile normalization (e.g., "US Courts of Appeals, active judges, 2010–2026"). Percentiles without a declared bench are invalid.
 
+**Declared v1 proxies (ratified at first filing).** The reference implementation ships four computed axes and two nulls. Each docket carries the full proxy statement in `axes.<axis>.metric_def`:
+
+| Axis | v1 proxy | Null axes |
+|------|----------|-----------|
+| Disposition | Petitioner-alignment rate — share of voted merits cases where the actor's side favored the party seeking relief (petitioner/appellant), resolved from the winning-party record | — |
+| Temperament | Dissent rate — share of merits votes cast with the minority | — |
+| Precedent | Citation density — mean authorities cited per authored lead opinion | — |
+| Reversal | — | Not computable: no reviewing court sits above the declared bench; treatment analysis pending citation-depth ingestion |
+| Orality | — | Oral-argument transcripts not yet ingested |
+| Exposure | Publication rate — authored lead opinions per calendar year of service inside the window | — |
+
 ## 3. Computation rules
 
 1. **Ingestion.** Raw records are cached with URI + retrieval timestamp. No live lookups at compute time.
@@ -42,6 +53,7 @@ All axes are expressed as an integer percentile 0–99 against the reference ben
 3. **Normalization.** Percentile = empirical CDF rank within the reference bench: `pct = 100 · (rank − 0.5) / bench_size` (median-rank convention, ties averaged).
 4. **Confidence intervals.** Bootstrap over the actor's decision set: 10,000 resamples, percentile method, seed = `sha256(docket_id + axis_name + standard_version)` truncated to 32 bits. The seed is disclosed in the docket.
 5. **Insufficient data.** If N < 30 for an axis (or the bench has < 30 members), the axis is `null`, status `insufficient-data`, and the glyph renders that spoke dashed.
+5bis. **Small-bench rule.** A reference bench of ≥ 5 but < 30 members is admissible when: `bench_n` and `small_bench: true` are declared in the docket; the docket's `limits` state the coarse percentile granularity; and the bootstrap CI is computed against the fixed bench as described in rule 4. (Adopted before the first FILED docket.)
 6. **Rounding.** Percentiles integer; CI bounds integer; raw metrics kept at full precision internally.
 
 ## 4. The Docket JSON (canonical artifact)
@@ -136,6 +148,8 @@ Non-compliant implementations MUST NOT use the standard identifier.
 ## 9. Versioning
 
 LS-1.0 freezes when the first docket is FILED. Any change to formulas, normalization, or schema bumps to LS-1.1+. Filed dockets keep their original standard version forever.
+
+**Freeze record.** Before the first filing, two pre-ratification amendments were adopted: (a) §5.4 rotation widened from mod 60 to mod 360; (b) §2 declared v1 proxies and §3.5bis small-bench rule. The first FILED dockets — the sitting Nine of the Supreme Court of the United States, window OT2020–2026, sources CourtListener and Oyez — carry this version.
 
 ---
 

@@ -26,10 +26,25 @@ export interface SystemState {
   state: "COLD" | "WARM";
 }
 
-async function countJsonFiles(dir: string): Promise<number> {
+async function listFiles(dir: string): Promise<string[]> {
   try {
-    const entries = await readdir(path.join(process.cwd(), dir));
-    return entries.filter((f) => f.endsWith(".json")).length;
+    return await readdir(path.join(process.cwd(), dir));
+  } catch {
+    return [];
+  }
+}
+
+async function countJsonFiles(dir: string, recursive = false): Promise<number> {
+  try {
+    const entries = await readdir(path.join(process.cwd(), dir), { withFileTypes: true });
+    let count = 0;
+    for (const e of entries) {
+      if (e.isFile() && e.name.endsWith(".json")) count += 1;
+      else if (recursive && e.isDirectory()) {
+        count += await countJsonFiles(path.join(dir, e.name), true);
+      }
+    }
+    return count;
   } catch {
     return 0;
   }
@@ -49,8 +64,11 @@ export async function getSystemState(): Promise<SystemState> {
     /* The standard is missing — the interface says so. It invents nothing. */
   }
 
-  const judgesScored = await countJsonFiles("data/dockets");
-  const docketsIngested = await countJsonFiles("data/sources");
+  /** FILED dockets only — the MANIFEST is not a docket. */
+  const judgesScored = (await listFiles("data/dockets")).filter((f) =>
+    f.startsWith("LS-J-") && f.endsWith(".json"),
+  ).length;
+  const docketsIngested = await countJsonFiles("data/sources", true);
 
   let engineCycles = 0;
   let engineLast = "NEVER";

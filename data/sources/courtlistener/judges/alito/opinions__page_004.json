@@ -1,0 +1,168 @@
+{
+ "count": 62,
+ "next": null,
+ "previous": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjEwNTgyNDAwMDAwJnM9NDg0NzU5MCZyPTEmdD1vJmQ9MjAyNi0wOC0yNyZwPTM%3D&filed_after=2020-10-01&format=json&judge=Samuel+Alito&order_by=dateFiled+desc&type=o",
+ "results": [
+  {
+   "absolute_url": "/opinion/4847590/chicago-v-fulton/",
+   "attorney": "",
+   "caseName": "Chicago v. Fulton",
+   "caseNameFull": "",
+   "citation": [
+    "592 U.S. 154"
+   ],
+   "citeCount": 62,
+   "cluster_id": 4847590,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": null,
+   "dateFiled": "2021-01-14",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "19-357",
+   "docket_id": 29105324,
+   "judge": "Samuel Alito",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:26.871366Z",
+    "date_created": "2021-01-14T16:00:37.235632Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 77,
+     "cites": [
+      96405,
+      110958,
+      112522,
+      117977,
+      145884,
+      532101,
+      866912,
+      1264642,
+      1469058,
+      1537286,
+      1553026,
+      2798228,
+      4148584,
+      4408577,
+      4450750,
+      9435118
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/20pdf/19-357_6k47.pdf",
+     "id": 4651369,
+     "joined_by_ids": [],
+     "local_path": "pdf/2021/01/14/chicago_v._fulton.pdf",
+     "meta": {
+      "timestamp": "2025-11-27T07:07:16.304649Z",
+      "date_created": "2021-01-14T16:00:37.262399Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "c349e0e0a7ec1cb6a4447e2072ae586e0fa5aa8d",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2020                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    4651369
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/4837662/united-states-v-briggs/",
+   "attorney": "",
+   "caseName": "United States v. Briggs",
+   "caseNameFull": "",
+   "citation": [
+    "592 U.S. 69",
+    "141 S. Ct. 467",
+    "208 L. Ed. 2d 318"
+   ],
+   "citeCount": 21,
+   "cluster_id": 4837662,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": null,
+   "dateFiled": "2020-12-10",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "19-108",
+   "docket_id": 18730818,
+   "judge": "Samuel Alito",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:31:41.250941Z",
+    "date_created": "2020-12-10T16:01:01.042408Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 77,
+     "cites": [
+      96405,
+      2812588,
+      6680682,
+      9420974,
+      9421564,
+      9426843,
+      9426971,
+      9431452,
+      9431831,
+      9432802,
+      9434155,
+      9434285,
+      9434739,
+      9435168,
+      9842108
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/20pdf/19-108_8njq.pdf",
+     "id": 4641441,
+     "joined_by_ids": [],
+     "local_path": "pdf/2020/12/10/united_states_v._briggs.pdf",
+     "meta": {
+      "timestamp": "2025-11-27T06:36:46.764468Z",
+      "date_created": "2020-12-10T16:01:01.070869Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "efdf1a0efcf2e19a1bca834bb69dc8e22af184f3",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2020                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    4641441
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  }
+ ]
+}

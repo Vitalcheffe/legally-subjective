@@ -106,14 +106,35 @@
       "id": "A-005",
       "owner": "agent",
       "type": "code",
-      "title": "Routes data-driven — /judge/[id], /court/[id], /compare/[a]/[b], /docket/[id], /api/* — ne shippent QU'avec l'ingestion (loi: une URL qui ne calcule rien n'existe pas). Statut actuel: / (interrogation) et /standard (la norme rendue depuis le fichier) sont LIVE",
-      "status": "pending"
+      "title": "Routes data-driven — LIVRÉ: /judge/[id] (Case File), /court/[id] (Bench + matrice d'accord cliquable), /compare/[a]/[b] (Other Door: split % + deltas), /docket/[id] (Chain of Custody), /api/dockets (+ ?format=bibtex). 7/7 URL LIVE, télémétrie WARM",
+      "status": "done"
     },
     {
       "id": "A-006",
       "owner": "agent",
       "type": "code",
-      "title": "Ingestion CourtListener — client REST authentifié, cache sourcé dans data/sources/ — débloque les 4 routes data et fait passer la télémétrie de COLD à WARM",
+      "title": "Ingestion CourtListener + Oyez — LIVRÉ: 688 clusters CL indexés, 329 cas Oyez avec votes par juge, 587 opinions signées avec citations, cache sourcé data/sources/ (422 fichiers, URIs + timestamps)",
+      "status": "done"
+    },
+    {
+      "id": "A-007",
+      "owner": "agent",
+      "type": "code",
+      "title": "Axe Orality — ingestion des transcriptions d'audience (Oyez audio/sections) pour débloquer le 5e axe",
+      "status": "pending"
+    },
+    {
+      "id": "A-008",
+      "owner": "agent",
+      "type": "code",
+      "title": "Axe Reversal — analyse de traitement des citations (affirmed/reversed/distinguished) via ingestion profonde CourtListener",
+      "status": "pending"
+    },
+    {
+      "id": "A-009",
+      "owner": "agent",
+      "type": "code",
+      "title": "ONE DOOR DOWN par cour — extension aux cours d'appel (courts of appeals) : banc de 30+ juges, percentiles pleine granularité",
       "status": "pending"
     }
   ]

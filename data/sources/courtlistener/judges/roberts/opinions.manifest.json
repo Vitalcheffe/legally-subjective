@@ -1,0 +1,25 @@
+{
+ "label": "opinions",
+ "pages": [
+  {
+   "page": 1,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?format=json&order_by=dateFiled+desc&court=scotus&type=o&judge=John+G.+Roberts&filed_after=2020-10-01",
+   "retrieved_at": "2026-08-27T07:39:14Z"
+  },
+  {
+   "page": 2,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzQwNDQxNjAwMDAwJnM9MTA3NzY4NjkmdD1vJmQ9MjAyNi0wOC0yNyZwPTI%3D&filed_after=2020-10-01&format=json&judge=John+G.+Roberts&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:39:15Z"
+  },
+  {
+   "page": 3,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjg4MDgzMjAwMDAwJnM9MTAwNDk2NTUmdD1vJmQ9MjAyNi0wOC0yNyZwPTM%3D&filed_after=2020-10-01&format=json&judge=John+G.+Roberts&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:39:17Z"
+  },
+  {
+   "page": 4,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjUyNjU5MjAwMDAwJnM9NjQ2OTAyNSZ0PW8mZD0yMDI2LTA4LTI3JnA9NA%3D%3D&filed_after=2020-10-01&format=json&judge=John+G.+Roberts&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:39:18Z"
+  }
+ ]
+}

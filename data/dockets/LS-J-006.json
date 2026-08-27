@@ -1,0 +1,124 @@
+{
+ "axes": {
+  "disposition": {
+   "ci95": [
+    39,
+    94
+   ],
+   "metric": "reversal-share",
+   "metric_def": "Petitioner-alignment rate: of the merits cases this justice voted in, the share where their side favored the party seeking relief (petitioner/appellant), resolved from the Oyez winning-party record. A directional outcome-orientation proxy — not an affirm/reverse count.",
+   "n": 224,
+   "percentile": 72,
+   "sources": [
+    "oyez:api.oyez.org/cases/<term>/<docket> — 230 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
+   ],
+   "status": "ok",
+   "value": 0.6696
+  },
+  "exposure": {
+   "ci95": [
+    6,
+    94
+   ],
+   "metric": "publication-rate",
+   "metric_def": "Publication rate: authored lead opinions per year of service inside the declared window (service years from Oyez role metadata).",
+   "n": 76,
+   "percentile": 94,
+   "sources": [
+    "courtlistener:…/api/rest/v4/search/?judge=… — 76 lead-opinion pages cached under data/sources/courtlistener/judges/gorsuch/ with manifest"
+   ],
+   "status": "ok",
+   "value": 10.8571
+  },
+  "orality": {
+   "ci95": null,
+   "n": 0,
+   "note": "not computable from current sources",
+   "percentile": null,
+   "status": "insufficient-data"
+  },
+  "precedent": {
+   "ci95": [
+    28,
+    83
+   ],
+   "metric": "citation-density",
+   "metric_def": "Citation density: mean number of authorities cited per authored lead opinion (CourtListener cites arrays). Engagement with precedent, measured by citation volume, not by treatment.",
+   "n": 76,
+   "percentile": 72,
+   "sources": [
+    "courtlistener:…/api/rest/v4/search/?judge=… — 76 lead-opinion pages cached under data/sources/courtlistener/judges/gorsuch/ with manifest"
+   ],
+   "status": "ok",
+   "value": 35.3289
+  },
+  "reversal": {
+   "ci95": null,
+   "n": 0,
+   "note": "not computable from current sources",
+   "percentile": null,
+   "status": "insufficient-data"
+  },
+  "temperament": {
+   "ci95": [
+    39,
+    61
+   ],
+   "metric": "dissent-rate",
+   "metric_def": "Dissent rate: of the merits votes cast, the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
+   "n": 230,
+   "percentile": 39,
+   "sources": [
+    "oyez:api.oyez.org/cases/<term>/<docket> — 230 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
+   ],
+   "status": "ok",
+   "value": 0.1652
+  }
+ },
+ "chain": {
+  "computed_at": "2026-08-27T07:49:16Z",
+  "pipeline": "legally-subjective/1.0.0",
+  "sha256": "D06714D5F6BDF471FF61D8C5A0C762465D12C2E46479FF2C6605556271DA0C79"
+ },
+ "docket": "LS-J-006",
+ "filed_at": "2026-08-27T07:49:16Z",
+ "limits": [
+  "Temperament is a collegiality proxy from public voting records, not a psychological assessment.",
+  "Percentiles are relative to the declared bench (the sitting Nine), not absolute qualities.",
+  "Small-bench rule: with 9 members, percentiles take 9 discrete values — the granularity is coarse by construction.",
+  "Reversal and Orality are null: SCOTUS is the terminal court (no reviewing treatment data), and oral-argument transcripts are not yet ingested.",
+  "The window is terms 2020-2026; a justice who joined mid-window has fewer observations by fact, not by choice."
+ ],
+ "projections": {
+  "iterations": 10000,
+  "quantiles": {
+   "p10": null,
+   "p50": null,
+   "p90": null
+  },
+  "seed_basis": "sha256(docket|axis|LS-1.0) truncated to 32 bits"
+ },
+ "raw": {
+  "dissents": 38,
+  "lead_opinions": 76,
+  "merits_votes": 230,
+  "separate_writings": 48,
+  "service_years_window": 7
+ },
+ "revision": 0,
+ "standard": "LS-1.0",
+ "status": "FILED",
+ "subject": {
+  "bench": "scotus-sitting-2020-2026",
+  "bench_n": 9,
+  "court": "supreme-court-of-the-united-states",
+  "name": "Neil M. Gorsuch",
+  "role": "associate-justice",
+  "slug": "gorsuch",
+  "small_bench": true
+ },
+ "window": {
+  "end": "2026-08-24",
+  "start": "2020-10-01"
+ }
+}

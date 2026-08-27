@@ -24,3 +24,16 @@
 1. Rien n'est FILED sans validation Boss (« Ok. Go. »).
 2. Zéro donnée fabriquée — le GUARD du moteur scanne en permanence.
 3. Les dossiers publiés sont immuables ; toute correction = révision nouvelle.
+
+
+## Sprint 2026-08-27 — LE RECORD EST OUVERT (terminé)
+- [x] A-006 Ingestion réelle : CourtListener (688 clusters, 587 opinions signées) + Oyez (329 affaires, votes par juge) — cache sourcé 422 fichiers
+- [x] A-005 Les 5 routes-outils : /judge/[id] · /court/[id] · /compare/[a]/[b] · /docket/[id] · /api/dockets — 7/7 URL LIVE, télémétrie WARM
+- [x] LS-1.0 gelé au premier dépôt : 9 dockets FILED, déterminisme bit-identique, §3.5bis banc réduit, proxies v1 ratifiés
+
+## Prochain sprint
+- [ ] A-007 Axe Orality — transcriptions d'audience (Oyez sections audio)
+- [ ] A-008 Axe Reversal — traitement des citations (ingestion profonde CL)
+- [ ] A-009 ONE DOOR DOWN par cour — cours d'appel, banc 30+, percentiles pleine granularité
+- [ ] A-003 Spec In re You (le test miroir)
+- [ ] A-004 Modules kernel restants + packaging

@@ -126,3 +126,29 @@ Stage Summary:
 - Le site n'est plus une brochure : c'est un instrument. 2 URL LIVE qui calculent (/, /standard), 5 URL PENDING qui n'existeront qu'avec la donnée réelle
 - Palette verrouillée : blanc/encre/rouge signal. Typo verrouillée : Grotesk + Mono. Motion verrouillée : cut + horloge + curseur
 - Prochaine étape logique : ingestion CourtListener (A-006) qui fait passer la télémétrie COLD → WARM et débloque /judge, /court, /compare, /docket
+
+---
+Task ID: 5
+Agent: Super Z (main)
+Task: A-006 + A-005 — Ingestion réelle CourtListener/Oyez et les 5 routes-outils (le site devient réellement Palantir)
+
+Work Log:
+- Accès API vérifié : CourtListener v4 anonyme (search/people/courts OK, clusters/opinions 401) ; Oyez api.oyez.org public (détail par terme+docket, fallback détecté)
+- Ingestion 3 phases (core/src/legally_subjective/ingest/ + scripts/ingest.py, cache-first + reprise) :
+  * index : 688 clusters SCOTUS CL (filed_after=2020-10-01), 610 dockets de fond uniques
+  * oyez : 329 affaires avec votes par juge (237 decisions, winning_party résolu par matching robuste nom/sigle/faute — 223/237), 13 misses enregistrés
+  * judges : 587 opinions principales des Neuf avec citations (fautes réelles CL contournées : « Elana Kagan », « Samuel Alito »)
+- Métriques v1 (core/src/legally_subjective/axes/v1.py) : Disposition = taux d'alignement requérant ; Temperament = taux de dissidence ; Precedent = densité de citation ; Exposure = taux de publication ; Reversal + Orality = null honnêtes (cour terminale / transcriptions non ingérées)
+- Percentiles banc réduit (LS-1.0 §3.5bis adopté AVANT premier dépôt) + bootstrap 10 000 itérations, seed = sha256(docket|axe|LS-1.0)
+- 9 dockets FILED (LS-J-001..009, ordre protocolaire) : JSON canonique, sceau sha256 vérifié, déterminisme bit-identique (--verify OK)
+- Standard LS-1.0 amendé pré-gel : §2 proxies v1 ratifiés, §3.5bis règle banc réduit, §9 registre de gel
+- Productions : agreement.json (36 paires réelles, 56,95 % → 95,24 %) + custody.json (fenêtres de récupération + arbres sha256 par axe)
+- 5 routes-outils livrées : /judge/[id] (dossier complet : glyphe réel, 6 axes + IC, limites, chaîne), /court/[id] (classement triable ?by=, spread par axe, matrice d'accord 9×9 cliquable → /compare), /compare/[a]/[b] (le contre-factuel : % de split + deltas divergents + union des chaînes), /docket/[id] (chaîne de garde par axe : fichiers, fenêtres, tree sha256, commande de vérification), /api/dockets (+ [id] + ?format=bibtex)
+- Télémétrie : JUDGES 009 · DOCKETS 422 sources · WARM — la map passe 7/7 LIVE, le portail de l'Interrogation mène au dossier réel (« Open the record → »)
+- Corrections : lastName avec suffixes (Alito, Jr.), contraste matrice (blanc au-delà de 0,72), comptage dockets sans MANIFEST
+- Vérifications : lint 0 erreur ; toutes routes 200 ; zéro overflow mobile (390px) sur home/bench/judge/compare ; VLM : Bench A-, Compare A/A+, matrice lisible
+
+Stage Summary:
+- Le site n'est plus une promesse : 9 juges réels mesurés sur 329 affaires et 587 opinions, chaque chiffre tracé jusqu'aux octets du cache source
+- Kavanaugh 94 / Jackson 6 en disposition ; Jackson 94 / Kavanaugh 6 en tempérament ; paire la plus alignée 95,24 %, la plus clivée 56,95 %
+- Prochain : axes Orality (transcriptions) et Reversal (traitement des citations), extension aux cours d'appel (banc de 30+, pleine granularité des percentiles)

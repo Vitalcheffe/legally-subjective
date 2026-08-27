@@ -1,0 +1,25 @@
+{
+ "label": "opinions",
+ "pages": [
+  {
+   "page": 1,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?format=json&order_by=dateFiled+desc&court=scotus&type=o&judge=Brett+Kavanaugh&filed_after=2020-10-01",
+   "retrieved_at": "2026-08-27T07:40:03Z"
+  },
+  {
+   "page": 2,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzM2ODk5MjAwMDAwJnM9MTAzMTQxOTAmdD1vJmQ9MjAyNi0wOC0yNyZwPTI%3D&filed_after=2020-10-01&format=json&judge=Brett+Kavanaugh&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:05Z"
+  },
+  {
+   "page": 3,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjg3MzkyMDAwMDAwJnM9OTQwODY4MiZ0PW8mZD0yMDI2LTA4LTI3JnA9Mw%3D%3D&filed_after=2020-10-01&format=json&judge=Brett+Kavanaugh&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:07Z"
+  },
+  {
+   "page": 4,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjIxMjA5NjAwMDAwJnM9NDg4MzY5MyZ0PW8mZD0yMDI2LTA4LTI3JnA9NA%3D%3D&filed_after=2020-10-01&format=json&judge=Brett+Kavanaugh&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:08Z"
+  }
+ ]
+}
