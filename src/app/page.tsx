@@ -160,6 +160,21 @@ export default async function Home() {
               nine public officials publicly did — so that &ldquo;it depends on
               the judge&rdquo; stops being a saying and becomes a number.
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3 font-data text-[11px] font-semibold tracking-[0.08em] uppercase">
+              <a href="/cases" className="text-ink-2 hover:text-ink">
+                The record — every case, searchable →
+              </a>
+              <a href="/paper" className="text-ink-2 hover:text-ink">
+                The science — the research article →
+              </a>
+            </div>
+            <p className="mt-3 max-w-[62ch] font-data text-[10.5px] leading-relaxed tracking-[0.02em] text-ink-3">
+              The record opens all {sys.casesDecided} cases — the votes, the
+              margin, what would have flipped each one. The science is the
+              full paper behind every number: method, figures, code, and the
+              trained model&apos;s honest limits.
+            </p>
           </div>
         </section>
       </main>
@@ -171,8 +186,13 @@ export default async function Home() {
           <span className="text-white/60">
             SOURCES: COURTLISTENER · OYEZ{sys.windowLabel ? ` · ${sys.windowLabel}` : ""}
           </span>
-          <span className="text-white/60">
-            EVERY NUMBER TRACES TO A PUBLIC FILING.
+          <span className="flex items-center gap-x-6">
+            <a href="/cases" className="text-white/60 hover:text-white">
+              THE RECORD →
+            </a>
+            <a href="/paper" className="text-white/60 hover:text-white">
+              THE SCIENCE →
+            </a>
           </span>
         </div>
       </footer>

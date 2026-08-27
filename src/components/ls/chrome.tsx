@@ -57,6 +57,13 @@ export function Chrome({ justices, cases, windowLabel, state }: ChromeProps) {
               {windowLabel ? ` · ${windowLabel}` : ""}
             </span>
           )}
+          <a
+            href="/paper"
+            className="hidden text-white/50 transition-colors hover:text-white md:inline"
+            title="The research article — method, figures, code"
+          >
+            THE SCIENCE
+          </a>
           <span
             className="flex items-center gap-1.5 text-signal-on-ink"
             title={

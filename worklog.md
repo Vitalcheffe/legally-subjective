@@ -277,3 +277,32 @@ Stage Summary:
 - La devanture existe : une URL, une expérience, une émotion — le visiteur sent le sol bouger avant de lire quoi que ce soit, et chaque chiffre tombé de la roue reste traçable jusqu'aux octets du cache source
 - L'écart réel affiché : 58 (Jackson) → 69 (Kavanaugh) sur 100 — dix points de vie sur le hasard d'un couloir
 - Prochain : le contre-factuel « ONE DOOR DOWN » chiffré par type d'enjeu (nécessite données par classe), et l'extension aux cours d'appel où le panel de 3 est littéralement tiré au sort
+
+---
+Task ID: 12
+Agent: Super Z (main)
+Task: THE SCIENCE — entraîner réellement le modèle + l'article de recherche format revue + les outils utilisateur (recherche, dossier par affaire, contre-factuel, machine vs juge)
+
+Work Log:
+- scripts/train.py — PIPELINE RÉEL (aucun mock, déterministe, seed 20260827) : 1 989 votes réels / 232 affaires / 9 juges chargés depuis le cache Oyez via load_oyez_votes()
+- Deux tâches binaires : DIRECTION (sides with petitioner) et DISSENT ; deux spécifications : A « case-only » (juge + term + circuit) et B « +colleagues » (momentum des 8 autres, self exclu — zéro fuite par construction)
+- Validation : GroupKFold(5) GROUPÉ PAR AFFAIRE (aucune affaire à cheval train/test) ; baselines = taux de base par juge calculés strictement dans le fold d'entraînement
+- Résultats réels : direction A=0.540 B=0.877 baseline=0.510 · dissent A=0.614 B=0.737 baseline=0.633 — LE cas seul ne prédit pas le vote, les collègues oui
+- Courbes d'apprentissage réelles (5 seeds, bandes ±1σ) : dissent 0.56→0.76 ; direction 0.80→0.87
+- Tests classiques réels : χ² dissent×juge = 88.04 (p<0.001) · χ² dissent×term (p=0.414, ns) · Fleiss κ=0.115 (147 affaires à 9 votes)
+- Spectre directionnel : logits par juge (fit complet case-only) + bootstrap 1 000 resamples d'affaires avec pondération de multiplicité
+- Artefacts : data/productions/model.json (chaque agrégat + versions logicielles) + cases.json (232 affaires avec votes + prédictions out-of-fold par juge) + 5 figures matplotlib journal-grade dans public/figures/
+- /paper — LS-R-001 : article au format revue (masthead « WORKING PAPER — OPEN REVIEW », résumé, 7 sections numérotées, 5 figures légendées, 3 tables booktabs, 12 références RÉELLES — Martin-Quinn 2002, Segal-Cover 1989, Epstein/Landes/Posner 2013, Katz/Bommarito/Blackman 2017, Fleiss 1971, Pedregosa 2011…). Corps en Newsreader justifié ; chaque nombre du texte est interpolé depuis model.json au build — la page ne peut pas dériver du modèle qu'elle décrit
+- /cases — LE REGISTRE : 232 affaires cherchables (client-side, SSG), filtres par terme + « ONE VOTE FROM FLIPPING » (18 affaires 5-4), alias de recherche (ninth↔9th), badge ONE DOOR
+- /case/[docket] — 232 pages SSG : les 9 votes (tampons MAJORITY/DISSENT), ONE DOOR DOWN (flip margin réel + qui était déjà de l'autre côté), THE MACHINE'S CALL (P(dissent) out-of-fold par juge vs réel, barres + « called it / missed it »), question présentée, métadonnées
+- Cas irrationnels (split sans majorité nette, ex. 24-872 Hamm v. Smith 2-4) : flip_margin = null, affiché « not computable » — jamais deviné
+- /judge/[id] enrichi : BLIND SPOTS (écart de dissidence par circuit d'origine vs le banc sur les mêmes affaires, n≥6) + THE MACHINE'S READ (AUC dissent/direction + logit directionnel avec CI bootstrap)
+- liens discrets : THE SCIENCE dans le Chrome (droite), THE RECORD + THE SCIENCE sur l'accueil et les footers — la science reste à un clic, cachée comme demandé
+- Vérifications : lint 0 erreur ; build 349/349 pages statiques ; toutes routes 200 ; zéro overflow 390px sur / /cases /case /judge /paper ; recherche testée (Ninth→42, trump→4, one-door→18, reset→232) ; figures toutes chargées (naturalWidth>0) ; revue VLM : article « genuinely convincing as an academic paper », verdict SHIP sur les 3 pages
+- Pièges corrigés en route : serveur next start fantôme servait un build périmé (kill par pid) ; Turbopack cache ; tables wrappées overflow-x-auto pour mobile ; circuitWords déplacé côté serveur (fonction client non appelable)
+
+Stage Summary:
+- L'IA est ENTRAÎNÉE pour de vrai : logistic regression L2 sur données réelles, cross-validation groupée par affaire, tout reproductible par « python scripts/train.py » — et les chiffres le prouvent : le dossier seul ne prédit pas le vote (AUC 0.540), les 8 autres juges oui (0.877)
+- Le site a maintenant sa crédibilité académique : un article complet au format des grandes revues, avec figures, tables, tests statistiques et références réelles — et ses outils utilisateur : registre cherchable, dossier par affaire, contre-factuel, machine vs juge
+- Le message scientifique renforce la devanture : « who the justice is matters, which year it is does not » (χ²) et « the case poorly determines the vote »
+- Prochain : étendre l'analyse au-delà des Neuf (cours d'appel où les panels sont tirés au sort), axes Orality/Reversal si sources

@@ -3,12 +3,14 @@ import { notFound } from "next/navigation";
 import { Chrome } from "@/components/ls/chrome";
 import { Glyph } from "@/components/ls/glyph";
 import { getSystemState } from "@/lib/system-state";
+import { getCases, getModel } from "@/lib/research";
 import {
   AXIS_LABELS,
   AXIS_METRIC_LABELS,
   AXIS_ORDER,
   citation,
   getDocket,
+  lastName,
   listDockets,
   type Docket,
 } from "@/lib/dockets";
@@ -101,8 +103,57 @@ export default async function JudgePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const [d, sys] = await Promise.all([getDocket(id), getSystemState()]);
+  const [d, sys, allCases, model] = await Promise.all([
+    getDocket(id),
+    getSystemState(),
+    getCases(),
+    getModel(),
+  ]);
   if (!d || d.status !== "FILED") notFound();
+
+  const slug = d.subject.slug;
+
+  // ——— BLIND SPOTS: where this justice breaks with the bench, per circuit ———
+  // Real computation from the case record: for each originating court with
+  // enough shared cases, the justice's dissent rate vs the bench's on the
+  // same cases (self excluded). Divergence = the gap in points.
+  const blindSpots: { circuit: string; n: number; own: number; bench: number; gap: number }[] = [];
+  if (allCases) {
+    const byCircuit = new Map<string, { own: [number, number]; others: [number, number] }>();
+    for (const c of allCases.cases) {
+      const own = c.votes[slug];
+      const participants = Object.keys(c.votes);
+      if (!participants.includes(slug)) continue;
+      let rec = byCircuit.get(c.circuit);
+      if (!rec) {
+        rec = { own: [0, 0], others: [0, 0] };
+        byCircuit.set(c.circuit, rec);
+      }
+      if (own === "minority") rec.own[0] += 1;
+      rec.own[1] += 1;
+      for (const s of participants) {
+        if (s === slug) continue;
+        if (c.votes[s] === "minority") rec.others[0] += 1;
+        rec.others[1] += 1;
+      }
+    }
+    for (const [circuit, rec] of byCircuit) {
+      if (rec.own[1] < 6) continue;
+      const ownRate = rec.own[0] / rec.own[1];
+      const benchRate = rec.others[0] / Math.max(rec.others[1], 1);
+      blindSpots.push({
+        circuit,
+        n: rec.own[1],
+        own: ownRate,
+        bench: benchRate,
+        gap: ownRate - benchRate,
+      });
+    }
+    blindSpots.sort((a, b) => Math.abs(b.gap) - Math.abs(a.gap));
+  }
+  const machine = model?.results.per_justice[slug] ?? null;
+  const spectrumPoint = model?.results.spectrum[slug] ?? null;
+
 
   const axesForGlyph = Object.fromEntries(
     AXIS_ORDER.map((ax) => [ax, d.axes[ax]?.percentile ?? null]),
@@ -226,6 +277,106 @@ export default async function JudgePage({
             </ul>
           </div>
         </section>
+
+        {blindSpots.length > 0 && (
+          <section className="border-b border-rule">
+            <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
+              <p className="micro">[003b] Blind spots — where {lastName(d.subject.name)} breaks with the bench</p>
+              <h2 className="mt-4 font-display text-[clamp(1.5rem,2.8vw,2.2rem)] font-bold uppercase leading-[1.05] tracking-[-0.01em]">
+                The cases that pull this justice away from the others.
+              </h2>
+              <p className="mt-4 max-w-[70ch] text-[14px] leading-[1.7] text-ink-2">
+                Grouped by the court the case came up from, each row below
+                compares this justice&apos;s dissent rate with the rate of the
+                other eight on the very same cases. A gap of twenty points is
+                a doorway: walk the same appeal through it, and the room
+                behaves differently around you.
+              </p>
+              <div className="mt-7 border-t border-rule">
+                {blindSpots.slice(0, 5).map((b) => (
+                  <div
+                    key={b.circuit}
+                    className="grid grid-cols-1 gap-x-6 gap-y-1.5 border-b border-hairline py-4 sm:grid-cols-[170px_90px_1fr_130px] sm:items-baseline"
+                  >
+                    <span className="font-data text-[12px] font-semibold tracking-[0.03em] uppercase">
+                      {b.circuit}
+                    </span>
+                    <span className="font-data text-[11px] text-ink-3 tabular">
+                      n={b.n}
+                    </span>
+                    <span className="text-[13px] leading-relaxed text-ink-2">
+                      dissents in <strong className="text-ink">{(b.own * 100).toFixed(0)}%</strong> of
+                      cases from this court, while the rest of the bench dissents in{" "}
+                      <strong className="text-ink">{(b.bench * 100).toFixed(0)}%</strong> of the
+                      same cases
+                    </span>
+                    <span
+                      className={`font-data text-[13px] font-bold tabular sm:justify-self-end ${
+                        Math.abs(b.gap) >= 0.15
+                          ? "text-signal-deep"
+                          : "text-ink-3"
+                      }`}
+                    >
+                      {b.gap > 0 ? "+" : "−"}
+                      {Math.abs(b.gap * 100).toFixed(0)} pts
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 font-data text-[11px] leading-relaxed tracking-[0.02em] text-ink-3">
+                Computed from the same filed votes as every other number on this
+                page. Circuits with fewer than 6 shared cases are withheld — a
+                smaller sample would be gossip, not measurement.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {machine && (
+          <section className="border-b border-rule bg-paper-2">
+            <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
+              <p className="micro">[003c] The machine&apos;s read — {model?.model_id}</p>
+              <div className="mt-6 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-3">
+                {[
+                  {
+                    k: "Dissent predictability",
+                    v: machine.auc_dissent.toFixed(3),
+                    note: "out-of-fold ROC AUC — how legibly this justice's dissent pattern reads to the model",
+                  },
+                  {
+                    k: "Direction predictability",
+                    v: machine.auc_direction.toFixed(3),
+                    note: "same, for siding with the party seeking relief",
+                  },
+                  {
+                    k: "Directional logit",
+                    v: spectrumPoint ? `${spectrumPoint.logit >= 0 ? "+" : "−"}${Math.abs(spectrumPoint.logit).toFixed(2)}` : "—",
+                    note: spectrumPoint
+                      ? `propensity to side with the petitioner, case-only fit · bootstrap 95% CI [${spectrumPoint.ci[0].toFixed(2)}, ${spectrumPoint.ci[1].toFixed(2)}]`
+                      : "not estimated",
+                  },
+                ].map((x) => (
+                  <div key={x.k} className="bg-paper px-5 py-5">
+                    <p className="font-data text-[10px] tracking-[0.08em] text-ink-3 uppercase">{x.k}</p>
+                    <p className="mt-2 font-data text-[30px] leading-none font-semibold tabular">{x.v}</p>
+                    <p className="mt-2 text-[11px] leading-snug text-ink-3">{x.note}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 max-w-[70ch] text-[13px] leading-relaxed text-ink-3">
+                A human reads a judge from a thousand details; the model reads
+                one from nothing but filed votes — identity, term, circuit, and
+                the pull of colleagues — and still guesses better than chance.
+                That is not clairvoyance. It is the measurable share of habit
+                in what presents itself as judgment. Specification and limits: {" "}
+                <Link href="/paper" className="text-signal-deep underline">
+                  the research article
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+        )}
 
         <section className="border-b border-rule">
           <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
