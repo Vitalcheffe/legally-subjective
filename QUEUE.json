@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "E-001",
+      "owner": "engine",
+      "type": "scaffold_dirs",
+      "title": "Arborescence du monorepo",
+      "status": "done",
+      "spec": {
+        "dirs": [
+          "core/src/legally_subjective",
+          "core/src/legally_subjective/ingest",
+          "core/src/legally_subjective/axes",
+          "core/src/legally_subjective/glyph",
+          "core/src/legally_subjective/docket",
+          "core/tests",
+          "web",
+          "docs",
+          "standards",
+          "data/dockets",
+          "data/sources",
+          "data/productions"
+        ]
+      },
+      "completed_at": "2026-08-27T05:57:44Z",
+      "result": "12 dossiers créés: core/src/legally_subjective, core/src/legally_subjective/ingest, core/src/legally_subjective/axes, core/src/legally_subjective/glyph, core/src/legally_subjective/docket, core/tests, web, docs, standards, data/dockets, data/sources, data/productions"
+    },
+    {
+      "id": "E-002",
+      "owner": "engine",
+      "type": "scaffold_files",
+      "title": "Fichiers de base (.gitignore, conventions data)",
+      "status": "pending",
+      "spec": {
+        "files": [
+          {
+            "path": ".gitignore",
+            "content": "__pycache__/\n*.pyc\n.venv/\nnode_modules/\n.next/\ndist/\nbuild/\n.env\n.env.local\n.DS_Store\ncoverage/\n*.log\n"
+          },
+          {
+            "path": "data/README.md",
+            "content": "# data/ — Les pièces du dossier\n\n- `dockets/` — les dossiers JSON publiés (format LS-1.0), immuables une fois FILED.\n- `sources/` — les caches bruts sourcés (CourtListener, etc.), avec URI et date de récupération.\n- `productions/` — les exports livrés (JSON, BibTeX, impressions).\n\nRègle absolue : un chiffre sans source n'existe pas. Chiffre inventé = banni.\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "E-003",
+      "owner": "engine",
+      "type": "guard_scan",
+      "title": "Premier scan zéro-mock du dépôt",
+      "status": "pending",
+      "spec": {}
+    },
+    {
+      "id": "A-001",
+      "owner": "agent",
+      "type": "spec",
+      "title": "Design System pixel — tokens Parchemin & Sceau, grille, composants signature (DocketCard, Chain of Custody, StampBadge, glyphe SVG)"
+    },
+    {
+      "id": "A-002",
+      "owner": "agent",
+      "type": "spec",
+      "title": "Spec The Bench — home : photo de cour en glyphes, séance levée (transition dossier), sceau qui bat une fois"
+    },
+    {
+      "id": "A-003",
+      "owner": "agent",
+      "type": "spec",
+      "title": "Spec In re You — 12 questions, mapping vers les 6 axes, carte miroir (subject.type=mirror, N=1 auto-déclaré)"
+    },
+    {
+      "id": "A-004",
+      "owner": "agent",
+      "type": "code",
+      "title": "Kernel Python — pyproject, modules (ingest/axes/glyph/docket), tests de déterminisme"
+    },
+    {
+      "id": "A-005",
+      "owner": "agent",
+      "type": "code",
+      "title": "Web statique — squelette 4 routes (/, /en-banc, /in-re/[slug], /daubert) + print CSS"
+    },
+    {
+      "id": "A-006",
+      "owner": "agent",
+      "type": "code",
+      "title": "Ingestion CourtListener — client REST authentifié, cache sourcé dans data/sources/"
+    }
+  ]
+}

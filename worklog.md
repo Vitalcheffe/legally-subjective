@@ -19,3 +19,14 @@ Stage Summary:
 - Identité complète : nom, tagline « Subjectivity, measured. », palette Parchemin & Sceau, typo Newsreader/Inter/Plex Mono
 - Concept frontend en cours de validation finale devant Boss (la Bench Photo comme home)
 - Prochaine étape : validation Boss → spec Standard LS-1.0 + design system complet
+
+---
+Task ID: E-001 (engine)
+Agent: LS-ENGINE-1
+Task: Arborescence du monorepo
+
+Work Log:
+- 12 dossiers créés: core/src/legally_subjective, core/src/legally_subjective/ingest, core/src/legally_subjective/axes, core/src/legally_subjective/glyph, core/src/legally_subjective/docket, core/tests, web, docs, standards, data/dockets, data/sources, data/productions
+
+Stage Summary:
+- exécuté automatiquement par le moteur de fond

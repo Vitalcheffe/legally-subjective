@@ -1,0 +1,13 @@
+{
+  "started": "2026-08-27T05:57:44Z",
+  "cycles": 1,
+  "tasks_done": [
+    {
+      "id": "E-001",
+      "at": "2026-08-27T05:57:44Z"
+    }
+  ],
+  "last_guard": null,
+  "status": "running",
+  "last_cycle": "2026-08-27T05:57:44Z"
+}

@@ -1,0 +1,2 @@
+[2026-08-27T05:57:44Z] ENGINE START — cycle=20s — GUARD tous les 15 cycles — MODE INFINI
+[2026-08-27T05:57:44Z] cycle 1: TASK E-001 → 12 dossiers créés: core/src/legally_subjective, core/src/legally_subjective/ingest, core/src/legally_subjective/axes, core/src/legally_subjective/glyph, core/src/legally_subjective/docket, core/tests, web, docs, standards, data/dockets, data/sources, data/productions
