@@ -28,13 +28,10 @@ export default async function StandardPage() {
   return (
     <div className="flex min-h-screen flex-col bg-paper font-display text-ink">
       <Chrome
-        build={sys.build}
-        judgesScored={sys.judgesScored}
-        docketsIngested={sys.docketsIngested}
-        engineCycles={sys.engineCycles}
-        engineLast={sys.engineLast}
+        justices={sys.judgesScored}
+        cases={sys.casesDecided}
+        windowLabel={sys.windowLabel}
         state={sys.state}
-        route="/standard"
       />
 
       <main className="flex-1">

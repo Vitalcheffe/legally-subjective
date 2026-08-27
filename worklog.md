@@ -236,3 +236,23 @@ Stage Summary:
 - RÈGLE GRAVÉE : plus jamais de squash/rewrite destructif sans veto explicite de l'utilisateur ; identité VitalCheffe par défaut partout, y compris pour le moteur et les auto-commits
 - main = 18 commits complets, tous signés VitalCheffe, arbre final identique à l'état déployable
 - Rien n'a jamais été perdu : hier sur archive/pre-rebuild (remote), aujourd'hui restauré sur main, brut conservé en local (local-history)
+
+---
+Task ID: 10
+Agent: Super Z (main)
+Task: Veto utilisateur — « la page principale parle ingénieur » — refonte humaine de l'accueil
+
+Work Log:
+- Veto : montrer des URLs (/api/*, /judge/{id}) sur l'accueil, c'est parler développeur à un visiteur qui risque la prison. Refondation : le site doit être un projet DE DONNÉES qui pose les BONNES QUESTIONS humaines (« est-ce que les sentiments jouent un rôle dans la justice ? »)
+- Audience clarifiée : (1) la personne qu'un juge va trancher — accusé, famille ; (2) le public/la presse — « la justice est-elle objective ? » ; (3) avocats/chercheurs — « prouvez-le ». La page parle aux trois par : question humaine → chiffre réel → porte-outil
+- THE MAP (7 URLs) SUPPRIMÉE → THE QUESTIONS (4 questions) : 01 « Does it matter which judge you draw? » (Thomas↔Jackson 56,95 % vs Roberts↔Kavanaugh 95,24 %) · 02 « Do feelings play a role in justice? » (dissidence 4,8 %↔25,5 %, précédent 23↔50 citations) · 03 « How different is one door from the next? » (contre-factuel, 43/100) · 04 « Why trust a number about a judge? » (chaîne de garde) — chaque réponse en langage humain, chaque porte mène à l'outil réel
+- Chrome humanisé : plus de BUILD sha / ENGINE / routes — désormais « DO JUDGES DIFFER? WE COUNT. » + « 9 JUSTICES · 237 CASES · OCT 2020 — AUG 2026 » + point LIVE + horloge UTC
+- Interrogation humanisée : bandeau « BUILT FROM PUBLIC COURT RECORDS · 9 JUSTICES · 237 DECIDED CASES · NOTHING ON THIS SITE IS INVENTED », micro-copy des douze fins réécrit, mode ROTATING/FROZEN
+- system-state.ts : nouveaux compteurs RÉELS — casesDecided (237 = fichiers Oyez portant une décision, comptés à la build) + windowLabel (lu d'agreement.json) ; 6 pages d'outils migrées vers les nouveaux props Chrome
+- Footer : SOURCES: COURTLISTENER · OYEZ · fenêtre — zéro jargon technique sur la page
+- Vérifications : lint 0 erreur ; build 115/115 pages statiques ; HTML prérendu contient 56,95 %, 95,24 %, 237, OCT 2020 — AUG 2026, zéro mention de /api ; 4 portes en 200 ; zéro overflow 390px ; revue VLM : « explanatory journalism rather than technical documentation », note A-
+
+Stage Summary:
+- L'accueil parle désormais à l'humain : quatre questions que tout le monde se pose, répondues par des nombres réels, avec des portes vers les outils — le jargon technique a disparu de la vitrine (il reste dans le repo, là où est sa place)
+- Le positionnement affiché : « Do judges differ? We count. » — un projet de mesure, pas un cabinet d'avocats, disclaimer inclus
+- Prochaine étape logique : peupler les Δ des douze fins (mapping classe de dossier ↔ données) et étendre au-delà des Neuf (cours d'appel fédérales)

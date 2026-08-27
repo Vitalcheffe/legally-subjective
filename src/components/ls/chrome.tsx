@@ -1,37 +1,29 @@
 "use client";
 
 /**
- * The Chrome — permanent telemetry. Black bar, white mono.
- * The site displays its own system state at all times: build, counts,
- * engine state, UTC clock. This is not decoration; it is the product
- * showing you what it currently knows.
+ * The Chrome — the permanent strip. Black bar, white mono.
+ * What a human needs to know at all times: what this site does,
+ * how much real court record is behind it, that it is live, and
+ * what time it is. No build hashes. No engine cycles. No routes.
  */
 import { useEffect, useState } from "react";
 
 export interface ChromeProps {
-  build: string;
-  judgesScored: number;
-  docketsIngested: number;
-  engineCycles: number;
-  engineLast: string;
+  /** Justices measured — from the FILED dockets. */
+  justices: number;
+  /** Decided cases actually read from the public record. */
+  cases: number;
+  /** Court-record window, e.g. "OCT 2020 — AUG 2026". */
+  windowLabel: string;
+  /** WARM: the record exists. COLD: not yet. */
   state: "COLD" | "WARM";
-  /** Current route, displayed like a terminal path. */
-  route: string;
 }
 
 function pad(n: number): string {
   return n < 10 ? `0${n}` : String(n);
 }
 
-export function Chrome({
-  build,
-  judgesScored,
-  docketsIngested,
-  engineCycles,
-  engineLast,
-  state,
-  route,
-}: ChromeProps) {
+export function Chrome({ justices, cases, windowLabel, state }: ChromeProps) {
   const [utc, setUtc] = useState("--:--:--");
 
   useEffect(() => {
@@ -54,26 +46,27 @@ export function Chrome({
             LEGALLY SUBJECTIVE
           </a>
           <span className="text-white/30">·</span>
-          <span className="text-white/70">LS-1.0</span>
-          <span className="hidden text-white/30 sm:inline">·</span>
-          <span className="hidden text-white/70 sm:inline">UI-1.0 EXHIBIT</span>
-          <span className="hidden text-white/30 md:inline">·</span>
-          <span className="hidden text-white/50 md:inline">{route}</span>
+          <span className="hidden text-white/70 sm:inline">
+            DO JUDGES DIFFER? WE COUNT.
+          </span>
         </div>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1 tabular">
-          <span className="hidden text-white/70 sm:inline">BUILD {build}</span>
-          <span className="hidden text-white/70 lg:inline">
-            ENGINE C{engineCycles.toString().padStart(2, "0")} · {engineLast}
-          </span>
-          <span className="text-white/70">
-            JUDGES {judgesScored.toString().padStart(3, "0")}
-          </span>
-          <span className="text-white/70">
-            DOCKETS {docketsIngested.toString().padStart(3, "0")}
-          </span>
-          <span className="flex items-center gap-1.5 text-signal-on-ink">
+          {justices > 0 && (
+            <span className="text-white/70">
+              {justices} JUSTICES · {cases} CASES
+              {windowLabel ? ` · ${windowLabel}` : ""}
+            </span>
+          )}
+          <span
+            className="flex items-center gap-1.5 text-signal-on-ink"
+            title={
+              state === "WARM"
+                ? "Measured from public court records"
+                : "The record is being built"
+            }
+          >
             <span className="inline-block h-[7px] w-[7px] bg-signal-on-ink" />
-            {state}
+            {state === "WARM" ? "LIVE" : "BUILDING"}
           </span>
           <span>UTC {utc}</span>
         </div>

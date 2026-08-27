@@ -43,11 +43,11 @@ const ENDINGS: Ending[] = [
 type Mode = "AUTO" | "FROZEN";
 
 export interface InterrogationProps {
-  judgesScored: number;
-  docketsIngested: number;
+  justices: number;
+  cases: number;
 }
 
-export function Interrogation({ judgesScored, docketsIngested }: InterrogationProps) {
+export function Interrogation({ justices, cases }: InterrogationProps) {
   const [index, setIndex] = useState(0);
   const [mode, setMode] = useState<Mode>("AUTO");
   const [copied, setCopied] = useState<string | null>(null);
@@ -174,11 +174,10 @@ export function Interrogation({ judgesScored, docketsIngested }: InterrogationPr
 
           <div className="tabular mt-8 font-data text-[11px] leading-[1.9] tracking-[0.05em] text-ink-2">
             <div>
-              [ {current.n} / 12 ] · MODE {mode} · {METRONOME_MS}MS METRONOME
+              [ {current.n} / 12 ] · {mode === "AUTO" ? "ROTATING" : "FROZEN"}
             </div>
             <div className="text-ink-3">
-              ← → NAVIGATE · SPACE FREEZE / RESUME · 1–9 JUMP · CLICK A LINE TO
-              FREEZE
+              ← → MOVE · SPACE FREEZE · 1–9 JUMP · CLICK A LINE TO KEEP IT
             </div>
             {copied && (
               <div className="text-signal-deep" role="status">
@@ -193,19 +192,17 @@ export function Interrogation({ judgesScored, docketsIngested }: InterrogationPr
               What do you have to lose?
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href={judgesScored > 0 ? "/court/scotus" : "#map"} className="btn">
-                {judgesScored > 0 ? "Open the record →" : "Enter the record →"}
+              <a href={justices > 0 ? "/court/scotus" : "#questions"} className="btn">
+                {justices > 0 ? "Open the record →" : "Enter the record →"}
               </a>
               <button type="button" onClick={copyQuestion} className="btn">
                 Copy the question
               </button>
             </div>
             <p className="micro normal-case tracking-[0.04em] text-ink-3">
-              {judgesScored > 0
-                ? `The record is open: ${judgesScored} dockets filed from ${docketsIngested.toLocaleString(
-                    "en-US",
-                  )} cached source files. Nothing is estimated.`
-                : "Routes to /court/&#123;id&#125; once ingestion is live. Nothing is estimated."}
+              {justices > 0
+                ? `${justices} justices measured on ${cases} decided cases, read from the public record. Nothing here is estimated.`
+                : "The record opens when the first judges are measured. Nothing here is estimated."}
             </p>
           </div>
         </div>
@@ -250,18 +247,17 @@ export function Interrogation({ judgesScored, docketsIngested }: InterrogationPr
             ))}
           </ol>
           <p className="micro mt-6 normal-case leading-relaxed tracking-[0.04em] text-ink-3">
-            Δ = the difference between two doors on this docket class.
-            Populates on first ingestion. Every line is a shareable URL.
+            Twelve things a ruling can take from someone. Click one to keep it
+            on screen — and send it to whoever needs to see the question.
           </p>
         </aside>
       </div>
 
-      {/* ——— STATUS BAND — honest system state ——— */}
+      {/* ——— STATUS BAND — what stands behind the page ——— */}
       <div className="tabular border-t border-hairline px-6 py-3 font-data text-[10.5px] leading-[1.8] tracking-[0.05em] text-ink-2 sm:px-10 lg:px-14">
-        DATA STATE: {judgesScored > 0 ? "WARM" : "COLD"} · {judgesScored}{" "}
-        JUDGES SCORED · {docketsIngested} DOCKETS INGESTED · NO INVENTED
-        NUMBERS — EVERY FIGURE THAT WILL APPEAR HERE MUST TRACE TO A FILED
-        DOCUMENT OR IT WILL NOT APPEAR · SOURCE OF RECORD: COURTLISTENER
+        BUILT FROM PUBLIC COURT RECORDS · {justices} JUSTICES · {cases} DECIDED
+        CASES · NOTHING ON THIS SITE IS INVENTED — IF A NUMBER CAN&apos;T BE
+        TRACED TO A PUBLIC FILING, IT DOES NOT APPEAR
       </div>
     </section>
   );

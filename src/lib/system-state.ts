@@ -18,6 +18,10 @@ export interface SystemState {
   judgesScored: number;
   /** Number of cached source sets = cases ingested. */
   docketsIngested: number;
+  /** Decided cases actually read (Oyez files carrying a decision record). */
+  casesDecided: number;
+  /** Human window label, from the agreement production (e.g. OCT 2020 — AUG 2026). */
+  windowLabel: string;
   /** Engine cycles from scripts/engine_state.json. */
   engineCycles: number;
   /** Engine last cycle, HH:MM:SSZ. */
@@ -32,6 +36,24 @@ async function listFiles(dir: string): Promise<string[]> {
   } catch {
     return [];
   }
+}
+
+async function listJsonRecursive(dir: string): Promise<string[]> {
+  const out: string[] = [];
+  const walk = async (d: string) => {
+    try {
+      const entries = await readdir(d, { withFileTypes: true });
+      for (const e of entries) {
+        const p = path.join(d, e.name);
+        if (e.isFile() && e.name.endsWith(".json")) out.push(p);
+        else if (e.isDirectory()) await walk(p);
+      }
+    } catch {
+      /* Not there. */
+    }
+  };
+  await walk(path.join(process.cwd(), dir));
+  return out;
 }
 
 async function countJsonFiles(dir: string, recursive = false): Promise<number> {
@@ -70,6 +92,52 @@ export async function getSystemState(): Promise<SystemState> {
   ).length;
   const docketsIngested = await countJsonFiles("data/sources", true);
 
+  /** Decided cases = Oyez files carrying a non-empty decision record. */
+  let casesDecided = 0;
+  try {
+    const oyezFiles = await listJsonRecursive("data/sources/oyez");
+    casesDecided = (
+      await Promise.all(
+        oyezFiles.map(async (f) => {
+          try {
+            const d = JSON.parse(await readFile(f, "utf8"));
+            const decs = (d as { decisions?: unknown }).decisions;
+            return Array.isArray(decs) && decs.length > 0 ? 1 : 0;
+          } catch {
+            return 0;
+          }
+        }),
+      )
+    ).reduce((a, b) => a + b, 0);
+  } catch {
+    /* No Oyez sources — zero decided cases. Honest. */
+  }
+
+  /** Human window label from the agreement production. */
+  let windowLabel = "";
+  try {
+    const agr = JSON.parse(
+      await readFile(
+        path.join(process.cwd(), "data", "productions", "agreement.json"),
+        "utf8",
+      ),
+    ) as { window?: { start?: string; end?: string } };
+    const fmt = (iso?: string) => {
+      if (!iso) return "";
+      const [y, m] = iso.split("-");
+      const months = [
+        "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+        "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
+      ];
+      return `${months[Number(m) - 1] ?? ""} ${y}`;
+    };
+    if (agr.window?.start && agr.window?.end) {
+      windowLabel = `${fmt(agr.window.start)} — ${fmt(agr.window.end)}`;
+    }
+  } catch {
+    /* No agreement production yet — no window. */
+  }
+
   let engineCycles = 0;
   let engineLast = "NEVER";
   try {
@@ -92,6 +160,8 @@ export async function getSystemState(): Promise<SystemState> {
     standardHash,
     judgesScored,
     docketsIngested,
+    casesDecided,
+    windowLabel,
     engineCycles,
     engineLast,
     state: judgesScored > 0 ? "WARM" : "COLD",
