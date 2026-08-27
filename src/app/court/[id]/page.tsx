@@ -1,26 +1,22 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Chrome } from "@/components/ls/chrome";
-import { Glyph } from "@/components/ls/glyph";
+import { BenchTable, type BenchRow } from "@/components/ls/bench-table";
 import { getSystemState } from "@/lib/system-state";
 import {
   agreementPair,
   getAgreement,
   listDockets,
   lastName,
-  type Docket,
 } from "@/lib/dockets";
 
 /* ————————————————————————————————————————————————
    THE BENCH — one court, every judge, every axis.
-   Function: rank the bench by any axis (server-side sort via ?by=),
-   show the per-axis spread, and the agreement matrix computed from
-   common merits votes.
+   Function: rank the bench by any axis (client-side sort over the
+   filed numbers — the page ships as static HTML), show the per-axis
+   spread, and the agreement matrix computed from common merits votes.
    Result: the proof that the bench is not uniform — in numbers.
    ———————————————————————————————————————————————— */
-
-const SORTABLE = ["docket", "disposition", "temperament", "precedent", "exposure"] as const;
-type SortKey = (typeof SORTABLE)[number];
 
 export async function generateStaticParams() {
   return [{ id: "scotus" }];
@@ -45,27 +41,42 @@ function grayFor(v: number | null): string {
 
 export default async function CourtPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ by?: string }>;
 }) {
-  const [{ id }, sp, sys] = await Promise.all([params, searchParams, getSystemState()]);
+  const [{ id }, sys] = await Promise.all([params, getSystemState()]);
   if (id !== "scotus") notFound();
 
   const [dockets, agreement] = await Promise.all([listDockets(), getAgreement()]);
   if (dockets.length === 0) notFound();
 
-  const by = (SORTABLE as readonly string[]).includes(sp.by ?? "") ? (sp.by as SortKey) : "docket";
-
-  const sorted = [...dockets].sort((a, b) => {
-    if (by === "docket") return a.docket.localeCompare(b.docket);
-    const av = a.axes[by]?.percentile ?? -1;
-    const bv = b.axes[by]?.percentile ?? -1;
-    return bv - av || a.docket.localeCompare(b.docket);
-  });
-
   const axes = ["disposition", "temperament", "precedent", "exposure"] as const;
+
+  const rows: BenchRow[] = dockets.map((d) => ({
+    docket: d.docket,
+    name: d.subject.name,
+    glyphAxes: Object.fromEntries(
+      ["disposition", "temperament", "precedent", "reversal", "orality", "exposure"].map(
+        (ax) => [ax, d.axes[ax]?.percentile ?? null],
+      ),
+    ),
+    values: Object.fromEntries(
+      axes.map((ax) => [ax, d.axes[ax]?.percentile ?? null]),
+    ),
+    ciWidths: Object.fromEntries(
+      axes.map((ax) => {
+        const a = d.axes[ax];
+        return [
+          ax,
+          a?.ci95 && a.percentile != null
+            ? Math.abs((a.ci95[1] ?? 0) - (a.ci95[0] ?? 0))
+            : null,
+        ];
+      }),
+    ),
+    n: Math.max(d.raw.merits_votes, d.raw.lead_opinions),
+    votes: d.raw.merits_votes,
+  }));
 
   // per-axis spread: max − min percentile (nulls excluded)
   const spreads = Object.fromEntries(
@@ -142,72 +153,8 @@ export default async function CourtPage({
         <section className="border-b border-rule">
           <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
             <p className="micro">[001] The ranking — click a column to re-rank the bench</p>
-            <div className="mt-6 overflow-x-auto">
-              <table className="w-full min-w-[860px] border-collapse">
-                <thead>
-                  <tr className="border-b-2 border-ink">
-                    <th className="py-3 pr-4 text-left font-data text-[10px] font-semibold tracking-[0.08em] uppercase">
-                      <Link href={`/court/${id}?by=docket`} className={by === "docket" ? "text-signal-deep" : "hover:text-signal-deep"}>
-                        Docket ↓
-                      </Link>
-                    </th>
-                    <th className="py-3 pr-4 text-left font-data text-[10px] font-semibold tracking-[0.08em] uppercase">Justice</th>
-                    {axes.map((ax) => (
-                      <th key={ax} className="py-3 pr-4 text-right font-data text-[10px] font-semibold tracking-[0.08em] uppercase">
-                        <Link href={`/court/${id}?by=${ax}`} className={by === ax ? "text-signal-deep" : "hover:text-signal-deep"}>
-                          {ax} {by === ax ? "↓" : "↕"}
-                        </Link>
-                      </th>
-                    ))}
-                    <th className="py-3 text-right font-data text-[10px] font-semibold tracking-[0.08em] uppercase">Votes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {sorted.map((d: Docket, i) => (
-                    <tr key={d.docket} className="border-b border-hairline hover:bg-row-hover">
-                      <td className="py-3.5 pr-4 font-data text-[12px] font-semibold tabular">
-                        <Link href={`/judge/${d.docket}`} className="hover:text-signal-deep">
-                          {d.docket}
-                        </Link>
-                      </td>
-                      <td className="py-3.5 pr-4">
-                        <Link href={`/judge/${d.docket}`} className="flex items-center gap-3 group">
-                          <Glyph
-                            docketId={d.docket}
-                            axes={Object.fromEntries(
-                              ["disposition", "temperament", "precedent", "reversal", "orality", "exposure"].map(
-                                (ax) => [ax, d.axes[ax]?.percentile ?? null],
-                              ),
-                            )}
-                            n={Math.max(d.raw.merits_votes, d.raw.lead_opinions)}
-                            maxN={400}
-                            strokeWidth={4}
-                            className="h-[34px] w-[34px] shrink-0"
-                          />
-                          <span className="text-[14px] font-semibold group-hover:text-signal-deep">
-                            {d.subject.name}
-                          </span>
-                        </Link>
-                      </td>
-                      {axes.map((ax) => {
-                        const a = d.axes[ax];
-                        const v = a?.percentile;
-                        return (
-                          <td key={ax} className="py-3.5 pr-4 text-right font-data text-[15px] font-semibold tabular">
-                            {v == null ? <span className="text-ink-3">—</span> : v}
-                            <span className="block text-[9.5px] font-normal text-ink-3">
-                              {v == null ? a?.status : `±${Math.abs((a.ci95?.[1] ?? 0) - (a.ci95?.[0] ?? 0))} ci`}
-                            </span>
-                          </td>
-                        );
-                      })}
-                      <td className="py-3.5 text-right font-data text-[12px] text-ink-2 tabular">
-                        {d.raw.merits_votes.toLocaleString("en-US")}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="mt-6">
+              <BenchTable rows={rows} />
             </div>
             <p className="micro mt-5 normal-case tracking-[0.02em] text-ink-3">
               Percentile against the bench of nine · CI width in gray under each value ·

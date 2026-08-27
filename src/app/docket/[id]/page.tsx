@@ -223,6 +223,9 @@ sha256sum data/dockets/${d.docket}.json
               <Link href={`/api/dockets/${d.docket}`} className="border border-rule px-4 py-2.5 text-ink-2 hover:border-ink hover:text-ink">
                 Canonical JSON →
               </Link>
+              <Link href={`/api/dockets/${d.docket}/bibtex`} className="border border-rule px-4 py-2.5 text-ink-2 hover:border-ink hover:text-ink">
+                BibTeX →
+              </Link>
               <Link href="/standard" className="border border-rule px-4 py-2.5 text-ink-2 hover:border-ink hover:text-ink">
                 The standard →
               </Link>

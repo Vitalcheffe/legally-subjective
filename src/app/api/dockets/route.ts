@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import { listDockets } from "@/lib/dockets";
 
 /* THE INTERFACE — canonical JSON for machines.
-   The standard is only real if machines can consume it. */
+   The standard is only real if machines can consume it.
+   force-static: computed once at build from the FILED record, then served
+   immutably — a filed docket never changes, and neither does its JSON. */
+
+export const dynamic = "force-static";
 
 export async function GET() {
   const dockets = await listDockets();
@@ -38,7 +42,6 @@ export async function GET() {
     },
     {
       headers: {
-        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
         "X-Standard": "LS-1.0",
       },
     },

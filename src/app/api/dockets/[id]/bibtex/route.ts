@@ -1,14 +1,12 @@
 import { NextResponse } from "next/server";
-import { getDocket } from "@/lib/dockets";
+import { bibtex, getDocket, listDockets } from "@/lib/dockets";
 
-/* THE INTERFACE — one docket, canonical JSON.
-   Serves the immutable artifact exactly as filed, seal included.
+/* THE INTERFACE — one docket, one BibTeX record (LS-1.0 §7).
    force-static: prerendered at build from the FILED record. */
 
 export const dynamic = "force-static";
 
 export async function generateStaticParams() {
-  const { listDockets } = await import("@/lib/dockets");
   const dockets = await listDockets();
   return dockets.map((d) => ({ id: d.docket }));
 }
@@ -26,11 +24,10 @@ export async function GET(
     );
   }
 
-  return NextResponse.json(d, {
+  return new NextResponse(bibtex(d), {
     headers: {
-      "X-Standard": d.standard,
+      "Content-Type": "application/x-bibtex; charset=utf-8",
       "X-Docket": d.docket,
-      "X-Docket-SHA256": d.chain.sha256 ?? "",
     },
   });
 }

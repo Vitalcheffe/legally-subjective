@@ -267,9 +267,12 @@ export default async function JudgePage({
                   {citation(d)}
                 </blockquote>
                 <p className="mt-4 font-data text-[11px] leading-relaxed text-ink-3">
-                  BibTeX: append <span className="text-ink-2">?format=bibtex</span> to the
-                  canonical JSON URL. Filed dockets are immutable; corrections produce
-                  revision + 1 with a supersede pointer.
+                  BibTeX served alongside every docket at{" "}
+                  <a href={`/api/dockets/${d.docket}/bibtex`} className="text-ink-2 underline">
+                    /api/dockets/{d.docket}/bibtex
+                  </a>
+                  . Filed dockets are immutable; corrections produce revision + 1 with a
+                  supersede pointer.
                 </p>
               </div>
             </div>
