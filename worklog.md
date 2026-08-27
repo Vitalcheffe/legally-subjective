@@ -152,3 +152,24 @@ Stage Summary:
 - Le site n'est plus une promesse : 9 juges réels mesurés sur 329 affaires et 587 opinions, chaque chiffre tracé jusqu'aux octets du cache source
 - Kavanaugh 94 / Jackson 6 en disposition ; Jackson 94 / Kavanaugh 6 en tempérament ; paire la plus alignée 95,24 %, la plus clivée 56,95 %
 - Prochain : axes Orality (transcriptions) et Reversal (traitement des citations), extension aux cours d'appel (banc de 30+, pleine granularité des percentiles)
+
+---
+Task ID: 6
+Agent: Super Z (main)
+Task: Fix déploiement Vercel — build casse sur vaul@^1.3.2 + préparation d'un état réellement déployable
+
+Work Log:
+- Diagnostic : le repo GitHub (Vitalcheffe/legally-subjective, commit 9627076) contient "vaul": "^1.3.2" — version inexistante sur npm ; le sandbox a toujours eu ^1.1.2 (valide, résolution npm complète vérifiée sur 937 packages)
+- package.json : vaul retiré (drawer inutilisé supprimé), build = "next build" (la chaîne cp standalone cassait sur Vercel), start = "next start"
+- package-lock.json généré et commité → install déterministe sur Vercel (npm détecté via lockfile)
+- next.config.ts : output "standalone" retiré (ignoré par Vercel, source d'échecs du script build)
+- /court/[id] : searchParams supprimé → page 100% statique ; tri par axe déplacé côté client (composant BenchTable) — un serveur serverless ne peut pas lire data/ au runtime
+- Routes API : force-static + generateStaticParams (/api/dockets, /api/dockets/[id], nouveau /api/dockets/[id]/bibtex, /api) — JSON et BibTeX prérendus au build, immuables comme les dockets
+- Bug critique intercepté au build de répétition : déstructuration params cassée ({id} → id objet) → la page court prérendait un 404 (NEXT_HTTP_ERROR_FALLBACK;404) ; corrigé
+- next build complet : ✓ 115 pages statiques — toutes les routes SSG/statiques, zéro lecture de fichiers au runtime, zéro compute serverless (doctrine « statique partout où c'est possible » respectée jusque dans le déploiement)
+- Vérifications : HTML prérendu contient les vraies données (WARM, JUDGES 009, DOCKETS 422, matrice 72 liens, sha256) ; tri client validé (temperament → Jackson 94 en tête) ; lint 0 erreur ; dev relancé
+- Commit a57d603 — 14 fichiers
+
+Stage Summary:
+- Le repo sandbox est désormais déployable tel quel sur Vercel : npm install déterministe + build statique complet
+- Action requise côté utilisateur : synchroniser GitHub avec CET état (le package.json GitHub porte vaul ^1.3.2, inexistant sur npm) puis relancer le déploiement
