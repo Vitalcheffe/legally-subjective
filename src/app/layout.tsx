@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Legally Subjective — Would you still be free tonight?",
+  title: "You don't pick your judge. · Legally Subjective",
   description:
     "LS-1.0: the open standard that measures the subjectivity of the bench from filed records. Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Legally Subjective" }],
   openGraph: {
-    title: "Legally Subjective — Would you still be free tonight?",
+    title: "You don't pick your judge. · Legally Subjective",
     description:
       "Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
     siteName: "Legally Subjective",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Legally Subjective — Would you still be free tonight?",
+    title: "You don't pick your judge. · Legally Subjective",
     description:
       "Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
   },

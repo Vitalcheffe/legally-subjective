@@ -1,19 +1,19 @@
-import { Chrome } from "@/components/ls/chrome";
-import { Interrogation } from "@/components/ls/interrogation";
+import { Draw } from "@/components/ls/draw";
 import { getSystemState } from "@/lib/system-state";
+import { getBench } from "@/lib/justices";
 
 /* ————————————————————————————————————————————————
-   THE QUESTIONS — the front page for humans.
+   THE FRONT OF THE SHOP — one page, one question,
+   one number, one button.
 
-   Not routes. Not APIs. The questions a person asks when
-   a judge is about to decide something that matters to
-   them — each answered by a figure from the public record,
-   each opening a door that measures.
+   The back room (dockets, axes, chain of custody) is
+   built and real — it hides behind THE DRAW, one click
+   deep, for the 2% who need to verify. The 98% spin,
+   feel the floor move, and share.
 
-   Every number below is real and traceable:
-   - 56.95% / 95.24%  data/productions/agreement.json (pairs)
-   - 25.5% / 4.8%     data/dockets/LS-J-009, LS-J-007 (temperament)
-   - 50.1 / 23.4      data/dockets/LS-J-001, LS-J-009 (precedent)
+   Every number the wheel can land on is real and
+   traceable: data/dockets/LS-J-00{1..9}.json, axis
+   "disposition", measured on recorded votes.
    ———————————————————————————————————————————————— */
 
 interface Question {
@@ -25,7 +25,7 @@ interface Question {
 }
 
 export default async function Home() {
-  const sys = await getSystemState();
+  const [sys, bench] = await Promise.all([getSystemState(), getBench()]);
   const live = sys.state === "WARM";
 
   const QUESTIONS: Question[] = [
@@ -100,31 +100,26 @@ export default async function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-paper font-display text-ink">
-      <Chrome
-        justices={sys.judgesScored}
-        cases={sys.casesDecided}
-        windowLabel={sys.windowLabel}
-        state={sys.state}
-      />
-
       <main className="flex-1">
-        <Interrogation justices={sys.judgesScored} cases={sys.casesDecided} />
+        {/* ——— THE DRAW — the whole store ——— */}
+        <Draw
+          bench={bench}
+          windowLabel={sys.windowLabel}
+          casesDecided={sys.casesDecided}
+        />
 
-        {/* ——— THE QUESTIONS ——— */}
+        {/* ——— THE QUESTIONS — below the fold, for the 2% ——— */}
         <section id="questions" className="scroll-mt-16 border-b border-rule">
           <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 lg:px-14 lg:py-20">
-            <p className="micro">[003] The questions</p>
-            <h2 className="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.9rem)] font-bold uppercase leading-[1.02] tracking-[-0.02em]">
-              Ask what a ruling hangs on.
-              <br />
-              <span className="text-ink-2">The record answers.</span>
+            <p className="micro">[002] For those who want to dig</p>
+            <h2 className="mt-5 font-display text-[clamp(1.7rem,3.2vw,2.5rem)] font-bold uppercase leading-[1.02] tracking-[-0.02em]">
+              The questions behind the wheel.
             </h2>
             <p className="mt-5 max-w-[62ch] font-display text-[15px] leading-relaxed text-ink-2">
-              Four questions people actually ask about judges. No opinions in
-              the answers — only counts from{" "}
-              {sys.casesDecided} decided cases read off the public record
-              {sys.windowLabel ? ` (${sys.windowLabel})` : ""}, Supreme Court
-              of the United States.
+              The spin makes you feel it; these pages prove it. No opinions —
+              only counts from {sys.casesDecided} decided cases read off the
+              public record{sys.windowLabel ? ` (${sys.windowLabel})` : ""},
+              Supreme Court of the United States.
             </p>
 
             <div className="mt-10 border-t border-rule">

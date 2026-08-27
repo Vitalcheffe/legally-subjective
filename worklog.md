@@ -255,4 +255,25 @@ Work Log:
 Stage Summary:
 - L'accueil parle désormais à l'humain : quatre questions que tout le monde se pose, répondues par des nombres réels, avec des portes vers les outils — le jargon technique a disparu de la vitrine (il reste dans le repo, là où est sa place)
 - Le positionnement affiché : « Do judges differ? We count. » — un projet de mesure, pas un cabinet d'avocats, disclaimer inclus
-- Prochaine étape logique : peupler les Δ des douze fins (mapping classe de dossier ↔ données) et étendre au-delà des Neuf (cours d'appel fédérales)
+- Prochaine étape logique : peoupler les Δ des douze fins (mapping classe de dossier ↔ données) et étendre au-delà des Neuf (cours d'appel fédérales)
+
+---
+Task ID: 11
+Agent: Super Z (main)
+Task: Directive fondatrice — « l'empathie est académique » — LA DEVANTURE : THE DRAW (la roulette des juges)
+
+Work Log:
+- Directive reçue : jMail prenait à la gorge en 2 secondes ; l'instrument académique non. « Pas un instrument que des chercheurs consultent. Une bombe que ton voisin de palier ne peut pas fermer. Une page, une question, un chiffre, un bouton. »
+- Architecture : l'arrière-boutique (dockets, axes, chaîne de garde) reste — elle se cache UN clic derrière la roue, pour les 2% ; les 98% spinent, paniquent, partagent
+- THE DRAW (src/components/ls/draw.tsx) : état IDLE — « YOU DON'T PICK YOUR JUDGE. » plein écran + enjeu rotatif rouge (les 12 fins) + bouton géant SPIN THE BENCH ; état FLASH — les noms défilent en cuts durs 85 ms (16–24 cuts), arrêt NET ; état LANDED — tampon rouge incliné « YOU DREW KAVANAUGH », chiffre GÉANT « 69 OUT OF 100 » en rouge, phrase humaine (« voted their way 69 times in 100. Measured on 226 recorded votes. Not an opinion. A count. »), contre-factuel 3 cases (porte la plus basse / rang de la tienne / porte la plus haute), SPIN AGAIN rouge plein + record + reçu
+- Loi d'exception assumée et documentée dans le code : le site est déterministe partout, SAUF ici — l'aléatoire EST la découverte (crypto.getRandomValues, uniforme) ; la roue ne décore pas le message, elle EST le message
+- Honnêteté maintenue : pas de « condamne 87% des gens comme toi » inventé — le vrai axe disposition (part des votes favorables à qui demande réparation), l'éventail réel 58→69, limites affichées (pas de ventilation par type de crime dans le registre public), disclaimer non-prédiction
+- Partage : chaque tirage écrit #you-drew-{slug} + titre d'onglet « YOU DREW THOMAS — 60 OUT OF 100 » (ré-affirmé à 80 ms pour gagner la course contre les metadata Next.js — bug trouvé et corrigé) ; prefers-reduced-motion → tirage instantané sans flash
+- page.tsx : THE DRAW = TOUT l'écran au-dessus de la ligne de flottaison ; THE QUESTIONS reléguées sous le pli (« For those who want to dig ») ; plus de Chrome télémétrique sur l'accueil — juste une ligne LEGALLY SUBJECTIVE · REAL DATA · 237 CASES
+- interrogation.tsx supprimée (absorbée) ; lib/justices.ts : chargeur serveur des 9 dockets FILED → props du client ; layout.tsx : titre statique « You don't pick your judge. »
+- Vérifications : lint 0 erreur ; build 115/115 statiques ; spin→flash→landed testé (KAGAN 61, SOTOMAYOR 60, KAVANAUGH 69) ; SPIN AGAIN → DRAW #02 ; restore #you-drew-thomas → titre persiste ; zéro overflow 390px ; revue VLM deux passes : « movie poster for a thriller », « like you've just been handed a verdict », « pulled the lever on your own fate » — note A-
+
+Stage Summary:
+- La devanture existe : une URL, une expérience, une émotion — le visiteur sent le sol bouger avant de lire quoi que ce soit, et chaque chiffre tombé de la roue reste traçable jusqu'aux octets du cache source
+- L'écart réel affiché : 58 (Jackson) → 69 (Kavanaugh) sur 100 — dix points de vie sur le hasard d'un couloir
+- Prochain : le contre-factuel « ONE DOOR DOWN » chiffré par type d'enjeu (nécessite données par classe), et l'extension aux cours d'appel où le panel de 3 est littéralement tiré au sort

@@ -44,7 +44,7 @@ export default async function StandardPage() {
                 href="/"
                 className="font-data text-[11px] font-medium tracking-[0.08em] text-ink-2 uppercase hover:text-signal-deep"
               >
-                ← Back to the interrogation
+                ← Back to the draw
               </a>
             </div>
             <h1 className="mt-5 font-display text-[clamp(2.2rem,5vw,4.2rem)] font-bold uppercase leading-[0.98] tracking-[-0.025em]">
