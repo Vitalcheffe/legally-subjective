@@ -101,3 +101,28 @@ Stage Summary:
 - La vitrine existe : hero « Would you still » en boucle, les Neuf en specimen honnête, zéro mock partout
 - État : UI fondatrice livrée, prête pour l'ingestion CourtListener (les specimens deviendront des FILED)
 - Fichiers clés : src/app/page.tsx, src/app/globals.css, src/components/ls/*, src/lib/sha256.ts, standards/LS-1.0.md, core/src/legally_subjective/glyph.py
+
+---
+Task ID: 4
+Agent: Super Z (main)
+Task: Pivot frontal total — UI-1.0 « EXHIBIT » (rejet de Parchemin & Sceau et de la vitrine one-page)
+
+Work Log:
+- Rejet fondateur enregistré : la vitrine brochure est morte. Nouvelle loi : une URL qui ne calcule rien n'existe pas (7 URL, chacune avec fonction/objectif/résultat réel)
+- globals.css réécrit : Parchemin & Sceau supprimé → EXHIBIT (fond #FFFFFF, encre #0A0A0A, UNE couleur signal #E4002B, ramp data gris 5 paliers, cut/tick/blink uniquement, scroll-behavior auto)
+- layout.tsx : Newsreader/Inter remplacés par Space Grotesk (parle) + IBM Plex Mono (mesure)
+- src/lib/system-state.ts : télémétrie RÉELLE — build = sha256(standards/LS-1.0.md), compteurs = fichiers data/, état moteur = engine_state.json. Rien d'inventable
+- chrome.tsx : barre noire sticky — horloge UTC live, BUILD, ENGINE C, JUDGES/DOCKETS, état COLD/WARM, route courante
+- interrogation.tsx : l'instrument hero — WOULD YOU STILL fixe + variable rouge au métronome 3400ms par CUT SEC, curseur clignotant (figé si FROZEN), [01/12], clavier (←/→, espace, 1-9), index des 12 fins cliquables (freeze), hash partageable par fin, document.title rotatif, COPY THE QUESTION, prefers-reduced-motion → départ figé
+- page.tsx : / = interrogation + THE MAP (les 7 URL avec fonction + état LIVE/PENDING) + footer noir. Les 4 routes data sont PENDING dans la map — elles n'existeront qu'avec l'ingestion (zéro-fabrication appliqué aux URL elles-mêmes)
+- /standard créé : rend standards/LS-1.0.md réel (react-markdown, RFC-brutal), rail specimen glyphe + SHA-256 complet — la page EST le fichier
+- Purge : seal.tsx, reveal.tsx, rotating-line.tsx supprimés ; glyph.tsx passé en var(--signal)
+- web/tokens.css : doc canonique EXHIBIT (5 lois + doctrine URL + motion law)
+- Conformité : Math.random éradiqué du dépôt (sidebar.tsx shadcn + examples/websocket rendus déterministes) → guard 0 violation total ; lint 0 erreur
+- Vérifié agent-browser : rotation live (3 valeurs observées), freeze + hash, 12 rangées, horloge UTC, /standard 9 sections + sha valide, 0 overflow mobile. Cache CSS Turbopack périmé détecté et purgé (.next) — variable confirmée rgb(228,0,43) sur fond rgb(255,255,255)
+- Revue VLM (2 passes) : « Palantir-grade instrument », « disciplined brutalist execution », hiérarchie excellente — note A-
+
+Stage Summary:
+- Le site n'est plus une brochure : c'est un instrument. 2 URL LIVE qui calculent (/, /standard), 5 URL PENDING qui n'existeront qu'avec la donnée réelle
+- Palette verrouillée : blanc/encre/rouge signal. Typo verrouillée : Grotesk + Mono. Motion verrouillée : cut + horloge + curseur
+- Prochaine étape logique : ingestion CourtListener (A-006) qui fait passer la télémétrie COLD → WARM et débloque /judge, /court, /compare, /docket

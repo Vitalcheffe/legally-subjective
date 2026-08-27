@@ -1,77 +1,93 @@
-/* LEGALLY SUBJECTIVE — Design Tokens v1.0
-   Palette « Parchemin & Sceau » — 9 couleurs, pas une de plus.
-   Règle 60-30-10 : 60% papier, 30% encre/surfaces, 10% sceau. */
+/* ============================================================
+   LEGALLY SUBJECTIVE · UI-1.0 “EXHIBIT”
+   ------------------------------------------------------------
+   Thesis: the interface is evidence. White light, dense data,
+   zero decoration. The page is indifferent — that is why it is
+   terrifying, and why it is admissible.
+
+   THE FIVE LAWS
+   1. One background (#FFFFFF), one ink (#0A0A0A), ONE signal
+      (#E4002B). Signal marks the variable, the delta, the live
+      state. It is never decoration.
+   2. Grotesk speaks. Mono measures. Space Grotesk carries
+      language; IBM Plex Mono carries numbers, labels, chrome.
+   3. Structure is exposed: 1px ink rules between zones, 1px
+      hairlines inside them. No radius. No shadow. No gradient.
+   4. State changes are CUTS (0ms). The only clocks are the
+      clock (1000ms) and the cursor (1060ms). No easing, ever.
+   5. Every number is tabular and traces to a filed document.
+      No number, no slot. Missing is rendered missing.
+
+   MOTION LAW
+   Two speeds exist: instant, and the clock. Rotation of the
+   interrogation variable is a hard cut on a fixed 3400ms
+   metronome. The order is fixed — this house does not shuffle.
+
+   URL DOCTRINE (what this system dresses)
+   /               the interrogation — asks, converts, shows state
+   /judge/{id}     the case file — one fingerprint, one docket list
+   /court/{id}     the bench — one court ranked, spread per axis
+   /compare/{a}/{b} the other door — the quantified counterfactual
+   /docket/{id}    the chain of custody — every number, its source
+   /standard       the norm — LS-1.0 rendered from the repo file
+   /api/*          the interface — canonical JSON for machines
+   A URL that computes nothing does not ship.
+
+   NOTE: the live tokens are carried by src/app/globals.css
+   (Tailwind 4 @theme). This file is the canonical reference.
+   ============================================================ */
 
 :root {
-  /* — Le papier — */
-  --paper: #FAF6EE;        /* fond ivoire, parchemin tenu à la lumière */
-  --card: #FFFFFF;         /* surfaces / chemises de dossier */
-  --sand: #F1EAD9;         /* surface secondaire, sable */
-  --line: #E4DBC6;         /* séparateurs, lin */
+  /* ——— surface ——— */
+  --paper: #ffffff;      /* the only ground */
+  --paper-2: #f7f7f5;    /* near-white zone tint (code, hash blocks) */
 
-  /* — L'encre — */
-  --ink: #1C1710;          /* texte principal, noir chaud */
-  --ink-2: #5C5244;        /* texte secondaire, taupe */
+  /* ——— ink ——— */
+  --ink: #0a0a0a;        /* text, structural rules, the chrome bar */
+  --ink-2: #595959;      /* secondary text */
+  --ink-3: #8c8c8c;      /* metadata, disabled, pending */
 
-  /* — Le sceau — */
-  --seal: #7A2E2B;         /* accent unique : oxblood, sang-de-bœuf */
-  --seal-deep: #5E211F;    /* hover, profondeur du sceau */
-  --gold: #A8894C;         /* or vieilli — rarissime, dorures seulement */
+  /* ——— structure ——— */
+  --rule: #0a0a0a;       /* 1px zone separators */
+  --hairline: #e3e3e3;   /* 1px internal dividers */
+  --row-hover: #f5f5f5;  /* hover ground for rows */
 
-  /* — Typographie — */
-  --font-display: "Newsreader", Georgia, serif;      /* titres, italiques */
-  --font-ui: "Inter", system-ui, sans-serif;         /* corps, interface */
-  --font-data: "IBM Plex Mono", monospace;           /* chiffres, cotes */
+  /* ——— the one color ——— */
+  --signal: #e4002b;     /* the variable, the delta, the live mark */
+  --signal-deep: #b40020;/* signal for small text on white */
+  --signal-on-ink: #ff4d6a; /* signal on the black chrome */
 
-  /* — Échelle — */
-  --text-display: 3.5rem;   /* 56 — la ligne d'ouverture */
-  --text-h1: 2.25rem;       /* 36 — intitulés d'arrêt */
-  --text-h2: 1.5rem;        /* 24 — sections du dossier */
-  --text-h3: 1.25rem;       /* 20 — exhibits */
-  --text-body: 1.0625rem;   /* 17 — lecture juridique, du souffle */
-  --text-small: 0.875rem;   /* 14 — chain of custody */
-  --leading-body: 1.65;
+  /* ——— data ramp (grayscale; red is reserved for highlight) ——— */
+  --d1: #0a0a0a;
+  --d2: #404040;
+  --d3: #737373;
+  --d4: #a6a6a6;
+  --d5: #d4d4d4;
 
-  /* — Rythme — */
-  --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;
-  --space-4: 1rem;     --space-6: 1.5rem;   --space-8: 2.5rem;
-  --space-12: 4rem;    --space-16: 6rem;
+  /* ——— type ——— */
+  --font-display: "Space Grotesk", system-ui, sans-serif; /* speaks */
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;  /* measures */
 
-  /* — Mesure de lecture : 68ch, la colonne d'un mémoire — */
-  --measure: 68ch;
+  /* ——— the two clocks ——— */
+  --cut: 0ms;            /* every state change */
+  --tick: 1000ms;        /* the UTC clock */
+  --blink: 1060ms;       /* the interrogation cursor */
+  --metronome: 3400ms;   /* the rotation of the variable */
 
-  /* — Mouvement : deux animations dans toute la maison — */
-  --motion-seal: 600ms cubic-bezier(0.2, 0, 0, 1);      /* le battement unique */
-  --motion-docket: 300ms cubic-bezier(0.4, 0, 0.2, 1);  /* la séance levée */
-
-  /* — Ramp data-viz (chaleur → alarme), 5 paliers — */
-  --ramp-1: #F1EAD9;
-  --ramp-2: #D9B98A;
-  --ramp-3: #B08A5E;
-  --ramp-4: #9A5A45;
-  --ramp-5: #7A2E2B;
-
-  /* — Catégoriel 6 couleurs (v., Lineage) — */
-  --cat-1: #7A2E2B;  --cat-2: #2E5E4E;  --cat-3: #B08A3E;
-  --cat-4: #3E5C8A;  --cat-5: #6E5C8A;  --cat-6: #8A6A4E;
+  /* ——— grid ——— */
+  --gutter: 24px;        /* mobile */
+  --gutter-lg: 40px;     /* desktop — generous, instrument-like */
+  --max: 1600px;         /* wide. density is a virtue */
 }
 
-/* Chiffres tabulaires partout où il y a des données — les colonnes s'alignent, toujours. */
-.tabular { font-variant-numeric: tabular-nums; }
-
-/* Le sceau ne pulse qu'UNE fois à l'arrivée. Jamais en boucle. */
-@keyframes seal-beat {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.06); }
-  100% { transform: scale(1); }
+/* Selection: signal ground, white text. Even the selection obeys. */
+::selection {
+  background: var(--signal);
+  color: #ffffff;
 }
-.seal-beat { animation: seal-beat var(--motion-seal) 1 ease-out; }
 
-/* États vides — la phrase sacrée, jamais contournée */
-.empty-truth {
-  font-family: var(--font-ui);
-  font-size: var(--text-small);
-  color: var(--ink-2);
-  font-style: italic;
+/* Focus: 2px signal outline. Visible to keyboards, invisible to others. */
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
 }
-.empty-truth::before { content: "No public data on this point. We fabricate nothing."; }

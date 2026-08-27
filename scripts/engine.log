@@ -15,3 +15,10 @@
 [2026-08-27T06:34:16Z] cycle 7: vivant — queue engine vide — 0 tâche(s) [agent] en attente
 [2026-08-27T06:34:36Z] cycle 8: vivant — queue engine vide — 0 tâche(s) [agent] en attente
 [2026-08-27T06:34:56Z] cycle 9: vivant — queue engine vide — 0 tâche(s) [agent] en attente
+[2026-08-27T07:06:01Z] ENGINE RESUME — cycles cumulés: 9 — mode ONCE
+[2026-08-27T07:06:01Z] cycle 10: vivant — queue engine vide — 4 tâche(s) [agent] en attente
+[2026-08-27T07:06:21Z] cycle 11: vivant — queue engine vide — 4 tâche(s) [agent] en attente
+[2026-08-27T07:06:41Z] cycle 12: vivant — queue engine vide — 4 tâche(s) [agent] en attente
+[2026-08-27T07:07:01Z] cycle 13: vivant — queue engine vide — 4 tâche(s) [agent] en attente
+[2026-08-27T07:07:21Z] cycle 14: vivant — queue engine vide — 4 tâche(s) [agent] en attente
+[2026-08-27T07:07:42Z] cycle 15: GUARD → 1 violation(s)

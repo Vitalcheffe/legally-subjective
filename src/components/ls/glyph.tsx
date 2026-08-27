@@ -130,7 +130,7 @@ export function Glyph({
       <path
         d={contour}
         fill="none"
-        stroke="var(--seal)"
+        stroke="var(--signal)"
         strokeWidth={strokeWidth}
         strokeLinejoin="round"
         strokeDasharray={hasData ? undefined : "5 6"}
@@ -149,7 +149,7 @@ export function Glyph({
           y1={(R + 7) * Math.sin(tilt - Math.PI / 2)}
           x2={(R + 15) * Math.cos(tilt - Math.PI / 2)}
           y2={(R + 15) * Math.sin(tilt - Math.PI / 2)}
-          stroke="var(--seal)"
+          stroke="var(--signal)"
           strokeWidth={2}
         />
       )}
@@ -158,8 +158,8 @@ export function Glyph({
         cx={0}
         cy={0}
         r={3}
-        fill={hasData ? "var(--seal)" : "none"}
-        stroke="var(--seal)"
+        fill={hasData ? "var(--signal)" : "none"}
+        stroke="var(--signal)"
         strokeWidth={1.5}
         opacity={hasData ? 1 : 0.7}
       />

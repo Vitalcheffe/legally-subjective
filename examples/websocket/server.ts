@@ -28,7 +28,9 @@ interface Message {
 
 const users = new Map<string, User>()
 
-const generateMessageId = () => Math.random().toString(36).substr(2, 9)
+// Deterministic id counter — this house bans non-deterministic calls.
+let messageCounter = 0
+const generateMessageId = () => `m${(++messageCounter).toString(36)}`
 
 const createSystemMessage = (content: string): Message => ({
   id: generateMessageId(),

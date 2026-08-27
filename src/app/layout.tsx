@@ -1,31 +1,25 @@
 import type { Metadata } from "next";
-import { Newsreader, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+/* UI-1.0 EXHIBIT — Grotesk speaks, Mono measures. Two fonts. No serif. */
+const grotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Legally Subjective — Subjectivity, measured.",
+  title: "Legally Subjective — Would you still be free tonight?",
   description:
-    "The open standard for the measured identity of legal actors. Would you still be free tonight if your judge had been one door down? Not a prediction. A record.",
+    "LS-1.0: the open standard that measures the subjectivity of the bench from filed records. Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
   keywords: [
     "legal analytics",
     "judicial analytics",
@@ -33,20 +27,21 @@ export const metadata: Metadata = {
     "judges",
     "open standard",
     "LS-1.0",
+    "one door down",
   ],
   authors: [{ name: "Legally Subjective" }],
   openGraph: {
-    title: "Legally Subjective — Subjectivity, measured.",
+    title: "Legally Subjective — Would you still be free tonight?",
     description:
-      "Would you still be free tonight if your judge had been one door down? Not a prediction. A record.",
+      "Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
     siteName: "Legally Subjective",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Legally Subjective — Subjectivity, measured.",
+    title: "Legally Subjective — Would you still be free tonight?",
     description:
-      "Would you still be free tonight if your judge had been one door down? Not a prediction. A record.",
+      "Would you still be free tonight — if your judge had been one door down? Not a prediction. A record.",
   },
 };
 
@@ -58,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${newsreader.variable} ${inter.variable} ${plexMono.variable} antialiased bg-background text-foreground`}
+        className={`${grotesk.variable} ${plexMono.variable} antialiased bg-background text-foreground`}
       >
         {children}
         <Toaster />

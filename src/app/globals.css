@@ -7,7 +7,7 @@
   /* shadcn mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-grotesk);
   --font-mono: var(--font-plex-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -38,157 +38,210 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* ——— Legally Subjective: Parchemin & Sceau ——— */
+  /* ——— Legally Subjective: UI-1.0 "EXHIBIT" ——— */
   --color-paper: var(--paper);
-  --color-sand: var(--sand);
-  --color-line: var(--line);
+  --color-paper-2: var(--paper-2);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
-  --color-seal: var(--seal);
-  --color-seal-deep: var(--seal-deep);
-  --color-gold: var(--gold);
-  --font-display: var(--font-newsreader), Georgia, serif;
-  --font-ui: var(--font-inter), system-ui, sans-serif;
-  --font-data: var(--font-plex-mono), monospace;
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-hairline: var(--hairline);
+  --color-row-hover: var(--row-hover);
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
+  --color-signal-on-ink: var(--signal-on-ink);
+  --font-display: var(--font-grotesk), system-ui, sans-serif;
+  --font-data: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 :root {
-  /* The palette — nine tokens, not one more. 60 / 30 / 10. */
-  --paper: #faf6ee;
-  --sand: #f1ead9;
-  --line: #e4dbc6;
-  --ink: #1c1710;
-  --ink-2: #5c5244;
-  --seal: #7a2e2b;
-  --seal-deep: #5e211f;
-  --gold: #a8894c;
+  /* ============================================================
+     UI-1.0 “EXHIBIT” — the interface is evidence.
+     White light. Dense data. Zero decoration.
+     FIVE LAWS:
+     1. One background, one ink, ONE signal color.
+        Signal marks the variable, the delta, the live state.
+        It is never decoration.
+     2. Grotesk speaks. Mono measures.
+     3. Structure is exposed: 1px ink rules between zones,
+        1px hairlines inside. No radius. No shadow. No gradient.
+     4. State changes are CUTS (0ms). The only clocks are
+        the clock (1000ms) and the cursor (1060ms). No easing.
+     5. Every number is tabular, and traces to a filed
+        document — or it does not exist.
+     ============================================================ */
+  --paper: #ffffff;
+  --paper-2: #f7f7f5;
+  --ink: #0a0a0a;
+  --ink-2: #595959;
+  --ink-3: #8c8c8c;
+  --rule: #0a0a0a;
+  --hairline: #e3e3e3;
+  --row-hover: #f5f5f5;
+  --signal: #e4002b;
+  --signal-deep: #b40020;
+  --signal-on-ink: #ff4d6a;
 
-  /* shadcn wiring (light only — dark mode is forbidden in this house) */
+  /* data ramp — grayscale only; red is reserved for the highlight */
+  --d1: #0a0a0a;
+  --d2: #404040;
+  --d3: #737373;
+  --d4: #a6a6a6;
+  --d5: #d4d4d4;
+
+  /* shadcn wiring (light only — dark mode is banned in this house) */
   --radius: 0rem;
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: #ffffff;
+  --card: var(--paper);
   --card-foreground: var(--ink);
-  --popover: #ffffff;
+  --popover: var(--paper);
   --popover-foreground: var(--ink);
-  --primary: var(--seal);
+  --primary: var(--ink);
   --primary-foreground: var(--paper);
-  --secondary: var(--sand);
+  --secondary: var(--paper-2);
   --secondary-foreground: var(--ink);
-  --muted: var(--sand);
+  --muted: var(--paper-2);
   --muted-foreground: var(--ink-2);
-  --accent: var(--sand);
-  --accent-foreground: var(--seal);
-  --destructive: var(--seal);
-  --border: var(--line);
-  --input: var(--line);
-  --ring: var(--seal);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--signal);
+  --border: var(--hairline);
+  --input: var(--rule);
+  --ring: var(--signal);
   --sidebar: var(--paper);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--seal);
+  --sidebar-primary: var(--ink);
   --sidebar-primary-foreground: var(--paper);
-  --sidebar-accent: var(--sand);
-  --sidebar-accent-foreground: var(--seal);
-  --sidebar-border: var(--line);
-  --sidebar-ring: var(--seal);
+  --sidebar-accent: var(--paper-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--signal);
 }
 
-/* Dark mode is banned. If anything forces .dark, it gets the same paper. */
+/* Dark mode is banned. If anything forces .dark, it gets the same white. */
 .dark {
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: #ffffff;
+  --card: var(--paper);
   --card-foreground: var(--ink);
-  --popover: #ffffff;
+  --popover: var(--paper);
   --popover-foreground: var(--ink);
-  --primary: var(--seal);
+  --primary: var(--ink);
   --primary-foreground: var(--paper);
-  --secondary: var(--sand);
+  --secondary: var(--paper-2);
   --secondary-foreground: var(--ink);
-  --muted: var(--sand);
+  --muted: var(--paper-2);
   --muted-foreground: var(--ink-2);
-  --accent: var(--sand);
-  --accent-foreground: var(--seal);
-  --destructive: var(--seal);
-  --border: var(--line);
-  --input: var(--line);
-  --ring: var(--seal);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--signal);
+  --border: var(--hairline);
+  --input: var(--rule);
+  --ring: var(--signal);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  /* Motion law: no smooth scroll. Anchors are cuts, like everything else. */
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-grotesk), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: var(--seal);
-    color: var(--paper);
+    background: var(--signal);
+    color: #ffffff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
   }
 }
 
-/* ——— The two animations of the house ——— */
+/* ——— The two clocks of the house ——— */
 
-/* The wax presses once. Never loops. */
-@keyframes seal-beat {
-  0% {
-    transform: scale(1);
+/* The interrogation cursor. Blinks until frozen. */
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
   }
-  40% {
-    transform: scale(1.09);
-  }
+  50%,
   100% {
-    transform: scale(1);
-  }
-}
-
-/* A stamp lands. Slight rotation, permanent. */
-@keyframes stamp-in {
-  0% {
     opacity: 0;
-    transform: scale(1.2) rotate(-8deg);
-  }
-  55% {
-    opacity: 1;
-    transform: scale(0.96) rotate(-2deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(-3deg);
   }
 }
-.stamp {
-  animation: stamp-in 500ms cubic-bezier(0.2, 0, 0, 1) 1 both;
+.cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.8em;
+  margin-left: 0.12em;
+  transform: translateY(0.05em);
+  background: var(--ink);
+  animation: cursor-blink 1.06s steps(1, end) infinite;
 }
+.cursor.frozen {
+  animation: none;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+/* ——— Primitives ——— */
 
 /* Tabular numbers wherever data lives. Columns align. Always. */
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
-/* The docket double-rule — pleading paper's left margin, quietly. */
-.docket-rule {
-  border-left: 1px solid var(--line);
-  box-shadow: -3px 0 0 -1px var(--line);
-}
-
-/* Fine typographic details */
-.tracking-wordmark {
-  letter-spacing: 0.22em;
-}
-.smallcaps {
-  font-variant-caps: all-small-caps;
+/* The micro-label: every zone carries its exhibit number. */
+.micro {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
 }
 
-/* Custom scrollbar — ink on paper */
+/* The button: 1px ink, white ground. Hover inverts. Active signals. No radius. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--ink);
+  color: #ffffff;
+}
+.btn:active {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: #ffffff;
+}
+
+/* Custom scrollbar — graphite on white */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -196,7 +249,7 @@
   background: var(--paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--line);
+  background: var(--d4);
   border: 2px solid var(--paper);
 }
 ::-webkit-scrollbar-thumb:hover {

@@ -78,37 +78,43 @@
       "id": "A-001",
       "owner": "agent",
       "type": "spec",
-      "title": "Design System pixel — tokens Parchemin & Sceau, grille, composants signature (DocketCard, Chain of Custody, StampBadge, glyphe SVG)"
+      "title": "Design System — REMPLACÉ: Parchemin & Sceau est mort. UI-1.0 EXHIBIT livré (fond blanc #FFFFFF, encre #0A0A0A, UNE couleur signal #E4002B, Space Grotesk + IBM Plex Mono, cut/tick/blink uniquement)",
+      "status": "done"
     },
     {
       "id": "A-002",
       "owner": "agent",
       "type": "spec",
-      "title": "Spec The Bench — home : photo de cour en glyphes, séance levée (transition dossier), sceau qui bat une fois"
+      "title": "OBSOLETE: la vitrine one-page « The Bench » est rejetée par le fondateur. Remplacée par la doctrine des 7 URL: chaque page calcule un vrai résultat, aucune page-brochure",
+      "status": "done"
     },
     {
       "id": "A-003",
       "owner": "agent",
       "type": "spec",
-      "title": "Spec In re You — 12 questions, mapping vers les 6 axes, carte miroir (subject.type=mirror, N=1 auto-déclaré)"
+      "title": "Spec In re You — 12 questions, mapping vers les 6 axes, carte miroir (subject.type=mirror, N=1 auto-déclaré)",
+      "status": "pending"
     },
     {
       "id": "A-004",
       "owner": "agent",
       "type": "code",
-      "title": "Kernel Python — pyproject, modules (ingest/axes/glyph/docket), tests de déterminisme"
+      "title": "Kernel Python — modules ingest/axes/glyph/docket, tests de déterminisme (glyph.py déjà déterministe et testé)",
+      "status": "pending"
     },
     {
       "id": "A-005",
       "owner": "agent",
       "type": "code",
-      "title": "Web statique — squelette 4 routes (/, /en-banc, /in-re/[slug], /daubert) + print CSS"
+      "title": "Routes data-driven — /judge/[id], /court/[id], /compare/[a]/[b], /docket/[id], /api/* — ne shippent QU'avec l'ingestion (loi: une URL qui ne calcule rien n'existe pas). Statut actuel: / (interrogation) et /standard (la norme rendue depuis le fichier) sont LIVE",
+      "status": "pending"
     },
     {
       "id": "A-006",
       "owner": "agent",
       "type": "code",
-      "title": "Ingestion CourtListener — client REST authentifié, cache sourcé dans data/sources/"
+      "title": "Ingestion CourtListener — client REST authentifié, cache sourcé dans data/sources/ — débloque les 4 routes data et fait passer la télémétrie de COLD à WARM",
+      "status": "pending"
     }
   ]
 }

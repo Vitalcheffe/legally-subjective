@@ -1,6 +1,6 @@
 {
   "started": "2026-08-27T06:00:13Z",
-  "cycles": 9,
+  "cycles": 15,
   "tasks_done": [
     {
       "id": "E-002",
@@ -15,8 +15,18 @@
       "at": "2026-08-27T06:03:30Z"
     }
   ],
-  "last_guard": null,
+  "last_guard": {
+    "cycle": 15,
+    "count": 1,
+    "violations": [
+      {
+        "file": "examples/websocket/server.ts",
+        "line": 31,
+        "pattern": "Math\\.random\\s*\\("
+      }
+    ]
+  },
   "status": "running",
-  "last_cycle": "2026-08-27T06:34:56Z",
-  "resumes": 3
+  "last_cycle": "2026-08-27T07:07:42Z",
+  "resumes": 4
 }
