@@ -306,3 +306,28 @@ Stage Summary:
 - Le site a maintenant sa crédibilité académique : un article complet au format des grandes revues, avec figures, tables, tests statistiques et références réelles — et ses outils utilisateur : registre cherchable, dossier par affaire, contre-factuel, machine vs juge
 - Le message scientifique renforce la devanture : « who the justice is matters, which year it is does not » (χ²) et « the case poorly determines the vote »
 - Prochain : étendre l'analyse au-delà des Neuf (cours d'appel où les panels sont tirés au sort), axes Orality/Reversal si sources
+
+---
+Task ID: 13
+Agent: Super Z (main)
+Task: MISSION MANHATTAN — persister le roadmap complet + rapatrier et avancer la Phase 1 (A vs B)
+
+Work Log:
+- Directive fondatrice reçue : « Le Projet Manhattan du Droit » — 6 étages, 8 phases, gates mesurables, ratio qualité/temps = infini. Mission : persister le roadmap, mettre à jour le manifeste, rapporter l'état exact de Phase 1.
+- Localisation du « collecteur » de la mission : la lignée archivée origin/archive/pre-rebuild contenait le corpus criminel abandonné (1 387 appels NY App Div 2015-2023, collector + preprocessing + échantillon doré 5 cas R10 + base rates réels)
+- Rapatriement dans main sous phase1/ : scripts complets (collector, preprocess blocs+kernel, golden test), data/corpus + data/sample + data/structured + data/validation + data/analysis, config.json — chemins relatifs préservés, REPO_ROOT = phase1/
+- PREUVE : test de régression doré repassé dans main — « GOLDEN TEST PASSED (5 records, deterministic fields identical) » = concordance 5/5
+- Extension de la collecte : fenêtres 2024-2025 ajoutées à config (overflow), target_usable 1300→1700 ; 2 runs à 8 min (checkpoint/reprise) → +290 affaires réelles, 0 échec, 85 doublons rejetés → corpus total 1 677
+- Ré-extraction structurée du corpus étendu (1 677 enregistrements, déterministe, zéro LLM) + golden test repassé : TOUJOURS 5/5
+- AUDIT DE FUITTE (découverte Phase 1) : le format memorandum NY embarque le verdict dans le récit (« ...convicting defendant... unanimously affirmed ») et la ligne de concurrence porte le panel en fin de document
+- scripts/phase1_build_dataset.py : construction déterministe du dataset A/B — R1 coupe du décret (« Ordered that »), R2 retrait du bloc panel d'en-tête (amas de noms extraits, coupe corrigée début/fin), R2b retrait de la ligne « ...JJ., concur. », R3 retrait des verdicts en ligne, R4 GATE ANTI-FUITES (toute occurrence résiduelle d'un mot de verdict EXCLUT l'affaire), R5 longueur ≥ 200 chars ; stratification crime×verdict×fenêtre, plus grands restes, seed 20260827
+- Résultat : pool propre 1 027 → TRAIN 600 / TEST 400 (les nombres exacts de la mission), balance affirmed/reversed 482/118 et 319/81, 0 fuite vérifiée sur les 1 000 textes, panel retiré (588/600 sans aucun nom), rapport complet split_report.json
+- phase1/colab/manhattan_stage1_ab.ipynb (généré par scripts/phase1_make_notebook.py, JSON validé, cellules syntaxe-vérifiées) : Modèle A zero-shot vs Modèle B QLoRA (rank 16, lr 2e-4, 3 époques, perte masquée sur le prompt), 400 prédictions chacun, matrices de confusion, biais par catégorie de crime, gate B−A > 5 points, rapport results_stage1.json — prêt pour T4
+- archives/manhattan-roadmap.md : roadmap fondatrice persisté (préambule ambition+ratio infini, arbre des dépendances, 6 étages complets avec méthodes exactes, 4 couches de profiling, 2 méthodes de simulation croisée, module infini darwinien + sa gate, validation humaine, les 2 questions tranchées, tableau des 8 phases avec gates, photographie d'état datée)
+- Manifeste mis à jour : README.md (ambition « Manhattan Project of Law » + ratio infini + liens roadmap/phase1) ; BACKLOG.md (le roadmap Manhattan REMPLACE le plan des 9 semaines, tableau 8 phases avec gates et états, règle 4 ajoutée : résultat négatif = résultat documenté, historique des sprints clos)
+- phase1/README.md : provenance (lignée 2026-08-26 + extension 2026-08-27), contenu, reproduction, règles R1-R5
+
+Stage Summary:
+- Le chemin Manhattan est persisté et exécutable : roadmap complet dans archives/, Phase 1 matériellement avancée — le collecteur a TOURNÉ ce jour (+290 cas réels), la concordance 5/5 est prouvée dans main, le dataset 600/400 est construit avec zéro fuite vérifiée, le notebook Colab est prêt
+- Gate restante de Phase 1 : exécuter le notebook sur Colab T4 (nécessite le GPU de l'utilisateur) et décider : B − A > 5 points → Phase 2 ; sinon résultat négatif documenté
+- Phases 2-8 : non commencées, dépendances et gates posées dans le roadmap

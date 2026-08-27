@@ -1,0 +1,62 @@
+
+
+People v Jose S. (2025 NY Slip Op 05476)
+
+
+
+<table align="center">
+<tbody><tr>
+<td align="center"><b>People v Jose S.</b></td>
+</tr>
+<tr>
+<td align="center">2025 NY Slip Op 05476</td>
+</tr>
+<tr>
+<td align="center">Decided on October 07, 2025</td>
+</tr>
+<tr>
+<td align="center">Appellate Division, First Department</td>
+</tr>
+
+<tr>
+<td align="center">Published by New York State Law Reporting Bureau pursuant to Judiciary Law § 431.</td>
+</tr>
+<tr>
+<td align="center">This opinion is uncorrected and subject to revision before publication in the Official Reports.</td>
+</tr>
+</tbody></table>
+<br><br>
+Decided and Entered: October 07, 2025
+
+<br>Before: Mendez, J.P., Pitt-Burke, Higgitt, O'Neill Levy, JJ. 
+
+<div></div>
+<br>Ind. No. 1274/12|Appeal No. 4853, 4853A|Case No. 2023-06021|
+
+<br><br><div><b>[*1]The People of the State of New York, Respondent,
+<br><br>v<br><br>Jose S., Defendant-Appellant.
+</b></div><br><br>
+<br><br>
+<p>Caprice R. Jenerson, Office of The Appellate Defender, New York (Rebecca Besdin of counsel), for appellant.</p>
+<p>Darcel D. Clark, District Attorney, Bronx (Lori Ann Farrington of counsel), for respondent.</p>
+<br><br>
+
+
+<p>Judgment, Supreme Court, Bronx County (Margaret L. Clancy, J.), rendered July 6, 2016, as amended August 16, 2016, convicting defendant, after a jury trial, of murder in the second degree, criminal possession of a weapon in the second degree, and two counts of assault in the second degree, and sentencing him to concurrent terms of 25 years to life for murder in the second degree, seven years for criminal possession of a weapon in the second degree, and five years on each of the counts of assault in the second degree, unanimously affirmed. Order, same court and Justice, entered on or about October 27, 2023, which denied defendant's motion pursuant to CPL 440.10 to vacate the judgment of conviction, unanimously affirmed.</p>
+<p>Defendant's convictions of assault in the second degree were supported by legally sufficient evidence, and the verdict was not against the weight of the evidence (<i>see People v Danielson</i>, 9 NY3d 342, 348-349 [2007]; <i>see also People v Baque</i>, 43 NY3d 26 [2024]). There was ample evidence supporting the jury's conclusion that defendant caused physical injury within the meaning of Penal Law § 10.00(9). While the victims did not specifically testify to the full extent of the pain they experienced, witnesses described how defendant hit the victims in the head with a gun, how at least one victim experienced pain from being hit, and how the injuries defendant inflicted led to significant bleeding from the head or mouth. There was ample basis for the jury to infer that the resulting injuries went well beyond mere "petty slaps, shoves, kicks and the like," and caused more than "slight or trivial pain" (<i>People v Montgomery</i>, 173 AD3d 627, 628 [1st Dept 2019], <i>lv denied</i> 34 NY3d 935 [2019]).</p>
+<p>The court's <i>Sandoval</i> ruling, which permitted the People to use a photo of defendant alongside alleged gang members while making gang symbols, balanced the appropriate factors and did not constitute an improvident exercise of discretion (<i>see People v Hayes</i>, 97 NY2d 203, 207-208 [2002]). This limited evidence was relevant to defendant's credibility, especially after defendant denied being affiliated with the gang in question, and the probative value of the evidence outweighed its prejudicial effect. In any event, we find that any alleged error in admitting the photo was harmless in light of the overwhelming evidence of guilt (<i>see People v Aracena</i>, 222 AD3d 534, 535 [1st Dept 2023], <i>lv denied</i> 41 NY3d 964 [2024]).</p>
+<p>Defendant's claim that the court should have issued a limiting instruction concerning gang-related evidence is unpreserved (<i>see People v McClary</i>, 107 AD3d 744 [2d Dept 2013], <i>lv denied</i> 21 NY3d 1044 [2013]), and we decline to consider it in the interest of justice. In any event, even assuming that the court should have issued a limiting instruction concerning some of the gang-related evidence, we find that any error was harmless.</p>
+<p>The bulk of defendant's challenges to the prosecutor's comments in their opening statement and in their summation are unpreserved (<i>see People v Romero</i>, 7 NY3d 911, 912 [2006]), and we decline to consider defendant's unpreserved claims in the interest of justice. As an alternative holding, while some isolated comments made by the prosecutor in summation may have been improper, we find that nothing was so egregious as to have deprived defendant of his right to a fair trial (<i>see People v D'Alessandro</i>, 184 AD2d 114, 118-119 [1st Dept 1992], <i>lv denied</i> 81 NY2d 884 [1993]).</p>
+<p>Although defendant's mode of proceedings claim may not require preservation (<i>see People v Jones</i>, 202 AD3d 1285, 1289 [3d Dept 2022]), defendant waived the claim by consenting to the court's proposed procedure of suspending jury deliberations to allow a technician, under the supervision of a court officer, to provide the jury with technical assistance so that it could view video evidence, before then resuming deliberations after the technician left (<i>see People v McPhatter</i>, 235 AD2d 233 [1st Dept 1997], <i>lv denied</i> 89 NY2d 1038 [1997]; <i>see also People v Zelaya</i>, 147 AD3d 986, 987 [2d Dept 2017], <i>lv denied</i> 29 NY3d 1038 [2017]; <i>People v Sampson</i>, 289 AD2d 1022, 1023 [4th Dept 2001], <i>lv denied</i> 97 NY2d 733 [2002]). We decline to consider this claim in the interest of justice. As an alternative holding, we find no mode of proceeding violation (<i>see</i> CPL 310.10; <i>cf. People v Jones</i>, 202 AD3d 1285 [3d Dept 2022] [an investigator had been permitted to go into the jury room unsupervised, thereby allowing a representative of the People to interfere with the jury's secret deliberations]).</p>
+<p>The court properly determined that defendant received effective assistance of counsel under both the state and federal standards (<i>see People v Benevento</i>, 91 NY2d 708, 713-714 [1998]; <i>Strickland v Washington</i>, 466 US 668 [1984]). In particular, we find that there was overwhelming evidence that defendant was either the shooter or acted in concert with the shooter. The additional testimony that counsel failed to secure was not likely to change the result of this case, especially considering the fact that this potential evidence was not inconsistent with the evidence that defendant acted in concert with the shooter (<i>see People v Howard</i>, 231 AD3d 1493, 1495 [4th Dept 2024], <i>lv denied</i> 43 NY3d 1046 [2025]; <i>People v Mohan</i>, 215 AD3d 766, 767-768 [2d Dept 2023], <i>lv denied</i> 40 NY3d 930 [2023]; <i>compare People v Green</i>, 37 AD3d 615, 615 [2d Dept 2007], <i>lv denied</i> 8 NY3d 1046 [2007] [counsel failed to interview potential witnesses "who could have offered exculpatory evidence"]). Defendant did not otherwise show that any of counsel's alleged deficiencies fell below an objective standard of reasonableness or that, viewed individually or collectively, they deprived him of a fair trial or affected the outcome of this case.</p>
+<p>We perceive no basis to reduce defendant's sentence. </p>
+<p>THIS CONSTITUTES THE DECISION AND ORDER OF THE SUPREME COURT, APPELLATE DIVISION, FIRST DEPARTMENT.</p>
+<p>ENTERED: October 7, 2025</p>
+
+
+<br><br><div>
+
+
+
+</div>
+
