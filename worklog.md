@@ -173,3 +173,22 @@ Work Log:
 Stage Summary:
 - Le repo sandbox est désormais déployable tel quel sur Vercel : npm install déterministe + build statique complet
 - Action requise côté utilisateur : synchroniser GitHub avec CET état (le package.json GitHub porte vaul ^1.3.2, inexistant sur npm) puis relancer le déploiement
+
+---
+Task ID: 7
+Agent: Super Z (main)
+Task: Audit accès GitHub — les identifiants ont-ils survécu au restart de session ?
+
+Work Log:
+- Audit complet de l'environnement : `git remote -v` vide, pas de ~/.git-credentials, pas de variables d'env GITHUB_TOKEN/GH_TOKEN, pas de ~/.ssh, `gh` CLI non installé
+- Vérification : `git ls-remote` sur Vitalcheffe/legally-subjective échoue (auth demandée) → aucun accès GitHub actif
+- Conclusion : les identifiants fournis dans la session précédente ont été perdus au restart ; le projet lui-même a survécu (15 commits locaux, arbre propre)
+- Diagnostic divergence : le commit GitHub 9627076 n'existe PAS dans l'historique local (repo GitHub poussé depuis un autre état) → un push devra être un force-push (souhaitable : GitHub porte l'état cassé vaul@^1.3.2)
+- Préparation : remote `origin` configuré (https://github.com/Vitalcheffe/legally-subjective.git, sans credentials intégrés)
+- Préparation : bundle git complet créé et vérifié → download/legally-subjective-2b6393b.bundle (fallback sans partage de secret, 9,85 Mo)
+
+Stage Summary:
+- Réponse à l'utilisateur : NON, les credentials n'ont pas survécu — aucun accès GitHub depuis le sandbox actuellement
+- GitHub est toujours sur l'état cassé (9627076, vaul@^1.3.2) → le build Vercel échouera tant que la synchro n'est pas faite
+- Deux chemins ouverts : (A) nouveau token fine-grained PAT repo-scoped → je pousse immédiatement (force-push), l'utilisateur révoque ensuite ; (B) bundle téléchargeable + 2 commandes locales, zéro secret partagé
+- Tout est prêt côté sandbox : remote ajouté, bundle vérifié, arbre propre, commit local 2b6393b = état Vercel-ready
