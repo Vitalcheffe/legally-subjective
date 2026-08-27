@@ -192,3 +192,27 @@ Stage Summary:
 - GitHub est toujours sur l'état cassé (9627076, vaul@^1.3.2) → le build Vercel échouera tant que la synchro n'est pas faite
 - Deux chemins ouverts : (A) nouveau token fine-grained PAT repo-scoped → je pousse immédiatement (force-push), l'utilisateur révoque ensuite ; (B) bundle téléchargeable + 2 commandes locales, zéro secret partagé
 - Tout est prêt côté sandbox : remote ajouté, bundle vérifié, arbre propre, commit local 2b6393b = état Vercel-ready
+
+---
+Task ID: 8
+Agent: Super Z (main)
+Task: Synchronisation GitHub complète — token reçu, push exécuté, lignée ancienne préservée
+
+Work Log:
+- Token PAT classique reçu de l'utilisateur → stocké dans ~/.git-credentials (credential helper store, perms 600, HORS du repo — ne peut jamais fuiter dans le code public), à la demande explicite de l'utilisateur (« keep it »)
+- Fetch authentifié OK → découverte MAJEURE : GitHub main (9627076) = une AUTRE lignée complète, celle d'hier (25 commits, 08-26 13:59→21:44) : projet Python « corpus » — 1 387 appels criminels réels 2015-2023, prédiction LLM, jMail/INFINITUM Mail, thème ivoire « Codex », README « research simulation » — soit la direction ABANDONNÉE
+- Correction du diagnostic Task 6 : GitHub ne contient AUCUN package.json — l'histoire du vaul@^1.3.2 ne correspondait pas à l'état réel du remote (le diagnostic précédent était erroné, sans accès réel)
+- Audit hygiène pré-push : .env suivi (contient seulement DATABASE_URL local SQLite — aucun vrai secret) ; 31 fichiers indésirables suivis (bun.lock, db/custom.db binaire, Caddyfile, .zscripts/, mini-services/, tool-results/, upload/, cl_recent.json, 8 fichiers oyez_* de grattage, download/ avec rapports INFINITUM 2 Mo + bundle git 9,8 Mo)
+- Découverte : la plateforme AUTO-COMMITE périodiquement (messages UUID) — c'est ainsi que le bundle et les rapports s'étaient retrouvés suivis
+- .gitignore renforcé : bloc « sandbox infrastructure & local artifacts — never ship » (download/, db/, Caddyfile, bun.lock, .zscripts/, mini-services/, tool-results/, upload/, cl_recent.json, oyez_*.json, oyez_href.txt, .env)
+- Vérification complétude du build : data/ 435/435 suivis, scripts/ 94/94, src/ 70/70, engine_state.json suivi — tout ce que le build SSG lit est dans l'arbre git (zéro divergence Vercel possible)
+- Chirurgie git : git rm --cached des 31 fichiers + commit-tree → historique squashé en UN commit propre a834b2f « Rebuild: the instrument — LS-1.0 standard + real SCOTUS telemetry » (664 fichiers) ; ancien historique 15 commits préservé localement (branche local-history)
+- Push 1 : github-backup → origin/archive/pre-rebuild (la lignée corpus d'hier reste intégrale sur le remote, supprimable à volonté)
+- Push 2 : force-push main → a834b2f — vérifié par ls-remote : main = a834b2f, archive/pre-rebuild = 9627076, HEAD = a834b2f
+- Vercel : plus d'ambiguïté de gestionnaire (bun.lock exclu, package-lock.json seul) ; npm ci + next build → 115 pages statiques
+
+Stage Summary:
+- GitHub est synchronisé sur l'état Vercel-ready : main = a834b2f (l'instrument LS-1.0 + télémétrie SCOTUS réelle), 664 fichiers, zéro secret, zéro artefact sandbox
+- Rien n'est perdu : hier préservé sur archive/pre-rebuild, l'historique sandbox dans local-history (local)
+- Token conservé pour les push futurs (hors repo) ; si la session redémarre et que l'auth échoue, l'utilisateur devra le recoller
+- Action utilisateur : vérifier le déploiement Vercel (auto-déclenché par le push si le projet est connecté au repo) ; le build devrait passer
