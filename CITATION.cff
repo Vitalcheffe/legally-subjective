@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce travail, citez le dépôt et ses sources (SCDB, CourtListener)."
+title: "Legally Subjective: Subjectivity, measured"
+authors:
+  - family-names: "Harch el Korane"
+    given-names: "Amine"
+version: 1.0.0
+date-released: "2026-08-28"
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/Vitalcheffe/legally-subjective"
+abstract: >-
+  Mesure du plafond de prévisibilité des décisions de la Cour suprême des
+  États-Unis (OT2015-2023) à partir de données publiques : corpus gelé de
+  569 affaires plaidées, votes SCDB par juge, baselines statistiques avec
+  intervalles de confiance, et protocole scellé pour l'évaluation de
+  modèles de langage (zéro-coup vs persona QLoRA vs RAG).
+keywords:
+  - "supreme court"
+  - "judicial decision making"
+  - "natural language processing"
+  - "predictability"
+  - "open data"
