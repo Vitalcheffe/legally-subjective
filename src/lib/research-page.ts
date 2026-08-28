@@ -4,19 +4,9 @@
 import { readFile } from "fs/promises";
 import path from "path";
 
-/** Surname display labels for the nine, read from the FILED dockets. */
+/** Surname display labels for the bench, read from the FILED dockets. */
 export async function getBenchLabels(): Promise<Record<string, string>> {
-  const labels: Record<string, string> = {
-    roberts: "Roberts",
-    thomas: "Thomas",
-    alito: "Alito",
-    sotomayor: "Sotomayor",
-    kagan: "Kagan",
-    gorsuch: "Gorsuch",
-    kavanaugh: "Kavanaugh",
-    barrett: "Barrett",
-    jackson: "Jackson",
-  };
+  const labels: Record<string, string> = {};
   try {
     const dir = path.join(process.cwd(), "data", "dockets");
     const { readdir } = await import("fs/promises");
@@ -35,21 +25,8 @@ export async function getBenchLabels(): Promise<Record<string, string>> {
       }
     }
   } catch {
-    /* fallback labels stand */
+    /* no dockets — no labels */
   }
   return labels;
-}
-
-const CIRCUIT_ALIASES: Record<string, string> = {
-  "1st": "first", "2nd": "second", "3rd": "third", "4th": "fourth",
-  "5th": "fifth", "6th": "sixth", "7th": "seventh", "8th": "eighth",
-  "9th": "ninth", "10th": "tenth", "11th": "eleventh",
-  "d.c.": "dc district of columbia", "fed.": "federal",
-};
-
-/** Search haystack fragment for a circuit — "9th Cir." also matches "ninth". */
-export function circuitWords(circuit: string): string {
-  const key = circuit.replace(" Cir.", "").toLowerCase();
-  return `${circuit} ${CIRCUIT_ALIASES[key] ?? ""} circuit court appeals`;
 }
 

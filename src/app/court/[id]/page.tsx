@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: "The Bench — Supreme Court of the United States · Legally Subjective",
     description:
-      "The sitting Nine, ranked axis by axis by their filed Subjectivity Fingerprints. The spread per axis — and the agreement matrix over common merits votes. The bench is not uniform.",
+      "The thirteen justices who sat OT2015–2023, ranked axis by axis by their filed Subjectivity Fingerprints. The spread per axis — and the agreement matrix over common merits votes. The bench is not uniform.",
   };
 }
 
@@ -124,7 +124,7 @@ export default async function CourtPage({
               Supreme Court of the United States
             </h1>
             <p className="mt-4 max-w-3xl text-[14px] leading-relaxed text-ink-2">
-              The sitting Nine, measured from filed records — {totalVotes.toLocaleString("en-US")} merits
+              Thirteen justices across nine terms, measured from filed records — {totalVotes.toLocaleString("en-US")} merits
               votes and {dockets.reduce((s, d) => s + d.raw.lead_opinions, 0).toLocaleString("en-US")} lead
               opinions, window {dockets[0].window.start.slice(0, 4)}–{dockets[0].window.end.slice(0, 10)}.
               Every number on this page traces to a public source. Sort by any axis — the
@@ -154,7 +154,7 @@ export default async function CourtPage({
               <BenchTable rows={rows} />
             </div>
             <p className="micro mt-5 normal-case tracking-[0.02em] text-ink-3">
-              Percentile against the bench of nine · CI width in gray under each value ·
+              Percentile against the declared bench of thirteen · CI width in gray under each value ·
               dashed glyph spokes = insufficient data (Reversal, Orality).
             </p>
           </div>

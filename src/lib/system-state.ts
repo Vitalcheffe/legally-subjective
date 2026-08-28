@@ -1,9 +1,9 @@
 /**
  * System state — REAL telemetry, read from the repository itself.
- * The interface derives its state from the actual system: the build is
- * the sha256 of the standard, the counts are file counts, the engine
- * state is the engine's own persisted state. Nothing here can be
- * invented — if the data is empty, the page says COLD.
+ * The interface derives its state from the frozen Corpus-Monde v1
+ * (data/processed/stats_v1.json + the FILED dockets): the build is the
+ * sha256 of the standard, the counts come from the corpus rule itself.
+ * Nothing here can be invented — if the data is empty, the page says COLD.
  */
 import { createHash } from "crypto";
 import { readFile, readdir } from "fs/promises";
@@ -14,28 +14,28 @@ export interface SystemState {
   build: string;
   /** Full sha256 of the standard — printed on /standard. */
   standardHash: string;
-  /** Number of FILED dockets = number of judges scored. */
+  /** Number of FILED dockets = number of justices scored. */
   judgesScored: number;
-  /** Number of cached source sets = cases ingested. */
-  docketsIngested: number;
-  /** Decided cases actually read (Oyez files carrying a decision record). */
+  /** Cases in the frozen corpus (argued, OT2015–OT2023). */
   casesDecided: number;
-  /** LS-AUDIT-001 inj. 4 — the public counter reconciliation, from the record itself. */
-  /** Total Oyez case files interrogated (valid responses + archived misses). */
-  oyezInterrogated: number;
-  /** Requests that failed and were archived as .miss.json — not hidden. */
-  oyezMisses: number;
-  /** Valid Oyez case responses. */
-  oyezUsable: number;
-  /** Cases that entered the research model (decision + exploitable votes), from model.json. */
-  casesModeled: number;
-  /** Human window label, from the agreement production (e.g. OCT 2020 — AUG 2026). */
+  /** Corpus ladder — LS-AUDIT-001 inj. 4: counters reconciled from the record.
+   *  Cases that entered the frozen corpus rule. */
+  corpusArgued: number;
+  /** Corpus cases joined to machine-readable SCDB votes. */
+  joinedScdb: number;
+  /** Corpus cases carrying a coded decision direction (SCDB 1/2). */
+  withDirection: number;
+  /** Labeled cases in the M2 training split (OT2015–OT2019). */
+  trainSplit: number;
+  /** Labeled cases in the M2 test split (OT2020–OT2023). */
+  testSplit: number;
+  /** Decisions decided 5–4 in the corpus. */
+  fiveFour: number;
+  /** Of those, the ones sealed for the final exam (never touched until M4). */
+  sealed: number;
+  /** Human window label, from the corpus rule (e.g. OCT 2015 — JUN 2024). */
   windowLabel: string;
-  /** Engine cycles from scripts/engine_state.json. */
-  engineCycles: number;
-  /** Engine last cycle, HH:MM:SSZ. */
-  engineLast: string;
-  /** COLD: nothing ingested. WARM: data exists. */
+  /** COLD: nothing filed. WARM: data exists. */
   state: "COLD" | "WARM";
 }
 
@@ -47,38 +47,13 @@ async function listFiles(dir: string): Promise<string[]> {
   }
 }
 
-async function listJsonRecursive(dir: string): Promise<string[]> {
-  const out: string[] = [];
-  const walk = async (d: string) => {
-    try {
-      const entries = await readdir(d, { withFileTypes: true });
-      for (const e of entries) {
-        const p = path.join(d, e.name);
-        if (e.isFile() && e.name.endsWith(".json")) out.push(p);
-        else if (e.isDirectory()) await walk(p);
-      }
-    } catch {
-      /* Not there. */
-    }
-  };
-  await walk(path.join(process.cwd(), dir));
-  return out;
-}
-
-async function countJsonFiles(dir: string, recursive = false): Promise<number> {
-  try {
-    const entries = await readdir(path.join(process.cwd(), dir), { withFileTypes: true });
-    let count = 0;
-    for (const e of entries) {
-      if (e.isFile() && e.name.endsWith(".json")) count += 1;
-      else if (recursive && e.isDirectory()) {
-        count += await countJsonFiles(path.join(dir, e.name), true);
-      }
-    }
-    return count;
-  } catch {
-    return 0;
-  }
+function fmtMonth(iso: string): string {
+  const [y, m] = iso.split("-");
+  const months = [
+    "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
+  ];
+  return `${months[Number(m) - 1] ?? ""} ${y}`;
 }
 
 export async function getSystemState(): Promise<SystemState> {
@@ -99,106 +74,93 @@ export async function getSystemState(): Promise<SystemState> {
   const judgesScored = (await listFiles("data/dockets")).filter((f) =>
     f.startsWith("LS-J-") && f.endsWith(".json"),
   ).length;
-  const docketsIngested = await countJsonFiles("data/sources", true);
 
-  /** Decided cases = Oyez files carrying a non-empty decision record. */
-  let casesDecided = 0;
-  let oyezMisses = 0;
-  let oyezUsable = 0;
+  /** The frozen corpus — its own stats file is the ladder of record. */
+  let corpusArgued = 0;
+  let joinedScdb = 0;
+  let withDirection = 0;
+  let trainSplit = 0;
+  let testSplit = 0;
+  let fiveFour = 0;
+  let sealed = 0;
+  let windowStart = "";
+  let windowEnd = "";
   try {
-    const oyezFiles = await listJsonRecursive("data/sources/oyez");
-    oyezMisses = oyezFiles.filter((f) => f.endsWith(".miss.json")).length;
-    const results = await Promise.all(
-      oyezFiles.map(async (f) => {
-        if (f.endsWith(".miss.json")) return 0;
-        try {
-          const d = JSON.parse(await readFile(f, "utf8"));
-          const decs = (d as { decisions?: unknown }).decisions;
-          const usable = d && typeof d === "object" ? 1 : 0;
-          return (Array.isArray(decs) && decs.length > 0 ? 10 : 0) + usable;
-        } catch {
-          return 0;
-        }
-      }),
-    );
-    for (const r of results) {
-      if (r >= 10) casesDecided += 1;
-      if (r >= 1) oyezUsable += 1;
-    }
-  } catch {
-    /* No Oyez sources — zero decided cases. Honest. */
-  }
-  const oyezInterrogated = oyezUsable + oyezMisses;
-
-  /** Cases that entered the research model — from the model's own artifact. */
-  let casesModeled = 0;
-  try {
-    const model = JSON.parse(
+    const stats = JSON.parse(
       await readFile(
-        path.join(process.cwd(), "data", "productions", "model.json"),
+        path.join(process.cwd(), "data", "processed", "stats_v1.json"),
         "utf8",
       ),
-    ) as { dataset?: { cases?: number } };
-    casesModeled = model?.dataset?.cases ?? 0;
-  } catch {
-    /* No model artifact — nothing modeled yet. Honest. */
-  }
-
-  /** Human window label from the agreement production. */
-  let windowLabel = "";
-  try {
-    const agr = JSON.parse(
-      await readFile(
-        path.join(process.cwd(), "data", "productions", "agreement.json"),
-        "utf8",
-      ),
-    ) as { window?: { start?: string; end?: string } };
-    const fmt = (iso?: string) => {
-      if (!iso) return "";
-      const [y, m] = iso.split("-");
-      const months = [
-        "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-        "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
-      ];
-      return `${months[Number(m) - 1] ?? ""} ${y}`;
+    ) as {
+      n_cases?: number;
+      n_with_scdb?: number;
+      n_five_four?: number;
+      five_four_selection?: { n_selected?: number };
     };
-    if (agr.window?.start && agr.window?.end) {
-      windowLabel = `${fmt(agr.window.start)} — ${fmt(agr.window.end)}`;
-    }
+    corpusArgued = stats.n_cases ?? 0;
+    joinedScdb = stats.n_with_scdb ?? 0;
+    fiveFour = stats.n_five_four ?? 0;
+    sealed = stats.five_four_selection?.n_selected ?? 0;
   } catch {
-    /* No agreement production yet — no window. */
+    /* No corpus stats — zero. Honest. */
   }
 
-  let engineCycles = 0;
-  let engineLast = "NEVER";
+  /** Direction labels and the M2 split, counted from the corpus itself. */
   try {
-    const raw = JSON.parse(
-      await readFile(
-        path.join(process.cwd(), "scripts", "engine_state.json"),
-        "utf8",
-      ),
-    );
-    engineCycles = typeof raw.cycles === "number" ? raw.cycles : 0;
-    if (typeof raw.last_cycle === "string" && raw.last_cycle.includes("T")) {
-      engineLast = `${raw.last_cycle.split("T")[1]}`;
+    const { createGunzip } = await import("zlib");
+    const { createReadStream } = await import("fs");
+    const rl = await import("readline");
+    const gz = createReadStream(
+      path.join(process.cwd(), "data", "processed", "corpus_cases_v1.jsonl.gz"),
+    ).pipe(createGunzip());
+    const lines = rl.createInterface({ input: gz });
+    for await (const line of lines) {
+      const c = JSON.parse(line) as {
+        term?: string;
+        scdb?: { decision_direction?: string | null };
+      };
+      const d = c.scdb?.decision_direction;
+      if (d === "1" || d === "2") {
+        withDirection += 1;
+        const t = Number(c.term ?? 0);
+        if (t >= 2015 && t <= 2019) trainSplit += 1;
+        else if (t >= 2020 && t <= 2023) testSplit += 1;
+      }
     }
   } catch {
-    /* Engine has never run on this system. Honest. */
+    /* Corpus file absent — the ladder stays at zero. Honest. */
+  }
+
+  /** Window label from the research state (argued → last decision). */
+  try {
+    const rs = JSON.parse(
+      await readFile(
+        path.join(process.cwd(), "data", "productions", "research_state.json"),
+        "utf8",
+      ),
+    ) as { corpus?: { window?: { start?: string; end?: string } } };
+    const w = rs.corpus?.window;
+    if (w?.start && w?.end) {
+      windowStart = fmtMonth(w.start);
+      windowEnd = fmtMonth(w.end);
+    }
+  } catch {
+    /* No research state — no window. */
   }
 
   return {
     build,
     standardHash,
     judgesScored,
-    docketsIngested,
-    casesDecided,
-    oyezInterrogated,
-    oyezMisses,
-    oyezUsable,
-    casesModeled,
-    windowLabel,
-    engineCycles,
-    engineLast,
+    casesDecided: corpusArgued,
+    corpusArgued,
+    joinedScdb,
+    withDirection,
+    trainSplit,
+    testSplit,
+    fiveFour,
+    sealed,
+    windowLabel: windowStart && windowEnd ? `${windowStart} — ${windowEnd}` : "",
     state: judgesScored > 0 ? "WARM" : "COLD",
   };
 }

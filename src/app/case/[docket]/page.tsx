@@ -3,16 +3,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Chrome } from "@/components/ls/chrome";
 import { getSystemState } from "@/lib/system-state";
-import { getCase, getModel, BENCH_ORDER, fmtDate } from "@/lib/research";
+import { getCase, getResearchState, BENCH_ORDER, fmtDate } from "@/lib/research";
 import { getBenchLabels } from "@/lib/research-page";
 
 /* ————————————————————————————————————————————————
    ONE CASE — the record opened.
 
-   Function: show what nine public officials did to one
-   dispute — the votes, the margin, and what would have
-   flipped it. Result: "it depends on the judge" becomes
-   a specific, inspectable sentence about this case.
+   Function: show what the public officials who sat on
+   one dispute did — the votes, the margin, and what
+   would have flipped it. Result: "it depends on the
+   judge" becomes a specific, inspectable sentence
+   about this case.
    ———————————————————————————————————————————————— */
 
 export async function generateStaticParams() {
@@ -31,7 +32,7 @@ export async function generateMetadata({
   if (!c) return { title: "Case not found — Legally Subjective" };
   return {
     title: `${c.name} — ${c.docket} · Legally Subjective`,
-    description: `How each of the nine voted in ${c.name}: the ${c.split} split, ${c.flip_margin === 1 ? "one vote from flipping" : `${c.flip_margin} votes from flipping`}, and the model's call on every vote.`,
+    description: `How the bench voted in ${c.name}: the ${c.split} split, ${c.flip_margin === 1 ? "one vote from flipping" : `${c.flip_margin ?? "—"} votes from flipping`}, and the direction on the record.`,
   };
 }
 
@@ -41,10 +42,10 @@ export default async function CasePage({
   params: Promise<{ docket: string }>;
 }) {
   const { docket } = await params;
-  const [c, sys, model, labels] = await Promise.all([
+  const [c, sys, rs, labels] = await Promise.all([
     getCase(docket),
     getSystemState(),
-    getModel(),
+    getResearchState(),
     getBenchLabels(),
   ]);
   if (!c) notFound();
@@ -53,11 +54,7 @@ export default async function CasePage({
     (s) => c.votes[s] === "minority",
   );
   const missing = BENCH_ORDER.filter((s) => !(s in c.votes));
-  const modelAuc = model?.results.dissent.B.auc ?? null;
-  /* LS-AUDIT-001 inj. 7 — the section must say what the model SAW, and
-     must carry the baseline that the stamps naturally invite. */
-  const modelAcc = model?.results.dissent.B.accuracy ?? null;
-  const baselineAcc = model?.results.dissent.baseline.accuracy ?? null;
+  const b4 = rs?.baselines.find((b) => b.id === "B4") ?? null;
 
   return (
     <div className="flex min-h-screen flex-col bg-paper font-display text-ink">
@@ -85,18 +82,21 @@ export default async function CasePage({
               {[
                 ["Docket", `No. ${c.docket}`],
                 ["Term", `OT${String(c.term).slice(2)}`],
-                ["From", c.circuit],
+                ["Issue area", c.issue_area],
                 ["Decided", fmtDate(c.decided)],
                 ["Split", c.split],
                 [
-                  "Outcome",
-                  c.petitioner_won === null
-                    ? "unresolved party"
-                    : c.petitioner_won
-                      ? "petitioner prevailed"
-                      : "respondent prevailed",
+                  "Direction",
+                  c.direction === "conservative"
+                    ? "conservative"
+                    : c.direction === "liberal"
+                      ? "liberal"
+                      : "uncoded",
                 ],
-                ["Winner", (c.winning_party ?? "—").slice(0, 28)],
+                [
+                  "Disposition",
+                  c.disposition ?? "—",
+                ],
                 ["Flip margin", c.flip_margin == null ? "not computable" : `${c.flip_margin} vote${c.flip_margin > 1 ? "s" : ""}`],
               ].map(([k, v]) => (
                 <div key={k}>
@@ -110,6 +110,18 @@ export default async function CasePage({
                 <p className="micro mb-2">Question presented</p>
                 <p className="text-[15px] leading-[1.7] text-ink-2">{c.question}</p>
               </div>
+            )}
+            {c.direction && (
+              <p className="mt-5 max-w-[70ch] font-data text-[11.5px] leading-relaxed tracking-[0.02em] text-ink-3">
+                DIRECTION ON THE RECORD: {c.direction.toUpperCase()} (SCDB
+                decisionDirection) · DISPOSITION: {(c.disposition ?? "uncoded").toUpperCase()}
+                {c.petitioner_won === true
+                  ? " · THE PARTY SEEKING RELIEF PREVAILED (REVERSAL)"
+                  : c.petitioner_won === false
+                    ? " · THE PARTY SEEKING RELIEF LOST (AFFIRMANCE)"
+                    : ""}
+                .
+              </p>
             )}
           </div>
         </section>
@@ -125,6 +137,8 @@ export default async function CasePage({
                   roberts: "LS-J-001", thomas: "LS-J-002", alito: "LS-J-003",
                   sotomayor: "LS-J-004", kagan: "LS-J-005", gorsuch: "LS-J-006",
                   kavanaugh: "LS-J-007", barrett: "LS-J-008", jackson: "LS-J-009",
+                  scalia: "LS-J-010", kennedy: "LS-J-011", ginsburg: "LS-J-012",
+                  breyer: "LS-J-013",
                 };
                 return (
                   <div key={s} className="flex items-baseline justify-between gap-4 bg-paper px-5 py-4">
@@ -154,8 +168,9 @@ export default async function CasePage({
             </div>
             {missing.length > 0 && (
               <p className="mt-3 font-data text-[11px] tracking-[0.03em] text-ink-3">
-                NOT VOTING: {missing.map((s) => labels[s] ?? s).join(", ")} — recusal
-                or absence is recorded, never assumed.
+                NOT VOTING: {missing.map((s) => labels[s] ?? s).join(", ")} — not
+                on the bench that term, recused, or absent: recorded, never
+                assumed.
               </p>
             )}
           </div>
@@ -246,103 +261,103 @@ export default async function CasePage({
           </div>
         </section>
 
-        {/* ——— THE MACHINE'S CALL ——— */}
+        {/* ——— THE BASELINE'S CALL — the dumb rule, in full view ——— */}
         <section className="border-b border-rule bg-paper-2">
           <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
-            <p className="micro">[003] The machine&apos;s call — {model?.model_id ?? "—"}</p>
+            <p className="micro">[003] The baseline&apos;s call — B4, the dumb rule</p>
             <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.4rem,2.6vw,2rem)] font-bold uppercase leading-[1.05] tracking-[-0.01em]">
-              What a model expected each justice to do — and exactly what it saw first.
+              What the dumbest honest rule expected — and what the room did.
             </h2>
             <p className="mt-4 max-w-[75ch] text-[14px] leading-[1.7] text-ink-2">
-              <strong>What it saw before predicting:</strong> the case file —
-              who the justice is, the term, the originating circuit — plus the
-              momentum of the other eight justices (how far each sat from the
-              majority, which way the bench leaned). It never saw this
-              case&apos;s own votes while learning: trained on the rest of the
-              record under case-grouped cross-validation, it assigns each
-              justice a probability of dissenting here.
+              <strong>What it saw before predicting:</strong> nothing about
+              this case. Each justice&apos;s ideological lean was measured on
+              the training split alone (OT2015–OT2019 votes, direction coded);
+              the rule then predicts every vote by that lean, and the case by
+              the majority of those predictions. This case&apos;s own votes
+              never informed it — that is what makes it a baseline rather
+              than a leak.
             </p>
             <p className="mt-3 max-w-[75ch] text-[14px] leading-[1.7] text-ink-2">
-              <strong>The honest part:</strong> its strongest signal — the
-              bench&apos;s momentum — only exists once the others have voted.
-              This is a reading of the court&apos;s coherence, largely ex post;
-              it is not a crystal ball for tomorrow&apos;s ruling. A bar near
-              the actual outcome means the vote was typical of that
-              justice&apos;s pattern; a bar that missed is the honest residue
-              — the part of the vote the record could not foresee.
-              {modelAuc != null && ` Pooled discrimination: AUC ${modelAuc.toFixed(3)}.`}
+              <strong>The honest part:</strong> the language-model conditions
+              of the protocol (zero-shot, persona, context) are not trained
+              yet — milestone M3 is pending, and this page refuses to invent
+              their calls. Until they exist, the dumb rule is the only
+              prediction on the record, and it is shown with its misses, not
+              its hits.
             </p>
-            {/* inj. 7 — the baseline travels WITH the stamps, because the
-                stamps invite exactly this comparison. */}
-            {modelAcc != null && baselineAcc != null && (
-              <p className="mt-4 max-w-[75ch] border-l-4 border-signal px-4 py-2.5 font-data text-[11.5px] leading-relaxed tracking-[0.02em] text-ink-2">
-                CALIBRATION, IN FULL VIEW: on the binary metric these stamps
-                display, the model calls {(modelAcc * 100).toFixed(1)}% of
-                votes correctly — and the per-justice base rate (in effect:
-                “never expect a dissent from this justice”) calls{" "}
-                {(baselineAcc * 100).toFixed(1)}%. On stamps alone, the dumb
-                rule is ahead. The model&apos;s real edge is in the
-                probabilities — ranking, calibration, AUC — not in the
-                binary call. Read the stamps with that baseline in view.
-              </p>
+            {c.baseline_call != null && (
+              <div className="mt-4 max-w-[75ch] border-l-4 border-signal px-4 py-2.5 font-data text-[11.5px] leading-relaxed tracking-[0.02em] text-ink-2">
+                THE CALL, IN FULL VIEW: the per-justice ideology baseline
+                called this case{" "}
+                <strong className="uppercase">{c.baseline_call}</strong>
+                {c.direction
+                  ? ` — the recorded direction is ${c.direction}, so the rule ${
+                      c.baseline_correct ? "got it right" : "missed it"
+                    }`
+                  : " — the record carries no coded direction here, so no verdict on the call is offered"}
+                . Across the whole test split, this rule sits at{" "}
+                {b4 ? `${(b4.accuracy * 100).toFixed(1)}%` : "—"} (vote level)
+                — the number any trained model has to beat, honestly.
+              </div>
             )}
             <div className="mt-7 border-t border-rule">
               {BENCH_ORDER.filter((s) => s in c.votes).map((s) => {
-                const m = c.model[s];
-                const p = m?.p_dissent;
-                const actual = c.votes[s] === "minority";
-                const called = p != null ? p >= 0.5 : null;
-                const right = called === actual;
+                const lean = rs?.justice_lean?.[s] ?? null;
+                const share = lean?.conservative_share ?? null;
+                const voteDir = c.vote_dirs?.[s] ?? null;
+                const called = lean?.modal ?? null;
+                const right =
+                  called != null && voteDir != null ? called === voteDir : null;
                 return (
                   <div
                     key={s}
-                    className="grid grid-cols-1 gap-x-6 gap-y-2 border-b border-hairline py-3.5 sm:grid-cols-[130px_1fr_120px_110px] sm:items-center"
+                    className="grid grid-cols-1 gap-x-6 gap-y-2 border-b border-hairline py-3.5 sm:grid-cols-[130px_1fr_150px_110px] sm:items-center"
                   >
                     <p className="text-[14px] font-bold">{labels[s] ?? s}</p>
                     <div className="relative h-[14px] w-full border border-rule bg-paper">
-                      {p != null && (
+                      {share != null && (
                         <div
-                          className={`absolute inset-y-0 left-0 ${actual ? "bg-signal" : "bg-ink"}`}
-                          style={{ width: `${Math.round(p * 100)}%` }}
+                          className={`absolute inset-y-0 left-0 ${voteDir === "conservative" ? "bg-ink" : "bg-signal"}`}
+                          style={{ width: `${Math.round(share * 100)}%` }}
                         />
                       )}
                       <div className="absolute inset-y-0 left-1/2 w-px bg-ink-3" />
                     </div>
                     <p className="font-data text-[12px] font-semibold tabular">
-                      {p != null ? `P(dissent) ${(p * 100).toFixed(0)}%` : "no call"}
+                      {share != null
+                        ? `lean C ${(share * 100).toFixed(0)}%`
+                        : "no train profile"}
                     </p>
                     <p
                       className={`font-data text-[10.5px] font-bold tracking-[0.06em] uppercase sm:justify-self-end ${
-                        called == null
+                        right == null
                           ? "text-ink-3"
                           : right
                             ? "text-ink-2"
                             : "text-signal-deep"
                       }`}
-                      title="Binary call at the 50% line — the per-justice base rate beats the model on this exact metric; see the calibration note above."
+                      title="The lean is measured on the training split only (OT2015-2019); the recorded vote direction is what actually happened."
                     >
-                      {called == null
-                        ? "—"
+                      {right == null
+                        ? voteDir ?? "—"
                         : right
                           ? "called it"
                           : "missed it"}
-                      <span className="ml-1 font-medium text-ink-3">·b</span>
                     </p>
                   </div>
                 );
               })}
             </div>
             <p className="mt-5 max-w-[75ch] font-data text-[11px] leading-relaxed tracking-[0.02em] text-ink-3">
-              METHODOLOGY IN ONE LINE: L2 logistic regression, GroupKFold(5)
-              grouped by case — this case&apos;s votes were held out together.
-              Stamps marked “·b” carry the baseline warning: the
-              per-justice base rate — effectively “never expect a dissent"
-              — scores {(baselineAcc != null ? (baselineAcc * 100).toFixed(1) : "84.1")}%
-              on this binary metric, the model{" "}
-              {(modelAcc != null ? (modelAcc * 100).toFixed(1) : "83.4")}%. Full
-              specification, baselines, and limitations: the research
-              article. Bars: red = actually dissented, black = voted with the
-              majority; the tick marks 50%.
+              METHODOLOGY IN ONE LINE: per-justice modal direction on the
+              training split (SCDB 2025_01 vote directions, OT2015–OT2019,
+              justices with at least 20 train votes); the case call is the
+              majority of those modal votes. Bars: the justice&apos;s
+              conservative share of train votes — black when the recorded
+              vote was conservative, red when liberal; the tick marks 50%.
+              Justices seated after 2019 carry no train profile by
+              construction — a fact, rendered as missing, never estimated.
+              Full specification and limitations: the research article.
             </p>
             <Link
               href="/paper"
@@ -358,7 +373,7 @@ export default async function CasePage({
         <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-x-8 gap-y-2 px-6 py-5 font-data text-[10.5px] font-medium tracking-[0.06em] sm:px-10 lg:px-14">
           <span>LEGALLY SUBJECTIVE — AN OPEN STANDARD. NO ONE OWNS IT.</span>
           <span className="text-white/60">
-            SOURCE: OYEZ CASE {c.docket} · AS RETRIEVED FROM THE PUBLIC RECORD
+            SOURCE: SCDB 2025_01 + COURTLISTENER · CASE {c.docket} · FROZEN CORPUS V1
           </span>
           <Link href="/cases" className="text-white/60 hover:text-white">
             THE RECORD →

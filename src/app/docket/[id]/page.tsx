@@ -188,20 +188,19 @@ export default async function DocketChainPage({
                   <h3 className="font-display text-[15px] font-bold uppercase">Verify it yourself</h3>
                   <p className="mt-4 text-[13px] leading-relaxed text-ink-2">
                     The whole pipeline is deterministic. Clone the repository,
-                    re-run the computation over the same cached sources, and you
-                    get bit-identical dockets — or the standard is violated.
+                    replay the seal over the filed bytes, and you get the same
+                    fingerprint — or the standard is violated.
                   </p>
                   <pre className="mt-4 overflow-x-auto border border-rule bg-paper px-4 py-3 font-data text-[11px] leading-relaxed">
-{`git clone <repo> && cd legally-subjective
-python scripts/file_dockets.py --verify
-# determinism: OK — bit-identical
-
-sha256sum data/dockets/${d.docket}.json
-# seal: ${(d.chain.sha256 ?? "").slice(0, 24)}…`}
+{`git clone https://github.com/Vitalcheffe/legally-subjective.git \
+  && cd legally-subjective
+python3 scripts/verify_dockets.py ${d.docket}
+# seal: ${(d.chain.sha256 ?? "").slice(0, 24)}… — reproduced, or FAIL`}
                   </pre>
                   <p className="mt-3 font-data text-[11px] text-ink-3">
-                    The seal is computed over the canonical JSON (keys sorted,
-                    UTF-8, compact separators) with chain.sha256 excluded, then written last.
+                    The seal is computed over the docket&apos;s own JSON (UTF-8,
+                    compact separators, key order as filed) with chain.sha256
+                    excluded, then written last.
                   </p>
                 </div>
               </div>
