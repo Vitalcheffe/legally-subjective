@@ -1,0 +1,187 @@
+{
+  "corpus_rule": {
+    "court": "Supreme Court of the United States",
+    "argued_window": [
+      "2015-10-01",
+      "2024-06-30"
+    ],
+    "filed_validation": [
+      "2015-10-01",
+      "2024-07-31"
+    ],
+    "terms": "OT2015..OT2023",
+    "case_definition": "affaires plaidées (SCDB dateArgument OU CourtListener date_argued) avec >= 1 grappe d'opinion dans la fenêtre",
+    "grouping": "jetons de docket normalisés (déduplication des dockets dupliqués)",
+    "opinions": "inventaire par id ; déduplication de texte différée au nettoyage M1.5",
+    "scdb_join": "jetons de docket ; compétence d'origine par numéro partagé"
+  },
+  "generated_at": "2026-08-28T07:54:52.019430+00:00",
+  "n_cases": 569,
+  "n_opinions": 1778,
+  "n_with_scdb": 547,
+  "n_five_four": 79,
+  "audio_coverage": 561,
+  "transcript_coverage": 561,
+  "by_term": {
+    "2015": {
+      "cases": 72,
+      "with_scdb": 67,
+      "five_four": 0,
+      "opinions": 294
+    },
+    "2018": {
+      "cases": 72,
+      "with_scdb": 68,
+      "five_four": 18,
+      "opinions": 265
+    },
+    "2016": {
+      "cases": 69,
+      "with_scdb": 62,
+      "five_four": 3,
+      "opinions": 247
+    },
+    "2019": {
+      "cases": 60,
+      "with_scdb": 56,
+      "five_four": 11,
+      "opinions": 263
+    },
+    "2017": {
+      "cases": 65,
+      "with_scdb": 64,
+      "five_four": 18,
+      "opinions": 235
+    },
+    "2020": {
+      "cases": 56,
+      "with_scdb": 55,
+      "five_four": 7,
+      "opinions": 130
+    },
+    "2021": {
+      "cases": 62,
+      "with_scdb": 62,
+      "five_four": 11,
+      "opinions": 86
+    },
+    "2022": {
+      "cases": 55,
+      "with_scdb": 55,
+      "five_four": 7,
+      "opinions": 117
+    },
+    "2023": {
+      "cases": 58,
+      "with_scdb": 58,
+      "five_four": 4,
+      "opinions": 141
+    }
+  },
+  "ghost_groups_excluded": 26,
+  "no_scdb_dockets": [
+    "17-9571",
+    "15-9571",
+    "18-9571",
+    "16-9571",
+    "19-269",
+    "16-269",
+    "18-269",
+    "15-269",
+    "14-1520",
+    "15-255",
+    "No. 14–1453.",
+    "No. 14–1505.",
+    "No. 15–1359.",
+    "No. 15–1363.",
+    "16-258",
+    "No. 16–300.",
+    "No. 16–307.",
+    "17-1107",
+    "No. 18–726.",
+    "No. 18-107",
+    "No. 18-217 (R46-11 / OT 2019)",
+    "No. 18–217."
+  ],
+  "scdb_cases_not_in_corpus": [
+    "2015-023",
+    "2017-032",
+    "2020-001",
+    "2020-040",
+    "2021-002",
+    "2022-002",
+    "2022-040",
+    "2023-046"
+  ],
+  "five_four_selection": {
+    "method": "échantillon aléatoire déterministe (Random MT, graine = SHA-256 de la liste triée des identifiants 5-4)",
+    "seed_hex": "0x8a400f4af9abb546",
+    "n_available": 79,
+    "n_selected": 50,
+    "cases": [
+      "145, Orig.",
+      "15-1498",
+      "16-1348",
+      "16-1363",
+      "16-1454",
+      "16-1466",
+      "16-1498",
+      "16-969",
+      "16–373.",
+      "16–6219.",
+      "17-1712",
+      "17-494",
+      "17-530",
+      "17-532",
+      "17-8151",
+      "17-8995",
+      "17-965",
+      "17-988",
+      "17–5554.",
+      "18-1109",
+      "18-1150",
+      "18-1195",
+      "18-1323; 18-1460",
+      "18-281",
+      "18-587; 18-588; 18-589",
+      "18-725",
+      "18-9526",
+      "18–422; 18–726",
+      "19-1039",
+      "19-199",
+      "19-5410",
+      "19-7",
+      "20-1312",
+      "20-222",
+      "20-440",
+      "20-603",
+      "21-1168",
+      "21-1195",
+      "21-1484",
+      "21-439",
+      "21-463",
+      "21-511",
+      "21-846",
+      "21A240",
+      "22-105",
+      "22-674",
+      "23-124",
+      "23-250",
+      "23A349",
+      "No. 18-6210"
+    ],
+    "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee"
+  },
+  "source_sha256": {
+    "dockets_bulk": "1396df61e95e18ff290c59ba6968fd90e4145fcb9cf83e2bb1a3745fd065aa59",
+    "clusters_bulk": "bddbd5ca78377ef2fe56ed2ef506e12afe291b6fc7fc31fac6721f4de33b182f",
+    "oral_arguments_bulk": "4abc95c3a7792eaeacf92d5d04ac5b96508464baa225bb0fa6397cedf0904ef5",
+    "scdb_2025_01_zip": "c7a41b1ef6bc215b5ca76bf287af1c1837a612a6840528f91a6e28b48c7b71e1",
+    "search_results": "41cc92cea9238d5a04e7dff3f1c3ca787efeb8e4016977172613fa81255138e1"
+  },
+  "notes": [
+    "Le fichier bulk opinion-clusters-2026-06-30.csv.bz2 de CourtListener ne couvre pas les grappes SCOTUS postérieures à ~2015 : les métadonnées de grappes proviennent de l'API de recherche v4 (accès anonyme, extrait le 2026-08-28).",
+    "Les fichiers bulk 2026-06-30 sont tronqués à la fin côté S3 (sans marqueur de fin bzip2) ; impact documenté, sans effet sur le corpus.",
+    "CourtListener stocke souvent le same slip opinion en plusieurs exemplaires (sha1 différents) : la déduplication fine se fera sur le texte au M1.5."
+  ]
+}
