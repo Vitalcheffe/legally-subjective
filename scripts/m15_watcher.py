@@ -12,6 +12,11 @@ redirigé vers data/raw/opinion_texts/watcher.log par l'appelant.
 
 Usage :  python3 scripts/m15_watcher.py            # boucle complète
          python3 scripts/m15_watcher.py --status   # état sans rien lancer
+         python3 scripts/m15_watcher.py --finalize # manifeste + commit, si collecte complète
+
+Note : dans un environnement qui tue les processus d'arrière-plan (sandbox),
+lancer plutôt fetch_opinion_texts.py en passes de --budget 500 (~8 min,
+résumable sur state.json), puis --finalize.
 """
 import argparse
 import gzip
@@ -174,6 +179,8 @@ def commit_push():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--finalize", action="store_true",
+                    help="manifeste + commit + push, si la collecte est complète")
     args = ap.parse_args()
 
     exp = expected_ids()
@@ -184,6 +191,17 @@ def main():
         tok = load_token()
         st, ra = probe(tok)
         log(f"sonde token : HTTP {st}" + (f", Retry-After {ra}s" if st == 429 else ""))
+        return
+
+    if args.finalize:
+        if done < exp:
+            log(f"finalize refusé : {len(exp) - len(done)} opinions manquantes")
+            return
+        man = build_manifest(exp)
+        log(f"manifeste : {man['n_records']} enregistrements "
+            f"({man['n_with_plain_text']} avec texte), gz = {man['sha256_gz_file'][:16]}…")
+        commit_push()
+        log("M1.5 (collecte) : TERMINÉ")
         return
 
     t0 = time.time()
