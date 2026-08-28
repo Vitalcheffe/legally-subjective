@@ -1,0 +1,190 @@
+{
+  "state_id": "LS-R-002",
+  "filed_at": "2026-08-28T22:35:27Z",
+  "corpus": {
+    "name": "Corpus-Monde v1 (gelé 2026-08-28)",
+    "n_cases": 569,
+    "n_opinions": 1778,
+    "n_with_scdb": 547,
+    "n_with_direction": 529,
+    "n_votes": 4730,
+    "n_justices": 13,
+    "terms": "OT2015–OT2023",
+    "window": {
+      "start": "2015-10-01",
+      "end": "2024-06-30"
+    },
+    "n_five_four": 79,
+    "n_sealed": 50,
+    "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
+    "audio_coverage": 561,
+    "transcript_coverage": 561,
+    "one_vote_margin_cases": 81
+  },
+  "split": {
+    "train": "OT2015..OT2019",
+    "test": "OT2020..OT2023"
+  },
+  "baselines": [
+    {
+      "id": "B1",
+      "name": "Majority class (liberal), OT2015–2019 prior",
+      "accuracy": 0.4356,
+      "ic95": [
+        0.3724,
+        0.5009
+      ],
+      "n": 225,
+      "note": "libéral"
+    },
+    {
+      "id": "B2",
+      "name": "Always conservative",
+      "accuracy": 0.5644,
+      "ic95": [
+        0.4991,
+        0.6276
+      ],
+      "n": 225
+    },
+    {
+      "id": "B3",
+      "name": "Always reverse the court below",
+      "accuracy": 0.6014,
+      "ic95": [
+        0.5181,
+        0.6793
+      ],
+      "n": 138,
+      "note": "clean affirm/reverse subset (SCDB caseDisposition 2/4)"
+    },
+    {
+      "id": "B4",
+      "name": "Per-justice ideology (vote level)",
+      "accuracy": 0.6366,
+      "ic95": [
+        0.6132,
+        0.6593
+      ],
+      "n": null,
+      "note": "the number to beat"
+    },
+    {
+      "id": "B4c",
+      "name": "Per-justice ideology (case level)",
+      "accuracy": 0.558,
+      "ic95": [
+        0.4926,
+        0.6216
+      ],
+      "n": null
+    }
+  ],
+  "agreement": {
+    "n_pairs": 60,
+    "min": 0.5425,
+    "min_pair": "CThomas|SSotomayor",
+    "min_n": 518,
+    "min_ic95": [
+      0.4994,
+      0.5849
+    ],
+    "max": 0.9459,
+    "max_pair": "BMKavanaugh|JGRoberts",
+    "max_n": 333,
+    "max_ic95": [
+      0.9162,
+      0.9655
+    ]
+  },
+  "justice_lean": {
+    "roberts": {
+      "modal": "conservative",
+      "conservative_share": 0.5452,
+      "n_train": 299
+    },
+    "kennedy": {
+      "modal": "conservative",
+      "conservative_share": 0.5082,
+      "n_train": 183
+    },
+    "thomas": {
+      "modal": "conservative",
+      "conservative_share": 0.6421,
+      "n_train": 299
+    },
+    "ginsburg": {
+      "modal": "liberal",
+      "conservative_share": 0.3433,
+      "n_train": 300
+    },
+    "breyer": {
+      "modal": "liberal",
+      "conservative_share": 0.39,
+      "n_train": 300
+    },
+    "alito": {
+      "modal": "conservative",
+      "conservative_share": 0.6544,
+      "n_train": 298
+    },
+    "sotomayor": {
+      "modal": "liberal",
+      "conservative_share": 0.3333,
+      "n_train": 297
+    },
+    "kagan": {
+      "modal": "liberal",
+      "conservative_share": 0.3754,
+      "n_train": 293
+    },
+    "gorsuch": {
+      "modal": "conservative",
+      "conservative_share": 0.5924,
+      "n_train": 184
+    },
+    "kavanaugh": {
+      "modal": "conservative",
+      "conservative_share": 0.5872,
+      "n_train": 109
+    }
+  },
+  "protocol": {
+    "conditions": [
+      {
+        "id": "A",
+        "name": "Zero-shot",
+        "spec": "Llama 3 8B decides from the dossier alone — no learning of its own"
+      },
+      {
+        "id": "B",
+        "name": "Persona",
+        "spec": "same model, QLoRA-finetuned on a justice's PAST opinions; tested on that justice's FUTURE cases"
+      },
+      {
+        "id": "C",
+        "name": "Context",
+        "spec": "same model + retrieval of similar earlier opinions (RAG)"
+      },
+      {
+        "id": "D",
+        "name": "Statistics",
+        "spec": "the M2 baselines above"
+      }
+    ],
+    "decisive_test": "B > A on unseen future cases => the persona is extractible from public texts. B = A => the personality is not in the public data. Both outcomes are results.",
+    "final_exam": "One pass, four conditions, on the 50 sealed 5-4 decisions (selection seed and SHA-256 in stats_v1.json)."
+  },
+  "status": {
+    "m1_corpus": "frozen 2026-08-28",
+    "m2_baselines": "done",
+    "m15_opinion_texts": "in progress (CourtListener API, rate-limited token, resumable passes)",
+    "m3_training": "pending (QLoRA personas, free Colab/Kaggle)",
+    "m4_final_exam": "sealed, not run"
+  },
+  "figures": [
+    "/figures/fig1-baselines.png",
+    "/figures/fig2-agreement.png",
+    "/figures/fig3-balance.png"
+  ]
+}

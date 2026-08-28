@@ -1,157 +1,254 @@
 {
- "basis": "common merits cases where both justices cast a recorded vote (Oyez decisions.votes)",
- "computed_at": "2026-08-27T07:49:35Z",
- "pairs": {
-  "alito|barrett": {
-   "agree": 0.8295,
-   "n": 217
+  "computed_at": "2026-08-28T22:35:27Z",
+  "window": {
+    "start": "2015-10-01",
+    "end": "2024-06-30"
   },
-  "alito|gorsuch": {
-   "agree": 0.8678,
-   "n": 227
-  },
-  "alito|jackson": {
-   "agree": 0.5839,
-   "n": 149
-  },
-  "alito|kagan": {
-   "agree": 0.5877,
-   "n": 228
-  },
-  "alito|kavanaugh": {
-   "agree": 0.8509,
-   "n": 228
-  },
-  "alito|sotomayor": {
-   "agree": 0.5746,
-   "n": 228
-  },
-  "barrett|jackson": {
-   "agree": 0.6577,
-   "n": 149
-  },
-  "gorsuch|barrett": {
-   "agree": 0.8532,
-   "n": 218
-  },
-  "gorsuch|jackson": {
-   "agree": 0.6443,
-   "n": 149
-  },
-  "gorsuch|kavanaugh": {
-   "agree": 0.8035,
-   "n": 229
-  },
-  "kagan|barrett": {
-   "agree": 0.7273,
-   "n": 220
-  },
-  "kagan|gorsuch": {
-   "agree": 0.6681,
-   "n": 229
-  },
-  "kagan|jackson": {
-   "agree": 0.88,
-   "n": 150
-  },
-  "kagan|kavanaugh": {
-   "agree": 0.7403,
-   "n": 231
-  },
-  "kavanaugh|barrett": {
-   "agree": 0.8955,
-   "n": 220
-  },
-  "kavanaugh|jackson": {
-   "agree": 0.72,
-   "n": 150
-  },
-  "roberts|alito": {
-   "agree": 0.8384,
-   "n": 229
-  },
-  "roberts|barrett": {
-   "agree": 0.8909,
-   "n": 220
-  },
-  "roberts|gorsuch": {
-   "agree": 0.8,
-   "n": 230
-  },
-  "roberts|jackson": {
-   "agree": 0.6954,
-   "n": 151
-  },
-  "roberts|kagan": {
-   "agree": 0.7446,
-   "n": 231
-  },
-  "roberts|kavanaugh": {
-   "agree": 0.9524,
-   "n": 231
-  },
-  "roberts|sotomayor": {
-   "agree": 0.7013,
-   "n": 231
-  },
-  "roberts|thomas": {
-   "agree": 0.7845,
-   "n": 232
-  },
-  "sotomayor|barrett": {
-   "agree": 0.6849,
-   "n": 219
-  },
-  "sotomayor|gorsuch": {
-   "agree": 0.6332,
-   "n": 229
-  },
-  "sotomayor|jackson": {
-   "agree": 0.9272,
-   "n": 151
-  },
-  "sotomayor|kagan": {
-   "agree": 0.9217,
-   "n": 230
-  },
-  "sotomayor|kavanaugh": {
-   "agree": 0.7174,
-   "n": 230
-  },
-  "thomas|alito": {
-   "agree": 0.8646,
-   "n": 229
-  },
-  "thomas|barrett": {
-   "agree": 0.8455,
-   "n": 220
-  },
-  "thomas|gorsuch": {
-   "agree": 0.8348,
-   "n": 230
-  },
-  "thomas|jackson": {
-   "agree": 0.5695,
-   "n": 151
-  },
-  "thomas|kagan": {
-   "agree": 0.6234,
-   "n": 231
-  },
-  "thomas|kavanaugh": {
-   "agree": 0.7792,
-   "n": 231
-  },
-  "thomas|sotomayor": {
-   "agree": 0.5887,
-   "n": 231
+  "basis": "common merits cases where both justices cast a vote with a coded direction (SCDB 2025_01, direction 1/2), n >= 50 pairs kept",
+  "sources": [
+    "scdb:2025_01 — via data/processed/corpus_justices_v1.jsonl.gz",
+    "results/m2_baselines.json — B5 (Wilson 95% IC dans le fichier source)"
+  ],
+  "pairs": {
+    "barrett|kavanaugh": {
+      "n": 213,
+      "agree": 0.892
+    },
+    "barrett|thomas": {
+      "n": 211,
+      "agree": 0.8389
+    },
+    "barrett|kagan": {
+      "n": 213,
+      "agree": 0.6808
+    },
+    "barrett|roberts": {
+      "n": 213,
+      "agree": 0.8685
+    },
+    "barrett|jackson": {
+      "n": 109,
+      "agree": 0.7064
+    },
+    "barrett|gorsuch": {
+      "n": 211,
+      "agree": 0.8152
+    },
+    "alito|barrett": {
+      "n": 209,
+      "agree": 0.8373
+    },
+    "barrett|breyer": {
+      "n": 102,
+      "agree": 0.5784
+    },
+    "barrett|sotomayor": {
+      "n": 213,
+      "agree": 0.6291
+    },
+    "kennedy|thomas": {
+      "n": 183,
+      "agree": 0.776
+    },
+    "kagan|kennedy": {
+      "n": 178,
+      "agree": 0.8315
+    },
+    "kennedy|roberts": {
+      "n": 182,
+      "agree": 0.8791
+    },
+    "gorsuch|kennedy": {
+      "n": 69,
+      "agree": 0.8551
+    },
+    "ginsburg|kennedy": {
+      "n": 183,
+      "agree": 0.765
+    },
+    "alito|kennedy": {
+      "n": 181,
+      "agree": 0.8287
+    },
+    "breyer|kennedy": {
+      "n": 183,
+      "agree": 0.8033
+    },
+    "kennedy|sotomayor": {
+      "n": 181,
+      "agree": 0.7403
+    },
+    "kavanaugh|thomas": {
+      "n": 330,
+      "agree": 0.7879
+    },
+    "kagan|kavanaugh": {
+      "n": 331,
+      "agree": 0.6949
+    },
+    "kavanaugh|roberts": {
+      "n": 333,
+      "agree": 0.9459
+    },
+    "jackson|kavanaugh": {
+      "n": 109,
+      "agree": 0.7523
+    },
+    "gorsuch|kavanaugh": {
+      "n": 329,
+      "agree": 0.7903
+    },
+    "ginsburg|kavanaugh": {
+      "n": 109,
+      "agree": 0.633
+    },
+    "alito|kavanaugh": {
+      "n": 329,
+      "agree": 0.8632
+    },
+    "breyer|kavanaugh": {
+      "n": 222,
+      "agree": 0.6712
+    },
+    "kavanaugh|sotomayor": {
+      "n": 332,
+      "agree": 0.6416
+    },
+    "kagan|thomas": {
+      "n": 515,
+      "agree": 0.5903
+    },
+    "roberts|thomas": {
+      "n": 520,
+      "agree": 0.7788
+    },
+    "jackson|thomas": {
+      "n": 108,
+      "agree": 0.5741
+    },
+    "gorsuch|thomas": {
+      "n": 406,
+      "agree": 0.8153
+    },
+    "ginsburg|thomas": {
+      "n": 299,
+      "agree": 0.5686
+    },
+    "alito|thomas": {
+      "n": 517,
+      "agree": 0.8743
+    },
+    "breyer|thomas": {
+      "n": 411,
+      "agree": 0.5742
+    },
+    "sotomayor|thomas": {
+      "n": 518,
+      "agree": 0.5425
+    },
+    "kagan|roberts": {
+      "n": 516,
+      "agree": 0.7403
+    },
+    "jackson|kagan": {
+      "n": 109,
+      "agree": 0.8807
+    },
+    "gorsuch|kagan": {
+      "n": 403,
+      "agree": 0.6402
+    },
+    "ginsburg|kagan": {
+      "n": 293,
+      "agree": 0.8942
+    },
+    "alito|kagan": {
+      "n": 511,
+      "agree": 0.6106
+    },
+    "breyer|kagan": {
+      "n": 406,
+      "agree": 0.9039
+    },
+    "kagan|sotomayor": {
+      "n": 515,
+      "agree": 0.8951
+    },
+    "jackson|roberts": {
+      "n": 109,
+      "agree": 0.7339
+    },
+    "gorsuch|roberts": {
+      "n": 406,
+      "agree": 0.7734
+    },
+    "ginsburg|roberts": {
+      "n": 299,
+      "agree": 0.7057
+    },
+    "alito|roberts": {
+      "n": 517,
+      "agree": 0.8433
+    },
+    "breyer|roberts": {
+      "n": 412,
+      "agree": 0.7209
+    },
+    "roberts|sotomayor": {
+      "n": 520,
+      "agree": 0.6808
+    },
+    "gorsuch|jackson": {
+      "n": 108,
+      "agree": 0.6574
+    },
+    "alito|jackson": {
+      "n": 107,
+      "agree": 0.6168
+    },
+    "jackson|sotomayor": {
+      "n": 109,
+      "agree": 0.9083
+    },
+    "ginsburg|gorsuch": {
+      "n": 184,
+      "agree": 0.6033
+    },
+    "alito|gorsuch": {
+      "n": 404,
+      "agree": 0.8119
+    },
+    "breyer|gorsuch": {
+      "n": 296,
+      "agree": 0.5912
+    },
+    "gorsuch|sotomayor": {
+      "n": 405,
+      "agree": 0.5975
+    },
+    "alito|ginsburg": {
+      "n": 298,
+      "agree": 0.6107
+    },
+    "breyer|ginsburg": {
+      "n": 300,
+      "agree": 0.8733
+    },
+    "ginsburg|sotomayor": {
+      "n": 297,
+      "agree": 0.9057
+    },
+    "alito|breyer": {
+      "n": 409,
+      "agree": 0.6137
+    },
+    "alito|sotomayor": {
+      "n": 515,
+      "agree": 0.5553
+    },
+    "breyer|sotomayor": {
+      "n": 410,
+      "agree": 0.8634
+    }
   }
- },
- "sources": [
-  "oyez:api.oyez.org/cases/<term>/<docket> \u2014 cached under data/sources/oyez/"
- ],
- "window": {
-  "end": "2026-08-24",
-  "start": "2020-10-01"
- }
 }
