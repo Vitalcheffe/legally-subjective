@@ -12,8 +12,12 @@ Lenteur maîtrisée (1 requête/s + reprise sur état) ; sorties :
 
 Usage :  python3 fetch_opinion_texts.py [--budget 500] [--page-check]
          python3 fetch_opinion_texts.py --budget 540 --wait-on-429
-                 (mode quota : le token gratuit est limité à 5 req/min ;
-                 le script dort le Retry-After et continue au lieu de s'arrêter)
+                 (mode quota : le token gratuit est limité — 5 req/min ET un
+                 quota glissé à l'heure ; le script dort le Retry-After et
+                 continue au lieu de s'arrêter)
+         python3 fetch_opinion_texts.py --pace 75 --budget 3600
+                 (pacing proactif : une requête toutes les 75 s, débit optimal
+                 sous le quota horaire sans jamais payer un 429)
 """
 import argparse
 import gzip
@@ -123,7 +127,7 @@ def main():
             os.replace(STATE + ".tmp", STATE)
             if n % 25 == 0:
                 log(f"{len(done)}/{len(ids)} | {time.time()-t0:.0f}s")
-            time.sleep(1.0)
+            time.sleep(max(args.pace, 1.0))
     log(f"fin d'appel : +{n} opinions (total {len(done)}/{len(ids)})")
 
 
@@ -131,6 +135,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget", type=int, default=500)
     ap.add_argument("--wait-on-429", action="store_true",
-                    help="dormir le Retry-After et poursuivre (token limité à 5 req/min)")
+                    help="dormir le Retry-After et poursuivre (token gratuit limité à 5 req/min)")
+    ap.add_argument("--pace", type=float, default=1.0,
+                    help="secondes entre requêtes (75 = débit optimal sous le quota horaire du token gratuit)")
     args = ap.parse_args()
     main()
