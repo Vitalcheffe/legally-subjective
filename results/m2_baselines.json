@@ -1,0 +1,654 @@
+{
+  "corpus": "Corpus-Monde v1 (569 affaires, OT2015..OT2023)",
+  "split": {
+    "train": "OT2015..OT2019",
+    "test": "OT2020..OT2023"
+  },
+  "B0_class_balance": {
+    "2015": {
+      "conservative": 33,
+      "liberal": 33,
+      "p_conservative": 0.5
+    },
+    "2016": {
+      "conservative": 30,
+      "liberal": 32,
+      "p_conservative": 0.484
+    },
+    "2017": {
+      "conservative": 29,
+      "liberal": 30,
+      "p_conservative": 0.492
+    },
+    "2018": {
+      "conservative": 30,
+      "liberal": 35,
+      "p_conservative": 0.462
+    },
+    "2019": {
+      "conservative": 26,
+      "liberal": 26,
+      "p_conservative": 0.5
+    },
+    "2020": {
+      "conservative": 31,
+      "liberal": 22,
+      "p_conservative": 0.585
+    },
+    "2021": {
+      "conservative": 39,
+      "liberal": 22,
+      "p_conservative": 0.639
+    },
+    "2022": {
+      "conservative": 29,
+      "liberal": 25,
+      "p_conservative": 0.537
+    },
+    "2023": {
+      "conservative": 28,
+      "liberal": 29,
+      "p_conservative": 0.491
+    }
+  },
+  "B1_majority_class": {
+    "train_terms": "OT2015..OT2019",
+    "test_terms": "OT2020..OT2023",
+    "modal_direction": "libéral",
+    "train_n": 304,
+    "test_n": 225,
+    "accuracy": 0.4356,
+    "accuracy_ic95": [
+      0.3724,
+      0.5009
+    ],
+    "kappa": 0.0
+  },
+  "B2_always": {
+    "toujours_conservateur": {
+      "accuracy": 0.5644,
+      "ic95": [
+        0.4991,
+        0.6276
+      ]
+    },
+    "toujours_liberal": {
+      "accuracy": 0.4356,
+      "ic95": [
+        0.3724,
+        0.5009
+      ]
+    }
+  },
+  "B3_petitioner_wins": {
+    "n": 138,
+    "accuracy": 0.6014,
+    "ic95": [
+      0.5181,
+      0.6793
+    ],
+    "note": "caseDisposition SCDB : 2=confirmé, 4=infirmé ; prédire « infirmé » (code partyWinning écarté : codage non fiable dans SCDB 2025_01)"
+  },
+  "B4_justice_ideology": {
+    "n_justices": 10,
+    "vote_accuracy": 0.6366,
+    "vote_accuracy_ic95": [
+      0.6132,
+      0.6593
+    ],
+    "case_accuracy": 0.558,
+    "case_accuracy_ic95": [
+      0.4926,
+      0.6216
+    ],
+    "per_justice": {
+      "BMKavanaugh": {
+        "n": 224,
+        "accuracy": 0.5938,
+        "ic95": [
+          0.5284,
+          0.656
+        ]
+      },
+      "CThomas": {
+        "n": 222,
+        "accuracy": 0.6622,
+        "ic95": [
+          0.5977,
+          0.7212
+        ]
+      },
+      "EKagan": {
+        "n": 224,
+        "accuracy": 0.6741,
+        "ic95": [
+          0.6102,
+          0.7321
+        ]
+      },
+      "JGRoberts": {
+        "n": 224,
+        "accuracy": 0.5893,
+        "ic95": [
+          0.5239,
+          0.6517
+        ]
+      },
+      "NMGorsuch": {
+        "n": 222,
+        "accuracy": 0.5631,
+        "ic95": [
+          0.4973,
+          0.6267
+        ]
+      },
+      "SAAlito": {
+        "n": 220,
+        "accuracy": 0.6909,
+        "ic95": [
+          0.627,
+          0.7483
+        ]
+      },
+      "SGBreyer": {
+        "n": 113,
+        "accuracy": 0.6283,
+        "ic95": [
+          0.5364,
+          0.7118
+        ]
+      },
+      "SSotomayor": {
+        "n": 224,
+        "accuracy": 0.6875,
+        "ic95": [
+          0.6241,
+          0.7446
+        ]
+      }
+    },
+    "note": "prédiction du vote de chaque juge par sa direction modale du train ; l'affaire = majorité des votes prédits"
+  },
+  "B5_agreement": {
+    "ACBarrett|BMKavanaugh": {
+      "n": 213,
+      "agreement": 0.892,
+      "ic95": [
+        0.8432,
+        0.927
+      ]
+    },
+    "ACBarrett|CThomas": {
+      "n": 211,
+      "agreement": 0.8389,
+      "ic95": [
+        0.7833,
+        0.8823
+      ]
+    },
+    "ACBarrett|EKagan": {
+      "n": 213,
+      "agreement": 0.6808,
+      "ic95": [
+        0.6154,
+        0.7397
+      ]
+    },
+    "ACBarrett|JGRoberts": {
+      "n": 213,
+      "agreement": 0.8685,
+      "ic95": [
+        0.8166,
+        0.9075
+      ]
+    },
+    "ACBarrett|KBJackson": {
+      "n": 109,
+      "agreement": 0.7064,
+      "ic95": [
+        0.6151,
+        0.7837
+      ]
+    },
+    "ACBarrett|NMGorsuch": {
+      "n": 211,
+      "agreement": 0.8152,
+      "ic95": [
+        0.7573,
+        0.8617
+      ]
+    },
+    "ACBarrett|SAAlito": {
+      "n": 209,
+      "agreement": 0.8373,
+      "ic95": [
+        0.7813,
+        0.8812
+      ]
+    },
+    "ACBarrett|SGBreyer": {
+      "n": 102,
+      "agreement": 0.5784,
+      "ic95": [
+        0.4815,
+        0.6697
+      ]
+    },
+    "ACBarrett|SSotomayor": {
+      "n": 213,
+      "agreement": 0.6291,
+      "ic95": [
+        0.5625,
+        0.6912
+      ]
+    },
+    "AMKennedy|CThomas": {
+      "n": 183,
+      "agreement": 0.776,
+      "ic95": [
+        0.7102,
+        0.8303
+      ]
+    },
+    "AMKennedy|EKagan": {
+      "n": 178,
+      "agreement": 0.8315,
+      "ic95": [
+        0.7696,
+        0.8793
+      ]
+    },
+    "AMKennedy|JGRoberts": {
+      "n": 182,
+      "agreement": 0.8791,
+      "ic95": [
+        0.8238,
+        0.9188
+      ]
+    },
+    "AMKennedy|NMGorsuch": {
+      "n": 69,
+      "agreement": 0.8551,
+      "ic95": [
+        0.7534,
+        0.9193
+      ]
+    },
+    "AMKennedy|RBGinsburg": {
+      "n": 183,
+      "agreement": 0.765,
+      "ic95": [
+        0.6985,
+        0.8206
+      ]
+    },
+    "AMKennedy|SAAlito": {
+      "n": 181,
+      "agreement": 0.8287,
+      "ic95": [
+        0.7672,
+        0.8766
+      ]
+    },
+    "AMKennedy|SGBreyer": {
+      "n": 183,
+      "agreement": 0.8033,
+      "ic95": [
+        0.7397,
+        0.8544
+      ]
+    },
+    "AMKennedy|SSotomayor": {
+      "n": 181,
+      "agreement": 0.7403,
+      "ic95": [
+        0.6719,
+        0.7987
+      ]
+    },
+    "BMKavanaugh|CThomas": {
+      "n": 330,
+      "agreement": 0.7879,
+      "ic95": [
+        0.7406,
+        0.8285
+      ]
+    },
+    "BMKavanaugh|EKagan": {
+      "n": 331,
+      "agreement": 0.6949,
+      "ic95": [
+        0.6433,
+        0.742
+      ]
+    },
+    "BMKavanaugh|JGRoberts": {
+      "n": 333,
+      "agreement": 0.9459,
+      "ic95": [
+        0.9162,
+        0.9655
+      ]
+    },
+    "BMKavanaugh|KBJackson": {
+      "n": 109,
+      "agreement": 0.7523,
+      "ic95": [
+        0.6636,
+        0.8238
+      ]
+    },
+    "BMKavanaugh|NMGorsuch": {
+      "n": 329,
+      "agreement": 0.7903,
+      "ic95": [
+        0.7431,
+        0.8308
+      ]
+    },
+    "BMKavanaugh|RBGinsburg": {
+      "n": 109,
+      "agreement": 0.633,
+      "ic95": [
+        0.5395,
+        0.7175
+      ]
+    },
+    "BMKavanaugh|SAAlito": {
+      "n": 329,
+      "agreement": 0.8632,
+      "ic95": [
+        0.8219,
+        0.8962
+      ]
+    },
+    "BMKavanaugh|SGBreyer": {
+      "n": 222,
+      "agreement": 0.6712,
+      "ic95": [
+        0.6069,
+        0.7296
+      ]
+    },
+    "BMKavanaugh|SSotomayor": {
+      "n": 332,
+      "agreement": 0.6416,
+      "ic95": [
+        0.5886,
+        0.6913
+      ]
+    },
+    "CThomas|EKagan": {
+      "n": 515,
+      "agreement": 0.5903,
+      "ic95": [
+        0.5473,
+        0.6319
+      ]
+    },
+    "CThomas|JGRoberts": {
+      "n": 520,
+      "agreement": 0.7788,
+      "ic95": [
+        0.7412,
+        0.8124
+      ]
+    },
+    "CThomas|KBJackson": {
+      "n": 108,
+      "agreement": 0.5741,
+      "ic95": [
+        0.4799,
+        0.6632
+      ]
+    },
+    "CThomas|NMGorsuch": {
+      "n": 406,
+      "agreement": 0.8153,
+      "ic95": [
+        0.7746,
+        0.85
+      ]
+    },
+    "CThomas|RBGinsburg": {
+      "n": 299,
+      "agreement": 0.5686,
+      "ic95": [
+        0.5119,
+        0.6235
+      ]
+    },
+    "CThomas|SAAlito": {
+      "n": 517,
+      "agreement": 0.8743,
+      "ic95": [
+        0.8429,
+        0.9001
+      ]
+    },
+    "CThomas|SGBreyer": {
+      "n": 411,
+      "agreement": 0.5742,
+      "ic95": [
+        0.5259,
+        0.6211
+      ]
+    },
+    "CThomas|SSotomayor": {
+      "n": 518,
+      "agreement": 0.5425,
+      "ic95": [
+        0.4994,
+        0.5849
+      ]
+    },
+    "EKagan|JGRoberts": {
+      "n": 516,
+      "agreement": 0.7403,
+      "ic95": [
+        0.7008,
+        0.7763
+      ]
+    },
+    "EKagan|KBJackson": {
+      "n": 109,
+      "agreement": 0.8807,
+      "ic95": [
+        0.8066,
+        0.929
+      ]
+    },
+    "EKagan|NMGorsuch": {
+      "n": 403,
+      "agreement": 0.6402,
+      "ic95": [
+        0.5922,
+        0.6855
+      ]
+    },
+    "EKagan|RBGinsburg": {
+      "n": 293,
+      "agreement": 0.8942,
+      "ic95": [
+        0.8537,
+        0.9245
+      ]
+    },
+    "EKagan|SAAlito": {
+      "n": 511,
+      "agreement": 0.6106,
+      "ic95": [
+        0.5676,
+        0.6519
+      ]
+    },
+    "EKagan|SGBreyer": {
+      "n": 406,
+      "agreement": 0.9039,
+      "ic95": [
+        0.8714,
+        0.9289
+      ]
+    },
+    "EKagan|SSotomayor": {
+      "n": 515,
+      "agreement": 0.8951,
+      "ic95": [
+        0.8657,
+        0.9187
+      ]
+    },
+    "JGRoberts|KBJackson": {
+      "n": 109,
+      "agreement": 0.7339,
+      "ic95": [
+        0.6441,
+        0.8079
+      ]
+    },
+    "JGRoberts|NMGorsuch": {
+      "n": 406,
+      "agreement": 0.7734,
+      "ic95": [
+        0.7302,
+        0.8114
+      ]
+    },
+    "JGRoberts|RBGinsburg": {
+      "n": 299,
+      "agreement": 0.7057,
+      "ic95": [
+        0.6517,
+        0.7545
+      ]
+    },
+    "JGRoberts|SAAlito": {
+      "n": 517,
+      "agreement": 0.8433,
+      "ic95": [
+        0.8095,
+        0.8721
+      ]
+    },
+    "JGRoberts|SGBreyer": {
+      "n": 412,
+      "agreement": 0.7209,
+      "ic95": [
+        0.6757,
+        0.762
+      ]
+    },
+    "JGRoberts|SSotomayor": {
+      "n": 520,
+      "agreement": 0.6808,
+      "ic95": [
+        0.6395,
+        0.7194
+      ]
+    },
+    "KBJackson|NMGorsuch": {
+      "n": 108,
+      "agreement": 0.6574,
+      "ic95": [
+        0.5639,
+        0.7401
+      ]
+    },
+    "KBJackson|SAAlito": {
+      "n": 107,
+      "agreement": 0.6168,
+      "ic95": [
+        0.5222,
+        0.7034
+      ]
+    },
+    "KBJackson|SSotomayor": {
+      "n": 109,
+      "agreement": 0.9083,
+      "ic95": [
+        0.8393,
+        0.9494
+      ]
+    },
+    "NMGorsuch|RBGinsburg": {
+      "n": 184,
+      "agreement": 0.6033,
+      "ic95": [
+        0.5312,
+        0.6711
+      ]
+    },
+    "NMGorsuch|SAAlito": {
+      "n": 404,
+      "agreement": 0.8119,
+      "ic95": [
+        0.7709,
+        0.847
+      ]
+    },
+    "NMGorsuch|SGBreyer": {
+      "n": 296,
+      "agreement": 0.5912,
+      "ic95": [
+        0.5344,
+        0.6457
+      ]
+    },
+    "NMGorsuch|SSotomayor": {
+      "n": 405,
+      "agreement": 0.5975,
+      "ic95": [
+        0.5491,
+        0.6442
+      ]
+    },
+    "RBGinsburg|SAAlito": {
+      "n": 298,
+      "agreement": 0.6107,
+      "ic95": [
+        0.5543,
+        0.6644
+      ]
+    },
+    "RBGinsburg|SGBreyer": {
+      "n": 300,
+      "agreement": 0.8733,
+      "ic95": [
+        0.8309,
+        0.9063
+      ]
+    },
+    "RBGinsburg|SSotomayor": {
+      "n": 297,
+      "agreement": 0.9057,
+      "ic95": [
+        0.8671,
+        0.934
+      ]
+    },
+    "SAAlito|SGBreyer": {
+      "n": 409,
+      "agreement": 0.6137,
+      "ic95": [
+        0.5657,
+        0.6596
+      ]
+    },
+    "SAAlito|SSotomayor": {
+      "n": 515,
+      "agreement": 0.5553,
+      "ic95": [
+        0.5122,
+        0.5977
+      ]
+    },
+    "SGBreyer|SSotomayor": {
+      "n": 410,
+      "agreement": 0.8634,
+      "ic95": [
+        0.8268,
+        0.8933
+      ]
+    }
+  }
+}
