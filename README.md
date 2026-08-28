@@ -34,7 +34,7 @@ Dans les deux cas, la mesure elle-même est le résultat.
 | `data/raw/provenance/` | SHA-256 de chaque source brute + prédicats de filtre exacts |
 | `results/m2_baselines.{json,md}` | Baselines statistiques M2 avec intervalles de confiance Wilson 95 % |
 | `scripts/` | Toute la chaîne de collecte et de construction, reproductible |
-| `app/` | Le site statique du projet (Next.js en export HTML pur — aucune dépendance runtime, aucun cookie, aucun analytics) |
+| `src/`, `public/`, `prisma/` | **Le site** (Next.js) : THE DRAW en vitrine, les questions, /paper, /standard, fiches d'affaires et comparaisons de juges |
 
 ### Le corpus en trois chiffres
 
@@ -70,6 +70,15 @@ publiques. Les deux issues sont des résultats.
 
 ## Reproduire
 
+Le site se lance localement :
+
+```bash
+npm ci
+npm run dev        # http://localhost:3000
+```
+
+Le dépôt de recherche :
+
 ```bash
 git clone https://github.com/Vitalcheffe/legally-subjective.git
 cd legally-subjective
@@ -81,6 +90,11 @@ print(stats['n_cases'], 'affaires |', stats['n_opinions'], 'opinions')
 print('scellé 5-4 :', stats['five_four_selection']['sealed_sha256'])
 EOF
 ```
+
+À noter : le site affiche le dossier scellé de l'expérience auditée
+(LS-J-001…009, 237 affaires décidées) ; le corpus de recherche gelé v1
+(569 affaires) vit dans `data/processed/`. Le rattachement du site au
+nouveau corpus est prévu quand l'entraînement M3 produira ses résultats.
 
 La chaîne complète de reconstruction (téléchargements bulk → filtres → corpus)
 est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md).
