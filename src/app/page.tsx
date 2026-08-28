@@ -13,8 +13,9 @@ import { listDockets, getAgreement } from "@/lib/dockets";
    feel the floor move, and share.
 
    Every number the wheel can land on is real and
-   traceable: data/dockets/LS-J-00{1..9}.json, axis
-   "disposition", measured on recorded votes.
+   traceable: data/dockets/LS-J-001..013.json, axis
+   "disposition", measured on recorded SCDB votes
+   (Corpus-Monde v1, OT2015–OT2023).
 
    LS-AUDIT-001, injonction 1: every public percentage
    below carries its EFFECTIVE N and its Wilson ±,
@@ -51,15 +52,30 @@ export default async function Home() {
   const live = sys.state === "WARM";
 
   /* ——— The vedette pair, recomputed from the FILED record ———
-     Thomas–Jackson (the most divided pair) vs Roberts–Kavanaugh
-     (the closest), each with its shared-case count and Wilson ±. */
+     The most divided and the closest sitting pair, each with its
+     shared-case count and Wilson ± — found in the agreement
+     production, never typed by hand. */
   const pairs = agreement?.pairs ?? {};
-  const readPair = (a: string, b: string) =>
-    pairs[`${a}|${b}`] ?? pairs[`${b}|${a}`] ?? null;
-  const divided = readPair("thomas", "jackson");
-  const aligned = readPair("roberts", "kavanaugh");
+  let dividedKey: string | null = null;
+  let alignedKey: string | null = null;
+  for (const [key, v] of Object.entries(pairs)) {
+    if (v.agree == null) continue;
+    if (!dividedKey || v.agree < pairs[dividedKey].agree) dividedKey = key;
+    if (!alignedKey || v.agree > pairs[alignedKey].agree) alignedKey = key;
+  }
+  const divided = dividedKey ? pairs[dividedKey] : null;
+  const aligned = alignedKey ? pairs[alignedKey] : null;
   const pctDiv = divided?.agree != null ? Math.round(divided.agree * 1000) / 10 : null;
   const pctAln = aligned?.agree != null ? Math.round(aligned.agree * 1000) / 10 : null;
+  const fullName = (slug: string) =>
+    dockets.find((d) => d.subject.slug === slug)?.subject.name ?? slug;
+  const shortName = (slug: string) => {
+    const n = fullName(slug);
+    const stripped = n.replace(/,?\s*(Jr\.|Sr\.|II|III|IV)\s*$/i, "").trim();
+    return stripped.split(/\s+/).slice(-1)[0];
+  };
+  const [divA, divB] = (dividedKey ?? "a|b").split("|");
+  const [alnA, alnB] = (alignedKey ?? "a|b").split("|");
 
   /* ——— The dissent range and citation range, from the dockets ——— */
   const tempers = dockets
@@ -78,6 +94,8 @@ export default async function Home() {
     .map((x) => ({ v: x.a!.value as number, n: x.a!.n }));
   const loPrec = prec.length ? prec.reduce((m, x) => (x.v < m.v ? x : m), prec[0]) : null;
   const hiPrec = prec.length ? prec.reduce((m, x) => (x.v > m.v ? x : m), prec[0]) : null;
+  const tempFold =
+    loTemp && hiTemp && loTemp.v > 0 ? (hiTemp.v / loTemp.v).toFixed(1) : null;
 
   const split100 =
     divided?.agree != null ? Math.round((1 - divided.agree) * 100) : null;
@@ -89,16 +107,15 @@ export default async function Home() {
       a: (
         <>
           On the cases they decided together ({divided?.n ?? "—"} shared
-          cases), Clarence Thomas and Ketanji Brown Jackson voted the same
-          way{" "}
+          cases), {fullName(divA)} and {fullName(divB)} voted the same way{" "}
           <strong className="text-signal-deep">
             {pctDiv ?? "—"}%
           </strong>{" "}
           <span className="font-data text-[12px] text-ink-3">
             (±{divided?.agree != null ? wilsonPm(divided.agree, divided.n) : "—"} pts)
           </span>{" "}
-          — they split on nearly half of them. John Roberts and Brett
-          Kavanaugh:{" "}
+          — they split on nearly half of them. {fullName(alnA)} and{" "}
+          {fullName(alnB)}:{" "}
           <strong className="text-signal-deep">{pctAln ?? "—"}%</strong>{" "}
           <span className="font-data text-[12px] text-ink-3">
             (±{aligned?.agree != null ? wilsonPm(aligned.agree, aligned.n) : "—"} pts,{" "}
@@ -108,7 +125,7 @@ export default async function Home() {
           counts, which is why each carries its own.
         </>
       ),
-      door: "Meet the nine",
+      door: "Meet the bench",
       href: "/court/scotus",
     },
     {
@@ -135,8 +152,8 @@ export default async function Home() {
               ({hiTemp.n} votes, ±{wilsonPm(hiTemp.v, hiTemp.n)} pts)
             </span>
           )}{" "}
-          across this bench — a five-fold gap. How heavily they anchor each
-          opinion in precedent runs from{" "}
+          across this bench{tempFold ? ` — a ${tempFold}-fold gap` : ""}. How
+          heavily their opinions anchor in precedent runs from{" "}
           <strong className="text-signal-deep">
             {loPrec ? Math.round(loPrec.v) : "—"}
           </strong>{" "}
@@ -144,7 +161,7 @@ export default async function Home() {
           <strong className="text-signal-deep">
             {hiPrec ? Math.round(hiPrec.v) : "—"}
           </strong>{" "}
-          cited authorities
+          citing decisions per authored opinion
           {loPrec && hiPrec && (
             <span className="font-data text-[12px] text-ink-3">
               {" "}
@@ -162,7 +179,7 @@ export default async function Home() {
       q: "How different is one door from the next?",
       a: (
         <>
-          Pick any two of the nine. The counterfactual is computed, not
+          Pick any two of the bench. The counterfactual is computed, not
           asserted: where they diverge, by how much, and with what
           uncertainty — all from votes they actually cast on cases they both
           heard. The most divided pair on this Court splits on{" "}
@@ -178,7 +195,7 @@ export default async function Home() {
         </>
       ),
       door: "Compare two judges",
-      href: "/compare/kavanaugh/jackson",
+      href: dividedKey ? `/compare/${divA}/${divB}` : "/compare/kavanaugh/jackson",
     },
     {
       n: "04",
@@ -226,48 +243,65 @@ export default async function Home() {
             </p>
 
             {/* LS-AUDIT-001 inj. 4 — the counter reconciliation, public.
-                Five numbers used to circulate unreconciled; now the ladder
-                itself is the display, each step explained in one clause. */}
+                The corpus ladder itself is the display: each step is a
+                documented filter, explained in one clause. */}
             <div className="mt-8 border border-ink bg-paper-2 px-5 py-4">
               <p className="font-data text-[10.5px] font-bold tracking-[0.1em] uppercase text-signal-deep">
-                The count, reconciled — why five numbers exist
+                The count, reconciled — every step is a documented filter
               </p>
               <p className="mt-2.5 font-data text-[12px] leading-[1.8] tracking-[0.01em] text-ink-2">
                 <span className="font-bold tabular text-ink">
-                  {sys.oyezInterrogated}
+                  {sys.corpusArgued}
                 </span>{" "}
-                case files pulled from the public record
+                argued cases entered the frozen corpus rule (OT2015–OT2023,
+                argued on the merits)
                 <span className="text-ink-3">
                   {" "}
-                  — of which {sys.oyezMisses} failed requests were archived
-                  as misses, not hidden
+                  — the rule is sealed, it does not move to flatter a result
                 </span>{" "}
                 →{" "}
                 <span className="font-bold tabular text-ink">
-                  {sys.oyezUsable}
+                  {sys.joinedScdb}
                 </span>{" "}
-                readable files
-                <span className="text-ink-3"> (everything that answered)</span>{" "}
-                →{" "}
-                <span className="font-bold tabular text-ink">
-                  {sys.casesDecided}
-                </span>{" "}
-                decided cases
+                carry machine-readable SCDB votes
                 <span className="text-ink-3">
                   {" "}
-                  (carrying a decision on the record)
+                  (the rest kept their CourtListener docket — SCDB had not
+                  coded them; a source gap, not a choice)
                 </span>{" "}
                 →{" "}
                 <span className="font-bold tabular text-ink">
-                  {sys.casesModeled}
+                  {sys.withDirection}
                 </span>{" "}
-                modeled in the research
+                carry a coded decision direction
                 <span className="text-ink-3">
                   {" "}
-                  (decided AND with every vote machine-readable — the
-                  remainder lost a vote field, not a fact)
-                </span>
-                . Every step is a documented filter, not a loss of truth.
+                  (conservative or liberal — the label every prediction task
+                  in the protocol uses)
+                </span>{" "}
+                →{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.trainSplit}
+                </span>{" "}
+                form the training split (OT2015–OT2019) and{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.testSplit}
+                </span>{" "}
+                the test split (OT2020–2023)
+                <span className="text-ink-3">
+                  {" "}
+                  — time-ordered, so no future leaks into the past
+                </span>{" "}
+                → and{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.sealed}
+                </span>{" "}
+                of the{" "}
+                <span className="font-bold tabular text-ink">
+                  {sys.fiveFour}
+                </span>{" "}
+                decisions won 5–4 are sealed under SHA-256 for the final
+                exam. Every step is a documented filter, not a loss of truth.
               </p>
             </div>
 
@@ -306,9 +340,9 @@ export default async function Home() {
             <p className="micro mt-7 normal-case leading-relaxed tracking-[0.04em] text-ink-3">
               This is an open measurement project, not a law firm. It does not
               predict any case and does not give legal advice. It counts what
-              nine public officials publicly did — so that &ldquo;it depends on
-              the judge&rdquo; stops being a saying and becomes a number with
-              its interval.
+              thirteen public officials publicly did across nine terms — so
+              that &ldquo;it depends on the judge&rdquo; stops being a saying
+              and becomes a number with its interval.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3 font-data text-[11px] font-semibold tracking-[0.08em] uppercase">
@@ -322,8 +356,9 @@ export default async function Home() {
             <p className="mt-3 max-w-[62ch] font-data text-[10.5px] leading-relaxed tracking-[0.02em] text-ink-3">
               The record opens all {sys.casesDecided} cases — the votes, the
               margin, what would have flipped each one. The science is the
-              full paper behind every number: method, figures, code, and the
-              trained model&apos;s honest limits.
+              full program behind every number: the frozen corpus, the
+              baselines to beat, the sealed protocol, and the honest state of
+              what is not yet trained.
             </p>
           </div>
         </section>
@@ -334,7 +369,7 @@ export default async function Home() {
         <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-x-8 gap-y-2 px-6 py-5 font-data text-[10.5px] font-medium tracking-[0.06em] sm:px-10 lg:px-14">
           <span>LEGALLY SUBJECTIVE — AN OPEN STANDARD. NO ONE OWNS IT.</span>
           <span className="text-white/60">
-            SOURCES: COURTLISTENER · OYEZ{sys.windowLabel ? ` · ${sys.windowLabel}` : ""}
+            SOURCES: SCDB · COURTLISTENER{sys.windowLabel ? ` · ${sys.windowLabel}` : ""}
           </span>
           <span className="flex items-center gap-x-6">
             <a href="/cases" className="text-white/60 hover:text-white">

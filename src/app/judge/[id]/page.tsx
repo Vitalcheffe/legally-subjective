@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Chrome } from "@/components/ls/chrome";
 import { Glyph } from "@/components/ls/glyph";
 import { getSystemState } from "@/lib/system-state";
-import { getCases, getModel } from "@/lib/research";
+import { getCases } from "@/lib/research";
 import {
   AXIS_LABELS,
   AXIS_METRIC_LABELS,
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!d) return { title: "Docket not found — Legally Subjective" };
   return {
     title: `In re ${d.subject.name} — ${d.docket} · Legally Subjective`,
-    description: `The filed Subjectivity Fingerprint of ${d.subject.name}: six axes, percentiles against the bench of nine, confidence intervals, N. ${d.raw.merits_votes} merits votes, ${d.raw.lead_opinions} lead opinions.`,
+    description: `The filed Subjectivity Fingerprint of ${d.subject.name}: six axes, percentiles against the declared bench of thirteen, confidence intervals, N. ${d.raw.merits_votes} merits votes, ${d.raw.lead_opinions} lead opinions.`,
   };
 }
 
@@ -108,20 +108,19 @@ export default async function JudgePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const [d, sys, allCases, model] = await Promise.all([
+  const [d, sys, allCases] = await Promise.all([
     getDocket(id),
     getSystemState(),
     getCases(),
-    getModel(),
   ]);
   if (!d || d.status !== "FILED") notFound();
 
   const slug = d.subject.slug;
 
-  // ——— DIVERGENCE PROFILE: where this justice breaks with the bench, per circuit ———
+  // ——— DIVERGENCE PROFILE: where this justice breaks with the bench, per issue area ———
   // (Renamed from "blind spots" — LS-AUDIT-001 inj. 11: no normative label
   // on a named judge. A divergence is a fact; a "blind spot" is a verdict.)
-  // Real computation from the case record: for each originating court with
+  // Real computation from the case record: for each issue area with
   // enough shared cases, the justice's dissent rate vs the bench's on the
   // same cases (self excluded). Divergence = the gap in points.
   const blindSpots: { circuit: string; n: number; own: number; bench: number; gap: number }[] = [];
@@ -131,10 +130,10 @@ export default async function JudgePage({
       const own = c.votes[slug];
       const participants = Object.keys(c.votes);
       if (!participants.includes(slug)) continue;
-      let rec = byCircuit.get(c.circuit);
+      let rec = byCircuit.get(c.issue_area);
       if (!rec) {
         rec = { own: [0, 0], others: [0, 0] };
-        byCircuit.set(c.circuit, rec);
+        byCircuit.set(c.issue_area, rec);
       }
       if (own === "minority") rec.own[0] += 1;
       rec.own[1] += 1;
@@ -158,10 +157,6 @@ export default async function JudgePage({
     }
     blindSpots.sort((a, b) => Math.abs(b.gap) - Math.abs(a.gap));
   }
-  const machine = model?.results.per_justice[slug] ?? null;
-  const spectrumPoint = model?.results.spectrum[slug] ?? null;
-
-
   const axesForGlyph = Object.fromEntries(
     AXIS_ORDER.map((ax) => [ax, d.axes[ax]?.percentile ?? null]),
   );
@@ -218,11 +213,11 @@ export default async function JudgePage({
             <p className="micro">[001] The raw count</p>
             <div className="mt-6 grid grid-cols-2 gap-px border border-rule bg-rule sm:grid-cols-3 lg:grid-cols-6">
               {[
-                ["Merits votes", d.raw.merits_votes.toLocaleString("en-US"), "Oyez · decisions.votes"],
+                ["Merits votes", d.raw.merits_votes.toLocaleString("en-US"), "SCDB 2025_01 · vote records"],
                 ["Dissents", d.raw.dissents.toLocaleString("en-US"), "votes cast with the minority"],
-                ["Separate writings", d.raw.separate_writings.toLocaleString("en-US"), "concurrences + dissents filed"],
-                ["Lead opinions", d.raw.lead_opinions.toLocaleString("en-US"), "CourtListener · judge= author match"],
-                ["Service years", String(d.raw.service_years_window), "in window · calendar years"],
+                ["Separate writings", d.raw.separate_writings.toLocaleString("en-US"), "SCDB opinion codes 2/3 — written positions"],
+                ["Lead opinions", d.raw.lead_opinions.toLocaleString("en-US"), "SCDB · majOpinWriter"],
+                ["Service years", String(d.raw.service_years_window), "terms present in the window"],
                 ["Dissent rate", `${((d.raw.dissents / Math.max(d.raw.merits_votes, 1)) * 100).toFixed(1)}%`, "raw · pre-percentile"],
               ].map(([k, v, note]) => (
                 <div key={k} className="bg-paper px-5 py-6">
@@ -237,7 +232,7 @@ export default async function JudgePage({
 
         <section className="border-b border-rule">
           <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
-            <p className="micro">[002] The six axes — percentile against the bench of nine</p>
+            <p className="micro">[002] The six axes — percentile against the declared bench of thirteen</p>
             <h2 className="mt-4 font-display text-[clamp(1.7rem,3vw,2.5rem)] font-bold uppercase leading-[1.02] tracking-[-0.01em]">
               The fingerprint, with its uncertainty in full view.
             </h2>
@@ -261,9 +256,10 @@ export default async function JudgePage({
                   ))}
               </div>
               <p className="font-data text-[11px] leading-relaxed tracking-[0.02em] text-ink-3">
-                Percentile = median-rank within the declared bench (the sitting
-                Nine). A bench of nine yields nine discrete values — the
-                granularity is coarse by construction and disclosed per §3.5bis.
+                Percentile = median-rank within the declared bench (the
+                thirteen justices who sat OT2015–2023). A bench of thirteen
+                yields thirteen discrete values — the granularity is coarse
+                by construction and disclosed per §3.5bis.
                 The bracketed band is the bootstrap range of that RANK on the
                 bench — it is not a confidence interval of the measured value;
                 where the value itself admits one (a binomial share), its
@@ -297,12 +293,13 @@ export default async function JudgePage({
                 The cases where this justice votes apart from the others.
               </h2>
               <p className="mt-4 max-w-[70ch] text-[14px] leading-[1.7] text-ink-2">
-                Grouped by the court the case came up from, each row below
-                compares this justice&apos;s dissent rate with the rate of the
-                other eight on the very same cases. A gap is a measured
-                divergence on shared cases — not a deficiency, not a virtue,
-                and not a prediction: walk the same appeal through it, and
-                the record says the room behaved differently around you.
+                Grouped by the issue area of the case (SCDB 2025_01 coding),
+                each row below compares this justice&apos;s dissent rate with
+                the rate of the rest of the bench on the very same cases. A
+                gap is a measured divergence on shared cases — not a
+                deficiency, not a virtue, and not a prediction: walk the same
+                appeal through it, and the record says the room behaved
+                differently around you.
               </p>
               <div className="mt-7 border-t border-rule">
                 {blindSpots.slice(0, 5).map((b) => (
@@ -318,7 +315,7 @@ export default async function JudgePage({
                     </span>
                     <span className="text-[13px] leading-relaxed text-ink-2">
                       dissents in <strong className="text-ink">{(b.own * 100).toFixed(0)}%</strong> of
-                      cases from this court, while the rest of the bench dissents in{" "}
+                      cases in this area, while the rest of the bench dissents in{" "}
                       <strong className="text-ink">{(b.bench * 100).toFixed(0)}%</strong> of the
                       same cases
                     </span>
@@ -337,54 +334,8 @@ export default async function JudgePage({
               </div>
               <p className="mt-4 font-data text-[11px] leading-relaxed tracking-[0.02em] text-ink-3">
                 Computed from the same filed votes as every other number on this
-                page. Circuits with fewer than 6 shared cases are withheld — a
+                page. Issue areas with fewer than 6 shared cases are withheld — a
                 smaller sample would be gossip, not measurement.
-              </p>
-            </div>
-          </section>
-        )}
-
-        {machine && (
-          <section className="border-b border-rule bg-paper-2">
-            <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-14">
-              <p className="micro">[003c] The machine&apos;s read — {model?.model_id}</p>
-              <div className="mt-6 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-3">
-                {[
-                  {
-                    k: "Dissent predictability",
-                    v: machine.auc_dissent.toFixed(3),
-                    note: "out-of-fold ROC AUC — how legibly this justice's dissent pattern reads to the model",
-                  },
-                  {
-                    k: "Direction predictability",
-                    v: machine.auc_direction.toFixed(3),
-                    note: "same, for siding with the party seeking relief",
-                  },
-                  {
-                    k: "Directional logit",
-                    v: spectrumPoint ? `${spectrumPoint.logit >= 0 ? "+" : "−"}${Math.abs(spectrumPoint.logit).toFixed(2)}` : "—",
-                    note: spectrumPoint
-                      ? `propensity to side with the petitioner, case-only fit · bootstrap 95% CI [${spectrumPoint.ci[0].toFixed(2)}, ${spectrumPoint.ci[1].toFixed(2)}]`
-                      : "not estimated",
-                  },
-                ].map((x) => (
-                  <div key={x.k} className="bg-paper px-5 py-5">
-                    <p className="font-data text-[10px] tracking-[0.08em] text-ink-3 uppercase">{x.k}</p>
-                    <p className="mt-2 font-data text-[30px] leading-none font-semibold tabular">{x.v}</p>
-                    <p className="mt-2 text-[11px] leading-snug text-ink-3">{x.note}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 max-w-[70ch] text-[13px] leading-relaxed text-ink-3">
-                A human reads a judge from a thousand details; the model reads
-                one from nothing but filed votes — identity, term, circuit, and
-                the pull of colleagues — and still guesses better than chance.
-                That is not clairvoyance. It is the measurable share of habit
-                in what presents itself as judgment. Specification and limits: {" "}
-                <Link href="/paper" className="text-signal-deep underline">
-                  the research article
-                </Link>
-                .
               </p>
             </div>
           </section>

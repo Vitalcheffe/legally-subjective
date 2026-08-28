@@ -13,13 +13,13 @@ export interface SlimCase {
   docket: string;
   name: string;
   term: string;
-  circuit: string;
+  issueArea: string;
   split: string;
   flip: number | null;
   unanimous: boolean;
   winner: string | null;
   petitionerWon: boolean | null;
-  /** Precomputed lowercase haystack incl. circuit aliases ("ninth" → "9th"). */
+  /** Precomputed lowercase haystack incl. the issue area and term. */
   hay: string;
 }
 
@@ -52,13 +52,13 @@ export function CaseSearch({ cases }: { cases: SlimCase[] }) {
             htmlFor="case-q"
             className="micro mb-2 block"
           >
-            Search the record — name, docket, circuit
+            Search the record — name, docket, issue area
           </label>
           <input
             id="case-q"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="e.g. Trump, 23-726, Ninth…"
+            placeholder="e.g. Trump, 23-726, Criminal Procedure…"
             className="w-full border border-ink bg-paper px-4 py-3 font-data text-[14px] tracking-[0.01em] text-ink placeholder:text-ink-3 focus:outline-none focus-visible:outline-2 focus-visible:outline-signal"
           />
         </div>
@@ -119,7 +119,7 @@ export function CaseSearch({ cases }: { cases: SlimCase[] }) {
               {c.name}
             </span>
             <span className="font-data text-[11px] tracking-[0.03em] text-ink-2 uppercase">
-              {c.circuit}
+              {c.issueArea}
             </span>
             <span className="font-data text-[13px] font-semibold tabular">
               {c.split}
