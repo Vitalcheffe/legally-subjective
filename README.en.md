@@ -28,7 +28,7 @@ publish:
 | `data/raw/provenance/` | SHA-256 of every raw source + exact filter predicates |
 | `results/m2_baselines.{json,md}` | M2 statistical baselines with Wilson 95% intervals |
 | `scripts/` | The full, reproducible collection and build chain |
-| `app/` | The project's static site (Next.js, pure HTML export — no runtime dependencies, no cookies, no analytics) |
+| `src/`, `public/`, `prisma/` | **The site** (Next.js): THE DRAW storefront, the questions, /paper, /standard, case pages and judge comparisons |
 
 ### Baselines to beat (test set OT2020–2023)
 
@@ -56,6 +56,18 @@ publish:
 working language). `docs/05-REPRODUCTIBILITE.md` contains the full rebuild
 chain. `docs/09-RESSOURCES.md` maps public legal data sources across
 jurisdictions, for replication or extension.
+
+## Run the site locally
+
+```bash
+npm ci
+npm run dev        # http://localhost:3000
+```
+
+Note: the site displays the sealed record of the audited experiment
+(LS-J-001…009, 237 decided cases); the frozen research corpus v1 (569
+cases) lives in `data/processed/`. The site will be rewired to the new
+corpus once M3 training produces its results.
 
 ## Data sources
 
