@@ -34,6 +34,7 @@ Dans les deux cas, la mesure elle-même est le résultat.
 | `data/raw/provenance/` | SHA-256 de chaque source brute + prédicats de filtre exacts |
 | `results/m2_baselines.{json,md}` | Baselines statistiques M2 avec intervalles de confiance Wilson 95 % |
 | `scripts/` | Toute la chaîne de collecte et de construction, reproductible |
+| `app/` | Le site statique du projet (Next.js en export HTML pur — aucune dépendance runtime, aucun cookie, aucun analytics) |
 
 ### Le corpus en trois chiffres
 
@@ -49,7 +50,7 @@ Dans les deux cas, la mesure elle-même est le résultat.
 | Classe majoritaire | 43,6 % | [37,2 ; 50,1] |
 | Toujours conservateur | 56,4 % | [49,9 ; 62,8] |
 | Toujours infirmer | 60,1 % | [51,8 ; 67,9] |
-| Idéologie par juge (vote) | 63,7 % | [62,3 ; 65,0] |
+| Idéologie par juge (vote) | 63,7 % | [61,3 ; 65,9] |
 | Idéologie par juge (affaire) | 55,8 % | [49,3 ; 62,2] |
 
 Détail : [`results/m2_baselines.md`](results/m2_baselines.md)
@@ -107,6 +108,7 @@ est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md
 | [`docs/06-ETHIQUE.md`](docs/06-ETHIQUE.md) | Données publiques, contre-factuels étiquetés |
 | [`docs/07-ROADMAP.md`](docs/07-ROADMAP.md) | Où on en est, où on va |
 | [`docs/08-LIMITES.md`](docs/08-LIMITES.md) | Ce que ce projet ne peut pas prouver |
+| [`docs/09-RESSOURCES.md`](docs/09-RESSOURCES.md) | Autres sources de données juridiques publiques (US, Europe, monde) — pour étendre ou répliquer |
 
 ## Citer
 

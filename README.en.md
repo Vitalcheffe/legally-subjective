@@ -28,6 +28,7 @@ publish:
 | `data/raw/provenance/` | SHA-256 of every raw source + exact filter predicates |
 | `results/m2_baselines.{json,md}` | M2 statistical baselines with Wilson 95% intervals |
 | `scripts/` | The full, reproducible collection and build chain |
+| `app/` | The project's static site (Next.js, pure HTML export — no runtime dependencies, no cookies, no analytics) |
 
 ### Baselines to beat (test set OT2020–2023)
 
@@ -35,8 +36,8 @@ publish:
 |---|---|---|
 | Majority class | 43.6% | [37.2; 50.1] |
 | Always conservative | 56.4% | [49.9; 62.8] |
-| Always reverse | 54.9% | [47.9; 61.7] |
-| Per-justice ideology (vote) | 63.7% | [62.3; 65.0] |
+| Always reverse | 60.1% | [51.8; 67.9] |
+| Per-justice ideology (vote) | 63.7% | [61.3; 65.9] |
 | Per-justice ideology (case) | 55.8% | [49.3; 62.2] |
 
 ## Principles
@@ -51,9 +52,10 @@ publish:
 
 ## Documentation
 
-`docs/00-VISION.md` through `docs/08-LIMITES.md` (in French — the project's
+`docs/00-VISION.md` through `docs/09-RESSOURCES.md` (in French — the project's
 working language). `docs/05-REPRODUCTIBILITE.md` contains the full rebuild
-chain.
+chain. `docs/09-RESSOURCES.md` maps public legal data sources across
+jurisdictions, for replication or extension.
 
 ## Data sources
 
