@@ -1,0 +1,424 @@
+{
+ "model_id": "LS-M-001",
+ "trained_at": "2026-08-27T10:05:40Z",
+ "seed": 20260827,
+ "reproduce": "python scripts/train.py",
+ "environment": {
+  "python": "3.12.14",
+  "scikit_learn": "1.5.2",
+  "numpy": "2.1.3",
+  "scipy": "1.14.1",
+  "matplotlib": "3.9.2"
+ },
+ "dataset": {
+  "votes": 1989,
+  "cases": 232,
+  "terms": [
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "justices": 9,
+  "dissent_votes": 317,
+  "dissent_rate": 0.159376571141277,
+  "direction_resolvable_votes": 1939,
+  "direction_rate": 0.6343476018566271,
+  "circuits": [
+   "10th Cir.",
+   "11th Cir.",
+   "1st Cir.",
+   "2nd Cir.",
+   "3rd Cir.",
+   "4th Cir.",
+   "5th Cir.",
+   "6th Cir.",
+   "7th Cir.",
+   "8th Cir.",
+   "9th Cir.",
+   "D.C. Cir.",
+   "Fed. Cir.",
+   "Federal district court",
+   "St. Sup. Ct.",
+   "State appellate court"
+  ]
+ },
+ "design": {
+  "cv": "GroupKFold(5) grouped by case \u2014 all votes of a case share one fold",
+  "model": "L2 logistic regression (C=1.0, scikit-learn)",
+  "spec_A": "case-only: justice identity + term + originating circuit (one-hot)",
+  "spec_B": "Spec A + bench signals measured on the other eight justices only (share in majority; net direction lean) \u2014 self excluded, no leakage",
+  "baselines": "per-justice base rate computed strictly inside each training fold",
+  "bootstrap": "1000 case resamples for per-justice logits"
+ },
+ "results": {
+  "direction": {
+   "A": {
+    "auc": 0.5400524040501335,
+    "accuracy": 0.594636410520887,
+    "brier": 0.24219057518877393,
+    "log_loss": 0.6801060945961667,
+    "n": 1939
+   },
+   "B": {
+    "auc": 0.876754159643148,
+    "accuracy": 0.812790097988654,
+    "brier": 0.13611654580145394,
+    "log_loss": 0.42232291490139356,
+    "n": 1939
+   },
+   "baseline": {
+    "auc": 0.5095668925659637,
+    "accuracy": 0.6343476018566271,
+    "brier": 0.2329820531084351,
+    "n": 1939
+   }
+  },
+  "dissent": {
+   "A": {
+    "auc": 0.6136354202828551,
+    "accuracy": 0.8401206636500754,
+    "brier": 0.13376559398426296,
+    "log_loss": 0.4340091333255119,
+    "n": 1989
+   },
+   "B": {
+    "auc": 0.7365062714141246,
+    "accuracy": 0.8340874811463047,
+    "brier": 0.12538106995930437,
+    "log_loss": 0.3983997944649338,
+    "n": 1989
+   },
+   "baseline": {
+    "auc": 0.6330694459118833,
+    "accuracy": 0.840623428858723,
+    "brier": 0.12982901972358288,
+    "n": 1989
+   }
+  },
+  "learning_curve_direction": [
+   {
+    "n_train_cases": 14,
+    "fraction": 0.08,
+    "auc_mean": 0.8006438482164311,
+    "auc_std": 0.04855972871618843,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 27,
+    "fraction": 0.15,
+    "auc_mean": 0.8632846214762969,
+    "auc_std": 0.011121056389273128,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 45,
+    "fraction": 0.25,
+    "auc_mean": 0.8716670449966808,
+    "auc_std": 0.005966125225129603,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 72,
+    "fraction": 0.4,
+    "auc_mean": 0.8645544809747111,
+    "auc_std": 0.011136958893831936,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 108,
+    "fraction": 0.6,
+    "auc_mean": 0.871401137919843,
+    "auc_std": 0.01040786804489716,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 145,
+    "fraction": 0.8,
+    "auc_mean": 0.8726928623061763,
+    "auc_std": 0.020397753108498923,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 181,
+    "fraction": 1.0,
+    "auc_mean": 0.8695665719218303,
+    "auc_std": 0.02825840756579378,
+    "reps": 5
+   }
+  ],
+  "learning_curve_dissent": [
+   {
+    "n_train_cases": 15,
+    "fraction": 0.08,
+    "auc_mean": 0.5596032912672817,
+    "auc_std": 0.03529045214930594,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 28,
+    "fraction": 0.15,
+    "auc_mean": 0.6175238243630836,
+    "auc_std": 0.02697617604682691,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 46,
+    "fraction": 0.25,
+    "auc_mean": 0.6350994077986561,
+    "auc_std": 0.013542545670515405,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 74,
+    "fraction": 0.4,
+    "auc_mean": 0.6670685718030361,
+    "auc_std": 0.02007230468828441,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 111,
+    "fraction": 0.6,
+    "auc_mean": 0.6780498923084263,
+    "auc_std": 0.02619757854196144,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 148,
+    "fraction": 0.8,
+    "auc_mean": 0.7084804498934976,
+    "auc_std": 0.025958293835173583,
+    "reps": 5
+   },
+   {
+    "n_train_cases": 186,
+    "fraction": 1.0,
+    "auc_mean": 0.7601468849721548,
+    "auc_std": 0.01253586487570318,
+    "reps": 5
+   }
+  ],
+  "per_justice": {
+   "roberts": {
+    "name": "John G. Roberts, Jr.",
+    "n_votes": 232,
+    "dissents": 13,
+    "dissent_rate": 0.05603448275862069,
+    "dissent_ci": [
+     0.033035849629752895,
+     0.09349601194333054
+    ],
+    "direction_rate": 0.6814159292035398,
+    "auc_dissent": 0.6564805057955743,
+    "auc_direction": 0.9490440115440115
+   },
+   "thomas": {
+    "name": "Clarence Thomas",
+    "n_votes": 232,
+    "dissents": 45,
+    "dissent_rate": 0.1939655172413793,
+    "dissent_ci": [
+     0.14824123316720372,
+     0.2496593704414266
+    ],
+    "direction_rate": 0.5973451327433629,
+    "auc_dissent": 0.6771836007130125,
+    "auc_direction": 0.8377696377696376
+   },
+   "alito": {
+    "name": "Samuel A. Alito, Jr.",
+    "n_votes": 229,
+    "dissents": 40,
+    "dissent_rate": 0.17467248908296942,
+    "dissent_ci": [
+     0.1309763919219649,
+     0.22910320578085877
+    ],
+    "direction_rate": 0.6143497757847534,
+    "auc_dissent": 0.6708333333333333,
+    "auc_direction": 0.8655576302834833
+   },
+   "sotomayor": {
+    "name": "Sonia Sotomayor",
+    "n_votes": 231,
+    "dissents": 58,
+    "dissent_rate": 0.2510822510822511,
+    "dissent_ci": [
+     0.19954394665147202,
+     0.3107639837391125
+    ],
+    "direction_rate": 0.5955555555555555,
+    "auc_dissent": 0.6643910703607734,
+    "auc_direction": 0.7833360669181565
+   },
+   "kagan": {
+    "name": "Elena Kagan",
+    "n_votes": 231,
+    "dissents": 55,
+    "dissent_rate": 0.23809523809523808,
+    "dissent_ci": [
+     0.18773754171176044,
+     0.2970212372209416
+    ],
+    "direction_rate": 0.6106194690265486,
+    "auc_dissent": 0.6993801652892562,
+    "auc_direction": 0.837697628458498
+   },
+   "gorsuch": {
+    "name": "Neil M. Gorsuch",
+    "n_votes": 230,
+    "dissents": 38,
+    "dissent_rate": 0.16521739130434782,
+    "dissent_ci": [
+     0.12280095988332967,
+     0.21863318624007133
+    ],
+    "direction_rate": 0.6696428571428571,
+    "auc_dissent": 0.7140213815789475,
+    "auc_direction": 0.8833783783783784
+   },
+   "kavanaugh": {
+    "name": "Brett M. Kavanaugh",
+    "n_votes": 231,
+    "dissents": 11,
+    "dissent_rate": 0.047619047619047616,
+    "dissent_ci": [
+     0.026794791228605338,
+     0.0832430996551528
+    ],
+    "direction_rate": 0.6858407079646017,
+    "auc_dissent": 0.6770661157024793,
+    "auc_direction": 0.9599273057701045
+   },
+   "barrett": {
+    "name": "Amy Coney Barrett",
+    "n_votes": 220,
+    "dissents": 18,
+    "dissent_rate": 0.08181818181818182,
+    "dissent_ci": [
+     0.052378627482599,
+     0.12561100424424168
+    ],
+    "direction_rate": 0.6558139534883721,
+    "auc_dissent": 0.7255225522552256,
+    "auc_direction": 0.9458980256852597
+   },
+   "jackson": {
+    "name": "Ketanji Brown Jackson",
+    "n_votes": 153,
+    "dissents": 39,
+    "dissent_rate": 0.2549019607843137,
+    "dissent_ci": [
+     0.19243720490795707,
+     0.3293729047152755
+    ],
+    "direction_rate": 0.581081081081081,
+    "auc_dissent": 0.6033513270355375,
+    "auc_direction": 0.789947486871718
+   }
+  },
+  "spectrum": {
+   "roberts": {
+    "logit": 0.6588901322962907,
+    "ci": [
+     0.21711468776512985,
+     1.2071535133670102
+    ]
+   },
+   "thomas": {
+    "logit": 0.30149887037906636,
+    "ci": [
+     -0.1418664770407901,
+     0.8579506998526262
+    ]
+   },
+   "alito": {
+    "logit": 0.38537703807003804,
+    "ci": [
+     -0.07121060342577237,
+     0.9217139258594917
+    ]
+   },
+   "sotomayor": {
+    "logit": 0.29675454280780617,
+    "ci": [
+     -0.19165802600074427,
+     0.8853288674704086
+    ]
+   },
+   "kagan": {
+    "logit": 0.3602618386947548,
+    "ci": [
+     -0.10357113167341889,
+     0.9360217872294395
+    ]
+   },
+   "gorsuch": {
+    "logit": 0.6307396497041118,
+    "ci": [
+     0.20659403495604092,
+     1.2150546829538338
+    ]
+   },
+   "kavanaugh": {
+    "logit": 0.7090651872622473,
+    "ci": [
+     0.26361249556898936,
+     1.2975273219948802
+    ]
+   },
+   "barrett": {
+    "logit": 0.5762865162386575,
+    "ci": [
+     0.12815919648229893,
+     1.1413104665028568
+    ]
+   },
+   "jackson": {
+    "logit": 0.39239607991621117,
+    "ci": [
+     -0.09019527730858236,
+     0.9980830694136944
+    ]
+   }
+  },
+  "tests": {
+   "chi2_dissent_x_justice": {
+    "chi2": 88.04,
+    "p": 1.160889943217663e-15,
+    "dof": 8,
+    "levels": 9
+   },
+   "chi2_dissent_x_term": {
+    "chi2": 5.02,
+    "p": 0.41400535536277405,
+    "dof": 5,
+    "levels": 6
+   },
+   "fleiss_kappa": {
+    "kappa": 0.1153,
+    "P_bar": 0.7574,
+    "P_e": 0.7258,
+    "items": 147,
+    "raters": 9
+   }
+  },
+  "agreement": {
+   "n_pairs": 36,
+   "min": 0.5695,
+   "max": 0.9524,
+   "mean": 0.7578305555555556,
+   "min_pair": "thomas|jackson",
+   "max_pair": "roberts|kavanaugh"
+  }
+ },
+ "figures": [
+  "/figures/fig1-bench.png",
+  "/figures/fig2-agreement.png",
+  "/figures/fig3-learning.png",
+  "/figures/fig4-roc.png",
+  "/figures/fig5-spectrum.png"
+ ]
+}

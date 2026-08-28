@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* shadcn mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-grotesk);
+  --font-mono: var(--font-plex-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* ——— Legally Subjective: UI-1.0 "EXHIBIT" ——— */
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-hairline: var(--hairline);
+  --color-row-hover: var(--row-hover);
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
+  --color-signal-on-ink: var(--signal-on-ink);
+  --font-display: var(--font-grotesk), system-ui, sans-serif;
+  --font-data: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+:root {
+  /* ============================================================
+     UI-1.0 “EXHIBIT” — the interface is evidence.
+     White light. Dense data. Zero decoration.
+     FIVE LAWS:
+     1. One background, one ink, ONE signal color.
+        Signal marks the variable, the delta, the live state.
+        It is never decoration.
+     2. Grotesk speaks. Mono measures.
+     3. Structure is exposed: 1px ink rules between zones,
+        1px hairlines inside. No radius. No shadow. No gradient.
+     4. State changes are CUTS (0ms). The only clocks are
+        the clock (1000ms) and the cursor (1060ms). No easing.
+     5. Every number is tabular, and traces to a filed
+        document — or it does not exist.
+     ============================================================ */
+  --paper: #ffffff;
+  --paper-2: #f7f7f5;
+  --ink: #0a0a0a;
+  --ink-2: #595959;
+  --ink-3: #8c8c8c;
+  --rule: #0a0a0a;
+  --hairline: #e3e3e3;
+  --row-hover: #f5f5f5;
+  --signal: #e4002b;
+  --signal-deep: #b40020;
+  --signal-on-ink: #ff4d6a;
+
+  /* data ramp — grayscale only; red is reserved for the highlight */
+  --d1: #0a0a0a;
+  --d2: #404040;
+  --d3: #737373;
+  --d4: #a6a6a6;
+  --d5: #d4d4d4;
+
+  /* shadcn wiring (light only — dark mode is banned in this house) */
+  --radius: 0rem;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-2);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--signal);
+  --border: var(--hairline);
+  --input: var(--rule);
+  --ring: var(--signal);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--paper-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--signal);
+}
+
+/* Dark mode is banned. If anything forces .dark, it gets the same white. */
+.dark {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-2);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: var(--signal);
+  --border: var(--hairline);
+  --input: var(--rule);
+  --ring: var(--signal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  /* Motion law: no smooth scroll. Anchors are cuts, like everything else. */
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-grotesk), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--signal);
+    color: #ffffff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
+  }
+}
+
+/* ——— The two clocks of the house ——— */
+
+/* The interrogation cursor. Blinks until frozen. */
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.8em;
+  margin-left: 0.12em;
+  transform: translateY(0.05em);
+  background: var(--ink);
+  animation: cursor-blink 1.06s steps(1, end) infinite;
+}
+.cursor.frozen {
+  animation: none;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+/* ——— Primitives ——— */
+
+/* Tabular numbers wherever data lives. Columns align. Always. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The micro-label: every zone carries its exhibit number. */
+.micro {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* The button: 1px ink, white ground. Hover inverts. Active signals. No radius. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--ink);
+  color: #ffffff;
+}
+.btn:active {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: #ffffff;
+}
+
+/* Custom scrollbar — graphite on white */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--d4);
+  border: 2px solid var(--paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-2);
+}
+
+/* ——— The reading room (LS-R articles only) ——— */
+
+/* Serif body for the research article. The site speaks Grotesk;
+   the paper reads like a paper: Newsreader, justified, measured. */
+.font-reader {
+  font-family: var(--font-reader), Georgia, "Times New Roman", serif;
+}
+.reader-body p {
+  font-size: 15.5px;
+  line-height: 1.78;
+  margin-block: 0 1.1em;
+  text-align: justify;
+  hyphens: auto;
+}
+.reader-body p:last-child {
+  margin-block-end: 0;
+}
+@media (max-width: 640px) {
+  .reader-body p {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+}
+.reader-h {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-block: 2.2em 0.9em 0;
+}
+.reader-sub {
+  font-size: 16px;
+  font-weight: 700;
+  margin-block: 1.6em 0.6em 0;
+}
+.reader-figcap {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-block: 0.7em 2em;
+  text-align: left;
+}
+.reader-refs p {
+  font-size: 13px;
+  line-height: 1.65;
+  margin-block: 0 0.7em;
+  text-align: left;
+}
+.reader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+.reader-table th {
+  font-weight: 600;
+  text-align: right;
+  padding: 8px 10px;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.reader-table th:first-child,
+.reader-table td:first-child {
+  text-align: left;
+}
+.reader-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--hairline);
+  text-align: right;
+  white-space: nowrap;
+}
+.reader-table tr:last-child td {
+  border-bottom: 1.5px solid var(--ink);
+}
