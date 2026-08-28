@@ -1,0 +1,1585 @@
+{
+ "count": 39,
+ "next": null,
+ "previous": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzE4MzIzMjAwMDAwJnM9OTU2NzA0NiZyPTEmdD1vJmQ9MjAyNi0wOC0yNyZwPTE%3D&filed_after=2020-10-01&format=json&judge=Ketanji+Brown+Jackson&order_by=dateFiled+desc&type=o",
+ "results": [
+  {
+   "absolute_url": "/opinion/9567046/united-states-trustee-v-john-q-hammons-fall-2006-llc/",
+   "attorney": "",
+   "caseName": "United States Trustee v. John Q. Hammons Fall 2006, LLC",
+   "caseNameFull": "",
+   "citation": [
+    "602 U.S. 487"
+   ],
+   "citeCount": 1,
+   "cluster_id": 9567046,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-01-09",
+   "dateFiled": "2024-06-14",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-1238",
+   "docket_id": 68147104,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:48.962273Z",
+    "date_created": "2024-06-14T15:01:21.949409Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      87868,
+      90244,
+      96405,
+      96876,
+      99473,
+      101131,
+      105746,
+      108316,
+      111114,
+      111659,
+      111686,
+      112444,
+      117883,
+      117961,
+      118170,
+      145672,
+      2790213,
+      2804677,
+      4181064,
+      4274908,
+      4546251,
+      4641442,
+      4697199,
+      6347224,
+      6347905,
+      6352829,
+      6680919,
+      9424299,
+      9427142,
+      9427659,
+      9432854,
+      9433869,
+      9434273,
+      9434536,
+      9487490
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/22-1238_i426.pdf",
+     "id": 10033659,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/06/14/united_states_trustee_v._john_q._hammons_fall_2006_llc.pdf",
+     "meta": {
+      "timestamp": "2025-11-29T20:16:55.695466Z",
+      "date_created": "2024-06-14T15:01:21.991757Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "a2bee322c8563437acee8e6e32ce0e2b4e834ec9",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2023                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10033659
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10600089/coinbase-v-suski/",
+   "attorney": "",
+   "caseName": "Coinbase v. Suski",
+   "caseNameFull": "",
+   "citation": [
+    "602 U.S. 143"
+   ],
+   "citeCount": 58,
+   "cluster_id": 10600089,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-02-28",
+   "dateFiled": "2024-05-23",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-3",
+   "docket_id": 68305309,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-06-07T06:45:46.714838Z",
+    "date_created": "2025-06-06T21:01:04.756920Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      117937,
+      6672015,
+      6672139,
+      9423492,
+      9430410,
+      9434977
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/602us1r26_k537.pdf",
+     "id": 11066677,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/05/23/coinbase_v._suski_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T20:34:43.631676Z",
+      "date_created": "2025-06-06T21:01:04.870576Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "c567557a27754881dfcfd560b17e00a64960290d",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 602 U. S. Part 1\n                             Pages 143–153\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 23, 2024\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11066677
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9506539/coinbase-v-suski/",
+   "attorney": "",
+   "caseName": "Coinbase v. Suski",
+   "caseNameFull": "",
+   "citation": [
+    "602 U.S. 143"
+   ],
+   "citeCount": 104,
+   "cluster_id": 9506539,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-02-28",
+   "dateFiled": "2024-05-23",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-3",
+   "docket_id": 68305309,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:50.410881Z",
+    "date_created": "2024-05-23T15:03:22.930065Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      96405,
+      117937,
+      4358632,
+      6672015,
+      6672139,
+      6682162,
+      8206047,
+      9423492,
+      9430410,
+      9434977,
+      9888387
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/23-3_879d.pdf",
+     "id": 9973152,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/05/23/coinbase_v._suski.pdf",
+     "meta": {
+      "timestamp": "2025-12-05T09:20:18.116027Z",
+      "date_created": "2024-05-23T15:03:23.026840Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "f5f7633a490359be0227fab71c3e063c7eb13b11",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2023                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9973152
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10600100/rudisill-v-mcdonough/",
+   "attorney": "",
+   "caseName": "Rudisill v. McDonough",
+   "caseNameFull": "",
+   "citation": [
+    "601 U.S. 294"
+   ],
+   "citeCount": 2,
+   "cluster_id": 10600100,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-11-08",
+   "dateFiled": "2024-04-16",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-888",
+   "docket_id": 67989807,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-06-07T06:45:47.918644Z",
+    "date_created": "2025-06-06T21:01:17.499083Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      112670,
+      117884,
+      9419372,
+      10516270
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/601us2r16_2dp3.pdf",
+     "id": 11066688,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/04/16/rudisill_v._mcdonough_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T20:34:42.724630Z",
+      "date_created": "2025-06-06T21:01:17.529311Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "f33e78529af81d3d5008a23bd60f11f23fe16b32",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 601 U. S. Part 2\n                             Pages 294–329\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                               April 16, 2024\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are req",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11066688
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9493900/rudisill-v-mcdonough/",
+   "attorney": "",
+   "caseName": "Rudisill v. McDonough",
+   "caseNameFull": "",
+   "citation": [
+    "601 U.S. 294"
+   ],
+   "citeCount": 7,
+   "cluster_id": 9493900,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-11-08",
+   "dateFiled": "2024-04-16",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-888",
+   "docket_id": 67989807,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:51.779070Z",
+    "date_created": "2024-04-16T15:01:33.345702Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      96405,
+      112670,
+      117884,
+      205712,
+      4181067,
+      4248497,
+      4534982,
+      4682788,
+      4702060,
+      9226081,
+      9326215,
+      9404160,
+      9419372,
+      9873454
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/22-888_1b8e.pdf",
+     "id": 9960513,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/04/16/rudisill_v._mcdonough.pdf",
+     "meta": {
+      "timestamp": "2025-11-29T12:36:17.766217Z",
+      "date_created": "2024-04-16T15:01:33.382979Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "1f58db2e8b81558661ab3e73f81cc103ed430c9f",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2023                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9960513
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10600112/mcelrath-v-georgia/",
+   "attorney": "",
+   "caseName": "McElrath v. Georgia",
+   "caseNameFull": "",
+   "citation": [
+    "601 U.S. 87"
+   ],
+   "citeCount": 23,
+   "cluster_id": 10600112,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-11-28",
+   "dateFiled": "2024-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-721",
+   "docket_id": 68039948,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-06-07T06:45:48.756134Z",
+    "date_created": "2025-06-06T21:01:24.733773Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      94515,
+      109891,
+      111286,
+      111663,
+      2502490,
+      9418734,
+      9421521,
+      9426742,
+      9426883,
+      9428554,
+      9428734,
+      9434733,
+      9502784,
+      9568176,
+      9781154,
+      9842021,
+      10516273,
+      10834156
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/601us1r05_1qm2.pdf",
+     "id": 11066700,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/02/21/mcelrath_v._georgia_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T20:34:43.092789Z",
+      "date_created": "2025-06-06T21:01:24.778952Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "9385f2f9f051d40c9891061cd86df6c980ef1416",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 601 U. S. Part 1\n                              Pages 87–99\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                             February 21, 2024\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are req",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11066700
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9477032/mcelrath-v-georgia/",
+   "attorney": "",
+   "caseName": "McElrath v. Georgia",
+   "caseNameFull": "",
+   "citation": [
+    "601 U.S. 87"
+   ],
+   "citeCount": 16,
+   "cluster_id": 9477032,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-11-28",
+   "dateFiled": "2024-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-721",
+   "docket_id": 68039948,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:53.634651Z",
+    "date_created": "2024-02-21T16:03:10.397622Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      94515,
+      96405,
+      101833,
+      105594,
+      109631,
+      109698,
+      109891,
+      109895,
+      110590,
+      110692,
+      111286,
+      111663,
+      137746,
+      820896,
+      1224105,
+      2502490,
+      2504897
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/23pdf/22-721_kjfl.pdf",
+     "id": 9942563,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/02/21/mcelrath_v._georgia.pdf",
+     "meta": {
+      "timestamp": "2025-11-29T09:58:45.106491Z",
+      "date_created": "2024-02-21T16:03:10.443321Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "052ba9ac1b9db95f4a3673e1394f4bc24a67ccc3",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2023                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9942563
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049672/lora-v-united-states/",
+   "attorney": "",
+   "caseName": "Lora v. United States",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 453"
+   ],
+   "citeCount": 34,
+   "cluster_id": 10049672,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-03-28",
+   "dateFiled": "2023-06-16",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-49",
+   "docket_id": 67102775,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:08.131067Z",
+    "date_created": "2024-08-22T18:34:08.000569Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      174017,
+      205265,
+      626993
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/599us1r41_2bo2.pdf",
+     "id": 10516272,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/16/lora_v._united_states_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-24T01:28:21.304518Z",
+      "date_created": "2024-08-22T18:34:08.032407Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "9f6af80320e1c884fb56afda3f44ad0e188e5f6d",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 599 U. S. Part 1\n                             Pages 453–464\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                               June 16, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516272
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9407188/lora-v-united-states/",
+   "attorney": "",
+   "caseName": "Lora v. United States",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 453"
+   ],
+   "citeCount": 31,
+   "cluster_id": 9407188,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-03-28",
+   "dateFiled": "2023-06-16",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-49",
+   "docket_id": 67102775,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:33.692596Z",
+    "date_created": "2023-06-16T15:01:12.786481Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      96405,
+      174017,
+      205265,
+      626993,
+      4434932,
+      9805757
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/22-49_d18e.pdf",
+     "id": 9402664,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/16/lora_v._united_states.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T20:21:45.090928Z",
+      "date_created": "2023-06-16T15:01:12.815713Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "7c1da4f94c8681c175ac08757afcd41e33229982",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9402664
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049674/lac-du-flambeau-band-of-lake-superior-chippewa-indians-v-coughlin/",
+   "attorney": "",
+   "caseName": "Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 382"
+   ],
+   "citeCount": 30,
+   "cluster_id": 10049674,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-04-24",
+   "dateFiled": "2023-06-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-227",
+   "docket_id": 67257419,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:09.521098Z",
+    "date_created": "2024-08-22T18:34:09.379981Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      84778,
+      85062,
+      85797,
+      86650,
+      86982,
+      89521,
+      90965,
+      94495,
+      95504,
+      103327,
+      109818,
+      109857,
+      111442,
+      112641,
+      112694,
+      118318,
+      118423,
+      121147,
+      145782,
+      626208,
+      785071,
+      2644672,
+      2655499,
+      2675751,
+      6075424,
+      10516296
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/599us1r39_3204.pdf",
+     "id": 10516274,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/15/lac_du_flambeau_band_of_lake_superior_chippewa_indians_v._coughlin_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-24T01:28:21.300677Z",
+      "date_created": "2024-08-22T18:34:09.410537Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "11ecd1909b71c239846e45489832b399a4cfce09",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 599 U. S. Part 1\n                             Pages 382–418\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                               June 15, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516274
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9406659/lac-du-flambeau-band-of-lake-superior-chippewa-indians-v-coughlin/",
+   "attorney": "",
+   "caseName": "Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 382"
+   ],
+   "citeCount": 23,
+   "cluster_id": 9406659,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-04-24",
+   "dateFiled": "2023-06-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-227",
+   "docket_id": 67257419,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:33.793835Z",
+    "date_created": "2023-06-15T15:01:51.465296Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      84778,
+      86650,
+      86982,
+      89521,
+      90965,
+      94495,
+      96405,
+      103327,
+      109818,
+      111442,
+      118423,
+      121147,
+      626208,
+      785071,
+      1457922,
+      2644672,
+      2655499,
+      6075424,
+      6338594,
+      9416266,
+      9416318,
+      9416337,
+      9416813,
+      9417865,
+      9427098,
+      9427176,
+      9428883,
+      9430547,
+      9431806,
+      9432384,
+      9432478,
+      9433869,
+      9433878,
+      9434981,
+      9435176,
+      9799717,
+      9824225,
+      9888068
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/22-227_i426.pdf",
+     "id": 9402135,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/15/lac_du_flambeau_band_of_lake_superior_chippewa_indians_v._coughlin.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T20:12:14.176258Z",
+      "date_created": "2023-06-15T15:01:51.496450Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "972fd41acea4ee514334b7d398a8cc18a93975b1",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9402135
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049677/health-and-hospital-corporation-of-marion-cty-v-talevski/",
+   "attorney": "",
+   "caseName": "Health and Hospital Corporation of Marion Cty. v. Talevski",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 166"
+   ],
+   "citeCount": 231,
+   "cluster_id": 10049677,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-11-08",
+   "dateFiled": "2023-06-08",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-806",
+   "docket_id": 65740707,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:11.828418Z",
+    "date_created": "2024-08-22T18:34:11.664133Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      87985,
+      89149,
+      89355,
+      90041,
+      95164,
+      96594,
+      99058,
+      100240,
+      102580,
+      104906,
+      106170,
+      108418,
+      108578,
+      109520,
+      109815,
+      110076,
+      110077,
+      110322,
+      110458,
+      110546,
+      111264,
+      111939,
+      112166,
+      112461,
+      112733,
+      112768,
+      117864,
+      118101,
+      118148,
+      121157,
+      145917,
+      288315,
+      809122,
+      2293149,
+      2620697,
+      2654532
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/599us1r36_feah.pdf",
+     "id": 10516277,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/08/health_and_hospital_corporation_of_marion_cty._v._talevski_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.227821Z",
+      "date_created": "2024-08-22T18:34:11.693739Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "deca421e6606929b7b10c8cbd9a637d4e14bde45",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 599 U. S. Part 1\n                             Pages 166–235\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                June 8, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516277
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9404968/health-and-hospital-corporation-of-marion-cty-v-talevski/",
+   "attorney": "",
+   "caseName": "Health and Hospital Corporation of Marion Cty. v. Talevski",
+   "caseNameFull": "",
+   "citation": [
+    "599 U.S. 166"
+   ],
+   "citeCount": 5,
+   "cluster_id": 9404968,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-11-08",
+   "dateFiled": "2023-06-08",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-806",
+   "docket_id": 65740707,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:34.106042Z",
+    "date_created": "2023-06-08T15:01:25.980293Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      87985,
+      89149,
+      89355,
+      90041,
+      95164,
+      96405,
+      96594,
+      99058,
+      100240,
+      109815,
+      112166,
+      145917,
+      288315,
+      2293149,
+      2654532,
+      2790213,
+      4706893,
+      8980660,
+      9418870,
+      9418925,
+      9419932,
+      9420593,
+      9422118,
+      9424704,
+      9426527,
+      9427567,
+      9427571,
+      9427612,
+      9427858,
+      9428027,
+      9428284,
+      9428452,
+      9428551,
+      9429770,
+      9430779,
+      9431078,
+      9431857,
+      9432070,
+      9432538,
+      9432622,
+      9433019,
+      9433509,
+      9433672,
+      9433805,
+      9434193,
+      9434282,
+      9434762,
+      9435860,
+      9493548,
+      9501447,
+      9795078,
+      9842134,
+      9842143
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-806_2dp3.pdf",
+     "id": 9400444,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/06/08/health_and_hospital_corporation_of_marion_cty._v._talevski.pdf",
+     "meta": {
+      "timestamp": "2025-12-05T09:23:44.685805Z",
+      "date_created": "2023-06-08T15:01:26.008698Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "aed5c666c585cc904e839aee8ab5d84f24dc1a1d",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9400444
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049693/santos-zacaria-v-garland/",
+   "attorney": "",
+   "caseName": "Santos-Zacaria v. Garland",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 411"
+   ],
+   "citeCount": 437,
+   "cluster_id": 10049693,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-17",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1436",
+   "docket_id": 66735159,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:21.716101Z",
+    "date_created": "2024-08-22T18:34:21.643608Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      1731,
+      1744,
+      1753,
+      65013,
+      77281,
+      112701,
+      131156,
+      145635,
+      145677,
+      145763,
+      145792,
+      145884,
+      169798,
+      205712,
+      620566,
+      787228,
+      815689,
+      1027358,
+      1212524,
+      2671724,
+      2672207,
+      2685545,
+      2771325,
+      2783180,
+      4349673,
+      4352080,
+      8414426,
+      10516303
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r19_dc8f.pdf",
+     "id": 10516293,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/santos-zacaria_v._garland_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.053337Z",
+      "date_created": "2024-08-22T18:34:21.676177Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "0b4daf5049416cccb0f8141698026a6a2ea6e3ea",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 411–431\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516293
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9398332/santos-zacaria-v-garland/",
+   "attorney": "",
+   "caseName": "Santos-Zacaria v. Garland",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 411"
+   ],
+   "citeCount": 321,
+   "cluster_id": 9398332,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-17",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1436",
+   "docket_id": 66735159,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.611536Z",
+    "date_created": "2023-05-11T15:01:05.100788Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      1753,
+      65013,
+      77281,
+      96405,
+      131156,
+      145677,
+      145763,
+      145884,
+      169798,
+      205712,
+      787228,
+      1027358,
+      1212524,
+      2671724,
+      2672207,
+      2685545,
+      2771325,
+      2783180,
+      2795703,
+      4218594,
+      4349673,
+      4352080,
+      4467409,
+      4707414,
+      6074419,
+      6672631,
+      7268274,
+      8414426,
+      9382639,
+      9413196,
+      9432482,
+      9433118,
+      9434908,
+      9435202,
+      9499526,
+      9501982,
+      9875951
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1436_n6io.pdf",
+     "id": 9393808,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/santos-zacaria_v._garland.pdf",
+     "meta": {
+      "timestamp": "2025-12-05T07:47:21.806271Z",
+      "date_created": "2023-05-11T15:01:05.175386Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "b5da690341466232f1c5d660d269deec21509092",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9393808
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049700/moac-mall-holdings-llc-v-transform-holdco-llc/",
+   "attorney": "",
+   "caseName": "MOAC Mall Holdings LLC v. Transform Holdco LLC",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 288"
+   ],
+   "citeCount": 49,
+   "cluster_id": 10049700,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-12-05",
+   "dateFiled": "2023-04-19",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1270",
+   "docket_id": 66612657,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:25.925966Z",
+    "date_created": "2024-08-22T18:34:25.847040Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      1731,
+      117920,
+      134738,
+      145677,
+      205712
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us1r14_3e04.pdf",
+     "id": 10516300,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/04/19/moac_mall_holdings_llc_v._transform_holdco_llc_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:47.097999Z",
+      "date_created": "2024-08-22T18:34:25.875254Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "fff8ba0978a71ff166f8b12df6e2923431aa80bd",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 1\n                             Pages 288–305\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                               April 19, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are req",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516300
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9392443/moac-mall-holdings-llc-v-transform-holdco-llc/",
+   "attorney": "",
+   "caseName": "MOAC Mall Holdings LLC v. Transform Holdco LLC",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 288"
+   ],
+   "citeCount": 40,
+   "cluster_id": 9392443,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-12-05",
+   "dateFiled": "2023-04-19",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1270",
+   "docket_id": 66612657,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:36.171060Z",
+    "date_created": "2023-04-19T15:01:03.943608Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      1731,
+      96405,
+      117920,
+      134738,
+      145677,
+      145688,
+      145751,
+      626209,
+      820748,
+      2620886,
+      7260395
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1270_3204.pdf",
+     "id": 9387919,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/04/19/moac_mall_holdings_llc_v._transform_holdco_llc.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T18:34:36.170062Z",
+      "date_created": "2023-04-19T15:01:03.972974Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "e59830404cf01187035371c5a1ae94f7adf88209",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9387919
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049705/delaware-v-pennsylvania/",
+   "attorney": "",
+   "caseName": "Delaware v. Pennsylvania",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 115"
+   ],
+   "citeCount": 17,
+   "cluster_id": 10049705,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": null,
+   "dateFiled": "2023-02-28",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "145, Orig.",
+   "docket_id": 66905891,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:51.125108Z",
+    "date_created": "2024-08-22T18:34:51.022811Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      106303,
+      106976,
+      108576,
+      110155,
+      112839,
+      2651114
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us1r7_3dq4.pdf",
+     "id": 10516305,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/02/28/delaware_v._pennsylvania_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:55.052046Z",
+      "date_created": "2024-08-22T18:34:51.056567Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "8aef5aa29902f1ab5f39c1852b6977b3b1d45a5c",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 1\n                             Pages 115–141\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                             February 28, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are re",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516305
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9380168/delaware-v-pennsylvania/",
+   "attorney": "",
+   "caseName": "Delaware v. Pennsylvania",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 115"
+   ],
+   "citeCount": 16,
+   "cluster_id": 9380168,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": null,
+   "dateFiled": "2023-02-28",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "145, Orig.",
+   "docket_id": 66905891,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:36.829465Z",
+    "date_created": "2023-02-28T16:01:07.127196Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      96405,
+      106303,
+      106976,
+      108576,
+      110155,
+      112839,
+      2651114,
+      7260402
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/145orig_kjfl.pdf",
+     "id": 9375644,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/02/28/delaware_v._pennsylvania.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T18:34:36.836473Z",
+      "date_created": "2023-02-28T16:01:07.368475Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "5d77888ab38c393e6801b11a92593a3efc7e1390",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9375644
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  }
+ ]
+}

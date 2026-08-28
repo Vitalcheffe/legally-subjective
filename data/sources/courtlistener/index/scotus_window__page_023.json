@@ -1,0 +1,1725 @@
+{
+ "count": 688,
+ "next": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjgzNzYzMjAwMDAwJnM9OTM5ODMzNCZ0PW8mZD0yMDI2LTA4LTI3JnA9MjQ%3D&filed_after=2020-10-01&format=json&order_by=dateFiled+desc&stat_Precedential=on&type=o",
+ "previous": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjg0MzY4MDAwMDAwJnM9MTAwNDk2OTEmcj0xJnQ9byZkPTIwMjYtMDgtMjcmcD0yMg%3D%3D&filed_after=2020-10-01&format=json&order_by=dateFiled+desc&stat_Precedential=on&type=o",
+ "results": [
+  {
+   "absolute_url": "/opinion/10049691/andy-warhol-foundation-for-visual-arts-inc-v-goldsmith/",
+   "attorney": "",
+   "caseName": "Andy Warhol Foundation for Visual Arts, Inc. v. Goldsmith",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 508"
+   ],
+   "citeCount": 41,
+   "cluster_id": 10049691,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-10-12",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-869",
+   "docket_id": 65419072,
+   "judge": "Sonia Sotomayor",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:20.364285Z",
+    "date_created": "2024-08-22T18:34:20.124737Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3045,
+     "cites": [
+      111062,
+      111432,
+      112420,
+      112568,
+      112936,
+      751770,
+      771448,
+      1292673,
+      3124896,
+      6672121,
+      7253988
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r23_c0n2.pdf",
+     "id": 10516291,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/andy_warhol_foundation_for_visual_arts_inc._v._goldsmith_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-24T01:28:20.610247Z",
+      "date_created": "2024-08-22T18:34:20.156189Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "d5c73bbe3682edda62cfe9787abb974faa4957cd",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 508–593\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 18, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516291
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049690/gonzalez-v-google-llc/",
+   "attorney": "",
+   "caseName": "Gonzalez v. Google LLC",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 617"
+   ],
+   "citeCount": 12,
+   "cluster_id": 10049690,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-02-21",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1333",
+   "docket_id": 66829908,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:18.919143Z",
+    "date_created": "2024-08-22T18:34:18.870906Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      10516287
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r25_i32j.pdf",
+     "id": 10516290,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/gonzalez_v._google_llc_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-24T01:28:20.594892Z",
+      "date_created": "2024-08-22T18:34:18.880661Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "d05a748d3f293e9f75c367c8486820e54afdd74c",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 617–622\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 18, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516290
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049689/ohio-adjutant-generals-dept-v-flra/",
+   "attorney": "",
+   "caseName": "Ohio Adjutant General's Dept. v. FLRA",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 449"
+   ],
+   "citeCount": 3,
+   "cluster_id": 10049689,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-09",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1454",
+   "docket_id": 66708626,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:18.489980Z",
+    "date_created": "2024-08-22T18:34:18.402637Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      105018,
+      111049,
+      118289,
+      162368,
+      318436,
+      772659,
+      2620697,
+      2649076
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r21_5425.pdf",
+     "id": 10516289,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/ohio_adjutant_generals_dept._v._flra_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-24T01:28:20.842474Z",
+      "date_created": "2024-08-22T18:34:18.432883Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "a8e989636c9bdc2576bccafa3cd13e6147f424fe",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 449–470\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 18, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516289
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049688/polselli-v-irs/",
+   "attorney": "",
+   "caseName": "Polselli v. IRS",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 432"
+   ],
+   "citeCount": 14,
+   "cluster_id": 10049688,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-03-29",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1599",
+   "docket_id": 67107270,
+   "judge": "John G. Roberts",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:17.987788Z",
+    "date_created": "2024-08-22T18:34:17.782049Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 2738,
+     "cites": [
+      108236,
+      109190,
+      110959,
+      111300,
+      118331,
+      134727,
+      136987,
+      222858,
+      626208,
+      767123,
+      868381
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r20_b07d.pdf",
+     "id": 10516288,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/polselli_v._irs_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.046599Z",
+      "date_created": "2024-08-22T18:34:17.811570Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "29164b465dd4279e6e0dcaf25dd0b341df8fb527",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 432–448\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 18, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516288
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049687/twitter-inc-v-taamneh/",
+   "attorney": "",
+   "caseName": "Twitter, Inc. v. Taamneh",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 471"
+   ],
+   "citeCount": 81,
+   "cluster_id": 10049687,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-02-22",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1496",
+   "docket_id": 66835761,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:17.218169Z",
+    "date_created": "2024-08-22T18:34:17.000988Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      103872,
+      104316,
+      104655,
+      109225,
+      117837,
+      118147,
+      329946,
+      571318,
+      783969,
+      806191,
+      820494,
+      944097,
+      1168079,
+      1293545,
+      1411519,
+      1485475,
+      2055651,
+      2375304,
+      2655590,
+      6412745,
+      6604230,
+      7377969,
+      7850003,
+      8907172,
+      10516290,
+      10516309
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r22_hejm.pdf",
+     "id": 10516287,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/twitter_inc._v._taamneh_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.091309Z",
+      "date_created": "2024-08-22T18:34:17.034029Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "4d8c6a620bec1b42712436712d731eb8023f5340",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 471–507\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 18, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516287
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400077/amgen-inc-v-sanofi/",
+   "attorney": "",
+   "caseName": "Amgen Inc. v. Sanofi",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 594"
+   ],
+   "citeCount": 13,
+   "cluster_id": 9400077,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-03-27",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-757",
+   "docket_id": 67094012,
+   "judge": "Neil Gorsuch",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.681080Z",
+    "date_created": "2023-05-18T15:01:03.738080Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1250,
+     "cites": [
+      85777,
+      86395,
+      89290,
+      90288,
+      92442,
+      94270,
+      96405,
+      96878,
+      98822,
+      101248,
+      101304,
+      112199,
+      1087738,
+      4209355,
+      4659495,
+      6682190,
+      8639979,
+      9416529,
+      9418774,
+      9421303,
+      9423185
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-757_k5g1.pdf",
+     "id": 9395553,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/amgen_inc._v._sanofi.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:40:06.863482Z",
+      "date_created": "2023-05-18T15:01:03.771357Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "6204560dde2503bdf29b11a305bf02873afccf0b",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395553
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400076/andy-warhol-foundation-for-visual-arts-inc-v-goldsmith/",
+   "attorney": "",
+   "caseName": "Andy Warhol Foundation for Visual Arts, Inc. v. Goldsmith",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 508"
+   ],
+   "citeCount": 9,
+   "cluster_id": 9400076,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-10-12",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-869",
+   "docket_id": 65419072,
+   "judge": "Sonia Sotomayor",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.248111Z",
+    "date_created": "2023-05-18T15:01:03.437709Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3045,
+     "cites": [
+      96405,
+      112568,
+      751770,
+      771448,
+      1292673,
+      3124896,
+      4671837,
+      6671998,
+      6672008,
+      6672014,
+      6672016,
+      6672020,
+      6672025,
+      6672119,
+      6672121,
+      6672126,
+      7253988,
+      8630848,
+      8631210,
+      9417897,
+      9426134,
+      9429426,
+      9430025,
+      9431989,
+      9432954,
+      9494472
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-869_87ad.pdf",
+     "id": 9395552,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/andy_warhol_foundation_for_visual_arts_inc._v._goldsmith.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:39:42.213187Z",
+      "date_created": "2023-05-18T15:01:03.467987Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "3f564b1df11bdc7639792df49217bcb41d2805b7",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395552
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400075/gonzalez-v-google-llc/",
+   "attorney": "",
+   "caseName": "Gonzalez v. Google LLC",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 617"
+   ],
+   "citeCount": 4,
+   "cluster_id": 9400075,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-02-21",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1333",
+   "docket_id": 66829908,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.107002Z",
+    "date_created": "2023-05-18T15:01:03.065481Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      4697508
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1333_6j7a.pdf",
+     "id": 9395551,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/gonzalez_v._google_llc.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:39:12.016474Z",
+      "date_created": "2023-05-18T15:01:03.073180Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "3be254711fd0c15217fe1a6104f0b55679072d4c",
+     "snippet": "(Slip Opinion)            Cite as: 598 U. S. ____ (2023)                              1\n\n                                     Per Curiam\n\n       NOTICE: This opinion is subject to formal revision before publication in the\n       United States Reports. Readers are requested to notify the Reporter of\n       Decisions, Supreme Court of the United States, Washington, D. C. 20543,\n       pio@supremecourt.gov, of any typographical or other formal errors.\n\n\nSUPREME COURT OF THE UNITED STATES\n          ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395551
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400074/ohio-adjutant-generals-dept-v-flra/",
+   "attorney": "",
+   "caseName": "Ohio Adjutant General's Dept. v. FLRA",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 449"
+   ],
+   "citeCount": 0,
+   "cluster_id": 9400074,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-09",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1454",
+   "docket_id": 66708626,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.429052Z",
+    "date_created": "2023-05-18T15:01:02.808396Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      96405,
+      111049,
+      162368,
+      318436,
+      772659,
+      2649076,
+      4238063,
+      5139352,
+      6680909,
+      9419885,
+      9420759,
+      9433265,
+      9433801,
+      9795078,
+      9795100
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1454_6kgm.pdf",
+     "id": 9395550,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/ohio_adjutant_generals_dept._v._flra.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:39:33.273508Z",
+      "date_created": "2023-05-18T15:01:02.840693Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "3546d000f930301215e9ac157f57a2a7151f0f1e",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395550
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400073/polselli-v-irs/",
+   "attorney": "",
+   "caseName": "Polselli v. IRS",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 432"
+   ],
+   "citeCount": 6,
+   "cluster_id": 9400073,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-03-29",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1599",
+   "docket_id": 67107270,
+   "judge": "John G. Roberts",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.388058Z",
+    "date_created": "2023-05-18T15:01:02.574183Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 2738,
+     "cites": [
+      96405,
+      108236,
+      109190,
+      110959,
+      111300,
+      118331,
+      134727,
+      136987,
+      218455,
+      222858,
+      626208,
+      767123,
+      767940,
+      868381
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1599_l5gm.pdf",
+     "id": 9395549,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/polselli_v._irs.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T18:34:35.447358Z",
+      "date_created": "2023-05-18T15:01:02.606647Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "0f876a4c74119131640ac637bd66729c1296fc9d",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395549
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400072/twitter-inc-v-taamneh/",
+   "attorney": "",
+   "caseName": "Twitter, Inc. v. Taamneh",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 471"
+   ],
+   "citeCount": 61,
+   "cluster_id": 9400072,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-02-22",
+   "dateFiled": "2023-05-18",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1496",
+   "docket_id": 66835761,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.313488Z",
+    "date_created": "2023-05-18T15:01:02.165330Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      96405,
+      103872,
+      329946,
+      377111,
+      417693,
+      454379,
+      571318,
+      783969,
+      806191,
+      820494,
+      944097,
+      1168079,
+      1177833,
+      1411519,
+      1485475,
+      2055651,
+      2375304,
+      2655590,
+      4697508,
+      6412745,
+      6604230,
+      7377969,
+      8907172,
+      9419862,
+      9420303,
+      9426045,
+      9432983,
+      9433532,
+      9476463,
+      9854195
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1496_d18f.pdf",
+     "id": 9395548,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/18/twitter_inc._v._taamneh.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:39:51.646249Z",
+      "date_created": "2023-05-18T15:01:02.233303Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "29f4ef2431002f791e18633f9b9427cbdad6c02d",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395548
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049697/ciminelli-v-united-states/",
+   "attorney": "",
+   "caseName": "Ciminelli v. United States",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 306"
+   ],
+   "citeCount": 70,
+   "cluster_id": 10049697,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-11-28",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1170",
+   "docket_id": 66528499,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:23.928574Z",
+    "date_created": "2024-08-22T18:34:23.789079Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      110221,
+      111404,
+      111945,
+      111964,
+      112596,
+      118298,
+      118390,
+      142889,
+      149286,
+      356054,
+      447912,
+      789980,
+      2671132,
+      4420460,
+      8413680
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r15_d1o2.pdf",
+     "id": 10516297,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/ciminelli_v._united_states_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:47.083369Z",
+      "date_created": "2024-08-22T18:34:23.818915Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "b2205d2318ec23dfc8089ae963a85bfca32e81bb",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 306–318\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516297
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049696/financial-oversight-and-management-bd-for-p-r-v-centro-de-periodismo/",
+   "attorney": "",
+   "caseName": "Financial Oversight and Management Bd. for P. R. v. Centro De Periodismo Investigativo, Inc.",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 339"
+   ],
+   "citeCount": 30,
+   "cluster_id": 10049696,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-11",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-96",
+   "docket_id": 66714377,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:23.367348Z",
+    "date_created": "2024-08-22T18:34:23.268669Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      84681,
+      97778,
+      109520,
+      110168,
+      112641,
+      112800,
+      118069,
+      118318,
+      142900,
+      145670,
+      145672,
+      215077,
+      626208
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r17_c0nd.pdf",
+     "id": 10516296,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/financial_oversight_and_management_bd._for_p._r._v._centro_de_periodismo_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:47.138581Z",
+      "date_created": "2024-08-22T18:34:23.298525Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "4d7916c4269f726f00455f7010d0381245036282",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 339–355\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516296
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049695/national-pork-producers-council-v-ross/",
+   "attorney": "",
+   "caseName": "National Pork Producers Council v. Ross",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 356"
+   ],
+   "citeCount": 112,
+   "cluster_id": 10049695,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-10-11",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-468",
+   "docket_id": 65414968,
+   "judge": "Neil Gorsuch",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:22.843086Z",
+    "date_created": "2024-08-22T18:34:22.764756Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1250,
+     "cites": [
+      85330,
+      85412,
+      85534,
+      87505,
+      88075,
+      90046,
+      90370,
+      90506,
+      94456,
+      96276,
+      97424,
+      101887,
+      102402,
+      103243,
+      103990,
+      104652,
+      105319,
+      105890,
+      108085,
+      109703,
+      109896,
+      110067,
+      110101,
+      110308,
+      110439,
+      110758,
+      111380,
+      111491,
+      111683,
+      112081,
+      112108,
+      112301,
+      112927,
+      117855,
+      118026,
+      118080,
+      118111,
+      145730,
+      145739,
+      186553,
+      525013,
+      931614,
+      1192989,
+      2816584
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r18_g2bh.pdf",
+     "id": 10516295,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/national_pork_producers_council_v._ross_2.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.018247Z",
+      "date_created": "2024-08-22T18:34:22.795326Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "0a6ffb617bfc7cd32b796e59d104463addb804af",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 356–410\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516295
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049694/percoco-v-united-states/",
+   "attorney": "",
+   "caseName": "Percoco v. United States",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 319"
+   ],
+   "citeCount": 29,
+   "cluster_id": 10049694,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-11-28",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1158",
+   "docket_id": 66514681,
+   "judge": "Samuel Alito",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:22.189504Z",
+    "date_created": "2024-08-22T18:34:22.108180Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 77,
+     "cites": [
+      89266,
+      100759,
+      111945,
+      149286,
+      1480190,
+      6607979,
+      6672057
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r16_4gdj.pdf",
+     "id": 10516294,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/percoco_v._united_states_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.040380Z",
+      "date_created": "2024-08-22T18:34:22.137879Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "0971b9e296a3c0db64c6f237bc220edf33b6b925",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 319–338\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516294
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10049693/santos-zacaria-v-garland/",
+   "attorney": "",
+   "caseName": "Santos-Zacaria v. Garland",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 411"
+   ],
+   "citeCount": 437,
+   "cluster_id": 10049693,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-17",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1436",
+   "docket_id": 66735159,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2024-08-22T18:34:21.716101Z",
+    "date_created": "2024-08-22T18:34:21.643608Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      1731,
+      1744,
+      1753,
+      65013,
+      77281,
+      112701,
+      131156,
+      145635,
+      145677,
+      145763,
+      145792,
+      145884,
+      169798,
+      205712,
+      620566,
+      787228,
+      815689,
+      1027358,
+      1212524,
+      2671724,
+      2672207,
+      2685545,
+      2771325,
+      2783180,
+      4349673,
+      4352080,
+      8414426,
+      10516303
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/598us2r19_dc8f.pdf",
+     "id": 10516293,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/santos-zacaria_v._garland_1.pdf",
+     "meta": {
+      "timestamp": "2025-10-27T17:55:54.053337Z",
+      "date_created": "2024-08-22T18:34:21.676177Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "0b4daf5049416cccb0f8141698026a6a2ea6e3ea",
+     "snippet": "                   PRELIMINARY PRINT\n\n             Volume 598 U. S. Part 2\n                             Pages 411–431\n\n\n\n\n       OFFICIAL REPORTS\n                                    OF\n\n\n   THE SUPREME COURT\n                                May 11, 2023\n\n\nPage Proof Pending Publication\n\n\n                   REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are requ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10516293
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9400078/national-pork-producers-council-v-ross/",
+   "attorney": "",
+   "caseName": "National Pork Producers Council v. Ross",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 356"
+   ],
+   "citeCount": 0,
+   "cluster_id": 9400078,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-10-11",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-468",
+   "docket_id": 65414968,
+   "judge": "Neil Gorsuch",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.750688Z",
+    "date_created": "2023-05-18T15:01:18.207131Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1250,
+     "cites": [
+      85330,
+      85412,
+      87505,
+      90370,
+      90506,
+      94456,
+      96405,
+      97424,
+      102402,
+      103243,
+      108085,
+      109703,
+      110067,
+      112081,
+      117855,
+      186553,
+      525013,
+      1192989,
+      2801433,
+      2816584,
+      4443989,
+      9015735,
+      9416295,
+      9416505,
+      9416760,
+      9417995,
+      9418740,
+      9419503,
+      9420296,
+      9420530,
+      9421201,
+      9421809,
+      9427044,
+      9427259,
+      9427269,
+      9427988,
+      9428137,
+      9428250,
+      9429963,
+      9430128,
+      9430529,
+      9431084,
+      9431365,
+      9431758,
+      9431811,
+      9432937,
+      9433102,
+      9433294,
+      9433410,
+      9433457,
+      9434438,
+      9435068,
+      9435081,
+      9435214,
+      9500013,
+      9515886,
+      9526946,
+      9527080,
+      9814755,
+      9841717,
+      9878532,
+      9883127,
+      9886092
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-468_c0ne.pdf",
+     "id": 9395554,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/national_pork_producers_council_v._ross_1.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T20:34:47.285260Z",
+      "date_created": "2023-05-18T15:01:18.239717Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "a8cb7ce8fbe91f8871d1efd99a1aeaf0e174f045",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9395554
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9398336/ciminelli-v-united-states/",
+   "attorney": "",
+   "caseName": "Ciminelli v. United States",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 306"
+   ],
+   "citeCount": 51,
+   "cluster_id": 9398336,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-11-28",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-1170",
+   "docket_id": 66528499,
+   "judge": "Clarence Thomas",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:36.104367Z",
+    "date_created": "2023-05-11T15:01:07.072925Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3200,
+     "cites": [
+      96405,
+      111404,
+      111964,
+      118390,
+      356054,
+      447912,
+      532548,
+      789980,
+      2652116,
+      2671132,
+      4420460,
+      4909137,
+      8413680,
+      9427819,
+      9431096,
+      9432281,
+      9433818,
+      9434781,
+      9435812,
+      9481681,
+      9483519
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-1170_b97d.pdf",
+     "id": 9393812,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/ciminelli_v._united_states.pdf",
+     "meta": {
+      "timestamp": "2025-12-05T07:47:38.984570Z",
+      "date_created": "2023-05-11T15:01:07.110726Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "7a9ddd6b00aca3d945a95814e9561f8279bbab04",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9393812
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9398335/financial-oversight-and-management-bd-for-p-r-v-centro-de-periodismo/",
+   "attorney": "",
+   "caseName": "Financial Oversight and Management Bd. for P. R. v. Centro De Periodismo Investigativo, Inc.",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 339"
+   ],
+   "citeCount": 20,
+   "cluster_id": 9398335,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2023-01-11",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "22-96",
+   "docket_id": 66714377,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.813085Z",
+    "date_created": "2023-05-11T15:01:06.668430Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      84681,
+      96405,
+      97778,
+      118069,
+      145672,
+      626208,
+      6341686,
+      9426527,
+      9427734,
+      9431732,
+      9432384,
+      9432709,
+      9433265,
+      9433869,
+      9433878,
+      9434445,
+      9434809,
+      9434968,
+      9799717,
+      9823986
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/22-96_6j7a.pdf",
+     "id": 9393811,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/financial_oversight_and_management_bd._for_p._r._v._centro_de_periodismo.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T18:16:42.314680Z",
+      "date_created": "2023-05-11T15:01:06.699321Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "95c25be0e6bf9b51b3b8a4e6f017b5a87a3bab72",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9393811
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/9398334/national-pork-producers-council-v-ross/",
+   "attorney": "",
+   "caseName": "National Pork Producers Council v. Ross",
+   "caseNameFull": "",
+   "citation": [
+    "598 U.S. 356"
+   ],
+   "citeCount": 25,
+   "cluster_id": 9398334,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2022-10-11",
+   "dateFiled": "2023-05-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "21-468",
+   "docket_id": 65414968,
+   "judge": "Neil Gorsuch",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:34:35.675802Z",
+    "date_created": "2023-05-11T15:01:06.235524Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1250,
+     "cites": [
+      85330,
+      85412,
+      87505,
+      90370,
+      90506,
+      94456,
+      96405,
+      97424,
+      102402,
+      103243,
+      108085,
+      109703,
+      110067,
+      112081,
+      117855,
+      186553,
+      525013,
+      1192989,
+      2801433,
+      2816584,
+      4443989,
+      9015735,
+      9416295,
+      9416505,
+      9416760,
+      9417995,
+      9418740,
+      9419503,
+      9420296,
+      9420530,
+      9421201,
+      9421809,
+      9427044,
+      9427259,
+      9427269,
+      9427988,
+      9428137,
+      9428250,
+      9429963,
+      9430128,
+      9430529,
+      9431084,
+      9431365,
+      9431758,
+      9431811,
+      9432937,
+      9433102,
+      9433294,
+      9433410,
+      9433457,
+      9434438,
+      9435068,
+      9435081,
+      9435214,
+      9500013,
+      9515886,
+      9526946,
+      9527080,
+      9814755,
+      9841717,
+      9878532,
+      9883127,
+      9886092
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/22pdf/21-468_5if6.pdf",
+     "id": 9393810,
+     "joined_by_ids": [],
+     "local_path": "pdf/2023/05/11/national_pork_producers_council_v._ross.pdf",
+     "meta": {
+      "timestamp": "2025-11-28T20:09:42.297374Z",
+      "date_created": "2023-05-11T15:01:06.275564Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "858d79e599a8b2306550626e15464e7e95e17b89",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2022                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    9393810
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  }
+ ]
+}

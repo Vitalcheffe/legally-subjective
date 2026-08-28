@@ -1,0 +1,15 @@
+{
+ "label": "opinions",
+ "pages": [
+  {
+   "page": 1,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?format=json&order_by=dateFiled+desc&court=scotus&type=o&judge=Ketanji+Brown+Jackson&filed_after=2020-10-01",
+   "retrieved_at": "2026-08-27T07:40:17Z"
+  },
+  {
+   "page": 2,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzE4MzIzMjAwMDAwJnM9MTA2MDAwNzcmdD1vJmQ9MjAyNi0wOC0yNyZwPTI%3D&filed_after=2020-10-01&format=json&judge=Ketanji+Brown+Jackson&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:18Z"
+  }
+ ]
+}

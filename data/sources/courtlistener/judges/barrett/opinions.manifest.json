@@ -1,0 +1,25 @@
+{
+ "label": "opinions",
+ "pages": [
+  {
+   "page": 1,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?format=json&order_by=dateFiled+desc&court=scotus&type=o&judge=Amy+Coney+Barrett&filed_after=2020-10-01",
+   "retrieved_at": "2026-08-27T07:40:10Z"
+  },
+  {
+   "page": 2,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzQ3ODcyMDAwMDAwJnM9MTA1ODk4MzYmdD1vJmQ9MjAyNi0wOC0yNyZwPTI%3D&filed_after=2020-10-01&format=json&judge=Amy+Coney+Barrett&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:12Z"
+  },
+  {
+   "page": 3,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzAxNzM0NDAwMDAwJnM9OTQ0OTA0MiZ0PW8mZD0yMDI2LTA4LTI3JnA9Mw%3D%3D&filed_after=2020-10-01&format=json&judge=Amy+Coney+Barrett&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:13Z"
+  },
+  {
+   "page": 4,
+   "uri": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNjI0MjMzNjAwMDAwJnM9NDg5MzQyMiZ0PW8mZD0yMDI2LTA4LTI3JnA9NA%3D%3D&filed_after=2020-10-01&format=json&judge=Amy+Coney+Barrett&order_by=dateFiled+desc&type=o",
+   "retrieved_at": "2026-08-27T07:40:15Z"
+  }
+ ]
+}

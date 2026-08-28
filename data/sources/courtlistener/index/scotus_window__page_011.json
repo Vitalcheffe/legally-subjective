@@ -1,0 +1,1718 @@
+{
+ "count": 688,
+ "next": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzMyMjMzNjAwMDAwJnM9MTA3NzY4ODAmdD1vJmQ9MjAyNi0wOC0yNyZwPTEy&filed_after=2020-10-01&format=json&order_by=dateFiled+desc&stat_Precedential=on&type=o",
+ "previous": "https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzQwMDk2MDAwMDAwJnM9MTA3NzY4NzMmcj0xJnQ9byZkPTIwMjYtMDgtMjcmcD0xMA%3D%3D&filed_after=2020-10-01&format=json&order_by=dateFiled+desc&stat_Precedential=on&type=o",
+ "results": [
+  {
+   "absolute_url": "/opinion/10776873/hungary-v-simon/",
+   "attorney": "",
+   "caseName": "Hungary v. Simon",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 115"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776873,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-12-03",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-867",
+   "docket_id": 69432337,
+   "judge": "Sonia Sotomayor",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:14.272475Z",
+    "date_created": "2026-01-20T18:03:01.995603Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3045,
+     "cites": [
+      110932,
+      145878,
+      4164892,
+      4246853,
+      4354961,
+      4657004,
+      4657005,
+      5524500,
+      9421132,
+      9422753,
+      9431516,
+      9432754,
+      9554254,
+      9778443,
+      9821354,
+      9822404,
+      9978377,
+      10803824
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r09_1b7d.pdf",
+     "id": 11243460,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/hungary_v._simon_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:09:25.949754Z",
+      "date_created": "2026-01-20T18:03:02.143504Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "711616de9e0ef036b6e52d8d9f1a119c1b1b9315",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                             Pages 115–139\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             February 21, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243460
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776872/williams-v-reed/",
+   "attorney": "",
+   "caseName": "Williams v. Reed",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 168"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776872,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-10-07",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-191",
+   "docket_id": 69231925,
+   "judge": "Brett Kavanaugh",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:14.077602Z",
+    "date_created": "2026-01-20T18:03:00.911675Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1713,
+     "cites": [
+      85330,
+      88034,
+      102264,
+      112456,
+      137744,
+      145872,
+      1088003,
+      2534203,
+      3011281,
+      7706307,
+      9413253,
+      9424206,
+      9428841,
+      9431388,
+      9432482,
+      9435372,
+      9795100,
+      9888741,
+      10453796,
+      10803823
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r11_2b8e.pdf",
+     "id": 11243459,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/williams_v._reed_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:11:16.463875Z",
+      "date_created": "2026-01-20T18:03:00.979808Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "fea37b7e05fc8704f08f3cde7d67dcc77cc20302",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                             Pages 168–191\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             February 21, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243459
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776871/wisconsin-bell-inc-v-united-states-ex-rel-heath/",
+   "attorney": "",
+   "caseName": "Wisconsin Bell, Inc. v. United States ex rel. Heath",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 140"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776871,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-11-04",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-1127",
+   "docket_id": 69341255,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:13.746781Z",
+    "date_created": "2026-01-20T18:02:59.749317Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      105694,
+      107624,
+      145798,
+      1028452,
+      2682104,
+      3011653,
+      3021312,
+      3213871,
+      9402663,
+      9414819,
+      9419289,
+      9421625,
+      9433083,
+      10479783,
+      10803822
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r10_mlio.pdf",
+     "id": 11243458,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/wisconsin_bell_inc._v._united_states_ex_rel._heath_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:11:12.072958Z",
+      "date_created": "2026-01-20T18:02:59.821635Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "ee4e188f1d8d7d0f447da191b96ba79eb564e2c1",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                             Pages 140–167\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             February 21, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243458
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10337236/hungary-v-simon/",
+   "attorney": "",
+   "caseName": "Hungary v. Simon",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 115"
+   ],
+   "citeCount": 11,
+   "cluster_id": 10337236,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-12-03",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-867",
+   "docket_id": 69432337,
+   "judge": "Sonia Sotomayor",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:33:20.718658Z",
+    "date_created": "2025-02-21T16:01:40.186122Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 3045,
+     "cites": [
+      96405,
+      110932,
+      145878,
+      4164892,
+      4246853,
+      4354961,
+      4657004,
+      4657005,
+      5524500,
+      9421132,
+      9422753,
+      9431516,
+      9432754,
+      9554254,
+      9778443,
+      9821354,
+      9822404,
+      9978377
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-867_5h26.pdf",
+     "id": 10803824,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/hungary_v._simon.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T21:52:42.384635Z",
+      "date_created": "2025-02-21T16:01:40.213926Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "bc5db9397e1fefd64a1e1c38d69d9fb91b873f9b",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10803824
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10337235/williams-v-reed/",
+   "attorney": "",
+   "caseName": "Williams v. Reed",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 168",
+    "145 S. Ct. 465",
+    "221 L. Ed. 2d 44"
+   ],
+   "citeCount": 23,
+   "cluster_id": 10337235,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-10-07",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-191",
+   "docket_id": 69231925,
+   "judge": "Brett Kavanaugh",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:45.787307Z",
+    "date_created": "2025-02-21T16:01:39.745885Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1713,
+     "cites": [
+      85330,
+      88034,
+      96405,
+      102264,
+      112456,
+      118434,
+      137744,
+      145872,
+      1088003,
+      2534203,
+      3011281,
+      7706307,
+      9387021,
+      9413253,
+      9424206,
+      9428841,
+      9431388,
+      9432482,
+      9435372,
+      9795100,
+      9888741,
+      10453796
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-191_q8l1.pdf",
+     "id": 10803823,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/williams_v._reed.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T21:52:48.547181Z",
+      "date_created": "2025-02-21T16:01:39.771487Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "9bd44a79731bbb6fea823de0076c6ffd358738c9",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10803823
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10337234/wisconsin-bell-inc-v-united-states-ex-rel-heath/",
+   "attorney": "",
+   "caseName": "Wisconsin Bell, Inc. v. United States ex rel. Heath",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 140",
+    "145 S. Ct. 498",
+    "221 L. Ed. 2d 24"
+   ],
+   "citeCount": 81,
+   "cluster_id": 10337234,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-11-04",
+   "dateFiled": "2025-02-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-1127",
+   "docket_id": 69341255,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:45.828341Z",
+    "date_created": "2025-02-21T16:01:39.244619Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      96405,
+      105694,
+      107624,
+      145798,
+      1028452,
+      2682104,
+      3011653,
+      3021312,
+      3213871,
+      9402663,
+      9414819,
+      9419289,
+      9421625,
+      9433083,
+      10479783
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-1127_k53l.pdf",
+     "id": 10803822,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/02/21/wisconsin_bell_inc._v._united_states_ex_rel._heath.pdf",
+     "meta": {
+      "timestamp": "2025-12-07T01:32:13.562589Z",
+      "date_created": "2025-02-21T16:01:39.289247Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "92738b9579a05fffe59036fc77a1b33ee9f88cd3",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10803822
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776874/andrew-v-white/",
+   "attorney": "",
+   "caseName": "Andrew v. White",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 86"
+   ],
+   "citeCount": 1,
+   "cluster_id": 10776874,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": null,
+   "dateFiled": "2025-01-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-6573",
+   "docket_id": 69560850,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:15.093463Z",
+    "date_created": "2026-01-20T18:03:04.309170Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      85330,
+      111471,
+      145897,
+      813020,
+      868383,
+      873668,
+      1256216,
+      2621423,
+      2670965,
+      2789927,
+      4217943,
+      4238064,
+      4551328,
+      4582848,
+      6333584,
+      6343024,
+      9381010,
+      9404568,
+      9419181,
+      9422632,
+      9424699,
+      9425708,
+      9428257,
+      9428322,
+      9430593,
+      9430976,
+      9432389,
+      9432422,
+      9433001,
+      9433265,
+      9434155,
+      9434318,
+      9434390,
+      9434617,
+      9435812,
+      9437862,
+      9438938,
+      9485375,
+      9796484,
+      9821185,
+      10784605
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r08_db8e.pdf",
+     "id": 11243461,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/21/andrew_v._white_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:09:42.749744Z",
+      "date_created": "2026-01-20T18:03:04.355689Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "db99df1b61b6b697626352e20d663e92b3bc7e10",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                              Pages 86–114\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                              January 21, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243461
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10318017/andrew-v-white/",
+   "attorney": "",
+   "caseName": "Andrew v. White",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 86",
+    "220 L. Ed. 2d 340",
+    "145 S. Ct. 75"
+   ],
+   "citeCount": 76,
+   "cluster_id": 10318017,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": null,
+   "dateFiled": "2025-01-21",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-6573",
+   "docket_id": 69560850,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:43.689319Z",
+    "date_created": "2025-01-21T15:01:28.933363Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      85330,
+      106634,
+      109024,
+      110443,
+      110474,
+      111471,
+      111717,
+      111891,
+      112643,
+      112660,
+      117851,
+      121169,
+      127898,
+      134748,
+      145897,
+      149286,
+      170677,
+      182992,
+      623144,
+      813020,
+      868383,
+      873668,
+      1256216,
+      2631102,
+      2670965,
+      10516264
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-6573_m647.pdf",
+     "id": 10784605,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/21/andrew_v._white.pdf",
+     "meta": {
+      "timestamp": "2025-11-26T18:11:43.598762Z",
+      "date_created": "2025-01-21T15:01:28.938164Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "d904ccd333a74796bb409b9227a153a47223e92c",
+     "snippet": "                  Cite as: 604 U. S. ____ (2025)           1\n\n                           Per Curiam\n\nSUPREME COURT OF THE UNITED STATES\n    BRENDA EVERS ANDREW v. TAMIKA WHITE,\n                  WARDEN\n   ON PETITION FOR WRIT OF CERTIORARI TO THE UNITED\n    STATES COURT OF APPEALS FOR THE TENTH CIRCUIT\n             No. 23–6573. Decided January 21, 2025\n\n  PER CURIAM.\n  An Oklahoma jury convicted Brenda Andrew of murder-\ning her husband, Rob Andrew, and sentenced her to death.\nThe State spent sig",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10784605
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776875/tiktok-inc-v-garland/",
+   "attorney": "",
+   "caseName": "TikTok Inc. v. Garland",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 56"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776875,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2025-01-10",
+   "dateFiled": "2025-01-17",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "24-656",
+   "docket_id": 69535496,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:15.367649Z",
+    "date_created": "2026-01-20T18:03:06.629922Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      145672,
+      2809763,
+      6319655,
+      6672015,
+      6672020,
+      9413187,
+      9418394,
+      9418596,
+      9419341,
+      9419503,
+      9420099,
+      9421855,
+      9427990,
+      9429122,
+      9429715,
+      9430705,
+      9431796,
+      9432641,
+      9432999,
+      9433029,
+      9433434,
+      9433638,
+      9441864,
+      9798642,
+      9807089,
+      9842067,
+      10345679,
+      10453796
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r07_k536.pdf",
+     "id": 11243462,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/17/tiktok_inc._v._garland_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:11:21.312219Z",
+      "date_created": "2026-01-20T18:03:06.693778Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "89d6e9ce3091e18122bd2a5d6266c94574455b38",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                               Pages 56–85\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                              January 17, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243462
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10316927/tiktok-inc-v-garland-revisions-11725/",
+   "attorney": "",
+   "caseName": "TikTok Inc. v. Garland Revisions: 1/17/25",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 56"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10316927,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2025-01-10",
+   "dateFiled": "2025-01-17",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "24-656",
+   "docket_id": 69535496,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:33:20.869446Z",
+    "date_created": "2025-01-17T22:01:14.480584Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      145672,
+      2809763,
+      6319655,
+      6672015,
+      6672020,
+      9413187,
+      9418394,
+      9418596,
+      9419341,
+      9419503,
+      9420099,
+      9421855,
+      9427990,
+      9429122,
+      9429600,
+      9429715,
+      9430705,
+      9431796,
+      9432641,
+      9432999,
+      9433029,
+      9433434,
+      9433638,
+      9441864,
+      9798642,
+      9807089,
+      9842067,
+      10345679,
+      10453796
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/24-656_new_3dq3.pdf",
+     "id": 10783515,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/17/tiktok_inc._v._garland_revisions_11725.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T17:13:02.299882Z",
+      "date_created": "2025-01-17T22:01:14.484620Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "17d287073395b7a09deccad8640cd1acec183940",
+     "snippet": "(Slip Opinion)            Cite as: 604 U. S. ____ (2025)                              1\n\n                                     Per Curiam\n\n       NOTICE: This opinion is subject to formal revision before publication in the\n       United States Reports. Readers are requested to notify the Reporter of\n       Decisions, Supreme Court of the United States, Washington, D. C. 20543,\n       pio@supremecourt.gov, of any typographical or other formal errors.\n\n\nSUPREME COURT OF THE UNITED STATES\n          ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10783515
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10316651/tiktok-inc-v-garland/",
+   "attorney": "",
+   "caseName": "TikTok Inc. v. Garland",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 56"
+   ],
+   "citeCount": 25,
+   "cluster_id": 10316651,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2025-01-10",
+   "dateFiled": "2025-01-17",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "24-656",
+   "docket_id": 69535496,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-10-27T18:33:20.944270Z",
+    "date_created": "2025-01-17T15:01:37.712489Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      145672,
+      2809763,
+      6319655,
+      6672015,
+      6672020,
+      9413187,
+      9418394,
+      9418596,
+      9419341,
+      9419503,
+      9420099,
+      9421855,
+      9427990,
+      9429122,
+      9429600,
+      9429715,
+      9430705,
+      9431796,
+      9432641,
+      9432999,
+      9433029,
+      9433434,
+      9433638,
+      9441864,
+      9798642,
+      9807089,
+      9842067,
+      10345679,
+      10453796
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/24-656_ca7d.pdf",
+     "id": 10783239,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/17/tiktok_inc._v._garland.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T17:12:40.314103Z",
+      "date_created": "2025-01-17T15:01:37.717814Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "f15b3e2ebac655661a07971f6c5b07c72becb92d",
+     "snippet": "(Slip Opinion)            Cite as: 604 U. S. ____ (2025)                              1\n\n                                     Per Curiam\n\n       NOTICE: This opinion is subject to formal revision before publication in the\n       United States Reports. Readers are requested to notify the Reporter of\n       Decisions, Supreme Court of the United States, Washington, D. C. 20543,\n       pio@supremecourt.gov, of any typographical or other formal errors.\n\n\nSUPREME COURT OF THE UNITED STATES\n          ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10783239
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776877/emd-sales-inc-v-carrera/",
+   "attorney": "",
+   "caseName": "E.M.D. Sales, Inc. v. Carrera",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 45"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776877,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-11-05",
+   "dateFiled": "2025-01-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-217",
+   "docket_id": 69345060,
+   "judge": "Brett Kavanaugh",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:16.160394Z",
+    "date_created": "2026-01-20T18:03:10.963194Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1713,
+     "cites": [
+      89785,
+      98056,
+      103314,
+      109052,
+      110067,
+      110825,
+      110966,
+      112522,
+      112618,
+      567286,
+      797168,
+      804084,
+      3212516,
+      6899040,
+      8129780,
+      9412260,
+      9419390,
+      9421568,
+      9422744,
+      9425816,
+      9428708,
+      9431657,
+      9434914,
+      9441719,
+      9500709,
+      9848572,
+      9931115,
+      10780778
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r06_5ifl.pdf",
+     "id": 11243464,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/15/e.m.d._sales_inc._v._carrera_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:09:50.332314Z",
+      "date_created": "2026-01-20T18:03:11.158254Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "9b2e7bb1010660b0d04049e9a15570fe20b8229a",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                               Pages 45–55\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                              January 15, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243464
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776876/royal-canin-u-s-a-v-wullschleger/",
+   "attorney": "",
+   "caseName": "Royal Canin U. S. A. v. Wullschleger",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 22"
+   ],
+   "citeCount": 3,
+   "cluster_id": 10776876,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-10-07",
+   "dateFiled": "2025-01-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-677",
+   "docket_id": 69232353,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:15.802543Z",
+    "date_created": "2026-01-20T18:03:08.120411Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      76037,
+      91055,
+      92989,
+      102976,
+      110990,
+      111915,
+      112531,
+      117845,
+      118069,
+      118372,
+      145677,
+      200935,
+      203225,
+      205712,
+      437714,
+      552840,
+      788371,
+      788629,
+      820904,
+      2745714,
+      4516143,
+      9382639,
+      9412476,
+      9423198,
+      9424226,
+      9427277,
+      9431164,
+      9431703,
+      9434608,
+      9435041,
+      9435113,
+      9500023,
+      10780777
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r05_db8e.pdf",
+     "id": 11243463,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/15/royal_canin_u._s._a._v._wullschleger_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:10:05.545085Z",
+      "date_created": "2026-01-20T18:03:09.539547Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "48760d973766affcfb6de0a6286107039c7623cd",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                               Pages 22–44\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                              January 15, 2025\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243463
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10314190/emd-sales-inc-v-carrera/",
+   "attorney": "",
+   "caseName": "E.M.D. Sales, Inc. v. Carrera",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 45",
+    "220 L. Ed. 2d 309",
+    "145 S. Ct. 34"
+   ],
+   "citeCount": 37,
+   "cluster_id": 10314190,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-11-05",
+   "dateFiled": "2025-01-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-217",
+   "docket_id": 69345060,
+   "judge": "Brett Kavanaugh",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:43.592893Z",
+    "date_created": "2025-01-15T16:01:27.684306Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1713,
+     "cites": [
+      89785,
+      96405,
+      98056,
+      103314,
+      109052,
+      110067,
+      110825,
+      110966,
+      112522,
+      112618,
+      567286,
+      797168,
+      804084,
+      3212516,
+      6899040,
+      8129780,
+      9412260,
+      9419390,
+      9421568,
+      9422744,
+      9425816,
+      9428708,
+      9431657,
+      9434914,
+      9441719,
+      9500709,
+      9848572,
+      9931115
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-217_9o6b.pdf",
+     "id": 10780778,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/15/e.m.d._sales_inc._v._carrera.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T16:58:11.809692Z",
+      "date_created": "2025-01-15T16:01:27.708752Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "126975a7711e5c281c26c3b39706153d2b950e07",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10780778
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10314189/royal-canin-u-s-a-v-wullschleger/",
+   "attorney": "",
+   "caseName": "Royal Canin U. S. A. v. Wullschleger",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 22",
+    "220 L. Ed. 2d 289",
+    "145 S. Ct. 41"
+   ],
+   "citeCount": 545,
+   "cluster_id": 10314189,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-10-07",
+   "dateFiled": "2025-01-15",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-677",
+   "docket_id": 69232353,
+   "judge": "Elana Kagan",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:40.288025Z",
+    "date_created": "2025-01-15T16:01:27.291623Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1691,
+     "cites": [
+      76037,
+      91055,
+      92989,
+      96405,
+      102976,
+      110990,
+      111915,
+      112531,
+      117845,
+      118069,
+      118372,
+      145677,
+      200935,
+      203225,
+      205712,
+      437714,
+      552840,
+      788371,
+      788629,
+      820904,
+      2745714,
+      4516143,
+      9382639,
+      9412476,
+      9423198,
+      9424226,
+      9427277,
+      9431164,
+      9431703,
+      9434608,
+      9435041,
+      9435113,
+      9500023
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-677_6jgm.pdf",
+     "id": 10780777,
+     "joined_by_ids": [],
+     "local_path": "pdf/2025/01/15/royal_canin_u._s._a._v._wullschleger.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T16:57:48.087663Z",
+      "date_created": "2025-01-15T16:01:27.333731Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "31f2c61f67fac9a7d46f62f6a5f2c24111b099dd",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10780777
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776878/nvidia-v-e-ohman-jor-fonder-ab/",
+   "attorney": "",
+   "caseName": "NVIDIA v. E. Ohman J:or Fonder AB",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 20"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776878,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-11-13",
+   "dateFiled": "2024-12-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-970",
+   "docket_id": 69372100,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:19.765974Z",
+    "date_created": "2026-01-20T18:03:12.420427Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      9696863,
+      10758036
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r04_5i36.pdf",
+     "id": 11243465,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/12/11/nvidia_v._e._ohman_jor_fonder_ab_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:09:31.109362Z",
+      "date_created": "2026-01-20T18:03:12.471348Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "25dea04e91e4df51547752229ba88951fd80156d",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                               Pages 20–21\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             December 11, 2024\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243465
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10291448/nvidia-v-e-ohman-jor-fonder-ab/",
+   "attorney": "",
+   "caseName": "NVIDIA v. E. Ohman J:or Fonder AB",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 20",
+    "145 S. Ct. 33",
+    "220 L. Ed. 2d 259"
+   ],
+   "citeCount": 2,
+   "cluster_id": 10291448,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-11-13",
+   "dateFiled": "2024-12-11",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-970",
+   "docket_id": 69372100,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:40.158208Z",
+    "date_created": "2024-12-11T15:01:53.027983Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-970_2dq3.pdf",
+     "id": 10758036,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/12/11/nvidia_v._e._ohman_jor_fonder_ab.pdf",
+     "meta": {
+      "timestamp": "2025-11-26T18:11:40.085041Z",
+      "date_created": "2024-12-11T15:01:53.035313Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "cd26049b116d5b104d9b1acbfb42d628e78723ff",
+     "snippet": "(Slip Opinion)            Cite as: 604 U. S. ____ (2024)                              1\n\n                                     Per Curiam\n\n       NOTICE: This opinion is subject to formal revision before publication in the\n       United States Reports. Readers are requested to notify the Reporter of\n       Decisions, Supreme Court of the United States, Washington, D. C. 20543,\n       pio@supremecourt.gov, of any typographical or other formal errors.\n\n\nSUPREME COURT OF THE UNITED STATES\n          ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10758036
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776879/bouarfa-v-mayorkas/",
+   "attorney": "",
+   "caseName": "Bouarfa v. Mayorkas",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 6"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776879,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-10-15",
+   "dateFiled": "2024-12-10",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-583",
+   "docket_id": 69262312,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:03:22.892916Z",
+    "date_created": "2026-01-20T18:03:13.869212Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      785980,
+      1242350,
+      3021842,
+      4157520,
+      4445402,
+      4518657,
+      4534982,
+      5125890,
+      6341011,
+      9411936,
+      9413196,
+      9431344,
+      9432851,
+      9434125,
+      10757634
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r03_3f14.pdf",
+     "id": 11243466,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/12/10/bouarfa_v._mayorkas_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:10:13.194200Z",
+      "date_created": "2026-01-20T18:03:14.036111Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "c7f6f943fe5f7dd4f14bf250579afb2cf80decbc",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                               Pages 6–19\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             December 10, 2024\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243466
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10291046/bouarfa-v-mayorkas/",
+   "attorney": "",
+   "caseName": "Bouarfa v. Mayorkas",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 6",
+    "145 S. Ct. 24",
+    "220 L. Ed. 2d 245"
+   ],
+   "citeCount": 60,
+   "cluster_id": 10291046,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": null,
+   "dateArgued": "2024-10-15",
+   "dateFiled": "2024-12-10",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-583",
+   "docket_id": 69262312,
+   "judge": "Ketanji Brown Jackson",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2025-11-26T18:11:55.046435Z",
+    "date_created": "2024-12-10T16:01:15.144105Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": 1609,
+     "cites": [
+      96405,
+      785980,
+      1242350,
+      3021842,
+      4157520,
+      4445402,
+      4518657,
+      4534982,
+      5125890,
+      6341011,
+      6496704,
+      9411936,
+      9413196,
+      9431344,
+      9432851,
+      9434125
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/23-583_onjq.pdf",
+     "id": 10757634,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/12/10/bouarfa_v._mayorkas.pdf",
+     "meta": {
+      "timestamp": "2025-12-06T13:49:43.483614Z",
+      "date_created": "2024-12-10T16:01:15.184091Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "e0ca9ea2d38c08d23774ff7ee05ab531e407c160",
+     "snippet": "(Slip Opinion)              OCTOBER TERM, 2024                                       1\n\n                                       Syllabus\n\n         NOTE: Where it is feasible, a syllabus (headnote) will be released, as is\n       being done in connection with this case, at the time the opinion is issued.\n       The syllabus constitutes no part of the opinion of the Court but has been\n       prepared by the Reporter of Decisions for the convenience of the reader.\n       See United States v. Detroit ",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    10757634
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  },
+  {
+   "absolute_url": "/opinion/10776880/facebook-inc-v-amalgamated-bank/",
+   "attorney": "",
+   "caseName": "Facebook, Inc. v. Amalgamated Bank",
+   "caseNameFull": "",
+   "citation": [
+    "604 U.S. 4"
+   ],
+   "citeCount": 0,
+   "cluster_id": 10776880,
+   "court": "Supreme Court of the United States",
+   "court_citation_string": "SCOTUS",
+   "court_id": "scotus",
+   "court_jurisdiction": "F",
+   "dateArgued": "2024-11-06",
+   "dateFiled": "2024-11-22",
+   "dateReargued": null,
+   "dateReargumentDenied": null,
+   "docketNumber": "23-980",
+   "docket_id": 69348675,
+   "judge": "Per Curiam",
+   "lexisCite": "",
+   "meta": {
+    "timestamp": "2026-01-20T18:04:11.687875Z",
+    "date_created": "2026-01-20T18:03:15.491139Z",
+    "score": {
+     "bm25": null
+    }
+   },
+   "neutralCite": "",
+   "non_participating_judge_ids": [],
+   "opinions": [
+    {
+     "author_id": null,
+     "cites": [
+      9891455,
+      10748779
+     ],
+     "download_url": "https://www.supremecourt.gov/opinions/24pdf/604us1r02_j4ek.pdf",
+     "id": 11243467,
+     "joined_by_ids": [],
+     "local_path": "pdf/2024/11/22/facebook_inc._v._amalgamated_bank_1.pdf",
+     "meta": {
+      "timestamp": "2026-01-20T18:11:32.621795Z",
+      "date_created": "2026-01-20T18:03:15.525902Z"
+     },
+     "ordering_key": null,
+     "per_curiam": false,
+     "sha1": "74009ba25ab83e1ebb62fd702451d49edcf93438",
+     "snippet": "                   PRELIMINARY PRINT\n\n              Volume 604 U. S. Part 1\n                                Pages 4–5\n\n\n\n\n       OFFICIAL REPORTS\n                                     OF\n\n\n   THE SUPREME COURT\n                             November 6, 2024\n\n\nPage Proof Pending Publication\n\n\n                    REBECCA A. WOMELDORF\n                           reporter of decisions\n\n\n\n\n    NOTICE: This preliminary print is subject to formal revision before\n  the bound volume is published. Users are r",
+     "type": "combined-opinion"
+    }
+   ],
+   "panel_ids": [],
+   "panel_names": [],
+   "posture": "",
+   "procedural_history": "",
+   "scdb_id": "",
+   "sibling_ids": [
+    11243467
+   ],
+   "source": "C",
+   "status": "Published",
+   "suitNature": "",
+   "syllabus": ""
+  }
+ ]
+}
