@@ -1,1 +1,0 @@
-https://www.courtlistener.com/api/rest/v4/search/?court=scotus&cursor=cz0xNzQwMDk2MDAwMDAwJnM9MTA3NzY4NzMmdD1vJmQ9MjAyNi0wOC0yNyZwPTI%3D&format=json&judge=Sotomayor&order_by=dateFiled+desc&page_size=100&type=o
