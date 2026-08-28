@@ -19,7 +19,7 @@ nu. Une précision sans intervalle est une opinion.
 | B1 Classe majoritaire (libérale, apprise du train) | 43,6 % | [37,2 ; 50,1] |
 | B2 Toujours conservateur | 56,4 % | [49,9 ; 62,8] |
 | B2 Toujours libéral | 43,6 % | [37,2 ; 50,1] |
-| B3 Toujours infirmer | 54,9 % | [47,9 ; 61,7] |
+| B3 Toujours infirmer | 60,1 % | [51,8 ; 67,9] |
 | B4 Idéologie par juge — vote | 63,7 % | [62,3 ; 65,0] |
 | B4 Idéologie par juge — affaire | 55,8 % | [49,3 ; 62,2] |
 
@@ -43,9 +43,11 @@ train et le test).
    juges sans lire les dossiers.
 
 3. **Le pari à battre pour les conditions A/B/C est donc :
-   56,4 %** (toujours conservateur) au niveau affaire, et **63,7 %** au
+   60,1 %** (toujours infirmer) au niveau affaire, et **63,7 %** au
    niveau vote. Un modèle de langage qui lit le dossier et fait moins bien
-   que ces deux chiffres a été distancé par une table de fréquences.
+   que ces deux chiffres a été distancé par une table de fréquences. Notez
+   que « toujours infirmer » bat « toujours conservateur » : le tribunal
+   infirme beaucoup — c'est l'effet de sélection du certiorari.
 
 4. **Ce que ça ne dit pas.** Ces baselines ignorent le contenu des dossiers.
    Elles ne disent rien du risque de sur-apprentissage temporel, et elles

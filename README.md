@@ -48,7 +48,7 @@ Dans les deux cas, la mesure elle-même est le résultat.
 |---|---|---|
 | Classe majoritaire | 43,6 % | [37,2 ; 50,1] |
 | Toujours conservateur | 56,4 % | [49,9 ; 62,8] |
-| Toujours infirmer | 54,9 % | [47,9 ; 61,7] |
+| Toujours infirmer | 60,1 % | [51,8 ; 67,9] |
 | Idéologie par juge (vote) | 63,7 % | [62,3 ; 65,0] |
 | Idéologie par juge (affaire) | 55,8 % | [49,3 ; 62,2] |
 
