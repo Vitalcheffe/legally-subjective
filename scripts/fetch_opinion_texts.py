@@ -11,6 +11,9 @@ Lenteur maîtrisée (1 requête/s + reprise sur état) ; sorties :
   data/raw/opinion_texts/opinions_text.jsonl.gz
 
 Usage :  python3 fetch_opinion_texts.py [--budget 500] [--page-check]
+         python3 fetch_opinion_texts.py --budget 540 --wait-on-429
+                 (mode quota : le token gratuit est limité à 5 req/min ;
+                 le script dort le Retry-After et continue au lieu de s'arrêter)
 """
 import argparse
 import gzip
@@ -85,11 +88,23 @@ def main():
             except urllib.error.HTTPError as e:
                 if e.code == 429:
                     ra = int(e.headers.get("Retry-After", "60"))
-                    log(f"429 — Retry-After {ra}s ; arrêt propre de cet appel")
-                    break
-                log(f"opinion {oid} : HTTP {e.code}")
-                time.sleep(1)
-                continue
+                    if args.wait_on_429:
+                        log(f"429 — Retry-After {ra}s ; attente et poursuite (mode quota)")
+                        time.sleep(ra + 1)
+                        try:
+                            d = fetch(oid, token)
+                        except urllib.error.HTTPError as e2:
+                            if e2.code == 429:
+                                log(f"429 persistant après attente — arrêt propre")
+                                break
+                            raise
+                    else:
+                        log(f"429 — Retry-After {ra}s ; arrêt propre de cet appel")
+                        break
+                else:
+                    log(f"opinion {oid} : HTTP {e.code}")
+                    time.sleep(1)
+                    continue
             rec = {
                 "opinion_id": oid,
                 "plain_text": d.get("plain_text") or "",
@@ -115,5 +130,7 @@ def main():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget", type=int, default=500)
+    ap.add_argument("--wait-on-429", action="store_true",
+                    help="dormir le Retry-After et poursuivre (token limité à 5 req/min)")
     args = ap.parse_args()
     main()
