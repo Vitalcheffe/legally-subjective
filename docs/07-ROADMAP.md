@@ -6,7 +6,7 @@
 |---|---|---|
 | **M1 — Corpus-Monde** | ✅ **gelé (2026-08-28)** | 569 affaires OT2015–2023, 1 778 opinions, votes SCDB, audio, scellé 5-4 |
 | **M2 — Baselines** | ✅ **fait** | Classe majoritaire, idéologie par juge, infirmation, accords inter-juges |
-| **M1.5 — Nettoyage** | ⏳ suivant | Déduplication des textes d'opinions, normalisation, découpe train/val |
+| **M1.5 — Nettoyage** | ⏳ **en cours** | Textes d'opinions : collecte API lancée (token gratuit limité à 5 req/min — passes résumables, `--wait-on-429`) ; le site vit déjà sur le corpus (13 fiches LS-J re-mesurées, `scripts/transfuse_v2.py` + `verify_dockets.py`) |
 | **M3 — Entraînement** | ⏳ | Personas QLoRA (9 juges) sur Colab/Kaggle gratuits |
 | **M4 — Épreuve Finale** | ⏳ | Une seule passe sur les 50 affaires scellées |
 

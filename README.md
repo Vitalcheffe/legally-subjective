@@ -91,10 +91,13 @@ print('scellé 5-4 :', stats['five_four_selection']['sealed_sha256'])
 EOF
 ```
 
-À noter : le site affiche le dossier scellé de l'expérience auditée
-(LS-J-001…009, 237 affaires décidées) ; le corpus de recherche gelé v1
-(569 affaires) vit dans `data/processed/`. Le rattachement du site au
-nouveau corpus est prévu quand l'entraînement M3 produira ses résultats.
+À noter : le site tourne sur le corpus gelé v1 — les 13 fiches LS-J
+re-mesurées sur les votes SCDB (OT2015–2023, `scripts/transfuse_v2.py`,
+sceaux vérifiables par `scripts/verify_dockets.py`), les 569 affaires du
+dossier, l'accord inter-juges B5 et les baselines M2. Les conditions IA
+(A/B/C) restent à entraîner (M3) ; les pages qui les concernent affichent
+l'état réel du programme — la baseline statistique, jamais une prédiction
+inventée.
 
 La chaîne complète de reconstruction (téléchargements bulk → filtres → corpus)
 est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md).
