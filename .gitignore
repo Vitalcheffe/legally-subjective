@@ -6,3 +6,11 @@ __pycache__/
 data/raw/
 *.log
 .DS_Store
+
+# Node / Next.js (site statique)
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.vercel
