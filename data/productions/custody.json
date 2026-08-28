@@ -1,537 +1,773 @@
 {
- "dockets": {
-  "LS-J-001": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 232,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "5EA630886A9482883DB10C30D383C1C1A44F56F0BA1A7701F3F3DEF76BFFDFC5",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
+  "exported_at": "2026-08-28T22:35:27Z",
+  "law": "Every non-null value in a FILED docket traces to >= 1 public source URI, cached with retrieval timestamps. Tree hashes cover the exact corpus bytes the docket was computed from (sha256 of the frozen jsonl.gz files, recorded in stats_v1.json).",
+  "dockets": {
+    "LS-J-001": {
+      "subject": "John G. Roberts, Jr.",
+      "docket_sha256": "61447A2A000EC76C1CFB534695035D8B619FFEE062378DD74861A6EAC95F14E4",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
     },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/roberts/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:18Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "02007B64B2D25D535B1085E3B0E4A693FD2E22C8B0D821AD5757EE25239FF329",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
+    "LS-J-002": {
+      "subject": "Clarence Thomas",
+      "docket_sha256": "D99044B19C19B2E4DD94ED525872F5EC333E29A90E1941A63CC874AC0A2F0FD6",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
     },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/roberts/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:18Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "02007B64B2D25D535B1085E3B0E4A693FD2E22C8B0D821AD5757EE25239FF329",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
+    "LS-J-003": {
+      "subject": "Samuel A. Alito, Jr.",
+      "docket_sha256": "EF607B04E890ED69938A933614DA12039F413A21E241CB7E30F0C6E8D3ACAB70",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
     },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 232,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "5EA630886A9482883DB10C30D383C1C1A44F56F0BA1A7701F3F3DEF76BFFDFC5",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
+    "LS-J-004": {
+      "subject": "Sonia Sotomayor",
+      "docket_sha256": "CFAB9C20B447AA0A840C8EA929D769710FF8B99DF7C3DE9794E79E8C5201D85E",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-005": {
+      "subject": "Elena Kagan",
+      "docket_sha256": "62E874E0E2D4FF18C77F24668EBF6E6290A1A5C7D90CFB98EA3E04DB2D03D8EE",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-006": {
+      "subject": "Neil M. Gorsuch",
+      "docket_sha256": "EA861E749312A1DA55EEF16E6DF49DA72A35C4FDD2BF0EF26C74A97B4ABFB42C",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-007": {
+      "subject": "Brett M. Kavanaugh",
+      "docket_sha256": "DD854C41543B369917900C6CAF30847076C1ECF6D8DD341D37FF0ECF8071479B",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-008": {
+      "subject": "Amy Coney Barrett",
+      "docket_sha256": "4930A668B7715B59992D4DFC5909E16E2F55941AD8E4962489571D7015F9C478",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-009": {
+      "subject": "Ketanji Brown Jackson",
+      "docket_sha256": "648CD07A6E44C0D10930C1F4FC3715284B9EEF5CB23E87C7557BB367F8D7F45D",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-010": {
+      "subject": "Antonin Scalia",
+      "docket_sha256": "9C1422024D1AFDBC4DB294EE78692BBD56C8AFB722A6293E284406219E291FC9",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-011": {
+      "subject": "Anthony M. Kennedy",
+      "docket_sha256": "55E6A5F60843B3296751553BC278848C2FF4BDEEADB17D93AE9BC55708D0D87E",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-012": {
+      "subject": "Ruth Bader Ginsburg",
+      "docket_sha256": "09EA1C3FCFDFE717BCD4540FB750B5857F9F41B9266253EC53401695D918A745",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
+    },
+    "LS-J-013": {
+      "subject": "Stephen G. Breyer",
+      "docket_sha256": "703BBA3E169FF91136643F972A2C3D754313FF7F2B4124889EB08A653C653EEB",
+      "index": {
+        "files": 3,
+        "cache": "data/processed/corpus_{cases,justices,opinions}_v1.jsonl.gz — frozen Corpus-Monde v1",
+        "retrieved_window": [
+          "2026-08-28T07:54:52.019430Z",
+          "2026-08-28T22:35:27Z"
+        ],
+        "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+      },
+      "axes": {
+        "disposition": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (caseDisposition + vote records)",
+          "cache": "data/processed/corpus_{cases,justices}_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "temperament": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (vote records)",
+          "cache": "data/processed/corpus_justices_v1.jsonl.gz",
+          "files": 1,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "80DE52E033684B7117B061E8C59F0392C7B6C78E79412F05AC2D6FC7A665D5DF"
+        },
+        "precedent": {
+          "system": "scdb+courtlistener",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter) + CourtListener citeCount",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 3,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        },
+        "exposure": {
+          "system": "scdb-2025_01",
+          "uri_pattern": "http://scdb.wustl.edu (majOpinWriter)",
+          "cache": "data/processed/corpus_cases_v1.jsonl.gz",
+          "files": 2,
+          "retrieved_window": [
+            "2026-08-28T07:54:52Z",
+            "2026-08-28T22:35:27Z"
+          ],
+          "tree_sha256": "88A444BBAA45903379EDD7C1DD0DED91833C1B6439E68DF171080D234A47A381"
+        }
+      }
     }
-   },
-   "docket_sha256": "B85AC14A7BC080F954F005295C04DED1CC19CF79D4E11B598EDC26B913194F3D",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:39:18Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "John G. Roberts, Jr."
-  },
-  "LS-J-002": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 232,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "5EA630886A9482883DB10C30D383C1C1A44F56F0BA1A7701F3F3DEF76BFFDFC5",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/thomas/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:35Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "168E285AFFA90682F92F801EFA7C51D27BCB2E04B915070FC1A8561B133F8293",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/thomas/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:35Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "168E285AFFA90682F92F801EFA7C51D27BCB2E04B915070FC1A8561B133F8293",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 232,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "5EA630886A9482883DB10C30D383C1C1A44F56F0BA1A7701F3F3DEF76BFFDFC5",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "5E20B38F413F3555AA54E05CBFE80F800E8D979ABB297D90A2D5D8B90E497EFC",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:39:35Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Clarence Thomas"
-  },
-  "LS-J-003": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 229,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "B6A54DB7D60905B433A0B927601398226496EED431747597A341160B5CC61E5B",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/alito/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:41Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "7556C95AC59C0B253EDE7D67D18A856209FCE180D3176D9BFBA290B7878915E2",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/alito/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:41Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "7556C95AC59C0B253EDE7D67D18A856209FCE180D3176D9BFBA290B7878915E2",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 229,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "B6A54DB7D60905B433A0B927601398226496EED431747597A341160B5CC61E5B",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "BEA7CF93B06387AC8546D77150A0ED81A8665887A665B2F9AD83671C9F2D4903",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:41Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Samuel A. Alito, Jr."
-  },
-  "LS-J-004": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "217C333C1DEF3464413CF85E032FF6D6B5ECECCA881A67843E4D95E654F7E57C",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/sotomayor/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:53Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "5B6665A0CCEE8DE2C335E352C457D4679A115A25B4ADC2483CD07AC0C865B031",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/sotomayor/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:39:53Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "5B6665A0CCEE8DE2C335E352C457D4679A115A25B4ADC2483CD07AC0C865B031",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "217C333C1DEF3464413CF85E032FF6D6B5ECECCA881A67843E4D95E654F7E57C",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "D3AE178194C6FF4430B58B3556232345136AB2AEFDB1E1F1E217D2AE66069AD8",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:39:53Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Sonia Sotomayor"
-  },
-  "LS-J-005": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "DF90ADFE12D22A2F14C59F0F888197CCED5A92CF9083319B6C18F054D8B2F7A3",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/kagan/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:49Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "9445F2D9E0F015C4D645049B404F4725E98915B4BB3E291C2BBE5FFA30443907",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/kagan/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:49Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "9445F2D9E0F015C4D645049B404F4725E98915B4BB3E291C2BBE5FFA30443907",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "DF90ADFE12D22A2F14C59F0F888197CCED5A92CF9083319B6C18F054D8B2F7A3",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "E3A10BF4B7B178C140BA6040F4892299783D7EC451606506DA7DDFF8D2E2DB33",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:49Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Elena Kagan"
-  },
-  "LS-J-006": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 230,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "AB3AB612CE460019D77D9B6FD7523FFF1B6B0D55E7947DA0B050FAFEFBE3EE36",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/gorsuch/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:01Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "6DBE9179FFA3F54E71B55050586F747180E3BF8DA00BF24954D3E4223F7D6065",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/gorsuch/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:01Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "6DBE9179FFA3F54E71B55050586F747180E3BF8DA00BF24954D3E4223F7D6065",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 230,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "AB3AB612CE460019D77D9B6FD7523FFF1B6B0D55E7947DA0B050FAFEFBE3EE36",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "D06714D5F6BDF471FF61D8C5A0C762465D12C2E46479FF2C6605556271DA0C79",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:01Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Neil M. Gorsuch"
-  },
-  "LS-J-007": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "DF90ADFE12D22A2F14C59F0F888197CCED5A92CF9083319B6C18F054D8B2F7A3",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/kavanaugh/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:08Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "6C5C2B4998AD790366282528CC642862FF829AEC0610F0D994DB2D939F992FA0",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/kavanaugh/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:08Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "6C5C2B4998AD790366282528CC642862FF829AEC0610F0D994DB2D939F992FA0",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 231,
-     "retrieved_window": [
-      "2026-08-27T07:30:09Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "DF90ADFE12D22A2F14C59F0F888197CCED5A92CF9083319B6C18F054D8B2F7A3",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "D096AD9EDEE88E08666F2C5A15A8E0838B3875E14E2A20EBFEBEEF4D8C49ABA9",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:08Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Brett M. Kavanaugh"
-  },
-  "LS-J-008": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 220,
-     "retrieved_window": [
-      "2026-08-27T07:30:16Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "4489D9B3B6AA6904AD930A47F2611FD02EF544B824182E0BEA9FF805AD214B15",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/barrett/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:15Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "CE088F41188D2F6DF87270B81451B20002BBAA4CDDD70FD7473F1FCC13FA7599",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/barrett/opinions__page_NNN.json",
-     "files": 5,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:15Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "CE088F41188D2F6DF87270B81451B20002BBAA4CDDD70FD7473F1FCC13FA7599",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 220,
-     "retrieved_window": [
-      "2026-08-27T07:30:16Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "4489D9B3B6AA6904AD930A47F2611FD02EF544B824182E0BEA9FF805AD214B15",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "7E2B0564039F2D42A09F8493206ACA80083DAB1DB87AB003AED8C3B01F804328",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:15Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Amy Coney Barrett"
-  },
-  "LS-J-009": {
-   "axes": {
-    "disposition": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 151,
-     "retrieved_window": [
-      "2026-08-27T07:33:25Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "8466933FA1485000431085B53F5FCF0348B71C7CD901A13F14B0FCBC42EF89C8",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    },
-    "exposure": {
-     "cache": "data/sources/courtlistener/judges/jackson/opinions__page_NNN.json",
-     "files": 3,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:18Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "AF5CB9313CE915718BE2D6ED652815BE347073D82D2F2A9D0B4F6B8B5225588D",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "precedent": {
-     "cache": "data/sources/courtlistener/judges/jackson/opinions__page_NNN.json",
-     "files": 3,
-     "retrieved_window": [
-      "2026-08-27T07:28:24Z",
-      "2026-08-27T07:40:18Z"
-     ],
-     "system": "courtlistener",
-     "tree_sha256": "AF5CB9313CE915718BE2D6ED652815BE347073D82D2F2A9D0B4F6B8B5225588D",
-     "uri_pattern": "https://www.courtlistener.com/api/rest/v4/search/?judge=…&court=scotus&type=o"
-    },
-    "temperament": {
-     "cache": "data/sources/oyez/<docket>.json",
-     "files": 151,
-     "retrieved_window": [
-      "2026-08-27T07:33:25Z",
-      "2026-08-27T07:38:50Z"
-     ],
-     "system": "oyez",
-     "tree_sha256": "8466933FA1485000431085B53F5FCF0348B71C7CD901A13F14B0FCBC42EF89C8",
-     "uri_pattern": "https://api.oyez.org/cases/<term>/<docket>"
-    }
-   },
-   "docket_sha256": "81647C52B60F544C15A1BE244F5ACDFCBDBA57E2CB0DE8A890282B48C4BB2C41",
-   "index": {
-    "cache": "data/sources/courtlistener/index/",
-    "files": 37,
-    "retrieved_window": [
-     "2026-08-27T07:28:24Z",
-     "2026-08-27T07:40:18Z"
-    ],
-    "tree_sha256": "5CE554B2C3805602AEED8C6D7168B56B7F403E632779BF76CD1F689D2E45FB36"
-   },
-   "subject": "Ketanji Brown Jackson"
   }
- },
- "exported_at": "2026-08-27T07:53:52Z",
- "law": "Every non-null value in a FILED docket traces to >= 1 public source URI, cached with retrieval timestamps. Tree hashes cover the exact cache bytes the docket was computed from."
 }

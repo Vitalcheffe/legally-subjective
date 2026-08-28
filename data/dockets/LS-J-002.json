@@ -1,142 +1,152 @@
 {
- "axes": {
-  "disposition": {
-   "metric": "reversal-share",
-   "metric_def": "Petitioner-alignment rate: of the merits cases this justice voted in, the share where their side favored the party seeking relief (petitioner/appellant), resolved from the Oyez winning-party record. A directional outcome-orientation proxy — not an affirm/reverse count.",
-   "n": 226,
-   "percentile": 28,
-   "rank_band": [
-    6,
-    61
-   ],
-   "sources": [
-    "oyez:api.oyez.org/cases/<term>/<docket> — 232 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
-   ],
-   "status": "ok",
-   "value": 0.5973,
-   "value_ci95": [
-    0.5323,
-    0.6591
-   ]
-  },
-  "exposure": {
-   "metric": "publication-rate",
-   "metric_def": "Publication rate: authored lead opinions per year of service inside the declared window (service years from Oyez role metadata).",
-   "n": 69,
-   "percentile": 61,
-   "rank_band": [
-    6,
-    94
-   ],
-   "sources": [
-    "courtlistener:…/api/rest/v4/search/?judge=… — 69 lead-opinion pages cached under data/sources/courtlistener/judges/thomas/ with manifest"
-   ],
-   "status": "ok",
-   "value": 9.8571,
-   "value_ci95": null
-  },
-  "orality": {
-   "n": 0,
-   "note": "not computable from current sources",
-   "percentile": null,
-   "rank_band": null,
-   "status": "insufficient-data",
-   "value_ci95": null
-  },
-  "precedent": {
-   "metric": "citation-density",
-   "metric_def": "Citation density: mean number of authorities cited per authored lead opinion (CourtListener cites arrays). Engagement with precedent, measured by citation volume, not by treatment.",
-   "n": 69,
-   "percentile": 28,
-   "rank_band": [
-    17,
-    72
-   ],
-   "sources": [
-    "courtlistener:…/api/rest/v4/search/?judge=… — 69 lead-opinion pages cached under data/sources/courtlistener/judges/thomas/ with manifest"
-   ],
-   "status": "ok",
-   "value": 29.9565,
-   "value_ci95": null
-  },
-  "reversal": {
-   "n": 0,
-   "note": "not computable from current sources",
-   "percentile": null,
-   "rank_band": null,
-   "status": "insufficient-data",
-   "value_ci95": null
-  },
-  "temperament": {
-   "metric": "dissent-rate",
-   "metric_def": "Dissent rate: of the merits votes cast, the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
-   "n": 232,
-   "percentile": 61,
-   "rank_band": [
-    39,
-    72
-   ],
-   "sources": [
-    "oyez:api.oyez.org/cases/<term>/<docket> — 232 merits case files cached under data/sources/oyez/ (each carries __source_uri__ + __retrieved_at__)"
-   ],
-   "status": "ok",
-   "value": 0.194,
-   "value_ci95": [
-    0.1482,
-    0.2497
-   ]
-  }
- },
- "chain": {
-  "computed_at": "2026-08-27T12:00:12Z",
-  "correction": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
-  "pipeline": "legally-subjective/1.0.0",
-  "sha256": "765EDB9246A00D8D180A2BD4F3287419B9EA41F3C5F72C256C8E6C18B135C11A"
- },
- "docket": "LS-J-002",
- "filed_at": "2026-08-27T07:49:16Z",
- "limits": [
-  "Temperament is a collegiality proxy from public voting records, not a psychological assessment.",
-  "Percentiles are relative to the declared bench (the sitting Nine), not absolute qualities.",
-  "Small-bench rule: with 9 members, percentiles take 9 discrete values — the granularity is coarse by construction.",
-  "Reversal and Orality are null: SCOTUS is the terminal court (no reviewing treatment data), and oral-argument transcripts are not yet ingested.",
-  "The window is terms 2020-2026; a justice who joined mid-window has fewer observations by fact, not by choice."
- ],
- "projections": {
-  "iterations": 10000,
-  "quantiles": {
-   "p10": null,
-   "p50": null,
-   "p90": null
-  },
-  "seed_basis": "sha256(docket|axis|LS-1.0) truncated to 32 bits"
- },
- "raw": {
-  "dissents": 45,
-  "lead_opinions": 69,
-  "merits_votes": 232,
-  "separate_writings": 68,
-  "service_years_window": 7
- },
- "revision": 1,
- "standard": "LS-1.0",
- "status": "FILED",
- "subject": {
-  "bench": "scotus-sitting-2020-2026",
-  "bench_n": 9,
-  "court": "supreme-court-of-the-united-states",
-  "name": "Clarence Thomas",
-  "role": "associate-justice",
-  "slug": "thomas",
-  "small_bench": true
- },
- "supersedes": {
+  "standard": "LS-1.0",
   "docket": "LS-J-002",
-  "reason": "LS-AUDIT-001 inj.3: field 'ci95' held the bootstrap band of the percentile rank on the bench, not a confidence interval of the measured value — renamed 'rank_band'; 'value_ci95' (Wilson 95%) added for binomial-share metrics (disposition, temperament), null for means/rates (precedent, exposure).",
-  "revision": 0
- },
- "window": {
-  "end": "2026-08-24",
-  "start": "2020-10-01"
- }
+  "revision": 2,
+  "subject": {
+    "name": "Clarence Thomas",
+    "slug": "thomas",
+    "role": "associate-justice",
+    "court": "supreme-court-of-the-united-states",
+    "bench": "scotus-ot2015-2023",
+    "bench_n": 13,
+    "small_bench": false
+  },
+  "status": "FILED",
+  "filed_at": "2026-08-28T22:35:27Z",
+  "window": {
+    "start": "2015-10-01",
+    "end": "2024-06-30"
+  },
+  "raw": {
+    "merits_votes": 541,
+    "lead_opinions": 61,
+    "service_years_window": 9,
+    "separate_writings": 243,
+    "dissents": 126
+  },
+  "axes": {
+    "disposition": {
+      "metric": "reversal-share",
+      "metric_def": "Petitioner-alignment rate: of the decided cases with a clean affirm/reverse disposition (SCDB caseDisposition 2 or 4) where this justice voted, the share where their side favored the party seeking relief — in the majority when the Court reversed the judgment below, in the minority when it affirmed. A directional outcome-orientation proxy — not an affirm/reverse count; mixed and unsettled dispositions are excluded, not guessed.",
+      "value": 0.4711,
+      "value_ci95": [
+        0.4191,
+        0.5237
+      ],
+      "n": 346,
+      "percentile": 12,
+      "rank_band": [
+        12,
+        12
+      ],
+      "status": "ok",
+      "sources": [
+        "scdb:2025_01 — votes par juge fusionnés dans data/processed/corpus_justices_v1.jsonl.gz (corpus gelé v1, chaîne SHA-256 dans stats_v1.json)"
+      ]
+    },
+    "temperament": {
+      "metric": "dissent-rate",
+      "metric_def": "Dissent rate: of the merits votes cast (SCDB 2025_01), the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
+      "value": 0.2329,
+      "value_ci95": [
+        0.1992,
+        0.2703
+      ],
+      "n": 541,
+      "percentile": 81,
+      "rank_band": [
+        81,
+        81
+      ],
+      "status": "ok",
+      "sources": [
+        "scdb:2025_01 — votes par juge fusionnés dans data/processed/corpus_justices_v1.jsonl.gz (corpus gelé v1, chaîne SHA-256 dans stats_v1.json)"
+      ]
+    },
+    "precedent": {
+      "metric": "citation-impact",
+      "metric_def": "Citation impact: mean number of citing decisions received per authored majority opinion (CourtListener cluster citeCount, authorship from SCDB majOpinWriter). Influence on precedent, measured by citation volume, not by treatment. The frozen corpus does not carry outbound citation arrays — engagement with precedent (authorities cited) is not measurable from it; influence is, and is what this axis now reports.",
+      "value": 327.459,
+      "value_ci95": null,
+      "n": 61,
+      "percentile": 58,
+      "rank_band": [
+        65,
+        65
+      ],
+      "status": "ok",
+      "sources": [
+        "scdb:2025_01 (majOpinWriter, caseDisposition) + courtlistener:citeCount — fusionnés dans data/processed/corpus_cases_v1.jsonl.gz"
+      ]
+    },
+    "reversal": {
+      "metric": null,
+      "metric_def": null,
+      "value": null,
+      "value_ci95": null,
+      "n": 0,
+      "percentile": null,
+      "rank_band": null,
+      "status": "insufficient-data",
+      "sources": null,
+      "note": "not computable from current sources"
+    },
+    "orality": {
+      "metric": null,
+      "metric_def": null,
+      "value": null,
+      "value_ci95": null,
+      "n": 0,
+      "percentile": null,
+      "rank_band": null,
+      "status": "insufficient-data",
+      "sources": null,
+      "note": "not computable from current sources"
+    },
+    "exposure": {
+      "metric": "publication-rate",
+      "metric_def": "Publication rate: authored majority opinions per term of service inside the declared window (authorship from SCDB majOpinWriter, terms present in the frozen corpus).",
+      "value": 6.7778,
+      "value_ci95": null,
+      "n": 61,
+      "percentile": 69,
+      "rank_band": [
+        81,
+        81
+      ],
+      "status": "ok",
+      "sources": [
+        "scdb:2025_01 (majOpinWriter, caseDisposition) + courtlistener:citeCount — fusionnés dans data/processed/corpus_cases_v1.jsonl.gz"
+      ]
+    }
+  },
+  "projections": {
+    "iterations": 10000,
+    "quantiles": {
+      "p10": null,
+      "p50": null,
+      "p90": null
+    },
+    "seed_basis": "sha256(docket|axis|LS-1.0) truncated to 32 bits"
+  },
+  "limits": [
+    "Temperament is a collegiality proxy from public voting records, not a psychological assessment.",
+    "Percentiles are relative to the declared bench (the thirteen justices who sat OT2015–OT2023), not absolute qualities.",
+    "Small-bench rule: with 13 members, percentiles take 13 discrete values — the granularity is coarse by construction.",
+    "Reversal and Orality are null: SCOTUS is the terminal court (no reviewing treatment data), and oral-argument behavior is not yet ingested.",
+    "The window is OT2015–OT2023; a justice who sat for part of it has fewer observations by fact, not by choice.",
+    "Precedent measures citations received (influence), not authorities cited (engagement): the frozen corpus carries no outbound citation arrays, so the axis was re-based on CourtListener citeCount — the switch is disclosed here rather than silently kept. Citations accumulate with time: opinions authored late in the window (Barrett, Jackson) have had fewer years to be cited than early-window ones — a recency artifact of the measurement, visible in the values.",
+    "Disposition is computed on the clean affirm/reverse subset (SCDB caseDisposition 2/4); other dispositions are excluded rather than guessed."
+  ],
+  "chain": {
+    "computed_at": "2026-08-28T22:35:27Z",
+    "pipeline": "legally-subjective/2.0.0",
+    "correction": "Corpus-Monde v1 pivot: every axis recomputed from SCDB 2025_01 votes fused into the frozen corpus (OT2015–OT2023), replacing the Oyez window OCT2020–AUG2026. Precedent re-based from authorities-cited to citations-received; disclosed in limits.",
+    "sha256": "D99044B19C19B2E4DD94ED525872F5EC333E29A90E1941A63CC874AC0A2F0FD6"
+  },
+  "supersedes": {
+    "docket": "LS-J-002",
+    "revision": 1,
+    "reason": "Corpus-Monde v1: re-measured on SCDB 2025_01 votes, OT2015–OT2023 (13-justice bench), superseding the Oyez OCT2020–AUG2026 measurement."
+  }
 }

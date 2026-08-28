@@ -1,15 +1,15 @@
 {
   "standard": "LS-1.0",
-  "docket": "LS-J-004",
-  "revision": 2,
+  "docket": "LS-J-011",
+  "revision": 1,
   "subject": {
-    "name": "Sonia Sotomayor",
-    "slug": "sotomayor",
+    "name": "Anthony M. Kennedy",
+    "slug": "kennedy",
     "role": "associate-justice",
     "court": "supreme-court-of-the-united-states",
     "bench": "scotus-ot2015-2023",
     "bench_n": 13,
-    "small_bench": false
+    "small_bench": true
   },
   "status": "FILED",
   "filed_at": "2026-08-28T22:35:27Z",
@@ -18,26 +18,26 @@
     "end": "2024-06-30"
   },
   "raw": {
-    "merits_votes": 538,
-    "lead_opinions": 58,
-    "service_years_window": 9,
-    "separate_writings": 166,
-    "dissents": 140
+    "merits_votes": 188,
+    "lead_opinions": 23,
+    "service_years_window": 3,
+    "separate_writings": 35,
+    "dissents": 10
   },
   "axes": {
     "disposition": {
       "metric": "reversal-share",
       "metric_def": "Petitioner-alignment rate: of the decided cases with a clean affirm/reverse disposition (SCDB caseDisposition 2 or 4) where this justice voted, the share where their side favored the party seeking relief — in the majority when the Court reversed the judgment below, in the minority when it affirmed. A directional outcome-orientation proxy — not an affirm/reverse count; mixed and unsettled dispositions are excluded, not guessed.",
-      "value": 0.5159,
+      "value": 0.5669,
       "value_ci95": [
-        0.4633,
-        0.5682
+        0.48,
+        0.6499
       ],
-      "n": 345,
-      "percentile": 35,
+      "n": 127,
+      "percentile": 65,
       "rank_band": [
-        12,
-        12
+        96,
+        96
       ],
       "status": "ok",
       "sources": [
@@ -47,16 +47,16 @@
     "temperament": {
       "metric": "dissent-rate",
       "metric_def": "Dissent rate: of the merits votes cast (SCDB 2025_01), the share cast with the minority. A collegial-conduct proxy from public records — not a psychological assessment.",
-      "value": 0.2602,
+      "value": 0.0532,
       "value_ci95": [
-        0.2249,
-        0.2989
+        0.0291,
+        0.0951
       ],
-      "n": 538,
-      "percentile": 96,
+      "n": 188,
+      "percentile": 4,
       "rank_band": [
-        88,
-        88
+        4,
+        4
       ],
       "status": "ok",
       "sources": [
@@ -66,13 +66,13 @@
     "precedent": {
       "metric": "citation-impact",
       "metric_def": "Citation impact: mean number of citing decisions received per authored majority opinion (CourtListener cluster citeCount, authorship from SCDB majOpinWriter). Influence on precedent, measured by citation volume, not by treatment. The frozen corpus does not carry outbound citation arrays — engagement with precedent (authorities cited) is not measurable from it; influence is, and is what this axis now reports.",
-      "value": 236.8448,
+      "value": 611.7391,
       "value_ci95": null,
-      "n": 58,
-      "percentile": 35,
+      "n": 23,
+      "percentile": 88,
       "rank_band": [
-        58,
-        58
+        88,
+        88
       ],
       "status": "ok",
       "sources": [
@@ -106,13 +106,13 @@
     "exposure": {
       "metric": "publication-rate",
       "metric_def": "Publication rate: authored majority opinions per term of service inside the declared window (authorship from SCDB majOpinWriter, terms present in the frozen corpus).",
-      "value": 6.4444,
+      "value": 7.6667,
       "value_ci95": null,
-      "n": 58,
-      "percentile": 50,
+      "n": 23,
+      "percentile": 96,
       "rank_band": [
-        50,
-        50
+        96,
+        96
       ],
       "status": "ok",
       "sources": [
@@ -142,11 +142,6 @@
     "computed_at": "2026-08-28T22:35:27Z",
     "pipeline": "legally-subjective/2.0.0",
     "correction": "Corpus-Monde v1 pivot: every axis recomputed from SCDB 2025_01 votes fused into the frozen corpus (OT2015–OT2023), replacing the Oyez window OCT2020–AUG2026. Precedent re-based from authorities-cited to citations-received; disclosed in limits.",
-    "sha256": "CFAB9C20B447AA0A840C8EA929D769710FF8B99DF7C3DE9794E79E8C5201D85E"
-  },
-  "supersedes": {
-    "docket": "LS-J-004",
-    "revision": 1,
-    "reason": "Corpus-Monde v1: re-measured on SCDB 2025_01 votes, OT2015–OT2023 (13-justice bench), superseding the Oyez OCT2020–AUG2026 measurement."
+    "sha256": "55E6A5F60843B3296751553BC278848C2FF4BDEEADB17D93AE9BC55708D0D87E"
   }
 }
