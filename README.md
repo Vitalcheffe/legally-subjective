@@ -1,133 +1,216 @@
 # Legally Subjective
 
-> **Subjectivity, measured.** — Mesurer le plafond de prévisibilité des décisions
-> de la Cour suprême des États-Unis, avec des données publiques et un budget de
-> zéro euro.
+> **Subjectivity, measured.** — Measuring the upper bound of predictability
+> in U.S. Supreme Court decisions, using public data and a zero-euro budget.
 
-[![Statut](https://img.shields.io/badge/M1-corpus_gelé-brightgreen)](docs/07-ROADMAP.md)
-[![Licence code](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
-[![Licence données](https://img.shields.io/badge/données-CC_BY_4.0-blue)](LICENSE)
-[![Coût](https://img.shields.io/badge/coût-0_€_pour_toujours-success)](docs/00-VISION.md)
+<img src="docs/assets/hero.png" alt="Legally Subjective — the bench, thirteen filed dockets, disposition rates with Wilson 95% intervals" width="100%">
 
-## La question
+---
 
-Un modèle de langage peut-il prédire la décision d'un juge à partir du dossier,
-sans connaître le verdict ? Et si on lui apprend le « style » d'un juge
-précis — son persona — devient-il meilleur sur **les affaires futures** de ce
-juge ? Deux résultats sont publiez-zéro-euro :
+## The question
 
-1. **Oui** : le persona est extractible des textes publics → la subjectivité
-   judiciaire est en partie mesurable, quantifiable, reproductible.
-2. **Non** : le persona n'apporte rien au-delà du style → l'essentiel de la
-   décision n'est pas dans les données publiques.
+Can a language model predict a justice's vote from the case file alone,
+without the verdict? And if we teach it one specific justice's *style* —
+their persona — does it get better on that justice's **future** cases?
+Both outcomes publish:
 
-Dans les deux cas, la mesure elle-même est le résultat.
+1. **Yes** — the persona is extractible from public text; judicial
+   subjectivity leaves a measurable footprint.
+2. **No** — the persona adds nothing beyond style; the essential part of
+   the decision is not in the public data.
 
-## Ce qu'il y a dans ce dépôt (M1+M2)
+In both cases, the measurement itself is the result.
 
-| Élément | Contenu |
+The project is built like an experiment, not a product: a frozen corpus,
+pre-registered baselines, sealed test cases, and a site that displays the
+true state of the program at every step — never an invented prediction.
+
+---
+
+## The record
+
+<img src="docs/assets/corpus-window.png" alt="The corpus window — 569 case ticks, OT2015–OT2023, the seventy-nine five-four decisions in red" width="100%">
+
+**Corpus-Monde v1** (frozen 2026-08-28): every argued Supreme Court case
+from OT2015 to OT2023 — CourtListener metadata fused with SCDB 2025_01
+votes, every source hash-chained.
+
+| | |
 |---|---|
-| `data/processed/corpus_cases_v1.jsonl.gz` | **Corpus-Monde v1 gelé** : 569 affaires plaidées de la Cour suprême (OT2015–OT2023), métadonnées CourtListener + votes SCDB fusionnés |
-| `data/processed/corpus_opinions_v1.jsonl.gz` | Inventaire de 1 778 opinions (majorités, dissidences, concurrences) |
-| `data/processed/corpus_justices_v1.jsonl.gz` | ~5 000 lignes juge×affaire : vote, opinion, direction (SCDB 2025_01) |
-| `data/processed/stats_v1.json` | Règle du corpus, statistiques, **50 décisions 5-4 scellées** (SHA-256) |
-| `data/raw/provenance/` | SHA-256 de chaque source brute + prédicats de filtre exacts |
-| `results/m2_baselines.{json,md}` | Baselines statistiques M2 avec intervalles de confiance Wilson 95 % |
-| `scripts/` | Toute la chaîne de collecte et de construction, reproductible |
-| `src/`, `public/`, `prisma/` | **Le site** (Next.js) : THE DRAW en vitrine, les questions, /paper, /standard, fiches d'affaires et comparaisons de juges |
+| **569** argued cases | 9 terms, window 2015-10-01 → 2024-06-30 |
+| **13** justices | each with a FILED docket, LS-J-001 … LS-J-013 |
+| **1,778** opinions | majority, dissent, concurrence — inventory |
+| **4,730** recorded votes | 96.1% of cases carry SCDB votes |
+| **98.6%** audio coverage | oral argument + transcript, multimodal-ready |
 
-### Le corpus en trois chiffres
+---
 
-- **569 affaires** plaidées, 9 mandats (OT2015–OT2023), 96,1 % avec votes SCDB
-- **79 décisions 5-4** ; 50 d'entre elles sont scellées pour l'Épreuve Finale
-- **98,6 %** des affaires ont leur plaidoirie audio + transcription (pipeline
-  prêt pour les conditions multimodales)
+## The bar
 
-### Les baselines à battre (M2, jeu de test OT2020–2023)
+<img src="docs/assets/baselines.png" alt="The number to beat — five statistical baselines with Wilson 95% intervals, the 63.7% bar in red" width="100%">
 
-| Baseline | Précision | IC 95 % |
+Before any model is trained, the statistical baselines fix the price of
+admission (test set OT2020–2023, Wilson 95% intervals):
+
+| Baseline | Accuracy | 95% CI |
 |---|---|---|
-| Classe majoritaire | 43,6 % | [37,2 ; 50,1] |
-| Toujours conservateur | 56,4 % | [49,9 ; 62,8] |
-| Toujours infirmer | 60,1 % | [51,8 ; 67,9] |
-| Idéologie par juge (vote) | 63,7 % | [61,3 ; 65,9] |
-| Idéologie par juge (affaire) | 55,8 % | [49,3 ; 62,2] |
+| B1 — Majority class (liberal), OT2015–2019 prior | 43.6% | [37.2; 50.1] |
+| B4c — Per-justice ideology, case level | 55.8% | [49.3; 62.2] |
+| B2 — Always conservative | 56.4% | [49.9; 62.8] |
+| B3 — Always reverse the court below | 60.1% | [51.8; 67.9] |
+| **B4 — Per-justice ideology, vote level** | **63.7%** | **[61.3; 65.9]** |
 
-Détail : [`results/m2_baselines.md`](results/m2_baselines.md)
+Detail: [`results/m2_baselines.md`](results/m2_baselines.md)
 
-## Les quatre conditions de l'expérience
+Any model that claims to read the law must beat **63.7% of votes** —
+knowing nothing but each justice's ideological lean. That is the number
+the whole project is organized around.
+
+---
+
+## The lock
+
+<img src="docs/assets/sealed.png" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
+
+Seventy-nine decisions came down 5–4. Fifty of them are **sealed** until
+the Final Test: selected deterministically (Random MT, seeded by the
+SHA-256 of the sorted 5–4 list), frozen by hash, never trained on, never
+tuned on. The model will face them blind.
+
+The Final Test runs four conditions on the same hold-out:
 
 | Condition | Description |
 |---|---|
-| **A — Zéro-coup** | Llama 3 8B, invité à décider à partir du dossier, sans aucun apprentissage propre |
-| **B — Persona** | le même modèle, affiné QLoRA sur les opinions **passées** d'un juge ; testé sur ses affaires **futures** |
-| **C — Contexte** | le même modèle + récupération d'opinions antérieures similaires (RAG) |
-| **D — Statistique** | les baselines ci-dessus |
+| **A — Zero-shot** | Llama 3 8B decides from the dossier alone — no learning of its own |
+| **B — Persona** | the same model, QLoRA-finetuned on a justice's **past** opinions; tested on that justice's **future** cases |
+| **C — Context** | the same model + retrieval of similar earlier opinions (RAG) |
+| **D — Statistical** | the baselines above |
 
-**Le test décisif** : B > A sur des affaires futures jamais vues ⟹ le persona
-est extractible. B = A ⟹ la personnalité du juge n'est pas dans les données
-publiques. Les deux issues sont des résultats.
+**The decisive test**: B > A on never-seen future cases ⟹ the persona is
+extractible. B = A ⟹ the justice's personality is not in the public data.
+Both outcomes are results.
 
-## Reproduire
+---
 
-Le site se lance localement :
+## The bench
+
+<img src="docs/assets/agreement.png" alt="Sixty pairs — the 13×13 vote-agreement matrix, closest and widest pairs marked in red" width="100%">
+
+Sixty pairs, each measured on their common votes (2015–2024). The closest
+pair: Kavanaugh–Roberts, **94.6%** [91.6; 96.8]. The widest gap:
+Sotomayor–Thomas, **54.3%** [50.0; 58.5]. Ordered conservative to liberal,
+the blocks tell the story before the numbers do.
+
+---
+
+## The storefront
+
+<img src="docs/assets/the-draw.png" alt="The Draw — the wheel of thirteen justices, one segment drawn in red" width="100%">
+
+The site (Next.js) is the experiment's public face — [run it locally](#reproduce),
+or read it like a case file:
+
+| Route | What it files |
+|---|---|
+| `/` | **THE DRAW** — spin the bench; the wheel files a justice's record: disposition rate, Wilson interval, votes. Receipts only |
+| `/court` | the thirteen justices, their filed dockets LS-J-001…013 |
+| `/cases` · `/case/[id]` | all 569 cases — with **the baseline's call** on each (honest: the model is M3-pending) |
+| `/judge/[slug]` · `/compare` | divergence by issue area; sixty-pair agreement |
+| `/paper` | LS-R-002 — the research record |
+| `/standard` | LS-1.0 — the subjectivity fingerprint standard |
+| `/system-state` | the true state of the program, read live from the data |
+
+The site runs entirely on the frozen corpus: thirteen re-measured LS-J
+dockets (seals verifiable via `scripts/verify_dockets.py`), the 569-case
+record, the B5 inter-judge agreement, the M2 baselines. The AI conditions
+(A/B/C) are not trained yet (M3); every page that concerns them displays
+the real state of the program — the statistical baseline, never an
+invented prediction.
+
+---
+
+## What's in the repository
+
+| Item | Content |
+|---|---|
+| `data/processed/corpus_cases_v1.jsonl.gz` | **Frozen Corpus-Monde v1**: 569 argued cases, CourtListener + SCDB fused |
+| `data/processed/corpus_opinions_v1.jsonl.gz` | Inventory of 1,778 opinions |
+| `data/processed/corpus_justices_v1.jsonl.gz` | ~5,000 justice×case vote rows |
+| `data/processed/stats_v1.json` | Corpus rule, statistics, **50 sealed 5–4 cases** (SHA-256) |
+| `data/dockets/` | The 13 FILED justice dockets + MANIFEST |
+| `data/productions/` | The site's data layer: cases, agreement, research state, custody |
+| `data/raw/provenance/` | SHA-256 of every raw source + exact filter predicates |
+| `results/m2_baselines.{json,md}` | M2 statistical baselines, Wilson 95% |
+| `docs/` | Vision, methodology, corpus, baselines, protocol, reproducibility, ethics, roadmap, limits, resources, **visual guide** |
+| `docs/assets/` | The exhibits above — HTML sources + rendered PNGs (LS-EXHIBIT-1.0) |
+| `scripts/` | The full, reproducible collection and build chain |
+| `src/`, `public/`, `prisma/` | The site (Next.js) |
+
+---
+
+## Reproduce
 
 ```bash
 npm ci
 npm run dev        # http://localhost:3000
 ```
 
-Le dépôt de recherche :
+Verify the corpus integrity:
 
 ```bash
 git clone https://github.com/Vitalcheffe/legally-subjective.git
 cd legally-subjective
-# vérifier l'intégrité du corpus
 python3 - <<'EOF'
-import gzip, json
+import json
 stats = json.load(open('data/processed/stats_v1.json'))
-print(stats['n_cases'], 'affaires |', stats['n_opinions'], 'opinions')
-print('scellé 5-4 :', stats['five_four_selection']['sealed_sha256'])
+print(stats['n_cases'], 'cases |', stats['n_opinions'], 'opinions')
+print('sealed 5-4 :', stats['five_four_selection']['sealed_sha256'])
 EOF
 ```
 
-À noter : le site tourne sur le corpus gelé v1 — les 13 fiches LS-J
-re-mesurées sur les votes SCDB (OT2015–2023, `scripts/transfuse_v2.py`,
-sceaux vérifiables par `scripts/verify_dockets.py`), les 569 affaires du
-dossier, l'accord inter-juges B5 et les baselines M2. Les conditions IA
-(A/B/C) restent à entraîner (M3) ; les pages qui les concernent affichent
-l'état réel du programme — la baseline statistique, jamais une prédiction
-inventée.
+The full rebuild chain (bulk downloads → filters → corpus) is documented
+in [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md). The
+exhibits in this README regenerate from the live data:
+`python3 /home/z/my-project/scripts/make_visuals_*.py` → see
+[`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md) §XII.
 
-La chaîne complète de reconstruction (téléchargements bulk → filtres → corpus)
-est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md).
+---
 
-## Principes
+## Principles
 
-- **Zéro euro, pour toujours** : Colab/Kaggle gratuits, données publiques,
-  aucun service payant.
-- **Amateur, sérieusement** : jouable, critiquable, vérifiable par n'importe
-  qui — et assez rigoureux pour intéresser un chercheur.
-- **Provenance totale** : chaque fichier a son SHA-256, chaque règle son
-  prédicat, chaque exception sa note.
-- **Pas de commercialisation** : ni produit, ni paywall, ni donnée privée.
+- **Zero euro, forever** — free Colab/Kaggle compute, public data, no paid
+  service at any step.
+- **Amateur, seriously** — playable, criticizable, verifiable by anyone;
+  rigorous enough to interest a researcher.
+- **Total provenance** — every file has its SHA-256, every rule its
+  predicate, every exception its note.
+- **No commercialization** — no product, no paywall, no private data.
+
+---
 
 ## Documentation
 
-| Document | Contenu |
+| Document | Content |
 |---|---|
-| [`docs/00-VISION.md`](docs/00-VISION.md) | La question, l'éthique, le positionnement |
-| [`docs/01-METHODOLOGIE.md`](docs/01-METHODOLOGIE.md) | Les quatre conditions, le test décisif |
-| [`docs/02-CORPUS.md`](docs/02-CORPUS.md) | La règle du corpus, ses statistiques, ses failles connues |
-| [`docs/03-BASELINES.md`](docs/03-BASELINES.md) | Les baselines M2 et leur lecture |
-| [`docs/04-PROTOCOLE.md`](docs/04-PROTOCOLE.md) | L'Épreuve Finale : scellement, pré-enregistrement |
-| [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md) | Reconstruire tout, vérifier les hachages |
-| [`docs/06-ETHIQUE.md`](docs/06-ETHIQUE.md) | Données publiques, contre-factuels étiquetés |
-| [`docs/07-ROADMAP.md`](docs/07-ROADMAP.md) | Où on en est, où on va |
-| [`docs/08-LIMITES.md`](docs/08-LIMITES.md) | Ce que ce projet ne peut pas prouver |
-| [`docs/09-RESSOURCES.md`](docs/09-RESSOURCES.md) | Autres sources de données juridiques publiques (US, Europe, monde) — pour étendre ou répliquer |
+| [`docs/00-VISION.md`](docs/00-VISION.md) | The question, the ethics, the positioning |
+| [`docs/01-METHODOLOGIE.md`](docs/01-METHODOLOGIE.md) | The four conditions, the decisive test |
+| [`docs/02-CORPUS.md`](docs/02-CORPUS.md) | The corpus rule, its statistics, its known flaws |
+| [`docs/03-BASELINES.md`](docs/03-BASELINES.md) | The M2 baselines and how to read them |
+| [`docs/04-PROTOCOLE.md`](docs/04-PROTOCOLE.md) | The Final Test: sealing, pre-registration |
+| [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md) | Rebuild everything, verify the hashes |
+| [`docs/06-ETHIQUE.md`](docs/06-ETHIQUE.md) | Public data, labeled counterfactuals |
+| [`docs/07-ROADMAP.md`](docs/07-ROADMAP.md) | Where we are, where we go |
+| [`docs/08-LIMITES.md`](docs/08-LIMITES.md) | What this project cannot prove |
+| [`docs/09-RESSOURCES.md`](docs/09-RESSOURCES.md) | Other public legal data sources (US, Europe, world) |
+| [`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md) | LS-EXHIBIT-1.0 — how the exhibits are made |
+| [`docs/11-REPORT-A-Z.md`](docs/11-REPORT-A-Z.md) | **The project, A to Z** — the full report |
 
-## Citer
+(Primary documentation is progressively migrating from French to English;
+the deep docs remain in French for now — the data and code are language-neutral.)
+
+---
+
+## Cite
 
 ```bibtex
 @software{harch_el_korane_2026_legally,
@@ -138,11 +221,18 @@ est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md
 }
 ```
 
-## Sources des données
+---
 
-- [CourtListener](https://www.courtlistener.com) (Free Law Project) — dockets,
-  opinions, plaidoiries, transcriptions. Fichiers bulk du 2026-06-30 + API v4.
-- [Supreme Court Database (SCDB)](http://scdb.wustl.edu) — votes par juge,
-  directions de décision, édition 2025_01.
-- Toutes les données sont publiques ; voir `data/raw/provenance/` pour les
-  empreintes exactes.
+## Data sources
+
+- [CourtListener](https://www.courtlistener.com) (Free Law Project) —
+  dockets, opinions, oral arguments, transcripts. Bulk files 2026-06-30 +
+  API v4.
+- [Supreme Court Database (SCDB)](http://scdb.wustl.edu) — per-justice
+  votes, decision directions, edition 2025_01.
+- All data is public; see `data/raw/provenance/` for the exact
+  fingerprints.
+
+---
+
+*Lire ceci en français : [`README.fr.md`](README.fr.md)*
