@@ -74,8 +74,22 @@ def main():
     log(f"{len(ids)} opinions à récupérer")
 
     done = set()
+    cooldown_until = 0
     if os.path.exists(STATE):
-        done = set(json.load(open(STATE))["done"])
+        st = json.load(open(STATE))
+        done = set(st["done"])
+        cooldown_until = st.get("cooldown_until", 0)
+
+    if cooldown_until > time.time():
+        remain = int(cooldown_until - time.time())
+        log(f"token en cooldown (429 persistant) — encore {remain}s ; "
+            f"passe sautée (reprendre après le reset)")
+        raise SystemExit(0)
+    if cooldown_until:
+        # le cooldown est expiré : on l'efface avant de repartir
+        with open(STATE + ".tmp", "w") as fs:
+            json.dump({"done": sorted(done)}, fs)
+        os.replace(STATE + ".tmp", STATE)
 
     mode = "at" if os.path.exists(OUT) else "wt"
     n = 0
@@ -92,6 +106,17 @@ def main():
             except urllib.error.HTTPError as e:
                 if e.code == 429:
                     ra = int(e.headers.get("Retry-After", "60"))
+                    if ra > 600:
+                        # mur long (quota horaire/diurne épuisé) : on persiste le
+                        # cooldown pour que les passes suivantes sautent au lieu
+                        # de dormir tout leur budget — reprise propre au reset.
+                        with open(STATE + ".tmp", "w") as fs:
+                            json.dump({"done": sorted(done),
+                                       "cooldown_until": int(time.time() + ra)}, fs)
+                        os.replace(STATE + ".tmp", STATE)
+                        log(f"429 — Retry-After {ra}s (>10 min) ; cooldown "
+                            f"persisté dans state.json, arrêt propre de la passe")
+                        raise SystemExit(0)
                     if args.wait_on_429:
                         log(f"429 — Retry-After {ra}s ; attente et poursuite (mode quota)")
                         time.sleep(ra + 1)
