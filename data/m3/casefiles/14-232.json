@@ -1,0 +1,18 @@
+{
+ "docket": "14-232",
+ "case_name": "Harris v. Arizona Independent Redistricting Comm'n",
+ "term": 2015,
+ "issue_area": "2",
+ "lc_disposition": "",
+ "lower_court": "Federal district court",
+ "parties": "Wesley Harris, et al.v. Arizona Independent Redistricting Commission, et al. (Petitioner v. Respondent)",
+ "question": "(1) Does the desire to gain advantage for one political party justify intentionally over-populating voting districts so that individual votes are devalued, thereby violating the one-person, one-vote principle? (2) Does the desire to obtain favorable preclearance review from the Justice Department permit the creation of voting districts that deviate from the one-person, one-vote principle in the wake of the Supreme Court’s decision in Shelby County v. Holder ?",
+ "facts": "In 2012, the Arizona Independent Redistricting Commission redrew the map for the state legislative districts based on the results of the 2010 census. Wesley Harris and other individual voters sued the Commission and alleged that the newly redrawn districts were under-populated in Democratic-leaning districts and over-populated in Republican-leaning ones, and therefore that the Commission had violated the Equal Protection Clause of the Fourteenth Amendment. The Commission argued that the population deviations were the result of attempts to comply with the Voting Rights Act. The district court found in favor of the Commission and held that the redrawn districts represented a good faith effort to comply with the Voting Rights Act.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Harris v. Arizona Independent Redistricting Comm'n\nDocket: 14-232 | Term: OT2015 | Court below: Federal district court\nParties: Wesley Harris, et al.v. Arizona Independent Redistricting Commission, et al. (Petitioner v. Respondent)\nQuestion presented: (1) Does the desire to gain advantage for one political party justify intentionally over-populating voting districts so that individual votes are devalued, thereby violating the one-person, one-vote principle? (2) Does the desire to obtain favorable preclearance review from the Justice Department permit the creation of voting districts that deviate from the one-person, one-vote principle in the wake of the Supreme Court’s decision in Shelby County v. Holder ?\nFacts: In 2012, the Arizona Independent Redistricting Commission redrew the map for the state legislative districts based on the results of the 2010 census. Wesley Harris and other individual voters sued the Commission and alleged that the newly redrawn districts were under-populated in Democratic-leaning districts and over-populated in Republican-leaning ones, and therefore that the Commission had violated the Equal Protection Clause of the Fourteenth Amendment. The Commission argued that the population deviations were the result of attempts to comply with the Voting Rights Act. The district court found in favor of the Commission and held that the redrawn districts represented a good faith effort to comply with the Voting Rights Act.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

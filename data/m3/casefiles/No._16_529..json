@@ -1,0 +1,18 @@
+{
+ "docket": "No. 16–529.",
+ "case_name": "Kokesh v. Sec. & Exch. Comm'n",
+ "term": 2016,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Tenth Circuit",
+ "parties": "Charles R. Kokeshv. Securities and Exchange Commission (Petitioner v. Respondent)",
+ "question": "Does the five-year statute of limitations of 28 U.S.C. §2462 apply to claims brought by the Securities and Exchange Commission seeking repayment of illegally obtained funds?",
+ "facts": "The Securities and Exchange Commission (SEC) sued Charles Kokesh for violating federal securities law by misappropriating funds from four business development companies. The district court found in favor of the SEC and ordered that Kokesh pay $34.9 million for “the ill-gotten gains causally connected” to Kokesh’s violations. On appeal, Kokesh argued that this “disgorgement” order is barred by the five-year statute of limitations on this type of claim because the SEC brought its action more than five years after the claims accrued. The U.S. Court of Appeals for the Tenth Circuit affirmed the lower court’s ruling. The appellate court held that the five-year statute of limitations did not apply to this case because the ordered payment was remedial rather than punitive in nature. The goal of disgorgement is not to punish a wrongdoer for illegal activity, but rather to return to the rightful owner whatever profits the wrongdoer gained in the course of the illegal activity. Therefore, a disgorgement payment may be ordered so long as the amount “reasonably approximates the ill-gotten gains causally connected to the Defendant’s violations.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Kokesh v. Sec. & Exch. Comm'n\nDocket: No. 16–529. | Term: OT2016 | Court below: United States Court of Appeals for the Tenth Circuit\nParties: Charles R. Kokeshv. Securities and Exchange Commission (Petitioner v. Respondent)\nQuestion presented: Does the five-year statute of limitations of 28 U.S.C. §2462 apply to claims brought by the Securities and Exchange Commission seeking repayment of illegally obtained funds?\nFacts: The Securities and Exchange Commission (SEC) sued Charles Kokesh for violating federal securities law by misappropriating funds from four business development companies. The district court found in favor of the SEC and ordered that Kokesh pay $34.9 million for “the ill-gotten gains causally connected” to Kokesh’s violations. On appeal, Kokesh argued that this “disgorgement” order is barred by the five-year statute of limitations on this type of claim because the SEC brought its action more than five years after the claims accrued. The U.S. Court of Appeals for the Tenth Circuit affirmed the lower court’s ruling. The appellate court held that the five-year statute of limitations did not apply to this case because the ordered payment was remedial rather than punitive in nature. The goal of disgorgement is not to punish a wrongdoer for illegal activity, but rather to return to the rightful owner whatever profits the wrongdoer gained in the course of the illegal activity. Therefore, a disgorgement payment may be ordered so long as the amount “reasonably approximates the ill-gotten gains causally connected to the Defendant’s violations.”\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

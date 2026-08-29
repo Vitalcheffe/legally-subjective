@@ -1,0 +1,18 @@
+{
+ "docket": "20-1641",
+ "case_name": "Marietta Memorial Hospital Employee Health Benefit Plan v. DaVita Inc.",
+ "term": 2021,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Sixth Circuit",
+ "parties": "Marietta Memorial Hospital Employee Health Benefit Plan, et al.v. DaVita, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Did the Marietta Memorial Hospital Employee Health Benefit Plan violate the Medicare Secondary Payer Act’s non-discrimination provisions through its reimbursement structure for dialysis providers?",
+ "facts": "DaVita is the leading provider of dialysis treatment in the United States. Marietta Memorial Hospital Employee Health Benefit Plan is a self-funded plan governed by the Employee Retirement Income Security Act of 1974 (“ERISA”). Patient A is an anonymous individual with end-stage renal disease who is a member of the plan and has been receiving treatment by DaVita since April 15, 2017. The Plan defines three tiers of reimbursement, and dialysis providers are categorically in the lowest tier and are considered out of network, entitling them to the lowest level of reimbursement relative to all other providers. DaVita challenged the Plan as violating the Medicare Secondary Payer Act, which prohibits health plans from treating individuals with kidney failure differently in eligibility or access to benefits. The district court dismissed all of DaVita’s claims, and the U.S. Court of Appeals for the Sixth Circuit reversed in part, finding that DaVita had plausibly alleged that the Plan engaged in unlawful discrimination.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Marietta Memorial Hospital Employee Health Benefit Plan v. DaVita Inc.\nDocket: 20-1641 | Term: OT2021 | Court below: United States Court of Appeals for the Sixth Circuit\nParties: Marietta Memorial Hospital Employee Health Benefit Plan, et al.v. DaVita, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Did the Marietta Memorial Hospital Employee Health Benefit Plan violate the Medicare Secondary Payer Act’s non-discrimination provisions through its reimbursement structure for dialysis providers?\nFacts: DaVita is the leading provider of dialysis treatment in the United States. Marietta Memorial Hospital Employee Health Benefit Plan is a self-funded plan governed by the Employee Retirement Income Security Act of 1974 (“ERISA”). Patient A is an anonymous individual with end-stage renal disease who is a member of the plan and has been receiving treatment by DaVita since April 15, 2017. The Plan defines three tiers of reimbursement, and dialysis providers are categorically in the lowest tier and are considered out of network, entitling them to the lowest level of reimbursement relative to all other providers. DaVita challenged the Plan as violating the Medicare Secondary Payer Act, which prohibits health plans from treating individuals with kidney failure differently in eligibility or access to benefits. The district court dismissed all of DaVita’s claims, and the U.S. Court of Appeals for the Sixth Circuit reversed in part, finding that DaVita had plausibly alleged that the Plan engaged in unlawful discrimination.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

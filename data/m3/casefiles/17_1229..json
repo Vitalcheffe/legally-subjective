@@ -1,0 +1,18 @@
+{
+ "docket": "17–1229.",
+ "case_name": "Helsinn Healthcare S. A. v. Teva Pharmaceuticals USA, Inc.",
+ "term": 2018,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Helsinn Healthcare S.A.v. Teva Pharmaceuticals USA, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Does an inventor’s sale of an invention to a third party who is obligated to keep the invention confidential qualify as prior art for purposes of determining the patentability of the invention?",
+ "facts": "Helsinn owns four patents describing intravenous formulations of palonosetron for reducing the likelihood of chemotherapy-induced nausea and vomiting (“CINV”). All four claim priority to a provisional patent application filed on January 30, 2003. The critical date for the on-sale bar is one year earlier, January 30, 2002, which means the sale of the invention before that date can invalidate the patent. In its defense, Teva argued that the asserted claims were invalid under the on-sale bar provision of 35 U.S.C. § 102. The sale referenced by Teva in its defense was an exclusive supply and purchase agreement between Helsinn and MGI Pharma. Everything about the agreement except the terms and price was publicly disclosed. The district court upheld as valid Helsinn’s patents and rejected Teva’s “on sale” defense. The Federal Circuit reversed, finding that the patents were subject to an invalidating contract for sale prior to the critical date of January 30, 2002, The court also noted that the evidence that the formulation was ready for patenting before the critical date was “overwhelming.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Helsinn Healthcare S. A. v. Teva Pharmaceuticals USA, Inc.\nDocket: 17–1229. | Term: OT2018 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Helsinn Healthcare S.A.v. Teva Pharmaceuticals USA, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Does an inventor’s sale of an invention to a third party who is obligated to keep the invention confidential qualify as prior art for purposes of determining the patentability of the invention?\nFacts: Helsinn owns four patents describing intravenous formulations of palonosetron for reducing the likelihood of chemotherapy-induced nausea and vomiting (“CINV”). All four claim priority to a provisional patent application filed on January 30, 2003. The critical date for the on-sale bar is one year earlier, January 30, 2002, which means the sale of the invention before that date can invalidate the patent. In its defense, Teva argued that the asserted claims were invalid under the on-sale bar provision of 35 U.S.C. § 102. The sale referenced by Teva in its defense was an exclusive supply and purchase agreement between Helsinn and MGI Pharma. Everything about the agreement except the terms and price was publicly disclosed. The district court upheld as valid Helsinn’s patents and rejected Teva’s “on sale” defense. The Federal Circuit reversed, finding that the patents were subject to an invalidating contract for sale prior to the critical date of January 30, 2002, The court also noted that the evidence that the formulation was ready for patenting before the critical date was “overwhelming.”\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "21-1326",
+ "case_name": "United States ex rel. Schutte v. Supervalu Inc.",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "Unites States of America, Ex. Rel. Schutte, et al.v. SuperValu Inc., et al. (Petitioner v. Respondent)",
+ "question": "Is a defendant’s contemporaneous subjective understanding about the lawfulness of its conduct relevant to whether it “knowingly” violated the False Claims Act?",
+ "facts": "SuperValu owned or operated approximately 2,500 grocery stories with over 800 in-store pharmacies between 2006 and 2016. To compete with other pharmacies, SuperValu stores implemented a prescription price-matching program, under which it would match lower prescription prices of competitors. However, SuperValu did not report its price-match program prices as its usual and customary price, in violation of Medicaid regulations. Tracy Schutte and Michael Yarberry (the “Relators”) sued SuperValu under the False Claims Act on behalf of the federal government and several states. They alleged that SuperValu knowingly caused false payment claims to be submitted to government healthcare programs between 2006 and 2016 by incorrectly reporting their drug prices. The federal government did not intervene in the case. The district court concluded that the Relators had failed to prove the “scienter” element of their FCA claim—that is, they failed to show SuperValu that SuperValu’s interpretation of the reporting requirement was objectively unreasonable at the time. The U.S. Court of Appeals for the Seventh Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States ex rel. Schutte v. Supervalu Inc.\nDocket: 21-1326 | Term: OT2022 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: Unites States of America, Ex. Rel. Schutte, et al.v. SuperValu Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Is a defendant’s contemporaneous subjective understanding about the lawfulness of its conduct relevant to whether it “knowingly” violated the False Claims Act?\nFacts: SuperValu owned or operated approximately 2,500 grocery stories with over 800 in-store pharmacies between 2006 and 2016. To compete with other pharmacies, SuperValu stores implemented a prescription price-matching program, under which it would match lower prescription prices of competitors. However, SuperValu did not report its price-match program prices as its usual and customary price, in violation of Medicaid regulations. Tracy Schutte and Michael Yarberry (the “Relators”) sued SuperValu under the False Claims Act on behalf of the federal government and several states. They alleged that SuperValu knowingly caused false payment claims to be submitted to government healthcare programs between 2006 and 2016 by incorrectly reporting their drug prices. The federal government did not intervene in the case. The district court concluded that the Relators had failed to prove the “scienter” element of their FCA claim—that is, they failed to show SuperValu that SuperValu’s interpretation of the reporting requirement was objectively unreasonable at the time. The U.S. Court of Appeals for the Seventh Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

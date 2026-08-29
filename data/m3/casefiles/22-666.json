@@ -1,0 +1,18 @@
+{
+ "docket": "22-666",
+ "case_name": "Wilkinson v. Garland",
+ "term": 2023,
+ "issue_area": "2",
+ "lc_disposition": "9",
+ "lower_court": "United States Court of Appeals for the Third Circuit",
+ "parties": "Situ Kamu Wilkinsonv. Merrick B. Garland, Attorney General (Petitioner v. Respondent)",
+ "question": "Is an agency determination that a given set of established facts does not rise to the statutory standard of “exceptional and extremely unusual hardship” a mixed question of law and fact reviewable under 8 U.S.C. § 1252(a)(2)(D), or instead a discretionary judgment call unreviewable under Section 1252(a)(2)(B)(i)?",
+ "facts": "Situ Wilkinson, originally from Trinidad and Tobago, overstayed his tourist visa in the U.S., built a life, and fathered a U.S.-citizen son. In 2019, after being arrested for selling crack cocaine, he faced deportation proceedings. Wilkinson conceded his deportability but sought either cancellation or withholding of removal based on the “exceptional and extremely unusual hardship” it would cause his son and the threat to his own life or freedom if he returned to Trinidad due to his “membership in a particular social group,” specifically people who have filed complaints against Trinidadian police. The immigration judge and the Board of Immigration Appeals rejected both of Wilkinson's claims. On appeal, the U.S. Court of Appeals for the Third Circuit held that it lacked jurisdiction to review the hardship claim because was discretionary. The Third Circuit also concluded that Wilkinson’s claim of belonging to a “particular social group” did not meet the requirements for withholding of removal, as it was not socially distinct within Trinidadian society. Therefore, the Third Circuit dismissed in part and denied in part Wilkinson’s petition for review.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Wilkinson v. Garland\nDocket: 22-666 | Term: OT2023 | Court below: United States Court of Appeals for the Third Circuit\nParties: Situ Kamu Wilkinsonv. Merrick B. Garland, Attorney General (Petitioner v. Respondent)\nQuestion presented: Is an agency determination that a given set of established facts does not rise to the statutory standard of “exceptional and extremely unusual hardship” a mixed question of law and fact reviewable under 8 U.S.C. § 1252(a)(2)(D), or instead a discretionary judgment call unreviewable under Section 1252(a)(2)(B)(i)?\nFacts: Situ Wilkinson, originally from Trinidad and Tobago, overstayed his tourist visa in the U.S., built a life, and fathered a U.S.-citizen son. In 2019, after being arrested for selling crack cocaine, he faced deportation proceedings. Wilkinson conceded his deportability but sought either cancellation or withholding of removal based on the “exceptional and extremely unusual hardship” it would cause his son and the threat to his own life or freedom if he returned to Trinidad due to his “membership in a particular social group,” specifically people who have filed complaints against Trinidadian police. The immigration judge and the Board of Immigration Appeals rejected both of Wilkinson's claims. On appeal, the U.S. Court of Appeals for the Third Circuit held that it lacked jurisdiction to review the hardship claim because was discretionary. The Third Circuit also concluded that Wilkinson’s claim of belonging to a “particular social group” did not meet the requirements for withholding of removal, as it was not socially distinct within Trinidadian society. Therefore, the Third Circuit dismissed in part and denied in part Wilkinson’s petition for review.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

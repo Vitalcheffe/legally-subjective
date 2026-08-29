@@ -1,0 +1,18 @@
+{
+ "docket": "15-233, 15-255",
+ "case_name": "Puerto Rico v. Franklin California Tax-Free Trust",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "2",
+ "parties": "Puerto Rico v. Franklin California Tax-Free Trust",
+ "question": "not available in Oyez (metadata-only case file)",
+ "facts": "not available in Oyez (metadata-only case file)",
+ "posture": "",
+ "sources": {
+  "oyez": false,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Puerto Rico v. Franklin California Tax-Free Trust\nDocket: 15-233, 15-255 | Term: OT2015 | Court below: 2\nParties: Puerto Rico v. Franklin California Tax-Free Trust\nQuestion presented: not available in Oyez (metadata-only case file)\nFacts: not available in Oyez (metadata-only case file)\nPosture: not recorded\n",
+ "window": "train"
+}

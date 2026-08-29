@@ -1,0 +1,18 @@
+{
+ "docket": "21-404",
+ "case_name": "United States v. Washington",
+ "term": 2021,
+ "issue_area": "10",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "United States of Americav. State of Washington, et al. (Petitioner v. Respondent)",
+ "question": "Does a Washington state workers’ compensation law that applies exclusively to certain federal workers in that state violate the principle of intergovernmental immunity?",
+ "facts": "The Hanford site was a federal nuclear production site in Washington State that operated between 1944 and 1989, producing substantial amounts of radioactive and chemically hazardous waste. The U.S. Department of Energy now oversees cleanup of the site, which is largely conducted by private contractors and subcontractors. In 2018, Washington amended its state workers’ compensation laws specifically for these cleanup workers. The amended law creates a rebuttable presumption that certain conditions and cancers are occupational diseases. The federal government challenged the law as violating the principle of intergovernmental immunity. The district court granted summary judgment for Washington, and the U.S. Court of Appeals for the Ninth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Washington\nDocket: 21-404 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: United States of Americav. State of Washington, et al. (Petitioner v. Respondent)\nQuestion presented: Does a Washington state workers’ compensation law that applies exclusively to certain federal workers in that state violate the principle of intergovernmental immunity?\nFacts: The Hanford site was a federal nuclear production site in Washington State that operated between 1944 and 1989, producing substantial amounts of radioactive and chemically hazardous waste. The U.S. Department of Energy now oversees cleanup of the site, which is largely conducted by private contractors and subcontractors. In 2018, Washington amended its state workers’ compensation laws specifically for these cleanup workers. The amended law creates a rebuttable presumption that certain conditions and cancers are occupational diseases. The federal government challenged the law as violating the principle of intergovernmental immunity. The district court granted summary judgment for Washington, and the U.S. Court of Appeals for the Ninth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

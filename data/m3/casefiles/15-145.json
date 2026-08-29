@@ -1,0 +1,18 @@
+{
+ "docket": "15-145",
+ "case_name": "Husky International Electronics, Inc. v. Ritz",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Husky International Electronics, Inc.v. Daniel Lee Ritz, Jr. (Petitioner v. Respondent)",
+ "question": "Is fraudulently transferring money to avoid repayment of a debt considered false representation under bankruptcy statute 11 U.S.C. §523(a)(2)(A) to prevent discharge of the debt?",
+ "facts": "Husky International Electronics, Inc. (Husky) sold and delivered electronic equipment to Chrysalis Manufacturing Corp. (Chrysalis), headed by Daniel Ritz. Chrysalis owed Husky $163,999.38 in purchases between 2003 and 2007. In 2007, Ritz started transferring funds from Chrysalis to various other ventures in which he owned stock. In 2009 Husky sued Ritz for payment of his outstanding debt, and Ritz then filed for Chapter 7 bankruptcy. In 2011, Husky filed a complaint against the discharge of Ritz’s debt and argued that Ritz had fraudulently moved funds from Chrysalis to other accounts in order to file for bankruptcy. The bankruptcy court found that Ritz had not fraudulently filed for bankruptcy and that it could not “pierce the veil” to go after Ritz’s personal finances for the debt Chrysalis owed. Husky appealed to the district court, which affirmed the bankruptcy court’s determination and found that Ritz had not committed “actual fraud” by false representation and that Husky had not proven that Ritz acted “maliciously and willfully.” The United States Appeals Court for the Fifth Circuit affirmed the lower court’s decision to discharge Ritz’s debt.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Husky International Electronics, Inc. v. Ritz\nDocket: 15-145 | Term: OT2015 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Husky International Electronics, Inc.v. Daniel Lee Ritz, Jr. (Petitioner v. Respondent)\nQuestion presented: Is fraudulently transferring money to avoid repayment of a debt considered false representation under bankruptcy statute 11 U.S.C. §523(a)(2)(A) to prevent discharge of the debt?\nFacts: Husky International Electronics, Inc. (Husky) sold and delivered electronic equipment to Chrysalis Manufacturing Corp. (Chrysalis), headed by Daniel Ritz. Chrysalis owed Husky $163,999.38 in purchases between 2003 and 2007. In 2007, Ritz started transferring funds from Chrysalis to various other ventures in which he owned stock. In 2009 Husky sued Ritz for payment of his outstanding debt, and Ritz then filed for Chapter 7 bankruptcy. In 2011, Husky filed a complaint against the discharge of Ritz’s debt and argued that Ritz had fraudulently moved funds from Chrysalis to other accounts in order to file for bankruptcy. The bankruptcy court found that Ritz had not fraudulently filed for bankruptcy and that it could not “pierce the veil” to go after Ritz’s personal finances for the debt Chrysalis owed. Husky appealed to the district court, which affirmed the bankruptcy court’s determination and found that Ritz had not committed “actual fraud” by false representation and that Husky had not proven that Ritz acted “maliciously and willfully.” The United States Appeals Court for the Fifth Circuit affirmed the lower court’s decision to discharge Ritz’s debt.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "20-322",
+ "case_name": "Garland v. Gonzalez",
+ "term": 2021,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Merrick B. Garland, Attorney General, et al.v. Esteban Aleman Gonzalez, et al. (Petitioner v. Respondent)",
+ "question": "Is a noncitizen who has spent more than six months in immigration detention awaiting resolution of their deportation withholding claim entitled to a hearing before an immigration judge to determine whether they can be released on bond?",
+ "facts": "Esteban Aleman Gonzalez and Gutierrez Sanchez are natives and citizens of Mexico who reside in the United States. The federal government had initiated removal proceedings against them, but asylum officers determined that each had a reasonable fear of persecution or torture in Mexico. Gonzalez and Sanchez both requested a bond hearing before an immigration judge after they had been detained for 180 days, but both requests were denied.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Garland v. Gonzalez\nDocket: 20-322 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Merrick B. Garland, Attorney General, et al.v. Esteban Aleman Gonzalez, et al. (Petitioner v. Respondent)\nQuestion presented: Is a noncitizen who has spent more than six months in immigration detention awaiting resolution of their deportation withholding claim entitled to a hearing before an immigration judge to determine whether they can be released on bond?\nFacts: Esteban Aleman Gonzalez and Gutierrez Sanchez are natives and citizens of Mexico who reside in the United States. The federal government had initiated removal proceedings against them, but asylum officers determined that each had a reasonable fear of persecution or torture in Mexico. Gonzalez and Sanchez both requested a bond hearing before an immigration judge after they had been detained for 180 days, but both requests were denied.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

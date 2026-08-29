@@ -1,0 +1,18 @@
+{
+ "docket": "19-177",
+ "case_name": "Agency for Int'l Dev. v. Alliance for Open Soc'y Int'l, Inc.",
+ "term": 2019,
+ "issue_area": "3",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "United States Agency for International Development, et al.v. Alliance for Open Society International, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Does the Court’s decision in U.S. Agency for International Development v. Alliance for Open Society International Inc. —which holds that the First Amendment prohibits Congress from enforcing a law that would have required U.S.-based organizations that receive federal funds to fight HIV/AIDS abroad to “have a policy explicitly opposing prostitution and sex trafficking”—imply that Congress may not enforce that law with respect to entities not directly involved in that case?",
+ "facts": "The Alliance for Open Society International and other organizations receive funding from the U.S. government to help with their mission of fighting HIV/AIDS abroad. The government provides the funds on the condition that “no funds be used to provide assistance to any group or organization that does not have a policy explicitly opposing prostitution and sex trafficking.” In U.S. Agency for International Development v. Alliance for Open Society International Inc. , decided in 2013, the Court held that the condition compelled speech in violation of the First Amendment. Although the government consequently did not apply the condition to Alliance for Open Society International, it continued to apply the condition to the organization’s foreign affiliates. The organization sued, asking for permanent injunctive relief. The district court granted the requested relief, and the U.S. Court of Appeals for the Second Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Agency for Int'l Dev. v. Alliance for Open Soc'y Int'l, Inc.\nDocket: 19-177 | Term: OT2019 | Court below: United States Court of Appeals for the Second Circuit\nParties: United States Agency for International Development, et al.v. Alliance for Open Society International, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Does the Court’s decision in U.S. Agency for International Development v. Alliance for Open Society International Inc. —which holds that the First Amendment prohibits Congress from enforcing a law that would have required U.S.-based organizations that receive federal funds to fight HIV/AIDS abroad to “have a policy explicitly opposing prostitution and sex trafficking”—imply that Congress may not enforce that law with respect to entities not directly involved in that case?\nFacts: The Alliance for Open Society International and other organizations receive funding from the U.S. government to help with their mission of fighting HIV/AIDS abroad. The government provides the funds on the condition that “no funds be used to provide assistance to any group or organization that does not have a policy explicitly opposing prostitution and sex trafficking.” In U.S. Agency for International Development v. Alliance for Open Society International Inc. , decided in 2013, the Court held that the condition compelled speech in violation of the First Amendment. Although the government consequently did not apply the condition to Alliance for Open Society International, it continued to apply the condition to the organization’s foreign affiliates. The organization sued, asking for permanent injunctive relief. The district court granted the requested relief, and the U.S. Court of Appeals for the Second Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

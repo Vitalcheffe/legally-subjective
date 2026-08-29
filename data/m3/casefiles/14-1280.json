@@ -1,0 +1,18 @@
+{
+ "docket": "14-1280",
+ "case_name": "Heffernan v. City of Paterson",
+ "term": 2015,
+ "issue_area": "3",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Third Circuit",
+ "parties": "Jeffrey Heffernanv. City of Paterson (Petitioner v. Respondent)",
+ "question": "Does the First Amendment prohibit the government from demoting a public employee based on a supervisor’s perception that the employee supports a political candidate?",
+ "facts": "Jeffrey Heffernan was a police officer for the City of Paterson, New Jersey. A fellow police officer observed Heffernan picking up a campaign sign for the mayoral candidate running against the incumbent. When a supervisor confronted him, Heffernan claimed that he was not politically involved, could not vote in the city of Paterson, and was picking up the sign on behalf of his mother. Heffernan was demoted to a walking post because his actions were considered to be “overt involvement in political activities.” Heffernan sued the city of Paterson and claimed that the city had violated his First Amendment rights to freedom of speech and association. The city filed a motion for summary judgment and argued that, since Heffernan had not actually engaged in constitutionally protected speech, the City’s actions had not violated his First Amendment rights. The district court granted the city’s motion for summary judgment because there was no evidence Heffernan associated himself with the political candidate at issue. Heffernan admitted himself that he was not associated with the candidate, and therefore there is no evidence of a violation of his right to freedom of association. The U.S. Court of Appeals for the Third Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Heffernan v. City of Paterson\nDocket: 14-1280 | Term: OT2015 | Court below: United States Court of Appeals for the Third Circuit\nParties: Jeffrey Heffernanv. City of Paterson (Petitioner v. Respondent)\nQuestion presented: Does the First Amendment prohibit the government from demoting a public employee based on a supervisor’s perception that the employee supports a political candidate?\nFacts: Jeffrey Heffernan was a police officer for the City of Paterson, New Jersey. A fellow police officer observed Heffernan picking up a campaign sign for the mayoral candidate running against the incumbent. When a supervisor confronted him, Heffernan claimed that he was not politically involved, could not vote in the city of Paterson, and was picking up the sign on behalf of his mother. Heffernan was demoted to a walking post because his actions were considered to be “overt involvement in political activities.” Heffernan sued the city of Paterson and claimed that the city had violated his First Amendment rights to freedom of speech and association. The city filed a motion for summary judgment and argued that, since Heffernan had not actually engaged in constitutionally protected speech, the City’s actions had not violated his First Amendment rights. The district court granted the city’s motion for summary judgment because there was no evidence Heffernan associated himself with the political candidate at issue. Heffernan admitted himself that he was not associated with the candidate, and therefore there is no evidence of a violation of his right to freedom of association. The U.S. Court of Appeals for the Third Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

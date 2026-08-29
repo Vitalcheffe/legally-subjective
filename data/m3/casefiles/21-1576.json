@@ -1,0 +1,18 @@
+{
+ "docket": "21-1576",
+ "case_name": "Smith v. United States",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Timothy J. Smithv. United States (Petitioner v. Respondent)",
+ "question": "Does a criminal trial’s improper venue as to one count require vacatur of the convictions for other counts?",
+ "facts": "Timothy Smith is a software engineer who lives in Mobile, Alabama, and who is an avid fisherman. He used a web application called Fiddler to obtain the coordinates of private artificial reefs from a website, StrikeLines, that sells such coordinates for between $190 and $199. Smith informed the owners of StrikeLines that he accessed their reef coordinates but refused to tell them how he did it. After negotiations between the owners of StrikeLines and Smith broke down, the owners contacted law enforcement, who executed a search warrant on Smith’s home. A federal grand jury indicted Smith on three counts in the Northern District of Florida. Before trial, Smith moved to dismiss all counts for lack of venue because (1) he was a resident of Mobile, Alabama, which is in the Southern District of Alabama, and (2) StrikeLines’s servers, where the coordinate data is stored, are in Orlando, which is in the Middle District of Florida. Thus, venue in the Northern District of Florida was improper, even though StrikeLines was headquartered in Pensacola, which is within that district. The U.S. Court of Appeals for the Eleventh Circuit concluded that venue was improper as to one count but that improper venue for one count does not require vacatur of the conviction for another count.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Smith v. United States\nDocket: 21-1576 | Term: OT2022 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Timothy J. Smithv. United States (Petitioner v. Respondent)\nQuestion presented: Does a criminal trial’s improper venue as to one count require vacatur of the convictions for other counts?\nFacts: Timothy Smith is a software engineer who lives in Mobile, Alabama, and who is an avid fisherman. He used a web application called Fiddler to obtain the coordinates of private artificial reefs from a website, StrikeLines, that sells such coordinates for between $190 and $199. Smith informed the owners of StrikeLines that he accessed their reef coordinates but refused to tell them how he did it. After negotiations between the owners of StrikeLines and Smith broke down, the owners contacted law enforcement, who executed a search warrant on Smith’s home. A federal grand jury indicted Smith on three counts in the Northern District of Florida. Before trial, Smith moved to dismiss all counts for lack of venue because (1) he was a resident of Mobile, Alabama, which is in the Southern District of Alabama, and (2) StrikeLines’s servers, where the coordinate data is stored, are in Orlando, which is in the Middle District of Florida. Thus, venue in the Northern District of Florida was improper, even though StrikeLines was headquartered in Pensacola, which is within that district. The U.S. Court of Appeals for the Eleventh Circuit concluded that venue was improper as to one count but that improper venue for one count does not require vacatur of the conviction for another count.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

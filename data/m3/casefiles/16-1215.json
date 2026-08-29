@@ -1,0 +1,18 @@
+{
+ "docket": "16-1215",
+ "case_name": "Lamar, Archer & Cofrin, LLP v. Appling",
+ "term": 2017,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Lamar, Archer & Cofrin, LLPv. R. Scott Appling (Petitioner v. Respondent)",
+ "question": "Can a statement regarding a specific asset be a “statement respecting the debtor’s . . . financial condition” under section 523(a)(2)(B) of the Bankruptcy Code, and if so, when?",
+ "facts": "R. Scott Appling hired the law firm of Lamar, Archer & Cofrin, LLP (“Lamar”) to represent him in legal proceedings against the former owners of his business. Appling incurred significant legal fees, and verbally told Lamar that he would be able to pay them after he received a sizeable tax refund that he was expecting. In reliance upon this statement, the firm continued to represent him through the conclusion of the litigation. Appling received a tax refund, though it was smaller than what he had told Lamar he was anticipating, and he put it into his business rather than paying the debt he owed to Lamar. Lamar obtained a judgment against Appling, and Appling subsequently filed for bankruptcy. Lamar initiated an adversary proceeding to collect the debt, and the bankruptcy court ruled that the amount was not dischargeable pursuant to 11 U.S.C. § 523(a)(2)(A) because Lamar had justifiably relied upon Appling’s fraudulent statements. The district court affirmed. The 11th Circuit reversed and remanded. Noting a circuit split on how to construe the statute at issue, the court explained that because Appling’s fraudulent statements about his tax refund were not in writing and qualified as statements “respecting [his] . . . financial condition” under § 523(a)(2)(B), the debt could be discharged.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Lamar, Archer & Cofrin, LLP v. Appling\nDocket: 16-1215 | Term: OT2017 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Lamar, Archer & Cofrin, LLPv. R. Scott Appling (Petitioner v. Respondent)\nQuestion presented: Can a statement regarding a specific asset be a “statement respecting the debtor’s . . . financial condition” under section 523(a)(2)(B) of the Bankruptcy Code, and if so, when?\nFacts: R. Scott Appling hired the law firm of Lamar, Archer & Cofrin, LLP (“Lamar”) to represent him in legal proceedings against the former owners of his business. Appling incurred significant legal fees, and verbally told Lamar that he would be able to pay them after he received a sizeable tax refund that he was expecting. In reliance upon this statement, the firm continued to represent him through the conclusion of the litigation. Appling received a tax refund, though it was smaller than what he had told Lamar he was anticipating, and he put it into his business rather than paying the debt he owed to Lamar. Lamar obtained a judgment against Appling, and Appling subsequently filed for bankruptcy. Lamar initiated an adversary proceeding to collect the debt, and the bankruptcy court ruled that the amount was not dischargeable pursuant to 11 U.S.C. § 523(a)(2)(A) because Lamar had justifiably relied upon Appling’s fraudulent statements. The district court affirmed. The 11th Circuit reversed and remanded. Noting a circuit split on how to construe the statute at issue, the court explained that because Appling’s fraudulent statements about his tax refund were not in writing and qualified as statements “respecting [his] . . . financial condition” under § 523(a)(2)(B), the debt could be discharged.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

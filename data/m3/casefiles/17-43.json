@@ -1,0 +1,18 @@
+{
+ "docket": "17-43",
+ "case_name": "Dahda v. United States",
+ "term": 2017,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Tenth Circuit",
+ "parties": "Los Rovell Dahda, et al.v. United States of America (Petitioner v. Respondent)",
+ "question": "Does Title III of the Omnibus Crime Control and Safe Streets Act of 1968 require suppression of evidence obtained pursuant to a wiretap order that is facially deficient because it exceeds the judge’s territorial jurisdiction?",
+ "facts": "Los and Roosevelt Dahda – twin brothers – were indicted on charges that they had conspired to acquire and distribute marijuana. Much of the evidence against the Dahdas was obtained through wiretaps of cell phones used by the co-conspirators, including the Dahdas. The wiretaps arose out of nine orders issued by a federal district court in Kansas. Prior to trial, the Dahdas brothers moved to suppress the information obtained from the wiretaps on the grounds that the wiretap orders exceeded the district court's territorial jurisdiction. The trial court rejected that argument, and both were found guilty and sentenced. The Tenth Circuit upheld the decision allowing evidence from the cellphones to be used against the brothers. Although the court of appeals agreed that the wiretap orders exceeded the district court's territorial jurisdiction, it held that such defect did not \"directly and substantially affect a congressional intention to limit wiretapping. The court identified two “core concerns” of Title III of the Omnibus Crime Control and Safe Streets Act of 1968—privacy and uniformity—that were not implicated by the Dahdas’ argument that the order exceeded the Kansas district court’s jurisdiction.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Dahda v. United States\nDocket: 17-43 | Term: OT2017 | Court below: United States Court of Appeals for the Tenth Circuit\nParties: Los Rovell Dahda, et al.v. United States of America (Petitioner v. Respondent)\nQuestion presented: Does Title III of the Omnibus Crime Control and Safe Streets Act of 1968 require suppression of evidence obtained pursuant to a wiretap order that is facially deficient because it exceeds the judge’s territorial jurisdiction?\nFacts: Los and Roosevelt Dahda – twin brothers – were indicted on charges that they had conspired to acquire and distribute marijuana. Much of the evidence against the Dahdas was obtained through wiretaps of cell phones used by the co-conspirators, including the Dahdas. The wiretaps arose out of nine orders issued by a federal district court in Kansas. Prior to trial, the Dahdas brothers moved to suppress the information obtained from the wiretaps on the grounds that the wiretap orders exceeded the district court's territorial jurisdiction. The trial court rejected that argument, and both were found guilty and sentenced. The Tenth Circuit upheld the decision allowing evidence from the cellphones to be used against the brothers. Although the court of appeals agreed that the wiretap orders exceeded the district court's territorial jurisdiction, it held that such defect did not \"directly and substantially affect a congressional intention to limit wiretapping. The court identified two “core concerns” of Title III of the Omnibus Crime Control and Safe Streets Act of 1968—privacy and uniformity—that were not implicated by the Dahdas’ argument that the order exceeded the Kansas district court’s jurisdiction.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

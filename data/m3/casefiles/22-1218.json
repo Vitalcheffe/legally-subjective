@@ -1,0 +1,18 @@
+{
+ "docket": "22-1218",
+ "case_name": "Smith v. Spizzirri",
+ "term": 2023,
+ "issue_area": "7",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Wendy Smith, et al.v. Keith Spizzirri, et al. (Petitioner v. Respondent)",
+ "question": "Does Section 3 of the Federal Arbitration Act give district courts discretion to dismiss a lawsuit when all claims are subject to arbitration?",
+ "facts": "Plaintiffs Smith and others were current and former delivery drivers for Intelliserve. They sued Intelliserve in Arizona state court alleging that “Intelliserve violated federal and state employment laws by misclassifying them as independent contractors, failing to pay them required minimum and overtime wages, and failing to provide paid sick leave.” Intelliserve removed the case to federal court, then moved to compel arbitration and to dismiss the case. While both parties agreed that, under the FAA, all claims were subject to mandatory arbitration, they disagreed on how the district court was supposed to handle the lawsuit. Intelliserve argued that Section 3 of the FAA permitted the district court to dismiss the action, while the plaintiffs argued that the FAA required the district court to stay the action pending arbitration. The district court dismissed the action without prejudice, and the U.S. Court of Appeals for the Ninth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Smith v. Spizzirri\nDocket: 22-1218 | Term: OT2023 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Wendy Smith, et al.v. Keith Spizzirri, et al. (Petitioner v. Respondent)\nQuestion presented: Does Section 3 of the Federal Arbitration Act give district courts discretion to dismiss a lawsuit when all claims are subject to arbitration?\nFacts: Plaintiffs Smith and others were current and former delivery drivers for Intelliserve. They sued Intelliserve in Arizona state court alleging that “Intelliserve violated federal and state employment laws by misclassifying them as independent contractors, failing to pay them required minimum and overtime wages, and failing to provide paid sick leave.” Intelliserve removed the case to federal court, then moved to compel arbitration and to dismiss the case. While both parties agreed that, under the FAA, all claims were subject to mandatory arbitration, they disagreed on how the district court was supposed to handle the lawsuit. Intelliserve argued that Section 3 of the FAA permitted the district court to dismiss the action, while the plaintiffs argued that the FAA required the district court to stay the action pending arbitration. The district court dismissed the action without prejudice, and the U.S. Court of Appeals for the Ninth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

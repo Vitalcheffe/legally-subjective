@@ -1,0 +1,18 @@
+{
+ "docket": "14-8349",
+ "case_name": "Foster v. Chatman",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "9",
+ "lower_court": "State trial court",
+ "parties": "Timothy Tyrone Fosterv. Bruce Chatman, Warden (Petitioner v. Respondent)",
+ "question": "Was there race-based discrimination of the type Batson v. Kentucky prohibits in the jury selection process of Foster’s trial?",
+ "facts": "In 1986, Timothy Tyrone Foster, an 18-year-old black man, was charged with murdering Queen White, an elderly white woman. At the trial, the prosecution used peremptory strikes against all four of the qualified black jurors. Pursuant to the Supreme Court’s decision in Batson v. Kentucky , which prohibits the use of peremptory strikes on the basis of race, the defense objected to those strikes, and the burden shifted to the prosecution to prove that there were race-neutral explanation for the strikes. The prosecution provided reasons, and the trial court held that the reasons were sufficient. An all-white jury convicted Foster of murder and imposed the death penalty. Foster filed a motion for post-judgment discovery regarding the prosecution’s notes during jury selection and a motion for a new trial, both of which the trial court denied. The Georgia Supreme Court affirmed the trial court’s decisions, and the U.S. Supreme Court denied certiorari. Foster petitioned for a writ of habeas corpus in Butts County Superior Court and submitted a new Batson challenge based on the prosecutor's notes obtained through the Georgia Open Records Act. The court denied Foster's petition. The Georgia Supreme Court affirmed the denial of the writ. The U.S. Supreme Court granted certiorari.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Foster v. Chatman\nDocket: 14-8349 | Term: OT2015 | Court below: State trial court\nParties: Timothy Tyrone Fosterv. Bruce Chatman, Warden (Petitioner v. Respondent)\nQuestion presented: Was there race-based discrimination of the type Batson v. Kentucky prohibits in the jury selection process of Foster’s trial?\nFacts: In 1986, Timothy Tyrone Foster, an 18-year-old black man, was charged with murdering Queen White, an elderly white woman. At the trial, the prosecution used peremptory strikes against all four of the qualified black jurors. Pursuant to the Supreme Court’s decision in Batson v. Kentucky , which prohibits the use of peremptory strikes on the basis of race, the defense objected to those strikes, and the burden shifted to the prosecution to prove that there were race-neutral explanation for the strikes. The prosecution provided reasons, and the trial court held that the reasons were sufficient. An all-white jury convicted Foster of murder and imposed the death penalty. Foster filed a motion for post-judgment discovery regarding the prosecution’s notes during jury selection and a motion for a new trial, both of which the trial court denied. The Georgia Supreme Court affirmed the trial court’s decisions, and the U.S. Supreme Court denied certiorari. Foster petitioned for a writ of habeas corpus in Butts County Superior Court and submitted a new Batson challenge based on the prosecutor's notes obtained through the Georgia Open Records Act. The court denied Foster's petition. The Georgia Supreme Court affirmed the denial of the writ. The U.S. Supreme Court granted certiorari.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

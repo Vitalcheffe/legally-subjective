@@ -1,0 +1,18 @@
+{
+ "docket": "14-613",
+ "case_name": "Green v. Brennan",
+ "term": 2015,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Tenth Circuit",
+ "parties": "Marvin Greenv. Megan J. Brennan, Postmaster General (Petitioner v. Respondent)",
+ "question": "Under federal employment discrimination law, does the filing period for a constructive discharge claim begin to run at the time of the employer’s last allegedly discriminatory act?",
+ "facts": "Marvin Green began working for the United States Postal Service in 1973. In 2002, he became the postmaster at the Englewood, Colorado, post office. In 2008, a postmaster position opened in Boulder, and Green applied but did not receive the position. He filed a formal Equal Employment Opportunity (EEO) charge regarding the denial of his application, and the charge was settled. In 2009, Green filed an informal EEO charge and alleged that his supervisor and supervisor’s replacement had been retaliating against him for his prior EEO activity. Throughout that year, Green was subject to internal Postal Service investigations including a threat of criminal prosecution. He ultimately signed an agreement that he would immediately give up his position and either retire or accept a much lower paying position. Green chose to retire and filed subsequent charges with the EEO Office, which dismissed his claim. Green then sued in district court and alleged, among other claims, that he had been constructively discharged. The district court held that Green’s constructive discharge claim was barred because he did not contact an EEO counselor within 45 days of signing the agreement, which was the last allegedly discriminatory act, and the U.S. Court of Appeals for the Tenth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Green v. Brennan\nDocket: 14-613 | Term: OT2015 | Court below: United States Court of Appeals for the Tenth Circuit\nParties: Marvin Greenv. Megan J. Brennan, Postmaster General (Petitioner v. Respondent)\nQuestion presented: Under federal employment discrimination law, does the filing period for a constructive discharge claim begin to run at the time of the employer’s last allegedly discriminatory act?\nFacts: Marvin Green began working for the United States Postal Service in 1973. In 2002, he became the postmaster at the Englewood, Colorado, post office. In 2008, a postmaster position opened in Boulder, and Green applied but did not receive the position. He filed a formal Equal Employment Opportunity (EEO) charge regarding the denial of his application, and the charge was settled. In 2009, Green filed an informal EEO charge and alleged that his supervisor and supervisor’s replacement had been retaliating against him for his prior EEO activity. Throughout that year, Green was subject to internal Postal Service investigations including a threat of criminal prosecution. He ultimately signed an agreement that he would immediately give up his position and either retire or accept a much lower paying position. Green chose to retire and filed subsequent charges with the EEO Office, which dismissed his claim. Green then sued in district court and alleged, among other claims, that he had been constructively discharged. The district court held that Green’s constructive discharge claim was barred because he did not contact an EEO counselor within 45 days of signing the agreement, which was the last allegedly discriminatory act, and the U.S. Court of Appeals for the Tenth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

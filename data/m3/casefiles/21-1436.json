@@ -1,0 +1,18 @@
+{
+ "docket": "21-1436",
+ "case_name": "Santos-Zacaria v. Garland",
+ "term": 2022,
+ "issue_area": "2",
+ "lc_disposition": "9",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Leon Santos-Zacariav. Merrick B. Garland, Attorney General (Petitioner v. Respondent)",
+ "question": "Does 8 U.S.C. § 1252(d)(1) bar a court of appeals from reviewing an immigrant’s claim that the Board of Immigration Appeals had engaged in impermissible factfinding because the immigrant had not exhausted that claim through a motion to reconsider?",
+ "facts": "Santos is a native and citizen of Guatemala seeking asylum in the United States based on the likelihood of persecution due to her sexual orientation and transgender identity. An immigration judge denied her application for withholding removal, finding one prior assault was insufficient to establish past persecution. The immigration judge also denied her claim for relief under the Convention Against Torture (CAT). Santos appealed to the Board of Immigration Appeals, which dismissed her appeal. Although the Board concluded her past assault was sufficient to establish past persecution and thus a presumption of future persecution, the government had rebutted that presumption. The Board affirmed the immigration judge’s determination that Santos had not established eligibility for relief under the CAT. The U.S. Court of Appeals for the Fifth Circuit denied Santos’s petition to review the Board’s determination that she was not eligible for relief under CAT and dismissed for lack of jurisdiction her challenge to the adequacy of the Board’s analysis because she failed to raise that argument in a motion for reconsideration.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Santos-Zacaria v. Garland\nDocket: 21-1436 | Term: OT2022 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Leon Santos-Zacariav. Merrick B. Garland, Attorney General (Petitioner v. Respondent)\nQuestion presented: Does 8 U.S.C. § 1252(d)(1) bar a court of appeals from reviewing an immigrant’s claim that the Board of Immigration Appeals had engaged in impermissible factfinding because the immigrant had not exhausted that claim through a motion to reconsider?\nFacts: Santos is a native and citizen of Guatemala seeking asylum in the United States based on the likelihood of persecution due to her sexual orientation and transgender identity. An immigration judge denied her application for withholding removal, finding one prior assault was insufficient to establish past persecution. The immigration judge also denied her claim for relief under the Convention Against Torture (CAT). Santos appealed to the Board of Immigration Appeals, which dismissed her appeal. Although the Board concluded her past assault was sufficient to establish past persecution and thus a presumption of future persecution, the government had rebutted that presumption. The Board affirmed the immigration judge’s determination that Santos had not established eligibility for relief under the CAT. The U.S. Court of Appeals for the Fifth Circuit denied Santos’s petition to review the Board’s determination that she was not eligible for relief under CAT and dismissed for lack of jurisdiction her challenge to the adequacy of the Board’s analysis because she failed to raise that argument in a motion for reconsideration.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

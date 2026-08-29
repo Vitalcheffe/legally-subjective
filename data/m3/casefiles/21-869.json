@@ -1,0 +1,18 @@
+{
+ "docket": "21-869",
+ "case_name": "Andy Warhol Foundation for Visual Arts, Inc. v. Goldsmith",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Andy Warhol Foundation for the Visual Arts, Inc.v. Lynn Goldsmith, et al. (Petitioner v. Respondent)",
+ "question": "What is the proper test for whether a work is “transformative” under the first factor of the Copyright Act’s fair use doctrine?",
+ "facts": "Artist Andy Warhol created a series of silkscreen prints and pencil illustrations (“Prince Series”) based on a copyrighted 1981 photograph of the musician Prince, taken by Lynn Goldsmith. Warhol made some aesthetic changes to Goldsmith’s original photograph, but they remained “recognizably derived” from the original. Goldsmith sued the Andy Warhol Foundation, successor to Warhol’s copyright in the Prince Series, for copyright infringement. The Foundation raised fair use as a defense. The district court granted summary judgment for the Foundation, concluding that Warhol had “transformed” the original photograph by giving it a new “meaning and message.” The U.S. Court of Appeals for the Second Circuit, holding that because the Prince Series remained “recognizably derived” from the original, it failed to transform and was thus not fair use.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Andy Warhol Foundation for Visual Arts, Inc. v. Goldsmith\nDocket: 21-869 | Term: OT2022 | Court below: United States Court of Appeals for the Second Circuit\nParties: Andy Warhol Foundation for the Visual Arts, Inc.v. Lynn Goldsmith, et al. (Petitioner v. Respondent)\nQuestion presented: What is the proper test for whether a work is “transformative” under the first factor of the Copyright Act’s fair use doctrine?\nFacts: Artist Andy Warhol created a series of silkscreen prints and pencil illustrations (“Prince Series”) based on a copyrighted 1981 photograph of the musician Prince, taken by Lynn Goldsmith. Warhol made some aesthetic changes to Goldsmith’s original photograph, but they remained “recognizably derived” from the original. Goldsmith sued the Andy Warhol Foundation, successor to Warhol’s copyright in the Prince Series, for copyright infringement. The Foundation raised fair use as a defense. The district court granted summary judgment for the Foundation, concluding that Warhol had “transformed” the original photograph by giving it a new “meaning and message.” The U.S. Court of Appeals for the Second Circuit, holding that because the Prince Series remained “recognizably derived” from the original, it failed to transform and was thus not fair use.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "19-357",
+ "case_name": "Chicago v. Fulton",
+ "term": 2020,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "City of Chicago, Illinoisv. Robbin L. Fulton, et al. (Petitioner v. Respondent)",
+ "question": "Does the Bankruptcy Code’s automatic stay provision, 11 U.S.C § 362, require that an entity that is passively retaining possession of property in which a bankruptcy estate has an interest return that property to the debtor or trustee immediately upon the filing of the bankruptcy petition?",
+ "facts": "The City of Chicago towed and impounded the Robbin Fulton’s vehicle for a prior citation of driving on a suspended license. Fulton filed a Chapter 13 bankruptcy action treating the City as an unsecured creditor. The City filed an unsecured proof of claim, and the bankruptcy court confirmed Fulton’s plan. The City then amended its proof of claim and asserted its status as a secured creditor. It refused to return Fulton’s vehicle, and Fulton filed a motion for sanctions against the City. The bankruptcy court held that the City was obligated to return the vehicle under Thompson v. General Motors Acceptance Corp. , 566 F.3d 699 (7th Cir. 2009), a binding case in which the Seventh Circuit had held that a creditor must comply with the automatic stay and return a debtor’s vehicle upon her filing of a bankruptcy petition. The City moved to stay the order in federal district court, and the court denied its request. The Seventh Circuit affirmed the lower court’s judgment denying the City's request.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Chicago v. Fulton\nDocket: 19-357 | Term: OT2020 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: City of Chicago, Illinoisv. Robbin L. Fulton, et al. (Petitioner v. Respondent)\nQuestion presented: Does the Bankruptcy Code’s automatic stay provision, 11 U.S.C § 362, require that an entity that is passively retaining possession of property in which a bankruptcy estate has an interest return that property to the debtor or trustee immediately upon the filing of the bankruptcy petition?\nFacts: The City of Chicago towed and impounded the Robbin Fulton’s vehicle for a prior citation of driving on a suspended license. Fulton filed a Chapter 13 bankruptcy action treating the City as an unsecured creditor. The City filed an unsecured proof of claim, and the bankruptcy court confirmed Fulton’s plan. The City then amended its proof of claim and asserted its status as a secured creditor. It refused to return Fulton’s vehicle, and Fulton filed a motion for sanctions against the City. The bankruptcy court held that the City was obligated to return the vehicle under Thompson v. General Motors Acceptance Corp. , 566 F.3d 699 (7th Cir. 2009), a binding case in which the Seventh Circuit had held that a creditor must comply with the automatic stay and return a debtor’s vehicle upon her filing of a bankruptcy petition. The City moved to stay the order in federal district court, and the court denied its request. The Seventh Circuit affirmed the lower court’s judgment denying the City's request.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

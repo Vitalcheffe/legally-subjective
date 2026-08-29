@@ -1,0 +1,18 @@
+{
+ "docket": "16–240.",
+ "case_name": "Weaver v. Massachusetts",
+ "term": 2016,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "Massachusetts Supreme Judicial Court",
+ "parties": "Kentel Myrone Weavev. Commonwealth of Massachusetts (Petitioner v. Respondent)",
+ "question": "Must a defendant who asserts a claim of ineffective assistance of counsel demonstrate prejudice when the alleged ineffective assistance resulted in a structural error?",
+ "facts": "On August 10, 2003, Germaine Rucker was shot and killed. Kentel Myrone Weaver later admitted to shooting Rucker after the police questioned him. During jury selection for Weaver’s trial, the court officer closed the court to Weaver’s family and other members of the public due to overcrowding. Weaver was subsequently convicted of murder in the first degree. In 2011, Weaver filed a motion for a new trial and claimed that he was denied effective assistance of counsel because his counsel failed to object to the closure of the courtroom in violation of his Sixth Amendment right to a public trial.The trial court denied Weaver’s motion. On direct appeal, the Supreme Judicial Court of Massachusetts affirmed Weaver’s conviction. The court held that Weaver had not shown that he suffered prejudice from his counsel’s failure to object to the court closure. Although a Sixth Amendment violation typically constitutes a “structural error,” which is automatically presumed to be prejudicial, the court held that, when the structural error resulted from alleged ineffective assistance of counsel, the defendant must show that he suffered prejudice.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Weaver v. Massachusetts\nDocket: 16–240. | Term: OT2016 | Court below: Massachusetts Supreme Judicial Court\nParties: Kentel Myrone Weavev. Commonwealth of Massachusetts (Petitioner v. Respondent)\nQuestion presented: Must a defendant who asserts a claim of ineffective assistance of counsel demonstrate prejudice when the alleged ineffective assistance resulted in a structural error?\nFacts: On August 10, 2003, Germaine Rucker was shot and killed. Kentel Myrone Weaver later admitted to shooting Rucker after the police questioned him. During jury selection for Weaver’s trial, the court officer closed the court to Weaver’s family and other members of the public due to overcrowding. Weaver was subsequently convicted of murder in the first degree. In 2011, Weaver filed a motion for a new trial and claimed that he was denied effective assistance of counsel because his counsel failed to object to the closure of the courtroom in violation of his Sixth Amendment right to a public trial.The trial court denied Weaver’s motion. On direct appeal, the Supreme Judicial Court of Massachusetts affirmed Weaver’s conviction. The court held that Weaver had not shown that he suffered prejudice from his counsel’s failure to object to the court closure. Although a Sixth Amendment violation typically constitutes a “structural error,” which is automatically presumed to be prejudicial, the court held that, when the structural error resulted from alleged ineffective assistance of counsel, the defendant must show that he suffered prejudice.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

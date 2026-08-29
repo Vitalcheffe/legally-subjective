@@ -1,0 +1,18 @@
+{
+ "docket": "14-981",
+ "case_name": "Fisher v. University of Tex. at Austin",
+ "term": 2015,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Abigail Noel Fisherv. University of Texas at Austin, et al. (Petitioner v. Respondent)",
+ "question": "Does the University of Texas’ use of race as a consideration in the admissions process violate the Equal Protection Clause of the Fourteenth Amendment?",
+ "facts": "Abigail Fisher, a white female, applied for admission to the University of Texas but was denied. She did not qualify for Texas' Top Ten Percent Plan, which guarantees admission to the top ten percent of every in-state graduating high school class. For the remaining spots, the university considers many factors, including race. Fisher sued the University and argued that the use of race as a consideration in the admissions process violated the Equal Protection Clause of the Fourteenth Amendment. The district court held that the University’s admissions process was constitutional, and the U.S. Court of Appeals for the Fifth Circuit affirmed. The case went to the Supreme Court, which held that the appellate court erred by not applying the strict scrutiny standard to the University’s admission policies. The case was remanded, and the appellate court reaffirmed the lower court’s decision by holding that the University of Texas’ use of race as a consideration in the admissions process was sufficiently narrowly tailored to the legitimate interest of promoting educational diversity and therefore satisfied strict scrutiny.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Fisher v. University of Tex. at Austin\nDocket: 14-981 | Term: OT2015 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Abigail Noel Fisherv. University of Texas at Austin, et al. (Petitioner v. Respondent)\nQuestion presented: Does the University of Texas’ use of race as a consideration in the admissions process violate the Equal Protection Clause of the Fourteenth Amendment?\nFacts: Abigail Fisher, a white female, applied for admission to the University of Texas but was denied. She did not qualify for Texas' Top Ten Percent Plan, which guarantees admission to the top ten percent of every in-state graduating high school class. For the remaining spots, the university considers many factors, including race. Fisher sued the University and argued that the use of race as a consideration in the admissions process violated the Equal Protection Clause of the Fourteenth Amendment. The district court held that the University’s admissions process was constitutional, and the U.S. Court of Appeals for the Fifth Circuit affirmed. The case went to the Supreme Court, which held that the appellate court erred by not applying the strict scrutiny standard to the University’s admission policies. The case was remanded, and the appellate court reaffirmed the lower court’s decision by holding that the University of Texas’ use of race as a consideration in the admissions process was sufficiently narrowly tailored to the legitimate interest of promoting educational diversity and therefore satisfied strict scrutiny.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

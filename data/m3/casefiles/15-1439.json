@@ -1,0 +1,18 @@
+{
+ "docket": "15-1439",
+ "case_name": "Cyan, Inc. v. Beaver County Employees Retirement Fund",
+ "term": 2017,
+ "issue_area": "8",
+ "lc_disposition": "9",
+ "lower_court": "State appellate court",
+ "parties": "Cyan, Inc., et. al.v. Beaver County Employees' Retirement Fund, et. al. (Petitioner v. Respondent)",
+ "question": "Do state courts have subject matter jurisdiction over covered class actions that allege only Securities Act of 1933 claims?",
+ "facts": "Since the enactment of the Securities Act of 1933, state courts have had concurrent jurisdiction to decide federal law claims brought under that statute. Congress then passed the Securities Litigation Uniform Standards Act of 1998, which precluded certain state law securities class actions, and amended the 1933 Act to reflect that limitation on state court claims. Beaver County Employees' Retirement Fund filed a lawsuit in a California superior court asserting claims under the 1933 Act. Cyan Inc. moved to dismiss the claims, arguing that the amended 1933 Act precluded state courts from exercising subject matter jurisdiction over 1933 Act claims entirely. The superior court rejected Cyan's objection to the exercise of jurisdiction. Federal district courts are split as to whether state courts have subject matter jurisdiction over covered class actions that allege only 1933 Act claims.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Cyan, Inc. v. Beaver County Employees Retirement Fund\nDocket: 15-1439 | Term: OT2017 | Court below: State appellate court\nParties: Cyan, Inc., et. al.v. Beaver County Employees' Retirement Fund, et. al. (Petitioner v. Respondent)\nQuestion presented: Do state courts have subject matter jurisdiction over covered class actions that allege only Securities Act of 1933 claims?\nFacts: Since the enactment of the Securities Act of 1933, state courts have had concurrent jurisdiction to decide federal law claims brought under that statute. Congress then passed the Securities Litigation Uniform Standards Act of 1998, which precluded certain state law securities class actions, and amended the 1933 Act to reflect that limitation on state court claims. Beaver County Employees' Retirement Fund filed a lawsuit in a California superior court asserting claims under the 1933 Act. Cyan Inc. moved to dismiss the claims, arguing that the amended 1933 Act precluded state courts from exercising subject matter jurisdiction over 1933 Act claims entirely. The superior court rejected Cyan's objection to the exercise of jurisdiction. Federal district courts are split as to whether state courts have subject matter jurisdiction over covered class actions that allege only 1933 Act claims.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

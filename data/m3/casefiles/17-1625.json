@@ -1,0 +1,18 @@
+{
+ "docket": "17-1625",
+ "case_name": "Rimini Street, Inc. v. Oracle USA, Inc.",
+ "term": 2018,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Rimini Street, Inc., et al.v. Oracle USA, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Is the Copyright Act’s allowance for “full costs” to a prevailing party limited to taxable costs or inclusive of non-taxable costs as well?",
+ "facts": "Oracle licenses its enterprise software for a substantial one-time payment and also sells maintenance contracts to licensees so they can update their software through Oracle’s support website. Rimini Street provided third-party support for Oracle’s software in lawful competition with Oracle’s direct maintenance service. To compete effectively, however, Rimini also needed to provide software updates to its customers, which would constitute copyright infringement if obtained without a proper license (which Rimini did not have). With Oracle’s knowledge, Rimini obtained Oracle software updates from Oracle’s website by a means that violated the Oracle website’s terms of use. Oracle filed a lawsuit against Rimini and obtained a partial summary judgment and a jury verdict. The jury awarded Oracle $50,027,000 plus attorney’s fees and costs, resulting in a total monetary judgment of $124,291,396.82. Rimini appealed the judgment. The US Court of Appeals for the Ninth Circuit affirmed, finding that 17 U.S.C. § 505 allows for recovery of “full costs” and the district court properly relied on Ninth Circuit precedent in Twentieth Century Fox v. Entertainment Distribution in awarding $12,774,550.26 in non-taxable costs, despite ostensibly conflicting language in 28 U.S.C § 1920 identifying six categories of costs taxable against the losing party.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Rimini Street, Inc. v. Oracle USA, Inc.\nDocket: 17-1625 | Term: OT2018 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Rimini Street, Inc., et al.v. Oracle USA, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Is the Copyright Act’s allowance for “full costs” to a prevailing party limited to taxable costs or inclusive of non-taxable costs as well?\nFacts: Oracle licenses its enterprise software for a substantial one-time payment and also sells maintenance contracts to licensees so they can update their software through Oracle’s support website. Rimini Street provided third-party support for Oracle’s software in lawful competition with Oracle’s direct maintenance service. To compete effectively, however, Rimini also needed to provide software updates to its customers, which would constitute copyright infringement if obtained without a proper license (which Rimini did not have). With Oracle’s knowledge, Rimini obtained Oracle software updates from Oracle’s website by a means that violated the Oracle website’s terms of use. Oracle filed a lawsuit against Rimini and obtained a partial summary judgment and a jury verdict. The jury awarded Oracle $50,027,000 plus attorney’s fees and costs, resulting in a total monetary judgment of $124,291,396.82. Rimini appealed the judgment. The US Court of Appeals for the Ninth Circuit affirmed, finding that 17 U.S.C. § 505 allows for recovery of “full costs” and the district court properly relied on Ninth Circuit precedent in Twentieth Century Fox v. Entertainment Distribution in awarding $12,774,550.26 in non-taxable costs, despite ostensibly conflicting language in 28 U.S.C § 1920 identifying six categories of costs taxable against the losing party.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

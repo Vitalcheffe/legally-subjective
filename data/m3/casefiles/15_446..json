@@ -1,0 +1,18 @@
+{
+ "docket": "15–446.",
+ "case_name": "Cuozzo Speed Technologies, LLC v. Lee",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Cuozzo Speed Technologies, LLCv. Michelle K. Lee, Under Secretary of Commerce for Intellectual Property and Director, Patent and Trademark Office (Petitioner v. Respondent)",
+ "question": "May the Patent Trial and Appeal Board apply the broadest reasonable interpretation of patent claims during an inter partes review proceeding? Is the Patent Trial and Appeal Board’s use of inter partes review judicially reviewable?",
+ "facts": "Cuozzo Speed Technologies, LLC. (Cuozzo) owns the 074 patent, “Speed Limit Indicator and Method for Displaying Speed and the Relevant Speed Limit,” and Garmin International, Inc. (Garmin) petitioned the Patent Trial and Appeal Board (Board) for inter partes review of claims regarding the patent. The Board was established to process patent litigation faster by using inter partes review, and during that process, the Board uses the broadest reasonable interpretation when reviewing patent claims instead of the plain and ordinary meaning of patent claims. The Board found that claims 10, 14, and 17 were unpatentable. Cuozzo filed a motion to amend by replacing claims 10, 14, and 17 with claims 21, 22, and 23. The Board denied this request by applying the broadest reasonable interpretation standard to the term “integrally attached” regarding claim 14 on the components of the “Speed Limit Indicator.” Cuozzo appealed to the U.S. Court of Appeals for the Federal Circuit, which held that it lacked authority to review the Board’s finding under the broadest reasonable interpretation.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Cuozzo Speed Technologies, LLC v. Lee\nDocket: 15–446. | Term: OT2015 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Cuozzo Speed Technologies, LLCv. Michelle K. Lee, Under Secretary of Commerce for Intellectual Property and Director, Patent and Trademark Office (Petitioner v. Respondent)\nQuestion presented: May the Patent Trial and Appeal Board apply the broadest reasonable interpretation of patent claims during an inter partes review proceeding? Is the Patent Trial and Appeal Board’s use of inter partes review judicially reviewable?\nFacts: Cuozzo Speed Technologies, LLC. (Cuozzo) owns the 074 patent, “Speed Limit Indicator and Method for Displaying Speed and the Relevant Speed Limit,” and Garmin International, Inc. (Garmin) petitioned the Patent Trial and Appeal Board (Board) for inter partes review of claims regarding the patent. The Board was established to process patent litigation faster by using inter partes review, and during that process, the Board uses the broadest reasonable interpretation when reviewing patent claims instead of the plain and ordinary meaning of patent claims. The Board found that claims 10, 14, and 17 were unpatentable. Cuozzo filed a motion to amend by replacing claims 10, 14, and 17 with claims 21, 22, and 23. The Board denied this request by applying the broadest reasonable interpretation standard to the term “integrally attached” regarding claim 14 on the components of the “Speed Limit Indicator.” Cuozzo appealed to the U.S. Court of Appeals for the Federal Circuit, which held that it lacked authority to review the Board’s finding under the broadest reasonable interpretation.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

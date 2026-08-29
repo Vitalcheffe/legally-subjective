@@ -1,0 +1,18 @@
+{
+ "docket": "22-859",
+ "case_name": "SEC v. Jarkesy",
+ "term": 2023,
+ "issue_area": "8",
+ "lc_disposition": "8",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Securities and Exchange Commissionv. George R. Jarkesy, Jr., et al. (Petitioner v. Respondent)",
+ "question": "Does the statutory scheme that empowers the Securities and Exchange Commission violate the Seventh Amendment, the nondelegation doctrine, or Article II of the U.S. Constitution?",
+ "facts": "George Jarkesy established two hedge funds, with Patriot28 as the investment adviser, managing $24 million in assets from over 100 investors. The SEC initiated an investigation in 2011, eventually bringing an in-house action alleging fraud under multiple acts. Jarkesy challenged the SEC’s proceedings in the U.S. District Court for the District of Columbia, citing constitutional infringements, but both the district court and the U.S. Court of Appeals for the D.C. Circuit denied the injunction, finding that the district court lacked jurisdiction. After an evidentiary hearing by an Administrative Law Judge (ALJ), Jarkesy was found guilty of securities fraud. Jarkesy sought review by the Commission, and while that petition was pending, the U.S. Supreme Court decided Lucia v. SEC, holding that SEC ALJs were improperly appointed. Jarkesy, however, waived his right to a new hearing. The Commission affirmed the fraud findings, imposed penalties, and rejected several constitutional arguments. He then filed a petition for review in the U.S. Court of Appeals for the Fifth Circuit, which reversed and remanded, finding multiple constitutional violations.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — SEC v. Jarkesy\nDocket: 22-859 | Term: OT2023 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Securities and Exchange Commissionv. George R. Jarkesy, Jr., et al. (Petitioner v. Respondent)\nQuestion presented: Does the statutory scheme that empowers the Securities and Exchange Commission violate the Seventh Amendment, the nondelegation doctrine, or Article II of the U.S. Constitution?\nFacts: George Jarkesy established two hedge funds, with Patriot28 as the investment adviser, managing $24 million in assets from over 100 investors. The SEC initiated an investigation in 2011, eventually bringing an in-house action alleging fraud under multiple acts. Jarkesy challenged the SEC’s proceedings in the U.S. District Court for the District of Columbia, citing constitutional infringements, but both the district court and the U.S. Court of Appeals for the D.C. Circuit denied the injunction, finding that the district court lacked jurisdiction. After an evidentiary hearing by an Administrative Law Judge (ALJ), Jarkesy was found guilty of securities fraud. Jarkesy sought review by the Commission, and while that petition was pending, the U.S. Supreme Court decided Lucia v. SEC, holding that SEC ALJs were improperly appointed. Jarkesy, however, waived his right to a new hearing. The Commission affirmed the fraud findings, imposed penalties, and rejected several constitutional arguments. He then filed a petition for review in the U.S. Court of Appeals for the Fifth Circuit, which reversed and remanded, finding multiple constitutional violations.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

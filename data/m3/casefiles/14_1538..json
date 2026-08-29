@@ -1,0 +1,18 @@
+{
+ "docket": "14–1538.",
+ "case_name": "Life Technologies Corp. v. Promega Corp.",
+ "term": 2016,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Life Technologies Corp., et al.v. Promega Corp. (Petitioner v. Respondent)",
+ "question": "Does supplying a single component of a multi-component invention from the United States for sale abroad expose the manufacturer to liability for infringement based on worldwide sales?",
+ "facts": "Promega Corporation owned four patents and was the exclusive licensee of another one for technology used in kits that can conduct genetic testing. The kits are usually used for the purposes of identifying forensic or paternity matches. In 2010, Promega sued Life Technologies Corporation (LifeTech) for infringing on the patents in question, and LifeTech filed counterclaims that argued that the asserted claims of the patents were invalid. The district court determined that LifeTech had directly infringed on the patents and the case proceeded to damages. During the damages phase, there was a dispute about whether or not Promega had met its burden to prove that it was eligible for damages based on its worldwide sales. The jury determined that Promega was eligible for the worldwide damages, but the district court granted LifeTech’s motion to vacate the judgment because it determined that, as a matter of law, Promega had failed to present sufficient evidence to sustain that jury verdict. The U.S. Court of Appeals for the Federal Circuit reversed and determined that there was substantial evidence that LifeTech was liable for worldwide damages.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Life Technologies Corp. v. Promega Corp.\nDocket: 14–1538. | Term: OT2016 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Life Technologies Corp., et al.v. Promega Corp. (Petitioner v. Respondent)\nQuestion presented: Does supplying a single component of a multi-component invention from the United States for sale abroad expose the manufacturer to liability for infringement based on worldwide sales?\nFacts: Promega Corporation owned four patents and was the exclusive licensee of another one for technology used in kits that can conduct genetic testing. The kits are usually used for the purposes of identifying forensic or paternity matches. In 2010, Promega sued Life Technologies Corporation (LifeTech) for infringing on the patents in question, and LifeTech filed counterclaims that argued that the asserted claims of the patents were invalid. The district court determined that LifeTech had directly infringed on the patents and the case proceeded to damages. During the damages phase, there was a dispute about whether or not Promega had met its burden to prove that it was eligible for damages based on its worldwide sales. The jury determined that Promega was eligible for the worldwide damages, but the district court granted LifeTech’s motion to vacate the judgment because it determined that, as a matter of law, Promega had failed to present sufficient evidence to sustain that jury verdict. The U.S. Court of Appeals for the Federal Circuit reversed and determined that there was substantial evidence that LifeTech was liable for worldwide damages.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

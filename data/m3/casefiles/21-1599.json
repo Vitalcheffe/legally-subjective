@@ -1,0 +1,18 @@
+{
+ "docket": "21-1599",
+ "case_name": "Polselli v. IRS",
+ "term": 2022,
+ "issue_area": "12",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Sixth Circuit",
+ "parties": "Hanna Karcho Polselli, et al.v. Internal Revenue Service (Petitioner v. Respondent)",
+ "question": "Does the exception in I.R.C. § 7609(c)(2)(D)(i) to the notice requirements for an Internal Revenue Service summons on third-party recordkeepers apply to a summons for anyone’s records whenever the IRS thinks that person’s records might somehow help it collect a delinquent taxpayer’s liability?",
+ "facts": "Remo Polselli underpaid his federal taxes for over a decade, with an outstanding balance of over $2 million. In pursuit of those unpaid liabilities, the Internal Revenue Service (IRS) issued administrative summonses to the banks of Polselli’s wife and lawyers. The IRS did not notify Polselli’s wife or lawyers of the summonses, relying on the exception in the Internal Revenue Code § 7609(c)(2)(D)(i), which excludes from the notice requirement summonses issued “in aid of the collection” of tax assessments. The district court concluded that the summonses fell within the exception and that Polselli’s wife and lawyers were not entitled to notice. The U.S. Court of Appeals for the Sixth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Polselli v. IRS\nDocket: 21-1599 | Term: OT2022 | Court below: United States Court of Appeals for the Sixth Circuit\nParties: Hanna Karcho Polselli, et al.v. Internal Revenue Service (Petitioner v. Respondent)\nQuestion presented: Does the exception in I.R.C. § 7609(c)(2)(D)(i) to the notice requirements for an Internal Revenue Service summons on third-party recordkeepers apply to a summons for anyone’s records whenever the IRS thinks that person’s records might somehow help it collect a delinquent taxpayer’s liability?\nFacts: Remo Polselli underpaid his federal taxes for over a decade, with an outstanding balance of over $2 million. In pursuit of those unpaid liabilities, the Internal Revenue Service (IRS) issued administrative summonses to the banks of Polselli’s wife and lawyers. The IRS did not notify Polselli’s wife or lawyers of the summonses, relying on the exception in the Internal Revenue Code § 7609(c)(2)(D)(i), which excludes from the notice requirement summonses issued “in aid of the collection” of tax assessments. The district court concluded that the summonses fell within the exception and that Polselli’s wife and lawyers were not entitled to notice. The U.S. Court of Appeals for the Sixth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

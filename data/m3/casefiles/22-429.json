@@ -1,0 +1,18 @@
+{
+ "docket": "22-429",
+ "case_name": "Acheson Hotels, LLC v. Laufer",
+ "term": 2023,
+ "issue_area": "9",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the First Circuit",
+ "parties": "Acheson Hotels, LLCv. Deborah Laufer (Petitioner v. Respondent)",
+ "question": "Does an ADA “tester” have Article III standing to challenge a hotel’s failure to provide disability accessibility information on its website, even if she has no plans to visit the hotel?",
+ "facts": "Deborah Laufer, a prolific litigant with physical disabilities and vision impairments, sued Acheson Hotels for failing to publish information about their accessibility on their website, which is required under the Americans with Disabilities Act (ADA). The district court dismissed the lawsuit, finding that Laufer lacked standing to sue because had no plans to visit the hotel and thus suffered no injury as a result of the lack of information on the website. The U.S. Court of Appeals for the First Circuit reversed, concluding that Laufer’s lack of intent to book a room at the hotel operated by Acheson does not negate the fact of injury.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Acheson Hotels, LLC v. Laufer\nDocket: 22-429 | Term: OT2023 | Court below: United States Court of Appeals for the First Circuit\nParties: Acheson Hotels, LLCv. Deborah Laufer (Petitioner v. Respondent)\nQuestion presented: Does an ADA “tester” have Article III standing to challenge a hotel’s failure to provide disability accessibility information on its website, even if she has no plans to visit the hotel?\nFacts: Deborah Laufer, a prolific litigant with physical disabilities and vision impairments, sued Acheson Hotels for failing to publish information about their accessibility on their website, which is required under the Americans with Disabilities Act (ADA). The district court dismissed the lawsuit, finding that Laufer lacked standing to sue because had no plans to visit the hotel and thus suffered no injury as a result of the lack of information on the website. The U.S. Court of Appeals for the First Circuit reversed, concluding that Laufer’s lack of intent to book a room at the hotel operated by Acheson does not negate the fact of injury.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

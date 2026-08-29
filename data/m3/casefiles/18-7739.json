@@ -1,0 +1,18 @@
+{
+ "docket": "18-7739",
+ "case_name": "Holguin-Hernandez v. United States",
+ "term": 2019,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Gonzalo Holguin-Hernandezv. United States (Petitioner v. Respondent)",
+ "question": "Must a criminal defendant make a formal objection after the pronouncement of his sentence to invoke appellate reasonableness review of the length of the sentence?",
+ "facts": "Gonzalo Holguin was convicted for possession of marijuana with intent to distribute, in violation of federal law, and sentenced to 24 months in prison, followed by two years of supervised release. Holguin was again arrested for possession and intent to distribute, and after that arrest the government filed a petition to revoke the supervised release term. Before the revocation hearing occurred, Holguin pleaded guilty to the second set of charges. At the revocation hearing, the district court explained the allegations of the revocation petition to Holguin and asked how he pleaded. Holguin answered “True.” Holguin’s attorney argued for a concurrent sentence on the revocation, but the court issued a 12-month consecutive sentence instead. Holguin appealed the reasonableness of his sentence, and the U.S. Court of Appeals for the Fifth Circuit affirmed, finding Holguin had failed to make a formal objection after the announcement of his sentence.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Holguin-Hernandez v. United States\nDocket: 18-7739 | Term: OT2019 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Gonzalo Holguin-Hernandezv. United States (Petitioner v. Respondent)\nQuestion presented: Must a criminal defendant make a formal objection after the pronouncement of his sentence to invoke appellate reasonableness review of the length of the sentence?\nFacts: Gonzalo Holguin was convicted for possession of marijuana with intent to distribute, in violation of federal law, and sentenced to 24 months in prison, followed by two years of supervised release. Holguin was again arrested for possession and intent to distribute, and after that arrest the government filed a petition to revoke the supervised release term. Before the revocation hearing occurred, Holguin pleaded guilty to the second set of charges. At the revocation hearing, the district court explained the allegations of the revocation petition to Holguin and asked how he pleaded. Holguin answered “True.” Holguin’s attorney argued for a concurrent sentence on the revocation, but the court issued a 12-month consecutive sentence instead. Holguin appealed the reasonableness of his sentence, and the U.S. Court of Appeals for the Fifth Circuit affirmed, finding Holguin had failed to make a formal objection after the announcement of his sentence.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

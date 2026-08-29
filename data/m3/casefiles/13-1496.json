@@ -1,0 +1,18 @@
+{
+ "docket": "13-1496",
+ "case_name": "Dollar General Corp. v. Mississippi Band of Choctaw Indians",
+ "term": 2015,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Dollar General Corporation, et al.v. Mississippi Band of Choctaw Indians, et al. (Petitioner v. Respondent)",
+ "question": "Does a tribal court have jurisdiction to adjudicate civil tort claims against nonmembers?",
+ "facts": "Dollar General Corporation (Dollar General) operates a store on land held in trust for the Mississippi Band of Choctaw Indians (Tribe). The store operates pursuant to a lease and business license agreement with the Tribe. In the spring of 2003, John Doe, a 13-year-old member of the Tribe alleged that he was sexually molested by the store manager, Dale Townsend, while he was working at the store as part of an internship program that the Tribe runs and in which the Townsend agreed to participate. In 2005, Doe sued Townsend and Dollar General in tribal court. Both defendants moved to dismiss the case for lack of subject matter jurisdiction, and the tribal court denied the motions. The Choctaw Supreme Court upheld the denial of the motions by finding that the U.S. Supreme Court’s decision in Montana v. United States , which allowed a tribe to regulate the activities of nonmembers who enter into a consensual arrangement with the tribe, applied in this case. The defendants then sued the Tribe in federal district court and sought injunctions to stop the suit in tribal court. The district court granted the injunction for Townsend but not for Dollar General because the company had failed to carry its burden to show that the Montana decision did not apply in this case. The U.S. Court of Appeals for the Fifth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Dollar General Corp. v. Mississippi Band of Choctaw Indians\nDocket: 13-1496 | Term: OT2015 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Dollar General Corporation, et al.v. Mississippi Band of Choctaw Indians, et al. (Petitioner v. Respondent)\nQuestion presented: Does a tribal court have jurisdiction to adjudicate civil tort claims against nonmembers?\nFacts: Dollar General Corporation (Dollar General) operates a store on land held in trust for the Mississippi Band of Choctaw Indians (Tribe). The store operates pursuant to a lease and business license agreement with the Tribe. In the spring of 2003, John Doe, a 13-year-old member of the Tribe alleged that he was sexually molested by the store manager, Dale Townsend, while he was working at the store as part of an internship program that the Tribe runs and in which the Townsend agreed to participate. In 2005, Doe sued Townsend and Dollar General in tribal court. Both defendants moved to dismiss the case for lack of subject matter jurisdiction, and the tribal court denied the motions. The Choctaw Supreme Court upheld the denial of the motions by finding that the U.S. Supreme Court’s decision in Montana v. United States , which allowed a tribe to regulate the activities of nonmembers who enter into a consensual arrangement with the tribe, applied in this case. The defendants then sued the Tribe in federal district court and sought injunctions to stop the suit in tribal court. The district court granted the injunction for Townsend but not for Dollar General because the company had failed to carry its burden to show that the Montana decision did not apply in this case. The U.S. Court of Appeals for the Fifth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

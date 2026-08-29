@@ -1,0 +1,18 @@
+{
+ "docket": "22-721",
+ "case_name": "McElrath v. Georgia",
+ "term": 2023,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "Supreme Court of Georgia",
+ "parties": "Damian McElrathv. Georgia (Petitioner v. Respondent)",
+ "question": "Does the Double Jeopardy Clause of the Fifth Amendment prohibit a second prosecution for a crime of which a defendant was previously acquitted?",
+ "facts": "In 2017, a Georgia jury found Damien McElrath guilty but mentally ill as to felony murder but not guilty by reason of insanity as to malice murder after an encounter between McElrath and his mother. The trial court did not recognize the verdicts as repugnant and accepted them, but the Georgia Supreme Court held that the verdicts were repugnant and vacated the verdicts, remanding McElrath’s case for retrial. On remand, McElrath alleged that retrial was precluded on double jeopardy grounds, but the trial court denied his motion. On a second appeal to the Georgia Supreme Court, McElrath argued that the court should have reversed rather than vacated his felony murder conviction in his previous appeal. He also challenges the trial court’s ruling on his double jeopardy claim, arguing that retrial on all of the counts is barred because the jury found him not guilty by reason of insanity on the malice murder count. The Georgia Supreme Court affirmed the lower court.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — McElrath v. Georgia\nDocket: 22-721 | Term: OT2023 | Court below: Supreme Court of Georgia\nParties: Damian McElrathv. Georgia (Petitioner v. Respondent)\nQuestion presented: Does the Double Jeopardy Clause of the Fifth Amendment prohibit a second prosecution for a crime of which a defendant was previously acquitted?\nFacts: In 2017, a Georgia jury found Damien McElrath guilty but mentally ill as to felony murder but not guilty by reason of insanity as to malice murder after an encounter between McElrath and his mother. The trial court did not recognize the verdicts as repugnant and accepted them, but the Georgia Supreme Court held that the verdicts were repugnant and vacated the verdicts, remanding McElrath’s case for retrial. On remand, McElrath alleged that retrial was precluded on double jeopardy grounds, but the trial court denied his motion. On a second appeal to the Georgia Supreme Court, McElrath argued that the court should have reversed rather than vacated his felony murder conviction in his previous appeal. He also challenges the trial court’s ruling on his double jeopardy claim, arguing that retrial on all of the counts is barred because the jury found him not guilty by reason of insanity on the malice murder count. The Georgia Supreme Court affirmed the lower court.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

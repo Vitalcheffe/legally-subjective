@@ -1,0 +1,18 @@
+{
+ "docket": "21-499",
+ "case_name": "Vega v. Tekoh",
+ "term": 2021,
+ "issue_area": "1",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Carlos Vegav. Terence B. Tekoh (Petitioner v. Respondent)",
+ "question": "Is the use of an un-Mirandized statement against a defendant in a criminal case sufficient to support a 42 U.S.C. § 1983 action?",
+ "facts": "Terence Tekoh worked as a patient transporter in a hospital in Los Angeles. After a patient accused him of sexual assault, hospital staff reported the allegation to the Los Angeles Sheriff’s Department. Deputy Carlos Vega went to the hospital to ask Tekoh some questions and to take Tekoh’s statement. Although the parties described vastly different accounts of the nature of the interaction between Tekoh and Vega, it is undisputed that Vega did not advise Tekoh of his Miranda rights prior to questioning him or taking his statement. Tekoh was arrested and charged in California state court, but a jury returned a verdict of not guilty. Following the acquittal on the criminal charge, Tekoh sued Vega under 42 U.S.C. § 1983 alleging that Vega violated Tekoh’s Fifth Amendment right against self-incrimination by taking his statement without first advising him of his Miranda rights. Based on the district court’s instructions, a jury found for Vega. The U.S. Court of Appeals for the Ninth Circuit vacated the verdict, reversed the district court’s judgment, and remanded the case for a new trial.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Vega v. Tekoh\nDocket: 21-499 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Carlos Vegav. Terence B. Tekoh (Petitioner v. Respondent)\nQuestion presented: Is the use of an un-Mirandized statement against a defendant in a criminal case sufficient to support a 42 U.S.C. § 1983 action?\nFacts: Terence Tekoh worked as a patient transporter in a hospital in Los Angeles. After a patient accused him of sexual assault, hospital staff reported the allegation to the Los Angeles Sheriff’s Department. Deputy Carlos Vega went to the hospital to ask Tekoh some questions and to take Tekoh’s statement. Although the parties described vastly different accounts of the nature of the interaction between Tekoh and Vega, it is undisputed that Vega did not advise Tekoh of his Miranda rights prior to questioning him or taking his statement. Tekoh was arrested and charged in California state court, but a jury returned a verdict of not guilty. Following the acquittal on the criminal charge, Tekoh sued Vega under 42 U.S.C. § 1983 alleging that Vega violated Tekoh’s Fifth Amendment right against self-incrimination by taking his statement without first advising him of his Miranda rights. Based on the district court’s instructions, a jury found for Vega. The U.S. Court of Appeals for the Ninth Circuit vacated the verdict, reversed the district court’s judgment, and remanded the case for a new trial.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

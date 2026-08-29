@@ -1,0 +1,18 @@
+{
+ "docket": "19-1155",
+ "case_name": "Garland v. Ming Dai",
+ "term": 2020,
+ "issue_area": "2",
+ "lc_disposition": "1",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Merrick B. Garland, Attorney Generalv. Ming Dai (Petitioner v. Respondent)",
+ "question": "Can a court of appeals presume that an immigrant’s testimony is credible and true if an immigration judge or the Board of Immigration Appeals did not specifically find that he was not credible?",
+ "facts": "Ming Dai, a native and citizen of China, sought asylum in the United States. An immigration judge denied his applications for asylum, withholding of removal, and protection under the Convention Against Torture, although it did not expressly state that Dai’s testimony lacked credibility. The Board of Immigration Appeals (BIA) upheld the immigration judge’s decision. Dai appealed to the U.S. Court of Appeals for the Ninth Circuit, which overturned the BIA and the immigration judge's ruling, holding that Dai was entitled to withholding of removal proceedings. The appellate court specifically noted that absent a finding that Dai was not credible, he was entitled to a presumption of credibility. This case was consolidated with Garland v. Alcaraz-Enriquez , No. 19-1156.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Garland v. Ming Dai\nDocket: 19-1155 | Term: OT2020 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Merrick B. Garland, Attorney Generalv. Ming Dai (Petitioner v. Respondent)\nQuestion presented: Can a court of appeals presume that an immigrant’s testimony is credible and true if an immigration judge or the Board of Immigration Appeals did not specifically find that he was not credible?\nFacts: Ming Dai, a native and citizen of China, sought asylum in the United States. An immigration judge denied his applications for asylum, withholding of removal, and protection under the Convention Against Torture, although it did not expressly state that Dai’s testimony lacked credibility. The Board of Immigration Appeals (BIA) upheld the immigration judge’s decision. Dai appealed to the U.S. Court of Appeals for the Ninth Circuit, which overturned the BIA and the immigration judge's ruling, holding that Dai was entitled to withholding of removal proceedings. The appellate court specifically noted that absent a finding that Dai was not credible, he was entitled to a presumption of credibility. This case was consolidated with Garland v. Alcaraz-Enriquez , No. 19-1156.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

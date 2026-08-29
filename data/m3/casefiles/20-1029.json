@@ -1,0 +1,18 @@
+{
+ "docket": "20-1029",
+ "case_name": "City of Austin v. Reagan National Advertising of Austin, LLC",
+ "term": 2021,
+ "issue_area": "3",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "City of Austin, Texasv. Reagan National Advertising of Texas Inc., et al. (Petitioner v. Respondent)",
+ "question": "Does the Austin city code’s distinction between on-premise signs, which may be digitized, and off-premise signs, which may not, constitute facially unconstitutional content-based regulation?",
+ "facts": "Reagan National Advertising of Austin and Lamar Advantage Outdoor Company own and operate signs and billboards that display commercial and non-commercial messages. They filed applications with the City of Austin to digitize existing billboards, but the City denied the applications because its sign code does not allow the digitization of off-premises signs. Reagan and Lamar sued, arguing that the code’s distinction between on-premise signs and off-premise signs violates the First Amendment. The district court held that the sign code was content-neutral and thus that it need only satisfy intermediate scrutiny—it must further an important government interest through means that are substantially related to that interest. The court found the code satisfied this test and entered judgment for the City. The U.S. Court of Appeals for the Fifth Circuit reversed, finding the code’s distinction is content-based, therefore subject to scrutiny, and that it cannot withstand strict scrutiny.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — City of Austin v. Reagan National Advertising of Austin, LLC\nDocket: 20-1029 | Term: OT2021 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: City of Austin, Texasv. Reagan National Advertising of Texas Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Does the Austin city code’s distinction between on-premise signs, which may be digitized, and off-premise signs, which may not, constitute facially unconstitutional content-based regulation?\nFacts: Reagan National Advertising of Austin and Lamar Advantage Outdoor Company own and operate signs and billboards that display commercial and non-commercial messages. They filed applications with the City of Austin to digitize existing billboards, but the City denied the applications because its sign code does not allow the digitization of off-premises signs. Reagan and Lamar sued, arguing that the code’s distinction between on-premise signs and off-premise signs violates the First Amendment. The district court held that the sign code was content-neutral and thus that it need only satisfy intermediate scrutiny—it must further an important government interest through means that are substantially related to that interest. The court found the code satisfied this test and entered judgment for the City. The U.S. Court of Appeals for the Fifth Circuit reversed, finding the code’s distinction is content-based, therefore subject to scrutiny, and that it cannot withstand strict scrutiny.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

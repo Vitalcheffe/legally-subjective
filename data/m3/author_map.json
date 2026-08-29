@@ -1,0 +1,186 @@
+{
+  "file": "data/m3/author_map.json",
+  "method": "two independent determinations from committed sources: Oyez type-join (primary) + SCDB writer-signature (completion); no external lookup, no guessing",
+  "scdb_opinion_code_learned": {
+    "code_2_means": "wrote an opinion",
+    "evidence": {
+      "combined|opinion=2|vote=1": 589,
+      "combined|opinion=2|vote=5": 21,
+      "combined|opinion=1|vote=2": 1,
+      "combined|opinion=1|vote=1": 1
+    }
+  },
+  "join_votes_used": 76,
+  "join_conflicts": {},
+  "mapping": {
+    "77": {
+      "last_name": "Alito",
+      "slug": "SAAlito",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Alito": 8
+      },
+      "conflicting": 0
+    },
+    "384": {
+      "last_name": "Breyer",
+      "slug": "SGBreyer",
+      "in_la_chambre": false,
+      "method": "oyez-join",
+      "votes": {
+        "Breyer": 8
+      },
+      "conflicting": 0
+    },
+    "1213": {
+      "last_name": "Ginsburg",
+      "slug": "RBGinsburg",
+      "in_la_chambre": false,
+      "method": "scdb-signature+service-window",
+      "docs": 26,
+      "dockets": 26,
+      "writer_dockets": {
+        "CThomas": 9,
+        "RBGinsburg": 26,
+        "JGRoberts": 1,
+        "SAAlito": 4,
+        "NMGorsuch": 5,
+        "SSotomayor": 4,
+        "BMKavanaugh": 1,
+        "SGBreyer": 1
+      },
+      "raw_constancy": 1.0,
+      "window_constancy": 1.0,
+      "service_window": [
+        2015,
+        2019
+      ],
+      "dockets_outside_service_window": []
+    },
+    "1250": {
+      "last_name": "Gorsuch",
+      "slug": "NMGorsuch",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Gorsuch": 8
+      },
+      "conflicting": 0
+    },
+    "1609": {
+      "last_name": "Jackson",
+      "slug": "KBJackson",
+      "in_la_chambre": true,
+      "method": "scdb-signature+service-window",
+      "docs": 10,
+      "dockets": 10,
+      "writer_dockets": {
+        "CThomas": 4,
+        "SGBreyer": 1,
+        "SAAlito": 3,
+        "NMGorsuch": 4,
+        "ACBarrett": 1,
+        "KBJackson": 9,
+        "BMKavanaugh": 1
+      },
+      "raw_constancy": 0.9,
+      "window_constancy": 1.0,
+      "service_window": [
+        2022,
+        2023
+      ],
+      "dockets_outside_service_window": [
+        "145, Orig."
+      ]
+    },
+    "1691": {
+      "last_name": "Kagan",
+      "slug": "EKagan",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Kagan": 10
+      },
+      "conflicting": 0
+    },
+    "1713": {
+      "last_name": "Kavanaugh",
+      "slug": "BMKavanaugh",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Kavanaugh": 8
+      },
+      "conflicting": 0
+    },
+    "1747": {
+      "last_name": "Kennedy",
+      "slug": "AMKennedy",
+      "in_la_chambre": false,
+      "method": "scdb-signature+service-window",
+      "docs": 14,
+      "dockets": 14,
+      "writer_dockets": {
+        "AMKennedy": 14,
+        "CThomas": 8,
+        "SAAlito": 6,
+        "SGBreyer": 2,
+        "JGRoberts": 3,
+        "RBGinsburg": 2,
+        "SSotomayor": 2,
+        "NMGorsuch": 3,
+        "EKagan": 1
+      },
+      "raw_constancy": 1.0,
+      "window_constancy": 1.0,
+      "service_window": [
+        2015,
+        2017
+      ],
+      "dockets_outside_service_window": []
+    },
+    "2738": {
+      "last_name": "Roberts",
+      "slug": "JGRoberts",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Roberts": 8
+      },
+      "conflicting": 0
+    },
+    "3045": {
+      "last_name": "Sotomayor",
+      "slug": "SSotomayor",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Sotomayor": 9
+      },
+      "conflicting": 0
+    },
+    "3200": {
+      "last_name": "Thomas",
+      "slug": "CThomas",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Thomas": 9
+      },
+      "conflicting": 0
+    },
+    "8543": {
+      "last_name": "Barrett",
+      "slug": "ACBarrett",
+      "in_la_chambre": true,
+      "method": "oyez-join",
+      "votes": {
+        "Barrett": 8
+      },
+      "conflicting": 0
+    }
+  },
+  "unmapped": {},
+  "anomalies": {}
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "23-146",
+ "case_name": "Connelly v. United States",
+ "term": 2023,
+ "issue_area": "12",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Thomas A. Connelly, as Executor of the Estate of Michael P. Connelly, Sr.v. United States of America (Petitioner v. Respondent)",
+ "question": "Should the proceeds of a life insurance policy taken out by a closely held corporation on a shareholder in order to facilitate the redemption of the shareholder’s stock be considered a corporate asset when calculating the value of the shareholder’s shares for purposes of the federal estate tax?",
+ "facts": "Brothers Michael and Thomas Connelly were the sole shareholders of a corporation. The corporation obtained life insurance on each brother so that if one died, the corporation could use the proceeds to redeem his shares. When Michael died, the Internal Revenue Service assessed taxes on his estate, which included his stock interest in the corporation. According to the IRS, the corporation’s fair market value included the life insurance proceeds intended for the stock redemption. Michael’s estate argued otherwise and sued for a tax refund. The district court granted summary judgment to the IRS, finding that the stock-purchase agreement did not affect the valuation and furthermore, that a proper valuation of the corporation must include the life insurance proceeds used for redemption because they were a significant asset of the company. The U.S. Court of Appeals for the Eighth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Connelly v. United States\nDocket: 23-146 | Term: OT2023 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Thomas A. Connelly, as Executor of the Estate of Michael P. Connelly, Sr.v. United States of America (Petitioner v. Respondent)\nQuestion presented: Should the proceeds of a life insurance policy taken out by a closely held corporation on a shareholder in order to facilitate the redemption of the shareholder’s stock be considered a corporate asset when calculating the value of the shareholder’s shares for purposes of the federal estate tax?\nFacts: Brothers Michael and Thomas Connelly were the sole shareholders of a corporation. The corporation obtained life insurance on each brother so that if one died, the corporation could use the proceeds to redeem his shares. When Michael died, the Internal Revenue Service assessed taxes on his estate, which included his stock interest in the corporation. According to the IRS, the corporation’s fair market value included the life insurance proceeds intended for the stock redemption. Michael’s estate argued otherwise and sued for a tax refund. The district court granted summary judgment to the IRS, finding that the stock-purchase agreement did not affect the valuation and furthermore, that a proper valuation of the corporation must include the life insurance proceeds used for redemption because they were a significant asset of the company. The U.S. Court of Appeals for the Eighth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

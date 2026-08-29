@@ -1,0 +1,18 @@
+{
+ "docket": "16-1519",
+ "case_name": "Lagos v. United States",
+ "term": 2017,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Sergio Fernando Lagosv. United States (Petitioner v. Respondent)",
+ "question": "Does the Mandatory Victims Restitution Act, pursuant to 18 U.S.C. § 3663A(b)(4), cover costs that were neither “required nor requested” by the government, including costs incurred for the victim’s own purposes and that were not prompted by any official government action?",
+ "facts": "Sergio Fernando Lagos pled guilty in federal district court to conspiracy to commit wire fraud, and multiple counts of wire fraud. He admitted that for a period of two years, he and his co-conspirators misled General Electric Capital Corporation (GECC) regarding the value of their assets in order to increase their revolving loan amount and secure under-collateralized funds. Following his guilty plea, Lagos appealed the district court’s order of restitution to the 5th Circuit. He argued that the Mandatory Victims Restitution Act (MVRA) did not allow restitution for the legal, expert, or consulting fees incurred by GECC in the course of investigating Lagos’ suspected fraud and the bankruptcy proceedings that followed. The 5th Circuit affirmed the district court’s order in light of its own precedent interpreting 18 U.S.C. § 3663A(b)(4) under the MVRA to permit restitution for investigative and legal costs, even under circumstances where these costs were incurred outside of the government’s investigation. The appeals court noted that the D.C. Circuit has adopted a narrower reading of the statute in question, though multiple other circuits have not.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Lagos v. United States\nDocket: 16-1519 | Term: OT2017 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Sergio Fernando Lagosv. United States (Petitioner v. Respondent)\nQuestion presented: Does the Mandatory Victims Restitution Act, pursuant to 18 U.S.C. § 3663A(b)(4), cover costs that were neither “required nor requested” by the government, including costs incurred for the victim’s own purposes and that were not prompted by any official government action?\nFacts: Sergio Fernando Lagos pled guilty in federal district court to conspiracy to commit wire fraud, and multiple counts of wire fraud. He admitted that for a period of two years, he and his co-conspirators misled General Electric Capital Corporation (GECC) regarding the value of their assets in order to increase their revolving loan amount and secure under-collateralized funds. Following his guilty plea, Lagos appealed the district court’s order of restitution to the 5th Circuit. He argued that the Mandatory Victims Restitution Act (MVRA) did not allow restitution for the legal, expert, or consulting fees incurred by GECC in the course of investigating Lagos’ suspected fraud and the bankruptcy proceedings that followed. The 5th Circuit affirmed the district court’s order in light of its own precedent interpreting 18 U.S.C. § 3663A(b)(4) under the MVRA to permit restitution for investigative and legal costs, even under circumstances where these costs were incurred outside of the government’s investigation. The appeals court noted that the D.C. Circuit has adopted a narrower reading of the statute in question, though multiple other circuits have not.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

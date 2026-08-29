@@ -1,0 +1,18 @@
+{
+ "docket": "17-1594",
+ "case_name": "Return Mail, Inc. v. U.S. Postal Serv.",
+ "term": 2018,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Return Mail, Inc.v. United States Postal Service (Petitioner v. Respondent)",
+ "question": "Is the government a “person” who may institute review proceedings under the Leahy-Smith America Invents Act?",
+ "facts": "Return Mail, Inc. owns a US patent directed to the processing of mail items that are undeliverable due to an inaccurate or obsolete address of the intended recipient. Return Mail sought to license the patent to the US Postal Service (“USPS”) and when it was unsuccessful, it filed a lawsuit against USPS alleging unlicensed and unlawful use and infringement of the patent. USPS filed a petition with the Patent and Trademark Office’s Patent Trial and Appeal Board (“Board”) asking that the patent be declared unpatentable on several grounds. In response, Return Mail addressed the unpatentability arguments and further argued that USPS lacked statutory standing to institute review proceedings under the Leahy-Smith America Invents Act (“AIA”). The Board held that USPS was not statutorily barred from filing the petition for review, and on the merits determined that all of the challenged patent claims were unpatentable under 35 U.S.C. § 101. The US Court of Appeals for the Federal Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Return Mail, Inc. v. U.S. Postal Serv.\nDocket: 17-1594 | Term: OT2018 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Return Mail, Inc.v. United States Postal Service (Petitioner v. Respondent)\nQuestion presented: Is the government a “person” who may institute review proceedings under the Leahy-Smith America Invents Act?\nFacts: Return Mail, Inc. owns a US patent directed to the processing of mail items that are undeliverable due to an inaccurate or obsolete address of the intended recipient. Return Mail sought to license the patent to the US Postal Service (“USPS”) and when it was unsuccessful, it filed a lawsuit against USPS alleging unlicensed and unlawful use and infringement of the patent. USPS filed a petition with the Patent and Trademark Office’s Patent Trial and Appeal Board (“Board”) asking that the patent be declared unpatentable on several grounds. In response, Return Mail addressed the unpatentability arguments and further argued that USPS lacked statutory standing to institute review proceedings under the Leahy-Smith America Invents Act (“AIA”). The Board held that USPS was not statutorily barred from filing the petition for review, and on the merits determined that all of the challenged patent claims were unpatentable under 35 U.S.C. § 101. The US Court of Appeals for the Federal Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

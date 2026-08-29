@@ -1,0 +1,18 @@
+{
+ "docket": "21-454",
+ "case_name": "Sackett v. EPA",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Michael Sackett and Chantelle Sackettv. Environmental Protection Agency (Petitioner v. Respondent)",
+ "question": "What is the proper test for determining whether wetlands are “waters of the United States” under the Clean Water Act?",
+ "facts": "Michael and Chantall Sackett own a residential lot near Priest Lake, Idaho, and want to build a home there. However, shortly after they began placing sand and gravel, the federal Environmental Protection Agency told them that they could not build on their lot because construction on the land violated the Clean Water Act. According to the EPA, the Sacketts’ lot contained wetlands that qualify as “navigable waters” regulated by the Act, so they needed to remove the sand and gravel and restore the property to its natural state. Litigation ensued, and in 2012, the Supreme Court permitted the Sacketts to litigate their challenge to the EPA’s order in federal court. During the litigation, the EPA removed its compliance order. The U.S. Court of Appeals for the Ninth Circuit held that the EPA’s withdrawal of the compliance order did not render the Sacketts’ challenge moot and that the EPA does have jurisdiction over their property under the Clean Water Act. The court reasoned that, under binding circuit precedent, “jurisdiction over wetlands depends upon the existence of a significant nexus between the wetlands in question and navigable waters in the traditional sense.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Sackett v. EPA\nDocket: 21-454 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Michael Sackett and Chantelle Sackettv. Environmental Protection Agency (Petitioner v. Respondent)\nQuestion presented: What is the proper test for determining whether wetlands are “waters of the United States” under the Clean Water Act?\nFacts: Michael and Chantall Sackett own a residential lot near Priest Lake, Idaho, and want to build a home there. However, shortly after they began placing sand and gravel, the federal Environmental Protection Agency told them that they could not build on their lot because construction on the land violated the Clean Water Act. According to the EPA, the Sacketts’ lot contained wetlands that qualify as “navigable waters” regulated by the Act, so they needed to remove the sand and gravel and restore the property to its natural state. Litigation ensued, and in 2012, the Supreme Court permitted the Sacketts to litigate their challenge to the EPA’s order in federal court. During the litigation, the EPA removed its compliance order. The U.S. Court of Appeals for the Ninth Circuit held that the EPA’s withdrawal of the compliance order did not render the Sacketts’ challenge moot and that the EPA does have jurisdiction over their property under the Clean Water Act. The court reasoned that, under binding circuit precedent, “jurisdiction over wetlands depends upon the existence of a significant nexus between the wetlands in question and navigable waters in the traditional sense.”\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

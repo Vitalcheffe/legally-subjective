@@ -1,0 +1,18 @@
+{
+ "docket": "14-770",
+ "case_name": "Bank Markazi v. Peterson",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Bank Markaziv. Deborah Peterson, et al. (Petitioner v. Respondent)",
+ "question": "Does a statute that effectively directs a particular result in a single pending case violate the separation of powers?",
+ "facts": "Deborah Peterson and a group of other plaintiffs were seeking to obtain judgments for injury or wrongful death during acts of terrorism by Iran. The Iran Central Bank (Bank Markazi) owned nearly $2 billion worth of bonds that were held in an account in New York City. Based on the Uniform Commercial Code, these assets were not considered assets of Bank Markazi, and therefore could not be attached by the plaintiffs and were immune from attachment under the Foreign Sovereign Immunities Act. While this case was pending, Congress passed the Iran Threat Reduction and Syria Human Rights Act of 2012, Section 8772 of which stated, “[T]he financial assets that are identified in and the subject of proceedings in the United States District for the Southern District of New York in Peterson et al. v. Islamic Republic of Iran et al., shall be subject to execution…in order to satisfy any judgment to the extent of any compensatory damages awarded against Iran for damages for personal injury or death caused by an act of [terrorism].” The plaintiffs moved for summary judgment based on Section 8772. Bank Markazi argued that Section 8772 violated the United States’ separation of powers because the law was solely directed at this specific case. The district court granted summary judgment for plaintiffs and ordered the turnover of the assets. The U.S. Court of Appeals for the Second Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Bank Markazi v. Peterson\nDocket: 14-770 | Term: OT2015 | Court below: United States Court of Appeals for the Second Circuit\nParties: Bank Markaziv. Deborah Peterson, et al. (Petitioner v. Respondent)\nQuestion presented: Does a statute that effectively directs a particular result in a single pending case violate the separation of powers?\nFacts: Deborah Peterson and a group of other plaintiffs were seeking to obtain judgments for injury or wrongful death during acts of terrorism by Iran. The Iran Central Bank (Bank Markazi) owned nearly $2 billion worth of bonds that were held in an account in New York City. Based on the Uniform Commercial Code, these assets were not considered assets of Bank Markazi, and therefore could not be attached by the plaintiffs and were immune from attachment under the Foreign Sovereign Immunities Act. While this case was pending, Congress passed the Iran Threat Reduction and Syria Human Rights Act of 2012, Section 8772 of which stated, “[T]he financial assets that are identified in and the subject of proceedings in the United States District for the Southern District of New York in Peterson et al. v. Islamic Republic of Iran et al., shall be subject to execution…in order to satisfy any judgment to the extent of any compensatory damages awarded against Iran for damages for personal injury or death caused by an act of [terrorism].” The plaintiffs moved for summary judgment based on Section 8772. Bank Markazi argued that Section 8772 violated the United States’ separation of powers because the law was solely directed at this specific case. The district court granted summary judgment for plaintiffs and ordered the turnover of the assets. The U.S. Court of Appeals for the Second Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

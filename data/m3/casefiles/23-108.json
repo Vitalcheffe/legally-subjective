@@ -1,0 +1,18 @@
+{
+ "docket": "23-108",
+ "case_name": "Snyder v. United States",
+ "term": 2023,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "James E. Snyderv. United States of America (Petitioner v. Respondent)",
+ "question": "Does 18 U.S.C. § 666(a)(1)(B) criminalize gratuities, i.e., payments in recognition of actions a state or local official has already taken or committed to take, without any quid pro quo agreement to take those actions?",
+ "facts": "James Snyder formerly served as mayor of Portage, Indiana. He was convicted of federal funds bribery in violation of 18 U.S.C. § 666(a)(1)(B) for soliciting and accepting $13,000 in connection with the city’s purchases of garbage trucks, among other federal crimes. Before, during, and after trial, Snyder argued that the evidence did not support a finding that there was an agreement to exchange money for the truck contracts before they were awarded. Without a prior quid pro quo agreement, he argued, § 666 cannot apply. Interpreting the plain language of the statute and Sixth Circuit precedent, the district court rejected his interpretation of that provision. The U.S. Court of Appeals for the Sixth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Snyder v. United States\nDocket: 23-108 | Term: OT2023 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: James E. Snyderv. United States of America (Petitioner v. Respondent)\nQuestion presented: Does 18 U.S.C. § 666(a)(1)(B) criminalize gratuities, i.e., payments in recognition of actions a state or local official has already taken or committed to take, without any quid pro quo agreement to take those actions?\nFacts: James Snyder formerly served as mayor of Portage, Indiana. He was convicted of federal funds bribery in violation of 18 U.S.C. § 666(a)(1)(B) for soliciting and accepting $13,000 in connection with the city’s purchases of garbage trucks, among other federal crimes. Before, during, and after trial, Snyder argued that the evidence did not support a finding that there was an agreement to exchange money for the truck contracts before they were awarded. Without a prior quid pro quo agreement, he argued, § 666 cannot apply. Interpreting the plain language of the statute and Sixth Circuit precedent, the district court rejected his interpretation of that provision. The U.S. Court of Appeals for the Sixth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

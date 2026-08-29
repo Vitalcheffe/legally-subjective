@@ -1,0 +1,18 @@
+{
+ "docket": "23-411",
+ "case_name": "Murthy v. Missouri",
+ "term": 2023,
+ "issue_area": "9",
+ "lc_disposition": "6",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Vivek H. Murthy, U.S. Surgeon General, et al.v. Missouri, et al. (Appellant v. Appellee)",
+ "question": "Did the federal government’s request that private social media companies take steps to prevent the dissemination of purported misinformation transform those companies’ content-moderation decisions into state action and thus violate users’ First Amendment rights?",
+ "facts": "Multiple plaintiffs, including epidemiologists, consumer and human rights advocates, academics, and media operators, claimed that various defendants, including numerous federal agencies and officials, have engaged in censorship, targeting conservative-leaning speech on topics such as the 2020 presidential election, COVID-19 origins, mask and vaccine efficacy, and election integrity. The plaintiffs argue that the defendants used public statements and threats of regulatory action, such as reforming Section 230 of the Communications Decency Act, to induce social media platforms to suppress content, thereby violating the plaintiffs’ First Amendment rights. The States of Missouri and Louisiana also alleged harm due to the infringement of the free speech rights of their citizens. The U.S. District Court for the Western District of Louisiana granted the plaintiffs’ motion for a nationwide preliminary injunction prohibiting the federal government from meeting with social media companies or otherwise seeking to influence their content-moderation policies. The U.S. Supreme Court granted the government’s motion for an emergency stay and granted certiorari to review the case on the merits.",
+ "posture": "Appeal",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Murthy v. Missouri\nDocket: 23-411 | Term: OT2023 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Vivek H. Murthy, U.S. Surgeon General, et al.v. Missouri, et al. (Appellant v. Appellee)\nQuestion presented: Did the federal government’s request that private social media companies take steps to prevent the dissemination of purported misinformation transform those companies’ content-moderation decisions into state action and thus violate users’ First Amendment rights?\nFacts: Multiple plaintiffs, including epidemiologists, consumer and human rights advocates, academics, and media operators, claimed that various defendants, including numerous federal agencies and officials, have engaged in censorship, targeting conservative-leaning speech on topics such as the 2020 presidential election, COVID-19 origins, mask and vaccine efficacy, and election integrity. The plaintiffs argue that the defendants used public statements and threats of regulatory action, such as reforming Section 230 of the Communications Decency Act, to induce social media platforms to suppress content, thereby violating the plaintiffs’ First Amendment rights. The States of Missouri and Louisiana also alleged harm due to the infringement of the free speech rights of their citizens. The U.S. District Court for the Western District of Louisiana granted the plaintiffs’ motion for a nationwide preliminary injunction prohibiting the federal government from meeting with social media companies or otherwise seeking to influence their content-moderation policies. The U.S. Supreme Court granted the government’s motion for an emergency stay and granted certiorari to review the case on the merits.\nPosture: Appeal\n",
+ "window": "test"
+}

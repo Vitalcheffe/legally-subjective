@@ -1,0 +1,18 @@
+{
+ "docket": "20-1114",
+ "case_name": "American Hospital Assn. v. Becerra",
+ "term": 2021,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the District of Columbia Circuit",
+ "parties": "American Hospital Association, et al.v. Xavier Becerra, Secretary of Health and Human Services, et al. (Petitioner v. Respondent)",
+ "question": "1. Is the Department of Health and Human Services’ decision to lower drug reimbursement rates for certain hospitals based on a reasonable interpretation of the Medicare statute? 2. Does 42 U.S.C. § 1395l(t)(12) preclude the petitioners’ challenge to HHS’s adjustments?",
+ "facts": "The federal government reimburses hospitals for providing outpatient care to patients insured by Medicare Part B. Until recently, the government reimbursed all hospitals at a uniform rate for providing covered drugs. In 2018, the Department of Health and Human Services (HHS) reduced the reimbursement rates for certain types of hospitals (known as “340B hospitals”) because those hospitals can obtain the covered drugs far more cheaply than other hospitals can. HHS reasoned that it should not reimburse hospitals more than they paid to acquire the drugs. Several 340B hospitals and hospital associations affected by the decision filed a lawsuit challenging HHS’s decision to lower reimbursement rates. The district court ruled that HHS had exceeded its statutory authority by reducing drug reimbursement rates for 340B hospitals, but the U.S. Court of Appeals for the D.C. Circuit reversed, finding that HHS’s decision is based on a reasonable interpretation of the statute.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — American Hospital Assn. v. Becerra\nDocket: 20-1114 | Term: OT2021 | Court below: United States Court of Appeals for the District of Columbia Circuit\nParties: American Hospital Association, et al.v. Xavier Becerra, Secretary of Health and Human Services, et al. (Petitioner v. Respondent)\nQuestion presented: 1. Is the Department of Health and Human Services’ decision to lower drug reimbursement rates for certain hospitals based on a reasonable interpretation of the Medicare statute? 2. Does 42 U.S.C. § 1395l(t)(12) preclude the petitioners’ challenge to HHS’s adjustments?\nFacts: The federal government reimburses hospitals for providing outpatient care to patients insured by Medicare Part B. Until recently, the government reimbursed all hospitals at a uniform rate for providing covered drugs. In 2018, the Department of Health and Human Services (HHS) reduced the reimbursement rates for certain types of hospitals (known as “340B hospitals”) because those hospitals can obtain the covered drugs far more cheaply than other hospitals can. HHS reasoned that it should not reimburse hospitals more than they paid to acquire the drugs. Several 340B hospitals and hospital associations affected by the decision filed a lawsuit challenging HHS’s decision to lower reimbursement rates. The district court ruled that HHS had exceeded its statutory authority by reducing drug reimbursement rates for 340B hospitals, but the U.S. Court of Appeals for the D.C. Circuit reversed, finding that HHS’s decision is based on a reasonable interpretation of the statute.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "22-196",
+ "case_name": "Samia v. United States",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Adam Samia, aka Sal, aka Adam Samicv. United States (Petitioner v. Respondent)",
+ "question": "Does admitting a codefendant’s redacted out-of-court confession that immediately inculpates a defendant based on context violate the Confrontation Clause of the Sixth Amendment?",
+ "facts": "Defendants Joseph Manuel Hunter, Carl David Stillwell, and Adam Samia were tried jointly and convicted on five counts: conspiracy to commit murder-for-hire, murder-for-hire, conspiracy to murder and kidnap in a foreign country, causing death with a firearm during and relation to a crime of violence, and conspiracy to launder money. All three defendants were sentenced to life imprisonment. One piece of evidence used to convict the defendants was Stillwell’s redacted confession. Samia challenged the admission of that evidence, arguing that the redactions were insufficient because jurors would immediately infer that the confession’s references to “another person” referred to Samia himself. As such, Samia argued, his inability to cross-examine Stillwell violated his Sixth Amendment right to confront witnesses against him. The U.S. Court of Appeals for the Second Circuit disagreed and affirmed the district court’s evidentiary ruling on that issue.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Samia v. United States\nDocket: 22-196 | Term: OT2022 | Court below: United States Court of Appeals for the Second Circuit\nParties: Adam Samia, aka Sal, aka Adam Samicv. United States (Petitioner v. Respondent)\nQuestion presented: Does admitting a codefendant’s redacted out-of-court confession that immediately inculpates a defendant based on context violate the Confrontation Clause of the Sixth Amendment?\nFacts: Defendants Joseph Manuel Hunter, Carl David Stillwell, and Adam Samia were tried jointly and convicted on five counts: conspiracy to commit murder-for-hire, murder-for-hire, conspiracy to murder and kidnap in a foreign country, causing death with a firearm during and relation to a crime of violence, and conspiracy to launder money. All three defendants were sentenced to life imprisonment. One piece of evidence used to convict the defendants was Stillwell’s redacted confession. Samia challenged the admission of that evidence, arguing that the redactions were insufficient because jurors would immediately infer that the confession’s references to “another person” referred to Samia himself. As such, Samia argued, his inability to cross-examine Stillwell violated his Sixth Amendment right to confront witnesses against him. The U.S. Court of Appeals for the Second Circuit disagreed and affirmed the district court’s evidentiary ruling on that issue.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

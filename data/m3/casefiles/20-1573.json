@@ -1,0 +1,18 @@
+{
+ "docket": "20-1573",
+ "case_name": "Viking River Cruises, Inc. v. Moriana",
+ "term": 2021,
+ "issue_area": "7",
+ "lc_disposition": "2",
+ "lower_court": "State appellate court",
+ "parties": "Viking River Cruises, Inc.v. Angie Moriana (Petitioner v. Respondent)",
+ "question": "Does the Federal Arbitration Act require enforcement of a bilateral arbitration agreement providing that an employee cannot raise representative claims?",
+ "facts": "Angie Moriana worked as a sales representative for Viking River Cruises, Inc., and agreed to submit any dispute arising out of her employment to binding arbitration. Notwithstanding that agreement, Moriana sued Viking on behalf of herself and similarly situated workers under California’s Labor Code Private Attorneys General Act of 2004 (PAGA). Moriana relied on a 2014 decision by the California Supreme Court, Iskanian v. CLS Transportation Los Angeles , which held arbitration agreements that waive the right to bring PAGA representative actions in any forum (such as the one between Moriana and Viking) are unenforceable. Viking moved to compel Moriana’s claims to arbitration, arguing that the U.S. Supreme Court’s 2018 decision in Epic Systems Corp. v. Lewis overruled Iskanian . The trial court denied Viking’s motion. The appellate court affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Viking River Cruises, Inc. v. Moriana\nDocket: 20-1573 | Term: OT2021 | Court below: State appellate court\nParties: Viking River Cruises, Inc.v. Angie Moriana (Petitioner v. Respondent)\nQuestion presented: Does the Federal Arbitration Act require enforcement of a bilateral arbitration agreement providing that an employee cannot raise representative claims?\nFacts: Angie Moriana worked as a sales representative for Viking River Cruises, Inc., and agreed to submit any dispute arising out of her employment to binding arbitration. Notwithstanding that agreement, Moriana sued Viking on behalf of herself and similarly situated workers under California’s Labor Code Private Attorneys General Act of 2004 (PAGA). Moriana relied on a 2014 decision by the California Supreme Court, Iskanian v. CLS Transportation Los Angeles , which held arbitration agreements that waive the right to bring PAGA representative actions in any forum (such as the one between Moriana and Viking) are unenforceable. Viking moved to compel Moriana’s claims to arbitration, arguing that the U.S. Supreme Court’s 2018 decision in Epic Systems Corp. v. Lewis overruled Iskanian . The trial court denied Viking’s motion. The appellate court affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

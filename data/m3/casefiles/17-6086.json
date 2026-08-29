@@ -1,0 +1,18 @@
+{
+ "docket": "17-6086",
+ "case_name": "Gundy v. United States",
+ "term": 2018,
+ "issue_area": "13",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Herman Avery Gundyv. United States (Petitioner v. Respondent)",
+ "question": "Does the Sex Offender Registration and Notification Act’s delegation of authority to the U.S. Attorney General to issue regulations under 42 U.S.C. § 16913 violate the nondelegation doctrine?",
+ "facts": "Herman Avery Gundy was convicted of committing sexual assault in Maryland while on supervised release for a prior federal offense. After serving his sentence for the Maryland sex offense, Gundy was to be transferred to federal custody to serve his sentence for violating his supervised release. As a part of this transfer, Gundy received permission to travel unsupervised by bus from Pennsylvania to New York. Gundy made the trip, but did not register as a sex offender in either Maryland or New York as required by state law. In January 2013, Gundy was indicted under 18 U.S.C. § 2250, the Sex Offender Notification and Registration Act (SORNA), for traveling from Pennsylvania to New York and then staying in New York without registering as a sex offender. He was convicted and sentenced to time served, along with five years of supervised release. The 2nd Circuit affirmed this judgment on appeal. Gundy then asked the U.S. Supreme Court to review his case, which it agreed to do only as to the question of whether SORNA unlawfully delegates authority to the U.S. Attorney General under 42 U.S.C. § 16913 to impose the law’s registration requirements upon offenders who were convicted before the statute was enacted.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Gundy v. United States\nDocket: 17-6086 | Term: OT2018 | Court below: United States Court of Appeals for the Second Circuit\nParties: Herman Avery Gundyv. United States (Petitioner v. Respondent)\nQuestion presented: Does the Sex Offender Registration and Notification Act’s delegation of authority to the U.S. Attorney General to issue regulations under 42 U.S.C. § 16913 violate the nondelegation doctrine?\nFacts: Herman Avery Gundy was convicted of committing sexual assault in Maryland while on supervised release for a prior federal offense. After serving his sentence for the Maryland sex offense, Gundy was to be transferred to federal custody to serve his sentence for violating his supervised release. As a part of this transfer, Gundy received permission to travel unsupervised by bus from Pennsylvania to New York. Gundy made the trip, but did not register as a sex offender in either Maryland or New York as required by state law. In January 2013, Gundy was indicted under 18 U.S.C. § 2250, the Sex Offender Notification and Registration Act (SORNA), for traveling from Pennsylvania to New York and then staying in New York without registering as a sex offender. He was convicted and sentenced to time served, along with five years of supervised release. The 2nd Circuit affirmed this judgment on appeal. Gundy then asked the U.S. Supreme Court to review his case, which it agreed to do only as to the question of whether SORNA unlawfully delegates authority to the U.S. Attorney General under 42 U.S.C. § 16913 to impose the law’s registration requirements upon offenders who were convicted before the statute was enacted.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "20-1530",
+ "case_name": "West Virginia v. EPA",
+ "term": 2021,
+ "issue_area": "8",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the District of Columbia Circuit",
+ "parties": "West Virginia, et al.v. Environmental Protection Agency, et al. (Petitioner v. Respondent)",
+ "question": "Does the Environmental Protection Agency have the authority to regulate greenhouse gas emissions in virtually any industry, so long as it considers cost, non-air impacts, and energy requirements?",
+ "facts": "The Trump administration repealed the 2015 Clean Power Plan, which established guidelines for states to limit carbon dioxide emissions from power plants, and issued in its place the Affordable Clean Energy (ACE) Rule, which eliminated or deferred the guidelines. However, the U.S. Court of Appeals for the D.C. Circuit vacated the ACE Rule as arbitrary and capricious. One of the challengers, North American Coal Corporation, challenged the Environmental Protection Agency’s authority to so broadly regulate greenhouse gas emissions.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — West Virginia v. EPA\nDocket: 20-1530 | Term: OT2021 | Court below: United States Court of Appeals for the District of Columbia Circuit\nParties: West Virginia, et al.v. Environmental Protection Agency, et al. (Petitioner v. Respondent)\nQuestion presented: Does the Environmental Protection Agency have the authority to regulate greenhouse gas emissions in virtually any industry, so long as it considers cost, non-air impacts, and energy requirements?\nFacts: The Trump administration repealed the 2015 Clean Power Plan, which established guidelines for states to limit carbon dioxide emissions from power plants, and issued in its place the Affordable Clean Energy (ACE) Rule, which eliminated or deferred the guidelines. However, the U.S. Court of Appeals for the D.C. Circuit vacated the ACE Rule as arbitrary and capricious. One of the challengers, North American Coal Corporation, challenged the Environmental Protection Agency’s authority to so broadly regulate greenhouse gas emissions.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "No. 19-67",
+ "case_name": "United States v. Sineneng-Smith",
+ "term": 2019,
+ "issue_area": "9",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "United States of Americav. Evelyn Sineneng-Smith (Petitioner v. Respondent)",
+ "question": "Is a federal law criminalizing the act of encouraging or inducing illegal immigration for commercial advantage or private financial gain unconstitutional on its face?",
+ "facts": "Evelyn Sineneng-Smith operated an immigration consulting firm in San Jose, California. Her clients were mostly natives of the Philippines, who were unlawfully employed in the United States and were seeking to obtain legal permanent residence (green cards). Sineneng-Smith purported to help her clients obtain permanent residence through the Labor Certification process, but that program expired on April 30, 2001. Sineneng-Smith knew that the program had expired but nonetheless continued to tell clients that they could obtain green cards via Labor Certifications. Federal law prohibits encouraging or inducing an alien to reside in the country, knowing and in reckless disregard of the fact that such residence is in violation of the law. Sineneng-Smith was indicted, charged, and convicted by a jury of violating this law. She appealed her conviction, and the U.S. Court of Appeals solicited supplemental briefing on several constitutional questions presented in the appeal. The court held that the statute was overbroad in violation of the First Amendment, criminalizing a “substantial amount of protected expression in relation to the statute’s narrow legitimate sweep.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Sineneng-Smith\nDocket: No. 19-67 | Term: OT2019 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: United States of Americav. Evelyn Sineneng-Smith (Petitioner v. Respondent)\nQuestion presented: Is a federal law criminalizing the act of encouraging or inducing illegal immigration for commercial advantage or private financial gain unconstitutional on its face?\nFacts: Evelyn Sineneng-Smith operated an immigration consulting firm in San Jose, California. Her clients were mostly natives of the Philippines, who were unlawfully employed in the United States and were seeking to obtain legal permanent residence (green cards). Sineneng-Smith purported to help her clients obtain permanent residence through the Labor Certification process, but that program expired on April 30, 2001. Sineneng-Smith knew that the program had expired but nonetheless continued to tell clients that they could obtain green cards via Labor Certifications. Federal law prohibits encouraging or inducing an alien to reside in the country, knowing and in reckless disregard of the fact that such residence is in violation of the law. Sineneng-Smith was indicted, charged, and convicted by a jury of violating this law. She appealed her conviction, and the U.S. Court of Appeals solicited supplemental briefing on several constitutional questions presented in the appeal. The court held that the statute was overbroad in violation of the First Amendment, criminalizing a “substantial amount of protected expression in relation to the statute’s narrow legitimate sweep.”\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

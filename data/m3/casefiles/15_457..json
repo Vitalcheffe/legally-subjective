@@ -1,0 +1,18 @@
+{
+ "docket": "15–457.",
+ "case_name": "Microsoft Corp. v. Baker",
+ "term": 2016,
+ "issue_area": "9",
+ "lc_disposition": "11",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Microsoft Corporationv. Seth Baker, et al. (Petitioner v. Respondent)",
+ "question": "Does a federal court of appeals have the jurisdiction to review a class action suit for certification after the plaintiffs voluntarily dismiss their individual claims with prejudice?",
+ "facts": "The plaintiffs brought a class action suit against Microsoft Corporation (Microsoft) and alleged that, during regular game play on the Xbox 360, the discs would come loose due to vibrations and scratch against internal components of the gaming system, which rendered them permanently broken. Because only 0.4% of consoles caused this issue with regular players, the district court determined that a class action suit could not be certified and individuals in the suit would have to come forward on their own. The parties then stipulated a dismissal with prejudice. The district court granted the dismissal, and the plaintiffs appealed to the U.S. Court of Appeals for the Ninth Circuit. The appellate court reversed and held that the district court had misapplied applicable law and, therefore, abused its discretion in striking the class action allegations.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Microsoft Corp. v. Baker\nDocket: 15–457. | Term: OT2016 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Microsoft Corporationv. Seth Baker, et al. (Petitioner v. Respondent)\nQuestion presented: Does a federal court of appeals have the jurisdiction to review a class action suit for certification after the plaintiffs voluntarily dismiss their individual claims with prejudice?\nFacts: The plaintiffs brought a class action suit against Microsoft Corporation (Microsoft) and alleged that, during regular game play on the Xbox 360, the discs would come loose due to vibrations and scratch against internal components of the gaming system, which rendered them permanently broken. Because only 0.4% of consoles caused this issue with regular players, the district court determined that a class action suit could not be certified and individuals in the suit would have to come forward on their own. The parties then stipulated a dismissal with prejudice. The district court granted the dismissal, and the plaintiffs appealed to the U.S. Court of Appeals for the Ninth Circuit. The appellate court reversed and held that the district court had misapplied applicable law and, therefore, abused its discretion in striking the class action allegations.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

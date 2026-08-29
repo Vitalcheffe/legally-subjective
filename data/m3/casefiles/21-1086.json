@@ -1,0 +1,18 @@
+{
+ "docket": "21-1086",
+ "case_name": "Allen v. Milligan",
+ "term": 2022,
+ "issue_area": "2",
+ "lc_disposition": "",
+ "lower_court": "Federal district court",
+ "parties": "Wes Allen, Alabama Secretary of State, et al.v. Evan Milligan, et al. (Appellant v. Appellee)",
+ "question": "Does Alabama’s 2021 redistricting plan for its seven U.S. House seats violate Section 2 of the Voting Rights Act?",
+ "facts": "After the 2020 census, Alabama created a redistricting plan for its seven seats in the U.S. House of Representatives. One of the districts in the plan is a majority-Black district. Registered voters and several organizations challenged the map, arguing that the state had illegally packed Black voters into a single district while dividing other clusters of Black voters across multiple districts. The challengers alleged that the map effectively minimizes the number of districts in which Black voters can elect their chosen candidates, in violation of Section 2 of the Voting Rights Act, which bans racial discrimination in voting policies. A three-judge district court agreed with the challengers that the map likely violated Section 2 of the VRA, granting a preliminary injunction that ordered the state to draw a new map. Alabama asked the U.S. Supreme Court to freeze the district court’s injunction, which the Court did by a 5-4 decision pending a merits decision.",
+ "posture": "Appeal",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Allen v. Milligan\nDocket: 21-1086 | Term: OT2022 | Court below: Federal district court\nParties: Wes Allen, Alabama Secretary of State, et al.v. Evan Milligan, et al. (Appellant v. Appellee)\nQuestion presented: Does Alabama’s 2021 redistricting plan for its seven U.S. House seats violate Section 2 of the Voting Rights Act?\nFacts: After the 2020 census, Alabama created a redistricting plan for its seven seats in the U.S. House of Representatives. One of the districts in the plan is a majority-Black district. Registered voters and several organizations challenged the map, arguing that the state had illegally packed Black voters into a single district while dividing other clusters of Black voters across multiple districts. The challengers alleged that the map effectively minimizes the number of districts in which Black voters can elect their chosen candidates, in violation of Section 2 of the Voting Rights Act, which bans racial discrimination in voting policies. A three-judge district court agreed with the challengers that the map likely violated Section 2 of the VRA, granting a preliminary injunction that ordered the state to draw a new map. Alabama asked the U.S. Supreme Court to freeze the district court’s injunction, which the Court did by a 5-4 decision pending a merits decision.\nPosture: Appeal\n",
+ "window": "test"
+}

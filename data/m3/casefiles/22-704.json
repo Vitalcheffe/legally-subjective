@@ -1,0 +1,18 @@
+{
+ "docket": "22-704",
+ "case_name": "Vidal v. Elster",
+ "term": 2023,
+ "issue_area": "3",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Katherine K. Vidal, Under Secretary of Commerce for Intellectual Property and Director, United States Patent and Trademark Officev. Steve Elster (Petitioner v. Respondent)",
+ "question": "Does the refusal to register a trademark under 15 U.S.C. § 1052(c) when the mark contains criticism of a government official or public figure violate the Free Speech Clause of the First Amendment?",
+ "facts": "In 2018, Steve Elster attempted to register the phrase “TRUMP TOO SMALL” for use on various types of shirts, intending the mark to serve as political commentary on President Donald Trump and his policies. The Patent and Trademark Office (PTO) examiner rejected the application, citing two sections of the Lanham Act: Section 2(c), which prohibits registering a mark that identifies a living individual without their consent, and Section 2(a), which bars marks that falsely suggest a connection with living or dead persons. Elster appealed, arguing that the provisions infringed on his First Amendment rights and were not narrowly tailored to serve a compelling government interest. The Board upheld the examiner's decision based solely on Section 2(c), asserting that the statute is constitutional and serves compelling government interests, including the protection of individual rights and consumer protection. Elster appealed the decision, and the Federal Circuit reversed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Vidal v. Elster\nDocket: 22-704 | Term: OT2023 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Katherine K. Vidal, Under Secretary of Commerce for Intellectual Property and Director, United States Patent and Trademark Officev. Steve Elster (Petitioner v. Respondent)\nQuestion presented: Does the refusal to register a trademark under 15 U.S.C. § 1052(c) when the mark contains criticism of a government official or public figure violate the Free Speech Clause of the First Amendment?\nFacts: In 2018, Steve Elster attempted to register the phrase “TRUMP TOO SMALL” for use on various types of shirts, intending the mark to serve as political commentary on President Donald Trump and his policies. The Patent and Trademark Office (PTO) examiner rejected the application, citing two sections of the Lanham Act: Section 2(c), which prohibits registering a mark that identifies a living individual without their consent, and Section 2(a), which bars marks that falsely suggest a connection with living or dead persons. Elster appealed, arguing that the provisions infringed on his First Amendment rights and were not narrowly tailored to serve a compelling government interest. The Board upheld the examiner's decision based solely on Section 2(c), asserting that the statute is constitutional and serves compelling government interests, including the protection of individual rights and consumer protection. Elster appealed the decision, and the Federal Circuit reversed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

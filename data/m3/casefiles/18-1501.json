@@ -1,0 +1,18 @@
+{
+ "docket": "18-1501",
+ "case_name": "Liu v. SEC. & Exch. Comm'n",
+ "term": 2019,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Charles C. Lui, et al.v. Securities and Exchange Commission (Petitioner v. Respondent)",
+ "question": "May the Securities and Exchange Commission seek and obtain disgorgement from a court as “equitable relief” for a securities law violation, even though the Court has determined that such disgorgement is a penalty?",
+ "facts": "Charles Liu operated an EB-5 fund, which is a fund that offers lawful permanent residence opportunities to foreigners who make significant investments in the United States. However, Liu misappropriated millions of dollars that had been invested in the fund, in violation of Section 17(a) of the Securities Act of 1933, which prohibits the making of false statements in the context of a securities offering. The district court ordered Liu to “disgorge” (pay back) $26 million, the amount investors had paid into the EB-5 fund, and the U.S. Court of Appeals for the Ninth Circuit affirmed. In petitioning the Supreme Court’s review, Liu argued that the SEC lacked the authority to obtain disgorgement, under the Court’s 2017 decision in Kokesh v. SEC , which held that disgorgement awarded under the court’s equitable power is a penalty, not a remedial measure.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Liu v. SEC. & Exch. Comm'n\nDocket: 18-1501 | Term: OT2019 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Charles C. Lui, et al.v. Securities and Exchange Commission (Petitioner v. Respondent)\nQuestion presented: May the Securities and Exchange Commission seek and obtain disgorgement from a court as “equitable relief” for a securities law violation, even though the Court has determined that such disgorgement is a penalty?\nFacts: Charles Liu operated an EB-5 fund, which is a fund that offers lawful permanent residence opportunities to foreigners who make significant investments in the United States. However, Liu misappropriated millions of dollars that had been invested in the fund, in violation of Section 17(a) of the Securities Act of 1933, which prohibits the making of false statements in the context of a securities offering. The district court ordered Liu to “disgorge” (pay back) $26 million, the amount investors had paid into the EB-5 fund, and the U.S. Court of Appeals for the Ninth Circuit affirmed. In petitioning the Supreme Court’s review, Liu argued that the SEC lacked the authority to obtain disgorgement, under the Court’s 2017 decision in Kokesh v. SEC , which held that disgorgement awarded under the court’s equitable power is a penalty, not a remedial measure.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

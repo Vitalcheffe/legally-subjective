@@ -1,0 +1,18 @@
+{
+ "docket": "13-1339",
+ "case_name": "Spokeo, Inc. v. Robins",
+ "term": 2015,
+ "issue_area": "9",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Spokeo, Inc.v. Thomas Robins (Petitioner v. Respondent)",
+ "question": "Can Congress authorize a cause of action based on a violation of a federal statute and therefore confer Article III standing on a plaintiff who has not suffered concrete harm?",
+ "facts": "Spokeo, Inc. (Spokeo) operated a website that provided information about individuals such as contact data, marital status, age, occupation, and certain types of economic information. Thomas Robins sued Spokeo and claimed that the company willfully violated the Fair Credit Reporting Act (FCRA) by publishing false information about him on the website. However, Robins was unable to allege any “actual or imminent harm,” so the district court granted Spokeo’s motion to dismiss for lack of subject-matter jurisdiction and Robins’ lack of standing under Article III of the Constitution. Robins then filed an amended complaint in which he alleged that he suffered actual harm to his employment prospects due to the website falsely claiming that he was wealthy. The district court originally denied Spokeo’s motion to dismiss but later reconsidered its order and dismissed the complaint for failure to state an injury in fact. Robins appealed and argued that the district court could not reconsider its previous decision and that he had sufficiently alleged an injury in fact to qualify for Article III standing. The U.S. Court of Appeals for the Ninth Circuit reversed and held that, although the district court could reconsider its ruling, the allegation of a violation of a statutory right is sufficient injury to qualify for standing.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Spokeo, Inc. v. Robins\nDocket: 13-1339 | Term: OT2015 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Spokeo, Inc.v. Thomas Robins (Petitioner v. Respondent)\nQuestion presented: Can Congress authorize a cause of action based on a violation of a federal statute and therefore confer Article III standing on a plaintiff who has not suffered concrete harm?\nFacts: Spokeo, Inc. (Spokeo) operated a website that provided information about individuals such as contact data, marital status, age, occupation, and certain types of economic information. Thomas Robins sued Spokeo and claimed that the company willfully violated the Fair Credit Reporting Act (FCRA) by publishing false information about him on the website. However, Robins was unable to allege any “actual or imminent harm,” so the district court granted Spokeo’s motion to dismiss for lack of subject-matter jurisdiction and Robins’ lack of standing under Article III of the Constitution. Robins then filed an amended complaint in which he alleged that he suffered actual harm to his employment prospects due to the website falsely claiming that he was wealthy. The district court originally denied Spokeo’s motion to dismiss but later reconsidered its order and dismissed the complaint for failure to state an injury in fact. Robins appealed and argued that the district court could not reconsider its previous decision and that he had sufficiently alleged an injury in fact to qualify for Article III standing. The U.S. Court of Appeals for the Ninth Circuit reversed and held that, although the district court could reconsider its ruling, the allegation of a violation of a statutory right is sufficient injury to qualify for standing.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

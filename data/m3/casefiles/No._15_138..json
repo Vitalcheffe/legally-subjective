@@ -1,0 +1,18 @@
+{
+ "docket": "No. 15–138.",
+ "case_name": "RJR Nabisco, Inc. v. European Cmty.",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "RJR Nabisco, Inc., et al.v. The European Community, et al. (Petitioner v. Respondent)",
+ "question": "Can the Racketeer Influenced Corrupt Organizations (RICO) statute apply extraterritorially?",
+ "facts": "The European Community and 26 of its member states sued RJR Nabisco (RJR) and alleged that RJR directed, managed, and controlled a global money-laundering enterprise in violation of the Racketeer Influenced and Corrupt Organizations (RICO) statute. The European Community claimed that Colombian and Russian criminal organizations imported illegal drugs into European countries, where they produced revenue in euros that was then laundered back into the currency of the criminal organizations’ home countries while the euros were sold to cigarette importers at a discounted rate to purchase RJR’s cigarettes. The lawsuit alleged that RJR controlled this operation and in the course of executing it committed various violations of the RICO statute as well as violations of New York state law. The defendants moved to dismiss, and the district court granted the motion based on the presumption the U.S. statutes did not apply extraterritorially absent express Congressional intent. The U.S. Court of Appeals for the Second Circuit reversed and held that claims under the RICO statute can apply extraterritorially when the RICO claim is a violation of a predicate statute that Congress clearly intended to apply extraterritorially.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — RJR Nabisco, Inc. v. European Cmty.\nDocket: No. 15–138. | Term: OT2015 | Court below: United States Court of Appeals for the Second Circuit\nParties: RJR Nabisco, Inc., et al.v. The European Community, et al. (Petitioner v. Respondent)\nQuestion presented: Can the Racketeer Influenced Corrupt Organizations (RICO) statute apply extraterritorially?\nFacts: The European Community and 26 of its member states sued RJR Nabisco (RJR) and alleged that RJR directed, managed, and controlled a global money-laundering enterprise in violation of the Racketeer Influenced and Corrupt Organizations (RICO) statute. The European Community claimed that Colombian and Russian criminal organizations imported illegal drugs into European countries, where they produced revenue in euros that was then laundered back into the currency of the criminal organizations’ home countries while the euros were sold to cigarette importers at a discounted rate to purchase RJR’s cigarettes. The lawsuit alleged that RJR controlled this operation and in the course of executing it committed various violations of the RICO statute as well as violations of New York state law. The defendants moved to dismiss, and the district court granted the motion based on the presumption the U.S. statutes did not apply extraterritorially absent express Congressional intent. The U.S. Court of Appeals for the Second Circuit reversed and held that claims under the RICO statute can apply extraterritorially when the RICO claim is a violation of a predicate statute that Congress clearly intended to apply extraterritorially.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

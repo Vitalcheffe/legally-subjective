@@ -1,0 +1,18 @@
+{
+ "docket": "19-123",
+ "case_name": "Fulton v. Philadelphia",
+ "term": 2020,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Third Circuit",
+ "parties": "Sharonell Fulton, et al.v. City of Philadelphia, Pennsylvania, et al. (Petitioner v. Respondent)",
+ "question": "1. To succeed on their free exercise claim, must plaintiffs prove that the government would allow the same conduct by someone who held different religious views, or only provide sufficient evidence that a law is not neutral and generally applicable? 2. Should the Court revisit its decision in Employment Division v. Smith? 3. Does the government violate the First Amendment by conditioning a religious agency’s ability to participate in the foster care system on taking actions and making statements that directly contradict the agency’s religious beliefs?",
+ "facts": "In March 2018, the City of Philadelphia barred Catholic Social Services (CSS) from placing children in foster homes because of its policy of not licensing same-sex couples to be foster parents. CSS sued the City of Philadelphia, asking the court to order the city to renew their contract. CSS argued that its right to free exercise of religion and free speech entitled it to reject qualified same-sex couples because they were same-sex couples, rather than for any reason related to their qualifications to care for children. The district court denied CSS’s motion for a preliminary injunction, and the Third Circuit affirmed, finding that the City’s non-discrimination policy was a neutral, generally applicable law and that CSS had not demonstrated that the City targeted CSS for its religious beliefs or was motivated by ill will against its religion.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Fulton v. Philadelphia\nDocket: 19-123 | Term: OT2020 | Court below: United States Court of Appeals for the Third Circuit\nParties: Sharonell Fulton, et al.v. City of Philadelphia, Pennsylvania, et al. (Petitioner v. Respondent)\nQuestion presented: 1. To succeed on their free exercise claim, must plaintiffs prove that the government would allow the same conduct by someone who held different religious views, or only provide sufficient evidence that a law is not neutral and generally applicable? 2. Should the Court revisit its decision in Employment Division v. Smith? 3. Does the government violate the First Amendment by conditioning a religious agency’s ability to participate in the foster care system on taking actions and making statements that directly contradict the agency’s religious beliefs?\nFacts: In March 2018, the City of Philadelphia barred Catholic Social Services (CSS) from placing children in foster homes because of its policy of not licensing same-sex couples to be foster parents. CSS sued the City of Philadelphia, asking the court to order the city to renew their contract. CSS argued that its right to free exercise of religion and free speech entitled it to reject qualified same-sex couples because they were same-sex couples, rather than for any reason related to their qualifications to care for children. The district court denied CSS’s motion for a preliminary injunction, and the Third Circuit affirmed, finding that the City’s non-discrimination policy was a neutral, generally applicable law and that CSS had not demonstrated that the City targeted CSS for its religious beliefs or was motivated by ill will against its religion.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "14–6166.",
+ "case_name": "Taylor v. United States",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fourth Circuit",
+ "parties": "David Anthony Taylorv. United States (Petitioner v. Respondent)",
+ "question": "In a federal criminal prosecution under the Hobbs Act, is the government required to prove beyond a reasonable doubt that the robbery of a drug dealer is an inherent economic enterprise that satisfies the interstate commerce element of the offense?",
+ "facts": "David Anthony Taylor was a member of the “Southwest Goonz,” a group of robbers based in Roanoke, Virginia, that focused on robbing drug dealers, who typically have drug proceeds in their home and are reluctant to report crime. Taylor was indicted on two counts of robbery under the Hobbs Act, which prohibits actual or attempted robbery or extortion affecting interstate or foreign commerce. At Taylor’s second trial, after his first resulted in a hung jury, the government moved to prevent Taylor from offering evidence that robbing a drug dealer who grows marijuana outside of state lines does not affect interstate commerce and therefore cannot violate the Hobbs Act. The district court granted the government’s motion, and Taylor was subsequently convicted of both counts under the Hobbs Act. Taylor moved to set aside the verdict on the grounds that the government did not present sufficient evidence that his actions affected interstate commerce. The district court denied Taylor’s motion, and the U.S. Court of Appeals for the Fourth Circuit affirmed the conviction.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Taylor v. United States\nDocket: 14–6166. | Term: OT2015 | Court below: United States Court of Appeals for the Fourth Circuit\nParties: David Anthony Taylorv. United States (Petitioner v. Respondent)\nQuestion presented: In a federal criminal prosecution under the Hobbs Act, is the government required to prove beyond a reasonable doubt that the robbery of a drug dealer is an inherent economic enterprise that satisfies the interstate commerce element of the offense?\nFacts: David Anthony Taylor was a member of the “Southwest Goonz,” a group of robbers based in Roanoke, Virginia, that focused on robbing drug dealers, who typically have drug proceeds in their home and are reluctant to report crime. Taylor was indicted on two counts of robbery under the Hobbs Act, which prohibits actual or attempted robbery or extortion affecting interstate or foreign commerce. At Taylor’s second trial, after his first resulted in a hung jury, the government moved to prevent Taylor from offering evidence that robbing a drug dealer who grows marijuana outside of state lines does not affect interstate commerce and therefore cannot violate the Hobbs Act. The district court granted the government’s motion, and Taylor was subsequently convicted of both counts under the Hobbs Act. Taylor moved to set aside the verdict on the grounds that the government did not present sufficient evidence that his actions affected interstate commerce. The district court denied Taylor’s motion, and the U.S. Court of Appeals for the Fourth Circuit affirmed the conviction.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

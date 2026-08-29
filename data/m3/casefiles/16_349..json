@@ -1,0 +1,18 @@
+{
+ "docket": "16–349.",
+ "case_name": "Henson v. Santander Consumer USA Inc.",
+ "term": 2016,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fourth Circuit",
+ "parties": "Ricky Henson, et al.v. Santander Consumer USA, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Is a company that regularly attempts to collect debts it purchased after the debts had fallen into default is a “debt collector” subject to the Fair Debt Collection Practices Act?",
+ "facts": "The petitioners are a group of individuals who all obtained car loans from CitiFinancial Auto. When they were unable to make payments on the vehicles, CitiFinancial repossessed them, sold them, and then informed the petitioners they owed a balance to cover the difference between the agreed purchase price and the amount of money for which CitiFinancial sold the debt. It later sold the defaulted loans to Santander Consumer, USA (Santander), which attempted to collect these alleged debts. In November 2012, the petitioners filed a putative class action lawsuit that alleged that Santander violated the Fair Debt Collection Practices Act (FDCPA) in its communications with them. Santander moved to dismiss the action and claimed that it was not a “debt collector” under the regulations of the FDCPA because Santander merely bought the debt from another institution and did not originate it. The district court agreed with Santander and dismissed the case.The U.S. Court of Appeals for the Fourth Circuit affirmed the lower court’s decision and declined to rehear the case en banc.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Henson v. Santander Consumer USA Inc.\nDocket: 16–349. | Term: OT2016 | Court below: United States Court of Appeals for the Fourth Circuit\nParties: Ricky Henson, et al.v. Santander Consumer USA, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Is a company that regularly attempts to collect debts it purchased after the debts had fallen into default is a “debt collector” subject to the Fair Debt Collection Practices Act?\nFacts: The petitioners are a group of individuals who all obtained car loans from CitiFinancial Auto. When they were unable to make payments on the vehicles, CitiFinancial repossessed them, sold them, and then informed the petitioners they owed a balance to cover the difference between the agreed purchase price and the amount of money for which CitiFinancial sold the debt. It later sold the defaulted loans to Santander Consumer, USA (Santander), which attempted to collect these alleged debts. In November 2012, the petitioners filed a putative class action lawsuit that alleged that Santander violated the Fair Debt Collection Practices Act (FDCPA) in its communications with them. Santander moved to dismiss the action and claimed that it was not a “debt collector” under the regulations of the FDCPA because Santander merely bought the debt from another institution and did not originate it. The district court agreed with Santander and dismissed the case.The U.S. Court of Appeals for the Fourth Circuit affirmed the lower court’s decision and declined to rehear the case en banc.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

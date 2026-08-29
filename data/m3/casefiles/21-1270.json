@@ -1,0 +1,18 @@
+{
+ "docket": "21-1270",
+ "case_name": "MOAC Mall Holdings LLC v. Transform Holdco LLC",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "MOAC Mall Holdings LLCv. Transform Holdco LLC (Petitioner v. Respondent)",
+ "question": "Does Bankruptcy Code Section 363(m) limit the jurisdiction of appellate courts over an order approving the sale of a debtor’s assets or instead simply limit the remedies available on appeal from such an order?",
+ "facts": "Sears formerly occupied a space in the Mall of America in Minneapolis, Minnesota, under a lease with MOAC. In 2019, the bankruptcy court permitted Transform to assign the Sears lease to its wholly-owned subsidiary. MOAC moved to stay assignment of the lease, but the bankruptcy court denied the motion. MOAC appealed to federal district court but did so without first obtaining from the district court a stay of the assignment pending resolution of the appeal. Transform challenged the district court’s review of the bankruptcy court’s assignment order, claiming that Bankruptcy Code Section 363(m) “creates a rule of statutory mootness” barring appellate review of a sale “made to a good-faith purchaser” and not stayed pending appeal. Because MOAC had not obtained a stay, the district court dismissed as moot MOAC’s appeal. The U.S. Court of Appeals for the Second Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — MOAC Mall Holdings LLC v. Transform Holdco LLC\nDocket: 21-1270 | Term: OT2022 | Court below: United States Court of Appeals for the Second Circuit\nParties: MOAC Mall Holdings LLCv. Transform Holdco LLC (Petitioner v. Respondent)\nQuestion presented: Does Bankruptcy Code Section 363(m) limit the jurisdiction of appellate courts over an order approving the sale of a debtor’s assets or instead simply limit the remedies available on appeal from such an order?\nFacts: Sears formerly occupied a space in the Mall of America in Minneapolis, Minnesota, under a lease with MOAC. In 2019, the bankruptcy court permitted Transform to assign the Sears lease to its wholly-owned subsidiary. MOAC moved to stay assignment of the lease, but the bankruptcy court denied the motion. MOAC appealed to federal district court but did so without first obtaining from the district court a stay of the assignment pending resolution of the appeal. Transform challenged the district court’s review of the bankruptcy court’s assignment order, claiming that Bankruptcy Code Section 363(m) “creates a rule of statutory mootness” barring appellate review of a sale “made to a good-faith purchaser” and not stayed pending appeal. Because MOAC had not obtained a stay, the district court dismissed as moot MOAC’s appeal. The U.S. Court of Appeals for the Second Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

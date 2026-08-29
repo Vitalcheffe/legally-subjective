@@ -1,0 +1,18 @@
+{
+ "docket": "22-166",
+ "case_name": "Tyler v. Hennepin County",
+ "term": 2022,
+ "issue_area": "4",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Geraldine Tylerv. Hennepin County, Minnesota, et al. (Petitioner v. Respondent)",
+ "question": "1. Does taking and selling a home to satisfy a debt to the government, and keeping the surplus value as a windfall, violate the Fifth Amendment’s Takings Clause? 2. Is the forfeiture of property worth far more than needed to satisfy a debt a fine within the meaning of the Eighth Amendment?",
+ "facts": "Geraldine Tyler owned a condominium in Minneapolis. She stopped paying her property taxes and accrued a tax debt of $15,000. To satisfy the debt, Hennepin County foreclosed on Tyler’s property and sold it for $40,000, retaining the net proceeds from the sale. Tyler sued the County, arguing that its actions violated her constitutional rights. The district court dismissed Tyler’s case for failure to state a claim, and the U.S. Court of Appeals for the Eighth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Tyler v. Hennepin County\nDocket: 22-166 | Term: OT2022 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Geraldine Tylerv. Hennepin County, Minnesota, et al. (Petitioner v. Respondent)\nQuestion presented: 1. Does taking and selling a home to satisfy a debt to the government, and keeping the surplus value as a windfall, violate the Fifth Amendment’s Takings Clause? 2. Is the forfeiture of property worth far more than needed to satisfy a debt a fine within the meaning of the Eighth Amendment?\nFacts: Geraldine Tyler owned a condominium in Minneapolis. She stopped paying her property taxes and accrued a tax debt of $15,000. To satisfy the debt, Hennepin County foreclosed on Tyler’s property and sold it for $40,000, retaining the net proceeds from the sale. Tyler sued the County, arguing that its actions violated her constitutional rights. The district court dismissed Tyler’s case for failure to state a claim, and the U.S. Court of Appeals for the Eighth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

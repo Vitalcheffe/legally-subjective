@@ -1,0 +1,18 @@
+{
+ "docket": "19-635",
+ "case_name": "Trump v. Vance",
+ "term": 2019,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Donald J. Trumpv. Cyrus R. Vance, Jr., in His Official Capacity as District Attorney of the County of New York, et al. (Petitioner v. Respondent)",
+ "question": "Does the Constitution permit a county prosecutor to subpoena a third-party custodian for the financial and tax records of a sitting president, over which the president has no claim of executive privilege?",
+ "facts": "The district attorney of New York County issued a grand jury subpoena to an accounting firm that possessed the financial records of President Donald Trump and one of his businesses. Trump asked a federal court to restrain enforcement of that subpoena, but the district court declined to exercise jurisdiction and dismissed the case based on Supreme Court precedent regarding federal intrusion into ongoing state criminal prosecutions. The court held, in the alternative, that there was no constitutional basis to temporarily restrain or preliminarily enjoin the subpoena at issue. The U.S. Court of Appeals for the Second Circuit affirmed the lower court with respect to the alternative holding, finding that any presidential immunity from state criminal process does not extend to investigative steps like the grand jury subpoena. However, it found that the Supreme Court precedent on which the lower court relied did not apply to the situation and vacated the judgment as to that issue and remanded the case to the lower court.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Trump v. Vance\nDocket: 19-635 | Term: OT2019 | Court below: United States Court of Appeals for the Second Circuit\nParties: Donald J. Trumpv. Cyrus R. Vance, Jr., in His Official Capacity as District Attorney of the County of New York, et al. (Petitioner v. Respondent)\nQuestion presented: Does the Constitution permit a county prosecutor to subpoena a third-party custodian for the financial and tax records of a sitting president, over which the president has no claim of executive privilege?\nFacts: The district attorney of New York County issued a grand jury subpoena to an accounting firm that possessed the financial records of President Donald Trump and one of his businesses. Trump asked a federal court to restrain enforcement of that subpoena, but the district court declined to exercise jurisdiction and dismissed the case based on Supreme Court precedent regarding federal intrusion into ongoing state criminal prosecutions. The court held, in the alternative, that there was no constitutional basis to temporarily restrain or preliminarily enjoin the subpoena at issue. The U.S. Court of Appeals for the Second Circuit affirmed the lower court with respect to the alternative holding, finding that any presidential immunity from state criminal process does not extend to investigative steps like the grand jury subpoena. However, it found that the Supreme Court precedent on which the lower court relied did not apply to the situation and vacated the judgment as to that issue and remanded the case to the lower court.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

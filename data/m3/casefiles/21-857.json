@@ -1,0 +1,18 @@
+{
+ "docket": "21-857",
+ "case_name": "Jones v. Hendrix",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Marcus DeAngelo Jonesv. Dewayne Hendrix (Petitioner v. Respondent)",
+ "question": "May a federal inmate who did not challenge their conviction on the ground that the statute did not criminalize their activity subsequently apply for habeas relief after the Supreme Court retroactively invalidates the circuit precedent on which the inmate relied in not challenging their conviction?",
+ "facts": "A jury convicted Marcus DeAngelo Jones of one count of making false statements to acquire a firearm and two counts of possessing a firearm as a felon. Jones appealed, and the U.S. Court of Appeals for the Eighth Circuit affirmed. Jones then filed a motion to vacate his sentence on the grounds that it was illegally imposed. The district court denied his motion, but the Eighth Circuit reversed, concluding that Jones’s counsel was ineffective for not objecting to the two felon-in-possession counts as duplicative. The district court vacated one of his felon-in-possession convictions and resentenced him. In 2019, the U.S. Supreme Court held that, to convict someone under § 922(g), the government must prove that the defendant knew both that he had a prohibited status and that he possessed a firearm. Because Jones had been convicted of this offense without proof that he knew he had a prohibited status, he filed a habeas petition challenging his conviction. The district court dismissed his petition, and the Eighth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Jones v. Hendrix\nDocket: 21-857 | Term: OT2022 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Marcus DeAngelo Jonesv. Dewayne Hendrix (Petitioner v. Respondent)\nQuestion presented: May a federal inmate who did not challenge their conviction on the ground that the statute did not criminalize their activity subsequently apply for habeas relief after the Supreme Court retroactively invalidates the circuit precedent on which the inmate relied in not challenging their conviction?\nFacts: A jury convicted Marcus DeAngelo Jones of one count of making false statements to acquire a firearm and two counts of possessing a firearm as a felon. Jones appealed, and the U.S. Court of Appeals for the Eighth Circuit affirmed. Jones then filed a motion to vacate his sentence on the grounds that it was illegally imposed. The district court denied his motion, but the Eighth Circuit reversed, concluding that Jones’s counsel was ineffective for not objecting to the two felon-in-possession counts as duplicative. The district court vacated one of his felon-in-possession convictions and resentenced him. In 2019, the U.S. Supreme Court held that, to convict someone under § 922(g), the government must prove that the defendant knew both that he had a prohibited status and that he possessed a firearm. Because Jones had been convicted of this offense without proof that he knew he had a prohibited status, he filed a habeas petition challenging his conviction. The district court dismissed his petition, and the Eighth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

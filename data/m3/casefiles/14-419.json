@@ -1,0 +1,18 @@
+{
+ "docket": "14-419",
+ "case_name": "Luis v. United States",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Sila Luisv. United States (Petitioner v. Respondent)",
+ "question": "<p>Does the pretrial restraint of assets that are not directly related to the crime at issue and are needed to retain counsel of choice violate the defendant’s Fifth and Sixth Amendment rights?</p>",
+ "facts": "A federal grand jury indicted Sila Luis for her alleged role in a Medicare fraud scheme that involved giving kickbacks to patients who enrolled with her home healthcare companies. Because federal law allows the government to file a pretrial motion to restrain the assets of defendants accused of particular types of fraud, including substitute assets not directly related to the fraud, the government did so in this case. Luis objected to the motion and argued that she needed those funds in order to pay for her criminal defense lawyer, and therefore granting the motion would violate her right to counsel under the Sixth Amendment. The district court granted the motion, and the U.S. Court of Appeals for the Eleventh Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Luis v. United States\nDocket: 14-419 | Term: OT2015 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Sila Luisv. United States (Petitioner v. Respondent)\nQuestion presented: <p>Does the pretrial restraint of assets that are not directly related to the crime at issue and are needed to retain counsel of choice violate the defendant’s Fifth and Sixth Amendment rights?</p>\nFacts: A federal grand jury indicted Sila Luis for her alleged role in a Medicare fraud scheme that involved giving kickbacks to patients who enrolled with her home healthcare companies. Because federal law allows the government to file a pretrial motion to restrain the assets of defendants accused of particular types of fraud, including substitute assets not directly related to the fraud, the government did so in this case. Luis objected to the motion and argued that she needed those funds in order to pay for her criminal defense lawyer, and therefore granting the motion would violate her right to counsel under the Sixth Amendment. The district court granted the motion, and the U.S. Court of Appeals for the Eleventh Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

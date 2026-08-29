@@ -1,0 +1,18 @@
+{
+ "docket": "15–458.",
+ "case_name": "Dietz v. Bouldin",
+ "term": 2015,
+ "issue_area": "9",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Rocky Dietzv. Hillary Bouldin (Petitioner v. Respondent)",
+ "question": "Can the judge recall jurors for further service in the same case after the judge has discharged a jury from service and the jurors have left the judge’s presence?",
+ "facts": "Hillary Bouldin’s vehicle collided with Rocky Dietz’s in Montana in 2009. Dietz filed a negligence claim for injuries sustained from the accident. The action was removed to federal court. The parties made stipulations as to past damages, and the jury ruled in Dietz’s favor but awarded $0 in damages. The district court judge dismissed the jury but then reconsidered and re-empaneled the jury. He asked them to re-determine the damages in a manner consistent with the parties’ stipulation. The jury returned the same verdict and awarded $15,000 in damages. On appeal, Dietz claimed that the district court erred by recalling the jury after it had been dismissed. The U.S. Court of Appeals for the Ninth Circuit affirmed the lower court’s decision and held that dismissing the jury, then recalling the jurors, was not an abuse of discretion because the jurors were not exposed to prejudicial influence during the brief duration of their dismissal.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Dietz v. Bouldin\nDocket: 15–458. | Term: OT2015 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Rocky Dietzv. Hillary Bouldin (Petitioner v. Respondent)\nQuestion presented: Can the judge recall jurors for further service in the same case after the judge has discharged a jury from service and the jurors have left the judge’s presence?\nFacts: Hillary Bouldin’s vehicle collided with Rocky Dietz’s in Montana in 2009. Dietz filed a negligence claim for injuries sustained from the accident. The action was removed to federal court. The parties made stipulations as to past damages, and the jury ruled in Dietz’s favor but awarded $0 in damages. The district court judge dismissed the jury but then reconsidered and re-empaneled the jury. He asked them to re-determine the damages in a manner consistent with the parties’ stipulation. The jury returned the same verdict and awarded $15,000 in damages. On appeal, Dietz claimed that the district court erred by recalling the jury after it had been dismissed. The U.S. Court of Appeals for the Ninth Circuit affirmed the lower court’s decision and held that dismissing the jury, then recalling the jurors, was not an abuse of discretion because the jurors were not exposed to prejudicial influence during the brief duration of their dismissal.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}
