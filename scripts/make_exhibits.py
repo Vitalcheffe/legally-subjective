@@ -1,20 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""LS-EXHIBIT-1.1 — regenerate the six README exhibits as adaptive SVGs.
+"""LS-EXHIBIT-1.2 — regenerate the six README exhibits, two faces each.
 
 Every exhibit:
   * is a PURE CHART — no page chrome, no title block, no footer stamp;
     the README supplies the words, the exhibit supplies the graphic;
   * has a TRANSPARENT background — it lives on the reader's paper
     (GitHub light or dark), never on a slab of its own;
-  * follows the reader's color scheme automatically (CSS variables +
-    prefers-color-scheme media query, inside the SVG);
+  * ships as TWO FILES — name.light.svg (dark ink) and name.dark.svg
+    (light ink) — and the README picks the face with a <picture>
+    element whose media query is evaluated by github.com itself.
+    An internal prefers-color-scheme query inside the SVG does NOT
+    fire in GitHub's <img>/camo context (field-measured 2026-08-29:
+    invisible ink on dark). Two files is the only reliable mechanism;
   * is CENTERED with generous empty margins on all four sides;
   * is drawn entirely from the REAL data in this repository (never
     hand-typed), text rendered as paths (no font dependency).
 
 Usage:  python3 scripts/make_exhibits.py
-Output: docs/assets/{hero,corpus-window,baselines,sealed,agreement,the-draw}.svg
+Output: docs/assets/{hero,corpus-window,baselines,sealed,agreement,
+        the-draw}.{light,dark}.svg
 """
 import hashlib
 import json
@@ -98,7 +103,7 @@ def last_name(slug):
 # ------------------------------------------------------- 1. THE BENCH -----
 
 def exhibit_hero(d):
-    W, H = 1560, 900
+    W, H = 1560, 925
     s = Svg(W, H)
     js = d["justices"]
 
@@ -127,10 +132,10 @@ def exhibit_hero(d):
     for i, j in enumerate(js):
         y = top + i * rh + rh / 2
         # row baseline hairline
-        s.line(X0 - 330, y + rh / 2 - 4, X1 + 240, y + rh / 2 - 4,
+        s.line(X0 - 316, y + rh / 2 - 4, X1 + 220, y + rh / 2 - 4,
                cls="s-hair", sw=1)
         # docket id + name
-        s.text(X0 - 330, y + 4, j["docket"], font="mono400", size=14,
+        s.text(X0 - 316, y + 4, j["docket"], font="mono400", size=14,
                cls="f-ink3", tracking=1)
         s.text(X0 - 22, y + 5, j["last"], font="mono600", size=17,
                anchor="end", tracking=1)
@@ -154,13 +159,13 @@ def exhibit_hero(d):
            "PETITIONER-ALIGNMENT RATE — SHARE OF VOTES FAVORING THE PARTY "
            "SEEKING RELIEF, WILSON 95 % INTERVALS",
            font="mono500", size=14, cls="f-ink3", anchor="middle", tracking=2)
-    s.save(os.path.join(ASSETS, "hero.svg"))
+    s.save_both(ASSETS, "hero")
 
 
 # -------------------------------------------------- 2. THE CORPUS WINDOW --
 
 def exhibit_corpus(d):
-    W, H = 1560, 300
+    W, H = 1560, 340
     s = Svg(W, H)
     cases = sorted(d["cases"], key=lambda c: (c["term"], c["docket"]))
     terms = sorted(d["by_term"].keys())
@@ -170,7 +175,7 @@ def exhibit_corpus(d):
     per = [d["by_term"][t] for t in terms]
     total_w = sum(p * tw for p in per) + gap * (len(terms) - 1)
     x = (W - total_w) / 2.0
-    tick_top, tick_h = 96.0, 84.0
+    tick_top, tick_h = 64.0, 84.0
     f54_terms = d["f54_by_term"]
 
     for ti, t in enumerate(terms):
@@ -200,7 +205,7 @@ def exhibit_corpus(d):
     s.rect(W / 2 + 66, ly - 12, 4, 18, cls="b-sig")
     s.text(W / 2 + 84, ly + 2, "DECIDED 5–4 — %d" % len(d["f54"]),
            font="mono500", size=14, cls="f-ink2", tracking=1.5)
-    s.save(os.path.join(ASSETS, "corpus-window.svg"))
+    s.save_both(ASSETS, "corpus-window")
 
 
 # ------------------------------------------------------- 3. THE BAR -------
@@ -224,7 +229,7 @@ def exhibit_baselines(d):
          m2["B4_justice_ideology"]["vote_accuracy"],
          m2["B4_justice_ideology"]["vote_accuracy_ic95"], True),
     ]
-    W, H = 1560, 480
+    W, H = 1560, 510
     s = Svg(W, H)
     X0, X1 = 620.0, 1220.0
     V0, V1 = 30.0, 75.0
@@ -245,7 +250,7 @@ def exhibit_baselines(d):
 
     for i, (label, acc, ci, is_sig) in enumerate(rows):
         y = top + i * rh + rh / 2
-        s.line(X0 - 600, y + rh / 2 - 4, X1 + 250, y + rh / 2 - 4,
+        s.line(X0 - 576, y + rh / 2 - 4, X1 + 268, y + rh / 2 - 4,
                cls="s-hair", sw=1)
         lab_cls = "f-sig" if is_sig else "f-ink"
         s.text(X0 - 22, y + 5, label, font="mono600", size=16,
@@ -268,7 +273,7 @@ def exhibit_baselines(d):
            "SHARE OF CORRECT VOTES ON THE TEST WINDOW OT2020–2023, "
            "WILSON 95 % INTERVALS",
            font="mono500", size=14, cls="f-ink3", anchor="middle", tracking=2)
-    s.save(os.path.join(ASSETS, "baselines.svg"))
+    s.save_both(ASSETS, "baselines")
 
 
 # ------------------------------------------------------- 4. THE LOCK ------
@@ -309,24 +314,10 @@ def exhibit_sealed(d):
     s.text(W / 2 + 104, ly + 2,
            "SEALED — %d, SHA-256 FROZEN" % len(d["sealed54"]),
            font="mono500", size=14, cls="f-ink2", tracking=1.5)
-    s.save(os.path.join(ASSETS, "sealed.svg"))
+    s.save_both(ASSETS, "sealed")
 
 
 # ----------------------------------------------------- 5. THE AGREEMENT ---
-
-MATRIX_STYLE = """.mc{stroke:var(--hair);stroke-width:1}
-.m5{fill:#0a0a0a}.m5t{fill:#ffffff}
-.m4{fill:#404040}.m4t{fill:#ffffff}
-.m3{fill:#737373}.m3t{fill:#ffffff}
-.m2{fill:#a6a6a6}.m2t{fill:#0a0a0a}
-.m1{fill:#d4d4d4}.m1t{fill:#0a0a0a}
-@media (prefers-color-scheme:dark){
-.m5{fill:#8b949e}.m5t{fill:#0d1117}
-.m4{fill:#6e7681}.m4t{fill:#0d1117}
-.m3{fill:#484f58}.m3t{fill:#e6edf3}
-.m2{fill:#21262d}.m2t{fill:#e6edf3}
-.m1{fill:#161b22}.m1t{fill:#e6edf3}}"""
-
 
 def exhibit_agreement(d):
     pairs = d["agreement"]
@@ -356,7 +347,7 @@ def exhibit_agreement(d):
     x0 = (W - grid) / 2.0 + 60
     top = 128.0
     H = int(top + grid + 118)
-    s = Svg(W, H, style_extra=MATRIX_STYLE)
+    s = Svg(W, H)
 
     def bin_cls(v):
         """agreement -> (fill class, text class), contrast-safe in both modes"""
@@ -417,19 +408,22 @@ def exhibit_agreement(d):
         s.rect(cx - 3, cy - 3, cell + 6, cell + 6, cls="s-sig", sw=3)
 
     ly = top + grid + 52
-    w_id, c_id = extremes[0][1].split("|")
-    b_id, _ = max(extremes)[1].split("|")
-    legend1 = "OUTLINED — CLOSEST: %s · %s  %.1f%%   WIDEST: %s · %s  %.1f%%" % (
-        w_id.upper(), c_id.upper(), extremes[0][0] * 100,
-        b_id.upper(), max(extremes)[1].split("|")[1].upper(),
-        max(extremes)[0] * 100)
+    # extremes[0] = lowest agreement = the pair FARTHEST apart (widest);
+    # max(extremes) = highest agreement = the CLOSEST pair. The legend
+    # must say which is which — inverted in 1.1, caught in the 1.2 review.
+    lo_ex, hi_ex = extremes[0], max(extremes)
+    w_a, w_b = lo_ex[1].split("|")
+    c_a, c_b = hi_ex[1].split("|")
+    legend1 = ("OUTLINED — CLOSEST: %s · %s  %.1f%%   WIDEST: %s · %s  %.1f%%"
+               % (c_a.upper(), c_b.upper(), hi_ex[0] * 100,
+                  w_a.upper(), w_b.upper(), lo_ex[0] * 100))
     s.text(W / 2, ly, legend1, font="mono500", size=15, cls="f-ink2",
            anchor="middle", tracking=1)
     s.text(W / 2, ly + 30,
            "VOTE-LEVEL AGREEMENT ON COMMON CASES, n ≥ 50 — ORDERED BY MEAN "
            "AGREEMENT WITH THE CONSERVATIVE BLOCK",
            font="mono500", size=13, cls="f-ink3", anchor="middle", tracking=1.5)
-    s.save(os.path.join(ASSETS, "agreement.svg"))
+    s.save_both(ASSETS, "agreement")
 
 
 # -------------------------------------------------------- 6. THE DRAW -----
@@ -444,9 +438,9 @@ def exhibit_draw(d):
     idx = rng.randrange(len(js))
     winner = js[idx]
 
-    W, H = 1560, 1080
+    W, H = 1560, 1090
     s = Svg(W, H)
-    cx, cy = W / 2, 560.0
+    cx, cy = W / 2, 545.0
     R, r_in = 380.0, 258.0
     n = len(js)
     seg = 2 * math.pi / n
@@ -501,7 +495,7 @@ def exhibit_draw(d):
     s.text(cx, cy + 96, winner["docket"], font="mono400", size=14,
            cls="f-ink3", anchor="middle", tracking=2)
 
-    s.save(os.path.join(ASSETS, "the-draw.svg"))
+    s.save_both(ASSETS, "the-draw")
     print("draw seed: %s -> index %d -> %s" % (seed_hex[:16], idx,
                                                winner["last"]))
 

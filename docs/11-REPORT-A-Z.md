@@ -441,20 +441,33 @@ commitments — the roadmap is the law, and it says so.
 
 ## X — The eXhibits
 
-The six exhibits of the LS-EXHIBIT-1.0 system, as filed:
+The six exhibits of the LS-EXHIBIT system, as filed (each as two SVG
+faces — `.light.svg` / `.dark.svg` — mounted through a `<picture>`
+element so GitHub itself picks the reader's face):
 
 | Exhibit | File | What it shows |
 |---|---|---|
-| A — The project | `docs/assets/hero.png` | the bench, thirteen dockets, disposition + Wilson |
-| B — The record | `docs/assets/corpus-window.png` | 569 ticks, the seventy-nine five-four in red |
-| C — The bar | `docs/assets/baselines.png` | five baselines, 63.7% in signal red |
-| D — The lock | `docs/assets/sealed.png` | 29 legible, 50 redacted |
-| E — The bench | `docs/assets/agreement.png` | the 13×13 matrix, extremes marked |
-| F — The storefront | `docs/assets/the-draw.png` | the wheel, one drawn justice |
+| A — The project | `docs/assets/hero.{light,dark}.svg` | the bench, thirteen dockets, disposition + Wilson |
+| B — The record | `docs/assets/corpus-window.{light,dark}.svg` | 569 ticks, the seventy-nine five-four in red |
+| C — The bar | `docs/assets/baselines.{light,dark}.svg` | five baselines, 63.7% in signal red |
+| D — The lock | `docs/assets/sealed.{light,dark}.svg` | 29 legible, 50 redacted |
+| E — The bench | `docs/assets/agreement.{light,dark}.svg` | the 13×13 matrix, extremes marked |
+| F — The storefront | `docs/assets/the-draw.{light,dark}.svg` | the wheel, one drawn justice |
 
-Each PNG sits next to its HTML source; each HTML is generated from the
-live JSON by the scripts in the project workspace, following
+Each file is generated from the live JSON by `scripts/make_exhibits.py`
+and gated by `scripts/qa_exhibits.py` (structure, WCAG AA contrast,
+raster canary, margin law), following
 [`docs/10-VISUAL-GUIDE.md`](10-VISUAL-GUIDE.md).
+
+> **Erratum (2026-08-29).** This report was filed against
+> LS-EXHIBIT-1.1 (single-file adaptive SVGs, PNG listings above).
+> Field review on GitHub showed the internal `prefers-color-scheme`
+> query never fires in the camo `<img>` context — dark-mode readers
+> got invisible ink. The system was refounded as LS-EXHIBIT-1.2 (two
+> files per exhibit, one `<picture>`, contrast gated by the build),
+> and the index above reflects it. One legend bug was found and fixed
+> in the same pass: the agreement exhibit labeled the widest pair as
+> "closest" and vice-versa.
 
 ## Y — The Yield
 
