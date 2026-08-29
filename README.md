@@ -68,6 +68,32 @@ the whole project is organized around.
 
 ---
 
+## The first challenger
+
+On 2026-08-29 the first model was trained — everything the case file
+knows *before* the decision (issue area, lower-court disposition, term,
+argument length, justice identity), the sealed 50 excluded from every
+split. **The bar held.**
+
+| Challenger (transparent test, sealed excluded) | Accuracy | vs B4 |
+|---|---|---|
+| M3a-LR — additive logistic regression | 58.6% | p = 0.002 |
+| M3a-GB — gradient boosting | 59.8% | p = 0.009 |
+| M3a-IX — with justice×issue interactions | 60.4% | p = 0.047 |
+| **B4 — per-justice ideology, same rows** | **63.1%** | reference |
+
+Reading: justice identity is the only stable signal in the structured
+world — *who* votes beats *what the case is about*. Justices do
+specialize by domain (interactions recover part of it), but not enough
+to clear the bar. Consequence: if 63.7% is beatable, the signal lives
+in the **text** — which is exactly what conditions A/B/C will test once
+the opinion corpus (M1.5, dripping) is complete. A null result is a
+result: the price of admission is now empirically priced.
+
+Detail: [`results/m3a_report.md`](results/m3a_report.md)
+
+---
+
 ## The lock
 
 <img src="docs/assets/sealed.svg" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
