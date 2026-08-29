@@ -128,7 +128,7 @@ monter un Drive contenant `personas/`. Le chemin local est prioritaire.""")
 code("""# --- Option A (défaut): repo git
 REPO_PATH = "/content/legally-subjective"          # Colab
 if not os.path.isdir(REPO_PATH):
-    !git clone --depth 1 https://github.com/<ORG>/legally-subjective.git {REPO_PATH}
+    !git clone --depth 1 https://github.com/Vitalcheffe/legally-subjective.git {REPO_PATH}
 
 # --- Option B: Drive
 # from google.colab import drive; drive.mount('/content/drive')
