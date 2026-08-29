@@ -1,0 +1,207 @@
+{
+  "milestone": "M3a — the structured challenger",
+  "date": "2026-08-29",
+  "question_answered": {
+    "trainable_now": "structured conditions — yes (metadata complete since the freeze); LLM conditions A/B/C — no (M1.5 opinion texts at 112/1778, dripping)",
+    "outcome": "NULL RESULT — no structured challenger beats the per-justice ideological bar B4. The bar holds."
+  },
+  "protocol": {
+    "rows": "justice×case votes with coded SCDB direction",
+    "train": "OT2015..OT2019, sealed excluded",
+    "test": "OT2020..OT2023, sealed excluded (transparent test)",
+    "sealed": "excluded from train, all CV folds, and test",
+    "cv": "GroupKFold(5), group = case",
+    "features": "issue area, lower-court disposition, term, log argument duration, justice identity — all pre-decision",
+    "seed": 42
+  },
+  "n": {
+    "rows_total": 4569,
+    "train": 2314,
+    "test": 1815,
+    "sealed_test_votes_excluded": 180
+  },
+  "B4_same_rows": {
+    "acc": 0.6307,
+    "n": 1522,
+    "ic95": [
+      0.6062,
+      0.6546
+    ]
+  },
+  "models": {
+    "M3a-LR": {
+      "desc": "additive logistic regression (issue, lc, term, log-dur, justice)",
+      "hyperparams": {
+        "C": 0.01
+      },
+      "cv_acc": 0.5623,
+      "test_acc_all_rows": 0.5829,
+      "test_ic95_all_rows": [
+        0.5601,
+        0.6054
+      ],
+      "test_acc_b4_rows": 0.5861,
+      "test_ic95_b4_rows": [
+        0.5611,
+        0.6106
+      ],
+      "mcnemar_vs_b4": {
+        "model_right_b4_wrong": 199,
+        "model_wrong_b4_right": 267,
+        "p_exact": 0.00188
+      },
+      "brier": 0.2396
+    },
+    "M3a-IX": {
+      "desc": "logistic regression + explicit justice×issue interactions",
+      "hyperparams": {
+        "C": 0.03
+      },
+      "cv_acc": 0.5709,
+      "test_acc_all_rows": 0.5989,
+      "test_ic95_all_rows": [
+        0.5762,
+        0.6212
+      ],
+      "test_acc_b4_rows": 0.6038,
+      "test_ic95_b4_rows": [
+        0.579,
+        0.6281
+      ],
+      "mcnemar_vs_b4": {
+        "model_right_b4_wrong": 182,
+        "model_wrong_b4_right": 223,
+        "p_exact": 0.04672
+      },
+      "brier": 0.235
+    },
+    "M3a-GB": {
+      "desc": "histogram gradient boosting (same features, native interactions)",
+      "hyperparams": {
+        "max_iter": 60
+      },
+      "cv_acc": 0.5614,
+      "test_acc_all_rows": 0.5879,
+      "test_ic95_all_rows": [
+        0.5651,
+        0.6103
+      ],
+      "test_acc_b4_rows": 0.5979,
+      "test_ic95_b4_rows": [
+        0.573,
+        0.6223
+      ],
+      "mcnemar_vs_b4": {
+        "model_right_b4_wrong": 153,
+        "model_wrong_b4_right": 203,
+        "p_exact": 0.00931
+      },
+      "brier": 0.2397
+    }
+  },
+  "best_challenger": "M3a-IX",
+  "per_justice_best": {
+    "ACBarrett": {
+      "n": 193,
+      "acc": 0.5181,
+      "ic95": [
+        0.448,
+        0.5876
+      ]
+    },
+    "BMKavanaugh": {
+      "n": 204,
+      "acc": 0.5686,
+      "ic95": [
+        0.5,
+        0.6347
+      ]
+    },
+    "CThomas": {
+      "n": 202,
+      "acc": 0.604,
+      "ic95": [
+        0.5352,
+        0.6689
+      ]
+    },
+    "EKagan": {
+      "n": 204,
+      "acc": 0.6618,
+      "ic95": [
+        0.5944,
+        0.7232
+      ]
+    },
+    "JGRoberts": {
+      "n": 204,
+      "acc": 0.5588,
+      "ic95": [
+        0.4902,
+        0.6252
+      ]
+    },
+    "KBJackson": {
+      "n": 100,
+      "acc": 0.68,
+      "ic95": [
+        0.5834,
+        0.7633
+      ]
+    },
+    "NMGorsuch": {
+      "n": 202,
+      "acc": 0.5495,
+      "ic95": [
+        0.4806,
+        0.6166
+      ]
+    },
+    "SAAlito": {
+      "n": 200,
+      "acc": 0.605,
+      "ic95": [
+        0.5359,
+        0.6702
+      ]
+    },
+    "SGBreyer": {
+      "n": 102,
+      "acc": 0.598,
+      "ic95": [
+        0.501,
+        0.688
+      ]
+    },
+    "SSotomayor": {
+      "n": 204,
+      "acc": 0.6814,
+      "ic95": [
+        0.6146,
+        0.7415
+      ]
+    }
+  },
+  "case_level_majority_best": {
+    "n": 204,
+    "acc": 0.5833,
+    "ic95": [
+      0.5147,
+      0.6488
+    ]
+  },
+  "ablation_cv": {
+    "drop_issue": 0.5787,
+    "drop_lc": 0.567,
+    "drop_term": 0.5653,
+    "drop_dur": 0.5609,
+    "drop_justice": 0.4762,
+    "full": 0.5622
+  },
+  "reading": [
+    "Justice identity is the dominant stable signal: B4 (each justice's modal train direction) scores 63.1% on the same rows.",
+    "Case context (issue area, lower-court disposition, term, argument length) adds no stable generalization across the time split: every structured challenger lands 58-61%, significantly below B4 by McNemar.",
+    "Interactions (justice×issue) recover part of the signal (60.6%) — justices do specialize by domain — but not enough to clear the bar at this sample size.",
+    "Consequence for the roadmap: if 63.7% is beatable at vote level, the signal must live in the TEXT of the case and the opinions — conditions A/B/C. M1.5 completion and the M3 LLM conditions are the critical path, not more metadata."
+  ]
+}

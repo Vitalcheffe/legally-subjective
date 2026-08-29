@@ -7,7 +7,8 @@
 | **M1 — Corpus-Monde** | ✅ **gelé (2026-08-28)** | 569 affaires OT2015–2023, 1 778 opinions, votes SCDB, audio, scellé 5-4 |
 | **M2 — Baselines** | ✅ **fait** | Classe majoritaire, idéologie par juge, infirmation, accords inter-juges |
 | **M1.5 — Nettoyage** | ⏳ **en cours** | Textes d'opinions : collecte API lancée — le token gratuit est bridé (5 req/min ET ~50-60 req/heure glissantes, Retry-After jusqu'à 10 min) ; passes résumables (`--pace 75` = débit optimal sans 429, ~35 h de drip au total) ; le site vit déjà sur le corpus (13 fiches LS-J re-mesurées, `scripts/transfuse_v2.py` + `verify_dockets.py`) |
-| **M3 — Entraînement** | ⏳ | Personas QLoRA (9 juges) sur Colab/Kaggle gratuits |
+| **M3a — Challenger structuré** | ✅ **fait (2026-08-29, résultat nul)** | LR additif / boosting / interactions juge×domaine : 58,6–60,4 % — aucun ne bat B4 (63,1 % sur les mêmes lignes, McNemar p ≤ 0,047). La barre tient ; le signal restant vit dans le texte. `scripts/m3a_train.py` + `results/m3a_report.md` |
+| **M3 — Entraînement (LLM)** | ⏳ | Personas QLoRA (9 juges) sur Colab/Kaggle gratuits — attend la fin de M1.5 (chemin critique confirmé par M3a) |
 | **M4 — Épreuve Finale** | ⏳ | Une seule passe sur les 50 affaires scellées |
 
 ## M1.5 — Nettoyage (prochaine étape)
@@ -24,6 +25,21 @@
    2 ans avant la fin du corpus ; tout ce qui précède = train, le reste =
    test futur. Vérification automatique : zéro fuite documentée dans un
    journal d'audit.
+
+## M3a — Le challenger structuré (fait, résultat nul)
+
+Question opérationnelle : *peut-on entraîner maintenant ?* Réponse
+double, archivée dans `results/m3a_report.md` :
+
+1. **Conditions structurées** — les données sont complètes depuis le gel
+   du corpus : entraînées le 2026-08-29. Trois challengers (LR additif,
+   boosting, interactions juge×domaine), fenêtres pré-décision
+   uniquement, scellées exclues de tout split, CV groupé par affaire,
+   McNemar contre B4 recalculé sur les mêmes lignes. **Aucun ne bat la
+   barre** (58,6–60,4 % contre 63,1 %). Résultat nul, publié tel quel.
+2. **Conditions LLM A/B/C** — impossible avant la fin de M1.5
+   (112/1 778 textes au 2026-08-29). M3a confirme que c'est LE chemin
+   critique : ce qui reste de signal est dans le texte.
 
 ## M3 — Entraînement (Colab/Kaggle, 0 €)
 
