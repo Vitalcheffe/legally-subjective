@@ -1,0 +1,107 @@
+\section{Protocol: pre-registration and the sealed holdout}
+\label{sec:protocol}
+
+\subsection{Split and baselines}
+
+The experiment fixes its evaluation before fitting anything. The
+corpus splits temporally: OT2015--OT2019 (2{,}314 coded votes) is the
+training window, and OT2020--OT2023 is the evaluation window. All
+hyper-parameter selection for the challengers of
+Section~\ref{sec:results} uses grouped 5-fold cross-validation
+\emph{inside the training window only}, with the group being the case
+--- votes of the same case never straddle a fold boundary, because
+votes within a case are correlated by construction and leaking them
+across folds silently inflates validation accuracy.
+
+On this skeleton, five statistical baselines were computed and
+committed before the first challenger was trained:
+
+\begin{itemize}[leftmargin=1.6em,itemsep=2pt]
+  \item \textbf{B1---majority class}: predict the modal decision
+  direction of the training window (liberal, at 51.6\% of coded
+  training votes) for every vote.
+  \item \textbf{B2---always conservative} (the stronger of the two
+  constant policies on this window).
+  \item \textbf{B3---always reverse}: predict that the Court
+  upends the court below; evaluated on the subset with a clean
+  affirm/reverse disposition.
+  \item \textbf{B4c/B4---per-justice ideology}: predict each
+  justice's vote as that justice's modal direction in the training
+  window, at the case level (majority of simulated votes) and the
+  vote level respectively.
+  \item \textbf{B5---pairwise agreement}, a descriptive baseline
+  that calibrates how differently the justices actually vote.
+\end{itemize}
+
+B4 is the bar: 63.7\% of votes on the full evaluation window (Wilson
+95\% CI [61.3; 65.9]). It deserves emphasis that this bar is not a
+floor to be cleared trivially---it is the accuracy of a model that
+knows one bit per justice (their revealed ideological lean) and
+nothing about the case. Any claim that a system ``reads the law''
+must beat an adversary that cannot read at all.
+
+\subsection{Sealing fifty of the seventy-nine}
+
+Seventy-nine decisions in the corpus came down 5--4---the narrowest
+possible majority and, folklore holds, the least predictable ones.
+Fifty of them are sealed. The selection is deterministic and was
+committed before any model training: the sorted list of 79 five-four
+identifiers seeds a Mersenne Twister (seed derived from the SHA-256
+of the sorted list), which draws 50; the resulting list is frozen by
+the SHA-256 of its JSON serialization, published in the repository's
+statistics file. Sealed cases are excluded from the training window,
+from every cross-validation fold, and from the transparent evaluation
+reported in this paper---they will be touched exactly once, by the
+final conditions, in the Final Test.
+
+The sealing rule exists to make the headline question unfakeable.
+The persona condition (below) claims to extract a justice's
+decision-relevant voice from their past opinions; such a claim is
+only meaningful against cases the extraction pipeline never saw, and
+only meaningful once. A sealed, hash-frozen, pre-registered holdout
+is the cheapest device that makes retro-fitting detectable: any
+post-hoc adjustment to the models after the seal is broken leaves a
+git trail.
+
+\begin{table}[t]
+\centering
+\caption{The four final conditions, evaluated once on the sealed
+holdout.}
+\label{tab:conditions}
+\small
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Condition & Description \\
+\midrule
+A---Zero-shot & An open-weight 8B language model reads the case
+dossier (briefs, oral-argument transcript, question presented) and
+answers with a vote direction. No learning from this corpus. \\
+B---Persona & The same base model, QLoRA-fine-tuned on one
+justice's \emph{past} opinions, tested on that justice's
+\emph{future} and sealed cases. \\
+C---Context & The same base model with retrieval of similar
+earlier opinions (RAG), no fine-tuning. \\
+D---Statistical & The pre-registered baselines of
+Section~\ref{sec:protocol}; B4 is the bar. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The decisive test}
+
+The Final Test compares conditions A--D on the sealed fifty. The
+pre-registered claim structure is deliberately symmetric:
+\emph{if B~$>$~A} on never-seen future cases, the persona is
+extractible from public text---judicial subjectivity leaves a
+measurable footprint. \emph{If B~$=$~A}, the justice's personality is
+not in the public data, and whatever is predictable is already
+priced by ideology. Both outcomes are results; the experiment is
+built so that neither can be quietly discarded.
+
+One more protocol commitment, unusual for machine-learning papers
+and central to this one: the public site that displays the
+experiment's state is forbidden from showing any model output that
+does not exist. Until a condition is trained, its pages show the
+statistical baseline's call, labeled as such. This is not an
+aesthetic preference; it is a control on the author's own incentive
+to narrate success before the seal is broken.

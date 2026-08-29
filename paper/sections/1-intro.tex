@@ -1,0 +1,70 @@
+\section{Introduction}\label{sec:intro}
+
+Supreme Court votes are the most consequential binary predictions in
+American public life, and they are made under conditions that should
+humiliate any forecaster: the inputs are thousands of pages of legal
+argument, the decision rule is nine human beings, and the outcome
+distribution is close enough to a coin flip that luck is difficult to
+rule out. Yet a long line of work has shown that the task is not
+entirely random. Statistical models built on case attributes have
+predicted affirm/reverse outcomes at rates far above chance for two
+decades~\citep{ruger2004,katz2017}, and the dominant theoretical
+account of the Court---the attitudinal model~\citep{segal2002} ---
+holds that ideology, not legal doctrine, explains most of the variance
+in votes.
+
+This paper reports the design and the first results of \emph{Legally
+Subjective}, an independently conducted, zero-budget experiment that
+asks a narrower and, we argue, more honest version of the prediction
+question. Rather than asking how accurately a court's output can be
+retrofitted by a flexible learner with centuries of data, we ask two
+questions that can both fail loudly. First, is each justice's vote
+predictable from the public case file alone, on a fixed, modern window,
+against a pre-registered bar? Second---and this is the experiment's
+live wire---if a language model is fine-tuned on one justice's own
+past opinions, does it predict that justice's \emph{future} votes
+better than the same model without the persona? Both answers are
+publishable. If the persona helps, then judicial subjectivity leaves a
+measurable textual footprint, and a justice's written voice carries
+predictive information about their future decisions. If it does not,
+then whatever is predictable about a justice is already captured by
+their ideological direction, and the remainder is either private
+deliberation or noise.
+
+Three design commitments distinguish the project from prior work.
+First, everything is pre-registered before the models see the
+\emph{sealed} holdout: the baselines, the split, the metrics, and the
+fifty-case test set are frozen in the repository, with the selection
+seed and the SHA-256 of the sealed list published in advance. There is
+no second holdout and no post hoc tuning. Second, the experiment is
+built to be audited by a stranger: the corpus is assembled from public
+sources with every raw file hash-chained, and every number in this
+paper regenerates from scripts in the repository. Third, the budget is
+zero by construction---public data, free API tiers, and free-tier
+compute---which is simultaneously a constraint, a proof of
+accessibility for non-institutional researchers, and a defense against
+the critique that results were bought rather than earned.
+
+The contributions of this working paper are: (i) a frozen,
+provenance-complete corpus of 569 argued Supreme Court cases spanning
+OT2015 through OT2023, fusing CourtListener metadata with Supreme Court
+Database (SCDB) vote coding, with 98.6\% oral-argument coverage for
+future multimodal conditions; (ii) pre-registered statistical
+baselines, of which the strongest---per-justice modal ideological
+direction---sets a vote-level bar of 63.7\% on the held-out window;
+(iii) the first trained challenger, a family of structured-feature
+models whose \emph{null result} is itself informative: nothing in the
+pre-decision metadata adds stable signal beyond who the justice is
+(Section~\ref{sec:results}); and (iv) the sealed, hash-frozen test
+protocol under which the remaining conditions (zero-shot, persona
+fine-tuning, retrieval) will eventually be judged
+(Section~\ref{sec:protocol}).
+
+We emphasize what this paper does not claim. It does not claim that
+Supreme Court votes are unpredictable; two decades of literature and
+our own baselines say otherwise. It does not report any language-model
+results; the opinion-text corpus required for those conditions is
+still being collected under free-tier API quotas. And it does not
+treat the 63.7\% bar as trivial: as Section~\ref{sec:results} shows,
+three families of supervised models failed to clear it on the same
+rows, which is precisely why the bar is interesting.

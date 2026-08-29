@@ -1,0 +1,53 @@
+\section{Limitations}\label{sec:limitations}
+
+\paragraph{Ground truth is a single coding.}
+Our outcome variable---vote direction, liberal vs.\ conservative
+--- is SCDB's editorial coding, produced and maintained by a small
+team applying published conventions \citep{spaeth2025}. That coding
+is the field's standard, but it is one team's reading of the cases:
+directional coding of some opinions (especially mixed or narrow
+ones) is contestable, and the database's own documentation flags
+categories with known unreliability. We did not recode anything;
+all weaknesses of the coding are inherited as measurement error
+that attenuates every accuracy in this paper, the bar included.
+
+\paragraph{A short, modern window.}
+Nine terms is a small epoch by the standards of the forecasting
+literature, and it is deliberately the hardest modern stretch:
+benches changed twice, 5--4 rates are high, and the ideological
+middle (Kennedy, then Roberts) moved. Consequences are concrete ---
+the training window contains no votes at all for Barrett and
+Jackson, so challengers receive no signal for them, and the B4
+comparison excludes them by the $n \ge 20$ rule. We consider this a
+feature (the numbers describe \emph{this} Court, not a historical
+average) but it bounds external validity: nothing here transfers
+automatically to other eras or other courts.
+
+\paragraph{The transparent test is exploratory.}
+The M3a comparison in Section~\ref{sec:results} runs on the
+non-sealed evaluation window. Although every hyper-parameter was
+selected by grouped cross-validation inside the training window and
+the three model families were fixed in advance, the transparent
+test was run once, on data we had already seen while computing
+baselines; the multiple comparisons across three challengers are
+not corrected. The sealed fifty exist precisely to absorb this
+residual degrees-of-freedom problem at the Final Test.
+
+\paragraph{No text yet.}
+The opinion-text corpus (M1.5) is 112 of 1{,}778 opinions deep,
+dripping at free-tier API quotas of roughly five requests per
+minute. Every textual condition therefore remains untested, and
+this paper's null result bounds only the \emph{structured} world.
+We regard the text as the live question, and we flag the risk we
+cannot exclude: the eventual persona adapters may overfit
+memorized opinion content rather than transferable style ---
+mitigations (min-$k$\% probes, cloze audits, temporal splits
+per justice) are pre-committed in the repository protocol.
+
+\paragraph{One rater of the pipeline.}
+The corpus fusion, the docket matching, and the sealed selection
+were implemented and audited by a single independent researcher
+with scripts, hashes, and logs---not by an institutional team.
+The machinery is public and every claim regenerates from the
+repository, but the human audit trail is one person deep, and we
+count that as a limitation of confidence rather than of method.
