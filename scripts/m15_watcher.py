@@ -37,6 +37,7 @@ STATE = os.path.join(OUT_DIR, "state.json")
 OUT = os.path.join(OUT_DIR, "opinions_text.jsonl.gz")
 MANIFEST = os.path.join(REPO, "data", "processed", "opinion_texts_manifest.json")
 FETCH = os.path.join(REPO, "scripts", "fetch_opinion_texts.py")
+FETCH_BATCH = os.path.join(REPO, "scripts", "fetch_opinion_texts_batch.py")
 PROBE_URL = "https://www.courtlistener.com/api/rest/v4/opinions/?page_size=1"
 
 MAX_WALL = 20 * 3600      # abandon au bout de 20 h
@@ -85,7 +86,10 @@ def done_ids():
     if not os.path.exists(STATE):
         return set()
     try:
-        return set(json.load(open(STATE))["done"])
+        st = json.load(open(STATE))
+        # les ids 404 (missing) comptent comme résolus : ils n'existent plus
+        # côté API et le drip ne les acquerrait jamais
+        return set(st["done"]) | set(st.get("missing", []))
     except Exception:
         return set()
 
@@ -115,7 +119,8 @@ def build_manifest(exp):
         "sha256_gz_file": h_file.hexdigest(),
         "bytes": os.path.getsize(OUT),
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "source": "CourtListener API v4 /api/rest/v4/opinions/{id}/ (token, 1 req/s)",
+        "source": "CourtListener API v4 /opinions/ (token ; lots id__in via "
+                  "fetch_opinion_texts_batch.py, repli détail 1 req/opinion)",
     }
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(man, f, indent=2, ensure_ascii=False)
@@ -213,8 +218,14 @@ def main():
         if st == 200:
             remaining = len(exp) - len(done_ids())
             log(f"token libéré — collecte ({remaining} restantes)")
-            subprocess.run([sys.executable, FETCH, "--budget", str(BUDGET_PER_RUN)],
-                           check=False)
+            # le batch (lots id__in) est la voie rapide : 125 req/jour comptent
+            # des REQUÊTES, pas des opinions. S'il échoue (exit 2 : filtre ou
+            # liste sans texte), repli sur le drip 1 req/opinion.
+            r = subprocess.run([sys.executable, FETCH_BATCH], check=False)
+            if r.returncode == 2:
+                log("batch indisponible — repli drip (1 req/opinion)")
+                subprocess.run([sys.executable, FETCH, "--budget", str(BUDGET_PER_RUN)],
+                               check=False)
             log(f"fin de passe : {len(done_ids())}/{len(exp)}")
         elif st == 429:
             wait = min(ra + 60, 3600)
