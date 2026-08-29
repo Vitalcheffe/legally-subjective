@@ -3,7 +3,7 @@
 > **Subjectivity, measured.** — Measuring the upper bound of predictability
 > in U.S. Supreme Court decisions, using public data and a zero-euro budget.
 
-<img src="docs/assets/hero.png" alt="Legally Subjective — the bench, thirteen filed dockets, disposition rates with Wilson 95% intervals" width="100%">
+<img src="docs/assets/hero.svg" alt="Legally Subjective — the bench, thirteen filed dockets, disposition rates with Wilson 95% intervals" width="100%">
 
 ---
 
@@ -29,7 +29,7 @@ true state of the program at every step — never an invented prediction.
 
 ## The record
 
-<img src="docs/assets/corpus-window.png" alt="The corpus window — 569 case ticks, OT2015–OT2023, the seventy-nine five-four decisions in red" width="100%">
+<img src="docs/assets/corpus-window.svg" alt="The corpus window — 569 case ticks, OT2015–OT2023, the seventy-nine five-four decisions in red" width="100%">
 
 **Corpus-Monde v1** (frozen 2026-08-28): every argued Supreme Court case
 from OT2015 to OT2023 — CourtListener metadata fused with SCDB 2025_01
@@ -47,7 +47,7 @@ votes, every source hash-chained.
 
 ## The bar
 
-<img src="docs/assets/baselines.png" alt="The number to beat — five statistical baselines with Wilson 95% intervals, the 63.7% bar in red" width="100%">
+<img src="docs/assets/baselines.svg" alt="The number to beat — five statistical baselines with Wilson 95% intervals, the 63.7% bar in red" width="100%">
 
 Before any model is trained, the statistical baselines fix the price of
 admission (test set OT2020–2023, Wilson 95% intervals):
@@ -70,7 +70,7 @@ the whole project is organized around.
 
 ## The lock
 
-<img src="docs/assets/sealed.png" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
+<img src="docs/assets/sealed.svg" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
 
 Seventy-nine decisions came down 5–4. Fifty of them are **sealed** until
 the Final Test: selected deterministically (Random MT, seeded by the
@@ -94,7 +94,7 @@ Both outcomes are results.
 
 ## The bench
 
-<img src="docs/assets/agreement.png" alt="Sixty pairs — the 13×13 vote-agreement matrix, closest and widest pairs marked in red" width="100%">
+<img src="docs/assets/agreement.svg" alt="Sixty pairs — the 12×12 vote-agreement matrix, closest and widest pairs marked in red" width="100%">
 
 Sixty pairs, each measured on their common votes (2015–2024). The closest
 pair: Kavanaugh–Roberts, **94.6%** [91.6; 96.8]. The widest gap:
@@ -105,7 +105,7 @@ the blocks tell the story before the numbers do.
 
 ## The storefront
 
-<img src="docs/assets/the-draw.png" alt="The Draw — the wheel of thirteen justices, one segment drawn in red" width="100%">
+<img src="docs/assets/the-draw.svg" alt="The Draw — the wheel of thirteen justices, one segment drawn in red" width="100%">
 
 The site (Next.js) is the experiment's public face — [run it locally](#reproduce),
 or read it like a case file:
@@ -142,7 +142,7 @@ invented prediction.
 | `data/raw/provenance/` | SHA-256 of every raw source + exact filter predicates |
 | `results/m2_baselines.{json,md}` | M2 statistical baselines, Wilson 95% |
 | `docs/` | Vision, methodology, corpus, baselines, protocol, reproducibility, ethics, roadmap, limits, resources, **visual guide** |
-| `docs/assets/` | The exhibits above — HTML sources + rendered PNGs (LS-EXHIBIT-1.0) |
+| `docs/assets/` | The exhibits above — adaptive SVGs (LS-EXHIBIT-1.1: transparent, dark/light-aware, text as paths) |
 | `scripts/` | The full, reproducible collection and build chain |
 | `src/`, `public/`, `prisma/` | The site (Next.js) |
 
@@ -170,9 +170,14 @@ EOF
 
 The full rebuild chain (bulk downloads → filters → corpus) is documented
 in [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md). The
-exhibits in this README regenerate from the live data:
-`python3 /home/z/my-project/scripts/make_visuals_*.py` → see
-[`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md) §XII.
+exhibits in this README regenerate from the live data in one command:
+
+```bash
+python3 scripts/make_exhibits.py   # -> docs/assets/*.svg
+```
+
+They are pure SVG, drawn from the frozen corpus — no screenshots, no
+browser step. See [`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md).
 
 ---
 

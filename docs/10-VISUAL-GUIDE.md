@@ -1,4 +1,4 @@
-# Legally Subjective — The Visual Guide (LS-EXHIBIT-1.0)
+# Legally Subjective — The Visual Guide (LS-EXHIBIT-1.1)
 
 > This document is the complete manual for producing **exhibit-grade visuals**
 > for Legally Subjective — README banners, paper figures, and documentation
@@ -237,21 +237,44 @@ Tuesday than on Monday is not evidence.
 
 ---
 
-## VII. LIGHT AND DARK — The one-face law
+## VII. LIGHT AND DARK — The two-face law (amended 2026-08-29)
 
-The AEGIS template requires a dark and a light variant of every visual.
-**This house deliberately breaks that rule**, and here is the documented
-reason: UI-1.0 EXHIBIT bans dark mode ("Dark mode is banned. If anything
-forces .dark, it gets the same white."). The paper is the identity. A filed
-exhibit does not adapt to the mood of the room.
+> **Amendment 1.1.** The original house law was *one face, always the
+> paper* — a white PNG under every scheme. It was overturned by the
+> project owner after field review: a white slab glued into a dark
+> GitHub README reads as a foreign object, not as a filed document.
+> The law is amended in writing, as the house requires.
 
-Practical consequence for GitHub: serve the **same white-paper PNG** under
-`prefers-color-scheme: dark` and `light`. In a dark-themed README the white
-exhibit reads exactly as intended — a document under examination, brought
-into the room. That contrast *is* the effect. One face. Always the paper.
+Every exhibit now ships as a **transparent SVG that carries both faces
+> in one file**. Ink colors are CSS custom properties, and the SVG embeds
+
+```css
+:root { --ink:#0a0a0a; --hair:#e3e3e3; --sig:#e4002b; /* … */ }
+@media (prefers-color-scheme: dark) {
+  :root { --ink:#e6edf3; --hair:#30363d; --sig:#ff4d6a; /* … */ }
+}
+```
+
+so the exhibit follows the reader's scheme — GitHub light, GitHub dark,
+and the browser's automatic day/night switching. The signal red
+brightens (`#e4002b` → `#ff4d6a`) so it keeps the same perceptual weight
+on both papers. Paired fills (the agreement matrix bins) ship their own
+fill+text pairs per scheme, so in-cell numbers never lose contrast in
+ either face.
+
+**Known limit, documented:** the media query follows the *browser*
+preference, not a manually-forced GitHub theme. A reader whose OS is
+light but who forced GitHub dark gets the light face. This is the
+standard behavior of every adaptive-image technique available in
+GitHub READMEs today; it is accepted and documented rather than hidden.
+
+**No background, ever.** The exhibit is transparent. It lives on the
+reader's paper. Never draw a background rect, never bake a paper color
+into a raster. If an element needs separation from the page, separate
+it with a hairline or whitespace — never with a slab.
 
 ```html
-<img src="docs/assets/hero.png" alt="Legally Subjective" width="100%">
+<img src="docs/assets/hero.svg" alt="…" width="100%">
 ```
 
 ---
@@ -429,35 +452,25 @@ Before an exhibit is declared filed, EVERY box must pass:
 
 ## XII. RENDERING — Exact commands
 
-```bash
-# One exhibit
-agent-browser set viewport 1920 800
-agent-browser open "file:///home/z/my-project/repo/docs/assets/hero.html"
-sleep 0.8
-agent-browser screenshot /home/z/my-project/repo/docs/assets/hero.png
-python3 -c "import struct; f=open('/home/z/my-project/repo/docs/assets/hero.png','rb').read(24); print(struct.unpack('>II', f[16:20]+f[20:24]))"
-```
+The exhibits are **generated as SVG directly from the data** — no HTML
+mock, no browser, no screenshot step. Text is shaped with HarfBuzz and
+written as paths (`scripts/ls_svg.py`), so the exact typography
+(Space Grotesk + IBM Plex Mono, both SIL OFL, sources in
+`scripts/fonts/` with licenses in `docs/assets/fonts/`) renders
+identically on every machine, with no font dependency and no CSP risk.
 
 ```bash
-# Batch (all exhibits, from the repo root)
-#!/usr/bin/env bash
-AB=agent-browser
-A=/home/z/my-project/repo/docs/assets
-declare -a FILES=(
-  "hero:1920x800"
-  "corpus-window:1920x760"
-  "baselines:1920x760"
-  "sealed:1920x760"
-  "agreement:1920x800"
-  "the-draw:1920x800"
-)
-for entry in "${FILES[@]}"; do
-  name="${entry%%:*}"; dims="${entry##*:}"; W="${dims%x*}"; H="${dims#*x}"
-  $AB set viewport "$W" "$H"
-  $AB open "file://$A/$name.html"; sleep 0.8
-  $AB screenshot "$A/$name.png"
-done
+# from the repo root — regenerates all six exhibits
+python3 scripts/make_exhibits.py   # -> docs/assets/*.svg
 ```
+
+The draw in `the-draw.svg` is deterministic and documented: the seed is
+`SHA-256("LS-EXHIBIT-1.1|THE-DRAW|bench-13")`, drawn with Random MT —
+same convention as the sealed-case selection.
+
+*(Historical note — the 1.0 rendering pipeline above was screenshot-based;
+it was retired with amendment 1.1. The HTML mocks and PNG rasters were
+removed from the repository; `git log` keeps their memory.)*
 
 ---
 
