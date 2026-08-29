@@ -1,0 +1,60 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Who votes beats what the case is about}
+
+The M3a null result is a negative finding with a positive reading.
+The failure of three model families to convert issue areas,
+lower-court dispositions, terms, and argument lengths into votes
+tells us that the mapping from case facts to outcomes is either
+unstable across time or not expressible in these coarse codes. The
+ablation sharpens this: keeping issue area actively hurt
+generalization, which is the signature of a signal that shifted
+between the training and evaluation windows---the mix and meaning
+of ``economic activity'' cases in OT2015 is not the mix of OT2022.
+Justice identity, by contrast, travels perfectly across the split,
+because it is a property of the voter, not of the era.
+
+This is a modern, pre-registered echo of the attitudinal model's
+central claim~\citep{segal2002}, obtained with none of its
+theoretical apparatus: one revealed-ideology bit per justice
+carries more predictive weight than the entire structured case
+file. It also explains, mechanically, why the earlier literature's
+headlines sit above our bar. \citet{katz2017} report 71.9\% at the
+vote level---but over 1816--2013, an era range containing long
+stretches of 80--90\% unanimity that no modern model enjoys; on the
+modern, 5--4-heavy window, the honest point of comparison is
+closer to our setting, and the 63.7\% bar is what an
+ideology-only adversary achieves when unanimity is gone.
+
+\subsection{Why the null makes the text conditions more
+interesting, not less}
+
+Had a structured challenger cleared the bar, the persona experiment
+would have been partially redundant: some of the textual signal
+would already be recoverable from codes. The null result does the
+opposite---it concentrates the entire residual question in the
+text. If prediction above 63.7\% is possible at all on this window,
+it must come from information that is written down but not coded:
+the argument's framing, the questions the justices asked at oral
+argument, the linguistic signature of each opinion. The persona
+condition (B) tests the strongest version of that hypothesis ---
+that the signature is \emph{individual} and \emph{prospective} ---
+and the stylometry lineage~\citep{mosteller1964,juola2006} gives it
+a principled footing: style is known to be persistent and hard to
+fake, so a fine-tuned adapter is a reasonable instrument for
+measuring whether style and substance are entangled.
+
+\subsection{Calibrating expectations for the Final Test}
+
+The sealed fifty are 5--4 decisions, which the folklore of court
+watching regards as the least predictable class; and the bar was
+computed on the full evaluation window, not on 5--4s specifically.
+Both facts cut against the persona condition clearing B4 on the
+holdout, and the honest prior is that the decisive test may return
+``no difference''. We stress that this is a designed outcome, not a
+failure state: a tight null on a sealed, pre-registered holdout
+with per-justice adapters and audited anti-memorization checks
+would be the cleanest public evidence yet that judicial
+subjectivity, beyond ideology, is not extractible from the written
+record---a claim that would stand regardless of how much compute
+a future replicant throws at it.

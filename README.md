@@ -94,6 +94,20 @@ Detail: [`results/m3a_report.md`](results/m3a_report.md)
 
 ---
 
+## The paper
+
+The working paper — corpus, protocol, M2 baselines, agreement, and the
+M3a null result, in the format researchers read — lives in
+[`paper/`](paper/) (LaTeX sources, `main.pdf` compiled with Tectonic;
+figures regenerate via `scripts/paper_figures.py`):
+
+> **Legally Subjective: Measuring the Upper Bound of Predictability in
+> U.S. Supreme Court Decisions with Public Data and a Zero Budget** —
+> A. Harch el Korane, working paper, 2026-08-29. 12 pages, 4 figures,
+> 5 tables, 12 references.
+
+---
+
 ## The lock
 
 <img src="docs/assets/sealed.svg" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">

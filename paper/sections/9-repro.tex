@@ -1,0 +1,34 @@
+\section{Reproducibility}\label{sec:repro}
+
+Every number in this paper regenerates from the public repository
+\url{https://github.com/Vitalcheffe/legally-subjective} with three commands
+and no credentials. The corpus rebuild chain is
+\texttt{scripts/build\_corpus.py} (raw sources $\rightarrow$
+frozen corpus with recomputed hashes); the baselines are
+\texttt{scripts/m2\_baselines.py}; the M3a challengers, including
+the grouped cross-validation, the McNemar tests, and the ablation,
+are \texttt{scripts/m3a\_train.py}. The paper figures are produced
+by \texttt{scripts/paper\_figures.py}. All randomness is seeded and
+the seeds are printed in the outputs; re-running the M3a script
+reproduces the numbers of Table~\ref{tab:m3a} exactly.
+
+Provenance is structural, not narrative. The SHA-256 of every raw
+source file is recorded at download; the frozen corpus recomputes
+and checks them; the sealed fifty are identified by a
+deterministic seeded draw whose seed derivation and resulting list
+hash are both committed. A reader who wishes to verify that the
+sealed list was not regenerated after training can do so from the
+git history alone. The dataset rule, the known exclusions
+(ghost docket groups, consolidated matters without SCDB matches),
+and the coding caveats are documented in the repository's
+\texttt{docs/} rather than hidden in prose.
+
+The remaining artifact under active construction is the
+opinion-text corpus (M1.5): 112 of 1{,}778 opinions collected at
+the time of writing, gathered under a free API tier whose measured
+quota (5 requests/minute, with multi-hour cooldown walls) makes
+completion a matter of weeks rather than hours. The collection is
+resumable on state, and its completion triggers the pre-committed
+text conditions---at which point this paper's structured null
+becomes the fixed background against which the persona question
+is finally asked.

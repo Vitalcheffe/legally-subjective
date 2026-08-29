@@ -1,0 +1,67 @@
+\section{Related work}\label{sec:related}
+
+\paragraph{Statistical forecasting of the Court.}
+The modern line begins with the Supreme Court Forecasting Project:
+\citet{ruger2004} built a conditional-choice model with input from
+political science theory and, over a single term, predicted 75\% of the
+Court's affirm/reverse outcomes---against 59.1\% for a panel of
+legal experts. The lesson was bruising for doctrine: a small
+regression with ideological covariates beat trained lawyers reading
+the briefs. A decade later, \citet{katz2017} scaled the exercise with
+a random forest over 628 features and nearly two centuries of
+decisions (1816--2013), reporting 70.2\% accuracy at the case level
+and 71.9\% at the individual vote level, and concluding that the
+Court behaves in a way that is, in their words, remarkably consistent
+with a machine-learning account. Both efforts, however, evaluate
+\emph{in sample across history}: the models see several centuries ---
+including eras with much higher unanimity rates---and predict votes
+whose contemporaneous context is far removed from today's Court.
+
+\paragraph{The attitudinal model.}
+Political science supplies the theoretical prior for why such models
+work. \citet{segal2002} argue that justices decide largely as
+attitudes wrapped in legal reasoning: revealed ideology dominates
+doctrine, and case facts matter mostly as triggers for those
+attitudes. Methodologically, \citet{martin2002} estimate dynamic
+ideal points for every justice since 1953, giving the field a
+continuous measure of the very covariate that our strongest baseline
+--- per-justice modal direction---approximates with a single bit per
+justice. Our results in Section~\ref{sec:results} are, in effect, a
+modern, pre-registered replication of the attitudinal prior on a
+nine-term window: the ideology bit is the signal; the structured case
+context is not.
+
+\paragraph{Authorship and style.}
+The persona condition is a stylometry question in modern dress.
+\citet{mosteller1964} settled the authorship of the disputed
+\emph{Federalist} papers with function-word frequencies; the field
+they founded has since shown that individual writing style is
+persistent, measurable, and hard to disguise~\citep{juola2006}. If a
+justice's voice is a stable individual signature, fine-tuning a
+language model on their opinions should transfer to their future
+opinions; the open question---the one this experiment isolates ---
+is whether that stylistic footprint carries \emph{decision-relevant}
+information beyond the ideology bit, or merely rhetorical habits.
+
+\paragraph{Language models and efficient fine-tuning.}
+The tooling for the persona condition is recent. QLoRA
+\citep{dettmers2023} makes full-model fine-tuning tractable on free
+single-GPU tiers by quantizing the base model and training low-rank
+adapters, and open-weight families such as Llama~3
+\citep{llama3} provide a competent base. This is what converts the
+persona question from an institutional project into a zero-budget
+one: nine adapters, one per justice, trained on free-tier compute,
+each sealed alongside the data that produced it.
+
+\paragraph{Positioning.}
+Against this background, the present project narrows the claim in
+three ways that we believe matter for honesty of the result. The
+window is short and modern (OT2015--OT2023, an era of narrow
+majorities), so historical unanimity cannot inflate accuracy. The
+evaluation is pre-registered and forward-holding: a sealed set of
+fifty 5--4 decisions, chosen deterministically before any model
+touched them, is the only arbiter of the final conditions. And the
+bar is fixed \emph{before} the challengers run, at the vote level,
+where the attitudinal bit is strongest---63.7\% on our window ---
+so that any reported improvement is an improvement over ideology
+itself, not over a straw man.

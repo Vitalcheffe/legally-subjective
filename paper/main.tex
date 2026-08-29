@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- typography ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+% ---------- layout ----------
+\usepackage{geometry}
+\geometry{a4paper, top=2.6cm, bottom=2.6cm, left=2.6cm, right=2.6cm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{needspace}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+% ---------- bibliography ----------
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{unsrtnat}
+
+% ---------- hyperref (last) ----------
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor={black!70},
+    urlcolor={black!70},
+    bookmarks=true,
+    bookmarksnumbered=true,
+    unicode=true
+]{hyperref}
+\usepackage{xurl}  % break URLs anywhere, after hyperref
+\usepackage[htt]{hyphenat}  % allow hyphenation in \texttt
+
+\hypersetup{
+    pdftitle={Legally Subjective: Measuring the Upper Bound of Predictability in U.S. Supreme Court Decisions with Public Data and a Zero Budget},
+    pdfauthor={Amine Harch el Korane},
+    pdfsubject={Computational legal prediction, judicial behavior, pre-registered baselines},
+    pdfkeywords={Supreme Court, judicial prediction, machine learning, pre-registration, SCDB, CourtListener}
+}
+
+\begin{document}
+
+% ================= title block (hand-set, no \maketitle) =================
+\begin{center}
+{\LARGE\bfseries Legally Subjective: Measuring the Upper Bound of\\[3pt]
+Predictability in U.S. Supreme Court Decisions\\[3pt]
+with Public Data and a Zero Budget\par}
+\vspace{14pt}
+{\normalsize Amine Harch el Korane\textsuperscript{1}\par}
+\vspace{2pt}
+{\small\textsuperscript{1}Independent researcher.
+Project and code: \href{https://github.com/Vitalcheffe/legally-subjective}{github.com/Vitalcheffe/legally-subjective}\par}
+\vspace{4pt}
+{\small Working paper, 29 August 2026 \textperiodcentered\ Corpus-Monde v1 (frozen 2026-08-28)\par}
+\end{center}
+\vspace{6pt}
+
+% ================= abstract =================
+\begin{center}
+\rule{0.28\linewidth}{0.6pt}
+\end{center}
+\noindent\textbf{Abstract.}
+Can a language model predict how a U.S. Supreme Court justice will vote
+from the public case file alone, without the verdict? And if the model is
+taught one justice's own writing --- a persona distilled from their past
+opinions --- does it improve on that justice's \emph{future} cases? We
+frame both outcomes as publishable results and report the first two
+milestones of a pre-registered experiment conducted entirely on public
+data at zero cost. We assemble a frozen, hash-chained corpus of 569
+argued cases (OT2015--OT2023, 13 justices, 4{,}569 coded
+justice$\times$case votes) by fusing CourtListener metadata with
+Supreme Court Database votes. Before any model is trained, statistical
+baselines fix the price of admission: predicting each justice's vote as
+their modal ideological direction from the training window achieves
+\textbf{63.7\%} accuracy (Wilson 95\% CI [61.3; 65.9]) at the vote
+level on the held-out window --- the bar. We then train the first
+structured-feature challengers (logistic regression, gradient boosting,
+and interaction models over issue area, lower-court disposition, term,
+and argument length, with 50 sealed 5--4 cases excluded from every
+split): none beats the bar (58.6--60.4\%; McNemar $p \le 0.047$). A
+feature ablation shows justice identity is the only stable signal
+($-8.6$ points without it). The null result prices the residual signal:
+if 63.7\% is beatable, the signal lives in the text of the cases and
+opinions, which the remaining pre-registered conditions (zero-shot,
+persona fine-tuning, retrieval) will test against a sealed holdout of
+fifty 5--4 decisions.
+
+\vspace{4pt}
+\noindent\textbf{Keywords:} judicial prediction; Supreme Court;
+pre-registration; supervised learning; attitudinal model; open data.
+
+\begin{center}
+\rule{0.28\linewidth}{0.6pt}
+\end{center}
+\vspace{8pt}
+
+\input{sections/1-intro}
+\input{sections/2-related}
+\input{sections/3-data}
+\input{sections/4-protocol}
+\input{sections/5-results}
+\input{sections/6-discussion}
+\input{sections/7-limitations}
+\input{sections/8-ethics}
+\input{sections/9-repro}
+\input{sections/10-conclusion}
+
+\bibliography{refs}
+
+\end{document}
