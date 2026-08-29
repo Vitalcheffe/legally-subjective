@@ -12,12 +12,17 @@ Lenteur maîtrisée (1 requête/s + reprise sur état) ; sorties :
 
 Usage :  python3 fetch_opinion_texts.py [--budget 500] [--page-check]
          python3 fetch_opinion_texts.py --budget 540 --wait-on-429
-                 (mode quota : le token gratuit est limité — 5 req/min ET un
-                 quota glissé à l'heure ; le script dort le Retry-After et
-                 continue au lieu de s'arrêter)
+                 (mode quota : le token gratuit est limité — 5 req/min, ~55 req/h,
+                 ET 125 req/JOUR ; le script dort le Retry-After et continue
+                 au lieu de s'arrêter)
          python3 fetch_opinion_texts.py --pace 75 --budget 3600
                  (pacing proactif : une requête toutes les 75 s, débit optimal
                  sous le quota horaire sans jamais payer un 429)
+
+NOTE (2026-08-29) : la limite JOURNALIÈRE (125 req/jour) rend le drip unitaire
+inadapté — 1 778 opinions = 14 jours. Utiliser plutôt fetch_opinion_texts_batch.py
+(lots id__in : ~20 opinions par requête, tout le corpus en ~20 minutes sous le
+même plafond). Ce script reste le chemin de repli unitaire.
 """
 import argparse
 import gzip

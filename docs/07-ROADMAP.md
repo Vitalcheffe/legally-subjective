@@ -6,16 +6,19 @@
 |---|---|---|
 | **M1 — Corpus-Monde** | ✅ **gelé (2026-08-28)** | 569 affaires OT2015–2023, 1 778 opinions, votes SCDB, audio, scellé 5-4 |
 | **M2 — Baselines** | ✅ **fait** | Classe majoritaire, idéologie par juge, infirmation, accords inter-juges |
-| **M1.5 — Nettoyage** | ⏳ **en cours** | Textes d'opinions : collecte API lancée — le token gratuit est bridé (5 req/min ET ~50-60 req/heure glissantes, Retry-After jusqu'à 10 min) ; passes résumables (`--pace 75` = débit optimal sans 429, ~35 h de drip au total) ; le site vit déjà sur le corpus (13 fiches LS-J re-mesurées, `scripts/transfuse_v2.py` + `verify_dockets.py`) |
+| **M1.5 — Nettoyage** | ⏳ **en cours** | Textes d'opinions : collecte API — la physique réelle du token gratuit est maintenant mesurée : 5 req/min, ~55 req/h, **125 req/JOUR** (le drip unitaire ≈ 14 jours a été remplacé par le mode batch `scripts/fetch_opinion_texts_batch.py` : lots `id__in`, ~20 opinions par requête, tout le corpus en ~20 min de quota) ; le site vit déjà sur le corpus (13 fiches LS-J re-mesurées, `scripts/transfuse_v2.py` + `verify_dockets.py`) |
 | **M3a — Challenger structuré** | ✅ **fait (2026-08-29, résultat nul)** | LR additif / boosting / interactions juge×domaine : 58,6–60,4 % — aucun ne bat B4 (63,1 % sur les mêmes lignes, McNemar p ≤ 0,047). La barre tient ; le signal restant vit dans le texte. `scripts/m3a_train.py` + `results/m3a_report.md` |
 | **M3 — Entraînement (LLM)** | ⏳ | Personas QLoRA (9 juges) sur Colab/Kaggle gratuits — attend la fin de M1.5 (chemin critique confirmé par M3a) |
 | **M4 — Épreuve Finale** | ⏳ | Une seule passe sur les 50 affaires scellées |
 
 ## M1.5 — Nettoyage (prochaine étape)
 
-1. **Collecte des textes** : `scripts/fetch_opinion_texts.py` (API
-   authentifiée, ~1 800 requêtes, reprise sur état). Les textes complètent
-   le corpus sans en changer l'identité — la règle M1 reste gelée.
+1. **Collecte des textes** : `scripts/fetch_opinion_texts_batch.py`
+   (lots `id__in`, ~89 requêtes au total — repli unitaire via
+   `scripts/fetch_opinion_texts.py`). La limite journalière du token
+   (125 req) compte des requêtes, pas des opinions. Les textes
+   complètent le corpus sans en changer l'identité — la règle M1 reste
+   gelée.
 2. **Déduplication** : les *slip opinions* ré-ingérés plusieurs fois par
    CourtListener sont fusionnés par similarité (ratio ≥ 0,95 sur le texte
    normalisé) ; on conserve l'exemplaire le plus propre.
