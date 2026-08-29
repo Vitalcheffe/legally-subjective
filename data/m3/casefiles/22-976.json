@@ -1,0 +1,18 @@
+{
+ "docket": "22-976",
+ "case_name": "Garland v. Cargill",
+ "term": 2023,
+ "issue_area": "1",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Michael Cargillv. Merrick B. Garland, Attorney General, et al. (Petitioner v. Respondent)",
+ "question": "Is a bump stock device a “machinegun” as defined in 26 U.S.C. § 5845(b)?",
+ "facts": "For over a decade, the federal Bureau of Alcohol, Tobacco, Firearms, and Explosives (“ATF”) maintained that bump stocks were not machineguns as defined by statute, 26 U.S.C. § 5845(b), and issued interpretation letters confirming this position. Following the October 1, 2017 Las Vegas shooting, where a shooter used bump stocks in a massacre, public demand for a ban on bump stocks surged, leading to proposed legislation. Before Congress could act, the ATF, responding to the tragedy and public sentiment, reversed its stance in 2018, reclassifying bump stocks as machineguns and exposing owners to criminal liability. Respondent Michael Cargill surrendered his bump stocks due to this new regulation and filed a lawsuit challenging the ATF regulations, arguing that the ATF exceeded its authority in defining bump stocks as machineguns. The district court for the government, finding that the government’s new interpretation of “machinegun” is the best interpretation of the statute. A panel of the U.S. Court of Appeals for the Fifth Circuit affirmed, but on rehearing, the Fifth Circuit sitting en banc reversed. The en banc court found the definition of \"machinegun\" as unambiguously not applying to bump stocks, but even if it were ambiguous, the rule of lenity would compel a construction of the statute in Cargill’s favor.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Garland v. Cargill\nDocket: 22-976 | Term: OT2023 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Michael Cargillv. Merrick B. Garland, Attorney General, et al. (Petitioner v. Respondent)\nQuestion presented: Is a bump stock device a “machinegun” as defined in 26 U.S.C. § 5845(b)?\nFacts: For over a decade, the federal Bureau of Alcohol, Tobacco, Firearms, and Explosives (“ATF”) maintained that bump stocks were not machineguns as defined by statute, 26 U.S.C. § 5845(b), and issued interpretation letters confirming this position. Following the October 1, 2017 Las Vegas shooting, where a shooter used bump stocks in a massacre, public demand for a ban on bump stocks surged, leading to proposed legislation. Before Congress could act, the ATF, responding to the tragedy and public sentiment, reversed its stance in 2018, reclassifying bump stocks as machineguns and exposing owners to criminal liability. Respondent Michael Cargill surrendered his bump stocks due to this new regulation and filed a lawsuit challenging the ATF regulations, arguing that the ATF exceeded its authority in defining bump stocks as machineguns. The district court for the government, finding that the government’s new interpretation of “machinegun” is the best interpretation of the statute. A panel of the U.S. Court of Appeals for the Fifth Circuit affirmed, but on rehearing, the Fifth Circuit sitting en banc reversed. The en banc court found the definition of \"machinegun\" as unambiguously not applying to bump stocks, but even if it were ambiguous, the rule of lenity would compel a construction of the statute in Cargill’s favor.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

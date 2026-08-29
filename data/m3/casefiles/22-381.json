@@ -1,0 +1,18 @@
+{
+ "docket": "22-381",
+ "case_name": "Yegiazaryan v. Smagin",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Ashot Yegiazaryanv. Vitaly I. Smagin, et al. (Petitioner v. Respondent)",
+ "question": "Does a foreign plaintiff with no alleged connection to the United States state a cognizable claim under the Racketeer Influenced and Corrupt Organizations (RICO) Act when it suffers an injury to an intangible property?",
+ "facts": "Vitaly Smagin, a Russian citizen who resides in Russia, sued Ashot Yegiazaryan, a Russian citizen who resides in California, and eleven other defendants, under the Racketeer Influenced and Corrupt Organizations (RICO) Act. Smagin alleged that Yegiazaryan and the other defendants illegally attempted to avoid paying a judgment Smagin won against them in the U.S. District Court for the Central District of California for engaging in a series of fraudulent transactions between 2003 and 2009 in to steal Smagin’s shares in a joint real estate investment in Moscow, Russia. The district court dismissed Smagin’s RICO claim, finding he did not suffer a domestic injury, which is a requirement for a RICO claim. The U.S. Court of Appeals for the Ninth Circuit reversed and remanded, concluding that Smagin did allege a domestic injury.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Yegiazaryan v. Smagin\nDocket: 22-381 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Ashot Yegiazaryanv. Vitaly I. Smagin, et al. (Petitioner v. Respondent)\nQuestion presented: Does a foreign plaintiff with no alleged connection to the United States state a cognizable claim under the Racketeer Influenced and Corrupt Organizations (RICO) Act when it suffers an injury to an intangible property?\nFacts: Vitaly Smagin, a Russian citizen who resides in Russia, sued Ashot Yegiazaryan, a Russian citizen who resides in California, and eleven other defendants, under the Racketeer Influenced and Corrupt Organizations (RICO) Act. Smagin alleged that Yegiazaryan and the other defendants illegally attempted to avoid paying a judgment Smagin won against them in the U.S. District Court for the Central District of California for engaging in a series of fraudulent transactions between 2003 and 2009 in to steal Smagin’s shares in a joint real estate investment in Moscow, Russia. The district court dismissed Smagin’s RICO claim, finding he did not suffer a domestic injury, which is a requirement for a RICO claim. The U.S. Court of Appeals for the Ninth Circuit reversed and remanded, concluding that Smagin did allege a domestic injury.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

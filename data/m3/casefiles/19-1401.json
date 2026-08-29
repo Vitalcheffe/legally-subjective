@@ -1,0 +1,18 @@
+{
+ "docket": "19-1401",
+ "case_name": "Hughes v. Northwestern Univ.",
+ "term": 2021,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "April Hughes, et al.v. Northwestern University, et al. (Petitioner v. Respondent)",
+ "question": "Are allegations that a defined-contribution retirement plan paid or charged its participants fees that substantially exceeded fees for alternative available investment products or services sufficient to state a claim against plan fiduciaries for breach of the duty of prudence under the Employee Retirement Income Security Act of 1974 (ERISA)?",
+ "facts": "Northwestern University offers two employee investment plans that are at issue in this case, a Retirement Plan in which Northwestern makes a matching contribution and a Voluntary Savings plan in which the University does not match. Laura Divane and other plaintiffs are beneficiaries of one or both of the employee investment plans. The plaintiffs sued Northwestern University for allegedly breaching its fiduciary duties under the Employee Retirement Income Security Act (ERISA), 29 U.S.C. § 1001, et seq. The plaintiffs alleged that Northwestern breached its fiduciary duty by offering a stock account option with excessive fees and a history of underperformance. The district court found no breach, noting that participants could have avoided any problems with the undesirable funds by simply choosing other options. The U.S. Court of Appeals for the Seventh Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Hughes v. Northwestern Univ.\nDocket: 19-1401 | Term: OT2021 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: April Hughes, et al.v. Northwestern University, et al. (Petitioner v. Respondent)\nQuestion presented: Are allegations that a defined-contribution retirement plan paid or charged its participants fees that substantially exceeded fees for alternative available investment products or services sufficient to state a claim against plan fiduciaries for breach of the duty of prudence under the Employee Retirement Income Security Act of 1974 (ERISA)?\nFacts: Northwestern University offers two employee investment plans that are at issue in this case, a Retirement Plan in which Northwestern makes a matching contribution and a Voluntary Savings plan in which the University does not match. Laura Divane and other plaintiffs are beneficiaries of one or both of the employee investment plans. The plaintiffs sued Northwestern University for allegedly breaching its fiduciary duties under the Employee Retirement Income Security Act (ERISA), 29 U.S.C. § 1001, et seq. The plaintiffs alleged that Northwestern breached its fiduciary duty by offering a stock account option with excessive fees and a history of underperformance. The district court found no breach, noting that participants could have avoided any problems with the undesirable funds by simply choosing other options. The U.S. Court of Appeals for the Seventh Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "145, Orig.",
+ "case_name": "Delaware v. Pennsylvania",
+ "term": 2017,
+ "issue_area": "11",
+ "lc_disposition": "",
+ "lower_court": "not recorded",
+ "parties": "Delaware v. Pennsylvania",
+ "question": "not available in Oyez (metadata-only case file)",
+ "facts": "not available in Oyez (metadata-only case file)",
+ "posture": "",
+ "sources": {
+  "oyez": false,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Delaware v. Pennsylvania\nDocket: 145, Orig. | Term: OT2017 | Court below: not recorded\nParties: Delaware v. Pennsylvania\nQuestion presented: not available in Oyez (metadata-only case file)\nFacts: not available in Oyez (metadata-only case file)\nPosture: not recorded\n",
+ "window": "train"
+}

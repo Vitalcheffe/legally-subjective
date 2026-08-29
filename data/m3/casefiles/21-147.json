@@ -1,0 +1,18 @@
+{
+ "docket": "21-147",
+ "case_name": "Egbert v. Boule",
+ "term": 2021,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Erik Egbertv. Robert Boule (Petitioner v. Respondent)",
+ "question": "Does a plaintiff have a right to sue federal officers for First Amendment retaliation claims or for allegedly violating the individual’s Fourth Amendment rights while engaging in immigration-related functions?",
+ "facts": "Erik Egbert, a Customs and Border Patrol Agent, went to the Smugglers Inn, which sits at the U.S.-Canada border, and approached a car carrying a guest from Turkey. The inn’s owner, Robert Boule, asked Egbert to leave, and when Egbert refused to do so, Egbert pushed Boule to the ground. After Boule complained to Egbert’s supervisors, Egbert suggested to the IRS that it investigate Boule. Boule filed a Bivens lawsuit (so called because of the case Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics, which first recognized the right of plaintiffs to sue federal officials for damages arising from violations of their constitutional rights) against Egbert arguing that the agent had violated his First and Fourth Amendment rights. The district court ruled against Boule, finding his claims beyond the scope of those permitted under Bivens. The U.S. Court of Appeals for the Ninth Circuit reversed, and the full (en banc) Ninth Circuit denied Egbert’s petition for rehearing.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Egbert v. Boule\nDocket: 21-147 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Erik Egbertv. Robert Boule (Petitioner v. Respondent)\nQuestion presented: Does a plaintiff have a right to sue federal officers for First Amendment retaliation claims or for allegedly violating the individual’s Fourth Amendment rights while engaging in immigration-related functions?\nFacts: Erik Egbert, a Customs and Border Patrol Agent, went to the Smugglers Inn, which sits at the U.S.-Canada border, and approached a car carrying a guest from Turkey. The inn’s owner, Robert Boule, asked Egbert to leave, and when Egbert refused to do so, Egbert pushed Boule to the ground. After Boule complained to Egbert’s supervisors, Egbert suggested to the IRS that it investigate Boule. Boule filed a Bivens lawsuit (so called because of the case Bivens v. Six Unknown Named Agents of Federal Bureau of Narcotics, which first recognized the right of plaintiffs to sue federal officials for damages arising from violations of their constitutional rights) against Egbert arguing that the agent had violated his First and Fourth Amendment rights. The district court ruled against Boule, finding his claims beyond the scope of those permitted under Bivens. The U.S. Court of Appeals for the Ninth Circuit reversed, and the full (en banc) Ninth Circuit denied Egbert’s petition for rehearing.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

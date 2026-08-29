@@ -1,0 +1,18 @@
+{
+ "docket": "14-280",
+ "case_name": "Montgomery v. Louisiana",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "9",
+ "lower_court": "Louisiana Supreme Court",
+ "parties": "Henry Montgomeryv. Louisiana (Petitioner v. Respondent)",
+ "question": "1) Does the U.S. Supreme Court’s decision in Miller v. Alabama , which held that the Eighth Amendment prohibits mandatory sentencing schemes that require children convicted of homicide to be sentenced to life in prison without parole, apply retroactively? (2)Does the U.S. Supreme Court have the jurisdiction to review the Louisiana Supreme Court’s determination that the Miller rule does not apply retroactively?",
+ "facts": "In 1963, Henry Montgomery was found guilty and received the death penalty for the murder of Charles Hunt, which Montgomery committed less than two weeks after he turned 17. He appealed to the Louisiana Supreme Court, and his conviction was overturned because of community prejudice. At his new trial, Montgomery was again convicted, but he was sentenced to life without parole. In 2012, the U.S. Supreme Court decided Miller v. Alabama , in which the Court held that mandatory sentencing schemes requiring children convicted of homicide to be sentenced to life imprisonment without parole violate the Eighth Amendment. In light of that decision, Montgomery filed a motion in state district court to correct what he argued was now an illegal sentence. The trial court denied Montgomery’s motion, and the Louisiana Supreme Court denied Montgomery’s application by holding that the decision in Miller does not apply retroactively.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Montgomery v. Louisiana\nDocket: 14-280 | Term: OT2015 | Court below: Louisiana Supreme Court\nParties: Henry Montgomeryv. Louisiana (Petitioner v. Respondent)\nQuestion presented: 1) Does the U.S. Supreme Court’s decision in Miller v. Alabama , which held that the Eighth Amendment prohibits mandatory sentencing schemes that require children convicted of homicide to be sentenced to life in prison without parole, apply retroactively? (2)Does the U.S. Supreme Court have the jurisdiction to review the Louisiana Supreme Court’s determination that the Miller rule does not apply retroactively?\nFacts: In 1963, Henry Montgomery was found guilty and received the death penalty for the murder of Charles Hunt, which Montgomery committed less than two weeks after he turned 17. He appealed to the Louisiana Supreme Court, and his conviction was overturned because of community prejudice. At his new trial, Montgomery was again convicted, but he was sentenced to life without parole. In 2012, the U.S. Supreme Court decided Miller v. Alabama , in which the Court held that mandatory sentencing schemes requiring children convicted of homicide to be sentenced to life imprisonment without parole violate the Eighth Amendment. In light of that decision, Montgomery filed a motion in state district court to correct what he argued was now an illegal sentence. The trial court denied Montgomery’s motion, and the Louisiana Supreme Court denied Montgomery’s application by holding that the decision in Miller does not apply retroactively.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

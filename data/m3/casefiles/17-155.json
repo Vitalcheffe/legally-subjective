@@ -1,0 +1,18 @@
+{
+ "docket": "17-155",
+ "case_name": "Hughes v. United States",
+ "term": 2017,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Erik Lindsey Hughesv. United States of America (Petitioner v. Respondent)",
+ "question": "Is an inmate who enters into a plea bargain under Federal Rule of Criminal Procedure 11(c)(1)(C) (which specifies that an attorney for the government will agree that a specific sentence is appropriate) eligible for a sentence reduction if the sentencing guidelines are changed subsequent to his sentencing?",
+ "facts": "Erik Hughes pleaded guilty to drug and firearm offenses and entered into a plea agreement with the government under Rule 11(c)(1)(C) of the Federal Rules of Criminal Procedure. The district court accepted the agreement and sentenced Hughes accordingly. Hughes then sought a sentence reduction under 18 U.S.C. § 3582(c)(2), which permits defendants who have been “sentenced to a term of imprisonment based on a sentencing range that has subsequently been lowered by the Sentencing Commission.” The district court relied on Justice Sotomayor’s concurring opinion in Freeman v. United States, 564 U.S. 522 (2011) in determining that Hughes was ineligible for a sentence reduction because he was not sentenced “based on a sentencing range,” but on a plea agreement. The Eleventh Circuit affirmed the district court’s holding.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Hughes v. United States\nDocket: 17-155 | Term: OT2017 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Erik Lindsey Hughesv. United States of America (Petitioner v. Respondent)\nQuestion presented: Is an inmate who enters into a plea bargain under Federal Rule of Criminal Procedure 11(c)(1)(C) (which specifies that an attorney for the government will agree that a specific sentence is appropriate) eligible for a sentence reduction if the sentencing guidelines are changed subsequent to his sentencing?\nFacts: Erik Hughes pleaded guilty to drug and firearm offenses and entered into a plea agreement with the government under Rule 11(c)(1)(C) of the Federal Rules of Criminal Procedure. The district court accepted the agreement and sentenced Hughes accordingly. Hughes then sought a sentence reduction under 18 U.S.C. § 3582(c)(2), which permits defendants who have been “sentenced to a term of imprisonment based on a sentencing range that has subsequently been lowered by the Sentencing Commission.” The district court relied on Justice Sotomayor’s concurring opinion in Freeman v. United States, 564 U.S. 522 (2011) in determining that Hughes was ineligible for a sentence reduction because he was not sentenced “based on a sentencing range,” but on a plea agreement. The Eleventh Circuit affirmed the district court’s holding.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

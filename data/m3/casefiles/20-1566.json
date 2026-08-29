@@ -1,0 +1,18 @@
+{
+ "docket": "20-1566",
+ "case_name": "Cassirer v. Thyssen-Bornemisza Collection Foundation",
+ "term": 2021,
+ "issue_area": "14",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "David Cassirerv. Thyssen-Bornemisza Collection Foundation (Petitioner v. Respondent)",
+ "question": "Should a federal court hearing state law claims under the Foreign Sovereign Immunities Act apply the forum state’s choice-of-law rules or federal common law to determine what substantive law governs the claims at issue?",
+ "facts": "David Cassirer and others filed a lawsuit to recover a painting by French Impressionist painter Camille Pissarro, which was stolen from their ancestors by the Nazi regime in 1939. The district court originally granted summary judgment in favor of Thyssen-Bornemisza Collection Foundation (TBC), but the U.S. Court of Appeals for the Ninth Circuit reversed and remanded, holding that the court needed to determine, as a threshold matter, whether TBC had actual knowledge the painting was stolen. If it had such knowledge, then it could be an accessory after the fact under Spanish Civil Code Article 1956. On remand, the district court determined that TBC did not have actual knowledge that the painting was stolen when it purchased the painting in 1993. Cassirer again appealed, arguing among other things the Ninth Circuit’s earlier decision erred in holding that Spanish law governs the substantive claims. The Ninth Circuit affirmed the lower court, finding no factual or legal developments that would justify revisiting its original holding.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Cassirer v. Thyssen-Bornemisza Collection Foundation\nDocket: 20-1566 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: David Cassirerv. Thyssen-Bornemisza Collection Foundation (Petitioner v. Respondent)\nQuestion presented: Should a federal court hearing state law claims under the Foreign Sovereign Immunities Act apply the forum state’s choice-of-law rules or federal common law to determine what substantive law governs the claims at issue?\nFacts: David Cassirer and others filed a lawsuit to recover a painting by French Impressionist painter Camille Pissarro, which was stolen from their ancestors by the Nazi regime in 1939. The district court originally granted summary judgment in favor of Thyssen-Bornemisza Collection Foundation (TBC), but the U.S. Court of Appeals for the Ninth Circuit reversed and remanded, holding that the court needed to determine, as a threshold matter, whether TBC had actual knowledge the painting was stolen. If it had such knowledge, then it could be an accessory after the fact under Spanish Civil Code Article 1956. On remand, the district court determined that TBC did not have actual knowledge that the painting was stolen when it purchased the painting in 1993. Cassirer again appealed, arguing among other things the Ninth Circuit’s earlier decision erred in holding that Spanish law governs the substantive claims. The Ninth Circuit affirmed the lower court, finding no factual or legal developments that would justify revisiting its original holding.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

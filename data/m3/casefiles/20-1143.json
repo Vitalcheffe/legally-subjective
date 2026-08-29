@@ -1,0 +1,18 @@
+{
+ "docket": "20-1143",
+ "case_name": "Badgerow v. Walters",
+ "term": 2021,
+ "issue_area": "7",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Denise A. Badgerowv. Greg Walters, et al. (Petitioner v. Respondent)",
+ "question": "Do federal courts have subject-matter jurisdiction to confirm or vacate an arbitration award when the only basis for jurisdiction is that the underlying dispute involved a federal question?",
+ "facts": "Denise Badgerow was employed as an associate financial advisor with REJ Properties, Inc., a Louisiana corporation, from January 2014 until July 2016, when she was terminated. During her employment with REJ, Badgerow signed an agreement to arbitrate any disputes that may arise between her and the three principals of the corporation. After her termination, Badgerow initiated an arbitration proceeding against the three principals before an arbitration panel of the Financial Industry Regulatory Authority (FINRA), seeking damages for tortious interference of contract and for violation of Louisiana’s whistleblower law. The panel dismissed all of her claims with prejudice. Badgerow then brought a new action in Louisiana state court, asking the court to vacate the dismissal because the whistleblower claim was obtained by fraud. The principals removed the action to federal court, and Badgerow filed a motion to remand for lack of subject-matter jurisdiction. The district court held that it had subject-matter jurisdiction over the petition to vacate and denied remand. On the merits, the court found no fraud and denied vacatur of the FINRA arbitration panel’s dismissal. The U.S. Court of Appeals for the Fifth Circuit Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Badgerow v. Walters\nDocket: 20-1143 | Term: OT2021 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Denise A. Badgerowv. Greg Walters, et al. (Petitioner v. Respondent)\nQuestion presented: Do federal courts have subject-matter jurisdiction to confirm or vacate an arbitration award when the only basis for jurisdiction is that the underlying dispute involved a federal question?\nFacts: Denise Badgerow was employed as an associate financial advisor with REJ Properties, Inc., a Louisiana corporation, from January 2014 until July 2016, when she was terminated. During her employment with REJ, Badgerow signed an agreement to arbitrate any disputes that may arise between her and the three principals of the corporation. After her termination, Badgerow initiated an arbitration proceeding against the three principals before an arbitration panel of the Financial Industry Regulatory Authority (FINRA), seeking damages for tortious interference of contract and for violation of Louisiana’s whistleblower law. The panel dismissed all of her claims with prejudice. Badgerow then brought a new action in Louisiana state court, asking the court to vacate the dismissal because the whistleblower claim was obtained by fraud. The principals removed the action to federal court, and Badgerow filed a motion to remand for lack of subject-matter jurisdiction. The district court held that it had subject-matter jurisdiction over the petition to vacate and denied remand. On the merits, the court found no fraud and denied vacatur of the FINRA arbitration panel’s dismissal. The U.S. Court of Appeals for the Fifth Circuit Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

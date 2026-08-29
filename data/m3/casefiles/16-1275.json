@@ -1,0 +1,18 @@
+{
+ "docket": "16-1275",
+ "case_name": "Virginia Uranium, Inc. v. Warren",
+ "term": 2018,
+ "issue_area": "10",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fourth Circuit",
+ "parties": "Virginia Uranium, Inc. et al.v. John Warren et al. (Petitioner v. Respondent)",
+ "question": "Does the federal Atomic Energy Act preempt a Virginia ban on non-federal uranium mining?",
+ "facts": "The federal Atomic Energy Act regulates nuclear power generation in the United States, and the Nuclear Regulatory Commission (NRC) enforces the provisions of the Act. In the early 1980s, a uranium deposit was discovered in Pittsylvania County, Virginia, on land owned by Coles Hill and Bowen Minerals (both plaintiffs in this case). The Virginia General Assembly called upon the state Coal and Energy Commission to evaluate the effects of mining uranium but in the meantime banned the mining of uranium “until a program for permitting uranium mining is established by statute.” Despite a recommendation by the state commission, the ban on uranium mining remains in effect. Virginia Uranium, Coles Hills, and Bowen Minerals filed a federal lawsuit in the Western District of Virginia asking the court to declare the ban preempted by federal law and enjoining the state to grant uranium mining permits. The district court granted the state’s motion to dismiss the lawsuit, finding that the AEA does not regulate non-federal uranium deposits and thus does not preempt the state law ban. Reviewing the district court’s conclusion de novo, the Fourth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Virginia Uranium, Inc. v. Warren\nDocket: 16-1275 | Term: OT2018 | Court below: United States Court of Appeals for the Fourth Circuit\nParties: Virginia Uranium, Inc. et al.v. John Warren et al. (Petitioner v. Respondent)\nQuestion presented: Does the federal Atomic Energy Act preempt a Virginia ban on non-federal uranium mining?\nFacts: The federal Atomic Energy Act regulates nuclear power generation in the United States, and the Nuclear Regulatory Commission (NRC) enforces the provisions of the Act. In the early 1980s, a uranium deposit was discovered in Pittsylvania County, Virginia, on land owned by Coles Hill and Bowen Minerals (both plaintiffs in this case). The Virginia General Assembly called upon the state Coal and Energy Commission to evaluate the effects of mining uranium but in the meantime banned the mining of uranium “until a program for permitting uranium mining is established by statute.” Despite a recommendation by the state commission, the ban on uranium mining remains in effect. Virginia Uranium, Coles Hills, and Bowen Minerals filed a federal lawsuit in the Western District of Virginia asking the court to declare the ban preempted by federal law and enjoining the state to grant uranium mining permits. The district court granted the state’s motion to dismiss the lawsuit, finding that the AEA does not regulate non-federal uranium deposits and thus does not preempt the state law ban. Reviewing the district court’s conclusion de novo, the Fourth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "23-726",
+ "case_name": "Moyle v. United States",
+ "term": 2023,
+ "issue_area": "5",
+ "lc_disposition": "8",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Mike Moyle, et al.v. United States of America (Petitioner v. Respondent)",
+ "question": "Does the federal Emergency Medical Treatment and Labor Act preempt an Idaho law that criminalizes most abortions in that state?",
+ "facts": "In August 2022, after the Supreme Court’s decision in Dobbs v. Jackson Women’s Health Organization, which eliminated the constitutional right to an abortion, the Biden administration brought a legal challenge to a restrictive Idaho abortion law. The Biden administration argued that the state law, which criminalizes providing an abortion except in a few narrow circumstances, including to save the life of the mother, is preempted by a federal law, the Emergency Medical Treatment and Labor Act (EMTALA). EMTALA requires hospitals receiving Medicare funding to offer “necessary stabilizing treatment” to pregnant women in emergencies. The district court ruled in favor of the Biden administration and barred Idaho from enforcing its law to the extent that it conflicted with EMTALA. The U.S. Court of Appeals for the Ninth Circuit, sitting en banc, declined to stay the district court's ruling while the state appealed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Moyle v. United States\nDocket: 23-726 | Term: OT2023 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Mike Moyle, et al.v. United States of America (Petitioner v. Respondent)\nQuestion presented: Does the federal Emergency Medical Treatment and Labor Act preempt an Idaho law that criminalizes most abortions in that state?\nFacts: In August 2022, after the Supreme Court’s decision in Dobbs v. Jackson Women’s Health Organization, which eliminated the constitutional right to an abortion, the Biden administration brought a legal challenge to a restrictive Idaho abortion law. The Biden administration argued that the state law, which criminalizes providing an abortion except in a few narrow circumstances, including to save the life of the mother, is preempted by a federal law, the Emergency Medical Treatment and Labor Act (EMTALA). EMTALA requires hospitals receiving Medicare funding to offer “necessary stabilizing treatment” to pregnant women in emergencies. The district court ruled in favor of the Biden administration and barred Idaho from enforcing its law to the extent that it conflicted with EMTALA. The U.S. Court of Appeals for the Ninth Circuit, sitting en banc, declined to stay the district court's ruling while the state appealed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

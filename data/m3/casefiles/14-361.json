@@ -1,0 +1,18 @@
+{
+ "docket": "14-361",
+ "case_name": "Ocasio v. United States",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fourth Circuit",
+ "parties": "Samuel Ocasiov. United States (Petitioner v. Respondent)",
+ "question": "Does a conspiracy to commit extortion require that the conspirators agree to extort money or property from a third party outside of the conspiracy?",
+ "facts": "Samuel Ocasio was a police officer of the Baltimore Police Department who was indicted in connection with a kickback scheme involving payments to police officers in exchange for referrals to Majestic Auto Repair Shop (Majestic). The indictment charged Ocasio with conspiring to violate the Hobbs Act by agreeing to unlawfully obtain money or property under color of right from Majestic. The jury convicted Ocasio, and he appealed by arguing that he cannot be guilty of conspiring to commit extortion with the owners of Majestic because they were also the victims of the conspiracy, and the victim of a Hobbes Act conspiracy must be a person outside of the alleged conspiracy. The U.S. Court of Appeals for the Fourth Circuit affirmed Ocasio’s conviction.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Ocasio v. United States\nDocket: 14-361 | Term: OT2015 | Court below: United States Court of Appeals for the Fourth Circuit\nParties: Samuel Ocasiov. United States (Petitioner v. Respondent)\nQuestion presented: Does a conspiracy to commit extortion require that the conspirators agree to extort money or property from a third party outside of the conspiracy?\nFacts: Samuel Ocasio was a police officer of the Baltimore Police Department who was indicted in connection with a kickback scheme involving payments to police officers in exchange for referrals to Majestic Auto Repair Shop (Majestic). The indictment charged Ocasio with conspiring to violate the Hobbs Act by agreeing to unlawfully obtain money or property under color of right from Majestic. The jury convicted Ocasio, and he appealed by arguing that he cannot be guilty of conspiring to commit extortion with the owners of Majestic because they were also the victims of the conspiracy, and the victim of a Hobbes Act conspiracy must be a person outside of the alleged conspiracy. The U.S. Court of Appeals for the Fourth Circuit affirmed Ocasio’s conviction.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "22-800",
+ "case_name": "Moore v. United States",
+ "term": 2023,
+ "issue_area": "12",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Charles G. Moore and Kathleen F. Moorev. United States of America (Petitioner v. Respondent)",
+ "question": "Does the 16th Amendment authorize Congress to tax unrealized sums without apportionment among the states?",
+ "facts": "In 2005, the Moores invested $40,000 in KisanKraft, an Indian company that supplies tools to small farmers, in exchange for 11% of the common shares. KisanKraft is a Controlled Foreign Corporation (CFC), meaning it is majority-owned by U.S. persons but operates abroad. Prior to 2017, U.S. shareholders of CFCs were typically taxed on foreign earnings only when those earnings were repatriated to the United States, according to a provision called Subpart F. However, the Tax Cuts and Jobs Act (TCJA) of 2017 significantly changed this, introducing a one-time Mandatory Repatriation Tax (MRT) that retroactively taxed CFC earnings after 1986, regardless of repatriation. This increased the Moores’ 2017 tax liability by approximately $15,000 based on their share of KisanKraft’s retained earnings. The Moores challenged the constitutionality of this tax, but the district court dismissed their suit, holding that the MRT taxed income and, although it was retroactive, did not violate the Fifth Amendment’s Due Process Clause. The U.S. Court of Appeals for the Ninth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Moore v. United States\nDocket: 22-800 | Term: OT2023 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Charles G. Moore and Kathleen F. Moorev. United States of America (Petitioner v. Respondent)\nQuestion presented: Does the 16th Amendment authorize Congress to tax unrealized sums without apportionment among the states?\nFacts: In 2005, the Moores invested $40,000 in KisanKraft, an Indian company that supplies tools to small farmers, in exchange for 11% of the common shares. KisanKraft is a Controlled Foreign Corporation (CFC), meaning it is majority-owned by U.S. persons but operates abroad. Prior to 2017, U.S. shareholders of CFCs were typically taxed on foreign earnings only when those earnings were repatriated to the United States, according to a provision called Subpart F. However, the Tax Cuts and Jobs Act (TCJA) of 2017 significantly changed this, introducing a one-time Mandatory Repatriation Tax (MRT) that retroactively taxed CFC earnings after 1986, regardless of repatriation. This increased the Moores’ 2017 tax liability by approximately $15,000 based on their share of KisanKraft’s retained earnings. The Moores challenged the constitutionality of this tax, but the district court dismissed their suit, holding that the MRT taxed income and, although it was retroactive, did not violate the Fifth Amendment’s Due Process Clause. The U.S. Court of Appeals for the Ninth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

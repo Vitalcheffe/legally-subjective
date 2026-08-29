@@ -1,0 +1,18 @@
+{
+ "docket": "22-506",
+ "case_name": "Biden v. Nebraska",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Joseph R. Biden, President of the United States, et al.v. Nebraska, et al. (Petitioner v. Respondent)",
+ "question": "1. Do Nebraska and other states have judicial standing to challenge the student-debt relief program? 2. Does the student-debt relief program exceed the statutory authority of the U.S. Secretary of Education, or does it violate the Administrative Procedure Act?",
+ "facts": "In 2020, then-presidential candidate Joseph Biden promised to cancel up to $10,000 of federal student loan debt per borrower. After winning the election, the Biden administration announced its intent to forgive, via executive action, $10,000 in student loans for borrowers with an annual income of less than $125,000. Nebraska and five other states challenged the forgiveness program, arguing that it violated the separation of powers and the Administrative Procedure Act. The district court dismissed the challenge, finding that the states lacked judicial standing to sue. The U.S. Court of Appeals for the Eighth Circuit enjoined the forgiveness program pending the appeal.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Biden v. Nebraska\nDocket: 22-506 | Term: OT2022 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Joseph R. Biden, President of the United States, et al.v. Nebraska, et al. (Petitioner v. Respondent)\nQuestion presented: 1. Do Nebraska and other states have judicial standing to challenge the student-debt relief program? 2. Does the student-debt relief program exceed the statutory authority of the U.S. Secretary of Education, or does it violate the Administrative Procedure Act?\nFacts: In 2020, then-presidential candidate Joseph Biden promised to cancel up to $10,000 of federal student loan debt per borrower. After winning the election, the Biden administration announced its intent to forgive, via executive action, $10,000 in student loans for borrowers with an annual income of less than $125,000. Nebraska and five other states challenged the forgiveness program, arguing that it violated the separation of powers and the Administrative Procedure Act. The district court dismissed the challenge, finding that the states lacked judicial standing to sue. The U.S. Court of Appeals for the Eighth Circuit enjoined the forgiveness program pending the appeal.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

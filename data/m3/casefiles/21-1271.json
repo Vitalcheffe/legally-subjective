@@ -1,0 +1,18 @@
+{
+ "docket": "21-1271",
+ "case_name": "Moore v. Harper",
+ "term": 2022,
+ "issue_area": "2",
+ "lc_disposition": "3",
+ "lower_court": "North Carolina Supreme Court",
+ "parties": "Timothy K. Moore, in His Official Capacity as Speaker of the North Carolina House of Representatives, et al.v. Rebecca Harper, et al. (Petitioner v. Respondent)",
+ "question": "Under the U.S. Constitution, does the state legislative body, independent of any constraints by state courts or other laws, have sole authority to regulate federal elections?",
+ "facts": "After the 2020 Census, in which North Carolina gained an additional seat in the U.S. House of Representatives and thus required redistricting of the state, North Carolina’s Republican-majority state legislature passed a partisan gerrymander. The map was challenged in state court, and in February 2022, the North Carolina Supreme Court struck down the map for violating the state constitution’s “free elections clause” and other provisions. The legislature proposed a second gerrymandered map, so the court ordered a special master to create a map for the 2022 congressional elections. The legislators asked the U.S. Supreme Court to review based on an argument that the Elections Clause of the U.S. Constitution gives state legislatures alone the authority to regulate federal elections—the so-called Independent State Legislature theory.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Moore v. Harper\nDocket: 21-1271 | Term: OT2022 | Court below: North Carolina Supreme Court\nParties: Timothy K. Moore, in His Official Capacity as Speaker of the North Carolina House of Representatives, et al.v. Rebecca Harper, et al. (Petitioner v. Respondent)\nQuestion presented: Under the U.S. Constitution, does the state legislative body, independent of any constraints by state courts or other laws, have sole authority to regulate federal elections?\nFacts: After the 2020 Census, in which North Carolina gained an additional seat in the U.S. House of Representatives and thus required redistricting of the state, North Carolina’s Republican-majority state legislature passed a partisan gerrymander. The map was challenged in state court, and in February 2022, the North Carolina Supreme Court struck down the map for violating the state constitution’s “free elections clause” and other provisions. The legislature proposed a second gerrymandered map, so the court ordered a special master to create a map for the 2022 congressional elections. The legislators asked the U.S. Supreme Court to review based on an argument that the Elections Clause of the U.S. Constitution gives state legislatures alone the authority to regulate federal elections—the so-called Independent State Legislature theory.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "16-1161",
+ "case_name": "Gill v. Whitford",
+ "term": 2017,
+ "issue_area": "9",
+ "lc_disposition": "",
+ "lower_court": "Federal district court",
+ "parties": "Beverly R. Gillv. William Whitford (Appellant v. Appellee)",
+ "question": "Did the district court err in holding that it had the authority to hear a statewide challenge to Wisconsin's redistricting plan, rather than requiring a district-by-district analysis? Did the district court err in holding that the redistricting plan was an unconstitutional gerrymander? Did the district court use an incorrect test for a gerrymander? Are defendants entitled to present evidence that they would have prevailed under the gerrymander test actually used by the district court? Are partisan gerrymandering claims justiciable?",
+ "facts": "In 2010, for the first time in over forty years, Wisconsin voters elected a Republican majority in the state assembly and the senate, and a Republican governor. As a result, the Republican leadership developed a voting district map that its drafters calculated would allow Republicans to maintain a majority under any likely voting scenario. The redistricting plan was introduced in July 2011, and both the senate and the assembly passed the bill shortly thereafter. The governor signed the bill into law in August 2011. Even before it was enacted, the plan faced two legal challenges, on constitutional and statutory grounds. A federal court upheld the plan as not violating the “one person one vote” principle nor violating the Equal Protection Clause. Plaintiffs in this case challenge the plan as an unconstitutional partisan gerrymander. At issue is whether the plan systematically dilutes the voting strength of Democratic voters statewide.",
+ "posture": "Appeal",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Gill v. Whitford\nDocket: 16-1161 | Term: OT2017 | Court below: Federal district court\nParties: Beverly R. Gillv. William Whitford (Appellant v. Appellee)\nQuestion presented: Did the district court err in holding that it had the authority to hear a statewide challenge to Wisconsin's redistricting plan, rather than requiring a district-by-district analysis? Did the district court err in holding that the redistricting plan was an unconstitutional gerrymander? Did the district court use an incorrect test for a gerrymander? Are defendants entitled to present evidence that they would have prevailed under the gerrymander test actually used by the district court? Are partisan gerrymandering claims justiciable?\nFacts: In 2010, for the first time in over forty years, Wisconsin voters elected a Republican majority in the state assembly and the senate, and a Republican governor. As a result, the Republican leadership developed a voting district map that its drafters calculated would allow Republicans to maintain a majority under any likely voting scenario. The redistricting plan was introduced in July 2011, and both the senate and the assembly passed the bill shortly thereafter. The governor signed the bill into law in August 2011. Even before it was enacted, the plan faced two legal challenges, on constitutional and statutory grounds. A federal court upheld the plan as not violating the “one person one vote” principle nor violating the Equal Protection Clause. Plaintiffs in this case challenge the plan as an unconstitutional partisan gerrymander. At issue is whether the plan systematically dilutes the voting strength of Democratic voters statewide.\nPosture: Appeal\n",
+ "window": "train"
+}

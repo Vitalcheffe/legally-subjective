@@ -1,0 +1,18 @@
+{
+ "docket": "22-500",
+ "case_name": "Great Lakes Ins. SE v. Raiders Retreat Realty Co.",
+ "term": 2023,
+ "issue_area": "14",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the Third Circuit",
+ "parties": "Great Lakes Insurance SEv. Raiders Retreat Realty Co., LLC (Petitioner v. Respondent)",
+ "question": "Is a choice-of-law clause in a maritime contract unenforceable if enforcement would conflict with the “strong public policy” of the state whose law is displaced?",
+ "facts": "Raiders Retreat Realty Co., a Pennsylvania company, insured a yacht for up to $550,000 with Great Lakes Insurance (GLI), a company headquartered in the United Kingdom. In June 2019, the yacht ran aground, incurring at least $300,000 in damage. Raiders submitted a claim to GLI for loss of the vessel, but GLI rejected it, claiming that, although none of the damage was due to fire, the entire policy was void because Raider had failed to timely recertify or inspect the yacht's fire-extinguishing equipment. GLI asked the district court for a declaratory judgment that Raiders’ omission voided the policy, and Raiders raised five counterclaims based on Pennsylvania law. The district court dismissed those counterclaims, finding that ​​the policy’s choice-of-law provision required the application of New York law. The court also rejected Raiders’ argument that the choice-of-law provision was unenforceable under the Supreme Court’s decision in The Bremen v. Zapata Off-Shore Co. , 407 U.S. 1 (1972) , which held that under federal admiralty law, a forum-selection provision is unenforceable “if enforcement would contravene a strong public policy of the forum in which suit is brought.” The U.S. Court of Appeals for the Third Circuit vacated, finding The Bremen controlled the outcome in this case.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Great Lakes Ins. SE v. Raiders Retreat Realty Co.\nDocket: 22-500 | Term: OT2023 | Court below: United States Court of Appeals for the Third Circuit\nParties: Great Lakes Insurance SEv. Raiders Retreat Realty Co., LLC (Petitioner v. Respondent)\nQuestion presented: Is a choice-of-law clause in a maritime contract unenforceable if enforcement would conflict with the “strong public policy” of the state whose law is displaced?\nFacts: Raiders Retreat Realty Co., a Pennsylvania company, insured a yacht for up to $550,000 with Great Lakes Insurance (GLI), a company headquartered in the United Kingdom. In June 2019, the yacht ran aground, incurring at least $300,000 in damage. Raiders submitted a claim to GLI for loss of the vessel, but GLI rejected it, claiming that, although none of the damage was due to fire, the entire policy was void because Raider had failed to timely recertify or inspect the yacht's fire-extinguishing equipment. GLI asked the district court for a declaratory judgment that Raiders’ omission voided the policy, and Raiders raised five counterclaims based on Pennsylvania law. The district court dismissed those counterclaims, finding that ​​the policy’s choice-of-law provision required the application of New York law. The court also rejected Raiders’ argument that the choice-of-law provision was unenforceable under the Supreme Court’s decision in The Bremen v. Zapata Off-Shore Co. , 407 U.S. 1 (1972) , which held that under federal admiralty law, a forum-selection provision is unenforceable “if enforcement would contravene a strong public policy of the forum in which suit is brought.” The U.S. Court of Appeals for the Third Circuit vacated, finding The Bremen controlled the outcome in this case.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

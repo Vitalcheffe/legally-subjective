@@ -1,0 +1,18 @@
+{
+ "docket": "20-1472",
+ "case_name": "Boechler v. Commissioner",
+ "term": 2021,
+ "issue_area": "12",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Boechler, P.C.v. Commissioner of Internal Revenue (Petitioner v. Respondent)",
+ "question": "Is the 30-day time limit to file a petition for review in the Tax Court of a notice of determination from the commissioner of internal revenue in 26 U.S.C. § 6330(d)(1) a jurisdictional requirement or a claim-processing rule subject to equitable tolling?",
+ "facts": "On June 5, 2015, the Internal Revenue Service sent Boechler, P.C., a letter noting a discrepancy between prior tax document submissions. After not receiving a response, the IRS imposed a 10% intentional disregard penalty, which Boechler did not pay. The IRS mailed Boechler a notice of intent to levy. Boechler timely responded but failed to establish grounds for relief. On July 28, 2017, the Office of Appeals mailed a determination sustaining the levy to Boechler's last known address in Fargo, North Dakota. The notice of determination, delivered on July 31, stated that Boechler had 30 days from the date of determination, i.e. until August 28, 2017, to submit a petition for review. Boechler mailed a petition for a CDP hearing on August 29, 2017, one day after the 30-day filing deadline had expired. The Tax Court received Boechler's untimely petition, and the IRS moved to dismiss for lack of jurisdiction. Boechler argued that the 30-day time limit in 26 U.S.C. § 6330(d)(1) is not jurisdictional, the time limit should be equitably tolled, and calculating the time limit from issuance rather than receipt violates due process. The tax court dismissed the petition for lack of jurisdiction, and Boechler appealed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Boechler v. Commissioner\nDocket: 20-1472 | Term: OT2021 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Boechler, P.C.v. Commissioner of Internal Revenue (Petitioner v. Respondent)\nQuestion presented: Is the 30-day time limit to file a petition for review in the Tax Court of a notice of determination from the commissioner of internal revenue in 26 U.S.C. § 6330(d)(1) a jurisdictional requirement or a claim-processing rule subject to equitable tolling?\nFacts: On June 5, 2015, the Internal Revenue Service sent Boechler, P.C., a letter noting a discrepancy between prior tax document submissions. After not receiving a response, the IRS imposed a 10% intentional disregard penalty, which Boechler did not pay. The IRS mailed Boechler a notice of intent to levy. Boechler timely responded but failed to establish grounds for relief. On July 28, 2017, the Office of Appeals mailed a determination sustaining the levy to Boechler's last known address in Fargo, North Dakota. The notice of determination, delivered on July 31, stated that Boechler had 30 days from the date of determination, i.e. until August 28, 2017, to submit a petition for review. Boechler mailed a petition for a CDP hearing on August 29, 2017, one day after the 30-day filing deadline had expired. The Tax Court received Boechler's untimely petition, and the IRS moved to dismiss for lack of jurisdiction. Boechler argued that the 30-day time limit in 26 U.S.C. § 6330(d)(1) is not jurisdictional, the time limit should be equitably tolled, and calculating the time limit from issuance rather than receipt violates due process. The tax court dismissed the petition for lack of jurisdiction, and Boechler appealed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

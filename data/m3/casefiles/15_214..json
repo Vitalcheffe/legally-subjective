@@ -1,0 +1,18 @@
+{
+ "docket": "15–214.",
+ "case_name": "Murr v. Wisconsin",
+ "term": 2016,
+ "issue_area": "4",
+ "lc_disposition": "2",
+ "lower_court": "State appellate court",
+ "parties": "Joseph P. Murr, et al.v. Wisconsin, et al. (Petitioner v. Respondent)",
+ "question": "In a regulatory taking case, should two legally distinct but commonly owned contiguous parcels be combined for takings analysis purposes?",
+ "facts": "The parents of Joseph P. Murr and his siblings (the Murrs) purchased two adjacent lots (Lots E and F) in St. Croix County in 1960. The two lots together made up approximately .98 acres. In 1994 and 1995 respectively, the Murrs’ parents transferred Lot F and Lot E to their children. In 1995, the two lots were merged pursuant to St. Croix County’s code of ordinances. The relevant ordinance prohibits the individual development or sale of adjacent lots under common ownership, unless an individual lot was at least one acre. The ordinance further specified that if each lot is not at least one acre, the lots may be measured together to equal one acre. Seven years later, the Murrs wanted to sell Lot E and not Lot F. The St. Croix County Board of Adjustment denied the Murrs’ application to sell the lots separately. The Murrs sued the state and county and claimed the ordinance in question resulted in an uncompensated taking of their property and deprived them of “all, or practically all, of the use of Lot E because the lot cannot be sold or developed as a separate lot.” The circuit court granted summary judgement to the state and county. The Court of Appeals of Wisconsin affirmed and held that the Murrs were not deprived of their practical use of the property.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Murr v. Wisconsin\nDocket: 15–214. | Term: OT2016 | Court below: State appellate court\nParties: Joseph P. Murr, et al.v. Wisconsin, et al. (Petitioner v. Respondent)\nQuestion presented: In a regulatory taking case, should two legally distinct but commonly owned contiguous parcels be combined for takings analysis purposes?\nFacts: The parents of Joseph P. Murr and his siblings (the Murrs) purchased two adjacent lots (Lots E and F) in St. Croix County in 1960. The two lots together made up approximately .98 acres. In 1994 and 1995 respectively, the Murrs’ parents transferred Lot F and Lot E to their children. In 1995, the two lots were merged pursuant to St. Croix County’s code of ordinances. The relevant ordinance prohibits the individual development or sale of adjacent lots under common ownership, unless an individual lot was at least one acre. The ordinance further specified that if each lot is not at least one acre, the lots may be measured together to equal one acre. Seven years later, the Murrs wanted to sell Lot E and not Lot F. The St. Croix County Board of Adjustment denied the Murrs’ application to sell the lots separately. The Murrs sued the state and county and claimed the ordinance in question resulted in an uncompensated taking of their property and deprived them of “all, or practically all, of the use of Lot E because the lot cannot be sold or developed as a separate lot.” The circuit court granted summary judgement to the state and county. The Court of Appeals of Wisconsin affirmed and held that the Murrs were not deprived of their practical use of the property.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

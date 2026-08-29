@@ -1,0 +1,18 @@
+{
+ "docket": "No. 17-1174",
+ "case_name": "Nieves v. Bartlett",
+ "term": 2018,
+ "issue_area": "3",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Luis A. Nieves, et al.v. Russell P. Bartlett (Petitioner v. Respondent)",
+ "question": "Does probable cause defeat a First Amendment retaliatory-arrest claim under 42 U.S.C. § 1983?",
+ "facts": "Russell Bartlett was arrested by Alaska state troopers Luis Nieves and Bryce Weight for disorderly conduct and harassment. Bartlett subsequently sued the officers for damages under 42 U.S.C. § 1983, making claims including false arrest and imprisonment, excessive force, malicious prosecution, and retaliatory arrest. The district court granted summary judgment to the officers on all claims. The U.S. Court of Appeals for the Ninth Circuit reversed the district court’s ruling on the retaliatory arrest claim, explaining that under its own precedent, a showing of probable cause did not preclude a claim of retaliatory arrest. The appellate court noted that in 2012, the U.S. Supreme Court had clarified that its decision in Hartman v. Moore , 547 U.S. 250 (2006), which held that a plaintiff could not make a retaliatory prosecution claim if the charges were supported by probable cause, did not necessarily extend to retaliatory arrests. And since that time, the Ninth Circuit had held that a plaintiff could make a retaliatory arrest claim even if the arresting officers had probable cause.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Nieves v. Bartlett\nDocket: No. 17-1174 | Term: OT2018 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Luis A. Nieves, et al.v. Russell P. Bartlett (Petitioner v. Respondent)\nQuestion presented: Does probable cause defeat a First Amendment retaliatory-arrest claim under 42 U.S.C. § 1983?\nFacts: Russell Bartlett was arrested by Alaska state troopers Luis Nieves and Bryce Weight for disorderly conduct and harassment. Bartlett subsequently sued the officers for damages under 42 U.S.C. § 1983, making claims including false arrest and imprisonment, excessive force, malicious prosecution, and retaliatory arrest. The district court granted summary judgment to the officers on all claims. The U.S. Court of Appeals for the Ninth Circuit reversed the district court’s ruling on the retaliatory arrest claim, explaining that under its own precedent, a showing of probable cause did not preclude a claim of retaliatory arrest. The appellate court noted that in 2012, the U.S. Supreme Court had clarified that its decision in Hartman v. Moore , 547 U.S. 250 (2006), which held that a plaintiff could not make a retaliatory prosecution claim if the charges were supported by probable cause, did not necessarily extend to retaliatory arrests. And since that time, the Ninth Circuit had held that a plaintiff could make a retaliatory arrest claim even if the arresting officers had probable cause.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

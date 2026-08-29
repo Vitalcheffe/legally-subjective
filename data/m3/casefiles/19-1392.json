@@ -1,0 +1,18 @@
+{
+ "docket": "19-1392",
+ "case_name": "Dobbs v. Jackson Women's Health Organization",
+ "term": 2021,
+ "issue_area": "5",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Thomas E. Dobbs, State Health Officer of the Mississippi Department of Health, et al.v. Jackson Women's Health Organization, et al. (Petitioner v. Respondent)",
+ "question": "Is Mississippi’s law banning nearly all abortions after 15 weeks’ gestational age unconstitutional?",
+ "facts": "In 2018, Mississippi passed a law called the “Gestational Age Act,” which prohibits all abortions, with few exceptions, after 15 weeks’ gestational age. Jackson Women’s Health Organization, the only licensed abortion facility in Mississippi, and one of its doctors filed a lawsuit in federal district court challenging the law and requesting an emergency temporary restraining order (TRO). After a hearing, the district court granted the TRO while the litigation proceeded to discovery. After discovery, the district court granted the clinic’s motion for summary judgment and enjoined Mississippi from enforcing the law, finding that the state had not provided evidence that a fetus would be viable at 15 weeks, and Supreme Court precedent prohibits states from banning abortions prior to viability. The U.S. Court of Appeals for the Fifth Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Dobbs v. Jackson Women's Health Organization\nDocket: 19-1392 | Term: OT2021 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Thomas E. Dobbs, State Health Officer of the Mississippi Department of Health, et al.v. Jackson Women's Health Organization, et al. (Petitioner v. Respondent)\nQuestion presented: Is Mississippi’s law banning nearly all abortions after 15 weeks’ gestational age unconstitutional?\nFacts: In 2018, Mississippi passed a law called the “Gestational Age Act,” which prohibits all abortions, with few exceptions, after 15 weeks’ gestational age. Jackson Women’s Health Organization, the only licensed abortion facility in Mississippi, and one of its doctors filed a lawsuit in federal district court challenging the law and requesting an emergency temporary restraining order (TRO). After a hearing, the district court granted the TRO while the litigation proceeded to discovery. After discovery, the district court granted the clinic’s motion for summary judgment and enjoined Mississippi from enforcing the law, finding that the state had not provided evidence that a fetus would be viable at 15 weeks, and Supreme Court precedent prohibits states from banning abortions prior to viability. The U.S. Court of Appeals for the Fifth Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

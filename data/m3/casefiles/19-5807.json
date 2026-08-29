@@ -1,0 +1,18 @@
+{
+ "docket": "19-5807",
+ "case_name": "Edwards v. Vannoy",
+ "term": 2020,
+ "issue_area": "1",
+ "lc_disposition": "9",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Thedrick Edwardsv. Darrel Vannoy, Warden (Petitioner v. Respondent)",
+ "question": "Does the Court’s decision in Ramos v. Louisiana , holding that the Sixth Amendment establishes a right to a unanimous jury in both federal and state courts, apply retroactively to cases on federal collateral review?",
+ "facts": "Thedrick Edwards was sentenced to life in prison for the commission of several robberies and rape in 2006. At Edwards’s trial, the state used its challenges to exclude all but one African American juror from the jury, and at least one person voted to acquit Edwards, a black man, on each count. At the time, Louisiana permitted conviction by a 10-2 vote, so Edwards’s conviction became final in 2010. On April 20, 2020, the U.S. Supreme Court decided Ramos v. Louisiana , holding that the Sixth Amendment establishes a right to a unanimous jury in both federal and state courts. Edwards argues that he would not have been convicted if he had been prosecuted in one of 48 other states or by the federal government, rather than in Louisiana.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Edwards v. Vannoy\nDocket: 19-5807 | Term: OT2020 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Thedrick Edwardsv. Darrel Vannoy, Warden (Petitioner v. Respondent)\nQuestion presented: Does the Court’s decision in Ramos v. Louisiana , holding that the Sixth Amendment establishes a right to a unanimous jury in both federal and state courts, apply retroactively to cases on federal collateral review?\nFacts: Thedrick Edwards was sentenced to life in prison for the commission of several robberies and rape in 2006. At Edwards’s trial, the state used its challenges to exclude all but one African American juror from the jury, and at least one person voted to acquit Edwards, a black man, on each count. At the time, Louisiana permitted conviction by a 10-2 vote, so Edwards’s conviction became final in 2010. On April 20, 2020, the U.S. Supreme Court decided Ramos v. Louisiana , holding that the Sixth Amendment establishes a right to a unanimous jury in both federal and state courts. Edwards argues that he would not have been convicted if he had been prosecuted in one of 48 other states or by the federal government, rather than in Louisiana.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

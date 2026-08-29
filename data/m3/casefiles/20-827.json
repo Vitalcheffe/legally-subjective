@@ -1,0 +1,18 @@
+{
+ "docket": "20-827",
+ "case_name": "United States v. Zubaydah",
+ "term": 2021,
+ "issue_area": "5",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "United Statesv. Zayn al-Abidin Muhammad Husayn, aka Abu Zubaydah, et al. (Petitioner v. Respondent)",
+ "question": "Did the U.S. Court of Appeals for the Ninth Circuit err in rejecting the federal government’s assertion of the state-secrets privilege based on its own assessment of the potential harms to national security that would result from disclosure of information pertaining to clandestine CIA activities?",
+ "facts": "Zayn Husayn, also known as Abu Zubaydah, is a former associate of Osama bin Laden. U.S. military forces captured him in Pakistan and detained him abroad before moving him to the detention facility at Guantanamo Bay, where he is currently being held. Zubaydah alleged that, before being transferred to Guantanamo, he was held at a CIA “dark site” in Poland, where two former CIA contractors used “enhanced interrogation techniques” against him. Zubaydah intervened in a Polish criminal investigation into the CIA’s conduct in that country, and he sought to compel the U.S. government to disclose evidence connected with that investigation. The government has declassified some information about Zubaydah’s treatment in CIA custody, but it has asserted the state-secrets privilege to protect other information. The U.S. Court of Appeals for the Ninth Circuit rejected the government’s assertion of state-secrets privilege based on its own assessment of potential harms to national security and allowed discovery in the case to proceed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Zubaydah\nDocket: 20-827 | Term: OT2021 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: United Statesv. Zayn al-Abidin Muhammad Husayn, aka Abu Zubaydah, et al. (Petitioner v. Respondent)\nQuestion presented: Did the U.S. Court of Appeals for the Ninth Circuit err in rejecting the federal government’s assertion of the state-secrets privilege based on its own assessment of the potential harms to national security that would result from disclosure of information pertaining to clandestine CIA activities?\nFacts: Zayn Husayn, also known as Abu Zubaydah, is a former associate of Osama bin Laden. U.S. military forces captured him in Pakistan and detained him abroad before moving him to the detention facility at Guantanamo Bay, where he is currently being held. Zubaydah alleged that, before being transferred to Guantanamo, he was held at a CIA “dark site” in Poland, where two former CIA contractors used “enhanced interrogation techniques” against him. Zubaydah intervened in a Polish criminal investigation into the CIA’s conduct in that country, and he sought to compel the U.S. government to disclose evidence connected with that investigation. The government has declassified some information about Zubaydah’s treatment in CIA custody, but it has asserted the state-secrets privilege to protect other information. The U.S. Court of Appeals for the Ninth Circuit rejected the government’s assertion of state-secrets privilege based on its own assessment of potential harms to national security and allowed discovery in the case to proceed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

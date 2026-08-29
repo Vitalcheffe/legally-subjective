@@ -1,0 +1,18 @@
+{
+ "docket": "15–1248.",
+ "case_name": "McLane Co. v. Equal Emp't Opportunity Comm'n",
+ "term": 2016,
+ "issue_area": "9",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "McLane Company, Inc.v. Equal Opportunity Employment Commission (Petitioner v. Respondent)",
+ "question": "Should a district court’s determination on whether to enforce an Equal Employment Opportunity Commission subpoena be reviewed “de novo,” or without deference to the lower court’s determination?",
+ "facts": "Damiana Ochoa filed a charge with the Equal Employment Opportunity Commission (EEOC) against her former employer, McLane Company (McLane), for violating Title VII of the Civil Rights Act of 1964. McLane required all new employees and employees returning work after a medical leave to take a physical capability strength test for positions that are classified as physically demanding. Ochoa failed the test three times, and therefore her employment was terminated. The EEOC opened up an investigation into McLane Co. During the investigation, the EEOC issued a subpoena for information McLane withheld, including either “pedigree information” for each test-taker or reasons the test-taker’s employment was terminated. McLane continued to refuse to provide that information, so the EEOC filed a subpoena enforcement action. The district court required McLane to disclose some of the information the EEOC subpoenaed, but it refused to require McLane to divulge the “pedigree information” or reasons for termination. The U.S. Court of Appeals for the Ninth Circuit reversed in part and vacated in part after reviewing the lower court’s decision “de novo,” or without giving deference to the lower court’s determination.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — McLane Co. v. Equal Emp't Opportunity Comm'n\nDocket: 15–1248. | Term: OT2016 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: McLane Company, Inc.v. Equal Opportunity Employment Commission (Petitioner v. Respondent)\nQuestion presented: Should a district court’s determination on whether to enforce an Equal Employment Opportunity Commission subpoena be reviewed “de novo,” or without deference to the lower court’s determination?\nFacts: Damiana Ochoa filed a charge with the Equal Employment Opportunity Commission (EEOC) against her former employer, McLane Company (McLane), for violating Title VII of the Civil Rights Act of 1964. McLane required all new employees and employees returning work after a medical leave to take a physical capability strength test for positions that are classified as physically demanding. Ochoa failed the test three times, and therefore her employment was terminated. The EEOC opened up an investigation into McLane Co. During the investigation, the EEOC issued a subpoena for information McLane withheld, including either “pedigree information” for each test-taker or reasons the test-taker’s employment was terminated. McLane continued to refuse to provide that information, so the EEOC filed a subpoena enforcement action. The district court required McLane to disclose some of the information the EEOC subpoenaed, but it refused to require McLane to divulge the “pedigree information” or reasons for termination. The U.S. Court of Appeals for the Ninth Circuit reversed in part and vacated in part after reviewing the lower court’s decision “de novo,” or without giving deference to the lower court’s determination.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

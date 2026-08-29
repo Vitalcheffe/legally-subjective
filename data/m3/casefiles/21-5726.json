@@ -1,0 +1,18 @@
+{
+ "docket": "21-5726",
+ "case_name": "Kemp v. United States",
+ "term": 2021,
+ "issue_area": "9",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Dexter Earl Kempv. United States of America (Petitioner v. Respondent)",
+ "question": "Does Federal Rule of Civil Procedure 60(b)(1) authorize relief based on a district court’s error of law?",
+ "facts": "Dexter Kemp and several co-defendants were charged and convicted of drug and firearms offenses. Kemp and some of the co-defendants appealed, but their sentences were affirmed. Some of the co-defendants, without Kemp, filed petitions for rehearings, rehearings en banc, and certiorari in the U.S. Supreme Court. Over a year later, Kemp moved to vacate his sentence under Federal Rule of Civil Procedure 60(b), arguing ineffective assistance of counsel. The court denied his motion as untimely under 28 U.S.C. § 2255(f). Kemp argued that his petition was timely under Supreme Court Rule 13.3, which provides that if a petition for rehearing is timely filed in the lower court, the time to file the petition for a writ of certiorari runs from the date of the denial of rehearing. The court denied his motion, finding that it fell under Rule 60(b)(1) because it alleged the court made a “mistake,” and that such motions must be filed within one year.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Kemp v. United States\nDocket: 21-5726 | Term: OT2021 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Dexter Earl Kempv. United States of America (Petitioner v. Respondent)\nQuestion presented: Does Federal Rule of Civil Procedure 60(b)(1) authorize relief based on a district court’s error of law?\nFacts: Dexter Kemp and several co-defendants were charged and convicted of drug and firearms offenses. Kemp and some of the co-defendants appealed, but their sentences were affirmed. Some of the co-defendants, without Kemp, filed petitions for rehearings, rehearings en banc, and certiorari in the U.S. Supreme Court. Over a year later, Kemp moved to vacate his sentence under Federal Rule of Civil Procedure 60(b), arguing ineffective assistance of counsel. The court denied his motion as untimely under 28 U.S.C. § 2255(f). Kemp argued that his petition was timely under Supreme Court Rule 13.3, which provides that if a petition for rehearing is timely filed in the lower court, the time to file the petition for a writ of certiorari runs from the date of the denial of rehearing. The court denied his motion, finding that it fell under Rule 60(b)(1) because it alleged the court made a “mistake,” and that such motions must be filed within one year.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

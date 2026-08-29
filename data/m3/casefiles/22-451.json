@@ -1,0 +1,18 @@
+{
+ "docket": "22-451",
+ "case_name": "Loper Bright Enterprises v. Raimondo",
+ "term": 2023,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the District of Columbia Circuit",
+ "parties": "Loper Bright Enterprises, et al.v. Gina Raimondo, Secretary of Commerce, et al. (Petitioner v. Respondent)",
+ "question": "1. Does the Magnuson-Stevens Act authorize the National Marine Fisheries Service to promulgate a rule that would require industry to pay for at-sea monitoring programs? 2. Should the Court overrule Chevron v. Natural Resources Defense Council or at least clarify whether statutory silence on controversial powers creates an ambiguity requiring deference to the agency?",
+ "facts": "A group of commercial fishermen who regularly participate in the Atlantic herring fishery sued the National Marine Fisheries Service after the Service promulgated a rule that required industry to fund at-sea monitoring programs at an estimated cost of $710 per day. The fisherman argued that the Magnuson-Stevens Fishery Conservation and Management Act of 1976 did not authorize the Service to create industry-funded monitoring requirements and that the Service failed to follow proper rulemaking procedure. The district court granted summary judgment for the government based on its reasonable interpretation of its authority and its adoption of the rule through the required notice-and-comment procedure. The U.S. Court of Appeals for the D.C. Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Loper Bright Enterprises v. Raimondo\nDocket: 22-451 | Term: OT2023 | Court below: United States Court of Appeals for the District of Columbia Circuit\nParties: Loper Bright Enterprises, et al.v. Gina Raimondo, Secretary of Commerce, et al. (Petitioner v. Respondent)\nQuestion presented: 1. Does the Magnuson-Stevens Act authorize the National Marine Fisheries Service to promulgate a rule that would require industry to pay for at-sea monitoring programs? 2. Should the Court overrule Chevron v. Natural Resources Defense Council or at least clarify whether statutory silence on controversial powers creates an ambiguity requiring deference to the agency?\nFacts: A group of commercial fishermen who regularly participate in the Atlantic herring fishery sued the National Marine Fisheries Service after the Service promulgated a rule that required industry to fund at-sea monitoring programs at an estimated cost of $710 per day. The fisherman argued that the Magnuson-Stevens Fishery Conservation and Management Act of 1976 did not authorize the Service to create industry-funded monitoring requirements and that the Service failed to follow proper rulemaking procedure. The district court granted summary judgment for the government based on its reasonable interpretation of its authority and its adoption of the rule through the required notice-and-comment procedure. The U.S. Court of Appeals for the D.C. Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

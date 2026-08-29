@@ -1,0 +1,18 @@
+{
+ "docket": "22-179",
+ "case_name": "United States v. Hansen",
+ "term": 2022,
+ "issue_area": "3",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "United Statesv. Helaman Hansen (Petitioner v. Respondent)",
+ "question": "Does the federal prohibition on encouraging or inducing unlawful immigration for commercial advantage or private financial gain violate the First Amendment of the U.S. Constitution?",
+ "facts": "Helaman Hansen ran an immigration-advising service charging undocumented immigrants for (incorrect) advice on how to achieve U.S. citizenship. Hansen was convicted and sentenced for, among other federal crimes, two counts of encouraging or inducing illegal immigration for private financial gain, in violation of 8 U.S.C. § 1324(a)(1)(A)(iv) and (B)(i). Two years earlier, in United States v. Sineneng-Smith, the U.S. Supreme Court unanimously reversed a Ninth Circuit decision striking down those two statutory provisions. Its reversal was based not on the merits of the constitutional challenge, but on the procedure the Ninth Circuit had used to entertain the challenge. Hansen’s case again raises the constitutional challenge.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Hansen\nDocket: 22-179 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: United Statesv. Helaman Hansen (Petitioner v. Respondent)\nQuestion presented: Does the federal prohibition on encouraging or inducing unlawful immigration for commercial advantage or private financial gain violate the First Amendment of the U.S. Constitution?\nFacts: Helaman Hansen ran an immigration-advising service charging undocumented immigrants for (incorrect) advice on how to achieve U.S. citizenship. Hansen was convicted and sentenced for, among other federal crimes, two counts of encouraging or inducing illegal immigration for private financial gain, in violation of 8 U.S.C. § 1324(a)(1)(A)(iv) and (B)(i). Two years earlier, in United States v. Sineneng-Smith, the U.S. Supreme Court unanimously reversed a Ninth Circuit decision striking down those two statutory provisions. Its reversal was based not on the merits of the constitutional challenge, but on the procedure the Ninth Circuit had used to entertain the challenge. Hansen’s case again raises the constitutional challenge.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

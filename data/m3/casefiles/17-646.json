@@ -1,0 +1,18 @@
+{
+ "docket": "17-646",
+ "case_name": "Gamble v. United States",
+ "term": 2018,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Terance Martez Gamblev. United States (Petitioner v. Respondent)",
+ "question": "Should the Court overrule the “separate sovereigns” exception to the Double Jeopardy Clause of the Fifth Amendment?",
+ "facts": "Terance Martez Gamble was convicted for possession of a firearm as a convicted felon. He argues that the district court erred in concluding that Double Jeopardy Clause of the Fifth Amendment did not prohibit the federal government from prosecuting Gamble for the same conduct for which he had been prosecuted and sentenced for by the State of Alabama. The US Supreme Court held in Abbate v. United States , 359 U.S. 187 (1959) , that prosecution in federal and state court for the same conduct does not violate the Double Jeopardy Clause because the state and federal governments are separate sovereigns (the so-called “separate sovereigns” exception). Under this binding precedent, the Eleventh Circuit affirmed the district court.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Gamble v. United States\nDocket: 17-646 | Term: OT2018 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Terance Martez Gamblev. United States (Petitioner v. Respondent)\nQuestion presented: Should the Court overrule the “separate sovereigns” exception to the Double Jeopardy Clause of the Fifth Amendment?\nFacts: Terance Martez Gamble was convicted for possession of a firearm as a convicted felon. He argues that the district court erred in concluding that Double Jeopardy Clause of the Fifth Amendment did not prohibit the federal government from prosecuting Gamble for the same conduct for which he had been prosecuted and sentenced for by the State of Alabama. The US Supreme Court held in Abbate v. United States , 359 U.S. 187 (1959) , that prosecution in federal and state court for the same conduct does not violate the Double Jeopardy Clause because the state and federal governments are separate sovereigns (the so-called “separate sovereigns” exception). Under this binding precedent, the Eleventh Circuit affirmed the district court.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

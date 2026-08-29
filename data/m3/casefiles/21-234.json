@@ -1,0 +1,18 @@
+{
+ "docket": "21-234",
+ "case_name": "George v. McDonough",
+ "term": 2021,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Kevin R. Georgev. Denis R. McDonough (Petitioner v. Respondent)",
+ "question": "When the Department of Veterans Affairs denies a veteran’s claim for benefits in reliance on an agency interpretation later deemed invalid under the plain text of the statutory provisions in effect at the time of the denial, is that the kind of “clear and unmistakable error” that the veteran may invoke to challenge the VA’s decision?",
+ "facts": "Kevin R. George and Michael B. Martin are both military veterans who sought and were denied disability benefits several decades ago based on the straightforward application of a regulation. Since then, the regulation was overturned, so George and Martin sought revision of those denial decisions based on the “clear and unmistakable error” (CUE) by the VA. The Board of Veterans’ Appeals denied the motions, holding that it was not clear and unmistakable error to faithfully apply a regulation that existed at the time. The U.S. Court of Appeals for the Federal Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — George v. McDonough\nDocket: 21-234 | Term: OT2021 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Kevin R. Georgev. Denis R. McDonough (Petitioner v. Respondent)\nQuestion presented: When the Department of Veterans Affairs denies a veteran’s claim for benefits in reliance on an agency interpretation later deemed invalid under the plain text of the statutory provisions in effect at the time of the denial, is that the kind of “clear and unmistakable error” that the veteran may invoke to challenge the VA’s decision?\nFacts: Kevin R. George and Michael B. Martin are both military veterans who sought and were denied disability benefits several decades ago based on the straightforward application of a regulation. Since then, the regulation was overturned, so George and Martin sought revision of those denial decisions based on the “clear and unmistakable error” (CUE) by the VA. The Board of Veterans’ Appeals denied the motions, holding that it was not clear and unmistakable error to faithfully apply a regulation that existed at the time. The U.S. Court of Appeals for the Federal Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

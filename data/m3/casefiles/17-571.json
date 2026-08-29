@@ -1,0 +1,18 @@
+{
+ "docket": "17-571",
+ "case_name": "Fourth Estate Pub. Benefit Corp. v. Wall-Street.com, LLC",
+ "term": 2018,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Fourth Estate Public Benefit Corporationv. Wall-Street.com, LLC, et al. (Petitioner v. Respondent)",
+ "question": "Is “registration of [a] copyright claim” complete under 17 U.S.C. § 411(a) when the copyright holder delivers the required application, fees, and materials to the copyright office, or only once the copyright office has acted on that application?",
+ "facts": "Fourth Estate Public Benefit Corporation is a news organization that produces online journalism and licenses articles to websites while retaining the copyright to the articles. Wall-Street.com obtained licenses to several articles produced by Fourth Estate, and under the license agreement, Wall-Street was required to remove all of the content produced by Fourth Estate from its website before cancelling its account. However, when Wall-Street cancelled its account, it continued to display the articles produced by Fourth Estate. Fourth Estate filed a lawsuit for copyright infringement, although it filed an application to register its allegedly infringed copyrights and the copyright office had not yet registered its claims. The district court dismissed the action, finding “registration” under Section 411 of the Copyright Act required that the register of copyrights “register the claim,” and that step had not occurred. The Eleventh Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Fourth Estate Pub. Benefit Corp. v. Wall-Street.com, LLC\nDocket: 17-571 | Term: OT2018 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Fourth Estate Public Benefit Corporationv. Wall-Street.com, LLC, et al. (Petitioner v. Respondent)\nQuestion presented: Is “registration of [a] copyright claim” complete under 17 U.S.C. § 411(a) when the copyright holder delivers the required application, fees, and materials to the copyright office, or only once the copyright office has acted on that application?\nFacts: Fourth Estate Public Benefit Corporation is a news organization that produces online journalism and licenses articles to websites while retaining the copyright to the articles. Wall-Street.com obtained licenses to several articles produced by Fourth Estate, and under the license agreement, Wall-Street was required to remove all of the content produced by Fourth Estate from its website before cancelling its account. However, when Wall-Street cancelled its account, it continued to display the articles produced by Fourth Estate. Fourth Estate filed a lawsuit for copyright infringement, although it filed an application to register its allegedly infringed copyrights and the copyright office had not yet registered its claims. The district court dismissed the action, finding “registration” under Section 411 of the Copyright Act required that the register of copyrights “register the claim,” and that step had not occurred. The Eleventh Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

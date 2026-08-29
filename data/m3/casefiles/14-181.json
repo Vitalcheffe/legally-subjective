@@ -1,0 +1,18 @@
+{
+ "docket": "14-181",
+ "case_name": "Gobeille v. Liberty Mut. Ins. Co.",
+ "term": 2015,
+ "issue_area": "10",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Alfred Gobeille, Chair of the Vermont Green Mountain Care Boardv. Liberty Mutual Insurance Company (Petitioner v. Respondent)",
+ "question": "Do the reporting requirements of the Employee Retirement Income Security Act of 1974 preempt a Vermont state statute regarding reporting requirements as applied to a self-insured employee health plan?",
+ "facts": "Liberty Mutual Insurance Company (Liberty Mutual) operates a self-insured employee health plan through a third-party administrator. Vermont state law requires that all health plans, including self-insured plans, file reports containing claims data and other information with the state. The statute specifies what type of information is required and how it is transmitted. When Vermont subpoenaed claims data from the third-party administrator, Liberty Mutual sued the state and argued that the reporting requirements of the Employment Retirement Income Security Act of 1974 (ERISA) preempted the Vermont statute. The district court found in favor of the state and held that ERISA did not preempt the Vermont statute. The U.S. Court of Appeals for the Second Circuit reversed and held that ERISA preempted the state statute because the state statute’s requirements were connected to the ERISA requirements and therefore were preempted.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Gobeille v. Liberty Mut. Ins. Co.\nDocket: 14-181 | Term: OT2015 | Court below: United States Court of Appeals for the Second Circuit\nParties: Alfred Gobeille, Chair of the Vermont Green Mountain Care Boardv. Liberty Mutual Insurance Company (Petitioner v. Respondent)\nQuestion presented: Do the reporting requirements of the Employee Retirement Income Security Act of 1974 preempt a Vermont state statute regarding reporting requirements as applied to a self-insured employee health plan?\nFacts: Liberty Mutual Insurance Company (Liberty Mutual) operates a self-insured employee health plan through a third-party administrator. Vermont state law requires that all health plans, including self-insured plans, file reports containing claims data and other information with the state. The statute specifies what type of information is required and how it is transmitted. When Vermont subpoenaed claims data from the third-party administrator, Liberty Mutual sued the state and argued that the reporting requirements of the Employment Retirement Income Security Act of 1974 (ERISA) preempted the Vermont statute. The district court found in favor of the state and held that ERISA did not preempt the Vermont statute. The U.S. Court of Appeals for the Second Circuit reversed and held that ERISA preempted the state statute because the state statute’s requirements were connected to the ERISA requirements and therefore were preempted.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

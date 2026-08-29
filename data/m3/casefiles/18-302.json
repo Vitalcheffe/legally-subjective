@@ -1,0 +1,18 @@
+{
+ "docket": "18-302",
+ "case_name": "Iancu v. Brunetti",
+ "term": 2018,
+ "issue_area": "3",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Federal Circuit",
+ "parties": "Andrei Iancu, Under Secretary of Commerce for Intellectual Property and Director, Patent and Trademark Officev. Erik Brunetti (Petitioner v. Respondent)",
+ "question": "Does Section 2(a) of the Lanham Act, which prohibits the federal registration of “immoral” or “scandalous” marks, violate the Free Speech Clause of the First Amendment?",
+ "facts": "Erik Brunetti owns the clothing brand “fuct,” founded in 1990. In 2011, two individuals filed an intent-to-use application for the mark FUCT , and the original applicants assigned the application to Brunetti. The examining attorney refused to register the mark under Section 2(a) of the Lanham Act, finding it comprised immoral or scandalous matter (the pronunciation of “fuct” sounds like a vulgar word) in violation of that section. Brunetti requested reconsideration and appealed to the Trademark Trial and Appeal Board, which affirmed the examining attorney’s refusal to register the mark. The US Court of Appeals for the Federal Circuit found that while the Board did not err in concluding the mark should be excluded under Section 2(a) of the Lanham Act, that section’s bar on registering immoral or scandalous marks is an unconstitutional restriction of free speech.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Iancu v. Brunetti\nDocket: 18-302 | Term: OT2018 | Court below: United States Court of Appeals for the Federal Circuit\nParties: Andrei Iancu, Under Secretary of Commerce for Intellectual Property and Director, Patent and Trademark Officev. Erik Brunetti (Petitioner v. Respondent)\nQuestion presented: Does Section 2(a) of the Lanham Act, which prohibits the federal registration of “immoral” or “scandalous” marks, violate the Free Speech Clause of the First Amendment?\nFacts: Erik Brunetti owns the clothing brand “fuct,” founded in 1990. In 2011, two individuals filed an intent-to-use application for the mark FUCT , and the original applicants assigned the application to Brunetti. The examining attorney refused to register the mark under Section 2(a) of the Lanham Act, finding it comprised immoral or scandalous matter (the pronunciation of “fuct” sounds like a vulgar word) in violation of that section. Brunetti requested reconsideration and appealed to the Trademark Trial and Appeal Board, which affirmed the examining attorney’s refusal to register the mark. The US Court of Appeals for the Federal Circuit found that while the Board did not err in concluding the mark should be excluded under Section 2(a) of the Lanham Act, that section’s bar on registering immoral or scandalous marks is an unconstitutional restriction of free speech.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

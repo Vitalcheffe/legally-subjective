@@ -1,0 +1,18 @@
+{
+ "docket": "22-807",
+ "case_name": "Alexander v. South Carolina State Conference of the NAACP",
+ "term": 2023,
+ "issue_area": "2",
+ "lc_disposition": "",
+ "lower_court": "Federal district court",
+ "parties": "Thomas C. Alexander, in His Official Capacity as President of the South Carolina Senate, et al.v. The South Carolina State Conference of the NAACP, et al. (Appellant v. Appellee)",
+ "question": "Does the South Carolina legislature’s redistricting map, which has the effect of moving tens of thousands of Black voters to a different district, constitute an impermissible racial gerrymander, even if the legislators’ purported intent was merely a political gerrymander?",
+ "facts": "After the 2020 Census, South Carolina’s Republican-controlled legislature adopted a new congressional map that moved tens of thousands of Black voters to a different district, effectively making the district a safe seat for Republicans. The South Carolina State Conference of the NAACP sued, and a three-judge panel concluded that the district was an unconstitutional racial gerrymander. The legislators appealed directly to the Supreme Court, arguing that the map was actually a political gerrymander (which is permissible) that merely had a racial effect.",
+ "posture": "Appeal",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Alexander v. South Carolina State Conference of the NAACP\nDocket: 22-807 | Term: OT2023 | Court below: Federal district court\nParties: Thomas C. Alexander, in His Official Capacity as President of the South Carolina Senate, et al.v. The South Carolina State Conference of the NAACP, et al. (Appellant v. Appellee)\nQuestion presented: Does the South Carolina legislature’s redistricting map, which has the effect of moving tens of thousands of Black voters to a different district, constitute an impermissible racial gerrymander, even if the legislators’ purported intent was merely a political gerrymander?\nFacts: After the 2020 Census, South Carolina’s Republican-controlled legislature adopted a new congressional map that moved tens of thousands of Black voters to a different district, effectively making the district a safe seat for Republicans. The South Carolina State Conference of the NAACP sued, and a three-judge panel concluded that the district was an unconstitutional racial gerrymander. The legislators appealed directly to the Supreme Court, arguing that the map was actually a political gerrymander (which is permissible) that merely had a racial effect.\nPosture: Appeal\n",
+ "window": "test"
+}

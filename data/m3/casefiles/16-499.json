@@ -1,0 +1,18 @@
+{
+ "docket": "16-499",
+ "case_name": "Jesner v. Arab Bank, PLC",
+ "term": 2017,
+ "issue_area": "9",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Joseph Jesner, et al.v. Arab Bank, PLC (Petitioner v. Respondent)",
+ "question": "Does the Alien Tort Statute prohibit corporate liability?",
+ "facts": "Several alien individuals were injured, kidnapped, or killed by terrorists in attacks against Israeli citizens overseas. The surviving aliens and the families of those who perished in the attacks accused Arab Bank, PLC (Arab Bank), a bank corporation headquartered in Jordan, of financing and facilitating various terrorist organizations involved in the attacks. The survivors sued Arab Bank in New York federal court under the Alien Tort Statute (ATS), which provides for federal district court jurisdiction over civil actions brought by aliens. Arab Bank moved to dismiss the ATS claims under the U.S. Court of Appeals for the Second Circuit’s decision in Kiobel v. Royal Dutch Petroleum Co. In that case, the appellate court held that the ATS does not authorize claims against foreign corporations. The district court acknowledged that, because the U.S. Supreme Court affirmed Kiobel on other grounds and had not addressed the question of corporate liability, the court of appeals’ holding was still controlling precedent and therefore dismissed the ATS claims. On appeal, the appellate court noted that the Supreme Court’s decision did cast some doubt on the corporate liability holding in Kiobel. However, because the Supreme Court had not addressed the question of corporate liability, the appellate court affirmed the lower court’s dismissal.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Jesner v. Arab Bank, PLC\nDocket: 16-499 | Term: OT2017 | Court below: United States Court of Appeals for the Second Circuit\nParties: Joseph Jesner, et al.v. Arab Bank, PLC (Petitioner v. Respondent)\nQuestion presented: Does the Alien Tort Statute prohibit corporate liability?\nFacts: Several alien individuals were injured, kidnapped, or killed by terrorists in attacks against Israeli citizens overseas. The surviving aliens and the families of those who perished in the attacks accused Arab Bank, PLC (Arab Bank), a bank corporation headquartered in Jordan, of financing and facilitating various terrorist organizations involved in the attacks. The survivors sued Arab Bank in New York federal court under the Alien Tort Statute (ATS), which provides for federal district court jurisdiction over civil actions brought by aliens. Arab Bank moved to dismiss the ATS claims under the U.S. Court of Appeals for the Second Circuit’s decision in Kiobel v. Royal Dutch Petroleum Co. In that case, the appellate court held that the ATS does not authorize claims against foreign corporations. The district court acknowledged that, because the U.S. Supreme Court affirmed Kiobel on other grounds and had not addressed the question of corporate liability, the court of appeals’ holding was still controlling precedent and therefore dismissed the ATS claims. On appeal, the appellate court noted that the Supreme Court’s decision did cast some doubt on the corporate liability holding in Kiobel. However, because the Supreme Court had not addressed the question of corporate liability, the appellate court affirmed the lower court’s dismissal.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "16-1067",
+ "case_name": "Murphy v. Smith",
+ "term": 2017,
+ "issue_area": "6",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "Charles Murphyv. Robert Smith, et al. (Petitioner v. Respondent)",
+ "question": "Does the parenthetical phrase “not to exceed 25 percent,” as used in 42 U.S.C. § 1997e(d)(2), mean any amount up to 25 percent (as four circuits hold), or exactly 25 percent (as the Seventh Circuit holds)?",
+ "facts": "Charles Murphy was an inmate in the Vandalia Correctional Center in Illinois. In July 2011, correctional officers hit Murphy, fracturing his eye socket, and did not provide him proper medical attention. Murphy sued under 42 U.S.C. § 1983 and state law theories. A jury returned a verdict in his favor and awarded him damages for some of his claims under state law, and the district court awarded him attorney fees under 42 U.S.C. § 1988. Two of the defendants appealed the judgment, arguing that the Illinois doctrine of sovereign immunity bars the state-law claims and that the Prison Litigation Reform Act requires that 25 percent of the damages awarded be used to pay the attorney fee award. The Seventh Circuit affirmed the district court's holding that the state officials or employees are not entitled to sovereign immunity against state-law claims where the officials or employees violated statutory or constitutional law, which violations Murphy alleged and proved. The Seventh Circuit reversed on the attorney fee award, however, finding that the 42 U.S.C. § 1997e(d) requires that the attorney fee award must first be satisfied from up to 25 percent of the damage award and that the district court does not have discretion to reduce that maximum percentage.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Murphy v. Smith\nDocket: 16-1067 | Term: OT2017 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: Charles Murphyv. Robert Smith, et al. (Petitioner v. Respondent)\nQuestion presented: Does the parenthetical phrase “not to exceed 25 percent,” as used in 42 U.S.C. § 1997e(d)(2), mean any amount up to 25 percent (as four circuits hold), or exactly 25 percent (as the Seventh Circuit holds)?\nFacts: Charles Murphy was an inmate in the Vandalia Correctional Center in Illinois. In July 2011, correctional officers hit Murphy, fracturing his eye socket, and did not provide him proper medical attention. Murphy sued under 42 U.S.C. § 1983 and state law theories. A jury returned a verdict in his favor and awarded him damages for some of his claims under state law, and the district court awarded him attorney fees under 42 U.S.C. § 1988. Two of the defendants appealed the judgment, arguing that the Illinois doctrine of sovereign immunity bars the state-law claims and that the Prison Litigation Reform Act requires that 25 percent of the damages awarded be used to pay the attorney fee award. The Seventh Circuit affirmed the district court's holding that the state officials or employees are not entitled to sovereign immunity against state-law claims where the officials or employees violated statutory or constitutional law, which violations Murphy alleged and proved. The Seventh Circuit reversed on the attorney fee award, however, finding that the 42 U.S.C. § 1997e(d) requires that the attorney fee award must first be satisfied from up to 25 percent of the damage award and that the district court does not have discretion to reduce that maximum percentage.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "No. 14–462.",
+ "case_name": "Directv, Inc. v. Imburgia",
+ "term": 2015,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "State appellate court",
+ "parties": "DIRECTV, Inc.v. Amy Imburgia, et al. (Petitioner v. Respondent)",
+ "question": "Did the California Court of Appeal err in holding that a reference to state law in an arbitration clause required the application of that state law despite its preemption by the Federal Arbitration Act?",
+ "facts": "On September 7, 2008, Amy Imburgia filed a class action lawsuit against DIRECTV, Inc. (DIRECTV), and argued that DIRECTV had improperly charged early termination fees to its customers. In 2011, the U.S. Supreme Court decided AT&T Mobility LLC v. Concepcion , in which the Court held that the Federal Arbitration Act preempted California precedent that had previously held that, in certain circumstances, arbitration clauses in customer agreements were unenforceable. Less than one month after that decision, DIRECTV moved to stay or dismiss the plaintiffs’ case and compel arbitration, which DIRECTV argued it had not done previously because it thought the arbitration clause in its customer agreement was void under California precedent. The trial court denied the motion and the California Court of Appeal for the Second District affirmed by holding that the language of the customer agreement subjected the arbitration clause to state law.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Directv, Inc. v. Imburgia\nDocket: No. 14–462. | Term: OT2015 | Court below: State appellate court\nParties: DIRECTV, Inc.v. Amy Imburgia, et al. (Petitioner v. Respondent)\nQuestion presented: Did the California Court of Appeal err in holding that a reference to state law in an arbitration clause required the application of that state law despite its preemption by the Federal Arbitration Act?\nFacts: On September 7, 2008, Amy Imburgia filed a class action lawsuit against DIRECTV, Inc. (DIRECTV), and argued that DIRECTV had improperly charged early termination fees to its customers. In 2011, the U.S. Supreme Court decided AT&T Mobility LLC v. Concepcion , in which the Court held that the Federal Arbitration Act preempted California precedent that had previously held that, in certain circumstances, arbitration clauses in customer agreements were unenforceable. Less than one month after that decision, DIRECTV moved to stay or dismiss the plaintiffs’ case and compel arbitration, which DIRECTV argued it had not done previously because it thought the arbitration clause in its customer agreement was void under California precedent. The trial court denied the motion and the California Court of Appeal for the Second District affirmed by holding that the language of the customer agreement subjected the arbitration clause to state law.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

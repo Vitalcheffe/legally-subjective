@@ -1,0 +1,18 @@
+{
+ "docket": "15–6092.",
+ "case_name": "Mathis v. United States",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Richard Mathisv. United States (Petitioner v. Respondent)",
+ "question": "Does a predicate prior conviction under the Armed Career Criminal Act qualify when the courts examine the specific elements of the offenses in question using a modified categorical approach?",
+ "facts": "On March 8, 2013, police officers executed a warrant to search Richard Mathis’ house following allegations of sexual abuse from young men. The officers found a loaded rifle and ammunition. After he was arrested and while in custody, Mathis admitted to owning the rifle and ammunition, and he was charged with being a felon in possession of a firearm in violation of the Armed Career Criminal Act (ACCA) because of his five previous burglary convictions in Iowa state courts. At trial, the district court used a modified categorical approach to determine that Mathis’ prior convictions constituted violent felonies because the elements of the offense were substantially similar to generic burglary and posed the same risk of harm to others. Therefore, Mathis was sentenced to 180 months imprisonment pursuant to the ACCA. Mathis appealed his conviction and argued that his Iowa convictions should not have constituted predicate offenses under the ACCA, but the U.S. Court of Appeals for the Eighth Circuit affirmed the lower court's decision.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Mathis v. United States\nDocket: 15–6092. | Term: OT2015 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Richard Mathisv. United States (Petitioner v. Respondent)\nQuestion presented: Does a predicate prior conviction under the Armed Career Criminal Act qualify when the courts examine the specific elements of the offenses in question using a modified categorical approach?\nFacts: On March 8, 2013, police officers executed a warrant to search Richard Mathis’ house following allegations of sexual abuse from young men. The officers found a loaded rifle and ammunition. After he was arrested and while in custody, Mathis admitted to owning the rifle and ammunition, and he was charged with being a felon in possession of a firearm in violation of the Armed Career Criminal Act (ACCA) because of his five previous burglary convictions in Iowa state courts. At trial, the district court used a modified categorical approach to determine that Mathis’ prior convictions constituted violent felonies because the elements of the offense were substantially similar to generic burglary and posed the same risk of harm to others. Therefore, Mathis was sentenced to 180 months imprisonment pursuant to the ACCA. Mathis appealed his conviction and argued that his Iowa convictions should not have constituted predicate offenses under the ACCA, but the U.S. Court of Appeals for the Eighth Circuit affirmed the lower court's decision.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

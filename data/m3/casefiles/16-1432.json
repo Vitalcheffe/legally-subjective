@@ -1,0 +1,18 @@
+{
+ "docket": "16-1432",
+ "case_name": "Sveen v. Melin",
+ "term": 2017,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Ashley Sveen, et al.v. Kaye Melin, et al. (Petitioner v. Respondent)",
+ "question": "Does the application of a revocation-upon-divorce statute to a contract signed before the law was enacted violate the Contract Clause of the Constitution?",
+ "facts": "Mark A. Sveen and Kaye L. Melin were married in 1997. Sveen purchased a life insurance policy that year, and the following year he named Melin the primary beneficiary, and his children the contingent beneficiaries. Sveen and Melin divorced in 2007, and Sveen died in 2011. Minnesota had changed its probate code in 2002 to apply a revocation-upon-divorce statute to life insurance beneficiary designations. Sveen had never changed the designation on his life insurance policy, and Melin was therefore still listed as the primary beneficiary at the time of his death. The insurance company filed an interpleader to establish whether the revocation-upon-divorce statute nullified this designation. Sveen’s children and Melin cross-claimed for the proceeds, and the district court granted summary judgment in favor of the children, rejecting Melin’s contention that retroactively applying the revocation-upon-divorce statute violated the Contract Clause of the Constitution. The Eighth Circuit reversed and remanded, finding that under its own precedent, the dispositive issue in this context was the right of the policyholder to have his wishes carried out in accordance with his intentions at the time he signed the contract. Applying the revocation-upon-divorce statute retroactively would deprive him of that right in violation of the Contract Clause.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Sveen v. Melin\nDocket: 16-1432 | Term: OT2017 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Ashley Sveen, et al.v. Kaye Melin, et al. (Petitioner v. Respondent)\nQuestion presented: Does the application of a revocation-upon-divorce statute to a contract signed before the law was enacted violate the Contract Clause of the Constitution?\nFacts: Mark A. Sveen and Kaye L. Melin were married in 1997. Sveen purchased a life insurance policy that year, and the following year he named Melin the primary beneficiary, and his children the contingent beneficiaries. Sveen and Melin divorced in 2007, and Sveen died in 2011. Minnesota had changed its probate code in 2002 to apply a revocation-upon-divorce statute to life insurance beneficiary designations. Sveen had never changed the designation on his life insurance policy, and Melin was therefore still listed as the primary beneficiary at the time of his death. The insurance company filed an interpleader to establish whether the revocation-upon-divorce statute nullified this designation. Sveen’s children and Melin cross-claimed for the proceeds, and the district court granted summary judgment in favor of the children, rejecting Melin’s contention that retroactively applying the revocation-upon-divorce statute violated the Contract Clause of the Constitution. The Eighth Circuit reversed and remanded, finding that under its own precedent, the dispositive issue in this context was the right of the policyholder to have his wishes carried out in accordance with his intentions at the time he signed the contract. Applying the revocation-upon-divorce statute retroactively would deprive him of that right in violation of the Contract Clause.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

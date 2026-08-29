@@ -1,0 +1,18 @@
+{
+ "docket": "21-1450",
+ "case_name": "Turkiye Halk Bankasi A.S. v. United States",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Turkiye Halk Bankasi A.S.v. United States of America (Petitioner v. Respondent)",
+ "question": "May the district courts properly exercise subject-matter jurisdiction over the criminal prosecution against Halkbank in this case based on the commercial activity exception to the Foreign Sovereign Immunities Act?",
+ "facts": "Turkiye Halk Bankasi (“Halkbank”) is a commercial bank that is majority-owned by the Government of Turkey. A 2019 grand jury charged Halkbank with participating in a money-laundering scheme involving billions of dollars’ worth of Iranian oil and natural gas proceeds, in violation of U.S. sanctions against Iran. Halkbank moved to dismiss the indictment, arguing that the Foreign Sovereign Immunities Act (FSIA) immunizes it from criminal prosecution because it is majority-owned by the Government of Turkey. Further, it argued that FSIA’s exceptions to immunity apply only to civil, not criminal, cases, and even if they include criminal cases, it is nevertheless entitled to immunity under common law. The district court rejected Halkbank’s arguments, and the U.S. Court of Appeals for the Second Circuit affirmed, finding that even if FSIA confers immunity from criminal prosecutions, the conduct at issue falls within FSIA’s commercial activity exception.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Turkiye Halk Bankasi A.S. v. United States\nDocket: 21-1450 | Term: OT2022 | Court below: United States Court of Appeals for the Second Circuit\nParties: Turkiye Halk Bankasi A.S.v. United States of America (Petitioner v. Respondent)\nQuestion presented: May the district courts properly exercise subject-matter jurisdiction over the criminal prosecution against Halkbank in this case based on the commercial activity exception to the Foreign Sovereign Immunities Act?\nFacts: Turkiye Halk Bankasi (“Halkbank”) is a commercial bank that is majority-owned by the Government of Turkey. A 2019 grand jury charged Halkbank with participating in a money-laundering scheme involving billions of dollars’ worth of Iranian oil and natural gas proceeds, in violation of U.S. sanctions against Iran. Halkbank moved to dismiss the indictment, arguing that the Foreign Sovereign Immunities Act (FSIA) immunizes it from criminal prosecution because it is majority-owned by the Government of Turkey. Further, it argued that FSIA’s exceptions to immunity apply only to civil, not criminal, cases, and even if they include criminal cases, it is nevertheless entitled to immunity under common law. The district court rejected Halkbank’s arguments, and the U.S. Court of Appeals for the Second Circuit affirmed, finding that even if FSIA confers immunity from criminal prosecutions, the conduct at issue falls within FSIA’s commercial activity exception.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

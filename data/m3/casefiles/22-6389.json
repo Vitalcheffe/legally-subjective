@@ -1,0 +1,18 @@
+{
+ "docket": "22-6389",
+ "case_name": "Brown v. United States",
+ "term": 2023,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Third Circuit",
+ "parties": "Justin Rashaad Brownv. United States of America (Petitioner v. Respondent)",
+ "question": "Does the \"serious drug offense\" definition in the Armed Career Criminal Act incorporate the federal drug schedules that were in effect at the time of the federal firearm offense?",
+ "facts": "Justin Rashaad Brown was indicted in York County, Pennsylvania, for multiple counts, including being a felon in possession of a firearm, in violation of 18 U.S.C. § 922(g). Brown pleaded guilty to one charge of drug possession and distribution as well as the § 922(g) offense. The U.S. District Court for the Middle District of Pennsylvania sentenced him to concurrent terms of 180 months’ imprisonment due to prior convictions triggering the fifteen-year mandatory minimum sentence prescribed in the Armed Career Criminal Act (ACCA). Brown appealed his enhanced sentence, arguing that his prior state marijuana convictions should not serve as predicates under the ACCA because those crimes are no longer a categorical match to their federal counterpart. The U.S. Court of Appeals for the Third Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Brown v. United States\nDocket: 22-6389 | Term: OT2023 | Court below: United States Court of Appeals for the Third Circuit\nParties: Justin Rashaad Brownv. United States of America (Petitioner v. Respondent)\nQuestion presented: Does the \"serious drug offense\" definition in the Armed Career Criminal Act incorporate the federal drug schedules that were in effect at the time of the federal firearm offense?\nFacts: Justin Rashaad Brown was indicted in York County, Pennsylvania, for multiple counts, including being a felon in possession of a firearm, in violation of 18 U.S.C. § 922(g). Brown pleaded guilty to one charge of drug possession and distribution as well as the § 922(g) offense. The U.S. District Court for the Middle District of Pennsylvania sentenced him to concurrent terms of 180 months’ imprisonment due to prior convictions triggering the fifteen-year mandatory minimum sentence prescribed in the Armed Career Criminal Act (ACCA). Brown appealed his enhanced sentence, arguing that his prior state marijuana convictions should not serve as predicates under the ACCA because those crimes are no longer a categorical match to their federal counterpart. The U.S. Court of Appeals for the Third Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

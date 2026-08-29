@@ -1,0 +1,18 @@
+{
+ "docket": "15–797.",
+ "case_name": "Moore v. Texas",
+ "term": 2016,
+ "issue_area": "1",
+ "lc_disposition": "9",
+ "lower_court": "Texas Court of Criminal Appeals",
+ "parties": "Bobby James Moorev. Texas (Petitioner v. Respondent)",
+ "question": "Does the use of outdated medical standards regarding intellectual disability to determine whether a person is exempt from execution violate the Eighth Amendment’s prohibition against cruel and unusual punishment as well as the Atkins v. Virginia precedent?",
+ "facts": "In 1980, Bobby James Moore was convicted of capital murder for the shooting of James McCarble, a seventy-year-old store clerk, in Houston, Texas. Moore was sentenced to death, and his conviction and sentence were both affirmed on appeal. After a federal court granted habeas corpus relief, a new punishment hearing occurred in 2001, and Moore was again sentenced to the death penalty. His sentence was again affirmed on appeal. Moore sought state habeas relief and argued that the U.S. Supreme Court’s decision in Atkins v. Virginia should apply to his case; therefore, because he was intellectually disabled, he was exempt from execution. The habeas court granted relief based on the Atkins argument. The Court of Criminal Appeals of Texas, however, reversed and held that Moore had failed to establish by a preponderance of the evidence that he had the requisite intellectual disability for the Atkins precedent to apply based on Texas case law that used a 1992 definition of intellectual disability.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Moore v. Texas\nDocket: 15–797. | Term: OT2016 | Court below: Texas Court of Criminal Appeals\nParties: Bobby James Moorev. Texas (Petitioner v. Respondent)\nQuestion presented: Does the use of outdated medical standards regarding intellectual disability to determine whether a person is exempt from execution violate the Eighth Amendment’s prohibition against cruel and unusual punishment as well as the Atkins v. Virginia precedent?\nFacts: In 1980, Bobby James Moore was convicted of capital murder for the shooting of James McCarble, a seventy-year-old store clerk, in Houston, Texas. Moore was sentenced to death, and his conviction and sentence were both affirmed on appeal. After a federal court granted habeas corpus relief, a new punishment hearing occurred in 2001, and Moore was again sentenced to the death penalty. His sentence was again affirmed on appeal. Moore sought state habeas relief and argued that the U.S. Supreme Court’s decision in Atkins v. Virginia should apply to his case; therefore, because he was intellectually disabled, he was exempt from execution. The habeas court granted relief based on the Atkins argument. The Court of Criminal Appeals of Texas, however, reversed and held that Moore had failed to establish by a preponderance of the evidence that he had the requisite intellectual disability for the Atkins precedent to apply based on Texas case law that used a 1992 definition of intellectual disability.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

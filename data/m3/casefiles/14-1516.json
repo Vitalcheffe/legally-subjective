@@ -1,0 +1,18 @@
+{
+ "docket": "14-1516",
+ "case_name": "Duncan v. Owens",
+ "term": 2015,
+ "issue_area": "9",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Seventh Circuit",
+ "parties": "Stephen Duncanv. Lawrence Owens (Petitioner v. Respondent)",
+ "question": "Can habeas relief be awarded in the absence of clearly established precedent that the inference of motive at trial violates the defendant’s right to due process?",
+ "facts": "Ramon Nelson was riding his bike when he suffered a lethal blow to the back of his head with a baseball bat. After two eyewitnesses identified Lawrence Owens from an array of photos and then a lineup, he was tried and convicted for Nelson’s death. Because Nelson was carrying cocaine and crack cocaine potentially for distribution, the judge at Owens’ bench trial ruled that Owens was probably also a drug dealer and was trying to “knock [Nelson] off.” Owens was found guilty of first-degree murder and sentenced to 25 years in prison. Owens filed a petition for a writ of habeas corpus on the grounds that his constitutional right to due process was violated during the trial. He argued that the eyewitness identification should have been inadmissible based on unreliability and that the judge impermissibly inferred a motive when a motive was not an element of the offense. The district court denied the writ of habeas corpus, and Owens appealed. The U.S. Court of Appeals for the Seventh Circuit reversed the denial and held that the trial judge’s inference about Owens’s motive violated his right to have his guilt adjudicated solely based on the evidence presented at trial.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Duncan v. Owens\nDocket: 14-1516 | Term: OT2015 | Court below: United States Court of Appeals for the Seventh Circuit\nParties: Stephen Duncanv. Lawrence Owens (Petitioner v. Respondent)\nQuestion presented: Can habeas relief be awarded in the absence of clearly established precedent that the inference of motive at trial violates the defendant’s right to due process?\nFacts: Ramon Nelson was riding his bike when he suffered a lethal blow to the back of his head with a baseball bat. After two eyewitnesses identified Lawrence Owens from an array of photos and then a lineup, he was tried and convicted for Nelson’s death. Because Nelson was carrying cocaine and crack cocaine potentially for distribution, the judge at Owens’ bench trial ruled that Owens was probably also a drug dealer and was trying to “knock [Nelson] off.” Owens was found guilty of first-degree murder and sentenced to 25 years in prison. Owens filed a petition for a writ of habeas corpus on the grounds that his constitutional right to due process was violated during the trial. He argued that the eyewitness identification should have been inadmissible based on unreliability and that the judge impermissibly inferred a motive when a motive was not an element of the offense. The district court denied the writ of habeas corpus, and Owens appealed. The U.S. Court of Appeals for the Seventh Circuit reversed the denial and held that the trial judge’s inference about Owens’s motive violated his right to have his guilt adjudicated solely based on the evidence presented at trial.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

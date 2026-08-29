@@ -1,0 +1,18 @@
+{
+ "docket": "17-1184",
+ "case_name": "Biestek v. Berryhill",
+ "term": 2018,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Sixth Circuit",
+ "parties": "Michael J. Biestekv. Nancy A. Berryhill, Deputy Commissioner for Operations, Social Security Administration (Petitioner v. Respondent)",
+ "question": "During an application for Supplemental Security Income (SSI) and Disability Insurance (SSDI) benefits, does a vocational expert’s testimony count as “substantial evidence” of “other work” if the expert does not provide the underlying data on which that testimony is premised?",
+ "facts": "Michael Biestek worked for most of his life as a carpenter and a construction laborer. He stopped working in June 2005 due to a degenerative disc disease, Hepatitis C, and depression. He applied for SSI and SSDI benefits in March 2010, alleging a disability onset date of October 28, 2009. The Social Security Administration (SSA) denied his application in August 2010, an Administrative Law Judge (ALJ) denied his application, and the Social Security Administration Appeals Council denied review. Biestek timely appealed, and the district court adopted the magistrate judge’s finding that the ALJ had not obtained necessary medical-expert testimony and did not pose a sufficiently specific hypothetical to the vocational expert. On remand, the ALJ found that Biestek was disabled from May 4, 2013, but not before. Biestek appealed the ALJ’s determination, and the district court affirmed. The Sixth Circuit affirmed the district court, holding that substantial evidence supported the ALJ’s finding that Biestek did not meet the back-pain-related impairment requirement and that the ALJ properly evaluated the testimony of medical experts and a vocational expert.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Biestek v. Berryhill\nDocket: 17-1184 | Term: OT2018 | Court below: United States Court of Appeals for the Sixth Circuit\nParties: Michael J. Biestekv. Nancy A. Berryhill, Deputy Commissioner for Operations, Social Security Administration (Petitioner v. Respondent)\nQuestion presented: During an application for Supplemental Security Income (SSI) and Disability Insurance (SSDI) benefits, does a vocational expert’s testimony count as “substantial evidence” of “other work” if the expert does not provide the underlying data on which that testimony is premised?\nFacts: Michael Biestek worked for most of his life as a carpenter and a construction laborer. He stopped working in June 2005 due to a degenerative disc disease, Hepatitis C, and depression. He applied for SSI and SSDI benefits in March 2010, alleging a disability onset date of October 28, 2009. The Social Security Administration (SSA) denied his application in August 2010, an Administrative Law Judge (ALJ) denied his application, and the Social Security Administration Appeals Council denied review. Biestek timely appealed, and the district court adopted the magistrate judge’s finding that the ALJ had not obtained necessary medical-expert testimony and did not pose a sufficiently specific hypothetical to the vocational expert. On remand, the ALJ found that Biestek was disabled from May 4, 2013, but not before. Biestek appealed the ALJ’s determination, and the district court affirmed. The Sixth Circuit affirmed the district court, holding that substantial evidence supported the ALJ’s finding that Biestek did not meet the back-pain-related impairment requirement and that the ALJ properly evaluated the testimony of medical experts and a vocational expert.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

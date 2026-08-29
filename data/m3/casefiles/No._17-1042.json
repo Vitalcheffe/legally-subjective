@@ -1,0 +1,18 @@
+{
+ "docket": "No. 17-1042",
+ "case_name": "BNSF Ry. Co. v. Loos",
+ "term": 2018,
+ "issue_area": "12",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "BNSF Railway Companyv. Michael D. Loos (Petitioner v. Respondent)",
+ "question": "Are damages for lost wages \"compensation\" under the Railroad Retirement Tax Act and thus subject to employment taxes?",
+ "facts": "Michael Loos worked as an employee of BNSF Railway Company until his termination in November 2012 for a series of attendance policy violations. Related to at least some of the attendance violations was an injury Loos sustained in 2010 when he fell in the train yard. After being terminated, Loos brought two claims against his former employer: a claim of retaliation under the Federal Railroad Safety Act (FRSA) and a claim of negligence under the Federal Employers Liability Act (FELA). The district court found that Loos had not established a prima facie case of retaliation under FRSA and granted BNSF's motion for summary judgment on that claim, and the Eighth Circuit affirmed. The FELA negligence claim proceeded to a jury trial, and the jury returned a verdict in favor of Loos—$30,000 for lost wages and $11,212.78 for medical expenses. BNSF moved under Federal Rule of Civil Procedure 59(e) to offset the lost wages award by the amount of Loos’s share of taxes owed under the RRTA. The district court denied the motion, finding no RRTA tax was owed on the award. The Eighth Circuit reviewed this determination de novo and found that the text of RRTA is unambiguous in not including damages for lost wages in its definition of compensation as money remuneration for services rendered. Thus, the Eighth Circuit affirmed the district court’s ruling using alternate reasoning.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — BNSF Ry. Co. v. Loos\nDocket: No. 17-1042 | Term: OT2018 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: BNSF Railway Companyv. Michael D. Loos (Petitioner v. Respondent)\nQuestion presented: Are damages for lost wages \"compensation\" under the Railroad Retirement Tax Act and thus subject to employment taxes?\nFacts: Michael Loos worked as an employee of BNSF Railway Company until his termination in November 2012 for a series of attendance policy violations. Related to at least some of the attendance violations was an injury Loos sustained in 2010 when he fell in the train yard. After being terminated, Loos brought two claims against his former employer: a claim of retaliation under the Federal Railroad Safety Act (FRSA) and a claim of negligence under the Federal Employers Liability Act (FELA). The district court found that Loos had not established a prima facie case of retaliation under FRSA and granted BNSF's motion for summary judgment on that claim, and the Eighth Circuit affirmed. The FELA negligence claim proceeded to a jury trial, and the jury returned a verdict in favor of Loos—$30,000 for lost wages and $11,212.78 for medical expenses. BNSF moved under Federal Rule of Civil Procedure 59(e) to offset the lost wages award by the amount of Loos’s share of taxes owed under the RRTA. The district court denied the motion, finding no RRTA tax was owed on the award. The Eighth Circuit reviewed this determination de novo and found that the text of RRTA is unambiguous in not including damages for lost wages in its definition of compensation as money remuneration for services rendered. Thus, the Eighth Circuit affirmed the district court’s ruling using alternate reasoning.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

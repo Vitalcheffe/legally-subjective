@@ -1,0 +1,18 @@
+{
+ "docket": "21-984",
+ "case_name": "Helix Energy Solutions Group, Inc. v. Hewitt",
+ "term": 2022,
+ "issue_area": "7",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Helix Energy Solutions, et al.v. Michael J. Hewitt (Petitioner v. Respondent)",
+ "question": "Is a supervisor who makes over $200,000 annually, calculated on a daily basis, entitled to overtime pay, despite a regulation that carves out an exception for highly paid executives?",
+ "facts": "Michael J. Hewitt worked on an offshore oil rig managing other employees. His employer, Helix Energy Solutions Group, Inc., paid Hewitt based solely on a daily rate, and he often was required to work well over forty hours per week. Hewitt sued Helix for overtime pay under the Fair Labor Standards Act (FLSA). Helix argued that it was not required to pay Hewitt overtime because Hewitt was a “highly compensated employee,” and highly compensated employees are exempt from overtime pay. Hewitt argued that because his pay was calculated on a daily rate, he was not paid on a salary basis and thus was entitled to overtime pay regardless of the dollar amount he was paid. The district court ruled for Helix, and the U.S. Court of Appeals for the Fifth Circuit reversed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Helix Energy Solutions Group, Inc. v. Hewitt\nDocket: 21-984 | Term: OT2022 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Helix Energy Solutions, et al.v. Michael J. Hewitt (Petitioner v. Respondent)\nQuestion presented: Is a supervisor who makes over $200,000 annually, calculated on a daily basis, entitled to overtime pay, despite a regulation that carves out an exception for highly paid executives?\nFacts: Michael J. Hewitt worked on an offshore oil rig managing other employees. His employer, Helix Energy Solutions Group, Inc., paid Hewitt based solely on a daily rate, and he often was required to work well over forty hours per week. Hewitt sued Helix for overtime pay under the Fair Labor Standards Act (FLSA). Helix argued that it was not required to pay Hewitt overtime because Hewitt was a “highly compensated employee,” and highly compensated employees are exempt from overtime pay. Hewitt argued that because his pay was calculated on a daily rate, he was not paid on a salary basis and thus was entitled to overtime pay regardless of the dollar amount he was paid. The district court ruled for Helix, and the U.S. Court of Appeals for the Fifth Circuit reversed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "21-1397",
+ "case_name": "In re Grand Jury",
+ "term": 2022,
+ "issue_area": "",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "In re Grand Jury (Petitioner v. Respondent)",
+ "question": "If a communication involves both legal and non-legal advice, when is it protected from disclosure by attorney-client privilege?",
+ "facts": "A grand jury issued subpoenas to two parties—“Company” and “Law Firm”—requesting documents and communications related to a criminal investigation into the owner of Company and client of Law Firm. In response to the subpoenas, Company and Law Firm refused to disclose certain documents, citing attorney-client privilege and the work-product doctrine because the primary purpose of the documents at issue was to seek legal advice, not to obtain tax advice. The government moved to compel production, and the district court granted the government’s motion in part. Company and Law Firm disagreed with the district court’s ruling and continued to withhold the documents. The district court then held Company and Law Firm in contempt. The U.S. Court of Appeals for the Ninth Circuit affirmed, finding the primary purpose of the communications was to obtain legal advice.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — In re Grand Jury\nDocket: 21-1397 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: In re Grand Jury (Petitioner v. Respondent)\nQuestion presented: If a communication involves both legal and non-legal advice, when is it protected from disclosure by attorney-client privilege?\nFacts: A grand jury issued subpoenas to two parties—“Company” and “Law Firm”—requesting documents and communications related to a criminal investigation into the owner of Company and client of Law Firm. In response to the subpoenas, Company and Law Firm refused to disclose certain documents, citing attorney-client privilege and the work-product doctrine because the primary purpose of the documents at issue was to seek legal advice, not to obtain tax advice. The government moved to compel production, and the district court granted the government’s motion in part. Company and Law Firm disagreed with the district court’s ruling and continued to withhold the documents. The district court then held Company and Law Firm in contempt. The U.S. Court of Appeals for the Ninth Circuit affirmed, finding the primary purpose of the communications was to obtain legal advice.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

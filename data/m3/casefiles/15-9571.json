@@ -1,0 +1,18 @@
+{
+ "docket": "15-9571",
+ "case_name": "Holmes v. United States",
+ "term": 2016,
+ "issue_area": null,
+ "lc_disposition": null,
+ "lower_court": "not recorded",
+ "parties": "Holmes v. United States",
+ "question": "not available in Oyez (metadata-only case file)",
+ "facts": "not available in Oyez (metadata-only case file)",
+ "posture": "",
+ "sources": {
+  "oyez": false,
+  "scdb": false
+ },
+ "instruction": "CASE FILE — Holmes v. United States\nDocket: 15-9571 | Term: OT2016 | Court below: not recorded\nParties: Holmes v. United States\nQuestion presented: not available in Oyez (metadata-only case file)\nFacts: not available in Oyez (metadata-only case file)\nPosture: not recorded\n",
+ "window": "train"
+}

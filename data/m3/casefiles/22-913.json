@@ -1,0 +1,18 @@
+{
+ "docket": "22-913",
+ "case_name": "DeVillier v. Texas",
+ "term": 2023,
+ "issue_area": "4",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Richard Devillierv. State of Texas (Petitioner v. Respondent)",
+ "question": "May a party sue a state directly under the Takings Clause of the Fifth Amendment?",
+ "facts": "Petitioners Devillier and others own property in Texas along Interstate Highway 10 (IH-10). The State of Texas, through the Texas Department of Transportation (TxDOT), elevated IH-10 and installed a solid concrete median barrier, which acted as a “weir” to obstruct natural water flow and led to the flooding of the petitioners’ properties. Despite being aware of the potential for flooding, the State proceeded with the construction and even extended the barrier, causing extensive damage to the petitioners’ properties. The petitioners sued the state, directly invoking the Taking Clause of the U.S. Constitution, which they argued applied to the states through the Fourteenth Amendment. The district court denied Texas’s motion to dismiss, and the U.S. Court of Appeals for the Fifth Circuit vacated, finding the Fifth Amendment Takings Clause as applied to the states through the Fourteenth Amendment does not provide a right of action for takings claims against the state.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — DeVillier v. Texas\nDocket: 22-913 | Term: OT2023 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Richard Devillierv. State of Texas (Petitioner v. Respondent)\nQuestion presented: May a party sue a state directly under the Takings Clause of the Fifth Amendment?\nFacts: Petitioners Devillier and others own property in Texas along Interstate Highway 10 (IH-10). The State of Texas, through the Texas Department of Transportation (TxDOT), elevated IH-10 and installed a solid concrete median barrier, which acted as a “weir” to obstruct natural water flow and led to the flooding of the petitioners’ properties. Despite being aware of the potential for flooding, the State proceeded with the construction and even extended the barrier, causing extensive damage to the petitioners’ properties. The petitioners sued the state, directly invoking the Taking Clause of the U.S. Constitution, which they argued applied to the states through the Fourteenth Amendment. The district court denied Texas’s motion to dismiss, and the U.S. Court of Appeals for the Fifth Circuit vacated, finding the Fifth Amendment Takings Clause as applied to the states through the Fourteenth Amendment does not provide a right of action for takings claims against the state.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

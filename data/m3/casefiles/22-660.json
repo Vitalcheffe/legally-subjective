@@ -1,0 +1,18 @@
+{
+ "docket": "22-660",
+ "case_name": "Murray v. UBS Securities, LLC",
+ "term": 2023,
+ "issue_area": "2",
+ "lc_disposition": "8",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Trevor Murrayv. UBS Securities, LLC, et al. (Petitioner v. Respondent)",
+ "question": "Under 18 U.S.C. § 1514A, must a whistleblower prove his employer acted with “retaliatory intent” as part of his case in chief?",
+ "facts": "In 2011, UBS hired Trevor Murray as a strategist in its commercial mortgage-backed securities business. Under Securities and Exchange Commission regulations, Murray was required to certify that his reports were produced independently and that they accurately reflected his own views. According to Murray, two leaders at UBS improperly pressured him to skew his research. Murray repeatedly reported this conduct to his supervisor, who declined to take action. UBS terminated Murray in 2012. Murray sued UBS in 2014 alleging that his former employer terminated him in response to his complaints about fraud on shareholders in violation of the Sarbanes-Oxley Act's antiretaliation provision, 18 U.S.C. § 1514A. The district court ruled for Murray, and UBS appealed, arguing that the district court erred by failing to instruct the jury that Murray had to prove UBS's retaliatory intent to prevail on his section 1514A claim. The U.S. Court of Appeals for the Second Circuit agreed with UBS and vacated the judgment of the district court.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Murray v. UBS Securities, LLC\nDocket: 22-660 | Term: OT2023 | Court below: United States Court of Appeals for the Second Circuit\nParties: Trevor Murrayv. UBS Securities, LLC, et al. (Petitioner v. Respondent)\nQuestion presented: Under 18 U.S.C. § 1514A, must a whistleblower prove his employer acted with “retaliatory intent” as part of his case in chief?\nFacts: In 2011, UBS hired Trevor Murray as a strategist in its commercial mortgage-backed securities business. Under Securities and Exchange Commission regulations, Murray was required to certify that his reports were produced independently and that they accurately reflected his own views. According to Murray, two leaders at UBS improperly pressured him to skew his research. Murray repeatedly reported this conduct to his supervisor, who declined to take action. UBS terminated Murray in 2012. Murray sued UBS in 2014 alleging that his former employer terminated him in response to his complaints about fraud on shareholders in violation of the Sarbanes-Oxley Act's antiretaliation provision, 18 U.S.C. § 1514A. The district court ruled for Murray, and UBS appealed, arguing that the district court erred by failing to instruct the jury that Murray had to prove UBS's retaliatory intent to prevail on his section 1514A claim. The U.S. Court of Appeals for the Second Circuit agreed with UBS and vacated the judgment of the district court.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

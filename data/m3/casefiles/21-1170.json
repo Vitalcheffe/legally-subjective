@@ -1,0 +1,18 @@
+{
+ "docket": "21-1170",
+ "case_name": "Ciminelli v. United States",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Louis Ciminelliv. United States (Petitioner v. Respondent)",
+ "question": "Does the Second Circuit’s “right to control” theory of fraud state a valid basis for liability under the federal wire fraud statute?",
+ "facts": "In 2012, New York Governor Andrew Cuomo launched an initiative, known as the “Buffalo Billion” initiative, to develop the greater Buffalo area. Alain Kaloyeros strategically secured a highly influential role in the initiative and used that role to award contracts to certain developers of his choosing based on his knowledge and control over the process. Once the scheme came to light, the participants were charged and convicted of conspiracy to engage in wire fraud. In 2018, a jury returned a verdict of guilty on all counts, and the defendants were sentenced to prison terms of varying lengths. On appeal, the U.S. Court of Appeals for the Second Circuit affirmed the wire fraud convictions, relying on a “right-to-control theory” of wire fraud that allows for conviction on “a showing that the defendant, through the withholding or inaccurate reporting of information that could impact on economic decisions, deprived some person or entity of potentially valuable economic information.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Ciminelli v. United States\nDocket: 21-1170 | Term: OT2022 | Court below: United States Court of Appeals for the Second Circuit\nParties: Louis Ciminelliv. United States (Petitioner v. Respondent)\nQuestion presented: Does the Second Circuit’s “right to control” theory of fraud state a valid basis for liability under the federal wire fraud statute?\nFacts: In 2012, New York Governor Andrew Cuomo launched an initiative, known as the “Buffalo Billion” initiative, to develop the greater Buffalo area. Alain Kaloyeros strategically secured a highly influential role in the initiative and used that role to award contracts to certain developers of his choosing based on his knowledge and control over the process. Once the scheme came to light, the participants were charged and convicted of conspiracy to engage in wire fraud. In 2018, a jury returned a verdict of guilty on all counts, and the defendants were sentenced to prison terms of varying lengths. On appeal, the U.S. Court of Appeals for the Second Circuit affirmed the wire fraud convictions, relying on a “right-to-control theory” of wire fraud that allows for conviction on “a showing that the defendant, through the withholding or inaccurate reporting of information that could impact on economic decisions, deprived some person or entity of potentially valuable economic information.”\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

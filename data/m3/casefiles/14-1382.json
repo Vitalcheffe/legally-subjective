@@ -1,0 +1,18 @@
+{
+ "docket": "14-1382",
+ "case_name": "Americold Realty Trust v. ConAgra Foods, Inc.",
+ "term": 2015,
+ "issue_area": "9",
+ "lc_disposition": "5",
+ "lower_court": "United States Court of Appeals for the Tenth Circuit",
+ "parties": "Americold Realty Trustv. Conagra Foods, Inc., et al. (Petitioner v. Respondent)",
+ "question": "Is the citizenship of a trust for the purposes of diversity jurisdiction based on the diversity of the trust’s beneficiaries (who are its shareholders) as well as the trustees?",
+ "facts": "The plaintiffs, food distributors including Conagra Foods Inc. and Kraft Foodservice, sued Americold Logistics LLC and Americold Realty Trust (Americold) in state court for a breach of contract stemming from a dispute regarding liability for a warehouse fire. Americold sought to remove the case to federal court based on diversity jurisdiction because of the diversity of the trust’s board. No party challenged the propriety of the removal, and the district court addressed the case solely on its merits. Both parties moved for summary judgment, and the district court found in favor of the defendant. On appeal, the U.S. Court of Appeals of the Tenth Circuit raised the issue of potentially improper removal and asked the parties to submit briefs addressing the issue. The appellate court held that Americold did not meet its burden to demonstrate that diversity jurisdiction was appropriate because the inquiry must extend to the trust’s beneficiaries (who are its shareholders), not just the trustees.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Americold Realty Trust v. ConAgra Foods, Inc.\nDocket: 14-1382 | Term: OT2015 | Court below: United States Court of Appeals for the Tenth Circuit\nParties: Americold Realty Trustv. Conagra Foods, Inc., et al. (Petitioner v. Respondent)\nQuestion presented: Is the citizenship of a trust for the purposes of diversity jurisdiction based on the diversity of the trust’s beneficiaries (who are its shareholders) as well as the trustees?\nFacts: The plaintiffs, food distributors including Conagra Foods Inc. and Kraft Foodservice, sued Americold Logistics LLC and Americold Realty Trust (Americold) in state court for a breach of contract stemming from a dispute regarding liability for a warehouse fire. Americold sought to remove the case to federal court based on diversity jurisdiction because of the diversity of the trust’s board. No party challenged the propriety of the removal, and the district court addressed the case solely on its merits. Both parties moved for summary judgment, and the district court found in favor of the defendant. On appeal, the U.S. Court of Appeals of the Tenth Circuit raised the issue of potentially improper removal and asked the parties to submit briefs addressing the issue. The appellate court held that Americold did not meet its burden to demonstrate that diversity jurisdiction was appropriate because the inquiry must extend to the trust’s beneficiaries (who are its shareholders), not just the trustees.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "21-1496",
+ "case_name": "Twitter, Inc. v. Taamneh",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Twitter, Inc., et al.v. Mehier Taamneh, et al. (Petitioner v. Respondent)",
+ "question": "1. Does an internet platform “knowingly” provide substantial assistance under 18 U.S.C. § 2333 merely because it allegedly could have taken more “meaningful” or “aggressive” action to prevent such use? 2. May an internet platform whose services were not used in connection with the specific “act of international terrorism” that injured the plaintiff still be liable for aiding and abetting under Section 2333?",
+ "facts": "This case arises from the same set of facts as Gonzalez v. Google. Nohemi Gonzalez, a U.S. citizen, was killed by a terrorist attack in Paris, France, in 2015—one of several terrorist attacks that same day. The day afterwards, the foreign terrorist organization ISIS claimed responsibility by issuing a written statement and releasing a YouTube video. Gonzalez’s father filed an action against Google, Twitter, and Facebook, claiming, among other things, all three platforms were liable for aiding and abetting international terrorism by failing to take meaningful or aggressive action to prevent terrorists from using its services, even though they did not play an active role in the specific act of international terrorism that actually injured Gonzalez. The district court dismissed the claims based on aiding-and-abetting liability under the Anti-Terrorism Act, and the U.S. Court of Appeals for the Ninth Circuit reversed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Twitter, Inc. v. Taamneh\nDocket: 21-1496 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Twitter, Inc., et al.v. Mehier Taamneh, et al. (Petitioner v. Respondent)\nQuestion presented: 1. Does an internet platform “knowingly” provide substantial assistance under 18 U.S.C. § 2333 merely because it allegedly could have taken more “meaningful” or “aggressive” action to prevent such use? 2. May an internet platform whose services were not used in connection with the specific “act of international terrorism” that injured the plaintiff still be liable for aiding and abetting under Section 2333?\nFacts: This case arises from the same set of facts as Gonzalez v. Google. Nohemi Gonzalez, a U.S. citizen, was killed by a terrorist attack in Paris, France, in 2015—one of several terrorist attacks that same day. The day afterwards, the foreign terrorist organization ISIS claimed responsibility by issuing a written statement and releasing a YouTube video. Gonzalez’s father filed an action against Google, Twitter, and Facebook, claiming, among other things, all three platforms were liable for aiding and abetting international terrorism by failing to take meaningful or aggressive action to prevent terrorists from using its services, even though they did not play an active role in the specific act of international terrorism that actually injured Gonzalez. The district court dismissed the claims based on aiding-and-abetting liability under the Anti-Terrorism Act, and the U.S. Court of Appeals for the Ninth Circuit reversed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

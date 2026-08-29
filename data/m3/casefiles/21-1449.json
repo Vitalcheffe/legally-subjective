@@ -1,0 +1,18 @@
+{
+ "docket": "21-1449",
+ "case_name": "Glacier Northwest, Inc. v. Teamsters",
+ "term": 2022,
+ "issue_area": "7",
+ "lc_disposition": "3",
+ "lower_court": "Washington Supreme Court",
+ "parties": "Glacier Northwest, Inc.v. International Brotherhood of Teamsters (Petitioner v. Respondent)",
+ "question": "Does the National Labor Relations Act preempt a state-court lawsuit against a union for intentionally destroying an employer’s property during a labor dispute?",
+ "facts": "Glacier Northwest is a Washington corporation that sells and delivers ready-mix concrete to businesses in the state. It employs approximately 80-90 truck drivers to deliver concrete, and Local 174 is the exclusive union representative for Glacier’s truck drivers in King County. In 2017, during negotiations for a new collective bargaining agreement (CBA), Glacier truck drivers went on strike, resulting in the loss of some of Glacier’s concrete. Glacier sued Local 174 in state court for six tort claims arising from Local 174’s alleged role that resulted in Glacier’s loss of concrete. The trial court dismissed the claims arising before the CBA was reached, finding they were preempted by the federal National Labor Relations Act, and it granted summary judgment dismissal of the remaining claims primarily on state law grounds. The appellate court reversed as to the pre-CBA claims, finding the NLRA did not preempt those claims. The state supreme court reversed as to the preemption issue.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Glacier Northwest, Inc. v. Teamsters\nDocket: 21-1449 | Term: OT2022 | Court below: Washington Supreme Court\nParties: Glacier Northwest, Inc.v. International Brotherhood of Teamsters (Petitioner v. Respondent)\nQuestion presented: Does the National Labor Relations Act preempt a state-court lawsuit against a union for intentionally destroying an employer’s property during a labor dispute?\nFacts: Glacier Northwest is a Washington corporation that sells and delivers ready-mix concrete to businesses in the state. It employs approximately 80-90 truck drivers to deliver concrete, and Local 174 is the exclusive union representative for Glacier’s truck drivers in King County. In 2017, during negotiations for a new collective bargaining agreement (CBA), Glacier truck drivers went on strike, resulting in the loss of some of Glacier’s concrete. Glacier sued Local 174 in state court for six tort claims arising from Local 174’s alleged role that resulted in Glacier’s loss of concrete. The trial court dismissed the claims arising before the CBA was reached, finding they were preempted by the federal National Labor Relations Act, and it granted summary judgment dismissal of the remaining claims primarily on state law grounds. The appellate court reversed as to the pre-CBA claims, finding the NLRA did not preempt those claims. The state supreme court reversed as to the preemption issue.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

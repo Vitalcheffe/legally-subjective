@@ -1,0 +1,18 @@
+{
+ "docket": "15–1256.",
+ "case_name": "Nelson v. Colorado",
+ "term": 2016,
+ "issue_area": "4",
+ "lc_disposition": "3",
+ "lower_court": "Colorado Supreme Court",
+ "parties": "Shannon Nelson and Louis Alonzo Maddenv. Colorado (Petitioner v. Respondent)",
+ "question": "Does the state of Colorado’s refusal to refund money from persons exonerated from convictions unless they can “prove, by clear and convincing evidence, that [they were] ‘actually innocent’” violate the Due Process Clause?",
+ "facts": "The state of Colorado, like most states, imposes certain monetary penalties upon persons convicted of a crime. Shannon Nelson and Louis Madden were both separately arrested and charged with sexual assault crimes. Nelson was acquitted of all charges, and Madden was acquitted of one of two charges against him. Both requested refunds from the state for the penalties they had been charged, since their convictions were overturned. The trial court determined it lacked jurisdiction in Nelson’s case and only returned the funds taken from Madden in connection with the one charge on which he was acquitted. The Colorado Court of Appeals found that the state must refund the money Nelson and Madden had paid respective to their sexual assault charges that had been thrown out. The Colorado Supreme Court reversed the decisions in both cases and held that, under the state’s Exoneration Act, an individual may only recover monetary losses from an arrest if they can “prove, by clear and convincing evidence, that [they were] ‘actually innocent.’”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Nelson v. Colorado\nDocket: 15–1256. | Term: OT2016 | Court below: Colorado Supreme Court\nParties: Shannon Nelson and Louis Alonzo Maddenv. Colorado (Petitioner v. Respondent)\nQuestion presented: Does the state of Colorado’s refusal to refund money from persons exonerated from convictions unless they can “prove, by clear and convincing evidence, that [they were] ‘actually innocent’” violate the Due Process Clause?\nFacts: The state of Colorado, like most states, imposes certain monetary penalties upon persons convicted of a crime. Shannon Nelson and Louis Madden were both separately arrested and charged with sexual assault crimes. Nelson was acquitted of all charges, and Madden was acquitted of one of two charges against him. Both requested refunds from the state for the penalties they had been charged, since their convictions were overturned. The trial court determined it lacked jurisdiction in Nelson’s case and only returned the funds taken from Madden in connection with the one charge on which he was acquitted. The Colorado Court of Appeals found that the state must refund the money Nelson and Madden had paid respective to their sexual assault charges that had been thrown out. The Colorado Supreme Court reversed the decisions in both cases and held that, under the state’s Exoneration Act, an individual may only recover monetary losses from an arrest if they can “prove, by clear and convincing evidence, that [they were] ‘actually innocent.’”\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

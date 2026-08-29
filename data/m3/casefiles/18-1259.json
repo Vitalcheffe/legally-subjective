@@ -1,0 +1,18 @@
+{
+ "docket": "18-1259",
+ "case_name": "Jones v. Mississippi",
+ "term": 2020,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "Supreme Court of Mississippi",
+ "parties": "Brett Jonesv. Mississippi (Petitioner v. Respondent)",
+ "question": "Does the Eighth Amendment require a sentencing authority to find that a juvenile is permanently incorrigible before it may impose a sentence of life without the possibility of parole?",
+ "facts": "When Brett Jones was fifteen years old, he stabbed his grandfather to death. He was convicted of murder, and the Circuit Court of Lee County, Mississippi, imposed a mandatory sentence of life imprisonment, and Mississippi law made him ineligible for parole. The appellate court affirmed his conviction and sentence. In a post-conviction relief proceeding, the Supreme Court of Mississippi ordered that Jones be resentenced after a hearing to determine whether he was entitled to parole eligibility. Subsequently, the U.S. Supreme Court decided Miller v. Alabama , 567 U.S. 460 (2012), and Montgomery v. Louisiana , 577 U.S. __ (2016) . In Miller , the Court held that mandatory life in prison without the possibility of parole sentences for juveniles violated the Eighth Amendment’s prohibition on cruel and unusual punishments. And in Montgomery , it clarified that Miller barred life without the possibility of parole “for all but the rarest of juvenile offenders, those whose crimes reflect permanent incorrigibility.” The circuit court held the hearing weighing the factors laid out in Miller and determined Jones was not entitled to parole eligibility.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Jones v. Mississippi\nDocket: 18-1259 | Term: OT2020 | Court below: Supreme Court of Mississippi\nParties: Brett Jonesv. Mississippi (Petitioner v. Respondent)\nQuestion presented: Does the Eighth Amendment require a sentencing authority to find that a juvenile is permanently incorrigible before it may impose a sentence of life without the possibility of parole?\nFacts: When Brett Jones was fifteen years old, he stabbed his grandfather to death. He was convicted of murder, and the Circuit Court of Lee County, Mississippi, imposed a mandatory sentence of life imprisonment, and Mississippi law made him ineligible for parole. The appellate court affirmed his conviction and sentence. In a post-conviction relief proceeding, the Supreme Court of Mississippi ordered that Jones be resentenced after a hearing to determine whether he was entitled to parole eligibility. Subsequently, the U.S. Supreme Court decided Miller v. Alabama , 567 U.S. 460 (2012), and Montgomery v. Louisiana , 577 U.S. __ (2016) . In Miller , the Court held that mandatory life in prison without the possibility of parole sentences for juveniles violated the Eighth Amendment’s prohibition on cruel and unusual punishments. And in Montgomery , it clarified that Miller barred life without the possibility of parole “for all but the rarest of juvenile offenders, those whose crimes reflect permanent incorrigibility.” The circuit court held the hearing weighing the factors laid out in Miller and determined Jones was not entitled to parole eligibility.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

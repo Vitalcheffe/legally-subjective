@@ -1,0 +1,18 @@
+{
+ "docket": "20-303",
+ "case_name": "United States v. Vaello Madero",
+ "term": 2021,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the First Circuit",
+ "parties": "United Statesv. Jose Luis Vaello-Madero (Petitioner v. Respondent)",
+ "question": "Did Congress violate the Fifth Amendment by establishing the Supplemental Security Income program in the 50 states, the District of Columbia, and the Northern Mariana Islands, but not in Puerto Rico?",
+ "facts": "Congress established the Supplemental Security Income program in 1972 to provide cash benefits to low-income people who are 65 or older and have disabilities. The program extends to residents of the 50 states, the District of Columbia, and the unincorporated territory of the Northern Mariana Islands, but not to those living in Puerto Rico. Jose Luis Vaello-Madero was born in Puerto Rico in 1954 and moved to New York in 1985. In 2012, he started receiving SSI payments after he experienced severe health problems, and in 2013, he moved back to Puerto Rico to help care for his wife. In 2016, the Social Security Administration (SSA) informed Vaello-Madero that because he had moved back to Puerto Rico, it was terminating his SSI benefits. Moreover, the federal government filed a lawsuit in federal court in Puerto Rico to recover over $28,000 in benefits it had paid Vaello-Madero between 2013 and 2016 when he was living in Puerto Rico. The district court ruled for Vaello-Madero, finding, among other things, that the exclusion of Puerto Rico violated the equal-protection component of the Due Process Clause of the Fifth Amendment. The U.S. Court of Appeals for the First Circuit affirmed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Vaello Madero\nDocket: 20-303 | Term: OT2021 | Court below: United States Court of Appeals for the First Circuit\nParties: United Statesv. Jose Luis Vaello-Madero (Petitioner v. Respondent)\nQuestion presented: Did Congress violate the Fifth Amendment by establishing the Supplemental Security Income program in the 50 states, the District of Columbia, and the Northern Mariana Islands, but not in Puerto Rico?\nFacts: Congress established the Supplemental Security Income program in 1972 to provide cash benefits to low-income people who are 65 or older and have disabilities. The program extends to residents of the 50 states, the District of Columbia, and the unincorporated territory of the Northern Mariana Islands, but not to those living in Puerto Rico. Jose Luis Vaello-Madero was born in Puerto Rico in 1954 and moved to New York in 1985. In 2012, he started receiving SSI payments after he experienced severe health problems, and in 2013, he moved back to Puerto Rico to help care for his wife. In 2016, the Social Security Administration (SSA) informed Vaello-Madero that because he had moved back to Puerto Rico, it was terminating his SSI benefits. Moreover, the federal government filed a lawsuit in federal court in Puerto Rico to recover over $28,000 in benefits it had paid Vaello-Madero between 2013 and 2016 when he was living in Puerto Rico. The district court ruled for Vaello-Madero, finding, among other things, that the exclusion of Puerto Rico violated the equal-protection component of the Due Process Clause of the Fifth Amendment. The U.S. Court of Appeals for the First Circuit affirmed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

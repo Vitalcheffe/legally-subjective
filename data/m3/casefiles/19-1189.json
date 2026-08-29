@@ -1,0 +1,18 @@
+{
+ "docket": "19-1189",
+ "case_name": "BP p.l.c. v. Mayor and City Council of Baltimore",
+ "term": 2020,
+ "issue_area": "9",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fourth Circuit",
+ "parties": "BP P.L.C., et al.v. Mayor and City Council of Baltimore (Petitioner v. Respondent)",
+ "question": "Does federal law permit a court of appeals to review any issue included in a district court’s order remanding a case to state court, or only the ground for removal?",
+ "facts": "In July 2018, the Mayor and City of Baltimore filed suit in Maryland state court against 26 oil and gas companies that Maryland says are partly responsible for climate change. The complaint asserted eight causes of action, all founded on Maryland law, and sought monetary damages, civil penalties, and equitable relief. Two of the defendants removed the case to federal court, asserting eight grounds for removal. Baltimore then moved to remand the case back to state court. The district court rejected all eight grounds for removal and granted Baltimore’s motion for remand back to state court. The defendants appealed the remand order, and the U.S. Court of Appeals for the Fourth Circuit affirmed the lower court, finding that 28 U.S.C. § 1442 does not provide a proper basis for removal of the suit.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — BP p.l.c. v. Mayor and City Council of Baltimore\nDocket: 19-1189 | Term: OT2020 | Court below: United States Court of Appeals for the Fourth Circuit\nParties: BP P.L.C., et al.v. Mayor and City Council of Baltimore (Petitioner v. Respondent)\nQuestion presented: Does federal law permit a court of appeals to review any issue included in a district court’s order remanding a case to state court, or only the ground for removal?\nFacts: In July 2018, the Mayor and City of Baltimore filed suit in Maryland state court against 26 oil and gas companies that Maryland says are partly responsible for climate change. The complaint asserted eight causes of action, all founded on Maryland law, and sought monetary damages, civil penalties, and equitable relief. Two of the defendants removed the case to federal court, asserting eight grounds for removal. Baltimore then moved to remand the case back to state court. The district court rejected all eight grounds for removal and granted Baltimore’s motion for remand back to state court. The defendants appealed the remand order, and the U.S. Court of Appeals for the Fourth Circuit affirmed the lower court, finding that 28 U.S.C. § 1442 does not provide a proper basis for removal of the suit.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

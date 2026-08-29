@@ -1,0 +1,18 @@
+{
+ "docket": "15–7250.",
+ "case_name": "Manrique v. United States",
+ "term": 2016,
+ "issue_area": "9",
+ "lc_disposition": "9",
+ "lower_court": "United States Court of Appeals for the Eleventh Circuit",
+ "parties": "Marcelo Manriquev. United States (Petitioner v. Respondent)",
+ "question": "Does an appellate court have jurisdiction over an appeal of a restitution award when the judgment that awarded the amount of restitution was entered after the notice of appeal was filed?",
+ "facts": "Marcelo Manrique was convicted in federal district court of possession of child pornography. He was sentenced to a life term of supervised release and mandatory restitution, though the final judgment did not include an amount for the restitution and stated that would be included in the amended judgment. Manrique filed his notice of appeal before the amended judgment was entered. When the amended judgment was entered while the appeal was pending, it included the details of the restitution award, and both parties subsequently included arguments regarding the challenge of the award in their briefs. The U.S. Court of Appeals for the Eleventh Circuit ruled that it did not have jurisdiction to consider the challenge to the restitution award because Manrique did not file a second notice of appeal regarding the amended judgment that included the amount of the restitution award.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Manrique v. United States\nDocket: 15–7250. | Term: OT2016 | Court below: United States Court of Appeals for the Eleventh Circuit\nParties: Marcelo Manriquev. United States (Petitioner v. Respondent)\nQuestion presented: Does an appellate court have jurisdiction over an appeal of a restitution award when the judgment that awarded the amount of restitution was entered after the notice of appeal was filed?\nFacts: Marcelo Manrique was convicted in federal district court of possession of child pornography. He was sentenced to a life term of supervised release and mandatory restitution, though the final judgment did not include an amount for the restitution and stated that would be included in the amended judgment. Manrique filed his notice of appeal before the amended judgment was entered. When the amended judgment was entered while the appeal was pending, it included the details of the restitution award, and both parties subsequently included arguments regarding the challenge of the award in their briefs. The U.S. Court of Appeals for the Eleventh Circuit ruled that it did not have jurisdiction to consider the challenge to the restitution award because Manrique did not file a second notice of appeal regarding the amended judgment that included the amount of the restitution award.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

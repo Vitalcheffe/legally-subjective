@@ -1,0 +1,18 @@
+{
+ "docket": "19-1414",
+ "case_name": "United States v. Cooley",
+ "term": 2020,
+ "issue_area": "2",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "United Statesv. Joshua James Cooley (Petitioner v. Respondent)",
+ "question": "May a police officer for a Native American tribe detain and search a non-tribe member within a reservation on suspicion of violating a state or federal law?",
+ "facts": "Joshua James Cooley was parked in his pickup truck on the side of a road within the Crow Reservation in Montana when Officer James Saylor of the Crow Tribe approached his truck in the early hours of the morning. During their exchange, the officer assumed, based on Cooley’s appearance, that Cooley did not belong to a Native American tribe, but he did not ask Cooley or otherwise verify this conclusion. During their conversation, the officer grew suspicious that Cooley was engaged in unlawful activity and detained him to conduct a search of his truck, where he found evidence of methamphetamine. Meanwhile, the officer called for assistance from county officers because Cooley “seemed to be non-Native.” Cooley was charged with weapons and drug offenses in violation of federal law. He moved to suppress the evidence on the grounds that Saylor was acting outside the scope of his jurisdiction as a Crow Tribe law enforcement officer when he seized Cooley, in violation of the Indian Civil Rights Act of 1968 (“ICRA”). The district court granted Cooley’s motion, and the U.S. Court of Appeals for the Ninth Circuit affirmed, finding that Saylor, a tribal officer, lacked jurisdiction to detain Cooley, a non-Native person, without first making any attempt to determine whether he was Native.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Cooley\nDocket: 19-1414 | Term: OT2020 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: United Statesv. Joshua James Cooley (Petitioner v. Respondent)\nQuestion presented: May a police officer for a Native American tribe detain and search a non-tribe member within a reservation on suspicion of violating a state or federal law?\nFacts: Joshua James Cooley was parked in his pickup truck on the side of a road within the Crow Reservation in Montana when Officer James Saylor of the Crow Tribe approached his truck in the early hours of the morning. During their exchange, the officer assumed, based on Cooley’s appearance, that Cooley did not belong to a Native American tribe, but he did not ask Cooley or otherwise verify this conclusion. During their conversation, the officer grew suspicious that Cooley was engaged in unlawful activity and detained him to conduct a search of his truck, where he found evidence of methamphetamine. Meanwhile, the officer called for assistance from county officers because Cooley “seemed to be non-Native.” Cooley was charged with weapons and drug offenses in violation of federal law. He moved to suppress the evidence on the grounds that Saylor was acting outside the scope of his jurisdiction as a Crow Tribe law enforcement officer when he seized Cooley, in violation of the Indian Civil Rights Act of 1968 (“ICRA”). The district court granted Cooley’s motion, and the U.S. Court of Appeals for the Ninth Circuit affirmed, finding that Saylor, a tribal officer, lacked jurisdiction to detain Cooley, a non-Native person, without first making any attempt to determine whether he was Native.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "22-200",
+ "case_name": "Slack Technologies, LLC v. Pirani",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "Slack Technologies, LLC, fka Slack Technologies, Inc., et al.v. Fiyyaz Pirani (Petitioner v. Respondent)",
+ "question": "Do Sections 11 and 12(a)(2) of the Securities Act of 1933 require plaintiffs to plead and prove that they bought shares registered under the registration statement they claim is misleading?",
+ "facts": "On June 20, 2019, tech company Slack went public through a direct listing, which, unlike an initial public offering (IPO), does not involve the company issuing new shares and instead involves only filing a registration statement to allow existing shareholders to sell their shares on the exchange. Shares made available by a direct listing are sold directly to the public and not through a bank. Fiyyaz Pirani purchased 30,000 Slack shares at $38.50 per share on the day it went public and went on to purchase another 220,000 over several months. Subsequently, the share price dropped below $25. On September 19, 2019, Pirani brought a class action lawsuit against Slack, alleging that Slack’s registration statement was inaccurate and misleading because it did not disclose information about its service disruptions and how it compensated customers for those disruptions. The district court held that Pirani had standing to sue Slack even though he could not prove that his shares were issued under the registration statement he said was inaccurate. On appeal, a panel of the U.S. Court of Appeals for the Ninth Circuit affirmed over one dissenting vote.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Slack Technologies, LLC v. Pirani\nDocket: 22-200 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: Slack Technologies, LLC, fka Slack Technologies, Inc., et al.v. Fiyyaz Pirani (Petitioner v. Respondent)\nQuestion presented: Do Sections 11 and 12(a)(2) of the Securities Act of 1933 require plaintiffs to plead and prove that they bought shares registered under the registration statement they claim is misleading?\nFacts: On June 20, 2019, tech company Slack went public through a direct listing, which, unlike an initial public offering (IPO), does not involve the company issuing new shares and instead involves only filing a registration statement to allow existing shareholders to sell their shares on the exchange. Shares made available by a direct listing are sold directly to the public and not through a bank. Fiyyaz Pirani purchased 30,000 Slack shares at $38.50 per share on the day it went public and went on to purchase another 220,000 over several months. Subsequently, the share price dropped below $25. On September 19, 2019, Pirani brought a class action lawsuit against Slack, alleging that Slack’s registration statement was inaccurate and misleading because it did not disclose information about its service disruptions and how it compensated customers for those disruptions. The district court held that Pirani had standing to sue Slack even though he could not prove that his shares were issued under the registration statement he said was inaccurate. On appeal, a panel of the U.S. Court of Appeals for the Ninth Circuit affirmed over one dissenting vote.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

@@ -1,0 +1,18 @@
+{
+ "docket": "22-7386",
+ "case_name": "McIntosh v. United States",
+ "term": 2023,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Second Circuit",
+ "parties": "Louis McIntoshv. United States of America (Petitioner v. Respondent)",
+ "question": "May a district court enter a criminal forfeiture order when the time limit specified in the Federal Rules of Criminal Procedure has already passed?",
+ "facts": "On August 22, 2013, a jury convicted Louis McIntosh of multiple Hobbs Act robbery-related offenses and gun charges, leading to a near-life sentence of 720 months. The district court granted some relief by vacating specific counts but imposed a forfeiture amount inconsistently between oral and written judgments. On appeal, the government belatedly submitted a forfeiture order, which both the district court and the U.S. Court of Appeals for the Second Circuit upheld despite its tardiness. The appellate court vacated one of the §924(c) counts but reinstated others, rejecting the petitioner's arguments. After a Supreme Court decision in United States v. Taylor, 596 U.S. __ (2022), which held that attempted Hobbs Act robbery is not a crime of violence under 18 U.S.C. § 924(c) the Court granted certiorari, leading to a remand. However, the Second Circuit mostly upheld its prior rulings, making only minor changes.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — McIntosh v. United States\nDocket: 22-7386 | Term: OT2023 | Court below: United States Court of Appeals for the Second Circuit\nParties: Louis McIntoshv. United States of America (Petitioner v. Respondent)\nQuestion presented: May a district court enter a criminal forfeiture order when the time limit specified in the Federal Rules of Criminal Procedure has already passed?\nFacts: On August 22, 2013, a jury convicted Louis McIntosh of multiple Hobbs Act robbery-related offenses and gun charges, leading to a near-life sentence of 720 months. The district court granted some relief by vacating specific counts but imposed a forfeiture amount inconsistently between oral and written judgments. On appeal, the government belatedly submitted a forfeiture order, which both the district court and the U.S. Court of Appeals for the Second Circuit upheld despite its tardiness. The appellate court vacated one of the §924(c) counts but reinstated others, rejecting the petitioner's arguments. After a Supreme Court decision in United States v. Taylor, 596 U.S. __ (2022), which held that attempted Hobbs Act robbery is not a crime of violence under 18 U.S.C. § 924(c) the Court granted certiorari, leading to a remand. However, the Second Circuit mostly upheld its prior rulings, making only minor changes.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

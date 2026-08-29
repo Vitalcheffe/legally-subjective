@@ -1,0 +1,18 @@
+{
+ "docket": "No. 14–1373.",
+ "case_name": "Utah v. Strieff",
+ "term": 2015,
+ "issue_area": "1",
+ "lc_disposition": "3",
+ "lower_court": "Utah Supreme Court",
+ "parties": "Utahv. Edward Joseph Strieff (Petitioner v. Respondent)",
+ "question": "Should evidence seized incident to a lawful arrest on an outstanding warrant be suppressed because the warrant was discovered during an investigatory stop later found to be unlawful?",
+ "facts": "Utah Detective Douglas Fackrell received an anonymous tip about drug sales in a South Salt Lake residence, so he surveyed the area over a short period of time and speculated there was drug activity taking place. Fackrell saw Edward Joseph Strieff, Jr. leaving the residence and stopped him for questioning. During the stop, Fackrell discovered Strieff had an outstanding warrant and arrested him. During the lawful search after his arrest, Fackrell found methamphetamine and a drug pipe on Strieff’s person. The district court ruled that, although Fackrell did not have enough evidence to conduct an investigatory stop, the methamphetamine and drug paraphernalia obtained during the lawful search incident to arrest justified the admission of that evidence for trial. The Utah Court of Appeals affirmed the district court’s ruling, but the Utah Supreme Court reversed and held that the evidence should have been suppressed because the warrant that was the basis for the arrest was discovered during an unlawful investigatory stop.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Utah v. Strieff\nDocket: No. 14–1373. | Term: OT2015 | Court below: Utah Supreme Court\nParties: Utahv. Edward Joseph Strieff (Petitioner v. Respondent)\nQuestion presented: Should evidence seized incident to a lawful arrest on an outstanding warrant be suppressed because the warrant was discovered during an investigatory stop later found to be unlawful?\nFacts: Utah Detective Douglas Fackrell received an anonymous tip about drug sales in a South Salt Lake residence, so he surveyed the area over a short period of time and speculated there was drug activity taking place. Fackrell saw Edward Joseph Strieff, Jr. leaving the residence and stopped him for questioning. During the stop, Fackrell discovered Strieff had an outstanding warrant and arrested him. During the lawful search after his arrest, Fackrell found methamphetamine and a drug pipe on Strieff’s person. The district court ruled that, although Fackrell did not have enough evidence to conduct an investigatory stop, the methamphetamine and drug paraphernalia obtained during the lawful search incident to arrest justified the admission of that evidence for trial. The Utah Court of Appeals affirmed the district court’s ruling, but the Utah Supreme Court reversed and held that the evidence should have been suppressed because the warrant that was the basis for the arrest was discovered during an unlawful investigatory stop.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

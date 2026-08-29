@@ -1,0 +1,18 @@
+{
+ "docket": "22-915",
+ "case_name": "United States v. Rahimi",
+ "term": 2023,
+ "issue_area": "1",
+ "lc_disposition": "3",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "United Statesv. Zackey Rahimi (Petitioner v. Respondent)",
+ "question": "Does 18 U.S.C. § 922(g)(8), which prohibits the possession of firearms by persons subject to domestic-violence restraining orders, violate the Second Amendment?",
+ "facts": "Between December 2020 and January 2021, Zackey Rahimi was involved in a series of violent incidents in Arlington, Texas, including multiple shootings and a hit-and-run. Rahimi was under a civil protective order for alleged assault against his ex-girlfriend, which explicitly prohibited him from possessing firearms. Police searched his home and found a rifle and a pistol, leading to Rahimi’s indictment for violating federal law 18 U.S.C. § 922(g)(8), which makes it unlawful for someone under a domestic violence restraining order to possess firearms. Rahimi moved to dismiss the indictment on constitutional grounds but was denied, as his argument was foreclosed by United States v. McGinnis, 956 F.3d 747 (5th Cir. 2020). Rahimi pleaded guilty but continued his constitutional challenge on appeal. As the appeal was pending, the U.S. Supreme Court decided New York State Rifle & Pistol Association, Inc. v. Bruen, 579 U.S. __ (2022). Rahimi argued that Bruen overruled McGinnis and thus that § 922(g)(8) was unconstitutional, and the U.S. Court of Appeals for the Fifth Circuit agreed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — United States v. Rahimi\nDocket: 22-915 | Term: OT2023 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: United Statesv. Zackey Rahimi (Petitioner v. Respondent)\nQuestion presented: Does 18 U.S.C. § 922(g)(8), which prohibits the possession of firearms by persons subject to domestic-violence restraining orders, violate the Second Amendment?\nFacts: Between December 2020 and January 2021, Zackey Rahimi was involved in a series of violent incidents in Arlington, Texas, including multiple shootings and a hit-and-run. Rahimi was under a civil protective order for alleged assault against his ex-girlfriend, which explicitly prohibited him from possessing firearms. Police searched his home and found a rifle and a pistol, leading to Rahimi’s indictment for violating federal law 18 U.S.C. § 922(g)(8), which makes it unlawful for someone under a domestic violence restraining order to possess firearms. Rahimi moved to dismiss the indictment on constitutional grounds but was denied, as his argument was foreclosed by United States v. McGinnis, 956 F.3d 747 (5th Cir. 2020). Rahimi pleaded guilty but continued his constitutional challenge on appeal. As the appeal was pending, the U.S. Supreme Court decided New York State Rifle & Pistol Association, Inc. v. Bruen, 579 U.S. __ (2022). Rahimi argued that Bruen overruled McGinnis and thus that § 922(g)(8) was unconstitutional, and the U.S. Court of Appeals for the Fifth Circuit agreed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

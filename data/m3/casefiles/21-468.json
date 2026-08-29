@@ -1,0 +1,18 @@
+{
+ "docket": "21-468",
+ "case_name": "National Pork Producers Council v. Ross",
+ "term": 2022,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "National Pork Producers Council, et al.v. Karen Ross, in Her Official Capacity as Secretary of the California Department of Food & Agriculture, et al. (Petitioner v. Respondent)",
+ "question": "Does a California law that prohibits the in-state sale of pork from animals confined in a manner inconsistent with California standards violate the “dormant” component of the Constitution’s Commerce Clause?",
+ "facts": "In 2018, California voters passed Proposition 12, which amends the California Health and Safety Code to prohibit the sale of pork from animals confined in a manner inconsistent with California standards. Trade associations representing the pork industry and farmers challenged the law as violating the dormant Commerce Clause, which prohibits states from discriminating against interstate commerce or imposing undue burdens on interstate commerce. According to the challengers, Proposition 12 places an undue burden on interstate commerce and that it causes an impermissible “extraterritorial effect” because it effectively forces all or most hog farmers, regardless of their location, to comply with the California requirements yet mostly affects non-California transactions (because 87% of the pork produced in the country is consumed outside of California). The district court dismissed the complaint for failure to state a claim, and the U.S. Court of Appeals for the Ninth Circuit affirmed, finding the complaint did not plausibly plead that Proposition 12 violates the dormant Commerce Clause under either theory.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — National Pork Producers Council v. Ross\nDocket: 21-468 | Term: OT2022 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: National Pork Producers Council, et al.v. Karen Ross, in Her Official Capacity as Secretary of the California Department of Food & Agriculture, et al. (Petitioner v. Respondent)\nQuestion presented: Does a California law that prohibits the in-state sale of pork from animals confined in a manner inconsistent with California standards violate the “dormant” component of the Constitution’s Commerce Clause?\nFacts: In 2018, California voters passed Proposition 12, which amends the California Health and Safety Code to prohibit the sale of pork from animals confined in a manner inconsistent with California standards. Trade associations representing the pork industry and farmers challenged the law as violating the dormant Commerce Clause, which prohibits states from discriminating against interstate commerce or imposing undue burdens on interstate commerce. According to the challengers, Proposition 12 places an undue burden on interstate commerce and that it causes an impermissible “extraterritorial effect” because it effectively forces all or most hog farmers, regardless of their location, to comply with the California requirements yet mostly affects non-California transactions (because 87% of the pork produced in the country is consumed outside of California). The district court dismissed the complaint for failure to state a claim, and the U.S. Court of Appeals for the Ninth Circuit affirmed, finding the complaint did not plausibly plead that Proposition 12 violates the dormant Commerce Clause under either theory.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

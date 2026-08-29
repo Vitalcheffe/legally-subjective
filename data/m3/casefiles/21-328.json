@@ -1,0 +1,18 @@
+{
+ "docket": "21-328",
+ "case_name": "Morgan v. Sundance, Inc.",
+ "term": 2021,
+ "issue_area": "7",
+ "lc_disposition": "4",
+ "lower_court": "United States Court of Appeals for the Eighth Circuit",
+ "parties": "Robyn Morganv. Sundance, Inc. (Petitioner v. Respondent)",
+ "question": "Does the arbitration-specific requirement that the proponent of a contractual waiver defense prove prejudice violate the Supreme Court’s instruction that lower courts must “place arbitration agreements on an equal footing with other contracts”?",
+ "facts": "In September 2018, Robyn Morgan sued Sundance, Inc. for violations of the Fair Labor Standards Act, alleging that Sundance failed to pay her for overtime work. The district court denied Sundance’s motion to dismiss. Sundance then answered Morgan's complaint but did not assert its right to arbitrate Morgan's claims. After filing its answer, Morgan participated in a settlement mediation with plaintiffs in another similar lawsuit in Michigan. The Michigan case settled, but Morgan's case moved forward. Nearly eight months after the filing of Morgan's complaint, Sundance moved to compel arbitration. The district court denied the motion, concluding Sundance's participation in the litigation waived its right to arbitration. The U.S. Court of Appeals for the Eighth Circuit reversed.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Morgan v. Sundance, Inc.\nDocket: 21-328 | Term: OT2021 | Court below: United States Court of Appeals for the Eighth Circuit\nParties: Robyn Morganv. Sundance, Inc. (Petitioner v. Respondent)\nQuestion presented: Does the arbitration-specific requirement that the proponent of a contractual waiver defense prove prejudice violate the Supreme Court’s instruction that lower courts must “place arbitration agreements on an equal footing with other contracts”?\nFacts: In September 2018, Robyn Morgan sued Sundance, Inc. for violations of the Fair Labor Standards Act, alleging that Sundance failed to pay her for overtime work. The district court denied Sundance’s motion to dismiss. Sundance then answered Morgan's complaint but did not assert its right to arbitrate Morgan's claims. After filing its answer, Morgan participated in a settlement mediation with plaintiffs in another similar lawsuit in Michigan. The Michigan case settled, but Morgan's case moved forward. Nearly eight months after the filing of Morgan's complaint, Sundance moved to compel arbitration. The district court denied the motion, concluding Sundance's participation in the litigation waived its right to arbitration. The U.S. Court of Appeals for the Eighth Circuit reversed.\nPosture: Writ of certiorari\n",
+ "window": "test"
+}

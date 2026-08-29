@@ -1,0 +1,18 @@
+{
+ "docket": "17-949",
+ "case_name": "Sturgeon v. Frost",
+ "term": 2018,
+ "issue_area": "8",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Ninth Circuit",
+ "parties": "John Sturgeonv. Bert Frost, in His Official Capacity as Alaska Regional Director of the National Park Service, et al. (Petitioner v. Respondent)",
+ "question": "Is Alaska’s Nation River public land and therefore subject to the regulatory authority of the National Park Service?",
+ "facts": "John Sturgeon wanted to use his hovercraft on the Nation River, which runs through Alaska’s Yukon-Charley National Preserve conservation unit, designated as such by the Alaska National Interest Lands Conservation Act (ANILCA), 16 U.S.C. § 3101 et seq., to reach moose hunting grounds. The State of Alaska would permit him to do so, whereas the federal government would not pursuant to National Park Service regulations. Sturgeon argued that the Nation River belonged to Alaska, and that the National Park Service could not regulate or prohibit the use of hovercraft on that portion of the river. Sturgeon sought declaratory and injunctive relief barring the Park Service from enforcing its hovercraft ban. The district court and appellate court denied him relief, interpreting the statute as limiting the Park Service’s authority to impose Alaska-specific regulations on inholdings but not its authority to enforce nationwide regulations like the hovercraft rule. The US Supreme Court rejected this interpretation and remanded the case for further consideration. On remand from the US Supreme Court, the Ninth Circuit concluded that the Nation River was public land for purposes of ANILCA and thus that it was subject to the regulatory authority of the National Park Service.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Sturgeon v. Frost\nDocket: 17-949 | Term: OT2018 | Court below: United States Court of Appeals for the Ninth Circuit\nParties: John Sturgeonv. Bert Frost, in His Official Capacity as Alaska Regional Director of the National Park Service, et al. (Petitioner v. Respondent)\nQuestion presented: Is Alaska’s Nation River public land and therefore subject to the regulatory authority of the National Park Service?\nFacts: John Sturgeon wanted to use his hovercraft on the Nation River, which runs through Alaska’s Yukon-Charley National Preserve conservation unit, designated as such by the Alaska National Interest Lands Conservation Act (ANILCA), 16 U.S.C. § 3101 et seq., to reach moose hunting grounds. The State of Alaska would permit him to do so, whereas the federal government would not pursuant to National Park Service regulations. Sturgeon argued that the Nation River belonged to Alaska, and that the National Park Service could not regulate or prohibit the use of hovercraft on that portion of the river. Sturgeon sought declaratory and injunctive relief barring the Park Service from enforcing its hovercraft ban. The district court and appellate court denied him relief, interpreting the statute as limiting the Park Service’s authority to impose Alaska-specific regulations on inholdings but not its authority to enforce nationwide regulations like the hovercraft rule. The US Supreme Court rejected this interpretation and remanded the case for further consideration. On remand from the US Supreme Court, the Ninth Circuit concluded that the Nation River was public land for purposes of ANILCA and thus that it was subject to the regulatory authority of the National Park Service.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

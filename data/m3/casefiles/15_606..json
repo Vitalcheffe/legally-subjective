@@ -1,0 +1,18 @@
+{
+ "docket": "15–606.",
+ "case_name": "Pena-Rodriguez v. Colorado",
+ "term": 2016,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "Colorado Supreme Court",
+ "parties": "Miguel Angel Pena-Rodriguezv. Colorado (Petitioner v. Respondent)",
+ "question": "May Rule 606(b) of Colorado's Rules of Evidence bar evidence of racial bias offered to prove a violation of the Sixth Amendment right to an impartial jury?",
+ "facts": "Miguel Angel Pena-Rodriguez was convicted of unlawful sexual conduct and harassment in state trial court. After the entry of a guilty verdict, two jurors informed Pena-Rodriguez’s counsel that one of the other jurors made racially biased statements about Pena-Rodriguez and the alibi witness during jury deliberations. The trial court authorized Pena-Rodriguez’s counsel to contact the two jurors for their affidavits explaining what the “biased” juror said about Pena-Rodriguez or his alibi witness. Based on these affidavits, which related racially biased statements about Pena-Rodriguez’s likely guilt and the alibi witness’ lack of credibility because both were Hispanic, Pena-Rodriguez moved for a new trial. The trial court denied the motion, and the Colorado Court of Appeals affirmed. The Supreme Court of Colorado held the jurors’ affidavits were inadmissible under Rule 606(b) of Colorado’s Rules of Evidence, which prohibits juror testimony on any matter occurring during the jury deliberations. The Supreme Court of Colorado also held Rule 606(b) did not violate Pena-Rodriguez’s Sixth Amendment right to an impartial jury because Pena-Rodriguez had waived that right by failing to adequately question jurors about their racial bias during voir dire.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Pena-Rodriguez v. Colorado\nDocket: 15–606. | Term: OT2016 | Court below: Colorado Supreme Court\nParties: Miguel Angel Pena-Rodriguezv. Colorado (Petitioner v. Respondent)\nQuestion presented: May Rule 606(b) of Colorado's Rules of Evidence bar evidence of racial bias offered to prove a violation of the Sixth Amendment right to an impartial jury?\nFacts: Miguel Angel Pena-Rodriguez was convicted of unlawful sexual conduct and harassment in state trial court. After the entry of a guilty verdict, two jurors informed Pena-Rodriguez’s counsel that one of the other jurors made racially biased statements about Pena-Rodriguez and the alibi witness during jury deliberations. The trial court authorized Pena-Rodriguez’s counsel to contact the two jurors for their affidavits explaining what the “biased” juror said about Pena-Rodriguez or his alibi witness. Based on these affidavits, which related racially biased statements about Pena-Rodriguez’s likely guilt and the alibi witness’ lack of credibility because both were Hispanic, Pena-Rodriguez moved for a new trial. The trial court denied the motion, and the Colorado Court of Appeals affirmed. The Supreme Court of Colorado held the jurors’ affidavits were inadmissible under Rule 606(b) of Colorado’s Rules of Evidence, which prohibits juror testimony on any matter occurring during the jury deliberations. The Supreme Court of Colorado also held Rule 606(b) did not violate Pena-Rodriguez’s Sixth Amendment right to an impartial jury because Pena-Rodriguez had waived that right by failing to adequately question jurors about their racial bias during voir dire.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

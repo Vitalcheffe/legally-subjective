@@ -1,0 +1,18 @@
+{
+ "docket": "No. 18-5924",
+ "case_name": "Ramos v. Louisiana",
+ "term": 2019,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "State appellate court",
+ "parties": "Evangelisto Ramosv. State of Louisiana (Petitioner v. Respondent)",
+ "question": "Does the Fourteenth Amendment fully incorporate the Sixth Amendment guarantee of a unanimous verdict against the states?",
+ "facts": "Evangelisto Ramos was charged with second-degree murder and exercised his right to a jury trial. After deliberating, ten of the twelve jurors found that the prosecution had proven its case against Ramos beyond a reasonable doubt, while two jurors reached the opposite conclusion. Under Louisiana’s non-unanimous jury verdict law, agreement of only ten jurors is sufficient to enter a guilty verdict, so Ramos was sentenced to life in prison without the possibility of parole. Ramos appealed his case, and the state appellate court affirmed the lower court. The Louisiana Supreme Court denied review.",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Ramos v. Louisiana\nDocket: No. 18-5924 | Term: OT2019 | Court below: State appellate court\nParties: Evangelisto Ramosv. State of Louisiana (Petitioner v. Respondent)\nQuestion presented: Does the Fourteenth Amendment fully incorporate the Sixth Amendment guarantee of a unanimous verdict against the states?\nFacts: Evangelisto Ramos was charged with second-degree murder and exercised his right to a jury trial. After deliberating, ten of the twelve jurors found that the prosecution had proven its case against Ramos beyond a reasonable doubt, while two jurors reached the opposite conclusion. Under Louisiana’s non-unanimous jury verdict law, agreement of only ten jurors is sufficient to enter a guilty verdict, so Ramos was sentenced to life in prison without the possibility of parole. Ramos appealed his case, and the state appellate court affirmed the lower court. The Louisiana Supreme Court denied review.\nPosture: Writ of certiorari\n",
+ "window": "train"
+}

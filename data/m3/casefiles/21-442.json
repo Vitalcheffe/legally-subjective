@@ -1,0 +1,18 @@
+{
+ "docket": "21-442",
+ "case_name": "Reed v. Goertz",
+ "term": 2022,
+ "issue_area": "1",
+ "lc_disposition": "2",
+ "lower_court": "United States Court of Appeals for the Fifth Circuit",
+ "parties": "Rodney Reedv. Bryan Goertz, et al. (Petitioner v. Respondent)",
+ "question": "When does the statute of limitations for a 42 U.S.C. § 1983 claim seeking DNA testing of crime-scene evidence begin to run?",
+ "facts": "Rodney Reed was sentenced to death in Texas for the 1996 rape and murder of Stacey Stites. He unsuccessfully sought federal post-conviction relief, and when the state asked to set an execution date, Reed requested to have DNA testing conducted on several items on or near the victim’s body. A state trial court declined his request. Reed then filed a federal civil rights lawsuit under 42 U.S.C. § 1983 challenging the constitutionality of the Texas law governing post-conviction DNA testing. The district court dismissed his claim, and the U.S. Court of Appeals for the Fifth Circuit affirmed the dismissal on the grounds that Reed’s claims are barred by the state’s two-year statute of limitations for personal injury claims, which begins to run as soon as the plaintiff becomes aware that he has suffered an injury.”",
+ "posture": "Writ of certiorari",
+ "sources": {
+  "oyez": true,
+  "scdb": true
+ },
+ "instruction": "CASE FILE — Reed v. Goertz\nDocket: 21-442 | Term: OT2022 | Court below: United States Court of Appeals for the Fifth Circuit\nParties: Rodney Reedv. Bryan Goertz, et al. (Petitioner v. Respondent)\nQuestion presented: When does the statute of limitations for a 42 U.S.C. § 1983 claim seeking DNA testing of crime-scene evidence begin to run?\nFacts: Rodney Reed was sentenced to death in Texas for the 1996 rape and murder of Stacey Stites. He unsuccessfully sought federal post-conviction relief, and when the state asked to set an execution date, Reed requested to have DNA testing conducted on several items on or near the victim’s body. A state trial court declined his request. Reed then filed a federal civil rights lawsuit under 42 U.S.C. § 1983 challenging the constitutionality of the Texas law governing post-conviction DNA testing. The district court dismissed his claim, and the U.S. Court of Appeals for the Fifth Circuit affirmed the dismissal on the grounds that Reed’s claims are barred by the state’s two-year statute of limitations for personal injury claims, which begins to run as soon as the plaintiff becomes aware that he has suffered an injury.”\nPosture: Writ of certiorari\n",
+ "window": "test"
+}
