@@ -28,6 +28,7 @@ import argparse
 import gzip
 import json
 import os
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -35,7 +36,11 @@ import urllib.request
 ROOT = "/home/z/my-project/legally-subjective"
 OPINIONS = os.path.join(ROOT, "data", "processed", "corpus_opinions_v1.jsonl.gz")
 OUT_DIR = os.path.join(ROOT, "data", "raw", "opinion_texts")
-OUT = os.path.join(OUT_DIR, "opinions_text.jsonl.gz")
+# Sortie en TEXTE BRUT (plus de gzip append) : le 2026-08-29, des appends
+# gzip interrompus ont corrompu le fichier (42 enregistrements perdus).
+# Un append texte est sûr : une dernière ligne tronquée est simplement
+# ignorée par le lecteur robuste (fetch_opinion_texts_batch.load_all_records).
+OUT = os.path.join(OUT_DIR, "opinions_text.jsonl")
 STATE = os.path.join(OUT_DIR, "state.json")
 BASE = "https://www.courtlistener.com/api/rest/v4/opinions/"
 
@@ -96,10 +101,28 @@ def main():
             json.dump({"done": sorted(done)}, fs)
         os.replace(STATE + ".tmp", STATE)
 
+    # ---- RÉCONCILIATION état <-> fichiers réels (leçon du 2026-08-29) ----
+    # state.json peut déclarer plus d'opinions que ce qui est réellement
+    # lisible (corruption gzip passée). La vérité : ce qui est lisible.
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import fetch_opinion_texts_batch as _fb
+        readable = set(_fb.load_all_records())
+        lost = done - readable
+        if lost:
+            log(f"RÉCONCILIATION : {len(lost)} ids déclarées mais illisibles — "
+                f"retournent en TODO")
+            done = done & readable
+            with open(STATE + ".tmp", "w") as fs:
+                json.dump({"done": sorted(done)}, fs)
+            os.replace(STATE + ".tmp", STATE)
+    except Exception as e:  # le repli ne doit jamais bloquer la collecte
+        log(f"(réconciliation ignorée : {e})")
+
     mode = "at" if os.path.exists(OUT) else "wt"
     n = 0
     t0 = time.time()
-    with gzip.open(OUT, mode, encoding="utf-8") as fout:
+    with open(OUT, mode, encoding="utf-8") as fout:
         for oid in ids:
             if oid in done:
                 continue
@@ -150,6 +173,7 @@ def main():
                 "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             }
             fout.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            fout.flush()
             n += 1
             done.add(oid)
             with open(STATE + ".tmp", "w") as fs:

@@ -41,6 +41,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import zlib
 
 ROOT = "/home/z/my-project/legally-subjective"
 OPINIONS = os.path.join(ROOT, "data", "processed", "corpus_opinions_v1.jsonl.gz")
@@ -150,10 +151,71 @@ def rec_from(d, oid, want_html=False):
 
 
 def write_records(recs):
-    mode = "at" if os.path.exists(OUT) else "wt"
-    with gzip.open(OUT, mode, encoding="utf-8") as f:
-        for rec in recs:
-            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    """Obsolète en interne — conservée pour compat : réécrit TOUT le fichier
+    proprement (un seul membre gzip) à partir des enregistrements donnés +
+    ce qui est déjà lisible dans le fichier existant."""
+    existing = load_all_records()
+    for rec in recs:
+        existing[rec["opinion_id"]] = rec
+    rebuild_output(existing)
+
+
+def load_all_records():
+    """Lecteur ROBUSTE du fichier de sortie (leçon du 2026-08-29 : le drip
+    écrivait des membres gzip en append ; un processus tué au milieu d'une
+    écriture brisait la chaîne et 42 enregistrements sont devenus
+    illisibles). Ce lecteur sauve tout ce qui est sauvable :
+    - chaque membre gzip est décompressé indépendamment ;
+    - les lignes JSON valides sont conservées (la dernière ligne tronquée
+      d'un membre tué en pleine écriture est ignorée) ;
+    - un éventuel opinions_text.jsonl non compressé est aussi fusionné.
+    Retourne {opinion_id: record}."""
+    records = {}
+    # 1. fichier gz multi-membres, sauvetage membre par membre
+    if os.path.exists(OUT):
+        raw = open(OUT, "rb").read()
+        starts = []
+        for i in range(len(raw) - 2):
+            if raw[i] == 0x1F and raw[i + 1] == 0x8B and raw[i + 2] == 8:
+                starts.append(i)
+        for s in starts:
+            d = zlib.decompressobj(16 + zlib.MAX_WBITS)
+            try:
+                data = d.decompress(raw[s:])
+            except Exception:
+                continue
+            _absorb_lines(data, records)
+    # 2. jsonl non compressé (chemin du drip corrigé)
+    plain = OUT[:-3] if OUT.endswith(".gz") else OUT + ".jsonl"
+    if os.path.exists(plain):
+        try:
+            _absorb_lines(open(plain, "rb").read(), records)
+        except OSError:
+            pass
+    return records
+
+
+def _absorb_lines(data, records):
+    for line in data.split(b"\n"):
+        if not line.strip():
+            continue
+        try:
+            r = json.loads(line)
+            if isinstance(r, dict) and r.get("opinion_id"):
+                records[r["opinion_id"]] = r
+        except Exception:
+            continue
+
+
+def rebuild_output(records):
+    """Réécriture ATOMIQUE du fichier en UN SEUL membre gzip propre :
+    écriture dans .tmp puis os.replace — un processus tué à tout instant
+    laisse soit l'ancien fichier, soit le nouveau, jamais un hybride."""
+    tmp = OUT + ".tmp"
+    with gzip.open(tmp, "wt", encoding="utf-8") as f:
+        for oid in sorted(records):
+            f.write(json.dumps(records[oid], ensure_ascii=False) + "\n")
+    os.replace(tmp, OUT)
 
 
 def query_for(ids, page_size, with_fields):
@@ -217,13 +279,44 @@ def main():
 
     ids_all = expected_ids()
     done, cooldown, missing = load_state()
+
+    # ---- RÉCONCILIATION état <-> fichier réel ----
+    # Le state.json peut mentir (corruption du 2026-08-29 : 112 déclarées,
+    # 70 lisibles). La vérité est ce qui est LISIBLE dans le fichier.
+    records = load_all_records()
+    records = {k: v for k, v in records.items() if k in set(ids_all)}
+    if set(records) != done:
+        lost = done - set(records)
+        if lost:
+            log(f"RÉCONCILIATION : {len(lost)} ids déclarées dans state.json mais "
+                f"absentes du fichier (corruption passée) — retournent en TODO")
+        done = set(records)
+        save_state(done, missing=missing)
+    # guérison immédiate : réécrire le gz en UN membre propre, une fois
+    if records and os.path.exists(OUT):
+        rebuild_output(records)
+
     if cooldown and cooldown > time.time():
         log(f"token en cooldown — encore {int(cooldown - time.time())}s ; passe sautée")
         raise SystemExit(0)
+    # Le state.json peut mentir (corruption du 2026-08-29 : 112 déclarées,
+    # 70 lisibles). La vérité est ce qui est LISIBLE dans le fichier.
+    records = load_all_records()
+    records = {k: v for k, v in records.items() if k in set(ids_all)}
+    if set(records) != done:
+        lost = done - set(records)
+        if lost:
+            log(f"RÉCONCILIATION : {len(lost)} ids déclarées dans state.json mais "
+                f"absentes du fichier (corruption passée) — retournent en TODO")
+        done = set(records)
+        save_state(done, missing=missing)
+    # guérison immédiate : réécrire le gz en UN membre propre, une fois
+    if records and os.path.exists(OUT):
+        rebuild_output(records)
 
     todo = [i for i in ids_all if i not in done and i not in missing]
-    log(f"{len(ids_all)} attendues ; {len(done)} faites ; {len(missing)} missing ; "
-        f"{len(todo)} à faire")
+    log(f"{len(ids_all)} attendues ; {len(done)} faites (fichier : {len(records)}) ; "
+        f"{len(missing)} missing ; {len(todo)} à faire")
 
     # ------- SONDE : 3 ids réels, page_size=100 -------
     probe_ids = todo[:3] if todo else ids_all[:3]
@@ -264,10 +357,11 @@ def main():
         if not d.get("id"):
             continue
         if d.get("plain_text"):
-            write_records([rec_from(d, d["id"])])
+            records[d["id"]] = rec_from(d, d["id"])
             done.add(d["id"])
         else:
             deferred.append(d["id"])
+    rebuild_output(records)
     save_state(done, missing=missing)
     log(f"sonde créditée (total {len(done)}/{len(ids_all)}) ; "
         f"{len(deferred)} différées (sans texte)")
@@ -293,8 +387,10 @@ def main():
                 done.add(oid)
             else:
                 deferred.append(oid)
+        for rec in recs:
+            records[rec["opinion_id"]] = rec
         if recs:
-            write_records(recs)
+            rebuild_output(records)
         save_state(done, missing=missing)
         log(f"lot {i // args.batch + 1}/{(len(remaining) + args.batch - 1) // args.batch} : "
             f"+{len(recs)} (total {len(done)}/{len(ids_all)}) ; "
@@ -319,7 +415,9 @@ def main():
             recs = [rec_from(results[oid], oid, want_html=True)
                     for oid in chunk if oid in results]
             if recs:
-                write_records(recs)
+                for rec in recs:
+                    records[rec["opinion_id"]] = rec
+                rebuild_output(records)
                 for rec in recs:
                     done.add(rec["opinion_id"])
                 save_state(done, missing=missing)
@@ -330,7 +428,8 @@ def main():
         for oid in [i for i in deferred if i not in done]:
             try:
                 d = api_get_detail(oid, token)
-                write_records([rec_from(d, oid, want_html=True)])
+                records[oid] = rec_from(d, oid, want_html=True)
+                rebuild_output(records)
                 done.add(oid)
                 save_state(done, missing=missing)
                 time.sleep(max(args.pace, 1.0))
@@ -354,7 +453,8 @@ def main():
             try:
                 d = api_get_detail(oid, token)
                 rec = rec_from(d, oid, want_html=True)
-                write_records([rec])
+                records[oid] = rec
+                rebuild_output(records)
                 done.add(oid)
                 save_state(done, missing=missing)
                 time.sleep(max(args.pace, 1.0))
