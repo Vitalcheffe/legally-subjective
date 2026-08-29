@@ -35,8 +35,12 @@ def html_to_text(s):
     if not s:
         return ""
     try:
+        import warnings
+
         from bs4 import BeautifulSoup
-        soup = BeautifulSoup(s, "html.parser")
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")  # XMLParsedAsHTMLWarning (cosmétique)
+            soup = BeautifulSoup(s, "html.parser")
         for t in soup(["script", "style"]):
             t.decompose()
         txt = soup.get_text("\n")
@@ -126,8 +130,9 @@ def main():
             if old:
                 t = old.get("plain_text") or old.get("text") or ""
                 if t.strip():
-                    text, src = t.strip(), "legacy:" + str(
-                        old.get("source", old.get("origin", "bc")))
+                    raw_src = str(old.get("source", old.get("origin", "bc")))
+                    raw_src = raw_src.removeprefix("legacy:")  # idempotence
+                    text, src = t.strip(), "legacy:" + raw_src
                     stats["source"][src] = stats["source"].get(src, 0) + 1
         if not text:
             missing.append(oid)
