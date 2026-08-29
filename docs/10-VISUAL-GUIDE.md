@@ -1,4 +1,4 @@
-# Legally Subjective — The Visual Guide (LS-EXHIBIT-1.1)
+# Legally Subjective — The Visual Guide (LS-EXHIBIT-1.2)
 
 > This document is the complete manual for producing **exhibit-grade visuals**
 > for Legally Subjective — README banners, paper figures, and documentation
@@ -245,37 +245,66 @@ Tuesday than on Monday is not evidence.
 > GitHub README reads as a foreign object, not as a filed document.
 > The law is amended in writing, as the house requires.
 
-Every exhibit now ships as a **transparent SVG that carries both faces
-> in one file**. Ink colors are CSS custom properties, and the SVG embeds
+Every exhibit now ships as **two transparent SVG files, one per face**:
+`name.light.svg` (dark ink, for light papers) and `name.dark.svg`
+(light ink, for dark papers). Each file is a **fixed, statically-
+resolved palette** — no CSS variables, no media queries, no runtime
+switching — baked into a plain `<style>` block, so it renders
+identically in every SVG consumer.
 
-```css
-:root { --ink:#0a0a0a; --hair:#e3e3e3; --sig:#e4002b; /* … */ }
-@media (prefers-color-scheme: dark) {
-  :root { --ink:#e6edf3; --hair:#30363d; --sig:#ff4d6a; /* … */ }
-}
+> **Amendment 1.2 — why one file failed.** LS-EXHIBIT-1.1 put a
+> `prefers-color-scheme` media query *inside* the SVG with CSS
+> variables switching the palette. It worked when the SVG was opened
+> as a document — and **silently failed on GitHub**: README images
+> are served through the camo proxy inside an `<img>` element, and an
+> SVG rendered as an image is an isolated document whose internal
+> media query does **not** follow the page's color scheme. Field
+> result (measured 2026-08-29): the dark face never fired; a reader
+> in GitHub dark got near-black ink `#0a0a0a` on GitHub's dark paper
+> `#0d1117` — invisible text. The reliable mechanism is the one
+> GitHub itself documents: **the page** picks the file.
+
+The README mounts each exhibit with
+
+```html
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/name.dark.svg">
+  <img src="docs/assets/name.light.svg" alt="…" width="100%">
+</picture>
 ```
 
-so the exhibit follows the reader's scheme — GitHub light, GitHub dark,
-and the browser's automatic day/night switching. The signal red
-brightens (`#e4002b` → `#ff4d6a`) so it keeps the same perceptual weight
-on both papers. Paired fills (the agreement matrix bins) ship their own
-fill+text pairs per scheme, so in-cell numbers never lose contrast in
- either face.
+The media attribute is evaluated by **github.com's own HTML**, which
+knows the reader's theme. It degrades honestly: a browser that ignores
+the query shows the light face — never a broken one.
 
-**Known limit, documented:** the media query follows the *browser*
-preference, not a manually-forced GitHub theme. A reader whose OS is
-light but who forced GitHub dark gets the light face. This is the
-standard behavior of every adaptive-image technique available in
-GitHub READMEs today; it is accepted and documented rather than hidden.
+**Contrast is law, and it is enforced by the build.**
+`scripts/qa_exhibits.py` gates every file: text tokens must hold
+**WCAG AA (≥ 4.5:1)** against their target paper — light face against
+`#ffffff`, dark face against GitHub dark `#0d1117`; matrix numerals
+against their own cell fill; data marks ≥ 3:1; and the ink bounding
+box must keep ≥ 20px of air on all four sides of the 1200px raster
+(the margin law). Invisible ink is a build failure, not a review
+finding. Amendment 1.2 also lifted the borderline tokens: light ink3
+`#8c8c8c → #6e7379` (3.4 → 4.8:1), dark ink3 `#6e7681 → #768390`
+(4.1 → 4.9:1), light hairline `#e3e3e3 → #d0d7de` (GitHub's own
+border token), dark matrix m4 `#6e7681 → #768390` so in-cell numerals
+clear AA against their fill.
+
+The signal red keeps its perceptual weight per face (`#e4002b` on
+white, 4.9:1 → `#ff4d6a` on GitHub dark, 5.9:1). Paired fills (the
+agreement matrix bins) ship their own fill+text pairs per face, so
+in-cell numbers never lose contrast in either face.
+
+**Known limit, documented:** the `<picture>` query follows the
+*browser* preference, not a manually-forced GitHub theme. A reader
+whose OS is light but who forced GitHub dark gets the light face.
+This is the standard behavior of GitHub's own adaptive-image
+mechanism; it is accepted and documented rather than hidden.
 
 **No background, ever.** The exhibit is transparent. It lives on the
 reader's paper. Never draw a background rect, never bake a paper color
 into a raster. If an element needs separation from the page, separate
 it with a hairline or whitespace — never with a slab.
-
-```html
-<img src="docs/assets/hero.svg" alt="…" width="100%">
-```
 
 ---
 

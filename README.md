@@ -3,7 +3,10 @@
 > **Subjectivity, measured.** — Measuring the upper bound of predictability
 > in U.S. Supreme Court decisions, using public data and a zero-euro budget.
 
-<img src="docs/assets/hero.svg" alt="Legally Subjective — the bench, thirteen filed dockets, disposition rates with Wilson 95% intervals" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/hero.dark.svg">
+  <img src="docs/assets/hero.light.svg" alt="Legally Subjective — the bench, thirteen filed dockets, disposition rates with Wilson 95% intervals" width="100%">
+</picture>
 
 ---
 
@@ -29,7 +32,10 @@ true state of the program at every step — never an invented prediction.
 
 ## The record
 
-<img src="docs/assets/corpus-window.svg" alt="The corpus window — 569 case ticks, OT2015–OT2023, the seventy-nine five-four decisions in red" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/corpus-window.dark.svg">
+  <img src="docs/assets/corpus-window.light.svg" alt="The corpus window — 569 case ticks, OT2015–OT2023, the seventy-nine five-four decisions in red" width="100%">
+</picture>
 
 **Corpus-Monde v1** (frozen 2026-08-28): every argued Supreme Court case
 from OT2015 to OT2023 — CourtListener metadata fused with SCDB 2025_01
@@ -47,7 +53,10 @@ votes, every source hash-chained.
 
 ## The bar
 
-<img src="docs/assets/baselines.svg" alt="The number to beat — five statistical baselines with Wilson 95% intervals, the 63.7% bar in red" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/baselines.dark.svg">
+  <img src="docs/assets/baselines.light.svg" alt="The number to beat — five statistical baselines with Wilson 95% intervals, the 63.7% bar in red" width="100%">
+</picture>
 
 Before any model is trained, the statistical baselines fix the price of
 admission (test set OT2020–2023, Wilson 95% intervals):
@@ -110,7 +119,10 @@ figures regenerate via `scripts/paper_figures.py`):
 
 ## The lock
 
-<img src="docs/assets/sealed.svg" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/sealed.dark.svg">
+  <img src="docs/assets/sealed.light.svg" alt="The sealed fifty — twenty-nine legible five-four cases and fifty redaction bars" width="100%">
+</picture>
 
 Seventy-nine decisions came down 5–4. Fifty of them are **sealed** until
 the Final Test: selected deterministically (Random MT, seeded by the
@@ -134,18 +146,24 @@ Both outcomes are results.
 
 ## The bench
 
-<img src="docs/assets/agreement.svg" alt="Sixty pairs — the 12×12 vote-agreement matrix, closest and widest pairs marked in red" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/agreement.dark.svg">
+  <img src="docs/assets/agreement.light.svg" alt="Sixty pairs — the 12×12 vote-agreement matrix, closest and widest pairs marked in red" width="100%">
+</picture>
 
 Sixty pairs, each measured on their common votes (2015–2024). The closest
 pair: Kavanaugh–Roberts, **94.6%** [91.6; 96.8]. The widest gap:
-Sotomayor–Thomas, **54.3%** [50.0; 58.5]. Ordered conservative to liberal,
+Sotomayor–Thomas, **54.2%** [50.0; 58.5]. Ordered conservative to liberal,
 the blocks tell the story before the numbers do.
 
 ---
 
 ## The storefront
 
-<img src="docs/assets/the-draw.svg" alt="The Draw — the wheel of thirteen justices, one segment drawn in red" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/the-draw.dark.svg">
+  <img src="docs/assets/the-draw.light.svg" alt="The Draw — the wheel of thirteen justices, one segment drawn in red" width="100%">
+</picture>
 
 The site (Next.js) is the experiment's public face — [run it locally](#reproduce),
 or read it like a case file:
@@ -182,7 +200,7 @@ invented prediction.
 | `data/raw/provenance/` | SHA-256 of every raw source + exact filter predicates |
 | `results/m2_baselines.{json,md}` | M2 statistical baselines, Wilson 95% |
 | `docs/` | Vision, methodology, corpus, baselines, protocol, reproducibility, ethics, roadmap, limits, resources, **visual guide** |
-| `docs/assets/` | The exhibits above — adaptive SVGs (LS-EXHIBIT-1.1: transparent, dark/light-aware, text as paths) |
+| `docs/assets/` | The exhibits above — two-face SVGs (LS-EXHIBIT-1.2: transparent, one file per face picked by GitHub's `<picture>`, text as paths) |
 | `scripts/` | The full, reproducible collection and build chain |
 | `src/`, `public/`, `prisma/` | The site (Next.js) |
 
@@ -213,7 +231,8 @@ in [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md). The
 exhibits in this README regenerate from the live data in one command:
 
 ```bash
-python3 scripts/make_exhibits.py   # -> docs/assets/*.svg
+python3 scripts/make_exhibits.py   # -> docs/assets/*.{light,dark}.svg
+python3 scripts/qa_exhibits.py      # -> structure + WCAG + margin gates
 ```
 
 They are pure SVG, drawn from the frozen corpus — no screenshots, no

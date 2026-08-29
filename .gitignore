@@ -66,3 +66,6 @@ server.log
 /cl_recent.json
 /oyez_*.json
 /oyez_href.txt
+
+# exhibit QA rasters — regenerable working artifacts (scripts/qa_exhibits.py)
+/docs/assets/qa/

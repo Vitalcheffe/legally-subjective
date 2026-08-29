@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 708" role="img">
 <style>
-:root{--ink:#0a0a0a;--ink2:#595959;--ink3:#8c8c8c;--hair:#e3e3e3;
---d1:#0a0a0a;--d2:#404040;--d3:#737373;--d4:#a6a6a6;--d5:#d4d4d4;--sig:#e4002b}
-@media (prefers-color-scheme:dark){:root{--ink:#e6edf3;--ink2:#8b949e;
---ink3:#6e7681;--hair:#30363d;--d1:#e6edf3;--d2:#c9d1d9;--d3:#8b949e;
---d4:#6e7681;--d5:#484f58;--sig:#ff4d6a}}
-.f-ink{fill:var(--ink)}.f-ink2{fill:var(--ink2)}.f-ink3{fill:var(--ink3)}
-.f-sig{fill:var(--sig)}.f-paper{fill:#ffffff}.f-none{fill:none}
-.b-ink{fill:var(--d1)}.b-d2{fill:var(--d2)}.b-d3{fill:var(--d3)}
-.b-d4{fill:var(--d4)}.b-d5{fill:var(--d5)}.b-sig{fill:var(--sig)}
-.s-ink{stroke:var(--ink);fill:none}.s-hair{stroke:var(--hair);fill:none}
-.s-sig{stroke:var(--sig);fill:none}
+.f-ink{fill:#e6edf3}.f-ink2{fill:#8b949e}.f-ink3{fill:#768390}
+.f-sig{fill:#ff4d6a}.f-none{fill:none}
+.b-ink{fill:#e6edf3}.b-d2{fill:#c9d1d9}.b-d3{fill:#8b949e}
+.b-d4{fill:#6e7681}.b-d5{fill:#484f58}.b-sig{fill:#ff4d6a}
+.s-ink{stroke:#e6edf3;fill:none}.s-hair{stroke:#30363d;fill:none}
+.s-sig{stroke:#ff4d6a;fill:none}
+.mc{stroke:#30363d;stroke-width:1}
+.m5{fill:#8b949e}.m5t{fill:#0d1117}.m4{fill:#768390}.m4t{fill:#0d1117}
+.m3{fill:#484f58}.m3t{fill:#e6edf3}.m2{fill:#21262d}.m2t{fill:#e6edf3}
+.m1{fill:#161b22}.m1t{fill:#e6edf3}
 line,path,rect,circle{shape-rendering:geometricPrecision}
-
 </style>
 <rect class="b-sig" x="145.000" y="84.000" width="118.000" height="56.000"/>
 <rect class="s-hair" x="273.000" y="84.000" width="118.000" height="56.000" stroke-width="1.2"/>
