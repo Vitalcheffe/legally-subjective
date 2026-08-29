@@ -34,7 +34,8 @@ REPO = os.path.join(ROOT, "repo")
 OPINIONS = os.path.join(ROOT, "data", "processed", "corpus_opinions_v1.jsonl.gz")
 OUT_DIR = os.path.join(ROOT, "data", "raw", "opinion_texts")
 STATE = os.path.join(OUT_DIR, "state.json")
-OUT = os.path.join(OUT_DIR, "opinions_text.jsonl.gz")
+OUT = os.path.join(OUT_DIR, "opinions_text.jsonl")       # drip (texte brut)
+OUT_GZ = os.path.join(OUT_DIR, "opinions_text.jsonl.gz")  # batch (gzip propre)
 MANIFEST = os.path.join(REPO, "data", "processed", "opinion_texts_manifest.json")
 FETCH = os.path.join(REPO, "scripts", "fetch_opinion_texts.py")
 FETCH_BATCH = os.path.join(REPO, "scripts", "fetch_opinion_texts_batch.py")
@@ -95,29 +96,39 @@ def done_ids():
 
 
 def build_manifest(exp):
-    """Empreinte du fichier produit + statistiques de complétion."""
+    """Empreinte du fichier produit + statistiques de complétion.
+    Lecture ROBUSTE (leçon du 2026-08-29 : des appends gzip interrompus ont
+    déjà corrompu le fichier — on relit via le lecteur qui sauve tout)."""
+    sys.path.insert(0, os.path.join(REPO, "scripts"))
+    import fetch_opinion_texts_batch as fb
+    records = fb.load_all_records()
     h_records = hashlib.sha256()
-    n, n_text = 0, 0
-    with gzip.open(OUT, "rt", encoding="utf-8") as f:
-        for line in f:
-            h_records.update(line.encode("utf-8"))
-            n += 1
-            if json.loads(line).get("plain_text"):
-                n_text += 1
+    n = 0
+    n_text = 0
+    for oid in sorted(records):
+        line = json.dumps(records[oid], ensure_ascii=False) + "\n"
+        h_records.update(line.encode("utf-8"))
+        n += 1
+        if records[oid].get("plain_text") or records[oid].get("html"):
+            n_text += 1
+    # empreinte du/des fichiers bruts sur disque
     h_file = hashlib.sha256()
-    with open(OUT, "rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            h_file.update(chunk)
+    for path in (OUT, OUT_GZ):
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                for chunk in iter(lambda: f.read(1 << 20), b""):
+                    h_file.update(chunk)
     man = {
-        "file": "data/raw/opinion_texts/opinions_text.jsonl.gz (hors git, volume)",
+        "file": "data/raw/opinion_texts/opinions_text.jsonl[.gz] (hors git, volume)",
         "purpose": "M1.5 — textes d'opinions du Corpus-Monde v1 (l'identité du corpus ne change pas)",
         "n_records": n,
-        "n_with_plain_text": n_text,
+        "n_with_text": n_text,
         "n_expected_ids": len(exp),
         "complete": done_ids() >= exp,
         "sha256_records": h_records.hexdigest(),
-        "sha256_gz_file": h_file.hexdigest(),
-        "bytes": os.path.getsize(OUT),
+        "sha256_files": h_file.hexdigest(),
+        "bytes": sum(os.path.getsize(p) for p in (OUT, OUT_GZ)
+                     if os.path.exists(p)),
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "source": "CourtListener API v4 /opinions/ (token ; lots id__in via "
                   "fetch_opinion_texts_batch.py, repli détail 1 req/opinion)",
