@@ -1,6 +1,6 @@
 # Journal d'audit zéro-fuite — M1.5.4
 
-Généré : 2026-08-30T08:31:01.846805+00:00  
+Généré : 2026-08-30T09:34:05.346576+00:00  
 Verdict : **PASS** (14 contrôles, 0 échec(s))
 
 | Contrôle | Verdict | Détail |
@@ -31,4 +31,4 @@ Verdict : **PASS** (14 contrôles, 0 échec(s))
 | clean_report | `312650bd4d8b` | 5,261 |
 | authorship | `d615859f8330` | 292,473 |
 | segments | `81dca2f8ad9a` | 40,035,472 |
-| manifest | `85a7963455c2` | 2,410 |
+| manifest | `6da82654a668` | 2,441 |

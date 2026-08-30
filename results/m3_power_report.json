@@ -1,0 +1,23 @@
+{
+  "cutoff": "2020-10-01",
+  "seats": {
+    "ACBarrett": {
+      "name": "Amy Coney Barrett",
+      "joined": "OT2020 (assermentée le 27-10-2020, première séance)",
+      "authored_total": 46,
+      "first_authored": "2021-03-04",
+      "authored_before_cutoff": 0,
+      "authored_after_cutoff": 46,
+      "train_rows": 0
+    },
+    "KBJackson": {
+      "name": "Ketanji Brown Jackson",
+      "joined": "OT2022 (assermentée le 30-06-2022)",
+      "authored_total": 22,
+      "first_authored": "2023-04-19",
+      "authored_before_cutoff": 0,
+      "authored_after_cutoff": 22,
+      "train_rows": 0
+    }
+  }
+}

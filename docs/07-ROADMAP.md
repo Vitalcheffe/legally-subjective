@@ -60,6 +60,32 @@ double, archivée dans `results/m3a_report.md` :
 - Audits anti-mémorisation : min-k% prob + cloze, publiés avec chaque adapter.
 - Publication : adapters sur Hugging Face, notebook Colab dans `notebooks/`.
 
+### Préparation M3 (fait le 2026-08-30, sans GPU)
+
+- **Rapport de puissance Barrett/Jackson** ✅
+  `results/m3_power_report.md` — 0 ligne n'est pas un accident de collecte :
+  Barrett (première opinion signée 2021-03-04, 46 au total) et Jackson
+  (2023-04-19, 22) n'ont **aucune** opinion avant la garde 2020-10-01.
+  Condition B dégradée pré-enregistrée pour ces sièges (base + prompt
+  persona, sans adaptateur, étiquetée `persona=base-prompt-only`) ; votes
+  couverts par A/C/D.
+- **Audits anti-mémorisation dans le notebook** ✅ section 7bis
+  (`min-k%` base-vs-adapter sur échantillon train + cloze verbatim,
+  résultats dans `m3b_report.json` → `memorization`).
+- **Corrections du builder** ✅ prompt persona exact (Roberts = *Chief*
+  Justice ; noms canoniques — Oyez dégradeait Alito/Gorsuch/Jackson en
+  slugs) ; **dates des segments propagées** (231/477 lignes triaient comme
+  « plus récentes » sans date et chargeaient la validation du split
+  temporel du notebook) ; audit re-passé **14/14 PASS** après
+  régénération.
+- **Pré-vol données** ✅ `results/m3_preflight.md` — 7 personas actives,
+  split réel train/val, part des lignes débordant MAX_LEN (troncature
+  queue documentée, forte pour Alito/Thomas — signal concentré sur le
+  début des opinions).
+
+L'étape suivante est l'exécution du notebook sur Colab (T4 suffit) :
+`notebooks/m3b_qlora_personas.ipynb`, option A (clone du repo public).
+
 ## M4 — Épreuve Finale
 
 Voir `docs/04-PROTOCOLE.md`. Une seule passe, quatre conditions, les 50
