@@ -67,7 +67,10 @@ md("## 1 · Environnement (versions épinglées, exécuter une fois)")
 code("""# ⚠️ Runtime → Change runtime type → GPU (T4 suffit). Colab seulement:
 # !nvidia-smi
 
-%pip -q install "transformers==4.46.3" "peft==0.13.2" "bitsandbytes==0.45.0" \\
+# bitsandbytes: PLANCHER >=0.46.2 (pas de pin exact) — la 0.45.0 importe
+# triton.ops sans garde, module supprimé dans triton>=3.2 (torch 2.11,
+# python 3.13 sur Colab 2026) → ModuleNotFoundError à l'import.
+%pip -q install "transformers==4.46.3" "peft==0.13.2" "bitsandbytes>=0.46.2" \\
                "accelerate==1.2.1" "datasets==3.1.0" "sentencepiece" "protobuf"
 import os, sys
 import importlib.metadata as _md
