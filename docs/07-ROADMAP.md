@@ -6,28 +6,33 @@
 |---|---|---|
 | **M1 — Corpus-Monde** | ✅ **gelé (2026-08-28)** | 569 affaires OT2015–2023, 1 778 opinions, votes SCDB, audio, scellé 5-4 |
 | **M2 — Baselines** | ✅ **fait** | Classe majoritaire, idéologie par juge, infirmation, accords inter-juges |
-| **M1.5 — Nettoyage** | ⏳ **en cours** | Textes d'opinions : collecte API — la physique réelle du token gratuit est maintenant mesurée : 5 req/min, ~55 req/h, **125 req/JOUR** (le drip unitaire ≈ 14 jours a été remplacé par le mode batch `scripts/fetch_opinion_texts_batch.py` : lots `id__in`, ~20 opinions par requête, tout le corpus en ~20 min de quota) ; le site vit déjà sur le corpus (13 fiches LS-J re-mesurées, `scripts/transfuse_v2.py` + `verify_dockets.py`) |
+| **M1.5 — Nettoyage** | ✅ **clos (2026-08-30, audit 14/14 PASS)** | Textes 1 778/1 778 (v2), puis dédup+normalisation (v3) : **793 textes distincts** (985 doublons de ré-ingestion fusionnés, carte de provenance complète), en-têtes/pages/notes traités, journal d'audit zéro-fuite `data/m15_store/clean/audit_leak_journal.md` ; personas reconstruits : **477 lignes train** propres (7 juges, Barrett/Jackson 0 par construction) |
 | **M3a — Challenger structuré** | ✅ **fait (2026-08-29, résultat nul)** | LR additif / boosting / interactions juge×domaine : 58,6–60,4 % — aucun ne bat B4 (63,1 % sur les mêmes lignes, McNemar p ≤ 0,047). La barre tient ; le signal restant vit dans le texte. `scripts/m3a_train.py` + `results/m3a_report.md` |
-| **M3 — Entraînement (LLM)** | ⏳ | Personas QLoRA (9 juges) sur Colab/Kaggle gratuits — attend la fin de M1.5 (chemin critique confirmé par M3a) |
+| **M3 — Entraînement (LLM)** | ⏳ **prochaine étape** | Personas QLoRA (7 juges avec données train) sur Colab/Kaggle gratuits — M1.5 étant clos, le chemin critique est ouvert (`notebooks/m3b_qlora_personas.ipynb` prêt) |
 | **M4 — Épreuve Finale** | ⏳ | Une seule passe sur les 50 affaires scellées |
 
-## M1.5 — Nettoyage (prochaine étape)
+## M1.5 — Nettoyage (clos — 2026-08-30)
 
-1. **Collecte des textes** : `scripts/fetch_opinion_texts_batch.py`
-   (lots `id__in`, ~89 requêtes au total — repli unitaire via
-   `scripts/fetch_opinion_texts.py`). La limite journalière du token
-   (125 req) compte des requêtes, pas des opinions. Les textes
-   complètent le corpus sans en changer l'identité — la règle M1 reste
-   gelée.
-2. **Déduplication** : les *slip opinions* ré-ingérés plusieurs fois par
-   CourtListener sont fusionnés par similarité (ratio ≥ 0,95 sur le texte
-   normalisé) ; on conserve l'exemplaire le plus propre.
-3. **Normalisation** : en-têtes de *slip opinion*, numéros de page, notes de
-   bas de page signalées mais conservées, encodage uniforme.
-4. **Découpe temporelle par juge** : pour chaque juge, date de coupure =
-   2 ans avant la fin du corpus ; tout ce qui précède = train, le reste =
-   test futur. Vérification automatique : zéro fuite documentée dans un
-   journal d'audit.
+1. **Collecte des textes** : ✅ 1 778/1 778 (voie D CDN storage 99,8 % +
+   clôture API 119/135 ; détail `data/m15_store/final/stats.json`).
+2. **Déduplication** : ✅ `scripts/m15_clean_texts.py` — ratio ≥ 0,95 sur
+   texte normalisé ; 1 778 → **793 textes distincts** (370 groupes exacts,
+   91 quasi-doublons fusionnés ; 985 ids documentés dans
+   `data/m15_store/clean/dedup_map.json`). L'inventaire du corpus reste
+   gelé — la carte de déduplication est de la provenance, pas une édition.
+3. **Normalisation** : ✅ même script — en-têtes de slip (« Cite as: »,
+   « (Slip Opinion) », en-têtes latéraux), numéros de page, marqueurs
+   Harvard, trim de syllabus à la signature ; dépliage des paragraphes ;
+   NFC ; notes de bas de page conservées et comptées (~12 100 estimées).
+4. **Journal d'audit zéro-fuite** : ✅ `scripts/m15_audit.py` —
+   **14/14 PASS** (`data/m15_store/clean/audit_leak_journal.md`) :
+   scellé intact et absent de tout dataset, discipline temporelle
+   (décision réelle < 2020-10-01), v3 sans doublons, personas conformes,
+   casefiles pré-décision, chaîne sha256.
+
+Après reconstruction sur v3 : personas **477 lignes train** (Roberts 43,
+Thomas 146, Alito 83, Sotomayor 95, Kagan 50, Gorsuch 39, Kavanaugh 21,
+Barrett 0, Jackson 0 — power report obligatoire pour ces deux derniers).
 
 ## M3a — Le challenger structuré (fait, résultat nul)
 

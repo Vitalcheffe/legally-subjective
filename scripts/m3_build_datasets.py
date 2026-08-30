@@ -33,6 +33,7 @@ Output: data/m3/casefiles/*.json, data/m3/personas/<slug>/{train,test}.jsonl,
         data/m3/manifest.json
 """
 import argparse
+import difflib
 import glob
 import gzip
 import hashlib
@@ -41,12 +42,16 @@ import json
 import os
 import re
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROC = os.path.join(REPO, "data", "processed")
 OYEZ = os.path.join(REPO, "data", "sources", "oyez")
 M3 = os.path.join(REPO, "data", "m3")
+# M1.5 closed: the canonical text store is now v3 (deduped + normalized,
+# committed). The old data/raw mirror (gitignored) is only a fallback.
+TEXTS_V3 = os.path.join(REPO, "data", "m15_store", "clean",
+                         "opinion_texts_v3.jsonl.gz")
 TEXTS = os.path.join(REPO, "data", "raw", "opinion_texts",
                      "opinions_text.jsonl.gz")
 
@@ -160,11 +165,20 @@ def load_oyez():
 
 
 def load_texts():
-    """opinion_id -> plain_text, from M1.5 output (may be absent)."""
-    if not os.path.exists(TEXTS):
-        return None
-    out = {}
-    with gzip.open(TEXTS, "rt", encoding="utf-8") as f:
+    """opinion_id -> clean text (M1.5 v3: deduplicated + normalized).
+
+    Returns (texts, aliases_of_kept): only KEPT exemplar ids map to text
+    (duplicate ids were merged in v3 — feeding them would re-inflate the
+    duplicates); aliases_of_kept gives, for each kept id, the corpus ids
+    that were merged into it (signature lookups may use them).
+    """
+    path = TEXTS_V3 if os.path.exists(TEXTS_V3) else TEXTS
+    if not os.path.exists(path):
+        return None, {}
+    source = "m15_store/clean v3" if path == TEXTS_V3 else "raw mirror"
+    print(f"[texts] loading from {source}")
+    out, aliases = {}, {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
         for line in f:
             try:
                 r = json.loads(line)
@@ -174,7 +188,9 @@ def load_texts():
             t = r.get("plain_text") or r.get("text") or ""
             if oid and t:
                 out[int(oid)] = t
-    return out
+                if r.get("alias_ids"):
+                    aliases[int(oid)] = [int(a) for a in r["alias_ids"]]
+    return out, aliases
 
 
 # --------------------------------------------------------------- builders --
@@ -229,7 +245,7 @@ def main():
     cases, opinions, stats, amap = load_corpus()
     is_sealed = sealed_dockets(stats)
     oyez = load_oyez()
-    texts = load_texts()
+    texts, aliases_of_kept = load_texts()
     slug_of_aid = {int(k): v["slug"] for k, v in amap["mapping"].items()}
     # anomaly enforcement: Jackson's out-of-window docket
     outlawed_dockets = set()
@@ -289,6 +305,9 @@ def main():
     manifest_personas = {}
     seen_text_hash = set()   # dédup des textes identiques sous plusieurs
                               # opinion_ids (doublons Harvard ↔ canoniques, M1.5)
+    seen_cmp_hash = set()    # même dédup en normalisation alnum-minuscule :
+                              # attrape les variantes de casse/ponctuation que
+                              # la normalisation d'espaces ne voit pas
     # cartes normalisées pour les segments (leur docket est déjà nettoyé)
     norm_case_map = {norm_docket(c["docket_number"]): c for c in cases}
     norm_outlawed = {norm_docket(d) for d in outlawed_dockets}
@@ -300,6 +319,39 @@ def main():
         if o.get("date_filed"):
             date_of_oid[o["opinion_id"]] = o["date_filed"]
     TRAIN_DATE_CUTOFF = "2020-10-01"   # début OT2020
+
+    # M1.5 v3 — texte normalisé pour comparaison, par docket : sert à la
+    # dédup par inclusion des segments (un segment extrait d'un doc
+    # pluriel ne doit pas s'ajouter si son texte est déjà DANS un texte
+    # conservé de la même affaire — le hash de préfixe ne le voit pas)
+    case_cmp_texts = defaultdict(list)
+    if texts:
+        oid_to_docket = {}
+        for o in opinions:
+            oid_to_docket[o["opinion_id"]] = cluster_to_docket.get(
+                str(o["cluster_id"]))
+        for oid, t in texts.items():
+            dn = oid_to_docket.get(oid)
+            if dn:
+                case_cmp_texts[dn].append(
+                    re.sub(r"[^a-z0-9]", "", t.lower()))
+
+    def segment_is_contained(dn, seg_text):
+        """True si le segment vit deja a l'interieur d'un texte conserve
+        de la meme affaire (inclusion exacte sur texte normalise, ou
+        ratio difflib >= 0.95 sur les 3000 premiers caracteres)."""
+        cand = case_cmp_texts.get(dn) or []
+        cmp = re.sub(r"[^a-z0-9]", "", seg_text.lower())
+        if len(cmp) < 80:
+            return True                    # segment dégénéré → rien à trainer
+        for ct in cand:
+            if len(ct) >= len(cmp) and cmp[:3000] and cmp[:3000] in ct:
+                return True
+            if cmp[:3000] and ct[:3000]:
+                if (difflib.SequenceMatcher(None, cmp[:3000], ct[:3000])
+                        .ratio() >= 0.95):
+                    return True
+        return False
     for slug in LA_CHAMBRE:
         name = next((j["justice_name"] for c in cases
                      for j in c.get("justices", []) if j["justice"] == slug),
@@ -309,6 +361,13 @@ def main():
         n_train_votes = n_test_votes = 0
         for o in opinions:
             sig = sig_of_oid.get(o["opinion_id"])
+            if sig is None:
+                # the kept exemplar may carry no signature while a merged
+                # duplicate id did — the alias signature stands in
+                sig = next((sig_of_oid[a]
+                            for a in aliases_of_kept.get(o["opinion_id"],
+                                                         [])
+                            if a in sig_of_oid), None)
             if sig is None or sig[0] != slug:
                 continue          # pas de signature fiable → pas de persona
             dn = cluster_to_docket.get(str(o["cluster_id"]))
@@ -331,8 +390,13 @@ def main():
                 h = hashlib.sha256(
                     " ".join(text.split())[:8000].encode()
                 ).hexdigest()
-                dup = h in seen_text_hash   # même texte sous un autre id
+                hc = hashlib.sha256(
+                    re.sub(r"[^a-z0-9]", "", text.lower())[:8000].encode()
+                ).hexdigest()
+                dup = (h in seen_text_hash       # même texte sous un autre id
+                       or hc in seen_cmp_hash)
                 seen_text_hash.add(h)
+                seen_cmp_hash.add(hc)
                 row = {
                     "opinion_id": o["opinion_id"],
                     "docket": dn,
@@ -367,8 +431,10 @@ def main():
         os.makedirs(pdir, exist_ok=True)
         # ---- segments d'opinions séparées (voie D, docs pluriels) --------
         # dissidences/concordances signées extraites des PDF complets ;
-        # mêmes gardes : fenêtre train, scellés, hors-service, dédup sha256
+        # mêmes gardes : fenêtre train, scellés, hors-service, dédup sha256,
+        # dédup par inclusion contre les textes v3 de la même affaire
         n_seg_added = 0
+        n_seg_dup = 0
         seg_path = os.path.join(REPO, "data", "m15_store", "storage",
                                 "segments.jsonl")
         if os.path.exists(seg_path):
@@ -385,14 +451,21 @@ def main():
                 d_src = date_of_oid.get(s.get("source_opinion"))
                 if not d_src or d_src >= TRAIN_DATE_CUTOFF:
                     continue   # sans date réelle = pas de train (no-leak law)
+                if segment_is_contained(c["docket_number"], s["text"]):
+                    n_seg_dup += 1
+                    continue
                 import hashlib
 
                 h = hashlib.sha256(
                     " ".join(s["text"].split())[:8000].encode()
                 ).hexdigest()
-                if h in seen_text_hash:
+                hc = hashlib.sha256(
+                    re.sub(r"[^a-z0-9]", "", s["text"].lower())[:8000]
+                    .encode()).hexdigest()
+                if h in seen_text_hash or hc in seen_cmp_hash:
                     continue
                 seen_text_hash.add(h)
+                seen_cmp_hash.add(hc)
                 train_rows.append({
                     "opinion_id": None,
                     "segment_of": s.get("source_opinion"),
@@ -409,6 +482,9 @@ def main():
                     "output": s["text"],
                 })
                 n_seg_added += 1
+        if n_seg_added or n_seg_dup:
+            print(f"  [{slug}] segments: +{n_seg_added} "
+                  f"({n_seg_dup} déjà contenus dans un texte v3)")
         with open(os.path.join(pdir, "train.jsonl"), "w",
                   encoding="utf-8") as f:
             for r in train_rows:
