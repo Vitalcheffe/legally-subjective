@@ -27,8 +27,8 @@ OUT = os.path.join(REPO, "data", "m15_store", "final", "authorship.jsonl")
 
 HEAD_RE = re.compile(
     r"(?:^|\n)\s*(?:JUSTICE|Justice|CHIEF JUSTICE|Chief Justice)\s+"
-    r"([A-Z][a-zA-Z]+)"
-    r"([^\n]{0,200}?)\s*(?:,?\s*(deliver\w*|concurr\w*|dissent\w*|"
+    r"(?P<name>[A-Z][a-zA-Z]+)"
+    r"(?P<filler>[^\n]{0,200}?)\s*(?:,?\s*(?P<role>deliver\w*|concurr\w*|dissent\w*|"
     r"with whom[^,.]*|announc\w*|filed a statement[^,.]*|"
     r"concurring in the judgment[^,.]*)"
     r"[^.]{0,180}\.)",
@@ -39,8 +39,8 @@ PER_CURIAM_RE = re.compile(
 # unanimous Court... » / « ROBERTS, C. J., delivered... » / « THOMAS, J.,
 # dissenting. » — le Chief Justice s'écrit « C. J. » avec espaces/points
 NAME_J_RE = re.compile(
-    r"(?:^|\n)\s*([A-Z][a-zA-Z]+),\s*(?:C\.\s?J\.|CJ\.|J\.)\s*,?\s*"
-    r"(deliver\w*|concurr\w*|dissent\w*|announc\w*|with whom[^,.]*)",
+    r"(?:^|\n)\s*(?P<name>[A-Z][a-zA-Z]+),\s*(?:C\.\s?J\.|CJ\.|J\.)\s*,?\s*"
+    r"(?P<role>deliver\w*|concurr\w*|dissent\w*|announc\w*|with whom[^,.]*)",
     re.M)
 SCAN_WINDOW = 6000            # l'en-tête vit au début du texte
 
@@ -57,8 +57,8 @@ SERVICE = {
 }
 
 
-def role_of(frag):
-    f = frag.lower()
+def role_of(frag, full=""):
+    f = ((frag or "") + " " + (full or ""))[:400].lower()
     if "dissent" in f and "concurr" in f:
         return "concurrence-dissent"
     if "dissent" in f:
@@ -99,7 +99,7 @@ def main():
             n_none += 1
             continue
         fmt = "justice-header" if m else "slip-name-j"
-        last = pick.group(1).lower()
+        last = pick.group("name").lower()
         hit = last2slug.get(last)
         if not hit:
             n_none += 1
@@ -114,7 +114,7 @@ def main():
             continue
         per_curiam = bool(PER_CURIAM_RE.search(text[:1500]))
         row = {"opinion_id": oid, "slug": slug, "author_id": aid,
-               "justice": pick.group(1), "role": role_of(pick.group(2) or ""),
+               "justice": pick.group("name"), "role": role_of(pick.group("role") or "", pick.group(0)),
                "method": fmt,
                "per_curiam": per_curiam,
                "corpus_author_id": corpus.get(oid, {}).get("author_id")}

@@ -289,6 +289,17 @@ def main():
     manifest_personas = {}
     seen_text_hash = set()   # dédup des textes identiques sous plusieurs
                               # opinion_ids (doublons Harvard ↔ canoniques, M1.5)
+    # cartes normalisées pour les segments (leur docket est déjà nettoyé)
+    norm_case_map = {norm_docket(c["docket_number"]): c for c in cases}
+    norm_outlawed = {norm_docket(d) for d in outlawed_dockets}
+    # date de décision par opinion (garde anti-fuite : des dockets anciens
+    # peuvent être décidés des années plus tard — le terme du fichier cases
+    # est docket-dérivé et ment ; la date réelle gouverne)
+    date_of_oid = {}
+    for o in opinions:
+        if o.get("date_filed"):
+            date_of_oid[o["opinion_id"]] = o["date_filed"]
+    TRAIN_DATE_CUTOFF = "2020-10-01"   # début OT2020
     for slug in LA_CHAMBRE:
         name = next((j["justice_name"] for c in cases
                      for j in c.get("justices", []) if j["justice"] == slug),
@@ -307,8 +318,14 @@ def main():
             term = int(c["term"])
             window = "train" if term <= TRAIN_END else \
                 ("test" if term >= TEST_START else None)
+            # garde de date réelle : un terme ≤2019 avec décision après le
+            # début OT2020 (docket ancien décidé tard) = fuite → la fenêtre
+            # effective devient test
+            d_filed = o.get("date_filed") or ""
+            if window == "train" and d_filed and d_filed >= TRAIN_DATE_CUTOFF:
+                window = "test"
             text = (texts or {}).get(o["opinion_id"])
-            if text:
+            if text and len(text) >= 1500:   # <1500c = snippet tronqué
                 import hashlib
 
                 h = hashlib.sha256(
@@ -348,6 +365,50 @@ def main():
                     n_train_votes += 1
         pdir = os.path.join(persona_dir, slug)
         os.makedirs(pdir, exist_ok=True)
+        # ---- segments d'opinions séparées (voie D, docs pluriels) --------
+        # dissidences/concordances signées extraites des PDF complets ;
+        # mêmes gardes : fenêtre train, scellés, hors-service, dédup sha256
+        n_seg_added = 0
+        seg_path = os.path.join(REPO, "data", "m15_store", "storage",
+                                "segments.jsonl")
+        if os.path.exists(seg_path):
+            for line in open(seg_path, encoding="utf-8"):
+                s = json.loads(line)
+                if s.get("slug") != slug:
+                    continue
+                dn = norm_docket(s.get("docket"))
+                c = norm_case_map.get(dn)
+                if not c or is_sealed(c) or dn in norm_outlawed:
+                    continue
+                if int(c["term"]) > TRAIN_END:
+                    continue
+                d_src = date_of_oid.get(s.get("source_opinion"))
+                if not d_src or d_src >= TRAIN_DATE_CUTOFF:
+                    continue   # sans date réelle = pas de train (no-leak law)
+                import hashlib
+
+                h = hashlib.sha256(
+                    " ".join(s["text"].split())[:8000].encode()
+                ).hexdigest()
+                if h in seen_text_hash:
+                    continue
+                seen_text_hash.add(h)
+                train_rows.append({
+                    "opinion_id": None,
+                    "segment_of": s.get("source_opinion"),
+                    "docket": c["docket_number"],
+                    "type": s.get("role"),
+                    "date_filed": None,
+                    "system": PERSONA_SYSTEM.format(name=name),
+                    "instruction": CASEFILE_INSTRUCTION.format(
+                        title=c.get("case_name"), docket=c["docket_number"],
+                        term=int(c["term"]), lower="record below",
+                        parties=c.get("case_name"),
+                        question="record below", facts="record below",
+                        posture="record below"),
+                    "output": s["text"],
+                })
+                n_seg_added += 1
         with open(os.path.join(pdir, "train.jsonl"), "w",
                   encoding="utf-8") as f:
             for r in train_rows:

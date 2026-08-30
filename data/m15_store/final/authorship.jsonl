@@ -18,7 +18,7 @@
 {"opinion_id": 3187496, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 3187537, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 3187538, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 3189783, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 3189783, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 3191118, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 3191119, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 3195092, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -113,7 +113,7 @@
 {"opinion_id": 4174311, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 4174312, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 4181046, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 4181048, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 4181048, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 4181049, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 4181050, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1747, "agree": true}
 {"opinion_id": 4181051, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
@@ -140,7 +140,7 @@
 {"opinion_id": 4246854, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 4246855, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
 {"opinion_id": 4246856, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
-{"opinion_id": 4248496, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": false}
+{"opinion_id": 4248496, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": false}
 {"opinion_id": 4248497, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 4248498, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4251727, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
@@ -223,7 +223,7 @@
 {"opinion_id": 4373196, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
 {"opinion_id": 4373197, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
 {"opinion_id": 4378331, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": false}
-{"opinion_id": 4378332, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": false}
+{"opinion_id": 4378332, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": false}
 {"opinion_id": 4378333, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 4378644, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
 {"opinion_id": 4378645, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "slip-name-j", "per_curiam": true, "corpus_author_id": null}
@@ -262,7 +262,7 @@
 {"opinion_id": 4407521, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4408647, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
 {"opinion_id": 4408667, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
-{"opinion_id": 4408695, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": false}
+{"opinion_id": 4408695, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": false}
 {"opinion_id": 4409094, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
 {"opinion_id": 4409095, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 4409096, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
@@ -272,11 +272,11 @@
 {"opinion_id": 4409491, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 4409492, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4409493, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
-{"opinion_id": 4410204, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 4410204, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 4410205, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4410206, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 4410722, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 4410723, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": false}
+{"opinion_id": 4410723, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": false}
 {"opinion_id": 4410724, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4417171, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4418453, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
@@ -300,12 +300,12 @@
 {"opinion_id": 4522733, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 4522734, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4526979, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
-{"opinion_id": 4526980, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 4526980, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 4526981, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4528126, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 4528127, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
 {"opinion_id": 4528128, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
-{"opinion_id": 4529015, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 4529015, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 4529016, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 4529017, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4529018, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
@@ -333,19 +333,19 @@
 {"opinion_id": 4543027, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 4543943, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4544798, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 4544799, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": false}
+{"opinion_id": 4544799, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": false}
 {"opinion_id": 4544800, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 4544949, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4544950, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4545116, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1213, "agree": true}
 {"opinion_id": 4545117, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4546250, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
-{"opinion_id": 4546251, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": false}
+{"opinion_id": 4546251, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": false}
 {"opinion_id": 4546725, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4546726, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 4547011, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4547012, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 4547013, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 4547013, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 4547014, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 4547015, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 4641441, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
@@ -398,7 +398,7 @@
 {"opinion_id": 4691751, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 4692447, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 4693249, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
-{"opinion_id": 4694237, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": false}
+{"opinion_id": 4694237, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": false}
 {"opinion_id": 4695231, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 4695232, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 4696348, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
@@ -436,8 +436,8 @@
 {"opinion_id": 4707192, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 4766514, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 5133909, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
-{"opinion_id": 5134190, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
-{"opinion_id": 5134191, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 5134190, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 5134191, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 6052574, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 6092369, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 6092370, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -469,7 +469,7 @@
 {"opinion_id": 6333585, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 6335831, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 6335898, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
-{"opinion_id": 6336928, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": false}
+{"opinion_id": 6336928, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": false}
 {"opinion_id": 6341011, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 6341012, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 6341013, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 384, "agree": true}
@@ -537,7 +537,7 @@
 {"opinion_id": 8136731, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8136732, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8136735, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8137031, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8137031, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137053, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137218, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137364, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -549,38 +549,38 @@
 {"opinion_id": 8137797, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137871, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137873, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8137874, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8137874, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137881, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137887, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137892, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8137893, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 8137893, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 8137894, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137927, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137947, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137972, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8137973, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8137973, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137990, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8137991, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138010, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138013, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138041, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8138042, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8138042, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138047, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138053, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138058, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138064, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138076, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138088, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8138089, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8138089, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138090, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138101, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8138102, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8138102, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138117, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138125, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138126, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8138127, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8138127, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138130, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8138131, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8138131, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138139, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138292, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8138328, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -622,7 +622,7 @@
 {"opinion_id": 8391292, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391295, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391298, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8391299, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8391299, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391300, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391301, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391560, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "slip-name-j", "per_curiam": true, "corpus_author_id": null}
@@ -634,7 +634,7 @@
 {"opinion_id": 8391691, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8391888, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8392079, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8392083, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8392083, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8392187, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8392188, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8392190, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -727,7 +727,7 @@
 {"opinion_id": 8398185, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8398186, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8398190, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8398301, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8398301, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8398310, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8398515, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8398516, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -746,7 +746,7 @@
 {"opinion_id": 8399056, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8399150, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8399160, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8399431, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8399431, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8399432, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8399505, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8399506, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -782,7 +782,7 @@
 {"opinion_id": 8400555, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8400561, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8400572, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8400660, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8400660, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8400661, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8400662, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8400684, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -821,7 +821,7 @@
 {"opinion_id": 8402053, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8402054, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8402055, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 8402351, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 8402351, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8402756, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8402915, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 8403023, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -847,44 +847,44 @@
 {"opinion_id": 9225905, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9225908, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9225928, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9225959, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 9225959, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9225962, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9225963, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 9225963, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9225987, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9225996, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226036, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226037, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226037, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226038, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226039, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226040, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226039, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226040, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226041, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226042, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226043, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226044, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226045, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226044, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226045, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226046, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226047, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226048, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226047, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226048, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226081, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226082, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226082, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226096, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226097, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226097, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226099, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226102, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226104, "slug": "BMKavanaugh", "author_id": 1713, "justice": "Kavanaugh", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226105, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226106, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226106, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226121, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226122, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226122, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226123, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226124, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226134, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226124, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226134, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226135, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226136, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226137, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226137, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9226139, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226140, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9226142, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 9226140, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9226142, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9328343, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9328344, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9328345, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -929,7 +929,7 @@
 {"opinion_id": 9331025, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9331108, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9331115, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9331128, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9331128, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9331308, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "slip-name-j", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9331468, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9331493, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -969,7 +969,7 @@
 {"opinion_id": 9333451, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9333594, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9333595, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9333600, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9333600, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9333601, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9333602, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9333826, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -986,7 +986,7 @@
 {"opinion_id": 9334403, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334404, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334407, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9334451, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 9334451, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9334452, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334562, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334585, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -996,17 +996,17 @@
 {"opinion_id": 9334594, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334595, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9334596, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9335043, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9335043, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335129, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335130, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335131, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335133, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9335136, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9335136, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335137, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335138, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335139, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335253, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9335282, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9335282, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9335358, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9341427, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9341480, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1024,7 +1024,7 @@
 {"opinion_id": 9342044, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9342046, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9342050, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9342053, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9342053, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9342055, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9342056, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9342058, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1044,7 +1044,7 @@
 {"opinion_id": 9354513, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9354514, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9354515, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9354521, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9354521, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9354523, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9355058, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9355215, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1060,9 +1060,9 @@
 {"opinion_id": 9355587, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9355675, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9355681, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9355872, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9355872, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9355873, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9355874, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9355874, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356097, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356141, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356143, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1077,7 +1077,7 @@
 {"opinion_id": 9356629, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356630, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356636, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9356881, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9356881, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356890, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356915, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9356919, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1097,13 +1097,13 @@
 {"opinion_id": 9357124, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357127, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357128, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9357383, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9357383, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357384, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357403, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357411, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9357439, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9358636, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9358720, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9358720, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9358721, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9358723, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9358724, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1127,9 +1127,9 @@
 {"opinion_id": 9359298, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359305, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359312, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9359313, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9359313, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359441, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9359582, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9359582, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359592, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359668, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359743, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1144,23 +1144,23 @@
 {"opinion_id": 9359936, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359937, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359942, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9359943, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9359943, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9359952, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360154, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360155, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360386, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360388, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9360389, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9360389, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360390, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360394, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9360457, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9360457, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360463, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360465, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360554, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360720, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360721, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360728, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9360743, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9360743, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360745, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360746, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9360747, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1172,7 +1172,7 @@
 {"opinion_id": 9361255, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9361258, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9361259, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9361261, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9361261, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9361381, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9361382, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9361387, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1187,7 +1187,7 @@
 {"opinion_id": 9362045, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9362048, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9362050, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9362053, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9362053, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9362059, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9362268, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9362366, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1240,172 +1240,172 @@
 {"opinion_id": 9404569, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 9404570, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 9405081, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 9405082, "slug": "KBJackson", "author_id": 1609, "justice": "JACKSON", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 9405082, "slug": "KBJackson", "author_id": 1609, "justice": "JACKSON", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 9405083, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 9405814, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 9405815, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 9405816, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
-{"opinion_id": 9405817, "slug": "KBJackson", "author_id": 1609, "justice": "JACKSON", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 9405817, "slug": "KBJackson", "author_id": 1609, "justice": "JACKSON", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 9406261, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 9406262, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 9406263, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 9821183, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821184, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821186, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821184, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821186, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9821187, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821188, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821188, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9821253, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821254, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821254, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9821877, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821878, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9821879, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9822404, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9822405, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821878, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9821879, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9822404, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9822405, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9822733, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9822734, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9822734, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9822761, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9822762, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9822762, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823004, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823005, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823006, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823005, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823006, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823248, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823249, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823249, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823250, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823251, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823251, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823393, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823394, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823394, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823483, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823484, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823488, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823484, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823488, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823702, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823703, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823703, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823984, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823985, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823985, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823987, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9823988, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9823988, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9823989, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824055, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824056, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824056, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824057, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824058, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824225, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824226, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824226, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824227, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824228, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824228, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824286, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824287, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824288, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824289, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824287, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824288, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824289, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824290, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824291, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824291, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824357, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824358, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824359, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824358, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824359, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824712, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9824713, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824713, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9824714, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "slip-name-j", "per_curiam": true, "corpus_author_id": null}
-{"opinion_id": 9824715, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9824715, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873105, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9873107, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9873107, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873452, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9873453, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9873453, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873454, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9873456, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
+{"opinion_id": 9873456, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": true, "corpus_author_id": null}
 {"opinion_id": 9873459, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9873461, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9873461, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873500, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873502, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9873836, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9873838, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9873838, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9874371, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9874373, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9874373, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9875632, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9875970, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9875972, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9875972, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9876197, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9876199, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9876199, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9876889, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9876890, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9876890, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9876891, "slug": "AMKennedy", "author_id": 1747, "justice": "KENNEDY", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9876892, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9876892, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9876893, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9876894, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9876894, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9876895, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9876896, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9876896, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9887864, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9887865, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9887865, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888039, "slug": "RBGinsburg", "author_id": 1213, "justice": "GINSBURG", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888040, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888040, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888074, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888075, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888153, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888154, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888075, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888153, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888154, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888201, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888202, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888202, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888262, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888263, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888264, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888265, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888263, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888264, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888265, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888266, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888267, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888267, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888387, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888388, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888389, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888390, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888388, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888389, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888390, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888543, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888544, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888545, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888544, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888545, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888645, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888646, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888646, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888685, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888686, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888686, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888741, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888742, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888744, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888742, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888744, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888773, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888774, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888776, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888774, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888776, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888787, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888788, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888789, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888790, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888788, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888789, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888790, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9888811, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9888812, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9888812, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889171, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889172, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889172, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889173, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889174, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889175, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889174, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889175, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889176, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889177, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889177, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889178, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889179, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889179, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889180, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889181, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889181, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889182, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889184, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889185, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889185, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889186, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889187, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889188, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889189, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889190, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889191, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889187, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889188, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889189, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889190, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889191, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889192, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889193, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889194, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889193, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889194, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889195, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889196, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889197, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889198, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889196, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889197, "slug": "NMGorsuch", "author_id": 1250, "justice": "GORSUCH", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889198, "slug": "SSotomayor", "author_id": 3045, "justice": "SOTOMAYOR", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889199, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889200, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889201, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889200, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889201, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889202, "slug": "JGRoberts", "author_id": 2738, "justice": "ROBERTS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889203, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889204, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889203, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889204, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9889205, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
-{"opinion_id": 9889206, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 9889206, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "dissent", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9906867, "slug": "ACBarrett", "author_id": 8543, "justice": "BARRETT", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 9925138, "slug": "SGBreyer", "author_id": 384, "justice": "BREYER", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 9925157, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
@@ -1456,7 +1456,7 @@
 {"opinion_id": 10034024, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 10062888, "slug": "BMKavanaugh", "author_id": 1713, "justice": "KAVANAUGH", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 10062909, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
-{"opinion_id": 10065399, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 10065399, "slug": "SAAlito", "author_id": 77, "justice": "ALITO", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 10065409, "slug": "CThomas", "author_id": 3200, "justice": "THOMAS", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 10065411, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 10076567, "slug": "EKagan", "author_id": 1691, "justice": "KAGAN", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
@@ -1496,7 +1496,7 @@
 {"opinion_id": 10516258, "slug": "SAAlito", "author_id": 77, "justice": "Alito", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 10516259, "slug": "SAAlito", "author_id": 77, "justice": "Alito", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 10516260, "slug": "JGRoberts", "author_id": 2738, "justice": "Roberts", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
-{"opinion_id": 10516261, "slug": "KBJackson", "author_id": 1609, "justice": "Jackson", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 10516261, "slug": "KBJackson", "author_id": 1609, "justice": "Jackson", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 10516262, "slug": "EKagan", "author_id": 1691, "justice": "Kagan", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 10516263, "slug": "BMKavanaugh", "author_id": 1713, "justice": "Kavanaugh", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
 {"opinion_id": 10516264, "slug": "ACBarrett", "author_id": 8543, "justice": "Barrett", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
@@ -1541,7 +1541,7 @@
 {"opinion_id": 10516308, "slug": "SSotomayor", "author_id": 3045, "justice": "Sotomayor", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3045, "agree": true}
 {"opinion_id": 10516309, "slug": "ACBarrett", "author_id": 8543, "justice": "Barrett", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 10516311, "slug": "ACBarrett", "author_id": 8543, "justice": "Barrett", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
-{"opinion_id": 11066623, "slug": "KBJackson", "author_id": 1609, "justice": "Jackson", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
+{"opinion_id": 11066623, "slug": "KBJackson", "author_id": 1609, "justice": "Jackson", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": false}
 {"opinion_id": 11066624, "slug": "SAAlito", "author_id": 77, "justice": "Alito", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 77, "agree": true}
 {"opinion_id": 11066626, "slug": "JGRoberts", "author_id": 2738, "justice": "Roberts", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 2738, "agree": true}
 {"opinion_id": 11066627, "slug": "EKagan", "author_id": 1691, "justice": "Kagan", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
@@ -1560,7 +1560,7 @@
 {"opinion_id": 11066653, "slug": "NMGorsuch", "author_id": 1250, "justice": "Gorsuch", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1250, "agree": true}
 {"opinion_id": 11066656, "slug": "ACBarrett", "author_id": 8543, "justice": "Barrett", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 8543, "agree": true}
 {"opinion_id": 11066657, "slug": "BMKavanaugh", "author_id": 1713, "justice": "Kavanaugh", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1713, "agree": true}
-{"opinion_id": 11066659, "slug": "SAAlito", "author_id": 77, "justice": "Alito", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
+{"opinion_id": 11066659, "slug": "SAAlito", "author_id": 77, "justice": "Alito", "role": "concurrence", "method": "justice-header", "per_curiam": false, "corpus_author_id": null}
 {"opinion_id": 11066661, "slug": "CThomas", "author_id": 3200, "justice": "Thomas", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 3200, "agree": true}
 {"opinion_id": 11066663, "slug": "EKagan", "author_id": 1691, "justice": "Kagan", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1691, "agree": true}
 {"opinion_id": 11066665, "slug": "KBJackson", "author_id": 1609, "justice": "Jackson", "role": "lead", "method": "justice-header", "per_curiam": false, "corpus_author_id": 1609, "agree": true}

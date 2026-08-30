@@ -15,9 +15,9 @@
  },
  "opinion_texts": {
   "state": "present",
-  "texts_available": 1775,
+  "texts_available": 1778,
   "segment_channel": {
-   "added": 92,
+   "added": 33,
    "note": "segments PDF slip liés par en-tête de juge (voie C)"
   }
  },
@@ -26,65 +26,65 @@
   "JGRoberts": {
    "name": "John G. Roberts, Jr.",
    "author_id": 2738,
-   "train_text_rows": 33,
+   "train_text_rows": 42,
    "train_votes_available": 96,
    "test_votes": 52,
    "service_note": "",
-   "slip_segment_rows": 4
+   "slip_segment_rows": 1
   },
   "CThomas": {
    "name": "Clarence Thomas",
    "author_id": 3200,
-   "train_text_rows": 106,
+   "train_text_rows": 159,
    "train_votes_available": 145,
    "test_votes": 49,
    "service_note": "",
-   "slip_segment_rows": 33
+   "slip_segment_rows": 9
   },
   "SAAlito": {
    "name": "SAAlito",
    "author_id": 77,
-   "train_text_rows": 59,
+   "train_text_rows": 92,
    "train_votes_available": 107,
    "test_votes": 46,
    "service_note": "",
-   "slip_segment_rows": 18
+   "slip_segment_rows": 9
   },
   "SSotomayor": {
    "name": "Sonia Sotomayor",
    "author_id": 3045,
-   "train_text_rows": 63,
+   "train_text_rows": 94,
    "train_votes_available": 135,
    "test_votes": 49,
    "service_note": "",
-   "slip_segment_rows": 12
+   "slip_segment_rows": 2
   },
   "EKagan": {
    "name": "Elena Kagan",
    "author_id": 1691,
-   "train_text_rows": 43,
+   "train_text_rows": 50,
    "train_votes_available": 99,
    "test_votes": 46,
    "service_note": "",
-   "slip_segment_rows": 7
+   "slip_segment_rows": 4
   },
   "NMGorsuch": {
    "name": "NMGorsuch",
    "author_id": 1250,
-   "train_text_rows": 30,
+   "train_text_rows": 45,
    "train_votes_available": 41,
    "test_votes": 38,
    "service_note": "",
-   "slip_segment_rows": 12
+   "slip_segment_rows": 6
   },
   "BMKavanaugh": {
    "name": "Brett M. Kavanaugh",
    "author_id": 1713,
-   "train_text_rows": 21,
+   "train_text_rows": 20,
    "train_votes_available": 25,
    "test_votes": 39,
    "service_note": "",
-   "slip_segment_rows": 6
+   "slip_segment_rows": 2
   },
   "ACBarrett": {
    "name": "Amy Coney Barrett",
