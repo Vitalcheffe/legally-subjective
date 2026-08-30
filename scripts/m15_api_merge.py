@@ -22,6 +22,8 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API_DIR = os.path.join(REPO, "data", "m15_store", "api")
+STORAGE_TEXTS = os.path.join(REPO, "data", "m15_store", "storage",
+                             "texts.jsonl.gz")
 RAW_STORE = os.path.join(REPO, "data", "raw", "opinion_texts",
                          "opinions_text.jsonl.gz")
 OUT_DIR = os.path.join(REPO, "data", "m15_store", "final")
@@ -91,6 +93,17 @@ def main():
             api_map[int(r["id"])] = r
     print(f"API: {len(api_map)} enregistrements dans {len(files)} fichiers")
 
+    # 2b. textes voie D (CDN storage) : direct > bound-type > snippet
+    stor = {}
+    if os.path.exists(STORAGE_TEXTS):
+        with gzip.open(STORAGE_TEXTS, "rt") as f:
+            for line in f:
+                r = json.loads(line)
+                stor[int(r["opinion_id"])] = r
+    print(f"STORAGE: {len(stor)} textes (direct="
+          f"{sum(1 for r in stor.values() if r.get('via') == 'direct')}, "
+          f"bound={sum(1 for r in stor.values() if r.get('via') == 'bound-type')})")
+
     # 3. store existant (voies B+C)
     old_map = {}
     if os.path.exists(RAW_STORE):
@@ -126,7 +139,13 @@ def main():
         else:
             if rec is not None:
                 empty_api.append(oid)     # API a la ligne mais aucun champ texte
-            old = old_map.get(oid)
+            s = stor.get(oid)             # voie D : CDN storage
+            if s and (s.get("text") or "").strip():
+                via = s.get("via", "?")
+                text, src = s["text"], f"storage:{via}"
+                stats["source"][src] = stats["source"].get(src, 0) + 1
+        if not text:
+            old = old_map.get(oid)        # voies B+C : bulk S3 + slip PDFs
             if old:
                 t = old.get("plain_text") or old.get("text") or ""
                 if t.strip():

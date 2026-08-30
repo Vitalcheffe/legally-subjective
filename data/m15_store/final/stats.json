@@ -1,0 +1,53 @@
+{
+ "source": {
+  "storage:bound-type": 845,
+  "storage:direct": 797,
+  "api:plain_text": 1,
+  "legacy:bc": 1,
+  "storage:snippet": 83,
+  "api:xml_harvard": 48
+ },
+ "corpus_total": 1778,
+ "texts_available": 1775,
+ "coverage_pct": 99.8,
+ "api_records": 49,
+ "api_records_with_text": 49,
+ "api_empty_no_fallback": 0,
+ "by_term_have": {
+  "2017": 235,
+  "2015": 294,
+  "2016": 247,
+  "2018": 262,
+  "2019": 263,
+  "2020": 130,
+  "2021": 86,
+  "2022": 117,
+  "2023": 141
+ },
+ "by_term_total": {
+  "2017": 235,
+  "2015": 294,
+  "2016": 247,
+  "2018": 265,
+  "2019": 263,
+  "2020": 130,
+  "2021": 86,
+  "2022": 117,
+  "2023": 141
+ },
+ "by_type_have": {
+  "combined": 825,
+  "lead": 836,
+  "dissent": 57,
+  "concurrence": 49,
+  "in-part-opinion": 8
+ },
+ "missing_ids": [
+  4408718,
+  9333829,
+  9341592
+ ],
+ "missing_count": 3,
+ "chars_total": 52425816,
+ "chars_median": 27730
+}
