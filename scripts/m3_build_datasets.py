@@ -270,9 +270,25 @@ def main():
             json.dump(cf, f, ensure_ascii=False, indent=1)
 
     # ---- persona datasets --------------------------------------------------
+    # attribution d'auteur par SIGNATURE TEXTUELLE (M1.5) : l'author_id du
+    # corpus s'est révélé brouillé (0 % d'accord avec les textes signés,
+    # sha1 vérifiés). La signature « JUSTICE X, dissenting » / « X, J.,
+    # delivered » est la source de vérité ; corpus author_id n'est plus
+    # utilisé pour l'affectation persona.
+    sig_of_oid = {}
+    sig_path = os.path.join(REPO, "data", "m15_store", "final",
+                            "authorship.jsonl")
+    if os.path.exists(sig_path):
+        with open(sig_path, encoding="utf-8") as f:
+            for line in f:
+                r = json.loads(line)
+                sig_of_oid[r["opinion_id"]] = (r["slug"], r.get("role"))
+
     persona_dir = os.path.join(M3, "personas")
     os.makedirs(persona_dir, exist_ok=True)
     manifest_personas = {}
+    seen_text_hash = set()   # dédup des textes identiques sous plusieurs
+                              # opinion_ids (doublons Harvard ↔ canoniques, M1.5)
     for slug in LA_CHAMBRE:
         name = next((j["justice_name"] for c in cases
                      for j in c.get("justices", []) if j["justice"] == slug),
@@ -281,8 +297,9 @@ def main():
         train_rows, test_rows = [], []
         n_train_votes = n_test_votes = 0
         for o in opinions:
-            if aid is None or o.get("author_id") != aid:
-                continue
+            sig = sig_of_oid.get(o["opinion_id"])
+            if sig is None or sig[0] != slug:
+                continue          # pas de signature fiable → pas de persona
             dn = cluster_to_docket.get(str(o["cluster_id"]))
             c = docket_to_case.get(dn)
             if not c or is_sealed(c) or dn in outlawed_dockets:
@@ -292,10 +309,17 @@ def main():
                 ("test" if term >= TEST_START else None)
             text = (texts or {}).get(o["opinion_id"])
             if text:
+                import hashlib
+
+                h = hashlib.sha256(
+                    " ".join(text.split())[:8000].encode()
+                ).hexdigest()
+                dup = h in seen_text_hash   # même texte sous un autre id
+                seen_text_hash.add(h)
                 row = {
                     "opinion_id": o["opinion_id"],
                     "docket": dn,
-                    "type": o["type"],
+                    "type": sig[1] or o["type"],   # rôle signé > type corpus
                     "date_filed": o.get("date_filed"),
                     "system": PERSONA_SYSTEM.format(name=name),
                     "instruction": CASEFILE_INSTRUCTION.format(
@@ -307,7 +331,7 @@ def main():
                         posture="record below"),
                     "output": text,
                 }
-                if window == "train":
+                if window == "train" and not dup:
                     train_rows.append(row)
             # vote ground truth for the transparent eval (never a training
             # target under the pre-registered design)

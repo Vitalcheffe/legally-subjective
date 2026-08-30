@@ -15,7 +15,7 @@
  },
  "opinion_texts": {
   "state": "present",
-  "texts_available": 522,
+  "texts_available": 1775,
   "segment_channel": {
    "added": 92,
    "note": "segments PDF slip liés par en-tête de juge (voie C)"
@@ -26,53 +26,53 @@
   "JGRoberts": {
    "name": "John G. Roberts, Jr.",
    "author_id": 2738,
-   "train_text_rows": 11,
-   "train_votes_available": 23,
-   "test_votes": 45,
+   "train_text_rows": 33,
+   "train_votes_available": 96,
+   "test_votes": 52,
    "service_note": "",
-   "slip_segment_rows": 3
+   "slip_segment_rows": 4
   },
   "CThomas": {
    "name": "Clarence Thomas",
    "author_id": 3200,
-   "train_text_rows": 45,
-   "train_votes_available": 25,
-   "test_votes": 47,
+   "train_text_rows": 106,
+   "train_votes_available": 145,
+   "test_votes": 49,
    "service_note": "",
    "slip_segment_rows": 33
   },
   "SAAlito": {
    "name": "SAAlito",
    "author_id": 77,
-   "train_text_rows": 27,
-   "train_votes_available": 27,
-   "test_votes": 40,
+   "train_text_rows": 59,
+   "train_votes_available": 107,
+   "test_votes": 46,
    "service_note": "",
    "slip_segment_rows": 18
   },
   "SSotomayor": {
    "name": "Sonia Sotomayor",
    "author_id": 3045,
-   "train_text_rows": 17,
-   "train_votes_available": 28,
-   "test_votes": 45,
+   "train_text_rows": 63,
+   "train_votes_available": 135,
+   "test_votes": 49,
    "service_note": "",
-   "slip_segment_rows": 13
+   "slip_segment_rows": 12
   },
   "EKagan": {
    "name": "Elena Kagan",
    "author_id": 1691,
-   "train_text_rows": 21,
-   "train_votes_available": 27,
-   "test_votes": 41,
+   "train_text_rows": 43,
+   "train_votes_available": 99,
+   "test_votes": 46,
    "service_note": "",
    "slip_segment_rows": 7
   },
   "NMGorsuch": {
    "name": "NMGorsuch",
    "author_id": 1250,
-   "train_text_rows": 22,
-   "train_votes_available": 15,
+   "train_text_rows": 30,
+   "train_votes_available": 41,
    "test_votes": 38,
    "service_note": "",
    "slip_segment_rows": 12
@@ -80,9 +80,9 @@
   "BMKavanaugh": {
    "name": "Brett M. Kavanaugh",
    "author_id": 1713,
-   "train_text_rows": 13,
-   "train_votes_available": 10,
-   "test_votes": 34,
+   "train_text_rows": 21,
+   "train_votes_available": 25,
+   "test_votes": 39,
    "service_note": "",
    "slip_segment_rows": 6
   },
@@ -91,7 +91,7 @@
    "author_id": 8543,
    "train_text_rows": 0,
    "train_votes_available": 0,
-   "test_votes": 35,
+   "test_votes": 45,
    "service_note": "",
    "slip_segment_rows": 0
   },
