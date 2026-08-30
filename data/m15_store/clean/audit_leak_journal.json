@@ -1,0 +1,127 @@
+{
+ "generated_at": "2026-08-30T08:31:01.846805+00:00",
+ "scope": "M1.5 étape 4 — zéro fuite, dédup, hygiène, pré-décision",
+ "summary": {
+  "checks_total": 14,
+  "checks_failed": 0,
+  "persona_train_rows": 477,
+  "persona_test_votes": 382,
+  "casefiles": 519,
+  "v3_texts": 793
+ },
+ "verdict": "PASS",
+ "entries": [
+  {
+   "check": "A4.seal_integrity",
+   "verdict": "PASS",
+   "detail": "sealed_sha256 recomputed: match"
+  },
+  {
+   "check": "A1.sealed_not_in_casefiles",
+   "verdict": "PASS",
+   "detail": "519 casefiles, scellés trouvés: aucun"
+  },
+  {
+   "check": "A2.sealed_not_in_personas",
+   "verdict": "PASS",
+   "detail": "477 train rows, scellés: aucun"
+  },
+  {
+   "check": "A3.sealed_not_in_test_votes",
+   "verdict": "PASS",
+   "detail": "382 test votes, scellés: aucun"
+  },
+  {
+   "check": "B1.train_before_cutoff",
+   "verdict": "PASS",
+   "detail": "rows décidées après 2020-10-01: aucun"
+  },
+  {
+   "check": "B2.segments_date_guard",
+   "verdict": "PASS",
+   "detail": "segments sans date: 0, décidés après cutoff: 0"
+  },
+  {
+   "check": "B3.test_is_ot2020plus",
+   "verdict": "PASS",
+   "detail": "votes test hors fenêtre: aucun"
+  },
+  {
+   "check": "C1.v3_no_duplicates",
+   "verdict": "PASS",
+   "detail": "793 textes v3, doublons exacts: 0"
+  },
+  {
+   "check": "C2.dedup_map_covers_corpus",
+   "verdict": "PASS",
+   "detail": "1778 ids mappés, corpus 1778, cibles absentes de v3: 0"
+  },
+  {
+   "check": "C3.no_duplicate_outputs_within_persona",
+   "verdict": "PASS",
+   "detail": "doublons intra-persona: aucun"
+  },
+  {
+   "check": "D1.rows_in_v3_and_long_enough",
+   "verdict": "PASS",
+   "detail": "rows invalides: aucun"
+  },
+  {
+   "check": "D2.signatures_match_persona",
+   "verdict": "PASS",
+   "detail": "erreurs d'attribution: aucun"
+  },
+  {
+   "check": "E1.casefiles_pre_decision",
+   "verdict": "PASS",
+   "detail": "clés interdites: aucune (519 fichiers)"
+  },
+  {
+   "check": "F1.chain_hashes",
+   "verdict": "PASS",
+   "detail": "8 artefacts hachés (voir journal)"
+  }
+ ],
+ "chain": {
+  "corpus_stats": {
+   "path": "data/processed/stats_v1.json",
+   "sha256": "ad6081e71c7eee80e076191f6e7a32bd7d68590c3f8b8fc99745191f043f4c58",
+   "bytes": 4712
+  },
+  "texts_v2": {
+   "path": "data/m15_store/final/opinion_texts_v2.jsonl.gz",
+   "sha256": "5d5f4c6d24a18054c529d3d7aa6476c65b4db271f2e6bf43af7bae76f9e05b06",
+   "bytes": 18701575
+  },
+  "texts_v3": {
+   "path": "data/m15_store/clean/opinion_texts_v3.jsonl.gz",
+   "sha256": "cedf561a6fc057a2ad3cc2d0d78e2c2fcc78b0350adec1f8ee2efe0a0fc52301",
+   "bytes": 7600365
+  },
+  "dedup_map": {
+   "path": "data/m15_store/clean/dedup_map.json",
+   "sha256": "5c6fabbd00bd89b3344350d8d5c8c980bc6da18b4eab797d47d7cb81c35ecf40",
+   "bytes": 45040
+  },
+  "clean_report": {
+   "path": "data/m15_store/clean/clean_report.json",
+   "sha256": "312650bd4d8bb207bb38b16bc06a26197306e3de39daafb8530cb1ba404ef727",
+   "bytes": 5261
+  },
+  "authorship": {
+   "path": "data/m15_store/final/authorship.jsonl",
+   "sha256": "d615859f8330ae2431d92a62edcdd6251cb9dd99627c082fe76fdfe63d98655b",
+   "bytes": 292473
+  },
+  "segments": {
+   "path": "data/m15_store/storage/segments.jsonl",
+   "sha256": "81dca2f8ad9a06d0982f0c4c7b28f5234429de6219c78f084d19eee7f0acb8e6",
+   "bytes": 40035472
+  },
+  "manifest": {
+   "path": "data/m3/manifest.json",
+   "sha256": "85a7963455c2fce47f70d1ff88acc9b18282e635b9daf2d35964548d949865b2",
+   "bytes": 2410
+  }
+ }
+}

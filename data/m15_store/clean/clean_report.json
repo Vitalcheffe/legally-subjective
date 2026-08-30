@@ -1,0 +1,307 @@
+{
+ "input": "data/m15_store/final/opinion_texts_v2.jsonl.gz",
+ "output": "data/m15_store/clean/opinion_texts_v3.jsonl.gz",
+ "n_input": 1778,
+ "n_kept": 793,
+ "n_dropped": 985,
+ "n_groups": 793,
+ "exact_groups": 370,
+ "near_pairs_merged": 91,
+ "furniture_removed": {
+  "harvard_page_markers": 2,
+  "side_hdr": 23526,
+  "cite_as": 13186,
+  "footnote_markers_est": 12112,
+  "scotus_hdr": 1190,
+  "slip_hdr": 79,
+  "page_number_lines": 2021,
+  "syllabus": 127,
+  "reporter_note": 21,
+  "syllabus_trim": 14,
+  "syllabus_chars": 101453,
+  "oct_term": 4
+ },
+ "tiers": {
+  "full": 728,
+  "thin": 34,
+  "snippet": 31
+ },
+ "tiers_input": {
+  "full": 1655,
+  "thin": 90,
+  "snippet": 33
+ },
+ "by_term_kept": {
+  "2015": 106,
+  "2016": 83,
+  "2017": 66,
+  "2018": 106,
+  "2019": 90,
+  "2020": 56,
+  "2021": 64,
+  "2022": 107,
+  "2023": 115
+ },
+ "by_source_kept": {
+  "storage:direct": 656,
+  "api:plain_text": 3,
+  "legacy:bc": 1,
+  "api:xml_harvard": 114,
+  "storage:bound-type": 3,
+  "storage:snippet": 16
+ },
+ "chars_raw_total": 53898284,
+ "chars_clean_total": 22359016,
+ "biggest_groups": [
+  {
+   "kept": 9375644,
+   "kept_source": "storage:direct",
+   "dropped": [
+    112032,
+    112378,
+    112955,
+    115271,
+    116702,
+    122294,
+    130452,
+    133282,
+    137774,
+    144981,
+    4251728,
+    4288894,
+    4642624,
+    4673618,
+    5128288,
+    8132459,
+    8132851,
+    8136683,
+    8386111,
+    8390830,
+    8391124,
+    8391694,
+    8394497,
+    8395864,
+    8398179,
+    8398180,
+    8398631,
+    8399428,
+    8401103,
+    8401716,
+    8401717,
+    8401917,
+    8402036,
+    8402863,
+    9133006,
+    9138054,
+    9150072,
+    9150073,
+    9187708,
+    9187709,
+    9224188,
+    9224189,
+    9269330,
+    9329770,
+    9330064,
+    9330065,
+    9330541,
+    9331630,
+    9333945,
+    9343082,
+    9356591,
+    9356880,
+    9357394,
+    9358928,
+    9359954,
+    9360544,
+    9360553,
+    9361875,
+    9361877,
+    9387570,
+    10138744,
+    10516301,
+    11066648
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "Delaware v. Pennsylvania",
+   "n_chars_clean": 44959
+  },
+  {
+   "kept": 4546249,
+   "kept_source": "storage:direct",
+   "dropped": [
+    9226141,
+    9360391,
+    9360392,
+    9360556,
+    9360557,
+    9361256,
+    9361499,
+    9361501,
+    9362052
+   ],
+   "dropped_types": [
+    "lead"
+   ],
+   "case_name": "Colorado Dept. of State v. Baca",
+   "n_chars_clean": 968
+  },
+  {
+   "kept": 4665597,
+   "kept_source": "storage:direct",
+   "dropped": [
+    4665598,
+    4665927,
+    4671323,
+    4702235,
+    4664773,
+    4665257,
+    4665258,
+    9361258
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "United States Fish and Wildlife Serv. v. Sierra Club, Inc.",
+   "n_chars_clean": 20438
+  },
+  {
+   "kept": 4702637,
+   "kept_source": "storage:direct",
+   "dropped": [
+    4674541,
+    4674812,
+    4674813,
+    4683448,
+    9355873,
+    9359305,
+    9361254,
+    9362366
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "Google LLC v. Oracle America, Inc.",
+   "n_chars_clean": 32575
+  },
+  {
+   "kept": 3217422,
+   "kept_source": "storage:direct",
+   "dropped": [
+    3217423,
+    3217226,
+    8391691,
+    8393411,
+    8393452,
+    9824357,
+    9823004
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "Whole Woman's Health v. Hellerstedt",
+   "n_chars_clean": 75432
+  },
+  {
+   "kept": 4541344,
+   "kept_source": "storage:direct",
+   "dropped": [
+    9342050,
+    9342056,
+    9355583,
+    9355585,
+    9356141,
+    9356143,
+    9889182
+   ],
+   "dropped_types": [
+    "lead"
+   ],
+   "case_name": "Bostock v. Clayton County",
+   "n_chars_clean": 64641
+  },
+  {
+   "kept": 4544949,
+   "kept_source": "storage:direct",
+   "dropped": [
+    4544950,
+    4547015,
+    4544798,
+    9358862,
+    9358971,
+    9359759,
+    9360728
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "Seila Law LLC v. Consumer Financial Protection Bureau",
+   "n_chars_clean": 75306
+  },
+  {
+   "kept": 3171724,
+   "kept_source": "storage:direct",
+   "dropped": [
+    3177199,
+    3177200,
+    8135219,
+    8135669,
+    8389141,
+    9821253
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "Montgomery v. Louisiana",
+   "n_chars_clean": 6804
+  },
+  {
+   "kept": 4157405,
+   "kept_source": "storage:direct",
+   "dropped": [
+    4157406,
+    4157382,
+    8396762,
+    8399054,
+    8400661,
+    9873836
+   ],
+   "dropped_types": [
+    "combined",
+    "lead"
+   ],
+   "case_name": "McLane Co. v. Equal Emp't Opportunity Comm'n",
+   "n_chars_clean": 21604
+  },
+  {
+   "kept": 4174311,
+   "kept_source": "storage:direct",
+   "dropped": [
+    8399652,
+    8400662,
+    8964427,
+    8967888,
+    8968648,
+    8975783
+   ],
+   "dropped_types": [
+    "lead"
+   ],
+   "case_name": "Honeycutt v. United States",
+   "n_chars_clean": 19457
+  }
+ ],
+ "rules": {
+  "similarity_threshold": 0.95,
+  "comparison": "text lowercased, non-alphanumerics stripped; near-pass on first 6000 chars, same case, length ratio >= 0.85",
+  "exemplar": "source rank api>storage>legacy>snippet, then longer clean text, then lower opinion_id"
+ },
+ "sha256_v2": "5d5f4c6d24a18054c529d3d7aa6476c65b4db271f2e6bf43af7bae76f9e05b06"
+}

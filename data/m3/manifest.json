@@ -1,109 +1,96 @@
 {
- "file": "data/m3/manifest.json",
- "builder": "scripts/m3_build_datasets.py",
- "split": {
-  "train": "OT2015..OT2019",
-  "test_transparent": "OT2020..OT2023",
-  "sealed": "excluded everywhere (M4 only)"
- },
- "case_files": {
-  "train": 308,
-  "test": 211,
-  "oyez_coverage_train": 273,
-  "oyez_coverage_test": 194,
-  "note": "case files without Oyez fall back to metadata-only (flagged in sources.oyez)"
- },
- "opinion_texts": {
-  "state": "present",
-  "texts_available": 1778,
-  "segment_channel": {
-   "added": 33,
-   "note": "segments PDF slip liés par en-tête de juge (voie C)"
-  }
- },
- "vote_sft_extension": "disabled (pre-registered default)",
- "personas": {
-  "JGRoberts": {
-   "name": "John G. Roberts, Jr.",
-   "author_id": 2738,
-   "train_text_rows": 42,
-   "train_votes_available": 96,
-   "test_votes": 52,
-   "service_note": "",
-   "slip_segment_rows": 1
+  "file": "data/m3/manifest.json",
+  "builder": "scripts/m3_build_datasets.py",
+  "split": {
+    "train": "OT2015..OT2019",
+    "test_transparent": "OT2020..OT2023",
+    "sealed": "excluded everywhere (M4 only)"
   },
-  "CThomas": {
-   "name": "Clarence Thomas",
-   "author_id": 3200,
-   "train_text_rows": 162,
-   "train_votes_available": 145,
-   "test_votes": 49,
-   "service_note": "",
-   "slip_segment_rows": 9
+  "case_files": {
+    "train": 308,
+    "test": 211,
+    "oyez_coverage_train": 273,
+    "oyez_coverage_test": 194,
+    "note": "case files without Oyez fall back to metadata-only (flagged in sources.oyez)"
   },
-  "SAAlito": {
-   "name": "SAAlito",
-   "author_id": 77,
-   "train_text_rows": 95,
-   "train_votes_available": 107,
-   "test_votes": 46,
-   "service_note": "",
-   "slip_segment_rows": 9
+  "opinion_texts": {
+    "state": "present",
+    "texts_available": 793
   },
-  "SSotomayor": {
-   "name": "Sonia Sotomayor",
-   "author_id": 3045,
-   "train_text_rows": 97,
-   "train_votes_available": 135,
-   "test_votes": 49,
-   "service_note": "",
-   "slip_segment_rows": 2
+  "vote_sft_extension": "disabled (pre-registered default)",
+  "personas": {
+    "JGRoberts": {
+      "name": "John G. Roberts, Jr.",
+      "author_id": 2738,
+      "train_text_rows": 43,
+      "train_votes_available": 96,
+      "test_votes": 52,
+      "service_note": ""
+    },
+    "CThomas": {
+      "name": "Clarence Thomas",
+      "author_id": 3200,
+      "train_text_rows": 146,
+      "train_votes_available": 145,
+      "test_votes": 49,
+      "service_note": ""
+    },
+    "SAAlito": {
+      "name": "SAAlito",
+      "author_id": 77,
+      "train_text_rows": 83,
+      "train_votes_available": 107,
+      "test_votes": 46,
+      "service_note": ""
+    },
+    "SSotomayor": {
+      "name": "Sonia Sotomayor",
+      "author_id": 3045,
+      "train_text_rows": 95,
+      "train_votes_available": 135,
+      "test_votes": 49,
+      "service_note": ""
+    },
+    "EKagan": {
+      "name": "Elena Kagan",
+      "author_id": 1691,
+      "train_text_rows": 50,
+      "train_votes_available": 99,
+      "test_votes": 46,
+      "service_note": ""
+    },
+    "NMGorsuch": {
+      "name": "NMGorsuch",
+      "author_id": 1250,
+      "train_text_rows": 39,
+      "train_votes_available": 41,
+      "test_votes": 38,
+      "service_note": ""
+    },
+    "BMKavanaugh": {
+      "name": "Brett M. Kavanaugh",
+      "author_id": 1713,
+      "train_text_rows": 21,
+      "train_votes_available": 25,
+      "test_votes": 39,
+      "service_note": ""
+    },
+    "ACBarrett": {
+      "name": "Amy Coney Barrett",
+      "author_id": 8543,
+      "train_text_rows": 0,
+      "train_votes_available": 0,
+      "test_votes": 45,
+      "service_note": ""
+    },
+    "KBJackson": {
+      "name": "KBJackson",
+      "author_id": 1609,
+      "train_text_rows": 0,
+      "train_votes_available": 0,
+      "test_votes": 18,
+      "service_note": "OT2022-23 only — power report mandatory"
+    }
   },
-  "EKagan": {
-   "name": "Elena Kagan",
-   "author_id": 1691,
-   "train_text_rows": 50,
-   "train_votes_available": 99,
-   "test_votes": 46,
-   "service_note": "",
-   "slip_segment_rows": 4
-  },
-  "NMGorsuch": {
-   "name": "NMGorsuch",
-   "author_id": 1250,
-   "train_text_rows": 46,
-   "train_votes_available": 41,
-   "test_votes": 38,
-   "service_note": "",
-   "slip_segment_rows": 6
-  },
-  "BMKavanaugh": {
-   "name": "Brett M. Kavanaugh",
-   "author_id": 1713,
-   "train_text_rows": 23,
-   "train_votes_available": 25,
-   "test_votes": 39,
-   "service_note": "",
-   "slip_segment_rows": 2
-  },
-  "ACBarrett": {
-   "name": "Amy Coney Barrett",
-   "author_id": 8543,
-   "train_text_rows": 0,
-   "train_votes_available": 0,
-   "test_votes": 45,
-   "service_note": "",
-   "slip_segment_rows": 0
-  },
-  "KBJackson": {
-   "name": "KBJackson",
-   "author_id": 1609,
-   "train_text_rows": 0,
-   "train_votes_available": 0,
-   "test_votes": 18,
-   "service_note": "OT2022-23 only — power report mandatory",
-   "slip_segment_rows": 0
-  }
- },
- "total_opinions": 1778
+  "total_opinions": 1778
 }
