@@ -199,8 +199,8 @@ def phase_docs():
 # ------------------------------------------------------------------ phase C
 HEAD_RE = re.compile(
     r"(?:^|\n)\s*(?:JUSTICE|Justice|CHIEF JUSTICE|Chief Justice)\s+"
-    r"([A-Z][a-zA-Z]+)"
-    r"([^\n]{0,200}?)\s*(?:,?\s*(deliver\w*|concurr\w*|dissent\w*|with whom[^,.]*)"
+    r"(?P<name>[A-Z][a-zA-Z]+)"
+    r"(?P<filler>[^\n]{0,200}?)\s*(?:,?\s*(?P<role>deliver\w*|concurr\w*|dissent\w*|with whom[^,.]*)"
     r"[^.]{0,180}\.)",
     re.M)
 
