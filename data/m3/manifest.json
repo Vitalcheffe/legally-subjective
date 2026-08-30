@@ -36,7 +36,7 @@
       "service_note": ""
     },
     "SAAlito": {
-      "name": "SAAlito",
+      "name": "Samuel A. Alito, Jr.",
       "author_id": 77,
       "train_text_rows": 83,
       "train_votes_available": 107,
@@ -60,7 +60,7 @@
       "service_note": ""
     },
     "NMGorsuch": {
-      "name": "NMGorsuch",
+      "name": "Neil M. Gorsuch",
       "author_id": 1250,
       "train_text_rows": 39,
       "train_votes_available": 41,
@@ -84,7 +84,7 @@
       "service_note": ""
     },
     "KBJackson": {
-      "name": "KBJackson",
+      "name": "Ketanji Brown Jackson",
       "author_id": 1609,
       "train_text_rows": 0,
       "train_votes_available": 0,

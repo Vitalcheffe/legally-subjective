@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T08:31:01.846805+00:00",
+ "generated_at": "2026-08-30T09:34:05.346576+00:00",
  "scope": "M1.5 étape 4 — zéro fuite, dédup, hygiène, pré-décision",
  "summary": {
   "checks_total": 14,
@@ -120,8 +120,8 @@
   },
   "manifest": {
    "path": "data/m3/manifest.json",
-   "sha256": "85a7963455c2fce47f70d1ff88acc9b18282e635b9daf2d35964548d949865b2",
-   "bytes": 2410
+   "sha256": "6da82654a66840ef57d2668c9645e8cf39b6023fb08608aae8901d240685e83f",
+   "bytes": 2441
   }
  }
 }

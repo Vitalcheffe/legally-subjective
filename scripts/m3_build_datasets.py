@@ -61,8 +61,27 @@ TEST_START = 2020
 LA_CHAMBRE = ["JGRoberts", "CThomas", "SAAlito", "SSotomayor", "EKagan",
               "NMGorsuch", "BMKavanaugh", "ACBarrett", "KBJackson"]
 
+# canonical display names — fallback when the Oyez justice_name lookup
+# comes up empty (SAAlito, NMGorsuch, KBJackson on some dockets). These are
+# the nine seated OT2015-2023; public record, no guessing.
+FULL_NAMES = {
+    "JGRoberts": "John G. Roberts, Jr.",
+    "CThomas": "Clarence Thomas",
+    "SAAlito": "Samuel A. Alito, Jr.",
+    "SSotomayor": "Sonia Sotomayor",
+    "EKagan": "Elena Kagan",
+    "NMGorsuch": "Neil M. Gorsuch",
+    "BMKavanaugh": "Brett M. Kavanaugh",
+    "ACBarrett": "Amy Coney Barrett",
+    "KBJackson": "Ketanji Brown Jackson",
+}
+
+# role correctness: exactly one Chief Justice in La Chambre — calling him
+# "Associate Justice" in his own persona prompt would be a factual error.
+ROLE_OF = {"JGRoberts": "Chief Justice"}     # default: Associate Justice
+
 PERSONA_SYSTEM = (
-    "You are {name}, Associate Justice of the Supreme Court of the United "
+    "You are {name}, {role} of the Supreme Court of the United "
     "States. You read the case file exactly as it was before the Court "
     "decided, and you write as yourself.")
 
@@ -353,9 +372,11 @@ def main():
                     return True
         return False
     for slug in LA_CHAMBRE:
-        name = next((j["justice_name"] for c in cases
-                     for j in c.get("justices", []) if j["justice"] == slug),
-                    slug)
+        # Canonical names pinned, not looked up: Oyez's justice_name field
+        # degrades to the bare slug for three seats (SAAlito, NMGorsuch,
+        # KBJackson) — "You are NMGorsuch" in a persona prompt is not a
+        # name. The nine seated OT2015-2023 are public record (FULL_NAMES).
+        name = FULL_NAMES[slug]
         aid = next((a for a, s in slug_of_aid.items() if s == slug), None)
         train_rows, test_rows = [], []
         n_train_votes = n_test_votes = 0
@@ -402,7 +423,7 @@ def main():
                     "docket": dn,
                     "type": sig[1] or o["type"],   # rôle signé > type corpus
                     "date_filed": o.get("date_filed"),
-                    "system": PERSONA_SYSTEM.format(name=name),
+                    "system": PERSONA_SYSTEM.format(name=name, role=ROLE_OF.get(slug, "Associate Justice")),
                     "instruction": CASEFILE_INSTRUCTION.format(
                         title=c.get("case_name"), docket=dn, term=term,
                         lower="record below",
@@ -471,8 +492,12 @@ def main():
                     "segment_of": s.get("source_opinion"),
                     "docket": c["docket_number"],
                     "type": s.get("role"),
-                    "date_filed": None,
-                    "system": PERSONA_SYSTEM.format(name=name),
+                    # d_src déjà vérifiée < TRAIN_DATE_CUTOFF ci-dessus —
+                    # la propager : sinon 231/477 lignes trient comme
+                    # « plus récentes » et polluent le split temporel du
+                    # notebook (chargeait la validation de segments sans date)
+                    "date_filed": d_src,
+                    "system": PERSONA_SYSTEM.format(name=name, role=ROLE_OF.get(slug, "Associate Justice")),
                     "instruction": CASEFILE_INSTRUCTION.format(
                         title=c.get("case_name"), docket=c["docket_number"],
                         term=int(c["term"]), lower="record below",
