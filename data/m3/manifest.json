@@ -35,7 +35,7 @@
   "CThomas": {
    "name": "Clarence Thomas",
    "author_id": 3200,
-   "train_text_rows": 159,
+   "train_text_rows": 162,
    "train_votes_available": 145,
    "test_votes": 49,
    "service_note": "",
@@ -44,7 +44,7 @@
   "SAAlito": {
    "name": "SAAlito",
    "author_id": 77,
-   "train_text_rows": 92,
+   "train_text_rows": 95,
    "train_votes_available": 107,
    "test_votes": 46,
    "service_note": "",
@@ -53,7 +53,7 @@
   "SSotomayor": {
    "name": "Sonia Sotomayor",
    "author_id": 3045,
-   "train_text_rows": 94,
+   "train_text_rows": 97,
    "train_votes_available": 135,
    "test_votes": 49,
    "service_note": "",
@@ -71,7 +71,7 @@
   "NMGorsuch": {
    "name": "NMGorsuch",
    "author_id": 1250,
-   "train_text_rows": 45,
+   "train_text_rows": 46,
    "train_votes_available": 41,
    "test_votes": 38,
    "service_note": "",
@@ -80,7 +80,7 @@
   "BMKavanaugh": {
    "name": "Brett M. Kavanaugh",
    "author_id": 1713,
-   "train_text_rows": 20,
+   "train_text_rows": 23,
    "train_votes_available": 25,
    "test_votes": 39,
    "service_note": "",
