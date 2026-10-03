@@ -1,0 +1,48 @@
+name: audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verifications:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Le protocole ne dépend d'aucune bibliothèque externe : les scripts
+      # de vérification tournent sur la stdlib seule, volontairement.
+      - name: Audit zéro-fuite (14 contrôles, scellé + datasets)
+        run: python scripts/m15_audit.py
+
+      - name: Portillon M4 (BLOCKED attendu tant que M3b est en cours)
+        run: |
+          set +e
+          python scripts/m4_readiness.py
+          rc=$?
+          if [ "$rc" -ne 0 ] && [ "$rc" -ne 3 ]; then
+            echo "::error::m4_readiness a échoué (rc=$rc) — voir le rapport"
+            exit "$rc"
+          fi
+          echo "portillon M4 : BLOCKED sur M3b (attendu) ou READY — OK"
+
+      - name: Notebook M3b (structure, 25 cellules)
+        run: python scripts/validate_notebook.py
+
+      - name: Noyau statistique M4 (tests)
+        run: python scripts/test_m4_metrics.py
+
+      - name: Aucun secret dans l'arbre
+        run: |
+          if git grep -InE 'ghp_[A-Za-z0-9]{30,}|KGAT_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{30,}' HEAD -- .; then
+            echo "::error::secret détecté dans l'arbre commité"
+            exit 1
+          fi
+          echo "arbre : aucun secret"
