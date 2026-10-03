@@ -1,0 +1,146 @@
+{
+ "file": "results/m4_readiness.json",
+ "tool": "scripts/m4_readiness.py",
+ "generated_at": "2026-10-03T23:29:44.529758+00:00",
+ "preregistration_chain": {
+  "protocol_sha256": "9ed00873b737cdc5d5abd000c2b41a6e94f61605921a1af4b2b328be0f5868f3",
+  "stats_v1_sha256": "ad6081e71c7eee80e076191f6e7a32bd7d68590c3f8b8fc99745191f043f4c58",
+  "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
+  "sealed_matches_reference": true
+ },
+ "audit_reexecution": {
+  "rc": 0,
+  "verdict": "PASS",
+  "failed": []
+ },
+ "m3b": {
+  "report_present": false,
+  "justices_in_report": [],
+  "adapters": [],
+  "adapters_dir": "data/m3/adapters"
+ },
+ "sealed_ground_truth": {
+  "cases": 50,
+  "with_scdb": 49,
+  "with_split": 49,
+  "with_direction": 49,
+  "justice_rows": 441,
+  "justice_votes": 441,
+  "justice_votes_with_direction": 440,
+  "no_ground_truth_dockets": [
+   "No. 18–726."
+  ],
+  "note": "identifiants et comptages uniquement ; aucune lecture de contenu, aucune évaluation avant l'étape 5"
+ },
+ "checks": [
+  {
+   "section": "R1",
+   "name": "corpus_gelé",
+   "status": "PASS",
+   "detail": "n_cases=569, n_opinions=1778 (valeurs gelées attendues : 569 / 1778)"
+  },
+  {
+   "section": "R1",
+   "name": "jeu_scellé_défini",
+   "status": "PASS",
+   "detail": "n_available=79, n_selected=50"
+  },
+  {
+   "section": "R1",
+   "name": "scellé_intact",
+   "status": "PASS",
+   "detail": "sealed_sha256 recalculé = référence"
+  },
+  {
+   "section": "R1",
+   "name": "protocole_préenregistré",
+   "status": "PASS",
+   "detail": "docs/04-PROTOCOLE.md sha256=9ed00873b737cdc5…"
+  },
+  {
+   "section": "R1",
+   "name": "emballage_LICENSE",
+   "status": "PASS",
+   "detail": "présent"
+  },
+  {
+   "section": "R1",
+   "name": "emballage_CITATION.cff",
+   "status": "PASS",
+   "detail": "présent"
+  },
+  {
+   "section": "R2",
+   "name": "audit_zéro_fuite_reexécuté",
+   "status": "PASS",
+   "detail": "m15_audit.py rc=0, verdict=PASS, échecs=aucun"
+  },
+  {
+   "section": "R3",
+   "name": "rapport_m3b",
+   "status": "FAIL",
+   "detail": "results/m3b_report.json ABSENT — entraînement persona inachevé (sessions Colab côté utilisateur)"
+  },
+  {
+   "section": "R3",
+   "name": "adaptateurs",
+   "status": "FAIL",
+   "detail": "0 adaptateurs dans data/m3/adapters (répertoire absent)"
+  },
+  {
+   "section": "R3",
+   "name": "audits_anti_mémorisation",
+   "status": "FAIL",
+   "detail": "section memorization ABSENTE (section 7bis du notebook)"
+  },
+  {
+   "section": "R3",
+   "name": "personas_complets",
+   "status": "FAIL",
+   "detail": "personas actifs couverts : — ; manquants : ['JGRoberts', 'CThomas', 'SAAlito', 'SSotomayor', 'EKagan', 'NMGorsuch', 'BMKavanaugh'] ; base-prompt-only (pré-enregistré) : ['ACBarrett', 'KBJackson']"
+  },
+  {
+   "section": "R4",
+   "name": "baselines_condition_D",
+   "status": "PASS",
+   "detail": "B4 (barre à battre, niveau vote) = 0.6366"
+  },
+  {
+   "section": "R4",
+   "name": "personas_train",
+   "status": "PASS",
+   "detail": "477 lignes train (477 attendues) ; écarts : aucun"
+  },
+  {
+   "section": "R4",
+   "name": "casefiles",
+   "status": "PASS",
+   "detail": "519 casefiles (519 attendues : 308 train + 211 test)"
+  },
+  {
+   "section": "R4",
+   "name": "textes_v3",
+   "status": "PASS",
+   "detail": "textes distincts v3 = 793 (793 attendus)"
+  },
+  {
+   "section": "R5",
+   "name": "taille_du_scellé",
+   "status": "PASS",
+   "detail": "50 affaires scellées (50 attendues)"
+  },
+  {
+   "section": "R5",
+   "name": "vérité_terrain",
+   "status": "WARN",
+   "detail": "SCDB join 49/50 ; split maj/min 49/50 ; direction d'affaire 49/50 ; votes par juge 441/441 lignes (avec direction 440) — comptages seuls, contenu non lu ; sans vérité terrain (constaté avant tout envoi au modèle, cause documentée du protocole) : ['No. 18–726.']"
+  }
+ ],
+ "verdict": "BLOCKED",
+ "blockers": [
+  "R3.rapport_m3b",
+  "R3.adaptateurs",
+  "R3.audits_anti_mémorisation",
+  "R3.personas_complets"
+ ]
+}

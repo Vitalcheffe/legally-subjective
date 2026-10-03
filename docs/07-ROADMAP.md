@@ -91,6 +91,21 @@ L'étape suivante est l'exécution du notebook sur Colab (T4 suffit) :
 Voir `docs/04-PROTOCOLE.md`. Une seule passe, quatre conditions, les 50
 affaires scellées, publication des résultats quelles qu'ils soient.
 
+### Préparation M4 (sans GPU) — faite
+
+- **Portillon de pré-vol** ✅ `scripts/m4_readiness.py` →
+  `results/m4_readiness.md` : une seule commande vérifie la chaîne de
+  pré-enregistrement (scellé SHA-256 recalculé = référence), re-exécute
+  l'audit zéro-fuite en processus frais (PASS), contrôle les entrées des
+  quatre conditions (baselines, personas, casefiles, textes v3), et compte
+  la vérité terrain du scellé — identifiants et comptages seuls, contenu
+  jamais lu. Verdict actuel : **BLOCKED** uniquement sur M3b (rapport +
+  adaptateurs attendus des sessions Colab) ; tout le reste est vert.
+- **Donnée manquante documentée avant l'épreuve** : une affaire scellée
+  (`No. 18–726.`) n'a pas de jointure SCDB — exclusion conforme au
+  protocole (cause constatée avant tout envoi au modèle). Votes par juge :
+  441 lignes disponibles, 440 avec direction.
+
 ## Ensuite (idées, rien de promis)
 
 - Condition multimodale : la plaidoirie **audio** (98,6 % de couverture) comme
