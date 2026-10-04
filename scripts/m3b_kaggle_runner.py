@@ -170,35 +170,23 @@ def render_shim(repo_path, head, drive_root, env_info):
 
 # ------------------------------------------------------------ préparation --
 def acquire_repo():
-    """Source du code : dataset privé Kaggle (dépôt complet AVEC .git,
-    arbre vérifiable octet-identique au commit épinglé) — sinon clone
-    GitHub public. Les DEUX routes vérifient HEAD == REPO_COMMIT."""
+    """Source du code : dataset privé Kaggle (archive tar du dépôt COMPLET
+    avec .git, arbre vérifiable octet-identique au commit épinglé) — sinon
+    clone GitHub public. Les DEUX routes vérifient HEAD == REPO_COMMIT
+    et l'arbre PROPRE (git status vide)."""
     if os.path.exists(REPO_PATH):
         shutil.rmtree(REPO_PATH)
     src_ds = "/kaggle/input/legally-subjective-code"
     if os.path.isdir(src_ds):
-        # le dataset contient le dépôt lui-même (avec .git) — copie RW
-        log("source code : dataset privé (dépôt complet + .git)…")
-        shutil.copytree(src_ds, REPO_PATH)
-        # si le dataset expose le dépôt SOUS un dossier unique, descendre
-        while True:
-            entries = [e for e in os.listdir(REPO_PATH) if e != ".git"]
-            if len(entries) == 1 and \
-                    os.path.isdir(os.path.join(REPO_PATH, entries[0])) and \
-                    not os.path.isfile(os.path.join(
-                        REPO_PATH, entries[0], "scripts", "m3b_state.py")):
-                # ce n'est pas le dépôt : inutile de descendre davantage
-                break
-            if len(entries) == 1 and os.path.isfile(os.path.join(
-                    REPO_PATH, entries[0], "scripts", "m3b_state.py")):
-                inner = os.path.join(REPO_PATH, entries[0])
-                for e in os.listdir(inner):
-                    shutil.move(os.path.join(inner, e),
-                                os.path.join(REPO_PATH, e))
-                os.rmdir(inner)
-                break
-            break
-        source = "dataset:legally-subjective-code"
+        tars = sorted(f for f in os.listdir(src_ds)
+                      if f.endswith((".tar.gz", ".tgz")))
+        assert tars, f"dataset code sans archive tar : {src_ds}"
+        assert len(tars) == 1, f"plusieurs archives possibles : {tars}"
+        os.makedirs(REPO_PATH, exist_ok=True)
+        log(f"source code : dataset privé ({tars[0]})…")
+        sh(["tar", "-xzf", os.path.join(src_ds, tars[0]), "-C", REPO_PATH],
+           timeout=600)
+        source = f"dataset:legally-subjective-code/{tars[0]}"
     else:
         log("source code : clone GitHub public au commit épinglé…")
         sh(["git", "clone", "--quiet", REPO_URL, REPO_PATH], timeout=600)
@@ -208,7 +196,7 @@ def acquire_repo():
     head = sh(["git", "-C", REPO_PATH, "rev-parse", "HEAD"]).stdout.strip()
     assert head == REPO_COMMIT, \
         f"commit attendu {REPO_COMMIT}, obtenu {head}"
-    # arbre PROPRE = le contenu du dataset est octet-identique au commit
+    # arbre PROPRE = le contenu de l'archive est octet-identique au commit
     status = sh(["git", "-C", REPO_PATH, "status", "--porcelain"]).stdout
     assert not status.strip(), \
         f"arbre du dépôt divergent du commit :\n{status[:500]}"
