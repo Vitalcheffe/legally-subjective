@@ -1,0 +1,69 @@
+{
+ "schema": "m3b-local-feasibility/1",
+ "utc": "2026-10-04T17:32:35.593976+00:00",
+ "question": "Le protocole M3b gelé peut-il s'exécuter dans cet atelier ?",
+ "gpu": {
+  "ok": true,
+  "value": {
+   "nvidia_smi": null,
+   "dev_nvidia": "aucun",
+   "torch_version": "2.14.1+cpu",
+   "cuda_available": false,
+   "cuda_device_count": 0
+  },
+  "seconds": 1.17
+ },
+ "mem": {
+  "ok": true,
+  "value": {
+   "ram_total_gb": 4.14,
+   "ram_available_gb": 3.24,
+   "disk_total_gb": 10.53,
+   "disk_free_gb": 1.42,
+   "exigence_modele_bf16_go": 6.4,
+   "exigence_modele_4bit_go": 1.9,
+   "verdict_disque": "IMPOSSIBLE — téléchargement bf16 (6,4 Go) > libre",
+   "verdict_ram": "IMPOSSIBLE — chargement bf16 (6,4 Go) > RAM totale"
+  },
+  "seconds": 0.0
+ },
+ "bitsandbytes": {
+  "ok": true,
+  "value": {
+   "installed": false,
+   "error": "ModuleNotFoundError: No module named 'bitsandbytes'",
+   "note": "bnb cible CUDA ; l'atelier n'a jamais pu l'utiliser"
+  },
+  "seconds": 0.0
+ },
+ "cpu_bench": {
+  "ok": true,
+  "value": {
+   "params_micro": 3946496,
+   "seq_mesuree": 1024,
+   "pas_micro_s": 0.268,
+   "pas_3b_extrapole_s": 845.8,
+   "pas_totaux_protocole": 3816,
+   "duree_totale_extrapolee_h": 896.5,
+   "duree_totale_extrapolee_jours": 37.4,
+   "note": "extrapolation linéaire conservatrice (CPU 2 cœurs, bnb 4-bit CPU inexistant — le protocole gelé exigerait de toute façon CUDA pour nf4)"
+  },
+  "seconds": 1.99
+ },
+ "network": {
+  "ok": true,
+  "value": {
+   "huggingface": 200,
+   "note": "joignable — mais le téléchargement (≈6,2 Go) ne tient pas sur le disque libre"
+  },
+  "seconds": 0.24
+ },
+ "blockers": [
+  "AUCUN GPU (nvidia-smi absent, /dev/nvidia* absent, torch.cuda=False) — or le protocole gelé exige bitsandbytes nf4 = CUDA uniquement",
+  "disque libre 1.42 Go < 6,4 Go requis pour le seul téléchargement bf16 du modèle de base du protocole gelé",
+  "RAM totale 4.14 Go < 6,4 Go requis pour charger le modèle de base avant quantification",
+  "extrapolation CPU mesurée : 37.4 jours de calcul continu (845.8 s/pas × 3816 pas)"
+ ],
+ "verdict": "EXÉCUTION LOCALE DU PROTOCOLE GELÉ : OBJECTIVEMENT IMPOSSIBLE — AUCUN GPU (nvidia-smi absent, /dev/nvidia* absent, torch.cuda=False) — or le protocole gelé exige bitsandbytes nf4 = CUDA uniquement ; disque libre 1.42 Go < 6,4 Go requis pour le seul téléchargement bf16 du modèle de base du protocole gelé ; RAM totale 4.14 Go < 6,4 Go requis pour charger le modèle de base avant quantification ; extrapolation CPU mesurée : 37.4 jours de calcul continu (845.8 s/pas × 3816 pas)",
+ "decision": "Architecture alternative du projet : notebook Colab T4 + état Drive (construit, testé 143+30+25 contrôles, re-vérifié ce jour) — exécuté par l'utilisateur, l'atelier fournit l'infrastructure, la vérification et les preuves."
+}

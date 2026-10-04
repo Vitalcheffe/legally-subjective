@@ -1,0 +1,77 @@
+{
+ "schema": "repro-standards-check/1",
+ "utc": "2026-10-04T17:37:24.002335+00:00",
+ "commit": "d12b8c47d1cbae04980ba24cde40d75c09535529",
+ "standards_verifies": 11,
+ "pass": 11,
+ "fail": 0,
+ "checks": [
+  {
+   "id": "S1",
+   "standard": "splits temporels + scellé exclu",
+   "verdict": "PASS",
+   "evidence": "manifest train=OT2015..OT2019 test=OT2020..OT2023 ; audit zéro-fuite 14 contrôles re-exécuté ce jour : PASS (B1/B2/B3 = gardes temporelles)"
+  },
+  {
+   "id": "S2",
+   "standard": "hyperparamètres complets + gelés",
+   "verdict": "PASS",
+   "evidence": "11 fragments gelés (sha256), test gel re-exécuté : 12/12 ; config_sci contient MODEL_ID/MAX_LEN/LoRA/LR/EPOCHS/BATCH/GRAD_ACCUM/VAL_FRACTION"
+  },
+  {
+   "id": "S3",
+   "standard": "seed fixe, consignée, dans l'empreinte",
+   "verdict": "PASS",
+   "evidence": "SEED=42 (random/np/torch/cuda) ; seed=SEED dans TrainingArguments gelé ; empreinte = sha256({cfg, données, seed}) — une autre seed = autre expérience"
+  },
+  {
+   "id": "S4",
+   "standard": "ressources de calcul enregistrées par session",
+   "verdict": "PASS",
+   "evidence": "results/environment_probe.json + m3b_local_feasibility.json (mesures réelles atelier) ; state.json consigne env+scellé à CHAQUE session (GPU, VRAM, versions python/torch/transformers/peft/bnb)"
+  },
+  {
+   "id": "S5",
+   "standard": "temps/mémoire/interruptions par juge",
+   "verdict": "PASS",
+   "evidence": "stats par juge dans state.json (n_train, tokens, params, steps, wall, max_mem, interruptions, reprises, val_loss_history) + journal events.jsonl (START/CHECKPOINT/RESUME/RECOVERY/… horodatés)"
+  },
+  {
+   "id": "S6",
+   "standard": "code versionné (commit + tag + bundle)",
+   "verdict": "PASS",
+   "evidence": "HEAD d12b8c47d1 ; tag m4-freeze présent ; 3 bundle(s) de résilience dans download/ (histoire complète vérifiable hors ligne)"
+  },
+  {
+   "id": "S7",
+   "standard": "données déterministes + hachées",
+   "verdict": "PASS",
+   "evidence": "477 lignes train (9 juges, Barrett/Jackson=0 pré-garde) + 382 votes test transparents (extension M4, jamais en entraînement) ; 307+211 case files ; textes v3 793 distincts ; hash par juge dans le manifeste d'expérience ; régénération : scripts/m3_build_datasets.py (déterministe, audité)"
+  },
+  {
+   "id": "S8",
+   "standard": "métriques pré-inscrites, aucune calculée avant protocole",
+   "verdict": "PASS",
+   "evidence": "m4_metrics.py (Wilson, McNemar exact, κ, ECE, Brier) : 19 tests OK re-exécutés ; analyse pré-inscrite dans docs/04-PROTOCOLE.md (règles 1-15) AVANT l'épreuve scellée"
+  },
+  {
+   "id": "S9",
+   "standard": "procédure de reproduction d'un tiers + idempotence",
+   "verdict": "PASS",
+   "evidence": "docs/13 §3 : 5 commandes (clone au commit consigné → lignage → portillon → rapport → paquet) ; build_artifacts.py prouve l'idempotence (deux builds = paquets octet-identiques, testé)"
+  },
+  {
+   "id": "S10",
+   "standard": "notebooks validés, exécutables, gardes incluses",
+   "verdict": "PASS",
+   "evidence": "M3b OK ; M4 OK ; gardes : GPU en tête d'install, scellé re-vérifié avant entraînement, pins planchers documentés (leçon bitsandbytes : planchers + matrice de versions observées plutôt que pins exacts périssables)"
+  },
+  {
+   "id": "S11",
+   "standard": "documentation des paramètres importants",
+   "verdict": "PASS",
+   "evidence": "m3_preflight.md (7 personas actives, fenêtres réelles, part lignes tronquées documentée) ; m3_power_report.md (Barrett/Jackson = 0 pré-garde, condition B dégradée pré-enregistrée) ; docs/12-GUIDE-COLAB.md (séquence d'exécution, incidents connus)"
+  }
+ ],
+ "conclusion": "Les 11 standards de reproductibilité exigés (splits, hyperparamètres, seeds, ressources, temps, code, données, métriques, reproduction, notebooks, documentation) sont vérifiés PAR MACHINE au commit d12b8c47d1. Chaque vérification relit les artefacts, recalcule les hashs ou re-exécute les tests — aucune affirmation non vérifiée."
+}

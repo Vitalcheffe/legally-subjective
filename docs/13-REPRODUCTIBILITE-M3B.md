@@ -111,3 +111,23 @@ paquets octet-identiques : idempotence testée).
   ne les remplacent jamais, et aucune capture n'est jamais fabriquée,
   simulée ou retouchée — une capture sans commande réelle derrière est
   une fraude, pas une preuve.
+
+## 7 · Vérification croisée des standards (2026-10-05, LS-16)
+
+Les standards de reproductibilité recommandés (conférences ML : splits,
+hyperparamètres, seeds, ressources de calcul, temps, code, données,
+métriques/statistiques, possibilité de reproduire ; pratiques Kaggle :
+notebooks exécutables, documentation des paramètres importants) sont
+vérifiés PAR MACHINE — chaque contrôle relit les artefacts, recalcule
+les hashs ou re-exécute les tests :
+
+```bash
+python scripts/repro_standards_check.py     # → results/repro_standards_check.{json,md}
+```
+
+Dernier passage : **11/11 PASS** au commit `d12b8c4` (splits audités,
+11 fragments gelés, SEED=42 dans l'empreinte, env par session, temps
+par juge, commit+tag+bundle, données hachées déterministes, métriques
+pré-inscrites et testées, procédure d'un tiers idempotente, notebooks
+validés, paramètres documentés). La synthèse atelier complète (format
+A→S du cahier des charges) vit dans `results/m3b_atelier_synthese.md`.

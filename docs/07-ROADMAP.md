@@ -235,6 +235,18 @@ bout en bout.
 
 ## Journal des versions
 
+- **LS-16 (2026-10-05) — re-vérification complète + standards + faisabilité locale** :
+  cahier des charges Point B intégralement re-contrôlé au commit d12b8c4.
+  Sonde d'impossibilité locale (`scripts/m3b_local_feasibility.py`) : aucune
+  GPU, disque 1,42 Go < 6,4 Go, RAM 4,14 Go < 6,4 Go, extrapolation CPU
+  mesurée ~37 jours — l'exécution réelle reste sur Colab (architecture
+  alternative du projet). Vérification croisée des standards de
+  reproductibilité (`scripts/repro_standards_check.py`) : 11/11 PASS.
+  Toutes les suites re-exécutées : 12+14+143+30+25+19 contrôles verts,
+  B4 reproduit exactement, portillon pilote GO, lignage 16/16. Preuves
+  011-014 + index recadré honnêtement. Synthèse atelier A→S :
+  `results/m3b_atelier_synthese.md`.
+
 - **v1.0 (2026-08-28)** : gel du Corpus-Monde + baselines M2 + scellé 5-4.
   Sources : bulk CourtListener 2026-06-30 + API recherche v4 (2026-08-28) +
   SCDB 2025_01. Empreintes dans `data/processed/stats_v1.json`.

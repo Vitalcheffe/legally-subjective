@@ -79,6 +79,18 @@ def atomic_write(path, text):
 
 def write_index_md(outdir, idx):
     lines = ["# Index des captures de preuves — exécutions réelles", ""]
+    lines.append("> **Cadrage honnête.** Ces captures documentent des "
+                 "expériences exécutées dans l'environnement de recherche du "
+                 "projet (atelier de l'agent d'exécution : terminal, dépôt "
+                 "git, venv), avec traces et artefacts reproductibles. Elles "
+                 "ne prétendent PAS reproduire une intervention humaine "
+                 "manuelle : les commandes sont lancées par l'agent, les "
+                 "sorties sont authentiques, et chaque maillon est "
+                 "re-vérifiable par les outils du dépôt (lignage, portillon, "
+                 "hashes). Aucune capture n'est fabriquée, simulée ou "
+                 "retouchée ; une capture d'une exécution qui échoue reste "
+                 "publiée avec son code de retour réel.")
+    lines.append("")
     lines.append("Chaque fichier contient la sortie non modifiée d'une "
                  "commande réellement exécutée, avec horodatage UTC, "
                  "commit git et code de retour.")

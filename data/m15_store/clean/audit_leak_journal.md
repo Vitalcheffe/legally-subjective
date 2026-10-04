@@ -1,6 +1,6 @@
 # Journal d'audit zéro-fuite — M1.5.4
 
-Généré : 2026-10-04T16:36:02.128026+00:00  
+Généré : 2026-10-04T17:37:23.693134+00:00  
 Verdict : **PASS** (14 contrôles, 0 échec(s))
 
 | Contrôle | Verdict | Détail |
