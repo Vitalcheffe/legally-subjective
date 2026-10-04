@@ -131,6 +131,12 @@ des résultats quelles qu'ils soient.
   après écriture des prédictions, bris délibéré uniquement par
   `UNSEAL = "--je-brise-le-sceau"` (consigné). Phase T transparente
   (répétable) pour valider la machinerie avant l'épreuve.
+- **Donnée manquante documentée avant l'épreuve** : une affaire scellée
+  (`No. 18–726.`, doublon de graphie du docket consolidé scellé) n'a pas
+  de jointure SCDB — exclusion conforme au protocole (cause constatée
+  avant tout envoi au modèle). Vérité terrain du scellé disponible :
+  441 lignes de vote par juge, 440 avec direction — identifiants et
+  comptages seuls, contenu jamais lu avant l'épreuve.
 
 L'exécution attend le notebook Colab M3b : déposer
 `m3b_adapters_*.zip` (§2 du runner), puis phase T, puis phase S — une
