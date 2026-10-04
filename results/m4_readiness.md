@@ -10,7 +10,7 @@ Empreinte du scellé : `596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778
 | R1.2 | PASS | 50 sélectionnées parmi 79 affaires 5-4 |
 | R1.3 | PASS | les 50 scellées matchent le corpus (51 entrées — doublons de graphie exclus aussi) |
 | R1.4 | PASS | docs/04-PROTOCOLE.md est versionné |
-| R1.5 | PASS | arbre git propre (fichiers suivis ; HEAD 0fc4be6) |
+| R1.5 | PASS | arbre git propre (fichiers suivis ; HEAD a8a3341) |
 | R2 | PASS | audit zéro-fuite re-exécuté à froid : 14/14 PASS |
 | R3.1 | PASS | artefacts M3 : 518 case files, 477 lignes persona train, 793 textes v3, 9 juges |
 | R3.2 | PASS | re-construction déterministe : 537 fichiers, empreintes identiques avant/après |

@@ -92,6 +92,8 @@ def main():
         print("SKIP — torch/transformers/peft absents (test atelier, "
               "pas CI). Installer .venvs/m3b pour l'exécuter.")
         return 0
+    sys.path.insert(0, HERE)
+    import m3b_state as MS                              # noqa: F401
 
     print("\n=== R1 · session complète de bout en bout ===")
     base, drive, work = fresh()
@@ -108,6 +110,23 @@ def main():
           "R1.adaptateur_final")
     rep = json.load(open(os.path.join(drive, "m3b_report.json")))
     check(rep["results"][0]["verified"] is True, "R1.rapport_vérifié")
+    # v3 : chaîne de lignage complète sur de VRAIS artefacts peft
+    check(js and js.get("lineage_ok") is True, "R1.lignage_complet_vrai",
+          str(js))
+    check(os.path.isfile(os.path.join(drive, "experiment_manifest.json")),
+          "R1.manifeste_écrit")
+    evts, partial = MS.read_events(drive)
+    kinds = [e["kind"] for e in evts]
+    check(not partial and "RUN_COMPLETE" in kinds and "EXPORT" in kinds
+          and "JUDGE_COMPLETE" in kinds, "R1.journal_complet")
+    check(st["judges"]["AA"]["params"]["trainable"] > 0
+          and st["judges"]["AA"]["wall_seconds"] > 0,
+          "R1.stats_enregistrées")
+    check(st.get("seal_checks") and st["seal_checks"][0]["ok"] is True,
+          "R1.scellé_vérifié_dans_le_pilote")
+    ev_idx = json.load(open(os.path.join(drive, "evidence", "index.json")))
+    check(any("PILOTE" in open(c["file"], encoding="utf-8").read()
+              for c in ev_idx["captures"]), "R1.preuve_finale_réelle")
 
     print("\n=== R2 · mort brutale en plein pas réel, puis reprise ===")
     base, drive, work = fresh()
@@ -117,7 +136,6 @@ def main():
     check(st["judges"]["AA"]["status"] == "training", "R2.training")
     check(st["judges"]["AA"]["step"] == 16, "R2.dernier_pas_durable_16",
           str(st["judges"]["AA"]["step"]))
-    import m3b_state as MS
     ok, why = MS.ExpState(drive).verify_drive_entry(
         st["judges"]["AA"]["ckpt"], "AA")
     check(ok, "R2.ckpt16_intègre", why)
@@ -127,6 +145,14 @@ def main():
     check(js2 and js2.get("final_step") == 48, "R2.finit_à_48",
           str(js2 and js2.get("final_step")))
     check(js2 and js2.get("finalized"), "R2.finalized")
+    check(js2 and js2.get("lineage_ok") is True, "R2.lignage_après_mort",
+          str(js2))
+    st2 = state_of(drive)
+    check(st2["judges"]["AA"]["interruptions"] == 1
+          and st2["judges"]["AA"]["resumes"] == 1,
+          "R2.interruption+reprise_comptées",
+          str((st2["judges"]["AA"]["interruptions"],
+               st2["judges"]["AA"]["resumes"])))
 
     print("\n=== R3 · budget temps → arrêt PROPRE (save PUIS stop) ===")
     base, drive, work = fresh()
@@ -142,6 +168,7 @@ def main():
           out2[-600:])
     check(f"reprise réelle depuis le pas {js['final_step']}" in out2
           if js else False, "R3.reprise_au_pas_exact")
+    check(js2 and js2.get("lineage_ok") is True, "R3.lignage_après_budget")
 
     print("\n=== R4 · re-exécution sur état finalisé (idempotence) ===")
     rc, out, js = session(py, drive, work, mode="resume")

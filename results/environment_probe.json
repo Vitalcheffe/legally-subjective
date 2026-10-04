@@ -1,0 +1,57 @@
+{
+ "schema": "ls-environment-probe/1",
+ "utc": "2026-10-04T16:35:23Z",
+ "interpreter": {
+  "python": "3.12.14",
+  "executable": "/home/z/my-project/.venvs/m3b/bin/python",
+  "platform": "Linux-5.10.134-013.15.kangaroo.al8.x86_64-x86_64-with-glibc2.41"
+ },
+ "gpu": {
+  "nvidia_smi": {
+   "present": false,
+   "why": "exécutable nvidia-smi absent du PATH"
+  },
+  "devices": [],
+  "torch_cuda": null,
+  "torch": {
+   "version": "2.14.1+cpu",
+   "cuda_available": false,
+   "cuda_version_build": null,
+   "device_count": 0
+  }
+ },
+ "cpu": {
+  "model": "Intel(R) Xeon(R) Processor",
+  "logical_cores": 2,
+  "loadavg_1min": 0.17
+ },
+ "ram": {
+  "total_mb": 4042,
+  "available_mb": 3190
+ },
+ "disk": {
+  "free_gb": 2.2,
+  "total_gb": 10.5,
+  "write_mbs_fsync": 2447
+ },
+ "network": {
+  "github.com": {
+   "reachable": true,
+   "latency_ms": 119
+  },
+  "huggingface.co": {
+   "reachable": true,
+   "latency_ms": 22
+  }
+ },
+ "persistence": {
+  "note": "témoin écrit ; survie entre processus testée par un second appel (le fichier existe-t-il déjà ?)",
+  "marker": "/tmp/ls_probe_marker.txt",
+  "preexisting": true
+ },
+ "long_job": {
+  "background_process_spawnable": true,
+  "note": "fils détaché lancé (3 s) — le conteneur/exécuteur doit rester vivant assez longtemps pour les jobs longs"
+ },
+ "verdict_gpu": "EXÉCUTION M3b LOCALE IMPOSSIBLE — aucun pilote NVIDIA ni périphérique /dev/nvidia* ; torch 2.14.1+cpu : cuda_available=False (build CPU)"
+}

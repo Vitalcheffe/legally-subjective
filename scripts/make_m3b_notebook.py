@@ -230,6 +230,32 @@ print("dépôt :", HEAD[:12])
 sys.path.insert(0, os.path.join(REPO_PATH, "scripts"))
 import m3b_state as M3B
 
+# --- environnement d'exécution CONSIGNÉ (lignage : qui a entraîné, où,
+#     avec quelles versions — aucune de ces valeurs n'est inventée) --------
+ENV_INFO = {"python": sys.version.split()[0], "torch": torch.__version__,
+            "transformers": _md.version("transformers"),
+            "peft": _md.version("peft"),
+            "bitsandbytes": _md.version("bitsandbytes"),
+            "accelerate": _md.version("accelerate"),
+            "gpu": (torch.cuda.get_device_name(0)
+                    if torch.cuda.is_available() else "cpu"),
+            "gpu_mem_gb": (round(
+                torch.cuda.get_device_properties(0).total_memory / 1e9, 1)
+                if torch.cuda.is_available() else 0)}
+print("environnement :", ENV_INFO["gpu"], "|", ENV_INFO["torch"],
+      "|", ENV_INFO["transformers"])
+
+# --- scellé M4 re-vérifié DANS LE CLONE : l'entraînement ne démarre
+#     jamais dans un état où la chaîne de scellement serait cassée --------
+SEAL_CHECK = M3B.seal_check_from_repo(REPO_PATH)
+assert SEAL_CHECK.get("ok") is True, (
+    "scellé M4 non vérifiable dans le clone — REFUS de démarrer. "
+    "Le scellé doit être intègre PENDANT l'entraînement (protocole). "
+    f"Diagnostic : {SEAL_CHECK}")
+print("scellé M4 intègre dans le clone :",
+      str(SEAL_CHECK.get("sealed_sha256"))[:16] + "…",
+      f"({SEAL_CHECK.get('n_cases')} affaires scellées)")
+
 # --- statut brut, en lecture seule (la vraie reprise se fait en §5bis) ------
 _p = os.path.join(DRIVE_ROOT, "state.json")
 if os.path.exists(_p):
@@ -430,7 +456,8 @@ FINGERPRINT = hashlib.sha256(json.dumps(
 STATE = M3B.ExpState(DRIVE_ROOT)
 MODE, MSG = STATE.load_or_init(FINGERPRINT,
                                {"config": _fp_cfg, "data": _fp_dat},
-                               SEED, HEAD, list(personas), run_id=RUN_ID)
+                               SEED, HEAD, list(personas), run_id=RUN_ID,
+                               env=ENV_INFO, seal=SEAL_CHECK)
 print(MSG)
 assert MODE != "error", ("État incompatible — ne rien contourner : envoyer "
                          "ce message tel quel (règle d'or n°2).")
@@ -439,6 +466,16 @@ if not STATE.state["sessions"] or \\
     STATE.state["sessions"].append({"run_id": RUN_ID, "head": HEAD[:12],
                                     "resumed": [], "trained": []})
     STATE.save()
+
+# journal d'événements + preuve de démarrage (sorties RÉELLES, jamais
+# fabriquées — elles complètent le manifeste, ne le remplacent pas)
+_ev, _ev_partial = STATE.read_events()
+print(f"journal d'événements : {len(_ev)} enregistrements"
+      + (" — dernière ligne incomplète ignorée (crash)" if _ev_partial else ""))
+M3B.evidence_dump(DRIVE_ROOT, "démarrage-session",
+                   MSG + "\\njournal : " + str(len(_ev)) + " événements\\n",
+                   note="état réel au démarrage de la session",
+                   run_id=RUN_ID, head=HEAD)
 print("répertoire durable :", DRIVE_ROOT)
 """)
 
@@ -468,6 +505,7 @@ en échec sera repris (depuis son checkpoint) à la session suivante.
 
 code("""
 # --- §6 · entraînement repreneur ---------------------------------------------
+import time as _time
 import traceback
 
 CKPT_LOCAL = "/content/ckpt" if os.path.exists("/content") else "./ckpt"
@@ -485,6 +523,20 @@ def train_one(name):
         print("  · départ de zéro")
     else:
         print("  · aucun ckpt récupérable — redépart consigné au journal")
+    # ---- statistiques réelles de l'expérience (lignage §XI) ---------------
+    _j = STATE.j(name)
+    if _j.get("params") is None:
+        _j["params"] = {"trainable": int(sum(p.numel() for p in
+                                                model.parameters()
+                                                if p.requires_grad)),
+                        "total": int(sum(p.numel() for p in
+                                          model.parameters()))}
+    if _j.get("n_tokens_train") is None:
+        _j["n_tokens_train"] = int(sum(len(it[0]) for it in tr_ds.items))
+    _j["n_train"], _j["n_val"] = len(tr_rows), len(va_rows)
+    STATE.save()
+    if torch.cuda.is_available():
+        torch.cuda.reset_peak_memory_stats()
     args = TrainingArguments(
         output_dir=local_out,
         per_device_train_batch_size=CONFIG["BATCH"],
@@ -503,8 +555,18 @@ def train_one(name):
                                  M3B.StatefulEarlyStopping(
                                      STATE, name, CONFIG["PATIENCE"])])
     STATE.set_status(name, "training"); STATE.save()
+    STATE.event("START", judge=name, from_step=STATE.step(name))
+    _t0 = _time.time()
     trainer.train(resume_from_checkpoint=resume_from)
     final_step, fresh = trainer.state.global_step, None
+    _j = STATE.j(name)
+    _j["wall_seconds"] = round((_j.get("wall_seconds") or 0)
+                              + (_time.time() - _t0), 1)
+    _j["steps_total"] = int(trainer.state.max_steps)
+    if torch.cuda.is_available():
+        _j["max_mem_gb"] = round(
+            torch.cuda.max_memory_allocated() / 1e9, 2)
+    STATE.save()
     if STATE.step(name) == 0:          # juge trop court pour un seul save
         fresh = os.path.join(CKPT_LOCAL, f"final_{name}")
         model.save_pretrained(fresh)
@@ -541,6 +603,9 @@ def finalize_judge(name, fresh=None):
         ids = torch.tensor([p_ids + o_ids[:16]], device=base.device)
         assert torch.isfinite(m(input_ids=ids).logits).all(), "logits non finis"
     del m; torch.cuda.empty_cache()
+    STATE.record_validation(name, "reload_forward", True,
+                            "PeftModel rechargé depuis Drive + forward, "
+                            "logits finis — AVANT le marquage done")
     STATE.mark_done(name, {"n_train": len(splits[name][0]),
                            "n_val": len(splits[name][1]),
                            "best_val_loss": STATE.j(name).get("best_val_loss"),
@@ -569,6 +634,18 @@ for name in personas:
     finalize_judge(name, fresh)
     STATE.state["sessions"][-1]["trained"].append(name)
     STATE.save()
+    _j = STATE.j(name)
+    M3B.evidence_dump(
+        DRIVE_ROOT, f"juge-{name}-terminé",
+        f"{name} TERMINÉ — adaptateur promu sur Drive, hash vérifié, "
+        f"rechargé + forward OK\\n"
+        f"best_step={_j['best_step']} best_val_loss={_j['best_val_loss']} "
+        f"pas={_j['step']} wall={_j.get('wall_seconds')}s "
+        f"interruptions={_j.get('interruptions')} reprises={_j.get('resumes')}\\n"
+        f"n_train={_j.get('n_train')} tokens={_j.get('n_tokens_train')} "
+        f"params entraînables={(_j.get('params') or {}).get('trainable')}\\n",
+        note="finalisation réelle du juge sur Colab",
+        run_id=RUN_ID, head=HEAD)
     print(f"=== {name} : TERMINÉ, adaptateur vérifié ===")
 
 print("\\n" + STATE.summary())
@@ -616,6 +693,13 @@ else:
     STATE.state["probe"] = {"case": probe_case[:200],
                             "generations": {p: t[:500] for p, t in texts.items()}}
     STATE.save()
+    M3B.evidence_dump(
+        DRIVE_ROOT, "sonde-deux-plumes",
+        "§7 · sonde — même instruction, deux plumes\\n"
+        + "\\n".join(f"—— {p} ——\\n{t[:400]}" for p, t in texts.items())
+        + "\\n",
+        note="sorties réelles des adaptateurs rechargés",
+        run_id=RUN_ID, head=HEAD)
     df = pd.DataFrame(STATE.state["results"])
     print("\\n", df.to_string(index=False))
     print(f"\\nval_loss médiane: {df.best_val_loss.median():.3f} "
@@ -722,6 +806,13 @@ else:
 
     STATE.state["memorization"] = memo
     STATE.save()
+    M3B.evidence_dump(
+        DRIVE_ROOT, "audit-anti-mémorisation",
+        "§7bis · audit min-k% + cloze\\n"
+        + "\\n".join(f"{n}: {json.dumps(v, ensure_ascii=False)}"
+                     for n, v in memo.items()) + "\\n",
+        note="mesures réelles base vs adaptateur",
+        run_id=RUN_ID, head=HEAD)
     print("\\n→ section memorization écrite dans le manifeste Drive")
 """)
 
@@ -760,8 +851,46 @@ else:
                      os.path.join(DRIVE_ROOT, "final", "m3b_adapters_final.zip"))
     STATE.state["finalized"] = True
     STATE.save()
-    zf = os.path.join(DRIVE_ROOT, "final", "m3b_adapters_final.zip")
-    print("EXPORT FINAL :", zf, f"({os.path.getsize(zf)/1e6:.0f} Mo)")
+    _zf = os.path.join(DRIVE_ROOT, "final", "m3b_adapters_final.zip")
+    STATE.event("EXPORT", sha256=M3B.sha256_file(_zf),
+                size=os.path.getsize(_zf))
+    STATE.event("RUN_COMPLETE", judges=len(STATE.state["judges"]),
+                sessions=len(STATE.state["sessions"]))
+
+    # ---- manifeste de LIGNAGE : la chaîne complète, re-vérifiable --------
+    MANIFEST = M3B.build_experiment_manifest(STATE, CONFIG, ENV_INFO,
+                                             REPO_PATH)
+    print("manifeste de lignage :", os.path.join(DRIVE_ROOT,
+                                                 "experiment_manifest.json"))
+
+    # ---- vérification de chaîne : résultat → prédiction → modèle →
+    #      checkpoint → configuration → données → split → commit →
+    #      environnement → journal ---------------------------------------
+    _links, _lin_ok = M3B.verify_lineage(DRIVE_ROOT, REPO_PATH)
+    for _ok, _name, _det in _links:
+        print(f"  [{'✓' if _ok else '✗'}] {_name} — {_det}")
+
+    # ---- PORTILLON GO/NO-GO objectif (le verdict, pas une affirmation) --
+    print("\\nportillon M3b :")
+    _g = subprocess.run([sys.executable,
+                         os.path.join(REPO_PATH, "scripts", "m3b_gate.py"),
+                         "--root", DRIVE_ROOT, "--repo", REPO_PATH,
+                         "--json", os.path.join(DRIVE_ROOT,
+                                                "m3b_gate.json")],
+                        text=True)
+
+    M3B.evidence_dump(
+        DRIVE_ROOT, "finalisation-expérience",
+        "EXPÉRIENCE FINALISÉE\\n"
+        f"liens de lignage : {sum(1 for o, _, _ in _links if o)}"
+        f"/{len(_links)} OK\\n"
+        f"zip final sha256={M3B.sha256_file(_zf)[:16]}… "
+        f"({os.path.getsize(_zf)/1e6:.0f} Mo)\\n"
+        f"portillon : voir m3b_gate.json sur le Drive\\n",
+        note="finalisation réelle — chaîne vérifiée + portillon exécuté",
+        run_id=RUN_ID, head=HEAD)
+
+    print("\\nEXPORT FINAL :", _zf, f"({os.path.getsize(_zf)/1e6:.0f} Mo)")
     print("Le runner M4 (notebook m4_epreuve_finale) le récupérera TOUT SEUL"
           "\\nsur le Drive — rien à télécharger, rien à déposer.")
 """)

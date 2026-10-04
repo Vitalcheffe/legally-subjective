@@ -19,12 +19,18 @@ os._exit brutal, comme une coupure Colab) :
   J  manifeste incohérent (pas officiel inexistant → fallback réel) ;
   K  relancements accidentels / idempotence (export octet-identique) ;
   L  lancement alors que tout est finalisé ;
+  M  stockage Drive temporairement indisponible (EIO) — v3 ;
+  O  redémarrage COMPLET multi-sessions avec continuité — v3 ;
+  P  reprise après PLUSIEURS générations de checkpoints (recyclage
+     save_total_limit + corruption du plus récent) — v3.
 
   +  X1 budget temps → arrêt PROPRE avec sauvegarde du pas courant ;
      X2 empreinte scientifique modifiée → refus de reprendre ;
      X3 atomicité : crash pendant copytree (injection directe) ;
      X4 RESET TOTAL (double confirmation) ;
-     X5 adaptateur final falsifié → détecté par verify.
+     X5 adaptateur final falsifié → détecté par verify ;
+     X6 v3 : journal d'événements (ligne partielle tolérée), montée de
+        niveau v2→v3, preuves indexées, manifeste + lignage complet.
 
 Stdlib uniquement. Durée totale ~2-4 min.
 """
@@ -96,6 +102,10 @@ def fresh():
 
 
 # ------------------------------------------------------------------ scén. --
+def events_of(drive):
+    return M.read_events(drive)[0]
+
+
 def scenario_A():
     print("\n=== A · première exécution vierge ===")
     base, drive, local = fresh()
@@ -132,6 +142,37 @@ def scenario_A():
     check(sum(1 for n in names if n.endswith("adapter_config.json")) == 4
           and "m3b_report.json" in names, "A.zip_structure_M4")
     check(st["judges"]["AA"]["es_counter"] == 3, "A.compteur_es_3")
+    # ---- v3 : journal, stats, manifeste, lignage, preuves ----------------
+    evts = events_of(drive)
+    kinds = [e["kind"] for e in evts]
+    check(kinds.count("SESSION_START") == 1, "A.v3.1_session_start")
+    check(kinds.count("JUDGE_COMPLETE") == 4, "A.v3.4_juges_complétés")
+    check(kinds.count("START") == 4, "A.v3.4_start")
+    check("RUN_COMPLETE" in kinds and "EXPORT" in kinds,
+          "A.v3.run_complete+export")
+    check(all(e.get("ts") for e in evts), "A.v3.événements_datés")
+    check(st["judges"]["AA"]["n_tokens_train"] > 0
+          and st["judges"]["AA"]["params"]["trainable"] > 0
+          and st["judges"]["AA"]["wall_seconds"] >= 0,
+          "A.v3.stats_par_juge", str(st["judges"]["AA"].keys()))
+    check(st.get("environment", {}).get("gpu") == "simulator"
+          and st.get("seal_checks") and st["seal_checks"][0]["ok"] is True,
+          "A.v3.environnement+scellé_enregistrés")
+    check(os.path.isfile(os.path.join(drive, "experiment_manifest.json")),
+          "A.v3.manifeste_lignage_écrit")
+    check(js.get("lineage_ok") is True, "A.v3.chaîne_complète_vérifiée",
+          str(js.get("lineage_ok")))
+    man = json.load(open(os.path.join(drive, "experiment_manifest.json")))
+    check(man["protocol"]["seed"] == 42
+          and len(man["protocol"]["data_train_sha256"]) == 4
+          and man["seal_check"]["ok"] is True,
+          "A.v3.manifeste.contenu")
+    evd = os.path.join(drive, "evidence")
+    idx = json.load(open(os.path.join(evd, "index.json")))
+    check(len(idx["captures"]) >= 5, "A.v3.preuves_indexées",
+          str(len(idx.get("captures", []))))
+    check(any("TERMINÉ" in open(c["file"], encoding="utf-8").read()
+              for c in idx["captures"]), "A.v3.preuve_juge_réelle")
     return base, drive, local
 
 
@@ -401,6 +442,160 @@ def scenario_X4():
     check(len(renamed) == 1, "X4.sauvegarde_de_dernier_recours", str(renamed))
 
 
+def scenario_M():
+    print("\n=== M · stockage Drive temporairement indisponible (EIO) ===")
+    base, drive, local = fresh()
+    session(drive, local, kill_at_step=23)          # officiel : pas 20
+    st0 = state_of(drive)
+    n_evts0 = len(events_of(drive))
+    # session avec échec de TOUTES les écritures Drive (EIO simulé,
+    # équivalent quota plein) — activé après le chargement de l'état
+    rc, out, js = session(drive, local, readonly_drive=True)
+    check(rc == 0, "M.session_survie_proprement", out[-300:])
+    check("stockage Drive indisponible" in out, "M.message_arrêt_propre")
+    st1 = state_of(drive)
+    check(st1["judges"]["AA"]["step"] == 20, "M.manifeste_reste_au_pas_20",
+          str(st1["judges"]["AA"]["step"]))
+    check(st1["judges"]["AA"]["ckpt"] == st0["judges"]["AA"]["ckpt"],
+          "M.aucun_checkpoint_fantôme_promu")
+    check(st1["fingerprint"] == st0["fingerprint"], "M.empreinte_intacte")
+    # le journal n'a pas bougé pendant la panne (aucune écriture possible —
+    # seuls des artefacts DURABLES comptent, rien de fabriqué en mémoire)
+    check(len(events_of(drive)) >= n_evts0, "M.journal_jamais_falsifié")
+    # session suivante (Drive revenu) : reprise PROPRE depuis le pas 20,
+    # interruption de la session 1 détectée au boot, fin normale
+    rc2, out2, js2 = session(drive, local)
+    check(rc2 == 0 and js2 and js2.get("finalized"), "M.reprise_après_panne",
+          out2[-300:])
+    check("reprend au pas 20" in out2, "M.reprise_pas_20")
+    evts = events_of(drive)
+    check(any(e["kind"] == "RECOVERY" for e in evts),
+          "M.recovery_consigné_au_retour")
+    check(js2.get("lineage_ok") is True, "M.lignage_final_intègre")
+    st2 = state_of(drive)
+    check(st2["judges"]["AA"]["interruptions"] >= 1
+          and st2["judges"]["AA"]["status"] == "done",
+          "M.interruptions_comptées_puis_juge_fini")
+
+
+def scenario_O():
+    print("\n=== O · redémarrage complet — 4 processus, continuité totale ===")
+    base, drive, local = fresh()
+    session(drive, local, kill_at_step=23)
+    session(drive, local, kill_at_step=53)
+    session(drive, local, kill_at_step=83)
+    rc, out, js = session(drive, local)
+    check(rc == 0 and js and js.get("finalized"), "O.finalisée_en_4_processus",
+          out[-300:])
+    evts = events_of(drive)
+    kinds = [e["kind"] for e in evts]
+    check(kinds.count("SESSION_START") == 4, "O.4_démarrages_de_processus",
+          str(kinds.count("SESSION_START")))
+    recovs = [e for e in evts if e["kind"] == "RECOVERY"
+              and "interruption" in str(e.get("detail", ""))]
+    check(len(recovs) == 3, "O.3_interruptions_détectées_au_boot",
+          str(len(recovs)))
+    st = state_of(drive)
+    check(st["judges"]["AA"]["interruptions"] == 3,
+          "O.compteur_interruptions_3",
+          str(st["judges"]["AA"]["interruptions"]))
+    check(st["judges"]["AA"]["resumes"] == 3,
+          "O.compteur_reprises_3",
+          str(st["judges"]["AA"]["resumes"]))
+    check(js.get("lineage_ok") is True, "O.lignage_intègre_malgré_restarts")
+
+
+def scenario_P():
+    print("\n=== P · plusieurs générations de checkpoints + corruption du "
+          "plus récent ===")
+    base, drive, local = fresh()
+    session(drive, local, kill_at_step=23)          # gen 20
+    session(drive, local, kill_at_step=45)          # gens {20, 40}
+    session(drive, local, kill_at_step=65)          # prune → {40, 60}
+    st = state_of(drive)
+    gens = sorted(p for p in os.listdir(
+        os.path.join(drive, "checkpoints", "AA"))
+        if p.startswith("ckpt-"))
+    check(st["judges"]["AA"]["step"] == 60, "P.officiel_60",
+          str(st["judges"]["AA"]["step"]))
+    check(len(gens) <= 3, "P.recyclage_générations", str(gens))
+    # corruption du PLUS RÉCENT (officiel 60) → repli sur génération
+    # précédente disponible (50 : après recyclage, {50,60} subsistent),
+    # promue nouvel officiel
+    rc, out, js = session(drive, local, corrupt_official=True)
+    check(rc == 0 and js and js.get("finalized"), "P.session_termine",
+          out[-400:])
+    check("reprend au pas 50" in out, "P.repli_génération_précédente_50")
+    evts = events_of(drive)
+    recov = [e for e in evts if e["kind"] == "RECOVERY"
+             and "repli" in str(e.get("detail", ""))]
+    check(len(recov) >= 1, "P.événement_recovery_consigné")
+    st1 = state_of(drive)
+    check(st1["judges"]["AA"]["status"] == "done", "P.juge_fini_malgré_tout")
+    check(js.get("lineage_ok") is True, "P.lignage_final_intègre")
+
+
+def scenario_X6():
+    print("\n=== X6 · v3 : journal tolérant, montée v2→v3, preuves ===")
+    base = tempfile.mkdtemp(prefix="m3b_unit3_")
+    drive = os.path.join(base, "drive")
+    os.makedirs(drive)
+
+    # 1) ligne partielle (crash mid-write) → ignorée, signalée
+    with open(os.path.join(drive, "events.jsonl"), "w") as f:
+        f.write(json.dumps({"ts": "t", "kind": "NOTE"}) + "\n")
+        f.write('{"ts": "t2", "kind": "CHECKPOI')     # crash simulé
+    evts, partial = M.read_events(drive)
+    check(len(evts) == 1 and partial is True,
+          "X6.ligne_partielle_tolérée", str((len(evts), partial)))
+
+    # 2) manifeste v2 → v3 : enrichi, aucune donnée perdue
+    v2 = {"schema": "m3b-state/2", "run_id": "r1",
+          "fingerprint": "fpx", "fingerprint_parts": {"config": "a",
+                                                       "data": "b"},
+          "seed": 42, "code": {"head_initial": "h", "heads_seen": ["h"]},
+          "judges": {"AA": {"status": "training", "step": 30,
+                            "ckpt": None, "best_step": 20,
+                            "best_val_loss": 2.0, "es_counter": 1,
+                            "error": None}},
+          "results": [], "probe": None, "memorization": None,
+          "finalized": False, "sessions": []}
+    json.dump(v2, open(os.path.join(drive, "state.json"), "w"))
+    es = M.ExpState(drive)
+    mode, _ = es.load_or_init("fpx", {"config": "a", "data": "b"}, 42,
+                              "h", ["AA"], run_id="r2")
+    check(mode == "resume", "X6.v2_repris_sans_refus")
+    st = state_of(drive)
+    check(st["schema"] == "m3b-state/3", "X6.schéma_porté_en_v3")
+    check(st["judges"]["AA"]["best_val_loss"] == 2.0
+          and st["judges"]["AA"]["step"] == 30,
+          "X6.données_v2_préservées")
+    check(st["judges"]["AA"]["interruptions"] == 1
+          and st["judges"]["AA"]["status"] == "pending",
+          "X6.interruption_détectée_au_passage_v3")
+    evts = M.read_events(drive)[0]
+    check(any(e["kind"] == "RECOVERY" for e in evts),
+          "X6.recovery_consigné")
+
+    # 3) preuves : index atomique, séquences croissantes
+    M.evidence_dump(drive, "test-1", "sortie réelle 1", note="n1")
+    M.evidence_dump(drive, "test-2", "sortie réelle 2", note="n2")
+    idx = json.load(open(os.path.join(drive, "evidence", "index.json")))
+    seqs = [c["seq"] for c in idx["captures"]]
+    check(seqs == sorted(seqs) and len(seqs) == 2, "X6.preuves_séquences",
+          str(seqs))
+    check(os.path.isfile(os.path.join(drive, "evidence", "002_test-2.txt")),
+          "X6.preuve_2_écrite")
+
+    # 4) type d'événement inconnu → refus (le journal n'est pas une poubelle)
+    try:
+        es.event("NOT_A_KIND")
+        bad = False
+    except ValueError:
+        bad = True
+    check(bad, "X6.type_inconnu_refusé")
+
+
 def main():
     t0 = time.time()
     scenario_A()
@@ -411,10 +606,14 @@ def main():
     scenario_I()
     scenario_J()
     scenario_K()
+    scenario_M()
+    scenario_O()
+    scenario_P()
     scenario_X1()
     scenario_X2()
     scenario_X3_X5()
     scenario_X4()
+    scenario_X6()
     print(f"\n════════════════════════════════════════════════")
     print(f"INJECTION DE PANNES : {NPASS} PASS / {NFAIL} FAIL "
           f"({time.time() - t0:.0f}s)")

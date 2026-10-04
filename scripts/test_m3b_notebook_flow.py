@@ -9,7 +9,8 @@ vers un bac à sable local, parce que /content n'existe que sur Colab) :
   cellule 4   imports + garde GPU (torch.cuda patché) ;
   cellule 6   CONFIG + RUN_ID ;
   cellule 8   §2bis — montage Drive (google.colab factice), clone (symlink),
-              import m3b_state, statut brut ;
+              scellé re-vérifié + environnement consigné, import m3b_state,
+              statut brut ;
   cellules 10-11  PERSONAS_DIR + chargement des VRAIS personas du dépôt ;
   cellule 20  §5bis — empreinte + état (création VIERGE réelle) ;
   cellule 20 (2e passage) — reprise « resume » ;
@@ -149,11 +150,22 @@ def main():
     st = json.load(open(os.path.join(SANDBOX, "drive", "MyDrive",
                                      "legally-subjective-m3b",
                                      "state.json"), encoding="utf-8"))
-    check(st["schema"] == "m3b-state/2", "N2.schema")
+    check(st["schema"] == "m3b-state/3", "N2.schema", st.get("schema"))
     check(len(st["judges"]) == 7 and all(
         v["status"] == "pending" for v in st["judges"].values()),
         "N2.juges_pending")
     check(st["fingerprint"] == G["FINGERPRINT"], "N2.empreinte_cohérente")
+    # v3 : environnement + scellé consignés, journal + preuves démarrés
+    check(st.get("environment", {}).get("gpu") == "FakeT4 (harnais CPU)",
+          "N2.v3.environnement_consigné", str(st.get("environment")))
+    check(st.get("seal_checks") and st["seal_checks"][0]["ok"] is True,
+          "N2.v3.scellé_vérifié_dans_le_clone")
+    _dr = os.path.join(SANDBOX, "drive", "MyDrive", "legally-subjective-m3b")
+    _ev, _p = sys.modules["m3b_state"].read_events(_dr)
+    check(len(_ev) >= 1 and _ev[0]["kind"] == "SESSION_START",
+          "N2.v3.journal_session_start", str(_ev[:1]))
+    check(os.path.isdir(os.path.join(_dr, "evidence")),
+          "N2.v3.preuve_démarrage_écrite")
 
     print("\n=== N3 · §5bis re-exécuté : REPRISE automatique ===")
     ok, err = run_cell(19, "§5bis (2e fois)")
