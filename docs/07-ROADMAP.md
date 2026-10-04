@@ -180,6 +180,50 @@ le Drive (modification purement mécanique du transport ; scellé, tag
 `m4-freeze`, machinerie de scoring : inchangés et toujours re-vérifiés
 dans le clone au tag).
 
+## M3b v3 — le dossier expérimental traçable (lignage + preuves + portillon)
+
+Répond au cahier des charges « point B » (18 exigences) : la robustesse
+devient une propriété ARCHITECTURALE et le résultat devient PRUVABLE de
+bout en bout.
+
+- **Gel du protocole** (`scripts/test_m3b_protocol_freeze.py`) : les
+  fragments méthodologiques du notebook sont figés octet par octet
+  (`results/protocol_m3b_freeze.json`) et vérifiés en CI — améliorer
+  l'infrastructure sans toucher la méthodologie n'est plus une promesse,
+  c'est une invariant de build. Rituel de changement explicite :
+  `--je-change-le-protocole` (miroir du bris de sceau M4).
+- **Journal d'événements** (`events.jsonl`, append-only + fsync, ligne
+  déchirée réparée) : SESSION_START / START / CHECKPOINT / RESUME /
+  RECOVERY / VALIDATION / ERROR / JUDGE_COMPLETE / RUN_COMPLETE / EXPORT.
+- **Stats réelles par juge** : n_train, tokens, paramètres
+  entraînables/totaux, steps, temps cumulé, mémoire max, interruptions,
+  reprises, historique de val_loss.
+- **Manifeste de lignage** (`experiment_manifest.json`) + `verify_lineage`
+  (L1-L8, chaque hash recalculé) : résultat → prédiction → modèle →
+  checkpoint → configuration → données → split → commit → environnement →
+  journal. CLI : `scripts/m3b_lineage.py`.
+- **Preuves** : `evidence/` sur le Drive (captures de sorties RÉELLES,
+  horodatées, indexées — jamais fabriquées) + `scripts/capture_evidence.py`
+  côté atelier.
+- **Portillon GO/NO-GO** (`scripts/m3b_gate.py`, G1-G10) : juges attendus
+  recalculés depuis le dépôt, adaptateurs re-hachés, journal cohérent,
+  scellé re-vérifié + exclusion re-parcourue indépendamment, empreinte
+  re-dérivée, versions épinglées. Exécuté AUTOMATIQUEMENT en fin de §8.
+- **Rapport expérimental** (`scripts/m3b_report_gen.py`) : 20 sections,
+  chaque affirmation étiquetée PROUVÉ / TESTÉ / OBSERVÉ / SIMULÉ /
+  NON TESTÉ ; détecte et étiquette les pilotes tout seul.
+- **Paquet d'artefacts** (`scripts/build_artifacts.py`) : copie hachée
+  avant/après, idempotence testée (deux builds = hashes identiques).
+- **Scénarios M/O/P** (stockage indisponible EIO, redémarrages complets,
+  générations multiples de checkpoints) → suite A-P + X : 143 contrôles ;
+  intégration CPU réelle : 30 contrôles ; cellules réelles du notebook :
+  25 contrôles. Le pilote CPU finit **GO** au portillon avec chaîne
+  complète (16/16 maillons) sur de vrais artefacts peft.
+- **Sonde d'environnement** (`scripts/probe_environment.py`) : preuve
+  matérielle que l'atelier de l'agent n'a AUCUN GPU (aucun pilote NVIDIA,
+  torch CPU, 2 cœurs, 4 Go RAM) — l'exécution M3b réelle vit sur le
+  Colab de l'utilisateur, l'atelier prouve la mécanique.
+
 ## Ensuite (idées, rien de promis)
 
 - Condition multimodale : la plaidoirie **audio** (98,6 % de couverture) comme

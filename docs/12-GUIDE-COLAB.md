@@ -1,16 +1,21 @@
-# 12 · Guide d'exécution Colab (M3b → M4), édition architecture durable
+# 12 · Guide d'exécution Colab (M3b → M4), édition architecture durable v3
 
 Ce guide décrit la séquence opérationnelle complète, **depuis un
 environnement totalement vierge** (rien n'a jamais été fait, aucun fichier
 n'existe nulle part), jusqu'à l'Épreuve Finale M4. Il se lit dans l'ordre.
 
-L'architecture v2 rend l'entraînement **insensible aux coupures** : toute la
+L'architecture v3 rend l'entraînement **insensible aux coupures** : toute la
 vérité de l'expérience vit dans un seul dossier Google Drive, les
 checkpoints sont promus pendant l'entraînement (pas seulement entre les
 juges), et la reprise est automatique. Le notebook est le notebook
 `m3b_qlora_personas.ipynb` du dépôt ; sa logique de reprise est testée par
-injection de pannes (`scripts/test_m3b_state.py`, scénarios A-L) et par
-exécution réelle du Trainer (`scripts/test_m3b_resume_cpu.py`).
+injection de pannes (`scripts/test_m3b_state.py`, scénarios A-P) et par
+exécution réelle du Trainer (`scripts/test_m3b_resume_cpu.py`). Depuis la
+v3, l'expérience produit en plus **automatiquement** : un journal
+d'événements (`events.jsonl`), des captures de preuves (`evidence/`), un
+manifeste de lignage (`experiment_manifest.json`), une vérification de
+chaîne complète et un **portillon GO/NO-GO** exécuté à la fin — sans
+aucune action de ta part.
 
 ## 0 · Ce que « partir de zéro » veut dire, concrètement
 
@@ -63,11 +68,17 @@ Lien (à ouvrir **après** confirmation que le dépôt est à jour) :
 
 **Ce que tu verras** (repères de bon fonctionnement) :
 
-- §1 : `python 3.x`, puis `torch … | transformers 4.49.0 | peft 0.13.2 …` ;
+- §1 : la garde GPU s'exécute **avant** l'installation (2 s) — si elle
+  échoue, voir §4 « GPU requis » ci-dessous ; puis `python 3.x`, puis
+  `torch … | transformers 4.49.0 | peft 0.13.2 …` ; les lignes
+  `ERROR: pip's dependency resolver…` mentionnant **gradio** ou
+  **diffusers** (préinstallés Colab) sont ATTENDUES et sans effet ;
 - §2bis : `AUCUNE EXPÉRIENCE COMMENCÉE` (première session) puis, les
   suivantes, un tableau `ÉTAT : EN COURS — n/7 juges terminés` avec le
-  dernier pas durable de chaque juge ;
-- §5bis : le même tableau, plus `répertoire durable : …legally-subjective-m3b` ;
+  dernier pas durable de chaque juge ; puis `scellé M4 intègre dans le
+  clone : …` (re-vérifié à CHAQUE session) et `environnement : T4 …` ;
+- §5bis : le même tableau, `journal d'événements : N enregistrements`, et
+  `répertoire durable : …legally-subjective-m3b` ;
 - §6 : `=== <juge> ===`, la barre de progression HF (perte qui descend),
   et dans le journal `ckpt promu : <juge> pas N` à chaque sauvegarde Drive ;
 - arrêt propre : `⏹ budget temps atteint — ARRÊT PROPRE au pas N` **suivi
@@ -75,7 +86,10 @@ Lien (à ouvrir **après** confirmation que le dépôt est à jour) :
   en haut à droite), relancer §6 (ou Tout exécuter) ouvre une nouvelle
   fenêtre sans rien perdre ; sinon, revenir plus tard ;
 - fin complète : `TOUS LES JUGES SONT TERMINÉS`, puis §7/§7bis/§8
-  s'exécutent tout seuls et l'export final est écrit sur le Drive.
+  s'exécutent tout seuls : sonde deux plumes, table anti-mémorisation,
+  export final sur le Drive, **chaîne de lignage ✓** (chaque maillon
+  re-vérifié) et **portillon M3b : GO/NO-GO** — c'est ce verdict, pas un
+  feeling, qui décide de la suite.
 
 **Fin de session** : rien à télécharger, rien à sauvegarder. Fermer
 l'onglet, arrêter la session si tu veux économiser le quota. Revenir plus
@@ -85,11 +99,14 @@ tarde au même lien. C'est tout.
 
 1. **Dès que §8 affiche l'export final** (ou si une sortie te semble
    anormale à n'importe quel moment) : copier-coller
+   - la sortie complète du §8 **en commençant par le portillon GO/NO-GO**
+     (le tableau G1-G10) ;
    - la sortie complète du §7 (les deux plumes) ;
    - la sortie complète du §7bis (table anti-mémorisation) ;
    - le contenu du fichier `state.json` du dossier Drive (petit fichier
      texte — clic → Ouvrir avec → texte).
-   → je vérifie R6 et les audits ; réponse = **GO ou NO-GO** pour M4.
+   → je re-vérifie R6, la chaîne de lignage et les audits ; réponse =
+   **GO ou NO-GO** pour M4.
 2. **Après le GO** : exécuter M4 phase T (ci-dessous) et m'envoyer la
    sortie complète. La régression B4 doit donner **exactement** 0,6366
    (vote) et 0,558 (affaire) — la moindre divergence = machinerie à
@@ -132,6 +149,10 @@ le verrou était déjà posé. La reprise se décide ensemble.
 
 ## 4 · Incidents connus et remèdes
 
+- **`GPU requis — ce runtime est CPU-ONLY`** (dès la première cellule,
+  en ~2 s) : le runtime n'est pas un GPU. Exécution → Modifier le type
+  d'exécution → **T4 GPU** → Enregistrer, puis Tout exécuter à nouveau
+  (la machine redémarre : normal, rien n'est perdu à ce stade).
 - **`No module named 'triton.ops'`** : redémarrer l'exécution
   (Exécution → Redémarrer l'exécution, PAS Supprimer — les paquets
   restent), puis relancer. Le pin `>=0.47.0,<0.51` est censé l'empêcher ;
