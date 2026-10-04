@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-08-30T09:34:05.346576+00:00",
+ "generated_at": "2026-10-04T12:45:00.135704+00:00",
  "scope": "M1.5 étape 4 — zéro fuite, dédup, hygiène, pré-décision",
  "summary": {
   "checks_total": 14,
   "checks_failed": 0,
   "persona_train_rows": 477,
   "persona_test_votes": 382,
-  "casefiles": 519,
+  "casefiles": 518,
   "v3_texts": 793
  },
  "verdict": "PASS",
@@ -19,7 +19,7 @@
   {
    "check": "A1.sealed_not_in_casefiles",
    "verdict": "PASS",
-   "detail": "519 casefiles, scellés trouvés: aucun"
+   "detail": "518 casefiles, scellés trouvés: aucun"
   },
   {
    "check": "A2.sealed_not_in_personas",
@@ -74,7 +74,7 @@
   {
    "check": "E1.casefiles_pre_decision",
    "verdict": "PASS",
-   "detail": "clés interdites: aucune (519 fichiers)"
+   "detail": "clés interdites: aucune (518 fichiers)"
   },
   {
    "check": "F1.chain_hashes",
@@ -120,7 +120,7 @@
   },
   "manifest": {
    "path": "data/m3/manifest.json",
-   "sha256": "6da82654a66840ef57d2668c9645e8cf39b6023fb08608aae8901d240685e83f",
+   "sha256": "1245a0ce5eed93157dbca42e88dbc47e0ab5d384e1b1fca93023f40a62b8c6d7",
    "bytes": 2441
   }
  }

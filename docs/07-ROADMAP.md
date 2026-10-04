@@ -88,8 +88,53 @@ L'étape suivante est l'exécution du notebook sur Colab (T4 suffit) :
 
 ## M4 — Épreuve Finale
 
-Voir `docs/04-PROTOCOLE.md`. Une seule passe, quatre conditions, les 50
-affaires scellées, publication des résultats quelles qu'ils soient.
+Voir `docs/04-PROTOCOLE.md` (protocole + addendum de pré-inscription).
+Une seule passe, quatre conditions, les 50 affaires scellées, publication
+des résultats quelles qu'ils soient.
+
+### Préparation M4 (faite, sans toucher au scellé)
+
+- **Porte de pré-vol** ✅ `scripts/m4_readiness.py` — sept contrôles
+  exécutés à froid depuis les artefacts seuls : scellé recalculé
+  (formule exacte de `build_corpus.py`), audit zéro-fuite re-exécuté,
+  reconstruction déterministe des datasets M3 (empreintes avant/après),
+  exclusion du scellé par un matcher **indépendant** (aucune confiance
+  partagée avec le builder ni l'audit), disponibilité de la vérité
+  terrain (comptages seulement, jamais les valeurs), artefacts M3b,
+  runner. Verdict : READY / PENDING / FAIL — l'épreuve est
+  mécaniquement interdite sur FAIL.
+- **Fuite attrapée et réparée** ✅ le matcher indépendant a trouvé ce
+  que la règle officielle laissait passer : l'affaire scellée
+  « 145, Orig. » (Delaware v. Pennsylvania) figurait dans les case
+  files — la règle comparait « 145, Orig. » (corpus, point final) à
+  « 145, Orig » (scellé normalisé) sans normaliser les deux côtés. La
+  règle est corrigée (les deux côtés normalisés), les datasets
+  régénérés (519 → 518 case files ; personas inchangés — la garde de
+  date réelle avait déjà écarté cette affaire de l'entraînement : 0
+  ligne contaminée, vérifié), l'audit re-passé 14/14 PASS. Le comptage
+  « 50 » de l'ancienne règle masquait le trou : 49 scellées exclues +
+  une collision de graphie (« No. 18–726. », doublon d'un docket
+  scellé consolidé) faisaient 50. C'est exactement pourquoi le
+  protocole exige une vérification indépendante.
+- **Pré-inscription de l'analyse, en code** ✅ `scripts/m4_scoring.py`
+  (McNemar exact bilatéral, Wilson 95, κ, calibration bandes + ECE,
+  strates futur/entrelacé, condition D règle B4) — prouvé par
+  `scripts/test_m4_machinery.py` : McNemar vérifié contre scipy, **B4
+  reproduit à l'identique** (0,6366 vote / 0,558 affaire au niveau M2),
+  rapport synthétique complet et déterministe sur la fenêtre
+  transparente.
+- **Runner** ✅ `notebooks/m4_epreuve_finale.ipynb` (généré par
+  `scripts/make_m4_notebook.py`, AST-validé). Clone au tag `m4-freeze`,
+  scellé recalculé, porte de pré-vol re-exécutée dans le clone,
+  conditions A/B/C/D, scoring contraint (log-probs de séquence, aucune
+  génération libre), **gardes d'usage unique** : verrou `m4_exam.lock`
+  après écriture des prédictions, bris délibéré uniquement par
+  `UNSEAL = "--je-brise-le-sceau"` (consigné). Phase T transparente
+  (répétable) pour valider la machinerie avant l'épreuve.
+
+L'exécution attend le notebook Colab M3b : déposer
+`m3b_adapters_*.zip` (§2 du runner), puis phase T, puis phase S — une
+seule fois.
 
 ## Ensuite (idées, rien de promis)
 

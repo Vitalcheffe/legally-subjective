@@ -1,12 +1,12 @@
 # Journal d'audit zéro-fuite — M1.5.4
 
-Généré : 2026-08-30T09:34:05.346576+00:00  
+Généré : 2026-10-04T12:45:00.135704+00:00  
 Verdict : **PASS** (14 contrôles, 0 échec(s))
 
 | Contrôle | Verdict | Détail |
 |---|---|---|
 | `A4.seal_integrity` | PASS | sealed_sha256 recomputed: match |
-| `A1.sealed_not_in_casefiles` | PASS | 519 casefiles, scellés trouvés: aucun |
+| `A1.sealed_not_in_casefiles` | PASS | 518 casefiles, scellés trouvés: aucun |
 | `A2.sealed_not_in_personas` | PASS | 477 train rows, scellés: aucun |
 | `A3.sealed_not_in_test_votes` | PASS | 382 test votes, scellés: aucun |
 | `B1.train_before_cutoff` | PASS | rows décidées après 2020-10-01: aucun |
@@ -17,7 +17,7 @@ Verdict : **PASS** (14 contrôles, 0 échec(s))
 | `C3.no_duplicate_outputs_within_persona` | PASS | doublons intra-persona: aucun |
 | `D1.rows_in_v3_and_long_enough` | PASS | rows invalides: aucun |
 | `D2.signatures_match_persona` | PASS | erreurs d'attribution: aucun |
-| `E1.casefiles_pre_decision` | PASS | clés interdites: aucune (519 fichiers) |
+| `E1.casefiles_pre_decision` | PASS | clés interdites: aucune (518 fichiers) |
 | `F1.chain_hashes` | PASS | 8 artefacts hachés (voir journal) |
 
 ## Chaîne (sha256)
@@ -31,4 +31,4 @@ Verdict : **PASS** (14 contrôles, 0 échec(s))
 | clean_report | `312650bd4d8b` | 5,261 |
 | authorship | `d615859f8330` | 292,473 |
 | segments | `81dca2f8ad9a` | 40,035,472 |
-| manifest | `6da82654a668` | 2,441 |
+| manifest | `1245a0ce5eed` | 2,441 |

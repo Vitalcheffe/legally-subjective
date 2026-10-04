@@ -7,7 +7,7 @@
     "sealed": "excluded everywhere (M4 only)"
   },
   "case_files": {
-    "train": 308,
+    "train": 307,
     "test": 211,
     "oyez_coverage_train": 273,
     "oyez_coverage_test": 194,

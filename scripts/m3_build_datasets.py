@@ -162,10 +162,20 @@ def sealed_dockets(stats):
     snums = set()
     for s in raw:
         snums |= nums(s)
-    snorm = {s.strip().rstrip(".").replace("–", "-") for s in raw}
+
+    def nk(s):
+        """Clé canonique : tirets unifiés, espaces réduits, point final
+        retiré — appliquée des DEUX côtés (corpus ET scellé). Le bug M4-R4 :
+        « 145, Orig. » (corpus, point final) vs « 145, Orig » (scellé
+        normalisé) ne matchaient pas — la fuite d'un case file scellé."""
+        s = (s or "").replace("\u2013", "-").replace("\u2014", "-")
+        return re.sub(r"\s+", " ", s).strip().rstrip(".")
+
+    snorm = {nk(s) for s in raw}
+
     def is_sealed(c):
         cd = c.get("docket_number") or c.get("docket") or ""
-        return bool(nums(cd) & snums) or (cd in snorm) or (cd == "No.142")
+        return bool(nums(cd) & snums) or (nk(cd) in snorm) or (cd == "No.142")
     return is_sealed
 
 
