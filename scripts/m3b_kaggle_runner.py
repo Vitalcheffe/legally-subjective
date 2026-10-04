@@ -170,8 +170,9 @@ def render_shim(repo_path, head, drive_root, env_info):
 
 # ------------------------------------------------------------ préparation --
 def acquire_repo():
-    """Source du code : dataset privé Kaggle (archive tar du dépôt COMPLET
-    avec .git, arbre vérifiable octet-identique au commit épinglé) — sinon
+    """Source du code : dataset privé Kaggle (archive tar OPAQUE du dépôt
+    complet avec .git — extension .bin pour éviter l'extraction serveur ;
+    arbre vérifiable octet-identique au commit épinglé) — sinon
     clone GitHub public. Les DEUX routes vérifient HEAD == REPO_COMMIT
     et l'arbre PROPRE (git status vide)."""
     if os.path.exists(REPO_PATH):
@@ -179,7 +180,7 @@ def acquire_repo():
     src_ds = "/kaggle/input/legally-subjective-code"
     if os.path.isdir(src_ds):
         tars = sorted(f for f in os.listdir(src_ds)
-                      if f.endswith((".tar.gz", ".tgz")))
+                      if f.endswith((".tar.bin", ".tar.gz", ".tgz")))
         assert tars, f"dataset code sans archive tar : {src_ds}"
         assert len(tars) == 1, f"plusieurs archives possibles : {tars}"
         os.makedirs(REPO_PATH, exist_ok=True)
