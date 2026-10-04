@@ -1,0 +1,77 @@
+{
+  "gate": "scripts/m4_readiness.py",
+  "verdict": "PENDING — chaîne intacte, M3b/runner en attente",
+  "counts": {
+    "pass": 12,
+    "fail": 0,
+    "pending": 1
+  },
+  "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
+  "checks": [
+    {
+      "check": "R1.1",
+      "status": "PASS",
+      "detail": "scellé recalculé à l'identique (596ea80ae2478082dca3…, 50 affaires)"
+    },
+    {
+      "check": "R1.2",
+      "status": "PASS",
+      "detail": "50 sélectionnées parmi 79 affaires 5-4"
+    },
+    {
+      "check": "R1.3",
+      "status": "PASS",
+      "detail": "les 50 scellées matchent le corpus (51 entrées — doublons de graphie exclus aussi)"
+    },
+    {
+      "check": "R1.4",
+      "status": "PASS",
+      "detail": "docs/04-PROTOCOLE.md est versionné"
+    },
+    {
+      "check": "R1.5",
+      "status": "PASS",
+      "detail": "arbre git propre (fichiers suivis ; HEAD 74703dd)"
+    },
+    {
+      "check": "R2",
+      "status": "PASS",
+      "detail": "audit zéro-fuite re-exécuté à froid : 14/14 PASS"
+    },
+    {
+      "check": "R3.1",
+      "status": "PASS",
+      "detail": "artefacts M3 : 518 case files, 477 lignes persona train, 793 textes v3, 9 juges"
+    },
+    {
+      "check": "R3.2",
+      "status": "PASS",
+      "detail": "re-construction déterministe : 537 fichiers, empreintes identiques avant/après"
+    },
+    {
+      "check": "R4",
+      "status": "PASS",
+      "detail": "exclusion du scellé confirmée par le matcher indépendant (859 lignes persona + case files)"
+    },
+    {
+      "check": "R5.1",
+      "status": "PASS",
+      "detail": "vérité terrain disponible (les 50 entrées scellées) : direction 49/50, disposition 49/50, votes par juge 440"
+    },
+    {
+      "check": "R5.2",
+      "status": "PASS",
+      "detail": "strates pré-enregistrées : 20 futures (OT2020+) / 30 entrelacées (OT2015-2019) — McNemar global + stratifié"
+    },
+    {
+      "check": "R6",
+      "status": "PENDING",
+      "detail": "artefacts M3b absents localement (entraînement Colab en cours) : déposer m3b_adapters_*.zip → adapters/ + m3b_report.json à la racine du repo"
+    },
+    {
+      "check": "R7",
+      "status": "PASS",
+      "detail": "runner M4 présent, AST-valide, gardes (scellé + usage unique) en place"
+    }
+  ]
+}
