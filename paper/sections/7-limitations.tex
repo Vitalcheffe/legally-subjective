@@ -18,7 +18,16 @@ benches changed twice, 5--4 rates are high, and the ideological
 middle (Kennedy, then Roberts) moved. Consequences are concrete ---
 the training window contains no votes at all for Barrett and
 Jackson, so challengers receive no signal for them, and the B4
-comparison excludes them by the $n \ge 20$ rule. We consider this a
+comparison excludes them by the $n \ge 20$ rule. The Final Test
+report therefore separates \emph{known-justice forecasting} (justices
+with training history, where B4 and the persona are both defined)
+from \emph{new-justice forecasting} (Barrett, Jackson: B4 is
+undefined by construction, the persona is impossible, and coverage
+falls to the zero-shot and retrieval conditions). These are
+different questions---a model that cannot know a new justice is not
+the same failure as one that knows a justice and still misses---and
+aggregating across that boundary without labeling it would blur
+both. We consider the window a
 feature (the numbers describe \emph{this} Court, not a historical
 average) but it bounds external validity: nothing here transfers
 automatically to other eras or other courts.
@@ -33,12 +42,16 @@ baselines; the multiple comparisons across three challengers are
 not corrected. The sealed fifty exist precisely to absorb this
 residual degrees-of-freedom problem at the Final Test.
 
-\paragraph{No text yet.}
-The opinion-text corpus (M1.5) is 112 of 1{,}778 opinions deep,
-dripping at free-tier API quotas of roughly five requests per
-minute. Every textual condition therefore remains untested, and
-this paper's null result bounds only the \emph{structured} world.
-We regard the text as the live question, and we flag the risk we
+\paragraph{The text collection is complete but untested.}
+The opinion-text corpus (M1.5) is now complete: all 1{,}778 targeted
+opinion texts were collected, normalized, and deduplicated to 793
+distinct texts (the remainder are documented textual duplicates
+across docket aliases), with a zero-leak audit of fourteen checks
+committed and re-executed on every push. Every textual condition
+nevertheless remains untested pending the free-tier GPU training of
+the persona adapters, and this paper's null result bounds only the
+\emph{structured} world. We regard the text as the live question,
+and we flag the risk we
 cannot exclude: the eventual persona adapters may overfit
 memorized opinion content rather than transferable style ---
 mitigations (min-$k$\% probes, cloze audits, temporal splits

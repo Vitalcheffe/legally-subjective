@@ -41,7 +41,7 @@
 \usepackage[htt]{hyphenat}  % allow hyphenation in \texttt
 
 \hypersetup{
-    pdftitle={Legally Subjective: Measuring the Upper Bound of Predictability in U.S. Supreme Court Decisions with Public Data and a Zero Budget},
+    pdftitle={Legally Subjective: How Much U.S. Supreme Court Vote Predictability Survives a Strong Ideological Baseline? A Pre-Registered, Zero-Budget Experiment on Public Data},
     pdfauthor={Amine Harch el Korane},
     pdfsubject={Computational legal prediction, judicial behavior, pre-registered baselines},
     pdfkeywords={Supreme Court, judicial prediction, machine learning, pre-registration, SCDB, CourtListener}
@@ -51,16 +51,16 @@
 
 % ================= title block (hand-set, no \maketitle) =================
 \begin{center}
-{\LARGE\bfseries Legally Subjective: Measuring the Upper Bound of\\[3pt]
-Predictability in U.S. Supreme Court Decisions\\[3pt]
-with Public Data and a Zero Budget\par}
+{\LARGE\bfseries Legally Subjective: How Much U.S. Supreme Court Vote\\[3pt]
+Predictability Survives a Strong Ideological Baseline?\\[3pt]
+A Pre-Registered, Zero-Budget Experiment on Public Data\par}
 \vspace{14pt}
 {\normalsize Amine Harch el Korane\textsuperscript{1}\par}
 \vspace{2pt}
 {\small\textsuperscript{1}Independent researcher.
 Project and code: \href{https://github.com/Vitalcheffe/legally-subjective}{github.com/Vitalcheffe/legally-subjective}\par}
 \vspace{4pt}
-{\small Working paper, 29 August 2026 \textperiodcentered\ Corpus-Monde v1 (frozen 2026-08-28)\par}
+{\small Working paper, revision 2 \textperiodcentered\ Corpus-Monde v1 (frozen 2026-08-28)\par}
 \end{center}
 \vspace{6pt}
 
@@ -82,17 +82,21 @@ Supreme Court Database votes. Before any model is trained, statistical
 baselines fix the price of admission: predicting each justice's vote as
 their modal ideological direction from the training window achieves
 \textbf{63.7\%} accuracy (Wilson 95\% CI [61.3; 65.9]) at the vote
-level on the held-out window --- the bar. We then train the first
+level on the held-out window --- the bar. We then train
 structured-feature challengers (logistic regression, gradient boosting,
 and interaction models over issue area, lower-court disposition, term,
 and argument length, with 50 sealed 5--4 cases excluded from every
 split): none beats the bar (58.6--60.4\%; McNemar $p \le 0.047$). A
 feature ablation shows justice identity is the only stable signal
-($-8.6$ points without it). The null result prices the residual signal:
-if 63.7\% is beatable, the signal lives in the text of the cases and
-opinions, which the remaining pre-registered conditions (zero-shot,
-persona fine-tuning, retrieval) will test against a sealed holdout of
-fifty 5--4 decisions.
+($-8.6$ points without it). We are explicit about what this null does
+and does not establish: the \emph{tested} structured representation
+does not beat a per-justice ideological baseline under this temporal
+protocol --- it does not show that all non-textual information is
+exhausted, nor that the residual signal, if any, is textual. The
+remaining pre-registered conditions (zero-shot, persona fine-tuning,
+retrieval) probe the written record against a sealed holdout of fifty
+5--4 decisions, where the ideological baseline is re-fit and
+re-evaluated on that population itself as the like-for-like comparator.
 
 \vspace{4pt}
 \noindent\textbf{Keywords:} judicial prediction; Supreme Court;

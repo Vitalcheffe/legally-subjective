@@ -23,12 +23,13 @@ git history alone. The dataset rule, the known exclusions
 and the coding caveats are documented in the repository's
 \texttt{docs/} rather than hidden in prose.
 
-The remaining artifact under active construction is the
-opinion-text corpus (M1.5): 112 of 1{,}778 opinions collected at
-the time of writing, gathered under a free API tier whose measured
-quota (5 requests/minute, with multi-hour cooldown walls) makes
-completion a matter of weeks rather than hours. The collection is
-resumable on state, and its completion triggers the pre-committed
+The opinion-text corpus (M1.5) is complete: 1{,}778 collected texts,
+normalized and deduplicated to 793 distinct documents with full
+provenance, committed with a fourteen-check zero-leak audit that the
+repository's continuous integration re-executes on every push. The
+remaining artifact under construction is the persona training itself
+(M3b), running on free-tier GPU sessions; its completion triggers the
+pre-committed
 text conditions---at which point this paper's structured null
 becomes the fixed background against which the persona question
 is finally asked.

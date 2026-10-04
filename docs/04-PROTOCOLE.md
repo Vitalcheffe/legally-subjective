@@ -107,6 +107,40 @@ motivé par le résultat :
     (e) pose un verrou (`m4_exam.lock`) qui interdit toute seconde
     exécution sauf bris délibéré, consigné dans le rapport.
 
+### Amendement v2 — ajouté avant toute évaluation scellée
+
+L'épreuve n'a jamais été exécutée (verrou jamais posé, R6 en attente,
+aucune vérité terrain du scellé lue) ; le présent amendement étend donc
+la pré-inscription, avant tout résultat, de quatre manières. Il ne
+modifie ni le scellé, ni le tag `m4-freeze`, ni le code gelé — il fixe
+la **lecture** des sorties que ce code produit déjà :
+
+12. **Tailles d'effet rapportées** : en plus des tests, le rapport
+    publie Δ_persona = acc(B) − acc(A) et Δ_persona|B4 = acc(B) −
+    acc(D). Le comparateur de l'épreuve est D — B4 ajusté strict
+    (règle 8) **évalué sur la population scellée elle-même** — et non
+    le 63,7 % de la fenêtre générale : les 50 affaires 5-4 sont un
+    décalage de distribution volontaire, et la barre like-for-like est
+    la performance de l'adversaire idéologique sur cette population.
+13. **Contraste secondaire** : McNemar exact bilatéral B contre D
+    (α = 0,05), global et par strate — « le persona bat-il l'adversaire
+    sur le terrain le plus difficile ? ». B contre A (règle 1) reste le
+    test décisif primaire.
+14. **Strate juges connus / juges nouveaux** : le rapport par juge
+    (déjà calculé par le schéma `per_justice`) se lit en deux strates —
+    juges avec historique d'entraînement (prédictibles par B4) et
+    juges sans aucun vote dans la fenêtre train (Barrett, Jackson :
+    B4 indéfinissable, persona impossible par construction, couvert
+    par A/C et par le mode dégradé de la règle 10). Aucun score
+    « connaissance du juge » n'est agrégé à travers cette frontière
+    sans être signalé.
+15. **Post-hoc étiqueté** : le noyau statistique étendu
+    (`scripts/m4_metrics.py` — bootstrap apparié déterministe, Brier,
+    log-loss, F1 macro) est désigné **exploratoire** : ses sorties
+    nourrissent la section robustesse du rapport final, jamais le
+    verdict pré-inscrit, qui reste McNemar exact sur les paires
+    discordantes (règles 1 et 13).
+
 ## Après l'Épreuve
 
 Les résultats alimentent : le dépôt de reproductibilité (ce repo), l'article

@@ -26,35 +26,51 @@ modern, 5--4-heavy window, the honest point of comparison is
 closer to our setting, and the 63.7\% bar is what an
 ideology-only adversary achieves when unanimity is gone.
 
-\subsection{Why the null makes the text conditions more
+\subsection{What the null makes the text conditions more
 interesting, not less}
 
 Had a structured challenger cleared the bar, the persona experiment
 would have been partially redundant: some of the textual signal
 would already be recoverable from codes. The null result does the
-opposite---it concentrates the entire residual question in the
-text. If prediction above 63.7\% is possible at all on this window,
-it must come from information that is written down but not coded:
-the argument's framing, the questions the justices asked at oral
-argument, the linguistic signature of each opinion. The persona
-condition (B) tests the strongest version of that hypothesis ---
-that the signature is \emph{individual} and \emph{prospective} ---
-and the stylometry lineage~\citep{mosteller1964,juola2006} gives it
-a principled footing: style is known to be persistent and hard to
+opposite---it makes the text conditions the natural next probe. But
+we state the inference carefully: the M3a failure shows that the
+\emph{tested} structured representation (issue area, lower-court
+disposition, term, argument duration, and their pairwise
+interactions) does not beat the ideological rule on this window. It
+does not show that all non-textual information is exhausted: party
+characteristics, counsel characteristics, finer-grained temporal
+features, institutional signals, or richer encodings of the case
+file could still carry residual signal that our codes and model
+families did not capture. What the null does establish is narrower
+and firmer: any future claim of improvement must now be measured
+against a known, pre-registered adversary, and the cheapest rich
+representation of the case that remains untested is its text. The
+persona condition (B) tests the strongest version of that probe ---
+that any residual textual signal is \emph{individual} and
+\emph{prospective} --- and the stylometry lineage~\citep{mosteller1964,juola2006} gives it a principled footing: style is known to be persistent and hard to
 fake, so a fine-tuned adapter is a reasonable instrument for
 measuring whether style and substance are entangled.
 
 \subsection{Calibrating expectations for the Final Test}
 
 The sealed fifty are 5--4 decisions, which the folklore of court
-watching regards as the least predictable class; and the bar was
-computed on the full evaluation window, not on 5--4s specifically.
-Both facts cut against the persona condition clearing B4 on the
-holdout, and the honest prior is that the decisive test may return
+watching regards as the least predictable class; and the 63.7\% bar
+was computed on the full evaluation window, not on 5--4s specifically.
+The protocol therefore re-fits the ideological baseline on the
+sealed-excluded training window and evaluates it on the sealed
+population itself: the Final Test comparator is \emph{B4 on the
+5--4s}, not the general-window figure, and the report will carry
+both bars side by side (the pre-registered analysis addendum fixes
+this reading). Because the sealed population is deliberately harder
+than the window the bar was computed on, the two numbers may differ
+substantially, and comparing final conditions to the general-window
+bar directly would overstate their performance. Both facts cut
+against the persona condition clearing the bar
+on the holdout, and the honest prior is that the decisive test may return
 ``no difference''. We stress that this is a designed outcome, not a
 failure state: a tight null on a sealed, pre-registered holdout
 with per-justice adapters and audited anti-memorization checks
-would be the cleanest public evidence yet that judicial
-subjectivity, beyond ideology, is not extractible from the written
-record---a claim that would stand regardless of how much compute
+would be, to our knowledge, the cleanest public evidence yet that
+judicial subjectivity, beyond ideology, is not extractible from the
+written record---a claim that would stand regardless of how much compute
 a future replicant throws at it.
