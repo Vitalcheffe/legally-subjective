@@ -1,0 +1,63 @@
+{
+ "schema": "m3b-protocol-freeze/1",
+ "note": "gel régénéré par rituel --je-change-le-protocole",
+ "fragments": {
+  "config_sci": {
+   "sha256": "465cc696d8d470251fd27a29a8de5b41491cfffa860026a2e3ec2b62c384a39e",
+   "n_lines": 19
+  },
+  "data_selection": {
+   "sha256": "1a978e6dc73abe42f30c6aba3f6d7d320115c89a0f4585bc7e232a8edb6ac4fe",
+   "n_lines": 24
+  },
+  "temporal_split": {
+   "sha256": "59a155ae3bd6ae0c3e66e3b2b4ed7cf743e404c04f6cd133fbac74a4304bbd0e",
+   "n_lines": 10
+  },
+  "tokenization": {
+   "sha256": "2a1d309c61884174800646f51d01299d09de9e501db45b3a80992b4787180695",
+   "n_lines": 28
+  },
+  "dataset": {
+   "sha256": "350d8cc0f60912a8ccee54b96bcb68ef2e7ec6233623799fd9f45884a9f51898",
+   "n_lines": 22
+  },
+  "qlora_base": {
+   "sha256": "b0989121f237f7edbc454abbd99071add6d51913b55b4fe7ad1c3e03bb582f0c",
+   "n_lines": 22
+  },
+  "lora_targets": {
+   "sha256": "b0989121f237f7edbc454abbd99071add6d51913b55b4fe7ad1c3e03bb582f0c",
+   "n_lines": 22
+  },
+  "training_args": {
+   "sha256": "9915371decf6ad1b47e6355cae27f13f0cb498a8af88281a5cf2402e8cac6318",
+   "n_lines": 11
+  },
+  "eval_probe": {
+   "sha256": "1a8c9022fea661e19625673abc531495e651ddf26dda7e18626292682f917b89",
+   "n_lines": 2
+  },
+  "memo_audit": {
+   "sha256": "9f1d823c4cdf29185f1a19581ba0ad891845b8c0f50118311062384ca35c7b14",
+   "n_lines": 1
+  },
+  "sci_keys": {
+   "sha256": "3895aa93e42e2245c81f31952c7b341c7b1442adf1759eaf0d215f8bde8bc8f5",
+   "n_lines": 4
+  }
+ },
+ "texts": {
+  "config_sci": "CONFIG = {\n    # ---- modèle (non gated pour la reproductibilité)\n    \"MODEL_ID\": \"Qwen/Qwen2.5-3B-Instruct\",\n    # alternatives testées compatibles:\n    #   \"unsloth/Llama-3.2-3B-Instruct\"      (miroir non gated)\n    #   \"HuggingFaceTB/SmolLM2-1.7B-Instruct\" (budget serré)\n    \"MAX_LEN\": 4096,          # tokens ; T4 16Go passe avec gradient checkpointing\n    \"INSTR_KEEP\": 1024,       # budget tokens pour la PARTIE FINALE de l'instruction\n                              # (la question de l'affaire vit en fin de dossier)\n    # ---- LoRA\n    \"LORA_R\": 16, \"LORA_ALPHA\": 32, \"LORA_DROPOUT\": 0.05,\n    # ---- optimisation\n    \"LR\": 1e-4, \"EPOCHS\": 8, \"BATCH\": 1, \"GRAD_ACCUM\": 8,\n    \"EVAL_EVERY\": 20, \"PATIENCE\": 3, \"WARMUP\": 10,\n    # ---- protocole\n    \"VAL_FRACTION\": 0.15,     # temporel: les plus récentes de la fenêtre train\n    \"MIN_TRAIN_ROWS\": 8,      # en dessous: juge sauté (données trop minces)\n    \"PERSONAS_GARDÉES\": None, # None = toutes celles qui passent MIN_TRAIN_ROWS\n    ",
+  "data_selection": "def load_persona(path):\n    rows = []\n    with open(path, encoding=\"utf-8\") as f:\n        for line in f:\n            r = json.loads(line)\n            if r.get(\"output\") and len(r[\"output\"]) > 200:\n                rows.append(r)\n    rows.sort(key=lambda r: r.get(\"date_filed\") or \"9999\")  # temporel\n    return rows\n\npersonas = {}\nfor name in sorted(os.listdir(PERSONAS_DIR)):\n    p = os.path.join(PERSONAS_DIR, name, \"train.jsonl\")\n    if os.path.isfile(p):\n        rows = load_persona(p)\n        if len(rows) >= CONFIG[\"MIN_TRAIN_ROWS\"]:\n            personas[name] = rows\n        else:\n            print(f\"· {name}: {len(rows)} lignes < MIN_TRAIN_ROWS → sauté\")\n\nprint(f\"\\n{len(personas)} personas actives, \"\n      f\"{sum(len(v) for v in personas.values())} opinions au total\")\nfor k, v in personas.items():\n    print(f\"  {k:14s} {len(v):4d} opinions  ({v[0]['date_filed']} → {v[-1]['date_filed']})\")",
+  "temporal_split": "def temporal_split(rows, frac=CONFIG[\"VAL_FRACTION\"]):\n    if len(rows) < 4:\n        return rows, rows[-1:]                    # micro-corpus: 1 ligne de val\n    n_val = max(1, round(len(rows) * frac))\n    return rows[:-n_val], rows[-n_val:]\n\nsplits = {k: temporal_split(v) for k, v in personas.items()}\nfor k, (tr, va) in splits.items():\n    print(f\"  {k:14s} train {len(tr):3d} | val {len(va):2d} \"\n          f\"| val à partir de {va[0]['date_filed']}\")",
+  "tokenization": "from transformers import AutoTokenizer\n\ntok = AutoTokenizer.from_pretrained(CONFIG[\"MODEL_ID\"])\nBOS = tok.apply_chat_template(\n    [{\"role\": \"user\", \"content\": \"x\"}], tokenize=True, add_generation_prompt=True)\n\ndef encode_row(row, max_len=CONFIG[\"MAX_LEN\"], instr_keep=CONFIG[\"INSTR_KEEP\"]):\n    prompt_ids = tok.apply_chat_template(\n        [{\"role\": \"system\", \"content\": row[\"system\"]},\n         {\"role\": \"user\", \"content\": row[\"instruction\"]}],\n        tokenize=True, add_generation_prompt=True)\n    out_ids = tok(row[\"output\"], add_special_tokens=False)[\"input_ids\"]\n    # budget: system+template intouchable ; instr réduite par la TÊTE ;\n    # output réduit par la QUEUE si le total déborde encore.\n    n_out = len(out_ids)\n    room = max_len - len(prompt_ids) - 1\n    if room <= 0:                                   # instruction seule trop longue\n        tail = prompt_ids[-(instr_keep + 40):]\n        prompt_ids = prompt_ids[:2] + tail          # garde le template d'ouverture\n        room = max_len - len(prompt_ids) - 1\n    if n_out > room:\n        out_ids = out_ids[:room]\n    return prompt_ids, out_ids\n\n# stats de longueur avant d'aller plus loin\nfor name, rows in list(personas.items())[:3]:\n    ls = [sum(len(x) for x in encode_row(r)[:2]) for r in rows[:20]]\n    print(f\"{name:14s} médiane {int(np.median(ls)):5d} | max {max(ls):5d} tokens\")",
+  "dataset": "class PersonaTorch(torch.utils.data.Dataset):\n    def __init__(self, rows):\n        self.items = []\n        for r in rows:\n            p, o = encode_row(r)\n            ids = p + o + [tok.eos_token_id or tok.pad_token_id]\n            labels = [-100] * len(p) + o + [tok.eos_token_id or tok.pad_token_id]\n            self.items.append((ids[:CONFIG[\"MAX_LEN\"]], labels[:CONFIG[\"MAX_LEN\"]]))\n    def __len__(self):\n        return len(self.items)\n    def __getitem__(self, i):\n        ids, labels = self.items[i]\n        return {\"input_ids\": ids, \"labels\": labels}\n\ndef collate(batch):\n    mx = max(len(b[\"input_ids\"]) for b in batch)\n    pad = tok.pad_token_id or tok.eos_token_id\n    return {\n        \"input_ids\": torch.tensor([b[\"input_ids\"] + [pad] * (mx - len(b[\"input_ids\"])) for b in batch]),\n        \"labels\": torch.tensor([b[\"labels\"] + [-100] * (mx - len(b[\"labels\"])) for b in batch]),\n        \"attention_mask\": torch.tensor([[1] * len(b[\"input_ids\"]) + [0] * (mx - len(b[\"input_ids\"])) for b in batch]),\n    }",
+  "qlora_base": "import bitsandbytes as bnb\nfrom peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training\nfrom transformers import (AutoModelForCausalLM, BitsAndBytesConfig,\n                          Trainer, TrainingArguments)\n\nbnb_cfg = BitsAndBytesConfig(\n    load_in_4bit=True, bnb_4bit_quant_type=\"nf4\",\n    bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,\n    bnb_4bit_use_double_quant=True)\n\nbase = AutoModelForCausalLM.from_pretrained(\n    CONFIG[\"MODEL_ID\"], quantization_config=bnb_cfg, device_map={\"\": 0})\nbase = prepare_model_for_kbit_training(base, use_gradient_checkpointing=True)\nbase.config.use_cache = False\n\ndef make_lora():\n    return LoraConfig(\n        r=CONFIG[\"LORA_R\"], lora_alpha=CONFIG[\"LORA_ALPHA\"],\n        lora_dropout=CONFIG[\"LORA_DROPOUT\"], bias=\"none\", task_type=\"CAUSAL_LM\",\n        target_modules=[\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\",\n                        \"gate_proj\", \"up_proj\", \"down_proj\"])\nprint(\"base chargée:\", sum(p.numel() for p in base.parameters())/1e9, \"Md (4-bit)\")",
+  "lora_targets": "import bitsandbytes as bnb\nfrom peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training\nfrom transformers import (AutoModelForCausalLM, BitsAndBytesConfig,\n                          Trainer, TrainingArguments)\n\nbnb_cfg = BitsAndBytesConfig(\n    load_in_4bit=True, bnb_4bit_quant_type=\"nf4\",\n    bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,\n    bnb_4bit_use_double_quant=True)\n\nbase = AutoModelForCausalLM.from_pretrained(\n    CONFIG[\"MODEL_ID\"], quantization_config=bnb_cfg, device_map={\"\": 0})\nbase = prepare_model_for_kbit_training(base, use_gradient_checkpointing=True)\nbase.config.use_cache = False\n\ndef make_lora():\n    return LoraConfig(\n        r=CONFIG[\"LORA_R\"], lora_alpha=CONFIG[\"LORA_ALPHA\"],\n        lora_dropout=CONFIG[\"LORA_DROPOUT\"], bias=\"none\", task_type=\"CAUSAL_LM\",\n        target_modules=[\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\",\n                        \"gate_proj\", \"up_proj\", \"down_proj\"])\nprint(\"base chargée:\", sum(p.numel() for p in base.parameters())/1e9, \"Md (4-bit)\")",
+  "training_args": "    args = TrainingArguments(\n        output_dir=local_out,\n        per_device_train_batch_size=CONFIG[\"BATCH\"],\n        gradient_accumulation_steps=CONFIG[\"GRAD_ACCUM\"],\n        num_train_epochs=CONFIG[\"EPOCHS\"], learning_rate=CONFIG[\"LR\"],\n        lr_scheduler_type=\"cosine\", warmup_steps=CONFIG[\"WARMUP\"],\n        logging_steps=5, eval_strategy=\"steps\", eval_steps=CONFIG[\"EVAL_EVERY\"],\n        save_strategy=\"steps\", save_steps=CONFIG[\"SAVE_STEPS\"],\n        save_total_limit=None, load_best_model_at_end=False,\n        bf16=torch.cuda.is_bf16_supported(), report_to=\"none\", seed=SEED,\n        remove_unused_columns=False, dataloader_pin_memory=False)",
+  "eval_probe": "\n    def generate(name, instruction, max_new_tokens=120):",
+  "memo_audit": "    K_FRAC, N_MINK, N_CLOZE, CLOZE_SPAN, CLOZE_CONT = 0.20, 6, 4, 30, 48",
+  "sci_keys": "SCI_KEYS = (\"MODEL_ID\", \"MAX_LEN\", \"INSTR_KEEP\", \"LORA_R\", \"LORA_ALPHA\",\n            \"LORA_DROPOUT\", \"LR\", \"EPOCHS\", \"BATCH\", \"GRAD_ACCUM\",\n            \"EVAL_EVERY\", \"PATIENCE\", \"WARMUP\", \"VAL_FRACTION\",\n            \"MIN_TRAIN_ROWS\", \"PERSONAS_GARDÉES\")"
+ }
+}

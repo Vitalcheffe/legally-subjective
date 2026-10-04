@@ -83,8 +83,19 @@ md("""
 """)
 
 code("""
-# ⚠️ Runtime → Change runtime type → GPU (T4 suffit). Colab seulement:
-# !nvidia-smi
+# ⛔ GARDE GPU AVANT TOUT — 2 secondes au lieu de 2 minutes de pip pour
+# apprendre qu'il faut changer le runtime. torch est préinstallé sur Colab.
+try:
+    import torch as _torch_probe
+    assert _torch_probe.cuda.is_available(), (
+        "GPU requis — ce runtime est CPU-ONLY.\\n"
+        "  → Runtime → Change runtime type → T4 GPU\\n"
+        "  → puis Runtime → Run all (la machine redémarre : normal,\\n"
+        "    rien n'est perdu — rien n'a encore été fait à ce stade).")
+    print("GPU visible :", _torch_probe.cuda.get_device_name(0))
+    del _torch_probe
+except ImportError:
+    pass          # torch absent : la garde de la cellule suivante prend le relais
 
 # transformers==4.49.0 (et PAS 4.46.3) : à partir de torch 2.6, le chargement
 # de rng_state.pth au resume_from_checkpoint échoue par défaut
@@ -94,6 +105,9 @@ code("""
 # bitsandbytes: PLANCHER >=0.47.0,<0.51 — la 0.45.0 importe triton.ops sans
 # garde, module supprimé dans triton>=3.2 (torch 2.11, python 3.13 sur
 # Colab 2026) → ModuleNotFoundError à l'import.
+# NB : les lignes « ERROR: pip's dependency resolver… » pointant gradio ou
+# diffusers (préinstallés Colab) sont ATTENDUES et sans effet ici — paquets
+# non utilisés par M3b.
 %pip -q install "transformers==4.49.0" "peft==0.13.2" "bitsandbytes>=0.47.0,<0.51" \
                "accelerate==1.2.1" "datasets==3.1.0" "sentencepiece" "protobuf"
 import os, sys
