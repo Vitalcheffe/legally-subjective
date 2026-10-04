@@ -78,13 +78,24 @@ def write_ckpt(local_out, step, judge):
 
 
 def make_personas(root):
+    """root = le répertoire personas LUI-MÊME (data/m3/personas) — les
+    juges y vivent directement, comme dans le vrai dépôt. (Avant : un
+    niveau « personas/ » imbriqué rendait le mini-repo invisible au
+    portillon — attrapé par test_m3b_merge T3.)"""
     for j in JUDGES:
-        d = os.path.join(root, "personas", j)
+        d = os.path.join(root, j)
         os.makedirs(d, exist_ok=True)
+        # 10 lignes/juge : au-dessus de MIN_TRAIN_ROWS=8 pour que le
+        # portillon (G2 attendus recalculés depuis le dépôt) retrouve les
+        # 4 juges du mini-repo — les hash de données couvrent les MÊMES
+        # fichiers pour l'empreinte des sessions et la re-dérivation G9.
         with open(os.path.join(d, "train.jsonl"), "w") as f:
-            f.write(json.dumps({"system": "s", "instruction": "i",
-                                "output": "o" * 300, "date_filed": "2019-01-01"}) + "\n")
-    return os.path.join(root, "personas")
+            for k in range(10):
+                f.write(json.dumps(
+                    {"system": "s", "instruction": "i",
+                     "output": "o" * 300,
+                     "date_filed": "2019-01-01"}) + "\n")
+    return root
 
 
 def make_mini_repo(base):
@@ -206,7 +217,18 @@ def run_session(args):
 
     budget_hit = False
     budget = M.TimeBudgetCallback(args.budget_minutes)   # UNE fois par SESSION
-    for judge in sorted(JUDGES):
+    # --judges : restriction du SOUS-ENSEMBLE entraîné (miroir exact du
+    # design worker Kaggle LS-17 : l'empreinte couvre TOUS les juges,
+    # seule la boucle d'entraînement est restreinte — l'identité
+    # d'expérience est identique quel que soit le découpage en workers).
+    active = sorted(JUDGES)
+    if getattr(args, "judges", None):
+        wanted = [j.strip() for j in args.judges.split(",") if j.strip()]
+        unknown = [j for j in wanted if j not in JUDGES]
+        if unknown:
+            raise SystemExit(f"juges inconnus dans --judges : {unknown}")
+        active = [j for j in sorted(JUDGES) if j in wanted]
+    for judge in active:
         if es.status(judge) == "done":
             print(f"[session] {judge} — déjà fait, sauté")
             out["judges"][judge] = "skipped"
@@ -436,6 +458,9 @@ def main():
     ap.add_argument("--point-state-to", type=int, default=None)
     ap.add_argument("--mutate-config", action="store_true")
     ap.add_argument("--readonly-drive", action="store_true")
+    ap.add_argument("--judges", default=None,
+                    help="sous-ensemble de juges à entraîner (ex: AA,BB) — "
+                         "l'empreinte reste calculée sur TOUS les juges")
     args = ap.parse_args()
     out = run_session(args)
     print("RESULT_JSON " + json.dumps(out))

@@ -97,7 +97,7 @@ TMP_PREFIX = ".tmp-ckpt-"
 MANIFEST_SCHEMA = "m3b-manifest/1"
 EVENT_KINDS = ("SESSION_START", "START", "CHECKPOINT", "RESUME",
                "RECOVERY", "VALIDATION", "ERROR", "JUDGE_COMPLETE",
-               "RUN_COMPLETE", "EXPORT", "NOTE", "RESET")
+               "RUN_COMPLETE", "EXPORT", "NOTE", "RESET", "MERGE")
 
 # Fichiers attendus dans un checkpoint Trainer complet (reprise exacte :
 # poids adaptateur + optimizer + scheduler + RNG + état d'avancement).
