@@ -1,9 +1,9 @@
 {
   "gate": "scripts/m4_readiness.py",
-  "verdict": "PENDING — chaîne intacte, M3b/runner en attente",
+  "verdict": "FAIL — l'Épreuve Finale est INTERDITE jusqu'à réparation",
   "counts": {
-    "pass": 12,
-    "fail": 0,
+    "pass": 11,
+    "fail": 1,
     "pending": 1
   },
   "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
@@ -30,8 +30,8 @@
     },
     {
       "check": "R1.5",
-      "status": "PASS",
-      "detail": "arbre git propre (fichiers suivis ; HEAD de174fb)"
+      "status": "FAIL",
+      "detail": "fichiers suivis modifiés au départ : M .github/workflows/audit.yml;  M data/m15_store/clean/audit_leak_journal.json;  M data/m15_store/clean/audit_leak_journal.md"
     },
     {
       "check": "R2",

@@ -138,9 +138,47 @@ des résultats quelles qu'ils soient.
   441 lignes de vote par juge, 440 avec direction — identifiants et
   comptages seuls, contenu jamais lu avant l'épreuve.
 
-L'exécution attend le notebook Colab M3b : déposer
-`m3b_adapters_*.zip` (§2 du runner), puis phase T, puis phase S — une
-seule fois.
+L'exécution attend le notebook Colab M3b (architecture v2 « durable »),
+puis phase T, puis phase S — une seule fois.
+
+## M3b v2 — l'architecture durable (reprise automatique)
+
+La v1 reprenait au niveau « juge entier » via un zip téléversé à la main :
+avec des sessions Colab d'une heure et des juges de plusieurs heures,
+c'était structurellement infini. La v2 change d'architecture, sans toucher
+au protocole scientifique (corpus, splits, prompts, scellé : inchangés) :
+
+- **Vérité unique sur Drive** : un dossier `legally-subjective-m3b/`
+  (manifeste `state.json` écrit atomiquement, en dernier), jamais le
+  filesystem éphémère ;
+- **Checkpoints intra-juge** : promotion atomique Drive tous les
+  `SAVE_STEPS` pas (fichiers d'abord, manifeste ensuite ; hash de chaque
+  fichier) — une coupure coûte au plus ~10 pas ;
+- **Reprise automatique** : vrai `resume_from_checkpoint` Trainer
+  (poids + optimizer + scheduler + RNG), restauration vérifiée par hash,
+  repli sur la génération précédente en cas de corruption ;
+- **Arrêt propre programmé** (`SOFT_MINUTES`) : sauvegarde du pas courant
+  puis stop — la mort brutale devient l'exception ;
+- **Vérification avant progression** : un juge « done » a son adaptateur
+  rechargé et testé (forward aux logits finis) ; l'export final est
+  déterministe (deux exports du même état = octets identiques) ;
+- **Refus plutôt que silence** : empreinte scientifique inchangée exigée
+  (config + données + graine) ; manifeste illisible avec checkpoints
+  présents = diagnostic, jamais de redémarrage caché.
+
+Machines de validation (toutes vertes au moment de l'écriture) :
+`scripts/test_m3b_state.py` — injection de pannes A-L (interruptions
+brutales en sous-processus, corruption, manifeste manquant/incohérent,
+idempotence, reset) ; `scripts/test_m3b_resume_cpu.py` — VRAI
+transformers/peft : c'est ce test qui a révélé que le pin
+`transformers==4.46.3` casse la reprise sur torch≥2.6 (`weights_only`)
+et imposé `4.49.0` ; `scripts/test_m3b_notebook_flow.py` — exécution des
+vraies cellules du notebook (hors GPU) avec Drive simulé.
+
+Le runner M4 gagne une récupération **automatique** de l'export final sur
+le Drive (modification purement mécanique du transport ; scellé, tag
+`m4-freeze`, machinerie de scoring : inchangés et toujours re-vérifiés
+dans le clone au tag).
 
 ## Ensuite (idées, rien de promis)
 

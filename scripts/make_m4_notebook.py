@@ -120,7 +120,7 @@ Trois choses, dans l'ordre : cloner le repo **au tag `m4-freeze`**
 M3b** (le zip exporté par le notebook d'entraînement) ; re-exécuter la
 **porte de pré-vol**. Rien ne s'exécute si la chaîne ne tient pas.""")
 
-code("""import glob, gzip, hashlib, json, math, os, re, subprocess, sys, \\
+code("""import glob, gzip, hashlib, json, math, os, re, shutil, subprocess, sys, \\
     time, zipfile
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -151,10 +151,24 @@ recomputed = hashlib.sha256(
 assert recomputed == ff["sealed_sha256"], "SCELLÉ MODIFIÉ — ARRÊT IMMÉDIAT"
 print(f"scellé intègre : {ff['sealed_sha256'][:20]}… ({len(ff['cases'])} affaires)")
 
-# --- adaptateurs M3b : déposer m3b_adapters_*.zip dans le répertoire ---
+# --- adaptateurs M3b : zip local, SINON récupération AUTOMATIQUE sur Drive --
+# (l'export final de M3b v2 vit dans MyDrive/legally-subjective-m3b/final/ ;
+#  rien à téléverser à la main. Un zip déposé localement reste prioritaire.)
 ADAPTER_DIR = os.path.join(REPO, "adapters")
 M3B_REPORT = os.path.join(REPO, "m3b_report.json")
-for z in sorted(glob.glob("m3b_adapters_*.zip")):
+_zips = sorted(glob.glob("m3b_adapters_*.zip"))
+if not _zips:
+    try:
+        from google.colab import drive
+        drive.mount("/content/drive")
+        _final = "/content/drive/MyDrive/legally-subjective-m3b/final/m3b_adapters_final.zip"
+        if os.path.isfile(_final):
+            shutil.copy(_final, "m3b_adapters_final.zip")   # copie locale
+            _zips = ["m3b_adapters_final.zip"]
+            print("export final M3b récupéré AUTOMATIQUEMENT sur le Drive")
+    except Exception as _e:
+        print("(pas de Drive :", repr(_e)[:120], ")")
+for z in _zips:
     with zipfile.ZipFile(z) as zf:
         zf.extractall(ADAPTER_DIR)          # adapters/<juge>/…
     inner = os.path.join(ADAPTER_DIR, "m3b_report.json")

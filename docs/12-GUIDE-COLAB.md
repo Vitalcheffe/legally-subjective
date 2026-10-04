@@ -1,128 +1,152 @@
-# 12 · Guide d'exécution Colab (M3b → M4)
+# 12 · Guide d'exécution Colab (M3b → M4), édition architecture durable
 
-Ce document décrit la séquence d'exécution opérationnelle, côté Colab,
-de la fin de M3b (entraînement des personas) jusqu'à M4 (l'Épreuve
-Finale). Il se lit dans l'ordre : chaque étape ne commence qu'après
-validation de la précédente. Le notebook M3b est **repreneur** : la
-section 5bis restaure les adaptateurs d'une session précédente, la
-section 6 n'entraîne que les juges restants.
+Ce guide décrit la séquence opérationnelle complète, **depuis un
+environnement totalement vierge** (rien n'a jamais été fait, aucun fichier
+n'existe nulle part), jusqu'à l'Épreuve Finale M4. Il se lit dans l'ordre.
 
-## Les trois règles d'or
+L'architecture v2 rend l'entraînement **insensible aux coupures** : toute la
+vérité de l'expérience vit dans un seul dossier Google Drive, les
+checkpoints sont promus pendant l'entraînement (pas seulement entre les
+juges), et la reprise est automatique. Le notebook est le notebook
+`m3b_qlora_personas.ipynb` du dépôt ; sa logique de reprise est testée par
+injection de pannes (`scripts/test_m3b_state.py`, scénarios A-L) et par
+exécution réelle du Trainer (`scripts/test_m3b_resume_cpu.py`).
 
-1. **Notebook frais à chaque session.** Un notebook ouvert dans le
-   navigateur est un artefact figé : les correctifs poussés au dépôt
-   ne l'atteignent jamais. À chaque session, reprendre le notebook
-   depuis le dépôt (re-clone ou re-téléchargement), pas la copie
-   ouverte la fois précédente.
-2. **Erreur = arrêt + traceback.** En cas d'erreur, ne rien
-   improviser : copier la traceback complète et l'envoyer pour
-   diagnostic. Les seules éditions de cellule autorisées sont celles
-   explicitement prescrites dans ce guide.
-3. **Phase S = une seule exécution.** Tout ce qui précède l'Épreuve
-   est répétable ; l'Épreuve ne l'est pas. Le verrou `m4_exam.lock`
-   et le drapeau `UNSEAL` existent pour ça.
+## 0 · Ce que « partir de zéro » veut dire, concrètement
 
-## Étape A — finir M3b (plusieurs sessions GPU gratuites)
+Au premier passage, **rien n'existe** :
 
-Runtime : T4 suffit. Notebook : `notebooks/m3b_qlora_personas.ipynb`.
+- aucun dossier `legally-subjective-m3b` sur ton Drive (il sera créé
+  automatiquement au §5bis du notebook) ;
+- aucun état, aucun manifeste, aucun checkpoint, aucun adaptateur ;
+- rien à téléverser, rien à restaurer, rien à fusionner.
 
-**Session 1** — exécuter dans l'ordre :
-- sections 1 à 5 (environnement, configuration, données,
-  tokenisation, base 4-bit) ;
-- section 5bis : **ne rien téléverser** (première session — la
-  cellule reste sans effet) ;
-- section 6 : l'entraînement. Un point de reprise est écrit
-  (`m3b_report.json`) après **chaque juge** : une coupure en cours de
-  juge ne perd que ce juge.
+Le système distingue sans ambiguïté, à tout moment : *aucune expérience
+commencée* / *commencée, aucun juge terminé* / *juge en cours* / *certains
+juges terminés* / *tous terminés* / *finalisé*. C'est le manifeste
+`state.json` du dossier Drive qui fait la différence — lui seul.
 
-**Fin de chaque session** (ou juste avant une coupure de quota) :
-- section 8 : export → télécharger `m3b_adapters_run_*.zip`.
-  C'est le seul artefact à conserver précieusement (le rapport est
-  inclus dedans). Une copie sur Drive est recommandée (cellule
-  optionnelle fournie).
+**Ce que tu dois avoir** (et rien d'autre) :
 
-**Chaque session suivante** :
-- sections 1 à 5 (runtime neuf = tout recharger) ;
-- section 5bis : **téléverser le zip de la session précédente** —
-  les adaptateurs déjà entraînés sont restaurés, le rapport remonté ;
-- section 6 : seuls les juges restants sont entraînés ;
-- section 8 : le zip final contient **tous** les adaptateurs
-  (restaurés + nouveaux).
+1. le **lien du notebook** (ci-dessous) en favori ;
+2. à partir de la première session : le dossier
+   `legally-subjective-m3b/` sur ton Drive — **à ne jamais renommer,
+   déplacer, ni supprimer** ;
+3. un compte Google avec ~3 Go libres sur le Drive.
 
-Répéter jusqu'à ce que la section 6 n'ait plus rien à entraîner,
-puis :
-- section 7 : contrôle de santé (même affaire, deux plumes) —
-  copier la sortie ;
-- section 7bis : audit anti-mémorisation (min-k% + cloze) — copier
-  la sortie complète.
+**Ce que tu ne dois PAS avoir / ne dois PAS faire** :
 
-**Durées mesurées sur T4** (à titre d'ordre de grandeur) :
-Kavanaugh ~80 min · Gorsuch ~2 h · Roberts 2-2,5 h · Kagan 2-3 h ·
-Alito 3,5-4,5 h · Sotomayor 4-5 h · Thomas 4-9 h (early stopping
-probable). Total de l'ordre de 15-22 h : étaler sur les sessions, la
-configuration reste intacte (EPOCHS 8, MAX_LEN 4096 — toute déviation
-doit être consignée, elle casserait la comparabilité inter-juges).
+- pas d'ancien notebook Colab enregistré (toujours repartir du lien) ;
+- pas de zip `m3b_adapters_*.zip` à conserver ou fusionner (l'export final
+  vit sur le Drive et le runner M4 va le chercher tout seul) ;
+- ne jamais éditer une cellule (les seules exceptions sont notées
+  « édition autorisée » dans ce guide) ;
+- ne jamais relancer une phase S de M4 (une seule fois dans ta vie).
 
-## Étape B — points de contrôle (ce qu'on envoie, et quand)
+## 1 · La session type M3b (à répéter autant de fois que nécessaire)
 
-1. **Dès la fin de M3b** : `m3b_report.json` (petit fichier, inclus
-   dans le zip) + sorties complètes des sections 7 et 7bis.
-   → vérification du critère R6 et interprétation des audits
-   anti-mémorisation ; réponse = GO ou NO-GO pour l'Épreuve.
-2. **Après le GO** : exécuter la phase T de M4 (ci-dessous) et
-   envoyer la sortie complète.
-   → vérification de la régression B4 : les chiffres attendus sont
-   exacts (0,6366 au niveau vote ; 0,558 au niveau affaire) — la
-   moindre divergence signifie un défaut de machinerie à réparer
-   AVANT l'Épreuve.
-3. **Après validation de T** : l'Épreuve (phase S), une seule fois,
-   puis envoi de l'export final.
+Lien (à ouvrir **après** confirmation que le dépôt est à jour) :
 
-## Étape C — M4, l'Épreuve Finale
+    https://colab.research.google.com/github/Vitalcheffe/legally-subjective/blob/main/notebooks/m3b_qlora_personas.ipynb
 
-Session Colab **fraîche** (GPU). Notebook :
-`notebooks/m4_epreuve_finale.ipynb` (frais du dépôt).
+1. Ouvrir le lien (Colab charge le notebook **depuis GitHub** = toujours
+   frais). Si un avertissement « ce notebook n'a pas été créé par Google »
+   apparaît : **Exécuter quand même**.
+2. **Exécution → Modifier le type d'exécution → T4 GPU → Enregistrer**.
+3. **Exécution → Tout exécuter** (ou Ctrl+F9).
+4. Une fenêtre Google Drive s'ouvre au §2bis : **autoriser** (compte →
+   Autoriser). C'est la seule interaction de toute la session.
+5. Ne rien toucher. Laisser travailler jusqu'à ce que tout s'arrête
+   (arrêt propre programmé à ~55 min d'entraînement, ou mort de session —
+   dans les deux cas, rien ne se perd au-delà d'au plus ~10 pas
+   d'entraînement).
+
+**Ce que tu verras** (repères de bon fonctionnement) :
+
+- §1 : `python 3.x`, puis `torch … | transformers 4.49.0 | peft 0.13.2 …` ;
+- §2bis : `AUCUNE EXPÉRIENCE COMMENCÉE` (première session) puis, les
+  suivantes, un tableau `ÉTAT : EN COURS — n/7 juges terminés` avec le
+  dernier pas durable de chaque juge ;
+- §5bis : le même tableau, plus `répertoire durable : …legally-subjective-m3b` ;
+- §6 : `=== <juge> ===`, la barre de progression HF (perte qui descend),
+  et dans le journal `ckpt promu : <juge> pas N` à chaque sauvegarde Drive ;
+- arrêt propre : `⏹ budget temps atteint — ARRÊT PROPRE au pas N` **suivi
+  de l'instruction** : si le runtime est encore vivant (icône RAM/Disque
+  en haut à droite), relancer §6 (ou Tout exécuter) ouvre une nouvelle
+  fenêtre sans rien perdre ; sinon, revenir plus tard ;
+- fin complète : `TOUS LES JUGES SONT TERMINÉS`, puis §7/§7bis/§8
+  s'exécutent tout seuls et l'export final est écrit sur le Drive.
+
+**Fin de session** : rien à télécharger, rien à sauvegarder. Fermer
+l'onglet, arrêter la session si tu veux économiser le quota. Revenir plus
+tarde au même lien. C'est tout.
+
+## 2 · Les trois points de contrôle (ce qu'on m'envoie, et quand)
+
+1. **Dès que §8 affiche l'export final** (ou si une sortie te semble
+   anormale à n'importe quel moment) : copier-coller
+   - la sortie complète du §7 (les deux plumes) ;
+   - la sortie complète du §7bis (table anti-mémorisation) ;
+   - le contenu du fichier `state.json` du dossier Drive (petit fichier
+     texte — clic → Ouvrir avec → texte).
+   → je vérifie R6 et les audits ; réponse = **GO ou NO-GO** pour M4.
+2. **Après le GO** : exécuter M4 phase T (ci-dessous) et m'envoyer la
+   sortie complète. La régression B4 doit donner **exactement** 0,6366
+   (vote) et 0,558 (affaire) — la moindre divergence = machinerie à
+   réparer AVANT l'Épreuve.
+3. **Après validation de T** : l'Épreuve (phase S), une seule fois, puis
+   m'envoyer la sortie des sections 7-8 et l'export.
+
+Règle transversale : **toute erreur = arrêt immédiat + traceback complète
+copiée telle quelle** (le bloc rouge en entier, sans tronquer). Ne jamais
+improviser de correction.
+
+## 3 · M4 — l'Épreuve Finale
+
+Lien (notebook **frais**, T4) :
+
+    https://colab.research.google.com/github/Vitalcheffe/legally-subjective/blob/main/notebooks/m4_epreuve_finale.ipynb
 
 **Phase T — transparente, répétable :**
-1. Sections 1 et 2 : environnement, puis clone du dépôt au tag
-   `m4-freeze` (le scellé y est recalculé — toute divergence arrête
-   tout). Téléverser le zip FINAL des adaptateurs dans le répertoire
-   de travail : la cellule le décompresse elle-même et re-exécute la
-   porte de pré-vol dans le clone. Le verdict attendu : **READY**
-   (R6 doit être PASS).
-2. `PHASE = "T"` (valeur par défaut, ne rien changer) : exécuter les
-   sections suivantes jusqu'à la section 6 incluse. C'est le test
-   transparent sur la fenêtre publique : répétable sans risque.
-3. Envoyer la sortie complète (étape B.2).
+1. Tout exécuter. Au §2, le runner clone le dépôt au tag `m4-freeze`,
+   **récalcule le scellé** (toute divergence = arrêt automatique), puis
+   récupère **tout seul** l'export final M3b sur le Drive — aucun
+   téléversement manuel. La porte de pré-vol est re-exécutée dans le
+   clone : le verdict attendu est **READY** (R6 doit être PASS).
+2. `PHASE = "T"` est la valeur par défaut — ne rien changer. Exécuter
+   jusqu'à la section 6 incluse. Plusieurs heures.
+3. M'envoyer la sortie complète (point de contrôle n°2).
 
-**Phase S — l'Épreuve, une seule fois :**
-4. Après le GO : dans la cellule de configuration, passer
-   `PHASE = "S"`. **Laisser `UNSEAL = ""`** : ce drapeau ne sert
-   qu'aux bris de scellé délibérés (re-exécution après verrou),
-   qui doivent rester des exceptions consignées.
+**Phase S — l'ÉPREUVE, une seule fois :**
+4. Après mon GO : dans la cellule de configuration, passer
+   `PHASE = "T"` en `PHASE = "S"` (seule édition autorisée).
+   **Laisser `UNSEAL = ""`** — il ne sert qu'aux bris de scellé délibérés.
 5. Exécuter la section 7 (7.1 puis 7.2) : les prédictions des quatre
    conditions sont écrites et hachées AVANT toute lecture de vérité
-   terrain, puis le verrou est posé.
-6. Section 8 : le score (la vérité terrain entre en scène — McNemar
-   pré-inscrit, strates, par juge, condition D = B4 re-ajusté strict
-   sur la population scellée).
-7. Section 9 : export → télécharger `m4_epreuve_export.zip`.
+   terrain, puis le verrou `m4_exam.lock` est posé.
+6. Section 8 : le score (McNemar pré-inscrit, strates, par juge).
+7. Section 9 : export → m'envoyer la sortie + le zip.
 
-**En cas d'échec pendant l'Épreuve** : ne PAS relancer la 7.2 ;
-copier la traceback et l'état (verrou posé ou non) — la reprise se
-décide ensemble, avec le journal complet.
+**Si erreur pendant 7.2** : ne PAS relancer. Copier la traceback + dire si
+le verrou était déjà posé. La reprise se décide ensemble.
 
-## Incidents connus et remèdes
+## 4 · Incidents connus et remèdes
 
-- **bitsandbytes / triton (ImportError)** : les notebooks récents
-  encadrent la version (`>=0.47.0,<0.51`) — plus d'édition manuelle
-  nécessaire. Si un ImportError persiste après réinstallation :
-  purger `sys.modules` des clés `bitsandbytes*` avant de re-tester ;
-  en dernier recours, redémarrer le runtime (Restart, pas Delete —
-  conserve les paquets).
-- **Session coupée pendant un juge** : rien n'est perdu au-delà du
-  juge en cours ; il sera réentraîné à la session suivante (absent
-  du rapport = absent du compte).
-- **Quota GPU épuisé en pleine session** : exécuter la section 8
-  tant que le runtime vit, télécharger le zip, reprendre plus tard
-  par la 5bis.
+- **`No module named 'triton.ops'`** : redémarrer l'exécution
+  (Exécution → Redémarrer l'exécution, PAS Supprimer — les paquets
+  restent), puis relancer. Le pin `>=0.47.0,<0.51` est censé l'empêcher ;
+  si ça persiste : traceback complète.
+- **Session coupée en plein juge** : rien n'est perdu au-delà d'environ
+  10 pas. Session suivante : reprise automatique (message
+  `reprise depuis le pas N`).
+- **Quota GPU épuisé** (« no GPU available ») : attendre le rechargement,
+  rouvrir le lien. L'état est sur le Drive.
+- **Fenêtre Drive rejetée / montage échoué** : le notebook refuse de
+  démarrer (normal : pas de stockage durable = pas d'entraînement).
+  Relancer la cellule §2bis et autoriser.
+- **« EMPREINTE INCOMPATIBLE »** : la config scientifique ou les données
+  ont changé — ne rien contourner, m'envoyer le message complet.
+- **« checkpoints présents mais manifeste illisible »** : ne rien
+  relancer, m'envoyer `log.txt` + la liste des fichiers du dossier.
+- **Sessions plus longues qu'une heure** : monter `SOFT_MINUTES` dans la
+  cellule de configuration (clé opérationnelle, sans impact scientifique).
