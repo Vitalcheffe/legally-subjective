@@ -596,7 +596,11 @@ def main():
                             "w"), indent=1, ensure_ascii=False)
     print(json.dumps(summary, indent=1, ensure_ascii=False)[:3000])
 
-    hard_fail = [w for w, rc in outcomes.items() if rc not in (0, 137)]
+    # 137 = mort brutale VOLONTAIRE (test --kill-after) ; en production, un
+    # 137 réel (OOM-kill du superviseur) doit rester un ÉCHECH de session,
+    # visible et diagnostiqué — jamais toléré silencieusement.
+    expected_rc = {0} | ({137} if args.kill_after else set())
+    hard_fail = [w for w, rc in outcomes.items() if rc not in expected_rc]
     return 1 if hard_fail else 0
 
 
