@@ -1,0 +1,441 @@
+{
+ "schema": "m3b-eval-batch-fix-audit/1",
+ "généré_le": "2026-10-05T12:01:56.134283+00:00",
+ "rituel": "CORRIGER → PROUVER → TESTER → AUDITER → DÉCIDER",
+ "décision_préalable": "REPRENDRE (utilisateur) — correctif traité comme correction d'INFRASTRUCTURE d'évaluation, pas comme modification du protocole scientifique",
+ "état_avant": {
+  "s1": {
+   "kernel": "aminehrc/legally-subjective-m3b-s1",
+   "utc": "2026-10-04T21:10:12Z → 2026-10-05T01:03:04Z",
+   "wall_minutes": 233.0,
+   "repo_commit": "7ff7ffd60356fef830213bd0ed7efa6d41830368",
+   "fingerprint": "fa2c16441a70238e00fd1ddcf8655ddddcdc57245c00c93e3fcab27cd839332c"
+  },
+  "juges": {
+   "BMKavanaugh": "done 16/16 (jamais d'évaluation déclenchée : 16 < EVAL_EVERY 20) — adaptateur promu et validé par reload",
+   "EKagan": "failed — durable 10/40 — OOM à l'évaluation du pas 20",
+   "NMGorsuch": "failed — durable 10/32 — OOM à l'évaluation du pas 20",
+   "SAAlito": "failed — durable 10/64 — OOM à l'évaluation du pas 20",
+   "JGRoberts": "training — durable 6/32 — arrêté par le budget temps (225 min)",
+   "CThomas": "pending 0/120",
+   "SSotomayor": "pending 0/80"
+  },
+  "checks_intégrité_s1": "55 PASS / 3 FAIL / 3 INFO — les 3 FAIL = les 3 OOM d'évaluation",
+  "pas_durables": 52,
+  "pas_perdus_oom": 27
+ },
+ "cause_racine": {
+  "défaut": "per_device_eval_batch_size jamais fixé dans TrainingArguments → défaut HuggingFace = 8",
+  "mécanisme": "à MAX_LEN=4096 sur T4 15,6 Go (14,56 Gio utilisables), la passe d'évaluation réclame 8,00 GiB d'un coup (scaled_dot_product_attention) avec seulement 7,04 Gio libres",
+  "preuve_artefact": "training_args.bin des checkpoints s1 (dé-sérialisé, transformers 4.49.0) : per_device_eval_batch_size = 8, per_device_train_batch_size = 1",
+  "preuve_log": "torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.00 GiB. — NMGorsuch 22:54:41Z, SAAlito 01:03:01Z, EKagan 00:23:19Z",
+  "déterminisme": "les 3 juges évalués sont tombés au MÊME point (première évaluation, pas 20) ; Kavanaugh (16 pas, aucune évaluation) a terminé normalement — la cause est strictement l'évaluation"
+ },
+ "correctif": {
+  "commit": "960279ec1acabe23d9bbf58bb53b01aacf247138",
+  "contenu": "UNE ligne : per_device_eval_batch_size=1, ajoutée à l'appel TrainingArguments de la cellule §6 train_one — même ligne dans le générateur make_m3b_notebook.py (chaîne de régénération)",
+  "diff": "commit 960279ec1acabe23d9bbf58bb53b01aacf247138\nAuthor: Vitalcheffe <vitalcheffe@users.noreply.github.com>\nDate:   Mon Oct 5 09:13:56 2026 +0000\n\n    m3b : correctif évaluation — per_device_eval_batch_size=1 (OOM T4 déterministe)\n    \n    s1 (kernel legally-subjective-m3b-s1, 2026-10-04→05, 233 min) : 3 échecs OOM\n    déterministes (NMGorsuch, SAAlito, EKagan) à la PREMIÈRE évaluation\n    (EVAL_EVERY=20) : per_device_eval_batch_size héritait du défaut HF (=8),\n    jamais fixé — preuve relue dans training_args.bin des checkpoints s1\n    (per_device_eval_batch_size=8). À MAX_LEN=4096 sur T4 15,6 Go, la passe\n    d'évaluation réclame 8,00 GiB d'un coup (scaled_dot_product_attention,\n    7,04 Go libres) → torch.OutOfMemoryError. BMKavanaugh (16 pas < 20 :\n    aucune évaluation déclenchée) a terminé normalement et son adaptateur a\n    été validé par reload — la cause est strictement l'infrastructure\n    d'évaluation, pas l'entraînement.\n    \n    Correctif (UNE ligne, infrastructure d'évaluation, hors protocole) :\n    - notebooks/m3b_qlora_personas.ipynb (cellule §6 train_one) : +1 ligne\n    - scripts/make_m3b_notebook.py (générateur — chaîne de régénération) :\n      même ligne à l'identique\n    - results/protocol_m3b_freeze.json : gel régénéré par le RITUEL OFFICIEL\n      --je-change-le-protocole ; seul fragment divergent = training_args\n      (11→12 lignes) ; les 10 autres fragments restent octet-identiques\n      (constat documenté : 11 PASS / 1 FAIL avant régénération, le FAIL\n      étant exactement la ligne ajoutée)\n    \n    Invariance scientifique prouvée :\n    - per_device_eval_batch_size ∉ SCI_KEYS (m3b_state.py inchangé)\n    - empreinte d'expérience identique avant/après ET identique à s1 :\n      fa2c1644… / cfg 83fee411… / data fe6defeb… (cellules réelles\n      exécutées : imports→config→personas_dir→load_persona→§5bis)\n    - mêmes datasets, mêmes splits, mêmes hashs de données, 7 mêmes juges\n    \n    Batteries re-passées sur l'arbre corrigé :\n    - freeze 12/12 PASS ; leakage 14/14 verdict PASS (m15_audit)\n    - test_m3b_state 143/0 ; test_m3b_merge 25/0\n    - test_m3b_resume_cpu 30/0 (vrai transformers/peft CPU)\n    - test_m3b_notebook_flow 25/0 ; validate_notebook 31 cellules/0 erreur\n    - lignage : manifeste construit + chaîne re-calculée — maillons\n      intégrité tous ✓ (L1/L2 schémas, L3 empreinte ×3, L4 adaptateur\n      Kavanaugh, L5 dernière ligne journal, L7 scellé M4) ; maillons ✗ =\n      uniquement l'état connu non-terminé (juges incomplets, pas d'export §8)\n    \n    Compatibilité checkpoints s1 vérifiée fichier par fichier :\n    - 32/32 fichiers manifestés re-hachés conformes (EKagan ckpt-10,\n      JGRoberts ckpt-6, NMGorsuch ckpt-10, SAAlito ckpt-10)\n    - chargements réels (safetensors/torch/json) : 504 tenseurs LoRA,\n      504 params optimiseur, scheduler/rng/trainer_state intacts\n    - adaptateur promu BMKavanaugh rechargé (504 tenseurs, r=16, alpha=32)\n    \n    Audit complet du rituel de réparation : results/m3b_eval_batch_fix_audit.json/.md\n---\n data/m15_store/clean/audit_leak_journal.json | 2 +-\n data/m15_store/clean/audit_leak_journal.md   | 2 +-\n notebooks/m3b_qlora_personas.ipynb           | 1 +\n results/protocol_m3b_freeze.json             | 6 +++---\n scripts/make_m3b_notebook.py                 | 1 +\n 5 files changed, 7 insertions(+), 5 deletions(-)\n\ndiff --git a/data/m15_store/clean/audit_leak_journal.json b/data/m15_store/clean/audit_leak_journal.json\nindex 1106b79..e5ae47f 100644\n--- a/data/m15_store/clean/audit_leak_journal.json\n+++ b/data/m15_store/clean/audit_leak_journal.json\n@@ -1,5 +1,5 @@\n {\n- \"generated_at\": \"2026-10-04T17:37:23.693134+00:00\",\n+ \"generated_at\": \"2026-10-05T09:02:07.724567+00:00\",\n  \"scope\": \"M1.5 étape 4 — zéro fuite, dédup, hygiène, pré-décision\",\n  \"summary\": {\n   \"checks_total\": 14,\ndiff --git a/data/m15_store/clean/audit_leak_journal.md b/data/m15_store/clean/audit_leak_journal.md\nindex a3ebdf5..5545c65 100644\n--- a/data/m15_store/clean/audit_leak_journal.md\n+++ b/data/m15_store/clean/audit_leak_journal.md\n@@ -1,6 +1,6 @@\n # Journal d'audit zéro-fuite — M1.5.4\n \n-Généré : 2026-10-04T17:37:23.693134+00:00  \n+Généré : 2026-10-05T09:02:07.724567+00:00  \n Verdict : **PASS** (14 contrôles, 0 échec(s))\n \n | Contrôle | Verdict | Détail |\ndiff --git a/notebooks/m3b_qlora_personas.ipynb b/notebooks/m3b_qlora_personas.ipynb\nindex f031a2c..94725b7 100644\n--- a/notebooks/m3b_qlora_personas.ipynb\n+++ b/notebooks/m3b_qlora_personas.ipynb\n@@ -595,6 +595,7 @@\n     \"    args = TrainingArguments(\\n\",\n     \"        output_dir=local_out,\\n\",\n     \"        per_device_train_batch_size=CONFIG[\\\"BATCH\\\"],\\n\",\n+    \"        per_device_eval_batch_size=1,  # fix OOM T4 : défaut HF=8 × 4096 tok = alloc 8 Go, évaluation impossible\\n\",\n     \"        gradient_accumulation_steps=CONFIG[\\\"GRAD_ACCUM\\\"],\\n\",\n     \"        num_train_epochs=CONFIG[\\\"EPOCHS\\\"], learning_rate=CONFIG[\\\"LR\\\"],\\n\",\n     \"        lr_scheduler_type=\\\"cosine\\\", warmup_steps=CONFIG[\\\"WARMUP\\\"],\\n\",\ndiff --git a/results/protocol_m3b_freeze.json b/results/protocol_m3b_freeze.json\nindex ee7b574..dfed881 100644\n--- a/results/protocol_m3b_freeze.json\n+++ b/results/protocol_m3b_freeze.json\n@@ -31,8 +31,8 @@\n    \"n_lines\": 22\n   },\n   \"training_args\": {\n-   \"sha256\": \"9915371decf6ad1b47e6355cae27f13f0cb498a8af88281a5cf2402e8cac6318\",\n-   \"n_lines\": 11\n+   \"sha256\": \"c0771e1ccfc31e9adc352cf4ed68444f376fa9ea835a729a21d387e93dfb9df9\",\n+   \"n_lines\": 12\n   },\n   \"eval_probe\": {\n    \"sha256\": \"1a8c9022fea661e19625673abc531495e651ddf26dda7e18626292682f917b89\",\n@@ -55,7 +55,7 @@\n   \"dataset\": \"class PersonaTorch(torch.utils.data.Dataset):\\n    def __init__(self, rows):\\n        self.items = []\\n        for r in rows:\\n            p, o = encode_row(r)\\n            ids = p + o + [tok.eos_token_id or tok.pad_token_id]\\n            labels = [-100] * len(p) + o + [tok.eos_token_id or tok.pad_token_id]\\n            self.items.append((ids[:CONFIG[\\\"MAX_LEN\\\"]], labels[:CONFIG[\\\"MAX_LEN\\\"]]))\\n    def __len__(self):\\n        return len(self.items)\\n    def __getitem__(self, i):\\n        ids, labels = self.items[i]\\n        return {\\\"input_ids\\\": ids, \\\"labels\\\": labels}\\n\\ndef collate(batch):\\n    mx = max(len(b[\\\"input_ids\\\"]) for b in batch)\\n    pad = tok.pad_token_id or tok.eos_token_id\\n    return {\\n        \\\"input_ids\\\": torch.tensor([b[\\\"input_ids\\\"] + [pad] * (mx - len(b[\\\"input_ids\\\"])) for b in batch]),\\n        \\\"labels\\\": torch.tensor([b[\\\"labels\\\"] + [-100] * (mx - len(b[\\\"labels\\\"])) for b in batch]),\\n        \\\"attention_mask\\\": torch.tensor([[1] * len(b[\\\"input_ids\\\"]) + [0] * (mx - len(b[\\\"input_ids\\\"])) for b in batch]),\\n    }\",\n   \"qlora_base\": \"import bitsandbytes as bnb\\nfrom peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training\\nfrom transformers import (AutoModelForCausalLM, BitsAndBytesConfig,\\n                          Trainer, TrainingArguments)\\n\\nbnb_cfg = BitsAndBytesConfig(\\n    load_in_4bit=True, bnb_4bit_quant_type=\\\"nf4\\\",\\n    bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,\\n    bnb_4bit_use_double_quant=True)\\n\\nbase = AutoModelForCausalLM.from_pretrained(\\n    CONFIG[\\\"MODEL_ID\\\"], quantization_config=bnb_cfg, device_map={\\\"\\\": 0})\\nbase = prepare_model_for_kbit_training(base, use_gradient_checkpointing=True)\\nbase.config.use_cache = False\\n\\ndef make_lora():\\n    return LoraConfig(\\n        r=CONFIG[\\\"LORA_R\\\"], lora_alpha=CONFIG[\\\"LORA_ALPHA\\\"],\\n        lora_dropout=CONFIG[\\\"LORA_DROPOUT\\\"], bias=\\\"none\\\", task_type=\\\"CAUSAL_LM\\\",\\n        target_modules=[\\\"q_proj\\\", \\\"k_proj\\\", \\\"v_proj\\\", \\\"o_proj\\\",\\n                        \\\"gate_proj\\\", \\\"up_proj\\\", \\\"down_proj\\\"])\\nprint(\\\"base chargée:\\\", sum(p.numel() for p in base.parameters())/1e9, \\\"Md (4-bit)\\\")\",\n   \"lora_targets\": \"import bitsandbytes as bnb\\nfrom peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training\\nfrom transformers import (AutoModelForCausalLM, BitsAndBytesConfig,\\n                          Trainer, TrainingArguments)\\n\\nbnb_cfg = BitsAndBytesConfig(\\n    load_in_4bit=True, bnb_4bit_quant_type=\\\"nf4\\\",\\n    bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,\\n    bnb_4bit_use_double_quant=True)\\n\\nbase = AutoModelForCausalLM.from_pretrained(\\n    CONFIG[\\\"MODEL_ID\\\"], quantization_config=bnb_cfg, device_map={\\\"\\\": 0})\\nbase = prepare_model_for_kbit_training(base, use_gradient_checkpointing=True)\\nbase.config.use_cache = False\\n\\ndef make_lora():\\n    return LoraConfig(\\n        r=CONFIG[\\\"LORA_R\\\"], lora_alpha=CONFIG[\\\"LORA_ALPHA\\\"],\\n        lora_dropout=CONFIG[\\\"LORA_DROPOUT\\\"], bias=\\\"none\\\", task_type=\\\"CAUSAL_LM\\\",\\n        target_modules=[\\\"q_proj\\\", \\\"k_proj\\\", \\\"v_proj\\\", \\\"o_proj\\\",\\n                        \\\"gate_proj\\\", \\\"up_proj\\\", \\\"down_proj\\\"])\\nprint(\\\"base chargée:\\\", sum(p.numel() for p in base.parameters())/1e9, \\\"Md (4-bit)\\\")\",\n-  \"training_args\": \"    args = TrainingArguments(\\n        output_dir=local_out,\\n        per_device_train_batch_size=CONFIG[\\\"BATCH\\\"],\\n        gradient_accumulation_steps=CONFIG[\\\"GRAD_ACCUM\\\"],\\n        num_train_epochs=CONFIG[\\\"EPOCHS\\\"], learning_rate=CONFIG[\\\"LR\\\"],\\n        lr_scheduler_type=\\\"cosine\\\", warmup_steps=CONFIG[\\\"WARMUP\\\"],\\n        logging_steps=5, eval_strategy=\\\"steps\\\", eval_steps=CONFIG[\\\"EVAL_EVERY\\\"],\\n        save_strategy=\\\"steps\\\", save_steps=CONFIG[\\\"SAVE_STEPS\\\"],\\n        save_total_limit=None, load_best_model_at_end=False,\\n        bf16=torch.cuda.is_bf16_supported(), report_to=\\\"none\\\", seed=SEED,\\n        remove_unused_columns=False, dataloader_pin_memory=False)\",\n+  \"training_args\": \"    args = TrainingArguments(\\n        output_dir=local_out,\\n        per_device_train_batch_size=CONFIG[\\\"BATCH\\\"],\\n        per_device_eval_batch_size=1,  # fix OOM T4 : défaut HF=8 × 4096 tok = alloc 8 Go, évaluation impossible\\n        gradient_accumulation_steps=CONFIG[\\\"GRAD_ACCUM\\\"],\\n        num_train_epochs=CONFIG[\\\"EPOCHS\\\"], learning_rate=CONFIG[\\\"LR\\\"],\\n        lr_scheduler_type=\\\"cosine\\\", warmup_steps=CONFIG[\\\"WARMUP\\\"],\\n        logging_steps=5, eval_strategy=\\\"steps\\\", eval_steps=CONFIG[\\\"EVAL_EVERY\\\"],\\n        save_strategy=\\\"steps\\\", save_steps=CONFIG[\\\"SAVE_STEPS\\\"],\\n        save_total_limit=None, load_best_model_at_end=False,\\n        bf16=torch.cuda.is_bf16_supported(), report_to=\\\"none\\\", seed=SEED,\\n        remove_unused_columns=False, dataloader_pin_memory=False)\",\n   \"eval_probe\": \"\\n    def generate(name, instruction, max_new_tokens=120):\",\n   \"memo_audit\": \"    K_FRAC, N_MINK, N_CLOZE, CLOZE_SPAN, CLOZE_CONT = 0.20, 6, 4, 30, 48\",\n   \"sci_keys\": \"SCI_KEYS = (\\\"MODEL_ID\\\", \\\"MAX_LEN\\\", \\\"INSTR_KEEP\\\", \\\"LORA_R\\\", \\\"LORA_ALPHA\\\",\\n            \\\"LORA_DROPOUT\\\", \\\"LR\\\", \\\"EPOCHS\\\", \\\"BATCH\\\", \\\"GRAD_ACCUM\\\",\\n            \\\"EVAL_EVERY\\\", \\\"PATIENCE\\\", \\\"WARMUP\\\", \\\"VAL_FRACTION\\\",\\n            \\\"MIN_TRAIN_ROWS\\\", \\\"PERSONAS_GARDÉES\\\")\"\ndiff --git a/scripts/make_m3b_notebook.py b/scripts/make_m3b_notebook.py\nindex dc6804b..788c90e 100644\n--- a/scripts/make_m3b_notebook.py\n+++ b/scripts/make_m3b_notebook.py\n@@ -540,6 +540,7 @@ def train_one(name):\n     args = TrainingArguments(\n         output_dir=local_out,\n         per_device_train_batch_size=CONFIG[\"BATCH\"],\n+        per_device_eval_batch_size=1,  # fix OOM T4 : défaut HF=8 × 4096 tok = alloc 8 Go, évaluation impossible\n         gradient_accumulation_steps=CONFIG[\"GRAD_ACCUM\"],\n         num_train_epochs=CONFIG[\"EPOCHS\"], learning_rate=CONFIG[\"LR\"],\n         lr_scheduler_type=\"cosine\", warmup_steps=CONFIG[\"WARMUP\"],\n",
+  "gel": "results/protocol_m3b_freeze.json régénéré par le RITUEL OFFICIEL --je-change-le-protocole ; avant : 11 PASS / 1 FAIL (le FAIL = exactement la ligne ajoutée) ; après : 12 PASS / 0 FAIL"
+ },
+ "invariance_scientifique": {
+  "sci_keys": [
+   "MODEL_ID",
+   "MAX_LEN",
+   "INSTR_KEEP",
+   "LORA_R",
+   "LORA_ALPHA",
+   "LORA_DROPOUT",
+   "LR",
+   "EPOCHS",
+   "BATCH",
+   "GRAD_ACCUM",
+   "EVAL_EVERY",
+   "PATIENCE",
+   "WARMUP",
+   "VAL_FRACTION",
+   "MIN_TRAIN_ROWS",
+   "PERSONAS_GARDÉES"
+  ],
+  "per_device_eval_batch_size_dans_SCI_KEYS": false,
+  "empreintes": {
+   "s1_enregistré": {
+    "fingerprint": "fa2c16441a70238e00fd1ddcf8655ddddcdc57245c00c93e3fcab27cd839332c",
+    "config": "83fee411da554586951c77961e2f535632094a7ade5c876c1726ee30877954d5",
+    "data": "fe6defebabc01d9e9d583af06e3b9fd4013ac4865f05294e48aa27e4339b8a49"
+   },
+   "avant_correctif": {
+    "fingerprint": "fa2c16441a70238e00fd1ddcf8655ddddcdc57245c00c93e3fcab27cd839332c",
+    "config": "83fee411da554586951c77961e2f535632094a7ade5c876c1726ee30877954d5",
+    "data": "fe6defebabc01d9e9d583af06e3b9fd4013ac4865f05294e48aa27e4339b8a49",
+    "judges": [
+     "BMKavanaugh",
+     "CThomas",
+     "EKagan",
+     "JGRoberts",
+     "NMGorsuch",
+     "SAAlito",
+     "SSotomayor"
+    ]
+   },
+   "après_correctif": {
+    "fingerprint": "fa2c16441a70238e00fd1ddcf8655ddddcdc57245c00c93e3fcab27cd839332c",
+    "config": "83fee411da554586951c77961e2f535632094a7ade5c876c1726ee30877954d5",
+    "data": "fe6defebabc01d9e9d583af06e3b9fd4013ac4865f05294e48aa27e4339b8a49",
+    "judges": [
+     "BMKavanaugh",
+     "CThomas",
+     "EKagan",
+     "JGRoberts",
+     "NMGorsuch",
+     "SAAlito",
+     "SSotomayor"
+    ]
+   }
+  },
+  "invariance_avant_après": true,
+  "identité_avec_s1": true,
+  "méthode": "cellules réelles du notebook (imports → config → personas_dir → load_persona → §5bis) exécutées sur les deux versions (git HEAD vs arbre corrigé) ; empreinte = sha256({cfg, data, seed})"
+ },
+ "batteries": {
+  "gel_protocole": "12 PASS / 0 FAIL (régénéré par rituel officiel — geste consigné)",
+  "audit_zéro_fuite": "verdict: PASS (14 contrôles, m15_audit)",
+  "test_m3b_state": "143 PASS / 0 FAIL",
+  "test_m3b_merge": "25 PASS / 0 FAIL",
+  "test_m3b_resume_cpu": "30 PASS / 0 FAIL (vrai transformers/peft CPU)",
+  "test_m3b_notebook_flow": "25 PASS / 0 FAIL (cellules réelles)",
+  "validate_notebook": "31 cellules / 0 erreur réelle",
+  "lignage": "maillons d'intégrité tous ✓ (L1-L3 schémas + empreinte recalculée ×3, L4 adaptateur Kavanaugh, L5 dernière ligne journal, L7 scellé M4) ; maillons ✗ = uniquement l'état non-terminé connu (juges incomplets, pas d'export §8) — manifeste d'expérience reconstruit et chaîne re-vérifiée sur les DEUX racines s1"
+ },
+ "compatibilité_checkpoints_s1": {
+  "manifestes": "39/39 fichiers re-hachés conformes (EKagan ckpt-10, JGRoberts ckpt-6, NMGorsuch ckpt-10, SAAlito ckpt-10)",
+  "chargements_réels": [
+   {
+    "checkpoint": "EKagan/ckpt-10",
+    "ok": true,
+    "n_tensors": 504,
+    "n_opt_params": 504,
+    "global_step": 10,
+    "max_steps": 40,
+    "loss_dernier": 1.7458,
+    "scheduler_last_epoch": null,
+    "rng_type": "dict"
+   },
+   {
+    "checkpoint": "JGRoberts/ckpt-6",
+    "ok": true,
+    "n_tensors": 504,
+    "n_opt_params": 504,
+    "global_step": 6,
+    "max_steps": 32,
+    "loss_dernier": 1.654,
+    "scheduler_last_epoch": null,
+    "rng_type": "dict"
+   },
+   {
+    "checkpoint": "NMGorsuch/ckpt-10",
+    "ok": true,
+    "n_tensors": 504,
+    "n_opt_params": 504,
+    "global_step": 10,
+    "max_steps": 32,
+    "loss_dernier": 1.7462,
+    "scheduler_last_epoch": null,
+    "rng_type": "dict"
+   },
+   {
+    "checkpoint": "SAAlito/ckpt-10",
+    "ok": true,
+    "n_tensors": 504,
+    "n_opt_params": 504,
+    "global_step": 10,
+    "max_steps": 64,
+    "loss_dernier": 1.618,
+    "scheduler_last_epoch": null,
+    "rng_type": "dict"
+   },
+   {
+    "checkpoint": "BMKavanaugh/adaptateur-promu",
+    "ok": true,
+    "n_tensors": 504,
+    "sha256": "dfd26193094d21c61ecdf4a43c7b4a8273d6ffa91b8f991d142a8c40757be44d",
+    "r": 16,
+    "alpha": 32
+   }
+  ],
+  "training_args_s1": {
+   "per_device_train_batch_size": 1,
+   "per_device_eval_batch_size": 8,
+   "gradient_accumulation_steps": 8,
+   "num_train_epochs": 8,
+   "learning_rate": 0.0001,
+   "lr_scheduler_type": "cosine",
+   "warmup_steps": 10,
+   "logging_steps": 5,
+   "eval_steps": 20,
+   "save_steps": 10,
+   "seed": 42,
+   "bf16": true,
+   "output_dir": "/content/ckpt/NMGorsuch",
+   "remove_unused_columns": false,
+   "dataloader_pin_memory": false,
+   "load_best_model_at_end": false,
+   "save_total_limit": null
+  },
+  "découverte_code_corrigé": "ExpState (code corrigé) relit les racines s1 et retrouve tous les checkpoints durables (8/8 fichiers chacun) — le changement de batch d'évaluation ne rend RIEN incompatible (fichiers Trainer inchangés par le correctif)"
+ },
+ "réparations_infra_annexes": {
+  "resynchronisation_runner": {
+   "commit": "8866c0a0b39e619da9cd2c74057d6e38a38911e1",
+   "découverte": "le run 4 du micro-test a révélé que le runner du repo était en retard de 6 correctifs d'infrastructure sur le source kernel réellement exécuté en s1 (poussé sur Kaggle, jamais re-commité — 176 lignes de diff)",
+   "correctifs": "découverte récursive du tar et des racines d'état (agencement Kaggle 2026) ; SHIM avant les cellules de données (bug v4) ; suffixe RUN_ID par worker ; défense anti-récursion M3B_WORKER_IDX (bug v3)",
+   "source_de_vérité": "corps du kernel s1 (pull Kaggle), identique à smoke-b, éprouvé 233 min",
+   "impact_scientifique": "aucun — infrastructure seule, la science vit dans le notebook gelé exécuté"
+  },
+  "github_restauré": "token fourni par l'utilisateur (2026-10-05) — 55462bb..7ff7ffd (4 commits orphelins récupérés depuis l'archive dataset) puis 960279e..8866c0a poussés"
+ },
+ "micro_test_gpu": {
+  "fichiers_récupérés": [
+   "SESSION_SUMMARY.json",
+   "m3b_state_w0/checkpoints/EKagan/ckpt-20/trainer_state.json",
+   "m3b_state_w0/checkpoints/EKagan/ckpt-27/trainer_state.json",
+   "m3b_state_w0/checkpoints/JGRoberts/ckpt-6/trainer_state.json",
+   "m3b_state_w0/events.jsonl",
+   "m3b_state_w0/state.json",
+   "m3b_state_w1/checkpoints/NMGorsuch/ckpt-20/trainer_state.json",
+   "m3b_state_w1/checkpoints/NMGorsuch/ckpt-25/trainer_state.json",
+   "m3b_state_w1/checkpoints/SAAlito/ckpt-10/trainer_state.json",
+   "m3b_state_w1/events.jsonl",
+   "m3b_state_w1/state.json"
+  ],
+  "session": {
+   "utc_end": "2026-10-05T11:55:07.215310+00:00",
+   "wall_minutes": 94.1,
+   "outcomes": {
+    "w0": 0,
+    "w1": 0
+   },
+   "repo_commit": "8866c0a0b39e619da9cd2c74057d6e38a38911e1"
+  },
+  "états_finaux": {
+   "m3b_state_w0": {
+    "BMKavanaugh": {
+     "status": "done",
+     "step": 16
+    },
+    "EKagan": {
+     "status": "training",
+     "step": 27
+    }
+   },
+   "m3b_state_w1": {
+    "NMGorsuch": {
+     "status": "training",
+     "step": 25
+    },
+    "SAAlito": {
+     "status": "failed",
+     "step": 10
+    }
+   }
+  },
+  "évaluations_trainer_state": [
+   {
+    "checkpoint": "m3b_state_w0/checkpoints/EKagan/ckpt-20",
+    "step": 20,
+    "eval_loss": 1.7252482175827026,
+    "epoch": 3.762
+   },
+   {
+    "checkpoint": "m3b_state_w1/checkpoints/NMGorsuch/ckpt-20",
+    "step": 20,
+    "eval_loss": 1.768828272819519,
+    "epoch": 4.727
+   }
+  ],
+  "ok": true
+ },
+ "quota": {
+  "fenêtre": "30 h hebdomadaires, refresh 2026-10-10T00:00Z",
+  "mesures_API": [
+   {
+    "mesuré_le": "2026-10-05T08:27Z",
+    "timeUsed_s": 19601.56,
+    "restant_h": 24.553,
+    "note": "identique à l'affichage UI de l'utilisateur au millième de seconde près"
+   },
+   {
+    "mesuré_le": "2026-10-05T10:18Z (session micro-test en cours)",
+    "timeUsed_s": 20155,
+    "timeUsed_h": 5.599,
+    "restant_h": 24.4,
+    "refresh": "2026-10-10T00:00:00Z"
+   },
+   {
+    "mesuré_le": "2026-10-05T12:00Z (après micro-test)",
+    "timeUsed_s": 25827,
+    "timeUsed_h": 7.174,
+    "restant_h": 22.83,
+    "refresh": "2026-10-10T00:00:00Z"
+   }
+  ],
+  "réconciliation": "delta 08:27→12:00 = 6 225,4 s = les 4 runs du micro-test (3 courts ~12 min + run final 94,1 min) + persistance des sorties — et le run final (T4×2, 94,1 min de wall) a ajouté ~94 min de quota : re-confirmation EN VIVO du décompte simple",
+  "comportement_2_gpu": "une session T4×2 est décomptée UNE fois en wall (preuve 1 : somme des walls des 4 premières sessions = 19 601,56 s = timeUsed API à la demi-seconde ; preuve 2 : run final contrôlé de 94,1 min sur T4×2 → +~94 min de timeUsed)",
+  "unité": "secondes (timeUsed/timeReserved/totalTimeAllowed)"
+ },
+ "budget": {
+  "cadence_mesurée_s1": {
+   "min_mesurée_s": 281.2,
+   "max_mesurée_s": 383.2,
+   "moyenne_pondérée_s": 359.9,
+   "moyenne_w0_s": 349.4,
+   "moyenne_w1_s": 378.4,
+   "ancienne_estimation_utilisateur_s": 352.2
+  },
+  "juges": {
+   "BMKavanaugh": {
+    "total": 16,
+    "durable_fait": 16,
+    "restant": 0,
+    "train": 18,
+    "val": 3,
+    "evals_restantes_estimées": 1
+   },
+   "JGRoberts": {
+    "total": 32,
+    "durable_fait": 6,
+    "restant": 26,
+    "train": 37,
+    "val": 6,
+    "evals_restantes_estimées": 2
+   },
+   "EKagan": {
+    "total": 40,
+    "durable_fait": 10,
+    "restant": 30,
+    "train": 42,
+    "val": 8,
+    "evals_restantes_estimées": 2
+   },
+   "NMGorsuch": {
+    "total": 32,
+    "durable_fait": 10,
+    "restant": 22,
+    "train": 33,
+    "val": 6,
+    "evals_restantes_estimées": 2
+   },
+   "SAAlito": {
+    "total": 64,
+    "durable_fait": 10,
+    "restant": 54,
+    "train": 71,
+    "val": 12,
+    "evals_restantes_estimées": 3
+   },
+   "CThomas": {
+    "total": 120,
+    "durable_fait": 0,
+    "restant": 120,
+    "train": 124,
+    "val": 22,
+    "evals_restantes_estimées": 7
+   },
+   "SSotomayor": {
+    "total": 80,
+    "durable_fait": 0,
+    "restant": 80,
+    "train": 81,
+    "val": 14,
+    "evals_restantes_estimées": 5
+   }
+  },
+  "total_steps": 384,
+  "durable_fait": 52,
+  "restant": 332,
+  "pas_perdus_oom_s1": {
+   "EKagan": 9,
+   "NMGorsuch": 9,
+   "SAAlito": 9
+  },
+  "affectation_s2": {
+   "w0": [
+    "CThomas",
+    "JGRoberts",
+    "EKagan"
+   ],
+   "w1": [
+    "SSotomayor",
+    "SAAlito",
+    "NMGorsuch"
+   ],
+   "pas_w0": 176,
+   "pas_w1": 156
+  },
+  "quota": {
+   "total_h": 30.0,
+   "refresh": "2026-10-10T00:00:00Z",
+   "décompte": "une session T4×2 = 1× son wall (mesuré sur les 4 sessions : 19 601,56 s = somme des walls à la demi-seconde)"
+  },
+  "scénarios": {
+   "optimiste": {
+    "s_par_pas": 5.87,
+    "s_par_exemple_eval": 8,
+    "overhead_session_min": 10,
+    "sessions_estimées": 3,
+    "pas_w0": 176,
+    "pas_w1": 156,
+    "heures_w0": 17.6,
+    "heures_w1": 15.5,
+    "wall_entraînement_h": 17.6,
+    "finalize_h": 1.5,
+    "TOTAL_h": 19.6
+   },
+   "central": {
+    "s_par_pas": 6.3,
+    "s_par_exemple_eval": 12,
+    "overhead_session_min": 20,
+    "sessions_estimées": 4,
+    "pas_w0": 176,
+    "pas_w1": 156,
+    "heures_w0": 19.1,
+    "heures_w1": 16.8,
+    "wall_entraînement_h": 19.1,
+    "finalize_h": 1.5,
+    "TOTAL_h": 21.9
+   },
+   "prudent": {
+    "s_par_pas": 7.2,
+    "s_par_exemple_eval": 18,
+    "overhead_session_min": 25,
+    "sessions_estimées": 5,
+    "pas_w0": 176,
+    "pas_w1": 156,
+    "heures_w0": 22.0,
+    "heures_w1": 19.3,
+    "wall_entraînement_h": 22.0,
+    "finalize_h": 1.5,
+    "TOTAL_h": 25.6
+   }
+  },
+  "note": "l'ancien budget « 4,5 semaines à ~6 h/semaine » est OBSOLÈTE : la fenêtre réelle est 30 h/semaine (vérification téléphonique effective) avec 24 h 33 restantes au 2026-10-05T08:27Z, et le micro-test consomme ~1,6 h de plus ; le reste tient DANS la fenêtre courante pour les trois scénarios, avec marge (optimiste) ou report limité de ~1-2 h après le refresh du 10 octobre (prudent)"
+ },
+ "verdict": {
+  "décision": "GO S2",
+  "portes": {
+   "1_diff_minimal": true,
+   "2_fingerprint_identique": true,
+   "3_freeze_12_12": true,
+   "4_leakage_14_14": true,
+   "5_batteries": true,
+   "6_checkpoints_rechargeables": true,
+   "7_micro_test_évaluation_réelle": true,
+   "8_oom_éliminé": true,
+   "9_quota_suffisant": true
+  },
+  "conditions_s2": [
+   "monter la sortie du kernel s1 (racines d'état) comme source du kernel s2 — PAS la sortie du micro-test (celle-ci est une branche d'audit ; ses pas sont du calcul de vérification, pas de la production)",
+   "alternative documentée : monter la sortie du micro-test ferait gagner ~20 pas (~2 h) mais mélangerait vérification et production — déconseillé pour la propreté du lignage",
+   "affectation recommandée : w0 = CThomas, JGRoberts, EKagan (176 pas) ; w1 = SSotomayor, SAAlito, NMGorsuch (156 pas) ; sessions ≤ 8 h ; finalize en session séparée"
+  ]
+ }
+}
