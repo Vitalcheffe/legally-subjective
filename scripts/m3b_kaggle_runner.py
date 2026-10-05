@@ -170,30 +170,44 @@ def render_shim(repo_path, head, drive_root, env_info):
 
 # ------------------------------------------------------------ préparation --
 def acquire_repo():
-    """Source du code : dataset privé Kaggle (archive tar OPAQUE du dépôt
-    complet avec .git — extension .bin pour éviter l'extraction serveur ;
-    arbre vérifiable octet-identique au commit épinglé) — sinon
-    clone GitHub public. Les DEUX routes vérifient HEAD == REPO_COMMIT
-    et l'arbre PROPRE (git status vide)."""
+    """Source du code : tar opaque du dépôt complet (avec .git) cherché
+    dans TOUTES les entrées montées de /kaggle/input (dataset OU sortie
+    d'un noyau précédent qui l'embarquait) — sinon clone GitHub public.
+    Toutes les routes vérifient HEAD == REPO_COMMIT et l'arbre PROPRE."""
     if os.path.exists(REPO_PATH):
         shutil.rmtree(REPO_PATH)
-    src_ds = "/kaggle/input/legally-subjective-code"
-    if os.path.isdir(src_ds):
-        tars = sorted(f for f in os.listdir(src_ds)
-                      if f.endswith((".tar.bin", ".tar.gz", ".tgz")))
-        assert tars, f"dataset code sans archive tar : {src_ds}"
-        assert len(tars) == 1, f"plusieurs archives possibles : {tars}"
+    inp = "/kaggle/input"
+    tar_path = None
+    if os.path.isdir(inp):
+        # Kaggle 2026 monte les sources sous des sous-dossiers catégorisés
+        # (datasets/, notebooks/) — parcours récursif borné, robuste à tout
+        # agencement de montage.
+        for root, dirs, files in os.walk(inp):
+            if root.count(os.sep) - inp.count(os.sep) > 4:
+                dirs[:] = []
+                continue
+            for f in sorted(files):
+                if f.endswith((".tar.bin", ".tar.gz", ".tgz")) and \
+                        "legally-subjective-repo" in f:
+                    tar_path = os.path.join(root, f)
+                    break
+            if tar_path:
+                break
+        log(f"entrées montées : {sorted(os.listdir(inp))}")
+    if tar_path:
         os.makedirs(REPO_PATH, exist_ok=True)
-        log(f"source code : dataset privé ({tars[0]})…")
-        sh(["tar", "-xzf", os.path.join(src_ds, tars[0]), "-C", REPO_PATH],
-           timeout=600)
-        source = f"dataset:legally-subjective-code/{tars[0]}"
+        log(f"source code : archive du dépôt ({tar_path})…")
+        sh(["tar", "-xzf", tar_path, "-C", REPO_PATH], timeout=600)
+        source = f"archive:{tar_path}"
     else:
         log("source code : clone GitHub public au commit épinglé…")
         sh(["git", "clone", "--quiet", REPO_URL, REPO_PATH], timeout=600)
         sh(["git", "-C", REPO_PATH, "checkout", "--quiet", REPO_COMMIT],
            timeout=120)
         source = "github:" + REPO_URL
+    # git « dubious ownership » : le noyau s'exécute sous un autre uid que
+    # l'extraction du tar — exception explicite pour CE dépôt seulement.
+    sh(["git", "config", "--global", "--add", "safe.directory", REPO_PATH])
     head = sh(["git", "-C", REPO_PATH, "rev-parse", "HEAD"]).stdout.strip()
     assert head == REPO_COMMIT, \
         f"commit attendu {REPO_COMMIT}, obtenu {head}"
@@ -257,19 +271,20 @@ def prepare():
 
 def find_input_states():
     """Cherche les racines d'état des sessions précédentes dans les entrées
-    attachées (/kaggle/input/<noyau-précédent>/m3b_state_w*/)."""
+    montées (sortie du noyau précédent, agencement Kaggle 2026 :
+    /kaggle/input/notebooks/<slug>/m3b_state_w*/…)."""
     found = {}
     inp = "/kaggle/input"
     if not os.path.isdir(inp):
         return found
-    for src in os.listdir(inp):
-        d = os.path.join(inp, src)
-        if not os.path.isdir(d):
+    for root, dirs, files in os.walk(inp):
+        if root.count(os.sep) - inp.count(os.sep) > 3:
+            dirs[:] = []
             continue
-        for sub in os.listdir(d) if os.path.isdir(d) else []:
-            if sub.startswith("m3b_state") and \
-                    os.path.isfile(os.path.join(d, sub, "state.json")):
-                found[sub] = os.path.join(d, sub)
+        for d in list(dirs):
+            if d.startswith("m3b_state") and \
+                    os.path.isfile(os.path.join(root, d, "state.json")):
+                found[d] = os.path.join(root, d)
     return found
 
 
@@ -321,21 +336,30 @@ def worker_main(args, cells):
         f"({env_info['gpu_mem_gb']} Go) | juges {args.judges}")
 
     ns = {"__name__": "m3b_nbexec"}
-    order = ["imports", "config", "personas_dir", "load_persona",
-             "temporal_split", "tokenization", "dataset", "qlora",
-             "state_5bis"]
-    for name in order:
+    # ORDRE = celui du notebook : imports(3), config(5), SHIM(7), données(9+).
+    # (bug v4 : le SHIM était exécuté APRÈS les cellules de données alors
+    #  que personas_dir exige REPO_PATH défini par le SHIM.)
+    for name in ("imports", "config"):
         log(f"worker {args.worker_idx} : cellule gelée « {name} »")
         exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)
 
     # SOFT_MINUTES : paramètre OPÉRATIONNEL (hors empreinte, cellule 5 le
     # documente : « ajustable librement ») adapté aux sessions batch Kaggle.
     ns["CONFIG"]["SOFT_MINUTES"] = float(args.soft_minutes)
+    # RUN_ID par worker (comptabilité — même seconde ⇒ même id sinon) :
+    # suffixe _wN ; ni scientifique ni dans l'empreinte.
+    ns["RUN_ID"] = f"{ns['RUN_ID']}_w{args.worker_idx}"
 
-    # SHIM (cellule Drive → Kaggle) après la config, comme dans le notebook
+    # SHIM (cellule Drive → Kaggle) — comme la cellule 7 du notebook,
+    # APRÈS la config, AVANT les données.
     shim = render_shim(REPO_PATH, cells_head, args.drive_root, env_info)
     log(f"worker {args.worker_idx} : SHIM infrastructure Kaggle")
     exec(compile(shim, "<shim:kaggle>", "exec"), ns)
+
+    for name in ("personas_dir", "load_persona", "temporal_split",
+                 "tokenization", "dataset", "qlora", "state_5bis"):
+        log(f"worker {args.worker_idx} : cellule gelée « {name} »")
+        exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)
 
     # restriction du sous-ensemble APRÈS §5bis (empreinte = données complètes)
     if args.judges:
@@ -396,16 +420,18 @@ def finalize_main(args, cells):
             torch.cuda.get_device_properties(0).total_memory / 1e9, 1),
     }
     ns = {"__name__": "m3b_nbexec"}
-    order = ["imports", "config", "personas_dir", "load_persona",
-             "temporal_split", "tokenization", "dataset", "qlora",
-             "state_5bis"]
-    for name in order:
+    # ORDRE = celui du notebook (voir worker_main — bug v4 corrigé)
+    for name in ("imports", "config"):
         log(f"finalize : cellule gelée « {name} »")
         exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)
     ns["CONFIG"]["SOFT_MINUTES"] = float(args.soft_minutes)
     shim = render_shim(REPO_PATH, cells_head, drive_root, env_info)
     log("finalize : SHIM infrastructure Kaggle")
     exec(compile(shim, "<shim:kaggle>", "exec"), ns)
+    for name in ("personas_dir", "load_persona", "temporal_split",
+                 "tokenization", "dataset", "qlora", "state_5bis"):
+        log(f"finalize : cellule gelée « {name} »")
+        exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)
     for name in ("probe_7", "memo_7bis", "export_8"):
         log(f"finalize : cellule gelée « {name} »")
         exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)
@@ -440,6 +466,16 @@ def main():
     if args.repo_commit and args.repo_commit != REPO_COMMIT:
         REPO_COMMIT = args.repo_commit
         log(f"commit épinglé (override CLI) : {REPO_COMMIT[:12]}")
+
+    # défense en profondeur anti-récursion : l'indice worker peut venir de
+    # l'ENV (incécrasable par l'en-tête argv du noyau — bug v3 du smoke :
+    # l'en-tête réécrivait l'argv du sous-processus → boucle parent→worker
+    # →parent infinie jusqu'au tueur du noyau).
+    if args.worker is None:
+        _env_idx = os.environ.get("M3B_WORKER_IDX")
+        if _env_idx is not None:
+            args.worker = int(_env_idx)
+            log(f"worker hérité de l'env M3B_WORKER_IDX={_env_idx}")
 
     # ---- sous-processus worker -----------------------------------------
     if args.worker is not None:
@@ -553,6 +589,7 @@ def main():
     for s in specs:
         env = dict(os.environ)
         env["CUDA_VISIBLE_DEVICES"] = str(s["idx"])
+        env["M3B_WORKER_IDX"] = str(s["idx"])   # canal incécrasable
         cmd = [sys.executable, os.path.abspath(__file__),
                "--worker", str(s["idx"]),
                "--repo-commit", REPO_COMMIT,
