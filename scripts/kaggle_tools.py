@@ -54,8 +54,14 @@ def do_push(args):
         header = (
             "# --- PARAMÈTRES DE SESSION (générés au push par kaggle_tools ;\n"
             "#     opérationnel uniquement — infrastructure, hors protocole) ---\n"
+            "# GARDE : ne PAS écraser l'argv d'un worker — le runner se\n"
+            "# ré-invoque en sous-processus avec --worker N ; l'en-tête ne\n"
+            "# s'applique qu'au lancement initial du noyau (bug v3 du smoke :\n"
+            "# l'en-tête réécrivait l'argv du sous-processus → boucle\n"
+            "# parent→worker infinie jusqu'au tueur du noyau).\n"
             "import sys as _sys\n"
-            f"_sys.argv = {_sys_argv(args.runner_args)}\n\n")
+            "if '--worker' not in _sys.argv:\n"
+            f"    _sys.argv = {_sys_argv(args.runner_args)}\n\n")
         text = header + text
 
     req = ApiSaveKernelRequest()

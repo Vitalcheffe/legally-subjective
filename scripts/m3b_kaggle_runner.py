@@ -173,7 +173,18 @@ def acquire_repo():
     """Source du code : tar opaque du dépôt complet (avec .git) cherché
     dans TOUTES les entrées montées de /kaggle/input (dataset OU sortie
     d'un noyau précédent qui l'embarquait) — sinon clone GitHub public.
-    Toutes les routes vérifient HEAD == REPO_COMMIT et l'arbre PROPRE."""
+    Toutes les routes vérifient HEAD == REPO_COMMIT et l'arbre PROPRE.
+    Une archive en retard sur le commit épinglé déclenche le repli
+    GitHub (l'archive est un cache, pas une référence)."""
+    def _github_clone(reason):
+        if os.path.exists(REPO_PATH):
+            shutil.rmtree(REPO_PATH)
+        log(f"source code : clone GitHub public au commit épinglé ({reason})…")
+        sh(["git", "clone", "--quiet", REPO_URL, REPO_PATH], timeout=600)
+        sh(["git", "-C", REPO_PATH, "checkout", "--quiet", REPO_COMMIT],
+           timeout=120)
+        return f"github:{REPO_URL} ({reason})"
+
     if os.path.exists(REPO_PATH):
         shutil.rmtree(REPO_PATH)
     inp = "/kaggle/input"
@@ -198,13 +209,21 @@ def acquire_repo():
         os.makedirs(REPO_PATH, exist_ok=True)
         log(f"source code : archive du dépôt ({tar_path})…")
         sh(["tar", "-xzf", tar_path, "-C", REPO_PATH], timeout=600)
-        source = f"archive:{tar_path}"
+        sh(["git", "config", "--global", "--add", "safe.directory",
+            REPO_PATH])
+        _head = sh(["git", "-C", REPO_PATH, "rev-parse", "HEAD"],
+                   check=False).stdout.strip()
+        if _head != REPO_COMMIT:
+            # archive du dataset en RETARD sur le commit épinglé : repli
+            # GitHub. L'archive n'est qu'un cache — la référence reste le
+            # commit épinglé, vérifié ci-dessous quelle que soit la route.
+            source = _github_clone(
+                f"archive périmée : HEAD {_head[:12]} ≠ épinglé "
+                f"{REPO_COMMIT[:12]}")
+        else:
+            source = f"archive:{tar_path}"
     else:
-        log("source code : clone GitHub public au commit épinglé…")
-        sh(["git", "clone", "--quiet", REPO_URL, REPO_PATH], timeout=600)
-        sh(["git", "-C", REPO_PATH, "checkout", "--quiet", REPO_COMMIT],
-           timeout=120)
-        source = "github:" + REPO_URL
+        source = _github_clone("aucune archive montée")
     # git « dubious ownership » : le noyau s'exécute sous un autre uid que
     # l'extraction du tar — exception explicite pour CE dépôt seulement.
     sh(["git", "config", "--global", "--add", "safe.directory", REPO_PATH])
@@ -302,6 +321,189 @@ def copy_states_in(inputs, names=("m3b_state_w0", "m3b_state_w1",
             log(f"état précédent restauré : {n} "
                 f"({os.path.getsize(os.path.join(dst, 'state.json'))} octets de manifeste)")
     return copied
+
+
+# -------------------------------------------------------------- plan s2 ----
+def _expected_targets(cells, repo_path):
+    """Cibles de pas par juge CALCULÉES (jamais un total statique) : la
+    formule du notebook (mêmes cellules gelées) appliquée aux données
+    réelles du clone — max_steps = (ceil(n_train/BATCH) // GRAD_ACCUM) ×
+    EPOCHS. Validée 7/7 contre les steps_total mesurés de s1 et les
+    trainer_state des checkpoints (16/120/40/32/32/64/80)."""
+    import contextlib, io
+    ns = {"time": time}
+    with contextlib.redirect_stdout(io.StringIO()):   # la cellule imprime
+        exec(compile(cells["config"], "<notebook:config>", "exec"), ns)
+    cfg = ns["CONFIG"]
+    sys.path.insert(0, os.path.join(repo_path, "scripts"))
+    from m3b_gate import expected_judges
+    rows, _ = expected_judges(repo_path, min_rows=cfg["MIN_TRAIN_ROWS"])
+    out = {}
+    for name, n in rows.items():
+        n_val = 1 if n < 4 else max(1, round(n * cfg["VAL_FRACTION"]))
+        n_train = n - n_val                      # split temporel du notebook
+        len_dl = -(-n_train // cfg["BATCH"])      # ceil(n_train / BATCH)
+        out[name] = (len_dl // cfg["GRAD_ACCUM"]) * cfg["EPOCHS"]
+    return out, cfg
+
+
+def _ckpt_max_steps(root, judge):
+    """max_steps mesuré dans un trainer_state de checkpoint du juge
+    (identique dans tous les ckpts d'un même entraînement)."""
+    if not root:
+        return None
+    d = os.path.join(root, "checkpoints", judge)
+    if not os.path.isdir(d):
+        return None
+    for c in sorted(os.listdir(d), reverse=True):
+        if not c.startswith("ckpt-"):
+            continue
+        p = os.path.join(d, c, "trainer_state.json")
+        if os.path.isfile(p):
+            try:
+                ms = json.load(open(p, encoding="utf-8")).get("max_steps")
+            except Exception:
+                continue
+            if ms:
+                return int(ms)
+    return None
+
+
+def launch_plan(roots, cells, repo_path, judges_w0=None, judges_w1=None):
+    """Plan de session DÉDUIT DES state.json, juge par juge (LS-18) —
+    remaining = cible − durable, JAMAIS un total statique. Cible par
+    priorité : state.steps_total (mesurée) > trainer_state d'un checkpoint
+    (mesurée) > formule du notebook sur données réelles (calculée).
+
+    Vérifications dures AVANT tout entraînement :
+      V1 un juge à pas durables doit être affecté au worker dont la racine
+         porte son état — sinon il repartirait de zéro (cas Roberts) ;
+      V2 un juge ne peut pas être affecté aux deux workers ;
+      V3 un juge affecté doit exister dans le protocole ;
+      V4 deux racines ne peuvent pas porter des pas durables du même juge.
+    Les juges « done » sont marqués SKIP (la boucle §6 les saute déjà :
+    jamais réentraînés)."""
+    targets, _cfg = _expected_targets(cells, repo_path)
+    per_root = {}
+    for rname, rpath in roots.items():
+        p = os.path.join(rpath, "state.json")
+        if os.path.isfile(p):
+            per_root[rname] = json.load(open(p, encoding="utf-8")
+                                        ).get("judges", {})
+
+    # propriétaire par juge : LA racine qui porte ses pas durables
+    owners, conflicts = {}, []
+    for j in targets:
+        durable = {r: int(v.get("step") or 0)
+                   for r, js in per_root.items()
+                   for v in [js.get(j, {})]}
+        durable = {r: s for r, s in durable.items() if s > 0}
+        if len(durable) > 1:
+            conflicts.append((j, durable))              # V4
+        elif durable:
+            owners[j] = next(iter(durable))
+
+    rows = {}
+    for j, target in targets.items():
+        owner = owners.get(j)
+        js = (per_root.get(owner, {}) or {}).get(j, {}) if owner else {}
+        step = int(js.get("step") or 0)
+        status = js.get("status") or "pending"
+        src = "formule"
+        if js.get("steps_total"):
+            target, src = int(js["steps_total"]), "mesurée state"
+        else:
+            ck = _ckpt_max_steps(roots.get(owner), j) if owner else None
+            if ck:
+                target, src = ck, "mesurée ckpt"
+        remaining = 0 if status == "done" else max(0, int(target) - step)
+        rows[j] = {"root": owner, "status": status, "step": step,
+                   "target": int(target), "target_source": src,
+                   "remaining": remaining}
+
+    w0 = [j.strip() for j in (judges_w0 or "").split(",") if j.strip()]
+    w1 = [j.strip() for j in (judges_w1 or "").split(",") if j.strip()]
+    errors = []
+    for j, dur in conflicts:
+        errors.append(f"V4 : {j} porte des pas durables dans PLUSIEURS "
+                      f"racines ({dur}) — monter UNE seule source d'état")
+    both = sorted(set(w0) & set(w1))
+    if both:
+        errors.append(f"V2 : juges affectés aux DEUX workers : {both}")
+    for j in w0 + w1:
+        if j not in targets:
+            errors.append(f"V3 : juge inconnu du protocole : {j}")
+    for j, wname in ([(j, "w0") for j in w0] + [(j, "w1") for j in w1]):
+        r = rows.get(j)
+        if r and r["step"] > 0 and r["root"] != f"m3b_state_{wname}":
+            errors.append(
+                f"V1 : {j} porte {r['step']} pas durables dans {r['root']} "
+                f"mais est affecté à {wname} — ce worker ne monterait PAS "
+                f"cette racine : redépart de zéro. Réaffecter {j} au worker "
+                f"{r['root'].replace('m3b_state_', '')} ou réorganiser.")
+    unassigned = sorted(j for j, r in rows.items()
+                        if r["remaining"] > 0 and j not in w0 and j not in w1)
+    plan = {
+        "schema": "m3b-launch-plan/1",
+        "computed_from": "state.json des racines montées + formule notebook "
+                         "sur données réelles du clone — AUCUN total statique",
+        "judges": rows,
+        "assignment": {"w0": w0, "w1": w1},
+        "totals": {
+            "w0_remaining": sum(rows[j]["remaining"] for j in w0
+                                if j in rows),
+            "w1_remaining": sum(rows[j]["remaining"] for j in w1
+                                if j in rows),
+            "remaining": sum(r["remaining"] for r in rows.values()),
+            "targets_of_remaining": sum(r["target"] for r in rows.values()
+                                         if r["remaining"] > 0),
+            "durable_of_remaining": sum(r["step"] for r in rows.values()
+                                         if r["remaining"] > 0),
+        },
+        "skipped_done": sorted(j for j, r in rows.items()
+                                if r["status"] == "done"),
+        "unassigned_remaining": unassigned,
+        "errors": errors,
+    }
+    return plan
+
+
+def print_launch_plan(plan):
+    """Journal lisible du plan (visible dans le log du noyau)."""
+    t = plan["totals"]
+    print("\n== PLAN DE SESSION (déduit des state.json — aucun total "
+          "statique) ==")
+    print(f"  {'juge':14s} {'racine':6s} {'statut':9s} {'dur/cible':10s} "
+          f"{'restant':8s} worker")
+    for j, r in sorted(plan["judges"].items(),
+                       key=lambda kv: (kv[1]["root"] or "zz", kv[0])):
+        mark = {"mesurée state": "m", "mesurée ckpt": "c",
+                "formule": "f"}[r["target_source"]]
+        worker = "— SKIP (déjà terminé)" if r["status"] == "done" else \
+            ("w0" if j in plan["assignment"]["w0"] else
+             "w1" if j in plan["assignment"]["w1"] else "— non affecté")
+        print(f"  {j:14s} {(r['root'] or '—'):6s} {r['status']:9s} "
+              f"{r['step']}/{r['target']}{mark:<7s} {r['remaining']:<8d} "
+              f"{worker}")
+    print("  cible : m = mesurée state.steps_total · c = ckpt "
+          "trainer_state · f = formule notebook (données réelles)")
+    print(f"  w0 : {t['w0_remaining']} pas restants · w1 : "
+          f"{t['w1_remaining']} pas · TOTAL restant : {t['remaining']} pas "
+          f"(cibles des restants {t['targets_of_remaining']} − durables "
+          f"{t['durable_of_remaining']})")
+    if plan["skipped_done"]:
+        print(f"  terminés et SAUTÉS (jamais réentraînés) : "
+              f"{', '.join(plan['skipped_done'])}")
+    if plan["unassigned_remaining"]:
+        print(f"  ⚠ non affectés cette session (restant > 0) : "
+              f"{', '.join(plan['unassigned_remaining'])}")
+    if plan["errors"]:
+        print("  ✗ REFUS DE LANCER — vérifications du plan :")
+        for e in plan["errors"]:
+            print(f"    - {e}")
+    else:
+        print("  ✓ vérifications V1-V4 : PASS (racines/affectation cohérentes)")
+    print()
 
 
 # ------------------------------------------------------------------ worker --
@@ -545,6 +747,10 @@ def main():
 
     if args.dry:
         log("mode --dry : préparation seule, aucun entraînement")
+        plan = launch_plan(inputs, cells, REPO_PATH,
+                           args.judges_w0, args.judges_w1)
+        env_facts["plan"] = plan
+        print_launch_plan(plan)
         json.dump(env_facts, open(os.path.join(WORKING, "kaggle_env.json"),
                                   "w"), indent=1)
         return 0
@@ -556,7 +762,7 @@ def main():
         return rc
 
     # ---- phase train : workers en parallèle (1 GPU chacun) ---------------
-    copy_states_in(inputs)
+    copied = copy_states_in(inputs)
     os.makedirs(WORKING, exist_ok=True)
 
     # affectation par défaut SÛRE : si aucune affectation explicite, on
@@ -572,6 +778,23 @@ def main():
         args.judges_w1 = ",".join(names[1::2])
         log(f"affectation alternée par défaut : w0={args.judges_w0} | "
             f"w1={args.judges_w1}")
+
+    # ---- plan de session : DÉDUIT des state.json, juge par juge (LS-18) --
+    # remaining = cible − durable, AUCUN total statique ; vérifications
+    # V1-V4 AVANT tout lancement de worker (un juge à pas durables affecté
+    # au mauvais worker repartirait de zéro — refus net et immédiat).
+    plan = launch_plan(copied, cells, REPO_PATH,
+                       args.judges_w0, args.judges_w1)
+    env_facts["plan"] = plan
+    print_launch_plan(plan)
+    if plan["errors"]:
+        raise RuntimeError("plan de session INVALIDE — entraînement refusé "
+                           "(voir vérifications V1-V4 ci-dessus) :\n  - "
+                           + "\n  - ".join(plan["errors"]))
+    log(f"plan vérifié : restant w0={plan['totals']['w0_remaining']} pas | "
+        f"w1={plan['totals']['w1_remaining']} pas | "
+        f"total={plan['totals']['remaining']} pas "
+        f"(terminés sautés : {len(plan['skipped_done'])})")
 
     specs = []
     if n_gpu >= 2 and args.judges_w1:

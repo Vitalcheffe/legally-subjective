@@ -42,6 +42,9 @@ jobs:
       - name: Gestion d'état M3b durable (injection de pannes A-L)
         run: python scripts/test_m3b_state.py
 
+      - name: Plan de session déduit des state.json (LS-18, V1-V4)
+        run: python scripts/test_m3b_plan.py
+
       - name: Noyau statistique M4 (tests)
         run: python scripts/test_m4_metrics.py
 
