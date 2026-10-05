@@ -323,26 +323,33 @@ def main():
                 "gpu_mem_gb": round(
                     torch.cuda.get_device_properties(0).total_memory / 1e9, 1)}
 
-    # ---- cellules gelées (une fois) puis SHIM/état par racine -------------
+    # ---- cellules gelées : SHIM d'ABORD (bug v4 du runner — personas_dir
+    # exige REPO_PATH/DRIVE_ROOT définis par le SHIM, pas après les données)
     ns = {"__name__": "m3b_microtest"}
     for name in ("imports", "config"):
         log(f"cellule gelée « {name} »")
         exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)  # noqa: S102
     ns["CONFIG"]["SOFT_MINUTES"] = 1.0          # opérationnel (hors empreinte)
-    for name in ("personas_dir", "load_persona", "temporal_split",
-                 "tokenization", "dataset", "qlora"):
-        log(f"cellule gelée « {name} »")
-        exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)  # noqa: S102
 
     from peft import PeftModel
     from transformers import Trainer, TrainingArguments
 
     evals = []
+    first_pass = True
     for root_name in ("w1", "w0"):
         root = copied[f"m3b_state_{root_name}"]
         shim = render_shim(REPO_PATH, REPO_COMMIT, root, env_info)
-        log(f"SHIM + §5bis sur la racine {root_name} ({root})")
+        log(f"SHIM infrastructure Kaggle sur la racine {root_name} ({root})")
         exec(compile(shim, "<shim:kaggle>", "exec"), ns)              # noqa: S102
+        if first_pass:
+            # cellules de données UNE SEULE FOIS (le SHIM de la 2e racine
+            # ne rebind que DRIVE_ROOT/STATE — base/tok/splits inchangés)
+            for name in ("personas_dir", "load_persona", "temporal_split",
+                         "tokenization", "dataset", "qlora"):
+                log(f"cellule gelée « {name} »")
+                exec(compile(cells[name], f"<notebook:{name}>", "exec"), ns)  # noqa: S102
+            first_pass = False
+        log(f"cellule gelée « state_5bis » (racine {root_name})")
         exec(compile(cells["state_5bis"], "<notebook:state_5bis>",  # noqa: S102
                      "exec"), ns)
         STATE, CONFIG, SEED = ns["STATE"], ns["CONFIG"], ns["SEED"]
