@@ -302,6 +302,7 @@ def main():
     # fragment TrainingArguments EXACT + preuve d'identité avec le gel
     frag = balanced_call(cells["train_6"], "args = TrainingArguments(")
     import hashlib
+    import textwrap
     frag_sha256 = hashlib.sha256(frag.encode("utf-8")).hexdigest()
     golden = json.load(open(os.path.join(REPO_PATH, "results",
                                          "protocol_m3b_freeze.json"),
@@ -311,6 +312,9 @@ def main():
         f"fragment TrainingArguments ≠ gel ({frag_sha256[:12]} vs {want_sha256[:12]})"
     assert "per_device_eval_batch_size=1" in frag, \
         "le fragment gelé ne contient PAS le correctif — mauvais commit ?"
+    # le fragment vit DANS def train_one (indenté) — dé-indenter pour
+    # l'exécution isolée (le sha256, lui, porte le texte gelé original)
+    frag_dedent = textwrap.dedent(frag)
     report["fragment_training_args_sha256"] = frag_sha256
     report["fragment_identique_au_gel"] = True
     log(f"fragment TrainingArguments = gel du protocole "
@@ -374,7 +378,8 @@ def main():
             ns_args = {"local_out": local_out, "CONFIG": CONFIG,
                        "SEED": SEED, "torch": torch,
                        "TrainingArguments": TrainingArguments}
-            exec(compile(frag, "<gel:training_args>", "exec"), ns_args)  # noqa: S102
+            exec(compile(frag_dedent, "<gel:training_args>", "exec"),  # noqa: S102
+                  ns_args)
             targs = ns_args["args"]
             assert targs.per_device_eval_batch_size == 1, \
                 "le batch d'évaluation n'est pas 1 — correctif non appliqué"
