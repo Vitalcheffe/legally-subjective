@@ -540,6 +540,7 @@ def train_one(name):
     args = TrainingArguments(
         output_dir=local_out,
         per_device_train_batch_size=CONFIG["BATCH"],
+        per_device_eval_batch_size=1,  # fix OOM T4 : défaut HF=8 × 4096 tok = alloc 8 Go, évaluation impossible
         gradient_accumulation_steps=CONFIG["GRAD_ACCUM"],
         num_train_epochs=CONFIG["EPOCHS"], learning_rate=CONFIG["LR"],
         lr_scheduler_type="cosine", warmup_steps=CONFIG["WARMUP"],
