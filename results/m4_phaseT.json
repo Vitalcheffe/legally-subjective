@@ -1,0 +1,712 @@
+{
+ "schema": "m4-report/1",
+ "phase": "T",
+ "pinned": {
+  "tag": "m4-freeze"
+ },
+ "conditions": {
+  "A": {
+   "case_direction": {
+    "k": 103,
+    "n": 205,
+    "accuracy": 0.5024,
+    "ic95": [
+     0.4346,
+     0.5702
+    ],
+    "kappa_vs_majority_class": -0.0329,
+    "majority_class": "conservative",
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-1434",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-963",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "20-1775",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "21-1397",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "22-500",
+      "code": "no_truth_direction"
+     }
+    ]
+   },
+   "votes": {
+    "k": 823,
+    "n": 1713,
+    "accuracy": 0.4804,
+    "ic95": [
+     0.4569,
+     0.5041
+    ],
+    "per_justice": {
+     "ACBarrett": {
+      "k": 98,
+      "n": 193,
+      "accuracy": 0.5078
+     },
+     "BMKavanaugh": {
+      "k": 106,
+      "n": 204,
+      "accuracy": 0.5196
+     },
+     "CThomas": {
+      "k": 106,
+      "n": 202,
+      "accuracy": 0.5248
+     },
+     "EKagan": {
+      "k": 83,
+      "n": 204,
+      "accuracy": 0.4069
+     },
+     "JGRoberts": {
+      "k": 105,
+      "n": 204,
+      "accuracy": 0.5147
+     },
+     "KBJackson": {
+      "k": 38,
+      "n": 100,
+      "accuracy": 0.38
+     },
+     "NMGorsuch": {
+      "k": 99,
+      "n": 202,
+      "accuracy": 0.4901
+     },
+     "SAAlito": {
+      "k": 105,
+      "n": 200,
+      "accuracy": 0.525
+     },
+     "SSotomayor": {
+      "k": 83,
+      "n": 204,
+      "accuracy": 0.4069
+     }
+    }
+   },
+   "disposition": {
+    "k": 50,
+    "n": 210,
+    "accuracy": 0.2381,
+    "ic95": [
+     0.1855,
+     0.3001
+    ],
+    "confusion_true_pred": {
+     "affirm|affirm": 43,
+     "affirm|reverse": 10,
+     "reverse|affirm": 66,
+     "reverse|reverse": 7,
+     "vacate/other|affirm": 77,
+     "vacate/other|reverse": 7
+    },
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_disposition"
+     }
+    ]
+   },
+   "calibration": {
+    "case_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 16,
+       "mean_p": 0.063,
+       "mean_y": 0.5625
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 45,
+       "mean_p": 0.3302,
+       "mean_y": 0.3778
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 120,
+       "mean_p": 0.4954,
+       "mean_y": 0.45
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 23,
+       "mean_p": 0.6552,
+       "mean_y": 0.3478
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 1,
+       "mean_p": 0.8991,
+       "mean_y": 0.0
+      }
+     ],
+     "ece": 0.1149,
+     "n": 205
+    },
+    "vote_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 138,
+       "mean_p": 0.0627,
+       "mean_y": 0.6377
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 379,
+       "mean_p": 0.3308,
+       "mean_y": 0.4195
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 999,
+       "mean_p": 0.4958,
+       "mean_y": 0.4845
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 188,
+       "mean_p": 0.6539,
+       "mean_y": 0.3936
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 9,
+       "mean_p": 0.8991,
+       "mean_y": 0.0
+      }
+     ],
+     "ece": 0.1059,
+     "n": 1713
+    }
+   }
+  },
+  "B": {
+   "case_direction": {
+    "k": 113,
+    "n": 205,
+    "accuracy": 0.5512,
+    "ic95": [
+     0.4828,
+     0.6177
+    ],
+    "kappa_vs_majority_class": -0.0355,
+    "majority_class": "conservative",
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-1434",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-963",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "20-1775",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "21-1397",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "22-500",
+      "code": "no_truth_direction"
+     }
+    ]
+   },
+   "votes": {
+    "k": 922,
+    "n": 1713,
+    "accuracy": 0.5382,
+    "ic95": [
+     0.5146,
+     0.5617
+    ],
+    "per_justice": {
+     "ACBarrett": {
+      "k": 109,
+      "n": 193,
+      "accuracy": 0.5648
+     },
+     "BMKavanaugh": {
+      "k": 113,
+      "n": 204,
+      "accuracy": 0.5539
+     },
+     "CThomas": {
+      "k": 128,
+      "n": 202,
+      "accuracy": 0.6337
+     },
+     "EKagan": {
+      "k": 68,
+      "n": 204,
+      "accuracy": 0.3333
+     },
+     "JGRoberts": {
+      "k": 121,
+      "n": 204,
+      "accuracy": 0.5931
+     },
+     "KBJackson": {
+      "k": 44,
+      "n": 100,
+      "accuracy": 0.44
+     },
+     "NMGorsuch": {
+      "k": 113,
+      "n": 202,
+      "accuracy": 0.5594
+     },
+     "SAAlito": {
+      "k": 135,
+      "n": 200,
+      "accuracy": 0.675
+     },
+     "SSotomayor": {
+      "k": 91,
+      "n": 204,
+      "accuracy": 0.4461
+     }
+    }
+   },
+   "disposition": {
+    "k": 54,
+    "n": 210,
+    "accuracy": 0.2571,
+    "ic95": [
+     0.2028,
+     0.3202
+    ],
+    "confusion_true_pred": {
+     "affirm|affirm": 53,
+     "reverse|affirm": 72,
+     "reverse|reverse": 1,
+     "vacate/other|affirm": 83,
+     "vacate/other|reverse": 1
+    },
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_disposition"
+     }
+    ]
+   },
+   "calibration": {
+    "case_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 7,
+       "mean_p": 0.1856,
+       "mean_y": 0.4286
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 144,
+       "mean_p": 0.3078,
+       "mean_y": 0.4375
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 54,
+       "mean_p": 0.4473,
+       "mean_y": 0.4074
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      }
+     ],
+     "ece": 0.1099,
+     "n": 205
+    },
+    "vote_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 294,
+       "mean_p": 0.1536,
+       "mean_y": 0.4422
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 913,
+       "mean_p": 0.2965,
+       "mean_y": 0.448
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 420,
+       "mean_p": 0.4757,
+       "mean_y": 0.5286
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 83,
+       "mean_p": 0.6649,
+       "mean_y": 0.5301
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 3,
+       "mean_p": 0.8884,
+       "mean_y": 0.0
+      }
+     ],
+     "ece": 0.1513,
+     "n": 1713
+    }
+   }
+  },
+  "D": {
+   "case_direction": {
+    "k": 115,
+    "n": 203,
+    "accuracy": 0.5665,
+    "ic95": [
+     0.4977,
+     0.6328
+    ],
+    "kappa_vs_majority_class": -0.0098,
+    "majority_class": "conservative",
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-1434",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "19-963",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "20-1775",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "20-807",
+      "code": "tie_or_missing"
+     },
+     {
+      "docket": "21-1397",
+      "code": "no_truth_direction"
+     },
+     {
+      "docket": "22-381",
+      "code": "tie_or_missing"
+     },
+     {
+      "docket": "22-500",
+      "code": "no_truth_direction"
+     }
+    ]
+   },
+   "votes": {
+    "k": 960,
+    "n": 1522,
+    "accuracy": 0.6307,
+    "ic95": [
+     0.6062,
+     0.6546
+    ],
+    "per_justice": {
+     "BMKavanaugh": {
+      "k": 122,
+      "n": 204,
+      "accuracy": 0.598
+     },
+     "CThomas": {
+      "k": 132,
+      "n": 202,
+      "accuracy": 0.6535
+     },
+     "EKagan": {
+      "k": 135,
+      "n": 204,
+      "accuracy": 0.6618
+     },
+     "JGRoberts": {
+      "k": 123,
+      "n": 204,
+      "accuracy": 0.6029
+     },
+     "NMGorsuch": {
+      "k": 113,
+      "n": 202,
+      "accuracy": 0.5594
+     },
+     "SAAlito": {
+      "k": 136,
+      "n": 200,
+      "accuracy": 0.68
+     },
+     "SGBreyer": {
+      "k": 62,
+      "n": 102,
+      "accuracy": 0.6078
+     },
+     "SSotomayor": {
+      "k": 137,
+      "n": 204,
+      "accuracy": 0.6716
+     }
+    }
+   },
+   "disposition": {
+    "k": 73,
+    "n": 210,
+    "accuracy": 0.3476,
+    "ic95": [
+     0.2865,
+     0.4142
+    ],
+    "confusion_true_pred": {
+     "affirm|reverse": 53,
+     "reverse|reverse": 73,
+     "vacate/other|reverse": 84
+    },
+    "excluded": [
+     {
+      "docket": "17-1107",
+      "code": "no_truth_disposition"
+     }
+    ]
+   },
+   "calibration": {
+    "case_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 204,
+       "mean_p": 0.4884,
+       "mean_y": 0.4314
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      }
+     ],
+     "ece": 0.057,
+     "n": 204
+    },
+    "vote_level": {
+     "bins": [
+      {
+       "bin": [
+        0.0,
+        0.2
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      },
+      {
+       "bin": [
+        0.2,
+        0.4
+       ],
+       "n": 402,
+       "mean_p": 0.3766,
+       "mean_y": 0.3333
+      },
+      {
+       "bin": [
+        0.4,
+        0.6
+       ],
+       "n": 916,
+       "mean_p": 0.5027,
+       "mean_y": 0.4902
+      },
+      {
+       "bin": [
+        0.6,
+        0.8
+       ],
+       "n": 204,
+       "mean_p": 0.6455,
+       "mean_y": 0.6716
+      },
+      {
+       "bin": [
+        0.8,
+        1.0
+       ],
+       "n": 0,
+       "mean_p": null,
+       "mean_y": null
+      }
+     ],
+     "ece": 0.0225,
+     "n": 1522
+    }
+   }
+  }
+ },
+ "mcnemar_B_vs_A": {
+  "case_direction": {
+   "b": 42,
+   "c": 32,
+   "n": 74,
+   "p_value": 0.295413,
+   "significant_at_005": false
+  },
+  "vote": {
+   "b": 364,
+   "c": 265,
+   "n": 629,
+   "p_value": 9e-05,
+   "significant_at_005": true
+  },
+  "strata": {
+   "future": {
+    "case_direction": {
+     "b": 42,
+     "c": 32,
+     "n": 74,
+     "p_value": 0.295413,
+     "significant_at_005": false
+    },
+    "n_cases": 205
+   }
+  }
+ },
+ "n_truth_cases": 211,
+ "degraded": [
+  "ACBarrett",
+  "KBJackson"
+ ],
+ "b4_regression": {
+  "vote": 0.6366,
+  "published": 0.6366
+ },
+ "report_sha256": "1019d63aa749cacfea2f897213c816ffed93be1766d8470bf556bb82c9222f18"
+}

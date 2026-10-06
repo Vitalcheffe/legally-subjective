@@ -1,0 +1,5752 @@
+{
+ "phase": "S",
+ "broken_seal": false,
+ "pinned_tag": "m4-freeze",
+ "head": "843283e0a472de7cae6f9acb689131f8766cf3a8",
+ "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "adapters": {
+  "BMKavanaugh": "83d617024dd56cdc220f55ddf7fd6dc43cc6bd3ae8c8780e1549ce2aef580de2",
+  "CThomas": "1199f90293588ff0d6a5d422d505a522e3f7cca9d8bf5d5151e418e106cffb72",
+  "EKagan": "2cb9a336cefbd2b48dffd009932b94d1d466f6770d2c83f50d2849faebcf91b5",
+  "JGRoberts": "eb4f0ae1c243a860ff226362877c91294cf8db4f478972b9af93b2dd660961bf",
+  "NMGorsuch": "f306b604f06f42475e60e83a5202d26ca687c4b03e096cab65b7840a652013ae",
+  "SAAlito": "4f2965a51845cd823a3e2cabba10125dd30b88a4ac82dd98037ed74080a03da4",
+  "SSotomayor": "3bd037c9efa3098bbaee9af02c880a450b8196711e2ecc2e20b9027572b906d5"
+ },
+ "degraded": [
+  "ACBarrett",
+  "KBJackson"
+ ],
+ "seed": 271828,
+ "predictions": {
+  "A": [
+   {
+    "docket": "145, Orig.",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0331,
+     "CThomas": 0.0331,
+     "SAAlito": 0.0331,
+     "SSotomayor": 0.0331,
+     "EKagan": 0.0331,
+     "NMGorsuch": 0.0331,
+     "BMKavanaugh": 0.0331,
+     "ACBarrett": 0.0331,
+     "KBJackson": 0.0331
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0331,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "15-1498",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1348",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0601,
+     "CThomas": 0.0601,
+     "SAAlito": 0.0601,
+     "SSotomayor": 0.0601,
+     "EKagan": 0.0601,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.0601,
+     "ACBarrett": 0.0601,
+     "KBJackson": 0.0601
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0601,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1363",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1454",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0534,
+     "CThomas": 0.0534,
+     "SAAlito": 0.0534,
+     "SSotomayor": 0.0534,
+     "EKagan": 0.0534,
+     "NMGorsuch": 0.0534,
+     "BMKavanaugh": 0.0534,
+     "ACBarrett": 0.0534,
+     "KBJackson": 0.0534
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0534,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1466",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1067,
+     "CThomas": 0.1067,
+     "SAAlito": 0.1067,
+     "SSotomayor": 0.1067,
+     "EKagan": 0.1067,
+     "NMGorsuch": 0.1067,
+     "BMKavanaugh": 0.1067,
+     "ACBarrett": 0.1067,
+     "KBJackson": 0.1067
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1067,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1498",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0601,
+     "CThomas": 0.0601,
+     "SAAlito": 0.0601,
+     "SSotomayor": 0.0601,
+     "EKagan": 0.0601,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.0601,
+     "ACBarrett": 0.0601,
+     "KBJackson": 0.0601
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0601,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-969",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0534,
+     "CThomas": 0.0534,
+     "SAAlito": 0.0534,
+     "SSotomayor": 0.0534,
+     "EKagan": 0.0534,
+     "NMGorsuch": 0.0534,
+     "BMKavanaugh": 0.0534,
+     "ACBarrett": 0.0534,
+     "KBJackson": 0.0534
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0534,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–373.",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1067,
+     "CThomas": 0.1067,
+     "SAAlito": 0.1067,
+     "SSotomayor": 0.1067,
+     "EKagan": 0.1067,
+     "NMGorsuch": 0.1067,
+     "BMKavanaugh": 0.1067,
+     "ACBarrett": 0.1067,
+     "KBJackson": 0.1067
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1067,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–6219.",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0474,
+     "CThomas": 0.0474,
+     "SAAlito": 0.0474,
+     "SSotomayor": 0.0474,
+     "EKagan": 0.0474,
+     "NMGorsuch": 0.0474,
+     "BMKavanaugh": 0.0474,
+     "ACBarrett": 0.0474,
+     "KBJackson": 0.0474
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0474,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-1712",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-494",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0759,
+     "CThomas": 0.0759,
+     "SAAlito": 0.0759,
+     "SSotomayor": 0.0759,
+     "EKagan": 0.0759,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.0759,
+     "ACBarrett": 0.0759,
+     "KBJackson": 0.0759
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0759,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-530",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0601,
+     "CThomas": 0.0601,
+     "SAAlito": 0.0601,
+     "SSotomayor": 0.0601,
+     "EKagan": 0.0601,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.0601,
+     "ACBarrett": 0.0601,
+     "KBJackson": 0.0601
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0601,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-532",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0331,
+     "CThomas": 0.0331,
+     "SAAlito": 0.0331,
+     "SSotomayor": 0.0331,
+     "EKagan": 0.0331,
+     "NMGorsuch": 0.0331,
+     "BMKavanaugh": 0.0331,
+     "ACBarrett": 0.0331,
+     "KBJackson": 0.0331
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0331,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "17-8151",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "17-8995",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0601,
+     "CThomas": 0.0601,
+     "SAAlito": 0.0601,
+     "SSotomayor": 0.0601,
+     "EKagan": 0.0601,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.0601,
+     "ACBarrett": 0.0601,
+     "KBJackson": 0.0601
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0601,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "17-965",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0804,
+     "CThomas": 0.0804,
+     "SAAlito": 0.0804,
+     "SSotomayor": 0.0804,
+     "EKagan": 0.0804,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.0804,
+     "ACBarrett": 0.0804,
+     "KBJackson": 0.0804
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0804,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-988",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0534,
+     "CThomas": 0.0534,
+     "SAAlito": 0.0534,
+     "SSotomayor": 0.0534,
+     "EKagan": 0.0534,
+     "NMGorsuch": 0.0534,
+     "BMKavanaugh": 0.0534,
+     "ACBarrett": 0.0534,
+     "KBJackson": 0.0534
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0534,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17–5554.",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0759,
+     "CThomas": 0.0759,
+     "SAAlito": 0.0759,
+     "SSotomayor": 0.0759,
+     "EKagan": 0.0759,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.0759,
+     "ACBarrett": 0.0759,
+     "KBJackson": 0.0759
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0759,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1109",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0759,
+     "CThomas": 0.0759,
+     "SAAlito": 0.0759,
+     "SSotomayor": 0.0759,
+     "EKagan": 0.0759,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.0759,
+     "ACBarrett": 0.0759,
+     "KBJackson": 0.0759
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0759,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1150",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0759,
+     "CThomas": 0.0759,
+     "SAAlito": 0.0759,
+     "SSotomayor": 0.0759,
+     "EKagan": 0.0759,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.0759,
+     "ACBarrett": 0.0759,
+     "KBJackson": 0.0759
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0759,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1195",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0421,
+     "CThomas": 0.0421,
+     "SAAlito": 0.0421,
+     "SSotomayor": 0.0421,
+     "EKagan": 0.0421,
+     "NMGorsuch": 0.0421,
+     "BMKavanaugh": 0.0421,
+     "ACBarrett": 0.0421,
+     "KBJackson": 0.0421
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0421,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1323; 18-1460",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0601,
+     "CThomas": 0.0601,
+     "SAAlito": 0.0601,
+     "SSotomayor": 0.0601,
+     "EKagan": 0.0601,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.0601,
+     "ACBarrett": 0.0601,
+     "KBJackson": 0.0601
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0601,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-281",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1067,
+     "CThomas": 0.1067,
+     "SAAlito": 0.1067,
+     "SSotomayor": 0.1067,
+     "EKagan": 0.1067,
+     "NMGorsuch": 0.1067,
+     "BMKavanaugh": 0.1067,
+     "ACBarrett": 0.1067,
+     "KBJackson": 0.1067
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1067,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-587; 18-588; 18-589",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0851,
+     "CThomas": 0.0851,
+     "SAAlito": 0.0851,
+     "SSotomayor": 0.0851,
+     "EKagan": 0.0851,
+     "NMGorsuch": 0.0851,
+     "BMKavanaugh": 0.0851,
+     "ACBarrett": 0.0851,
+     "KBJackson": 0.0851
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0851,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-725",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-9526",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "18–422; 18–726",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0851,
+     "CThomas": 0.0851,
+     "SAAlito": 0.0851,
+     "SSotomayor": 0.0851,
+     "EKagan": 0.0851,
+     "NMGorsuch": 0.0851,
+     "BMKavanaugh": 0.0851,
+     "ACBarrett": 0.0851,
+     "KBJackson": 0.0851
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0851,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-1039",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5,
+     "CThomas": 0.5,
+     "SAAlito": 0.5,
+     "SSotomayor": 0.5,
+     "EKagan": 0.5,
+     "NMGorsuch": 0.5,
+     "BMKavanaugh": 0.5,
+     "ACBarrett": 0.5,
+     "KBJackson": 0.5
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-199",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6077,
+     "CThomas": 0.6077,
+     "SAAlito": 0.6077,
+     "SSotomayor": 0.6077,
+     "EKagan": 0.6077,
+     "NMGorsuch": 0.6077,
+     "BMKavanaugh": 0.6077,
+     "ACBarrett": 0.6077,
+     "KBJackson": 0.6077
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6077,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-5410",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-7",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0953,
+     "CThomas": 0.0953,
+     "SAAlito": 0.0953,
+     "SSotomayor": 0.0953,
+     "EKagan": 0.0953,
+     "NMGorsuch": 0.0953,
+     "BMKavanaugh": 0.0953,
+     "ACBarrett": 0.0953,
+     "KBJackson": 0.0953
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0953,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-1312",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3208,
+     "CThomas": 0.3208,
+     "SAAlito": 0.3208,
+     "SSotomayor": 0.3208,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.3208,
+     "BMKavanaugh": 0.3208,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.3208
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3208,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "20-222",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.2121,
+     "SAAlito": 0.2121,
+     "SSotomayor": 0.2121,
+     "EKagan": 0.2121,
+     "NMGorsuch": 0.2121,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.2121,
+     "KBJackson": 0.2121
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2121,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-440",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5927,
+     "CThomas": 0.5927,
+     "SAAlito": 0.5927,
+     "SSotomayor": 0.5927,
+     "EKagan": 0.5927,
+     "NMGorsuch": 0.5927,
+     "BMKavanaugh": 0.5927,
+     "ACBarrett": 0.5927,
+     "KBJackson": 0.5927
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5927,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-603",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.363,
+     "CThomas": 0.363,
+     "SAAlito": 0.363,
+     "SSotomayor": 0.363,
+     "EKagan": 0.363,
+     "NMGorsuch": 0.363,
+     "BMKavanaugh": 0.363,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.363,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1168",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5622,
+     "CThomas": 0.5622,
+     "SAAlito": 0.5622,
+     "SSotomayor": 0.5622,
+     "EKagan": 0.5622,
+     "NMGorsuch": 0.5622,
+     "BMKavanaugh": 0.5622,
+     "ACBarrett": 0.5622,
+     "KBJackson": 0.5622
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5622,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "21-1195",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4378,
+     "CThomas": 0.4378,
+     "SAAlito": 0.4378,
+     "SSotomayor": 0.4378,
+     "EKagan": 0.4378,
+     "NMGorsuch": 0.4378,
+     "BMKavanaugh": 0.4378,
+     "ACBarrett": 0.4378,
+     "KBJackson": 0.4378
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4378,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1484",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3208,
+     "CThomas": 0.3208,
+     "SAAlito": 0.3208,
+     "SSotomayor": 0.3208,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.3208,
+     "BMKavanaugh": 0.3208,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.3208
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3208,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-439",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "21-463",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3486,
+     "CThomas": 0.3486,
+     "SAAlito": 0.3486,
+     "SSotomayor": 0.3486,
+     "EKagan": 0.3486,
+     "NMGorsuch": 0.3486,
+     "BMKavanaugh": 0.3486,
+     "ACBarrett": 0.3486,
+     "KBJackson": 0.3486
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3486,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-511",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4688,
+     "CThomas": 0.4688,
+     "SAAlito": 0.4688,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.4688,
+     "NMGorsuch": 0.4688,
+     "BMKavanaugh": 0.4688,
+     "ACBarrett": 0.4688,
+     "KBJackson": 0.4688
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4688,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-846",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4225,
+     "CThomas": 0.4225,
+     "SAAlito": 0.4225,
+     "SSotomayor": 0.4225,
+     "EKagan": 0.4225,
+     "NMGorsuch": 0.4225,
+     "BMKavanaugh": 0.4225,
+     "ACBarrett": 0.4225,
+     "KBJackson": 0.4225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4225,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21A240",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0534,
+     "CThomas": 0.0534,
+     "SAAlito": 0.0534,
+     "SSotomayor": 0.0534,
+     "EKagan": 0.0534,
+     "NMGorsuch": 0.0534,
+     "BMKavanaugh": 0.0534,
+     "ACBarrett": 0.0534,
+     "KBJackson": 0.0534
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0534,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-105",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-674",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5467,
+     "CThomas": 0.5467,
+     "SAAlito": 0.5467,
+     "SSotomayor": 0.5467,
+     "EKagan": 0.5467,
+     "NMGorsuch": 0.5467,
+     "BMKavanaugh": 0.5467,
+     "ACBarrett": 0.5467,
+     "KBJackson": 0.5467
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5467,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23-124",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4688,
+     "CThomas": 0.4688,
+     "SAAlito": 0.4688,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.4688,
+     "NMGorsuch": 0.4688,
+     "BMKavanaugh": 0.4688,
+     "ACBarrett": 0.4688,
+     "KBJackson": 0.4688
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4688,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "23-250",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6514,
+     "CThomas": 0.6514,
+     "SAAlito": 0.6514,
+     "SSotomayor": 0.6514,
+     "EKagan": 0.6514,
+     "NMGorsuch": 0.6514,
+     "BMKavanaugh": 0.6514,
+     "ACBarrett": 0.6514,
+     "KBJackson": 0.6514
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6514,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23A349",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0534,
+     "CThomas": 0.0534,
+     "SAAlito": 0.0534,
+     "SSotomayor": 0.0534,
+     "EKagan": 0.0534,
+     "NMGorsuch": 0.0534,
+     "BMKavanaugh": 0.0534,
+     "ACBarrett": 0.0534,
+     "KBJackson": 0.0534
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0534,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "No. 18-6210",
+    "condition": "A",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.0675,
+     "CThomas": 0.0675,
+     "SAAlito": 0.0675,
+     "SSotomayor": 0.0675,
+     "EKagan": 0.0675,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.0675,
+     "ACBarrett": 0.0675,
+     "KBJackson": 0.0675
+    },
+    "direction": "conservative",
+    "p_liberal": 0.0675,
+    "disposition": "affirm"
+   }
+  ],
+  "B": [
+   {
+    "docket": "145, Orig.",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2018,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1128,
+     "SSotomayor": 0.363,
+     "EKagan": 0.4073,
+     "NMGorsuch": 0.0716,
+     "BMKavanaugh": 0.1919,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2347,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "15-1498",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.133,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.3346,
+     "EKagan": 0.3074,
+     "NMGorsuch": 0.0716,
+     "BMKavanaugh": 0.1824,
+     "ACBarrett": 0.2227,
+     "KBJackson": 0.3346
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2172,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1348",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.148,
+     "SAAlito": 0.1645,
+     "SSotomayor": 0.3486,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.1128,
+     "BMKavanaugh": 0.2814,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2599,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1363",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.148,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.363,
+     "EKagan": 0.4073,
+     "NMGorsuch": 0.1067,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.3486,
+     "KBJackson": 0.3486
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2558,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1454",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.1403,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.3486,
+     "NMGorsuch": 0.0901,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.3923,
+     "KBJackson": 0.3486
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2465,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1466",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1919,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1824,
+     "SSotomayor": 0.2689,
+     "EKagan": 0.2018,
+     "NMGorsuch": 0.0503,
+     "BMKavanaugh": 0.1403,
+     "ACBarrett": 0.133,
+     "KBJackson": 0.2337
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1691,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1498",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.1067,
+     "SAAlito": 0.1645,
+     "SSotomayor": 0.4225,
+     "EKagan": 0.3486,
+     "NMGorsuch": 0.0567,
+     "BMKavanaugh": 0.2227,
+     "ACBarrett": 0.2337,
+     "KBJackson": 0.4225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.247,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-969",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2018,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.3346,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.2337,
+     "ACBarrett": 0.2227,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2259,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–373.",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.133,
+     "SAAlito": 0.2018,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3346,
+     "NMGorsuch": 0.1128,
+     "BMKavanaugh": 0.2227,
+     "ACBarrett": 0.2337,
+     "KBJackson": 0.3346
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2466,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–6219.",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1919,
+     "CThomas": 0.1403,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.2227,
+     "EKagan": 0.2121,
+     "NMGorsuch": 0.0637,
+     "BMKavanaugh": 0.1733,
+     "ACBarrett": 0.2942,
+     "KBJackson": 0.2121
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1852,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-1712",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.133,
+     "SAAlito": 0.1824,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.4073,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.2451,
+     "ACBarrett": 0.3346,
+     "KBJackson": 0.4225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2826,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-494",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.1561,
+     "SAAlito": 0.1645,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.3346,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.1919,
+     "ACBarrett": 0.2337,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2153,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-530",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2814,
+     "CThomas": 0.148,
+     "SAAlito": 0.1733,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.4378,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.1824,
+     "ACBarrett": 0.2568,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2556,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-532",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.148,
+     "SAAlito": 0.133,
+     "SSotomayor": 0.3208,
+     "EKagan": 0.2942,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.148,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.2942
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2102,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-8151",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1824,
+     "CThomas": 0.148,
+     "SAAlito": 0.133,
+     "SSotomayor": 0.2814,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.0474,
+     "BMKavanaugh": 0.1919,
+     "ACBarrett": 0.2568,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2021,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-8995",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.148,
+     "SAAlito": 0.1919,
+     "SSotomayor": 0.4073,
+     "EKagan": 0.3923,
+     "NMGorsuch": 0.0953,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2752,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-965",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.1403,
+     "SAAlito": 0.1824,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.2942,
+     "NMGorsuch": 0.0953,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.2227,
+     "KBJackson": 0.2814
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2176,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-988",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2337,
+     "CThomas": 0.1259,
+     "SAAlito": 0.1645,
+     "SSotomayor": 0.3923,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.0601,
+     "BMKavanaugh": 0.2018,
+     "ACBarrett": 0.2689,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2368,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17–5554.",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1919,
+     "CThomas": 0.1259,
+     "SAAlito": 0.1403,
+     "SSotomayor": 0.2942,
+     "EKagan": 0.3346,
+     "NMGorsuch": 0.0567,
+     "BMKavanaugh": 0.1733,
+     "ACBarrett": 0.3486,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2136,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1109",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.1645,
+     "SAAlito": 0.1645,
+     "SSotomayor": 0.2942,
+     "EKagan": 0.2942,
+     "NMGorsuch": 0.0716,
+     "BMKavanaugh": 0.1919,
+     "ACBarrett": 0.2121,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2137,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1150",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.1128,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.0067,
+     "EKagan": 0.3486,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.2018,
+     "ACBarrett": 0.2337,
+     "KBJackson": 0.4225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1984,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1195",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2018,
+     "CThomas": 0.133,
+     "SAAlito": 0.1403,
+     "SSotomayor": 0.3346,
+     "EKagan": 0.3074,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.1733,
+     "ACBarrett": 0.2942,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2248,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1323; 18-1460",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.1733,
+     "SAAlito": 0.1733,
+     "SSotomayor": 0.4073,
+     "EKagan": 0.4225,
+     "NMGorsuch": 0.1009,
+     "BMKavanaugh": 0.1919,
+     "ACBarrett": 0.2568,
+     "KBJackson": 0.3486
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2577,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-281",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1645,
+     "CThomas": 0.133,
+     "SAAlito": 0.133,
+     "SSotomayor": 0.3486,
+     "EKagan": 0.3074,
+     "NMGorsuch": 0.133,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.1645,
+     "KBJackson": 0.3208
+    },
+    "direction": "conservative",
+    "p_liberal": 0.218,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-587; 18-588; 18-589",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2337,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1733,
+     "SSotomayor": 0.4225,
+     "EKagan": 0.4225,
+     "NMGorsuch": 0.0953,
+     "BMKavanaugh": 0.2451,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.4073
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2774,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-725",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.148,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.4073,
+     "EKagan": 0.4225,
+     "NMGorsuch": 0.1192,
+     "BMKavanaugh": 0.2689,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.3346
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2648,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-9526",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.1259,
+     "SAAlito": 0.1561,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.2568,
+     "NMGorsuch": 0.0759,
+     "BMKavanaugh": 0.1733,
+     "ACBarrett": 0.2451,
+     "KBJackson": 0.2689
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2024,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18–422; 18–726",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1259,
+     "CThomas": 0.0804,
+     "SAAlito": 0.1009,
+     "SSotomayor": 0.2689,
+     "EKagan": 0.1733,
+     "NMGorsuch": 0.0503,
+     "BMKavanaugh": 0.1561,
+     "ACBarrett": 0.1259,
+     "KBJackson": 0.2337
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1462,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-1039",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.2689,
+     "SAAlito": 0.2814,
+     "SSotomayor": 0.7058,
+     "EKagan": 0.2689,
+     "NMGorsuch": 0.2814,
+     "BMKavanaugh": 0.363,
+     "ACBarrett": 0.4378,
+     "KBJackson": 0.4378
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3922,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-199",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "conservative",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4688,
+     "CThomas": 0.2689,
+     "SAAlito": 0.4073,
+     "SSotomayor": 0.6077,
+     "EKagan": 0.5312,
+     "NMGorsuch": 0.363,
+     "BMKavanaugh": 0.5927,
+     "ACBarrett": 0.5,
+     "KBJackson": 0.6225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4847,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-5410",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.363,
+     "CThomas": 0.1366,
+     "SAAlito": 0.2689,
+     "SSotomayor": 0.3208,
+     "EKagan": 0.148,
+     "NMGorsuch": 0.1645,
+     "BMKavanaugh": 0.2451,
+     "ACBarrett": 0.2451,
+     "KBJackson": 0.2814
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2415,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-7",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2337,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1919,
+     "SSotomayor": 0.2121,
+     "EKagan": 0.2689,
+     "NMGorsuch": 0.1067,
+     "BMKavanaugh": 0.1824,
+     "ACBarrett": 0.2018,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1971,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-1312",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.1645,
+     "SAAlito": 0.1919,
+     "SSotomayor": 0.4073,
+     "EKagan": 0.1824,
+     "NMGorsuch": 0.1561,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.1733,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2293,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-222",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4378,
+     "CThomas": 0.133,
+     "SAAlito": 0.133,
+     "SSotomayor": 0.5,
+     "EKagan": 0.2337,
+     "NMGorsuch": 0.2689,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.3074,
+     "KBJackson": 0.5622
+    },
+    "direction": "conservative",
+    "p_liberal": 0.34,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-440",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4225,
+     "CThomas": 0.2018,
+     "SAAlito": 0.2568,
+     "SSotomayor": 0.5927,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3346,
+     "BMKavanaugh": 0.4533,
+     "ACBarrett": 0.2689,
+     "KBJackson": 0.4225
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3701,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-603",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3074,
+     "CThomas": 0.2121,
+     "SAAlito": 0.2942,
+     "SSotomayor": 0.2942,
+     "EKagan": 0.2942,
+     "NMGorsuch": 0.1919,
+     "BMKavanaugh": 0.3923,
+     "ACBarrett": 0.2689,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2847,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1168",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3346,
+     "CThomas": 0.2451,
+     "SAAlito": 0.2814,
+     "SSotomayor": 0.6077,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.4073,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5467,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.4411,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1195",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.1561,
+     "SAAlito": 0.2018,
+     "SSotomayor": 0.2568,
+     "EKagan": 0.1403,
+     "NMGorsuch": 0.1561,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.1919,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2069,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1484",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2942,
+     "CThomas": 0.133,
+     "SAAlito": 0.2121,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.2337,
+     "NMGorsuch": 0.148,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2657,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-439",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4225,
+     "CThomas": 0.1603,
+     "SAAlito": 0.3208,
+     "SSotomayor": 0.6077,
+     "EKagan": 0.2568,
+     "NMGorsuch": 0.1919,
+     "BMKavanaugh": 0.3074,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.3346
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3248,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-463",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.148,
+     "SAAlito": 0.1824,
+     "SSotomayor": 0.3923,
+     "EKagan": 0.1824,
+     "NMGorsuch": 0.1645,
+     "BMKavanaugh": 0.2337,
+     "ACBarrett": 0.2227,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2398,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-511",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4073,
+     "CThomas": 0.1919,
+     "SAAlito": 0.3346,
+     "SSotomayor": 0.5312,
+     "EKagan": 0.3074,
+     "NMGorsuch": 0.1824,
+     "BMKavanaugh": 0.363,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.332,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-846",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.3074,
+     "SAAlito": 0.4073,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.363,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5467,
+     "KBJackson": 0.5
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3993,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21A240",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2451,
+     "CThomas": 0.1561,
+     "SAAlito": 0.1919,
+     "SSotomayor": 0.3486,
+     "EKagan": 0.3346,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.1824,
+     "ACBarrett": 0.1733,
+     "KBJackson": 0.2942
+    },
+    "direction": "conservative",
+    "p_liberal": 0.223,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-105",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3208,
+     "CThomas": 0.1733,
+     "SAAlito": 0.2451,
+     "SSotomayor": 0.5775,
+     "EKagan": 0.1919,
+     "NMGorsuch": 0.1733,
+     "BMKavanaugh": 0.3074,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.3346
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2895,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-674",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4378,
+     "CThomas": 0.1778,
+     "SAAlito": 0.2451,
+     "SSotomayor": 0.3923,
+     "EKagan": 0.2568,
+     "NMGorsuch": 0.2337,
+     "BMKavanaugh": 0.3923,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.5156
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3302,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23-124",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3486,
+     "CThomas": 0.4073,
+     "SAAlito": 0.3346,
+     "SSotomayor": 0.7773,
+     "EKagan": 0.4533,
+     "NMGorsuch": 0.7058,
+     "BMKavanaugh": 0.3923,
+     "ACBarrett": 0.4378,
+     "KBJackson": 0.5927
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23-250",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "conservative",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.2942,
+     "SAAlito": 0.3074,
+     "SSotomayor": 0.7311,
+     "EKagan": 0.3923,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.637,
+     "ACBarrett": 0.5775,
+     "KBJackson": 0.6514
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5101,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23A349",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2121,
+     "CThomas": 0.1192,
+     "SAAlito": 0.1733,
+     "SSotomayor": 0.363,
+     "EKagan": 0.3346,
+     "NMGorsuch": 0.0675,
+     "BMKavanaugh": 0.2121,
+     "ACBarrett": 0.3486,
+     "KBJackson": 0.3486
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2421,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "No. 18-6210",
+    "condition": "B",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2568,
+     "CThomas": 0.2018,
+     "SAAlito": 0.1919,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.0804,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.3208
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2555,
+    "disposition": "affirm"
+   }
+  ],
+  "C": [
+   {
+    "docket": "145, Orig.",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4688,
+     "CThomas": 0.4688,
+     "SAAlito": 0.4688,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.4688,
+     "NMGorsuch": 0.4688,
+     "BMKavanaugh": 0.4688,
+     "ACBarrett": 0.4688,
+     "KBJackson": 0.4688
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4688,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "15-1498",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5156,
+     "CThomas": 0.5156,
+     "SAAlito": 0.5156,
+     "SSotomayor": 0.5156,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5156,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5156,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1348",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5156,
+     "CThomas": 0.5156,
+     "SAAlito": 0.5156,
+     "SSotomayor": 0.5156,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5156,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5156,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1363",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6077,
+     "CThomas": 0.6077,
+     "SAAlito": 0.6077,
+     "SSotomayor": 0.6077,
+     "EKagan": 0.6077,
+     "NMGorsuch": 0.6077,
+     "BMKavanaugh": 0.6077,
+     "ACBarrett": 0.6077,
+     "KBJackson": 0.6077
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6077,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "16-1454",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5156,
+     "CThomas": 0.5156,
+     "SAAlito": 0.5156,
+     "SSotomayor": 0.5156,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5156,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5156,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1466",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.4844,
+     "SAAlito": 0.4844,
+     "SSotomayor": 0.4844,
+     "EKagan": 0.4844,
+     "NMGorsuch": 0.4844,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.4844,
+     "KBJackson": 0.4844
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4844,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-1498",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.7186,
+     "CThomas": 0.7186,
+     "SAAlito": 0.7186,
+     "SSotomayor": 0.7186,
+     "EKagan": 0.7186,
+     "NMGorsuch": 0.7186,
+     "BMKavanaugh": 0.7186,
+     "ACBarrett": 0.7186,
+     "KBJackson": 0.7186
+    },
+    "direction": "liberal",
+    "p_liberal": 0.7186,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16-969",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5622,
+     "CThomas": 0.5622,
+     "SAAlito": 0.5622,
+     "SSotomayor": 0.5622,
+     "EKagan": 0.5622,
+     "NMGorsuch": 0.5622,
+     "BMKavanaugh": 0.5622,
+     "ACBarrett": 0.5622,
+     "KBJackson": 0.5622
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5622,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–373.",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3923,
+     "CThomas": 0.3923,
+     "SAAlito": 0.3923,
+     "SSotomayor": 0.3923,
+     "EKagan": 0.3923,
+     "NMGorsuch": 0.3923,
+     "BMKavanaugh": 0.3923,
+     "ACBarrett": 0.3923,
+     "KBJackson": 0.3923
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3923,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "16–6219.",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.363,
+     "CThomas": 0.363,
+     "SAAlito": 0.363,
+     "SSotomayor": 0.363,
+     "EKagan": 0.363,
+     "NMGorsuch": 0.363,
+     "BMKavanaugh": 0.363,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.363,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-1712",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2568,
+     "CThomas": 0.2568,
+     "SAAlito": 0.2568,
+     "SSotomayor": 0.2568,
+     "EKagan": 0.2568,
+     "NMGorsuch": 0.2568,
+     "BMKavanaugh": 0.2568,
+     "ACBarrett": 0.2568,
+     "KBJackson": 0.2568
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2568,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-494",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.4844,
+     "SAAlito": 0.4844,
+     "SSotomayor": 0.4844,
+     "EKagan": 0.4844,
+     "NMGorsuch": 0.4844,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.4844,
+     "KBJackson": 0.4844
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4844,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-530",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.4844,
+     "SAAlito": 0.4844,
+     "SSotomayor": 0.4844,
+     "EKagan": 0.4844,
+     "NMGorsuch": 0.4844,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.4844,
+     "KBJackson": 0.4844
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4844,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-532",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5775,
+     "CThomas": 0.5775,
+     "SAAlito": 0.5775,
+     "SSotomayor": 0.5775,
+     "EKagan": 0.5775,
+     "NMGorsuch": 0.5775,
+     "BMKavanaugh": 0.5775,
+     "ACBarrett": 0.5775,
+     "KBJackson": 0.5775
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5775,
+    "disposition": "vacate"
+   },
+   {
+    "docket": "17-8151",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.7311,
+     "CThomas": 0.7311,
+     "SAAlito": 0.7311,
+     "SSotomayor": 0.7311,
+     "EKagan": 0.7311,
+     "NMGorsuch": 0.7311,
+     "BMKavanaugh": 0.7311,
+     "ACBarrett": 0.7311,
+     "KBJackson": 0.7311
+    },
+    "direction": "liberal",
+    "p_liberal": 0.7311,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "17-8995",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6654,
+     "CThomas": 0.6654,
+     "SAAlito": 0.6654,
+     "SSotomayor": 0.6654,
+     "EKagan": 0.6654,
+     "NMGorsuch": 0.6654,
+     "BMKavanaugh": 0.6654,
+     "ACBarrett": 0.6654,
+     "KBJackson": 0.6654
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6654,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "17-965",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4688,
+     "CThomas": 0.4688,
+     "SAAlito": 0.4688,
+     "SSotomayor": 0.4688,
+     "EKagan": 0.4688,
+     "NMGorsuch": 0.4688,
+     "BMKavanaugh": 0.4688,
+     "ACBarrett": 0.4688,
+     "KBJackson": 0.4688
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4688,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17-988",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.7432,
+     "CThomas": 0.7432,
+     "SAAlito": 0.7432,
+     "SSotomayor": 0.7432,
+     "EKagan": 0.7432,
+     "NMGorsuch": 0.7432,
+     "BMKavanaugh": 0.7432,
+     "ACBarrett": 0.7432,
+     "KBJackson": 0.7432
+    },
+    "direction": "liberal",
+    "p_liberal": 0.7432,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "17–5554.",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5,
+     "CThomas": 0.5,
+     "SAAlito": 0.5,
+     "SSotomayor": 0.5,
+     "EKagan": 0.5,
+     "NMGorsuch": 0.5,
+     "BMKavanaugh": 0.5,
+     "ACBarrett": 0.5,
+     "KBJackson": 0.5
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1109",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1150",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1195",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3775,
+     "CThomas": 0.3775,
+     "SAAlito": 0.3775,
+     "SSotomayor": 0.3775,
+     "EKagan": 0.3775,
+     "NMGorsuch": 0.3775,
+     "BMKavanaugh": 0.3775,
+     "ACBarrett": 0.3775,
+     "KBJackson": 0.3775
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-1323; 18-1460",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5312,
+     "CThomas": 0.5312,
+     "SAAlito": 0.5312,
+     "SSotomayor": 0.5312,
+     "EKagan": 0.5312,
+     "NMGorsuch": 0.5312,
+     "BMKavanaugh": 0.5312,
+     "ACBarrett": 0.5312,
+     "KBJackson": 0.5312
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5312,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-281",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.7549,
+     "CThomas": 0.7549,
+     "SAAlito": 0.7549,
+     "SSotomayor": 0.7549,
+     "EKagan": 0.7549,
+     "NMGorsuch": 0.7549,
+     "BMKavanaugh": 0.7549,
+     "ACBarrett": 0.7549,
+     "KBJackson": 0.7549
+    },
+    "direction": "liberal",
+    "p_liberal": 0.7549,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-587; 18-588; 18-589",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.4844,
+     "SAAlito": 0.4844,
+     "SSotomayor": 0.4844,
+     "EKagan": 0.4844,
+     "NMGorsuch": 0.4844,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.4844,
+     "KBJackson": 0.4844
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4844,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-725",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5622,
+     "CThomas": 0.5622,
+     "SAAlito": 0.5622,
+     "SSotomayor": 0.5622,
+     "EKagan": 0.5622,
+     "NMGorsuch": 0.5622,
+     "BMKavanaugh": 0.5622,
+     "ACBarrett": 0.5622,
+     "KBJackson": 0.5622
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5622,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18-9526",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.363,
+     "CThomas": 0.363,
+     "SAAlito": 0.363,
+     "SSotomayor": 0.363,
+     "EKagan": 0.363,
+     "NMGorsuch": 0.363,
+     "BMKavanaugh": 0.363,
+     "ACBarrett": 0.363,
+     "KBJackson": 0.363
+    },
+    "direction": "conservative",
+    "p_liberal": 0.363,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "18–422; 18–726",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2942,
+     "CThomas": 0.2942,
+     "SAAlito": 0.2942,
+     "SSotomayor": 0.2942,
+     "EKagan": 0.2942,
+     "NMGorsuch": 0.2942,
+     "BMKavanaugh": 0.2942,
+     "ACBarrett": 0.2942,
+     "KBJackson": 0.2942
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2942,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-1039",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.637,
+     "CThomas": 0.637,
+     "SAAlito": 0.637,
+     "SSotomayor": 0.637,
+     "EKagan": 0.637,
+     "NMGorsuch": 0.637,
+     "BMKavanaugh": 0.637,
+     "ACBarrett": 0.637,
+     "KBJackson": 0.637
+    },
+    "direction": "liberal",
+    "p_liberal": 0.637,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-199",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6654,
+     "CThomas": 0.6654,
+     "SAAlito": 0.6654,
+     "SSotomayor": 0.6654,
+     "EKagan": 0.6654,
+     "NMGorsuch": 0.6654,
+     "BMKavanaugh": 0.6654,
+     "ACBarrett": 0.6654,
+     "KBJackson": 0.6654
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6654,
+    "disposition": "vacate"
+   },
+   {
+    "docket": "19-5410",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3074,
+     "CThomas": 0.3074,
+     "SAAlito": 0.3074,
+     "SSotomayor": 0.3074,
+     "EKagan": 0.3074,
+     "NMGorsuch": 0.3074,
+     "BMKavanaugh": 0.3074,
+     "ACBarrett": 0.3074,
+     "KBJackson": 0.3074
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3074,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "19-7",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3923,
+     "CThomas": 0.3923,
+     "SAAlito": 0.3923,
+     "SSotomayor": 0.3923,
+     "EKagan": 0.3923,
+     "NMGorsuch": 0.3923,
+     "BMKavanaugh": 0.3923,
+     "ACBarrett": 0.3923,
+     "KBJackson": 0.3923
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3923,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-1312",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2689,
+     "CThomas": 0.2689,
+     "SAAlito": 0.2689,
+     "SSotomayor": 0.2689,
+     "EKagan": 0.2689,
+     "NMGorsuch": 0.2689,
+     "BMKavanaugh": 0.2689,
+     "ACBarrett": 0.2689,
+     "KBJackson": 0.2689
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2689,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-222",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5775,
+     "CThomas": 0.5775,
+     "SAAlito": 0.5775,
+     "SSotomayor": 0.5775,
+     "EKagan": 0.5775,
+     "NMGorsuch": 0.5775,
+     "BMKavanaugh": 0.5775,
+     "ACBarrett": 0.5775,
+     "KBJackson": 0.5775
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5775,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "20-440",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2814,
+     "CThomas": 0.2814,
+     "SAAlito": 0.2814,
+     "SSotomayor": 0.2814,
+     "EKagan": 0.2814,
+     "NMGorsuch": 0.2814,
+     "BMKavanaugh": 0.2814,
+     "ACBarrett": 0.2814,
+     "KBJackson": 0.2814
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2814,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "20-603",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4378,
+     "CThomas": 0.4378,
+     "SAAlito": 0.4378,
+     "SSotomayor": 0.4378,
+     "EKagan": 0.4378,
+     "NMGorsuch": 0.4378,
+     "BMKavanaugh": 0.4378,
+     "ACBarrett": 0.4378,
+     "KBJackson": 0.4378
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4378,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "21-1168",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5467,
+     "CThomas": 0.5467,
+     "SAAlito": 0.5467,
+     "SSotomayor": 0.5467,
+     "EKagan": 0.5467,
+     "NMGorsuch": 0.5467,
+     "BMKavanaugh": 0.5467,
+     "ACBarrett": 0.5467,
+     "KBJackson": 0.5467
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5467,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1195",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.3208,
+     "CThomas": 0.3208,
+     "SAAlito": 0.3208,
+     "SSotomayor": 0.3208,
+     "EKagan": 0.3208,
+     "NMGorsuch": 0.3208,
+     "BMKavanaugh": 0.3208,
+     "ACBarrett": 0.3208,
+     "KBJackson": 0.3208
+    },
+    "direction": "conservative",
+    "p_liberal": 0.3208,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-1484",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.1733,
+     "CThomas": 0.1733,
+     "SAAlito": 0.1733,
+     "SSotomayor": 0.1733,
+     "EKagan": 0.1733,
+     "NMGorsuch": 0.1733,
+     "BMKavanaugh": 0.1733,
+     "ACBarrett": 0.1733,
+     "KBJackson": 0.1733
+    },
+    "direction": "conservative",
+    "p_liberal": 0.1733,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-439",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6225,
+     "CThomas": 0.6225,
+     "SAAlito": 0.6225,
+     "SSotomayor": 0.6225,
+     "EKagan": 0.6225,
+     "NMGorsuch": 0.6225,
+     "BMKavanaugh": 0.6225,
+     "ACBarrett": 0.6225,
+     "KBJackson": 0.6225
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6225,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-463",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.2227,
+     "CThomas": 0.2227,
+     "SAAlito": 0.2227,
+     "SSotomayor": 0.2227,
+     "EKagan": 0.2227,
+     "NMGorsuch": 0.2227,
+     "BMKavanaugh": 0.2227,
+     "ACBarrett": 0.2227,
+     "KBJackson": 0.2227
+    },
+    "direction": "conservative",
+    "p_liberal": 0.2227,
+    "disposition": "reverse"
+   },
+   {
+    "docket": "21-511",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.7432,
+     "CThomas": 0.7432,
+     "SAAlito": 0.7432,
+     "SSotomayor": 0.7432,
+     "EKagan": 0.7432,
+     "NMGorsuch": 0.7432,
+     "BMKavanaugh": 0.7432,
+     "ACBarrett": 0.7432,
+     "KBJackson": 0.7432
+    },
+    "direction": "liberal",
+    "p_liberal": 0.7432,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21-846",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6926,
+     "CThomas": 0.6926,
+     "SAAlito": 0.6926,
+     "SSotomayor": 0.6926,
+     "EKagan": 0.6926,
+     "NMGorsuch": 0.6926,
+     "BMKavanaugh": 0.6926,
+     "ACBarrett": 0.6926,
+     "KBJackson": 0.6926
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6926,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "21A240",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5156,
+     "CThomas": 0.5156,
+     "SAAlito": 0.5156,
+     "SSotomayor": 0.5156,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5156,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5156,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-105",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5156,
+     "CThomas": 0.5156,
+     "SAAlito": 0.5156,
+     "SSotomayor": 0.5156,
+     "EKagan": 0.5156,
+     "NMGorsuch": 0.5156,
+     "BMKavanaugh": 0.5156,
+     "ACBarrett": 0.5156,
+     "KBJackson": 0.5156
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5156,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "22-674",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5775,
+     "CThomas": 0.5775,
+     "SAAlito": 0.5775,
+     "SSotomayor": 0.5775,
+     "EKagan": 0.5775,
+     "NMGorsuch": 0.5775,
+     "BMKavanaugh": 0.5775,
+     "ACBarrett": 0.5775,
+     "KBJackson": 0.5775
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5775,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23-124",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.6792,
+     "CThomas": 0.6792,
+     "SAAlito": 0.6792,
+     "SSotomayor": 0.6792,
+     "EKagan": 0.6792,
+     "NMGorsuch": 0.6792,
+     "BMKavanaugh": 0.6792,
+     "ACBarrett": 0.6792,
+     "KBJackson": 0.6792
+    },
+    "direction": "liberal",
+    "p_liberal": 0.6792,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23-250",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4844,
+     "CThomas": 0.4844,
+     "SAAlito": 0.4844,
+     "SSotomayor": 0.4844,
+     "EKagan": 0.4844,
+     "NMGorsuch": 0.4844,
+     "BMKavanaugh": 0.4844,
+     "ACBarrett": 0.4844,
+     "KBJackson": 0.4844
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4844,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "23A349",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "liberal",
+     "CThomas": "liberal",
+     "SAAlito": "liberal",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "liberal",
+     "BMKavanaugh": "liberal",
+     "ACBarrett": "liberal",
+     "KBJackson": "liberal"
+    },
+    "p_votes": {
+     "JGRoberts": 0.5622,
+     "CThomas": 0.5622,
+     "SAAlito": 0.5622,
+     "SSotomayor": 0.5622,
+     "EKagan": 0.5622,
+     "NMGorsuch": 0.5622,
+     "BMKavanaugh": 0.5622,
+     "ACBarrett": 0.5622,
+     "KBJackson": 0.5622
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5622,
+    "disposition": "affirm"
+   },
+   {
+    "docket": "No. 18-6210",
+    "condition": "C",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "conservative",
+     "EKagan": "conservative",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative",
+     "ACBarrett": "conservative",
+     "KBJackson": "conservative"
+    },
+    "p_votes": {
+     "JGRoberts": 0.4533,
+     "CThomas": 0.4533,
+     "SAAlito": 0.4533,
+     "SSotomayor": 0.4533,
+     "EKagan": 0.4533,
+     "NMGorsuch": 0.4533,
+     "BMKavanaugh": 0.4533,
+     "ACBarrett": 0.4533,
+     "KBJackson": 0.4533
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4533,
+    "disposition": "affirm"
+   }
+  ],
+  "D": [
+   {
+    "docket": "145, Orig.",
+    "votes": {},
+    "direction": null,
+    "p_liberal": null,
+    "p_votes": {},
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "15-1498",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-1348",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-1363",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-1454",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-1466",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-1498",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16–373.",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16–6219.",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "16-969",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-1712",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-494",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-530",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-532",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17–5554.",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-8151",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-8995",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-965",
+    "votes": {
+     "JGRoberts": "conservative",
+     "AMKennedy": "liberal",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative"
+    },
+    "direction": "liberal",
+    "p_liberal": 0.5151,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "AMKennedy": 0.5087,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "17-988",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-1109",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-1150",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-1195",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-1323; 18-1460",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-281",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18–422; 18–726",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-587; 18-588; 18-589",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-725",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "18-9526",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "19-1039",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "19-199",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "19-5410",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "19-7",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.5104,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "20-1312",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "20-222",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "20-440",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "20-603",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-1168",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-1195",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-1484",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-439",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-463",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-511",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21-846",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "21A240",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4944,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "22-105",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "22-674",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "23-124",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "23-250",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "23A349",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "NMGorsuch": "conservative",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": "conservative",
+    "p_liberal": 0.4807,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "NMGorsuch": 0.4231,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   },
+   {
+    "docket": "No. 18-6210",
+    "votes": {
+     "JGRoberts": "conservative",
+     "CThomas": "conservative",
+     "RBGinsburg": "liberal",
+     "SGBreyer": "liberal",
+     "SAAlito": "conservative",
+     "SSotomayor": "liberal",
+     "EKagan": "liberal",
+     "BMKavanaugh": "conservative"
+    },
+    "direction": null,
+    "p_liberal": 0.5213,
+    "p_votes": {
+     "JGRoberts": 0.4778,
+     "CThomas": 0.3852,
+     "RBGinsburg": 0.6384,
+     "SGBreyer": 0.5904,
+     "SAAlito": 0.368,
+     "SSotomayor": 0.6455,
+     "EKagan": 0.5985,
+     "BMKavanaugh": 0.4667
+    },
+    "disposition": "reverse",
+    "condition": "D"
+   }
+  ]
+ }
+}

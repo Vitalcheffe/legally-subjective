@@ -1,0 +1,6 @@
+{
+ "broken_seal": false,
+ "predictions_sha256": "a1067cf9f0de66701a1acf93709a4fe392c1773768f5b3d087ace944dc03485d",
+ "head": "843283e0a472de7cae6f9acb689131f8766cf3a8",
+ "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee"
+}
