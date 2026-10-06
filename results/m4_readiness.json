@@ -1,10 +1,10 @@
 {
   "gate": "scripts/m4_readiness.py",
-  "verdict": "PENDING — chaîne intacte, M3b/runner en attente",
+  "verdict": "READY — l'Épreuve Finale peut être exécutée (une fois)",
   "counts": {
-    "pass": 12,
+    "pass": 13,
     "fail": 0,
-    "pending": 1
+    "pending": 0
   },
   "sealed_sha256": "596ea80ae2478082dca3a4aef85b370f0b30b7f121f5ffb2a59c6778ee652fee",
   "checks": [
@@ -31,7 +31,7 @@
     {
       "check": "R1.5",
       "status": "PASS",
-      "detail": "arbre git propre (fichiers suivis ; HEAD a8a3341)"
+      "detail": "arbre git propre (fichiers suivis ; HEAD edf1359)"
     },
     {
       "check": "R2",
@@ -65,8 +65,8 @@
     },
     {
       "check": "R6",
-      "status": "PENDING",
-      "detail": "artefacts M3b absents localement (entraînement Colab en cours) : déposer m3b_adapters_*.zip → adapters/ + m3b_report.json à la racine du repo"
+      "status": "PASS",
+      "detail": "M3b présent : rapport (Qwen/Qwen2.5-3B-Instruct) + 7 adaptateurs"
     },
     {
       "check": "R7",
