@@ -1,0 +1,156 @@
+{
+ "config": {
+  "MODEL_ID": "Qwen/Qwen2.5-3B-Instruct",
+  "MAX_LEN": 4096,
+  "INSTR_KEEP": 1024,
+  "LORA_R": 16,
+  "LORA_ALPHA": 32,
+  "LORA_DROPOUT": 0.05,
+  "LR": 0.0001,
+  "EPOCHS": 8,
+  "BATCH": 1,
+  "GRAD_ACCUM": 8,
+  "EVAL_EVERY": 20,
+  "PATIENCE": 3,
+  "WARMUP": 10,
+  "VAL_FRACTION": 0.15,
+  "MIN_TRAIN_ROWS": 8,
+  "PERSONAS_GARDÉES": null,
+  "SAVE_STEPS": 10,
+  "SOFT_MINUTES": 450.0
+ },
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "run_id": "run_20261005_225340_w1",
+ "results": [
+  {
+   "n_train": 18,
+   "n_val": 3,
+   "best_val_loss": null,
+   "last_step": 16,
+   "persona": "BMKavanaugh",
+   "verified": true
+  },
+  {
+   "n_train": 124,
+   "n_val": 22,
+   "best_val_loss": 1.4619,
+   "last_step": 100,
+   "persona": "CThomas",
+   "verified": true
+  },
+  {
+   "n_train": 42,
+   "n_val": 8,
+   "best_val_loss": 1.715,
+   "last_step": 40,
+   "persona": "EKagan",
+   "verified": true
+  },
+  {
+   "n_train": 37,
+   "n_val": 6,
+   "best_val_loss": 1.6986,
+   "last_step": 32,
+   "persona": "JGRoberts",
+   "verified": true
+  },
+  {
+   "n_train": 33,
+   "n_val": 6,
+   "best_val_loss": 1.7688,
+   "last_step": 32,
+   "persona": "NMGorsuch",
+   "verified": true
+  },
+  {
+   "n_train": 71,
+   "n_val": 12,
+   "best_val_loss": 1.5435,
+   "last_step": 64,
+   "persona": "SAAlito",
+   "verified": true
+  },
+  {
+   "n_train": 81,
+   "n_val": 14,
+   "best_val_loss": 1.6183,
+   "last_step": 80,
+   "persona": "SSotomayor",
+   "verified": true
+  }
+ ],
+ "probe": {
+  "case": "CASE FILE — Digital Realty Trust, Inc. v. Somers\nDocket: 16-1276 | Term: OT2017 | Court below: record below\nParties: Digital Realty Trust, Inc. v. Somers\nQuestion presented: record below\nFacts: record",
+  "generations": {
+   "CThomas": "\n\nJUSTICE THOMAS, concurring in part and concurring in\nthe judgment.\nI join Parts I and II of the Court’s opinion because they\ncorrect the error in the majority’s decision to apply the\n“plain meaning” rule to the phrase “in connection with”\nin § 1653(a). See ante, at 1–4. But I respectfully dissent\nfrom Parts III and IV of the Court’s opinion because they\nerr in concluding that the plain-meaning rule applies to\nthe phrase “in connection with” in § 1653",
+   "EKagan": "JUSTICE KAGAN delivered the opinion of the Court. This case presents two questions about the scope of a state’s power to regulate the use of land. The first question is whether a state may require a property owner to pay a fee for each square foot of land that he uses in a way that the state deems environmentally harmful. The second question is whether a state may require a property owner to pay a fee for each square foot of land that he uses in a way that the state deems economically harmful. W"
+  }
+ },
+ "memorization": {
+  "BMKavanaugh": {
+   "min20_base": -4.981,
+   "min20_adapter": -4.79,
+   "delta_nats": 0.191,
+   "train_ppl": 3.9,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "CThomas": {
+   "min20_base": -5.321,
+   "min20_adapter": -4.825,
+   "delta_nats": 0.496,
+   "train_ppl": 4.14,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "EKagan": {
+   "min20_base": -5.889,
+   "min20_adapter": -5.615,
+   "delta_nats": 0.274,
+   "train_ppl": 6.09,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "JGRoberts": {
+   "min20_base": -5.585,
+   "min20_adapter": -5.354,
+   "delta_nats": 0.231,
+   "train_ppl": 5.01,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "NMGorsuch": {
+   "min20_base": -6.033,
+   "min20_adapter": -5.854,
+   "delta_nats": 0.179,
+   "train_ppl": 6.68,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "SAAlito": {
+   "min20_base": -5.798,
+   "min20_adapter": -5.382,
+   "delta_nats": 0.416,
+   "train_ppl": 5.25,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  },
+  "SSotomayor": {
+   "min20_base": -5.543,
+   "min20_adapter": -5.325,
+   "delta_nats": 0.217,
+   "train_ppl": 4.94,
+   "cloze_base_hits": "0/4",
+   "cloze_adapter_hits": "0/4",
+   "flag": "ok"
+  }
+ },
+ "sessions": 11,
+ "state_schema": "m3b-state/3"
+}
