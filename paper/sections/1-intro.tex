@@ -61,16 +61,14 @@ direction---sets a vote-level bar of 63.7\% on the held-out window;
 (iii) a trained challenger, a family of structured-feature models whose
 \emph{null result} is itself informative: nothing in the
 pre-decision metadata adds stable signal beyond who the justice is
-(Section~\ref{sec:results}); and (iv) the sealed, hash-frozen test
+(Section~\ref{sec:protocol}); and (iv) the sealed, hash-frozen test
 protocol under which the remaining conditions (zero-shot, persona
-fine-tuning, retrieval) will eventually be judged
-(Section~\ref{sec:protocol}).
+fine-tuning, retrieval) have since been judged
+(Sections~\ref{sec:protocol} and~\ref{sec:results}).
 
 We emphasize what this paper does not claim. It does not claim that
 Supreme Court votes are unpredictable; two decades of literature and
-our own baselines say otherwise. It does not report any language-model
-results; the opinion-text corpus required for those conditions is
-still being collected under free-tier API quotas. And it does not
-treat the 63.7\% bar as trivial: as Section~\ref{sec:results} shows,
+our own baselines say otherwise. And it does not
+treat the 63.7\% bar as trivial: as Section~\ref{sec:protocol} shows,
 three families of supervised models failed to clear it on the same
 rows, which is precisely why the bar is interesting.

@@ -1,186 +1,529 @@
 \section{Results}\label{sec:results}
 
-\subsection{Baselines: the price of admission}
+Judge-specific personalization did not significantly improve
+case-direction prediction on the sealed 5--4 test set. In the
+pre-registered comparison that the seal exists to protect---persona
+against zero-shot, condition B against condition A, evaluated once on
+the fifty hash-frozen 5--4 decisions---B calls one case right that A
+misses and two cases wrong that A gets right (exact McNemar: $b=1$,
+$c=2$, $p=1.00$). The point estimates sit inside each other's
+intervals, 59.2\% for B against 61.2\% for A, and the sign of the
+difference is, if anything, negative. We state this first and without
+qualification because it is the primary outcome of the experiment; the
+remainder of the section is about what that null does and does not
+mean. It does not mean the two conditions are interchangeable.
+Personalization changes the model, measurably and systematically: it
+displaces the simulated voting distribution toward the base model's
+conservative default, it does so by different amounts for different
+justices, and the displacement is visible at every level of analysis
+we ran beneath the case outcome. What it never becomes is better
+prediction of the outcome of the Court's hardest cases. The section traces that contrast from the
+primary outcome (Section~\ref{sec:primary}) through vote-level
+behavior (Section~\ref{sec:votes}) to its mechanism: a conservative
+default with a displaced ideological dial
+(Section~\ref{sec:dialsec}), a prompt-versus-adapter decomposition
+with a pre-registered counter-example
+(Section~\ref{sec:promptsec}), and a falsified stylistic explanation
+(Section~\ref{sec:stylesec}).
 
-Table~\ref{tab:baselines} and Figure~\ref{fig:baselines} report the
-pre-registered baselines on the evaluation window. The ordering is
-informative. The majority-class and constant policies (B1, B2) land
-in the 44--56\% band---barely better than their own training-window
-priors, a first sign that the evaluation window is not an easy era.
-The reversal heuristic (B3) reaches 60.1\% but on the affirm/reverse
-subset only, with an interval that warns against taking the point
-estimate seriously. The per-justice ideology rules dominate: 55.8\%
-at the case level (B4c) and \textbf{63.7\%} at the vote level (B4)
-on the full evaluation window. On the transparent (sealed-excluded)
-subset used for challenger comparison below, B4 scores 63.1\%
-(n~$=$~1{,}522, CI [60.6; 65.5]).
-
-\begin{table}[t]
-\centering
-\caption{Pre-registered baselines on the evaluation window
-(OT2020--OT2023). Wilson 95\% intervals.}
-\label{tab:baselines}
-\small
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Baseline & Accuracy (\%) & 95\% CI \\
-\midrule
-B1---majority class (liberal) & 43.6 & [37.2; 50.1] \\
-B2---always conservative & 56.4 & [49.9; 62.8] \\
-B3---always reverse & 60.1 & [51.8; 67.9] \\
-B4c---per-justice ideology, case level & 55.8 & [49.3; 62.2] \\
-\textbf{B4---per-justice ideology, vote level} &
-\textbf{63.7} & \textbf{[61.3; 65.9]} \\
-\bottomrule
-\end{tabular}
-\end{table}
+\subsection{Primary outcome: the sealed 5--4 exam}\label{sec:primary}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{figures/fig2_baselines.pdf}
-\caption{The number to beat. Wilson 95\% intervals for the five
-baselines on the test window; B4 (red) is the vote-level bar of
-63.7\%.}
-\label{fig:baselines}
+\includegraphics[width=\linewidth]{figures/fig5_m4_primary.pdf}
+\caption{\textbf{Primary result on the sealed 5--4 exam (phase S,
+$n=50$).} Accuracy of the four pre-registered conditions with Wilson
+95\% intervals: A~(zero-shot), B~(persona: biographical prompt + QLoRA
+adapter), C~(RAG), D~(per-justice ideological prior, drawn hollow as a
+reference rule rather than a language model). \emph{(a)}~Case-direction
+accuracy, the primary endpoint: the pre-registered McNemar test of B
+vs.\ A is null ($b=1$, $c=2$, $p=1.00$) --- personalization does not
+significantly improve case-level prediction on close cases. \emph{(b)}
+Vote-level accuracy (D evaluated on $n=411$ votes including historical
+justices; A/B/C on $n=361$): the secondary, vote-level McNemar test is
+nominally significant ($b=25$, $c=12$, $p=.047$) and the trivial
+per-justice prior D dominates every language condition.
+\emph{(c)}~Expected calibration error at the case level (lower is
+better; vote-level ECE: A~.226, B~.169, C~.137, D~.094). All conditions
+are poorly calibrated; the prior rule is the best calibrated of the
+four.}
+\label{fig:m4-primary}
 \end{figure}
-
-\subsection{Pairwise agreement}
-
-The descriptive baseline B5 measures how often two justices vote the
-same way on their common cases. The extremes frame the scale:
-Kavanaugh and Roberts agree on 94.6\% of their 333 common coded
-votes (CI [91.6; 96.8]), while Sotomayor and Thomas agree on only
-54.3\% of 518 (CI [50.0; 58.5])---statistically indistinguishable
-from two justices flipping independent coins that share a slight
-bias. Figure~\ref{fig:agreement} shows the full matrix, ordered by
-mean agreement with the conservative anchor block (Thomas and
-Alito). The block structure is visible without statistics: the
-modern conservative five form a dark square in one corner, the
-liberal three-plus in the other, and the two red-outlined extremes
-are, on inspection, the two ends of the Court's ideological span.
-This matrix is the empirical picture of what B4 compresses into one
-bit per justice.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.92\linewidth]{figures/fig3_agreement.pdf}
-\caption{Vote-level agreement across the 60 pairs with at least 50
-common coded votes (values are percent agreement). Darker cells are
-higher agreement; the diagonal is undefined. Red outlines mark the
-closest (Kavanaugh--Roberts, 94.6\%) and widest (Sotomayor--Thomas,
-54.3\%) pairs. Ordering is by mean agreement with the conservative
-anchor block.}
-\label{fig:agreement}
-\end{figure}
-
-\subsection{M3a: the structured challengers---and the bar holds}
-
-The first trained condition, M3a, asks whether the structured,
-pre-decision attributes of a case---issue area, lower-court
-disposition, term, and oral-argument duration, joined with justice
-identity---predict vote direction better than the one-bit
-ideological rule. Three challengers were trained on the
-sealed-excluded training window with grouped cross-validation for
-all hyper-parameter choice: an additive logistic regression (M3a-LR),
-the same with explicit justice$\times$issue interactions (M3a-IX),
-and a histogram gradient-boosting classifier that learns
-interactions natively (M3a-GB).
 
 \begin{table}[t]
 \centering
-\caption{M3a challengers vs.\ the bar, transparent test
-(sealed-excluded; $n=1{,}522$ rows common to all rows where B4 is
-defined). McNemar exact test against B4's paired predictions.}
-\label{tab:m3a}
+\caption{The sealed 5--4 exam (phase S), exact values. One
+original-jurisdiction case carries no coded decision direction and is
+excluded from case-level scoring for every condition ($n=49$); the
+ideological prior D also loses one tie ($n=48$). Vote-level scoring:
+A/B/C on the nine current seats ($n=361$); D on the ten justices with
+a training-window voting record ($n=411$, departed members included).
+Pre-registered primary test: exact McNemar B vs.\ A on case
+direction, $b=1$, $c=2$, $p=1.00$; secondary vote-level test: $b=25$,
+$c=12$, $p=.047$.}
+\label{tab:m4-primary}
 \small
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Model & CV (\%) & Test (\%) & 95\% CI & $p$ \\
+Condition & Case dir.\ (\%) & 95\% CI & Votes (\%) & 95\% CI \\
 \midrule
-M3a-LR (additive) & 56.2 & 58.6 & [56.1; 61.1] & 0.002 \\
-M3a-GB (boosting) & 56.1 & 59.8 & [57.3; 62.2] & 0.009 \\
-M3a-IX (interactions) & 57.1 & 60.4 & [57.9; 62.8] & 0.047 \\
-\textbf{B4 (bar)} &---& \textbf{63.1} & \textbf{[60.6; 65.5]} &
---- \\
+A---zero-shot & 61.2 & [47.3; 73.6] & 56.2 & [51.1; 61.3] \\
+B---persona & 59.2 & [45.3; 71.8] & 59.8 & [54.7; 64.8] \\
+C---retrieval & 53.1 & [39.4; 66.3] & 50.1 & [45.0; 55.3] \\
+D---ideological prior & 50.0 & [36.4; 63.6] & 75.9 & [71.6; 79.8] \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{figures/fig4_m3a.pdf}
-\caption{The first challenger fails against the bar. Wilson 95\%
-intervals on the common rows; $p$-values are exact McNemar tests
-against B4's paired predictions.}
-\label{fig:m3a}
-\end{figure}
+The four conditions were scored exactly once, on the sealed fifty,
+after the completeness chain from the training freeze to the exam was
+verified. Figure~\ref{fig:m4-primary}(a) and
+Table~\ref{tab:m4-primary} give the outcome. The three language
+conditions share one open-weight base model
+(Qwen/Qwen2.5-3B-Instruct); B adds, per seat, a biographical system
+prompt and a QLoRA adapter fine-tuned on that justice's
+training-window opinions; C adds retrieval over earlier opinions; D is
+the re-fit per-justice ideological prior of
+Section~\ref{sec:protocol}, included as the like-for-like statistical
+comparator. Two seats have no adapter by construction---Barrett and
+Jackson joined the Court after the training window closed and authored
+no training-window opinions---so their condition B degenerates, by
+pre-inscription, to the biographical prompt alone. On the primary
+endpoint, case-direction accuracy, A scores 61.2\% (Wilson 95\% CI
+[47.3; 73.6]), B 59.2\% [45.3; 71.8], C 53.1\% [39.4; 66.3], and D
+50.0\% [36.4; 63.6]. With three discordant cases out of 49, only a
+large true effect would have been detectable; the pre-registered test
+returns $p=1.00$, and the honest summary is that personalization
+brings no detectable gain on the sealed 5--4 outcomes, with a point
+estimate two points below the zero-shot baseline.
 
-Table~\ref{tab:m3a} and Figure~\ref{fig:m3a} give the result: every
-challenger lands between 58.6\% and 60.4\% on the common rows, and
-every comparison against B4 favors the bar (McNemar exact
-$p \le 0.047$). The failure is not an artifact of regularization
-strength or model family; it is robust across three families and
-survives the interaction model that the site's per-justice
-domain-divergence displays would suggest. It is also not a power
-issue in the usual direction---the challengers are significantly
-\emph{worse}, not merely insignificantly different.
+Two details sharpen the null. First, the 49 scored cases of the
+sealed exam split into 29
+\emph{interleaved} cases---5--4 decisions handed down inside the
+training era, contemporaneous with (but excluded from, by the seal)
+the persona training texts---and 20 \emph{future} cases decided after
+the training window closed. On the interleaved stratum, A and B
+produce identical case-direction calls on every single case ($b=0$,
+$c=0$); all three disagreements fall in the future stratum. The one
+place the persona could plausibly have helped---cases decided after
+the texts it was trained on---is exactly where its few disagreements
+with A concentrate, to no net effect. Second, the re-fit ideological
+prior D scores exactly 50.0\%: a coin flip, with agreement against the
+always-conservative majority class of $\kappa=-0.11$. The 5--4
+population removes precisely the margin that makes ideology
+informative at the case level, while leaving it intact at the vote
+level (75.9\%, Section~\ref{sec:votes}). The language conditions sit
+between these poles, and none of them is doing much beyond the
+majority class: case-direction kappa against always-conservative is
+0.09 for A, 0.02 for B, 0.06 for C. On one-vote-margin decisions,
+every condition---language model and statistical rule alike---is a
+small perturbation of ``always guess conservative''.
 
-The ablation in Table~\ref{tab:ablation} locates the failure
-precisely. Removing justice identity from the feature set collapses
-cross-validated accuracy from 56.2\% to 47.6\%---below the class
-base rate---while removing any other feature group \emph{improves}
-it (issue area is the most harmful to keep, at $+1.7$ points when
-dropped). In other words, on this window, \emph{who} votes is
-signal; \emph{what the case is about} is noise. The structured
-challenger did not fail because the metadata was too thin; it
-failed because the only stable generalizable structure in the data
-is the attitudinal bit that B4 already uses.
+The contrast with the transparent window completes the statistical
+picture. Phase T---the same machinery scored on the 211
+evaluation-window casefiles with every sealed case excluded, 205 of
+them carrying a coded direction---had given B a $+4.9$-point advantage
+over A at case level (55.1\% vs.\ 50.2\%; McNemar $b=42$, $c=32$,
+$p=0.30$, not significant). Between the transparent window and the
+sealed exam, the sign of the B$-$A difference flips while remaining
+statistically indistinguishable from zero in both places. The honest
+reading is that case-level deltas of this magnitude are noise-dominated
+at these sample sizes; the sealed exam, evaluated once under a
+pre-registered test, is the number that counts, and it is null.
+
+\subsection{Vote-level behavior: changed votes, unchanged
+outcomes}\label{sec:votes}
+
+Case-direction prediction and vote prediction are different tasks. The
+first asks which side wins a one-vote-margin case; the second asks how
+each of the nine justices individually votes. A model can move many
+individual votes without moving a single outcome---and that, it turns
+out, is what personalization does. On the sealed exam's 361
+current-court votes, B scores 59.8\% [54.7; 64.8] against A's 56.2\%
+[51.1; 61.3], and the secondary, vote-level McNemar test is nominally
+significant ($b=25$, $c=12$, $p=.047$). We report this with its full
+fragility on display: it is a secondary endpoint; it has been
+subjected to no multiplicity correction; and with 37 discordant votes
+the $p$-value sits one tail-flip from convention. We read it as
+evidence of behavioral change to be investigated---which is what the
+rest of this section does---not as a confirmatory claim of
+improvement. The absence of a case-level gain does not mean the
+absence of a vote-level effect.
 
 \begin{table}[t]
 \centering
-\caption{Feature-group ablation (grouped 5-fold CV on the training
-window, additive logistic regression).}
-\label{tab:ablation}
+\caption{Vote-level accuracy per seat on the sealed exam (phase S):
+condition A (zero-shot) vs.\ condition B (persona), with the
+difference in percentage points computed from exact fractions.
+Barrett and Jackson have no adapter (pre-inscribed degraded mode:
+biographical prompt alone). Jackson sat for nine of the fifty sealed
+cases.}
+\label{tab:votes-per-justice}
 \small
-\begin{tabular}{@{}lc@{}}
+\begin{tabular}{@{}lccccc@{}}
 \toprule
-Feature set & CV accuracy (\%) \\
+Seat & $n$ & A (\%) & B (\%) & $\Delta$ (pp) & Adapter \\
 \midrule
-Full (justice, issue, lc, term, duration) & 56.2 \\
-drop justice identity & 47.6 \\
-drop issue area & 57.9 \\
-drop lower-court disposition & 56.7 \\
-drop term & 56.5 \\
-drop argument duration & 56.1 \\
+Thomas & 49 & 73.5 & 83.7 & $+10.2$ & yes \\
+Alito & 49 & 73.5 & 83.7 & $+10.2$ & yes \\
+Barrett & 20 & 65.0 & 75.0 & $+10.0$ & --- \\
+Kavanaugh & 39 & 71.8 & 74.4 & $+2.6$ & yes \\
+Gorsuch & 48 & 62.5 & 68.8 & $+6.3$ & yes \\
+Roberts & 49 & 69.4 & 63.3 & $-6.1$ & yes \\
+Jackson & 9 & 33.3 & 44.4 & $+11.1$ & --- \\
+Sotomayor & 49 & 20.4 & 24.5 & $+4.1$ & yes \\
+Kagan & 49 & 26.5 & 20.4 & $-6.1$ & yes \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The case-level reading is the same. Simulating each case's outcome
-as the majority of the challenger's predicted votes yields 58.3\%
-(CI [51.5; 64.9]) on the transparent subset---above the case-level
-ideological baseline (55.8\%), but the interval is wide enough that
-the honest summary is ``not distinguishable'', and the vote-level
-failure stands regardless.
+The ideological prior D dominates every language condition at the
+vote level: 75.9\% [71.6; 79.8] on the 411 sealed votes cast by the
+ten justices with a training-window voting record (the three departed
+members included; Barrett and Jackson are necessarily outside D's
+coverage, which cuts against D rather than for it). On the seven
+current seats that both D and B cover, D's per-justice accuracies run
+from 0.63 (Roberts) to 0.86 (Sotomayor); B's run from 0.20 (Kagan) to
+0.84 (Thomas). D thus supplies the mirror image of its case-level
+failure: it wins three individual votes in four and precisely cannot
+predict the one-vote majority those votes aggregate into, while the
+language conditions guess case direction at 53--61\% on top of
+per-justice votes that are barely better than chance. The trivial
+statistic captures the block structure of the Court on close cases;
+the language layer does not.
 
-\subsection{What the null prices}
+Table~\ref{tab:votes-per-justice} shows where B's vote-level movement
+comes from, and the pattern is the first appearance of the mechanism
+the rest of this section diagnoses. B's largest gains are conservative
+seats---Thomas and Alito at $+10.2$ points each, Barrett at $+10.0$
+(without an adapter), Gorsuch at $+6.3$---plus Jackson ($+11.1$, no
+adapter, $n=9$) and a modest $+4.1$ for Sotomayor. The two seats where
+B \emph{loses} ground are Kagan ($-6.1$) and Roberts ($-6.1$). The
+adapter helps where the seat already aligns with the base model's
+default behavior and hurts where it does not; a model fine-tuned on a
+justice's own prose ends up most accurate for the justices whose
+recorded votes sit closest to that default. On the transparent window the same contrast is
+larger: B beats A by 5.8 points over 1{,}713 votes (53.8\% vs.\
+48.0\%; McNemar $b=364$, $c=265$, $p=9\times10^{-5}$), with B's
+accuracy on the two liberal seats at 0.45 (Sotomayor) and 0.33 (Kagan)
+against D's 0.67 and 0.66, while the five conservative seats never
+differ by more than 0.045 between the two (Kavanaugh; all others at or
+below 0.02). The vote-level shift is consistent
+across windows and evaluation regimes; what it never converts into is
+case-direction improvement on the sealed set.
 
-Read together, the results give the experiment its current shape.
-The predictable component of a justice's vote on this window is, to
-the resolution that nine terms of structured data can detect, the
-justice's ideological direction---exactly what the attitudinal
-model predicts and exactly what B4 encodes. We phrase the
-implication precisely: the \emph{tested} structured features add no
-stable signal beyond the ideological bit on this window. This does
-not price \emph{all} non-textual information---untested structured
-sources (parties, counsel, finer temporal or institutional
-variables) or richer encodings of the same file could in principle
-hold residual signal; what our result establishes is that the
-standard SCDB-style coding of the case file does not. The cheapest
-rich representation that remains untested is the \emph{text}---the
-briefs, the transcript, the opinion language itself. That is where
-the pre-registered conditions A--C operate, and the M3a null result
-is what makes them the critical path rather than a side quest: the
-structured ceiling is now empirically priced for this
-representation, so any future claim of textual signal is a claim
-against a known, pre-registered number.
+Calibration completes the picture, and it is poor everywhere. Expected
+calibration error at case level is 0.202 for A, 0.138 for B, 0.106
+for C, and 0.094 for D; at vote level, 0.226, 0.169, 0.137, and
+0.094 respectively (Figure~\ref{fig:m4-primary}(c)). The language
+models are confidently wrong in the tail that matters most: condition
+A assigns a mean liberal probability of 0.07 to 209 votes whose
+observed liberal rate is 0.40. The best-calibrated of the four
+conditions is the one that does not read the case at all---the prior
+rule, whose outputs barely move. Probabilistic predictions from these
+pipelines should not be taken at face value for any downstream use
+that consumes them as probabilities.
+
+\subsection{The ideological dial}\label{sec:dialsec}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig6_ideological_dial.pdf}
+\caption{\textbf{The ideological dial: actual vs.\ simulated
+liberal-vote rates.} \emph{(a)}~On the sealed exam, every seat's
+persona (condition B) votes more conservatively than the justice it
+imitates; filled markers denote the liberal bloc. The persona-predicted
+rate never exceeds 0.44 while the actual rate spans 0.16--0.86
+(Jackson: $n=9$ votes). \emph{(b)}~The same dial, decomposed on the
+transparent window ($n=211$ casefiles, sealed cases excluded): the
+actual record, the neutral arm N ($\equiv$ condition A scheme), the
+biographical prompt alone (P), and the full persona B (E1 arm
+``A'', byte-identical to condition B). The base model pins every seat
+near $0.11$; the prompt moves Sotomayor to $0.50$ but barely moves
+Kagan ($0.05$); the adapter's marginal pull on top of the prompt is
+small everywhere (Gorsuch ends at $0.00$). Actual rates are derived from
+the frozen corpus and validated exactly against the published E1
+arm-N accuracies. \emph{Barrett and Jackson have no adapter (degraded,
+pre-inscribed mode): their persona arm \emph{is} the biographical
+prompt} (open red squares).}
+\label{fig:dial}
+\end{figure}
+
+To see what personalization actually moved, we measure, for each seat,
+the share of cases on which a condition casts a liberal vote---the
+simulated counterpart of the justice's liberal-vote rate. This dial
+requires no ground truth, which lets us read it on any window.
+Figure~\ref{fig:dial}(a) shows it on the sealed exam. Every one of
+the nine seats lies strictly below the diagonal: every persona,
+including those imitating liberal justices, votes more conservatively
+than the justice it imitates. The persona-predicted liberal rate never
+exceeds 0.44 (Jackson, $n=9$), while the actual rates span 0.16
+(Thomas, Alito) to 0.86 (Sotomayor). The seat-level failures of
+Table~\ref{tab:votes-per-justice} are not scattered noise---they are
+one systematic displacement: Kagan's persona votes liberal on 4.1\% of
+her sealed cases where the justice herself votes liberal on 83.7\%;
+Thomas's votes liberal on 0\% where the justice does on 16.3\%. The
+mechanism is compression rather than collapse. Condition B's mean
+predicted probability of a liberal vote spans only 0.16--0.39 across
+seats, so the Court's real ideological span is re-anchored into a
+narrow band whose upper edge stays below one half. Justices already
+inside that band are ``imitated'' almost perfectly; justices above it
+are structurally mis-imitated, whatever the fidelity of their
+adapter's prose.
+
+Two seats in Figure~\ref{fig:dial}(a) do move materially toward the
+truth---the two without adapters. Jackson's prompt-only persona
+predicts a 44.4\% liberal rate against an actual 77.8\% ($n=9$;
+small), and Barrett's 15.0\% against an actual 20.0\% ($n=20$),
+against Kagan's adapter-backed 4.1\%. The identity carried by the
+biographical prompt moves the dial more than fine-tuning on the
+justice's own texts does; this observation, visible in the sealed
+numbers, is what the decomposition experiment of
+Section~\ref{sec:promptsec} was designed to test.
+
+Figure~\ref{fig:dial}(b) decomposes the dial on the transparent window
+(211 casefiles, sealed cases excluded, one run, fixed seed 271828)
+under three arms: N, a neutral system prompt with no justice
+identity---the condition-A scheme; P, the biographical prompt alone on
+the base model; and B, the biographical prompt plus the seat's
+adapter---the condition-B pipeline, byte-for-byte (same prompts, same
+adapters). Arm N is
+seat-independent by construction, and it returns 24 liberal calls in
+211 cases (0.114) for every seat: the base model, asked to vote as a
+neutral legal analyst, has a strong conservative default on this
+task. This is the first of the three pre-registered predictions of
+the decomposition experiment, and it is confirmed. The prompt arm then
+moves seats in opposite directions---Sotomayor to 0.50 and Jackson to
+0.18, but Kagan only to 0.05, four of the five conservative seats down
+to 0.01--0.02, and Kavanaugh not at all---while the adapter's marginal
+effect on top of the prompt never exceeds a tenth of the dial (at most
+$+0.10$, taking Kavanaugh to 0.21): Kagan ends at 0.02, Gorsuch at
+0.00, and Sotomayor holds 0.49. The persona is not a louder version
+of the justice; it is the base model's default, nudged by the
+biography, with the adapter contributing only a small marginal pull.
+
+\subsection{Prompt versus adapter---and what the adapter did not
+learn}\label{sec:promptsec}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig7_prompt_vs_adapter.pdf}
+\caption{\textbf{E1: causal decomposition of the dial (transparent
+window, $n=211$; single run, seed 271828).} Change in predicted
+liberal-vote rate per seat. \emph{(a)}~Prompt effect $\Delta(P-N)$: the
+pre-registered prediction (ii) --- the biography lifts liberal seats
+--- holds spectacularly for Sotomayor ($+0.39$) and modestly for
+Jackson ($+0.06$), but is \emph{falsified for Kagan} ($-0.06$),
+highlighted in red. \emph{(b)}~Adapter effect $\Delta(B-P)$: the
+marginal effect of adding the adapter on top of the prompt is small
+everywhere ($\le +0.10$) and negative for the two pre-registered
+targets, confirming prediction (iii) --- the adapter erases the
+prompt's gain for Kagan ($-0.028$) and Sotomayor ($-0.014$).
+\emph{(c)}~Combined effect $\Delta(B-N)$; open markers mark the
+prompt-only seats (Barrett, Jackson --- no adapter exists). Arms:
+N~$=$ neutral base model ($\equiv$ condition A scheme; conservative
+default $0.114$ for all seats --- prediction (i), confirmed), P~$=$
+biographical prompt, B~$=$ persona (E1 artifact arm ``A'' $\equiv$
+condition B). Identity injected in the prompt is not behavior learned
+by the adapter.}
+\label{fig:decomposition}
+\end{figure}
+
+The decomposition experiment (E1) ran one identical vote query per
+case under the three system prompts of Figure~\ref{fig:dial}(b), on
+the transparent window only, with its hypotheses committed to the
+repository before execution. It is confirmatory within its own
+frame---a causal decomposition on non-sealed data---and it has no
+bearing on the sealed primary test, which is never recomputed. Its
+three pre-registered predictions and their fates are as follows.
+Prediction (i), a conservative default of the neutral arm for all
+seats, is confirmed ($N=0.114$ everywhere). Prediction (ii), a
+positive prompt effect $\Delta(P-N)$ for each of the three liberal
+seats, holds spectacularly for Sotomayor ($+0.39$) and modestly for
+Jackson ($+0.06$), and is \emph{falsified for Kagan} ($-0.06$); the
+broader contrast the prediction encoded---a positive mean shift for
+liberal seats ($+0.13$) against a negative one for conservative seats
+($-0.08$)---is confirmed. Prediction (iii), that the adapter erases
+the prompt's gain for Kagan and Sotomayor, is confirmed:
+$\Delta(B-P)=-0.028$ and $-0.014$ respectively
+(Figure~\ref{fig:decomposition}).
+
+Read together, the decomposition supports one central claim: the
+identity injected through the prompt is not the behavior learned by
+the adapter. Where the biography is ideologically legible, the prompt
+alone recovers half of the dial (Sotomayor, 0.11 $\to$ 0.50); the
+adapter's marginal effect on top of the prompt is small everywhere
+(at most $+0.10$, for Kavanaugh) and negative for its two
+pre-registered targets. In combined terms $\Delta(B-N)$, only
+Sotomayor ($+0.37$) and Kavanaugh ($+0.10$) end above the neutral
+default; every other adapted seat ends at or below it. The persona
+pipeline does not add the justice to the model: the closest any persona
+comes to its justice's record---Sotomayor's 0.49 against an actual
+0.67---owes that position to the biography, and the adapter's marginal
+contribution there is negative.
+
+One measurement caveat must be stated exactly. A pre-inscribed
+fidelity regression re-scored E1's arm B against the published
+phase-T condition-B per-justice accuracies---same prompts, same
+adapters, deterministic scoring, so exact equality was expected.
+Five of the seven adapter-backed seats match exactly; Kagan (0.343
+vs.\ 0.333) and Kavanaugh (0.534 vs.\ 0.554) diverge slightly, as do
+the two prompt-only seats (0.560 vs.\ 0.565; 0.400 vs.\ 0.440). For
+the neutral arm---seat-independent by construction, one vote query
+per case replicated to the nine seats exactly as the frozen
+condition-A scheme prescribes---the pre-inscribed check was a
+single-seat spot-check (Roberts, the first seat of the frozen bench
+ordering): 0.544 vs.\ 0.515. Extending that comparison to all nine
+seats was not part of the pre-inscribed regression; it is a post-hoc
+recomputation from the two published artifacts, and it widens the
+picture considerably. The neutral arm's per-justice gaps run from
+$-8.8$ points (Sotomayor, 0.319 vs.\ 0.407) to $+10.0$ points
+(Alito, 0.625 vs.\ 0.525) with a mean absolute gap of 5.8 points,
+against an aggregate shift of only $+1.5$ points (848 vs.\ 823 of
+1{,}713 votes); the recorded persona-arm comparisons never diverge
+by more than four votes on any seat. Inter-run divergences thus
+appear between logically identical re-executions---small on the
+persona arms, considerably larger and unevenly distributed across
+seats on the seat-independent neutral arm---and their cause is
+unisolated: consistent with, but not demonstrated to be, cuBLAS
+non-determinism on the T4 GPU. The divergences themselves are a
+solid observation; their cause remains a diagnostic hypothesis, not
+an experimental conclusion, and pinning it down would require a
+dedicated experiment (identical inputs, repeated runs, one
+environment) that we have not run; nor do we have an explanation
+for why the neutral arm diverges more than the persona arms.
+Accordingly, every cross-arm comparison in this subsection uses
+E1's internal numbers from its single seeded run, and phase-T
+values are quoted only as published figures, never mixed into the
+same computation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig9_e3_autocoherence.pdf}
+\caption{\textbf{E3: auto-coherence probe --- the persona does not
+reproduce the judge's votes even on the cases it was trained on
+(pre-specified, exploratory).} \emph{(a)}~Persona liberal-vote rate on
+the training cases where the justice authored the lead opinion
+\emph{and} voted liberal; by construction the actual rate is 1.0
+(dashed line). Kagan's persona, trained on 21 such opinions, votes
+liberal on 3 of 21 (14\%). No persona reaches even two-thirds.
+\emph{(b)}~The persona's liberal-vote rate split by the judge's actual
+vote on his or her own training cases: for Kagan the relationship is
+\emph{inverted} --- her persona votes liberal more often on cases where
+she voted conservative (21\%) than on cases where she voted liberal
+(12\%). The same inversion affects Sotomayor, Thomas and Gorsuch
+(4 of 7 adapters). The adapter has seen the judge's words on these
+very cases; it did not learn the vote that produced them.}
+\label{fig:e3}
+\end{figure}
+
+If the adapter does not transfer the justice's decision function, it
+should fail \emph{most transparently} on the cases whose texts it was
+trained on. The auto-coherence probe (E3, pre-specified and
+exploratory) tests this directly: it takes the training-era cases
+where the justice both voted liberal \emph{and} authored the lead
+opinion whose text entered the adapter's training set, and asks the
+persona to vote on them. By construction, the actual liberal rate on
+these cases is 1.0. Kagan's persona, trained on 21 such opinions,
+votes liberal on 3 of them (14\%); no persona reaches even two-thirds
+of its own probe set (the maxima are Kavanaugh's 60\% on five cases and
+Sotomayor's 47\% on seventeen; Thomas's and Gorsuch's personas vote
+liberal on none) (Figure~\ref{fig:e3}). The split by the judge's actual vote is more
+damning than the level: for Kagan, the persona votes liberal more
+often on cases where she voted \emph{conservative} (21\%) than on
+cases where she voted \emph{liberal} (12\%), and the same inversion
+affects Sotomayor, Thomas, and Gorsuch---four of the seven adapters.
+The adapter has read the judge's words on these very cases; it did
+not learn the vote that produced them.
+
+We delimit what these two experiments establish. They are evidence
+about this pipeline: one open-weight 3B base model, seven QLoRA
+adapters trained on sealed-excluded opinion corpora, biographical
+prompts of one fixed form, one task phrasing. Kagan's seat falsifies
+the generalization ``biographical prompts lift liberal justices'';
+Sotomayor's seat confirms it; the heterogeneity between them---not
+either seat alone---is the finding. Nothing here licenses a claim
+about LLM personas at large, and the Kagan observation in particular
+is a single-seat result on 21 cases. What the two experiments do
+establish, for this pipeline, is a mechanism: the persona's simulated
+voting behavior is governed by the base model's default plus whatever
+identity the prompt injects, and the adapter's contribution on top of
+the prompt is, if anything, a pull back toward that default.
+
+\subsection{Stylistic distinctiveness: a pre-registered prediction,
+falsified}\label{sec:stylesec}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig8_e2_distinctiveness.pdf}
+\caption{\textbf{E2: stylistic distinctiveness does not predict persona
+fidelity --- a pre-registered prediction, falsified ($n=7$
+adapters).} \emph{(a)}~Composite stylistic distinctiveness (lexical
+richness, sentence-length variance, function-word and
+authorial-marker signatures, TF-IDF/JSD distance to the other judges)
+against persona vote fidelity on the sealed exam. The pre-registered
+prediction was a \emph{positive} correlation; the observed Spearman
+correlation is $\rho=-0.72$ in phase S ($-0.61$ in phase T). Kagan is
+the most distinctive writer and the worst persona; Thomas the least
+distinctive and among the best. \emph{(b)}~Training volume explains
+nothing ($\rho=+0.14$). The surface style transfers; the decision
+function does not: persona fidelity tracks the justice's alignment
+with the base model's conservative default, not the distinctiveness of
+the pen. Exploratory label (measures chosen after observing
+fidelities; the correlation predictions themselves were committed to
+the repository before execution).}
+\label{fig:e2}
+\end{figure}
+
+The natural explanation left standing after E1 and E3 is stylistic:
+perhaps persona fidelity tracks how distinctive a writer the justice
+is, in the stylometric sense of a persistent, hard-to-fake
+signature~\citep{mosteller1964,juola2006}. This explanation was itself
+pre-registered---as two predictions inscribed before any
+measurement---and then falsified. The distinctiveness study (E2,
+local and corpus-side) scores each of the seven adapted judges on a
+composite of surface measures over the clean pre-guard corpus:
+sliding-window lexical richness, sentence-length variance, a
+function-word signature, authorial markers such as ``I dissent'' per
+ten thousand words, and TF-IDF/Jensen--Shannon distance to the other
+judges (18--70 texts per judge, 76k--276k words each). The first
+inscribed prediction fixed an expected ranking, with Kagan the least
+distinctive writer; the observed ranking inverts it at both ends---Kagan is
+the \emph{most} distinctive writer in the corpus ($+0.24$ composite
+$z$) and Thomas the least ($-0.32$). The second inscribed prediction
+was a positive correlation between distinctiveness and persona vote
+fidelity, exceeding the volume--fidelity correlation. The observed
+Spearman correlation is $\rho=-0.72$ on the sealed exam and $-0.61$
+on the transparent window, against $+0.14$ for training volume
+(Figure~\ref{fig:e2}): distinctiveness of the pen predicts persona
+fidelity with the wrong sign.
+
+The label discipline here matters and we keep it explicit. $\rho
+=-0.72$ is the falsification of a pre-registered prediction, not a
+hypothesis invented after seeing the results: the correlation
+predictions were committed before execution, and the ranking
+prediction was committed in full. The distinctiveness \emph{measures}
+were chosen after the fidelities had been observed, and for that
+reason the study carries an exploratory label on its instruments.
+One axis of Kagan's composite rests on a small sample (the
+Jensen--Shannon distance over her separate opinions uses two texts),
+but the negative correlation survives on the all-texts axis alone,
+and no surface measure we computed correlates positively with
+fidelity.
+
+The falsification, read in the direction the data point, sharpens the
+mechanism of Section~\ref{sec:dialsec}. The seven judges' surface
+signatures sit at tiny Jensen--Shannon distances from one another
+(0.155--0.212: American legal English is a shared register), and the
+judges closest to the shared register obtain the best personas. The
+persona failure is therefore not a failure of style transfer---the
+style visibly moves---but of decision transfer: what varies between
+justices, and what the adapter does not carry, is the voting function,
+not the voice. Persona fidelity tracks the justice's alignment with
+the base model's conservative default, not the distinctiveness of the
+pen. A companion descriptive statistic from the phase-0 analysis
+points the same way (share of majority-authored opinions against
+fidelity: $\rho=-0.74$, $n=7$, no inferential status): majority
+writing is coalition writing, and coalition prose is the least
+individual prose a justice produces. The adapter moves words, not
+votes.
