@@ -105,15 +105,16 @@ Detail: [`results/m3a_report.md`](results/m3a_report.md)
 
 ## The paper
 
-The working paper — corpus, protocol, M2 baselines, agreement, and the
-M3a null result, in the format researchers read — lives in
+The working paper — corpus, protocol, pre-registered baselines, the
+sealed 5-4 exam (M4), and the mechanism experiments (E1-E3), in the
+format researchers read — lives in
 [`paper/`](paper/) (LaTeX sources, `main.pdf` compiled with Tectonic;
-figures regenerate via `scripts/paper_figures.py`):
+figures regenerate via `scripts/paper_figures.py` and
+`scripts/paper_figures_d1bis.py`):
 
-> **Legally Subjective: Measuring the Upper Bound of Predictability in
-> U.S. Supreme Court Decisions with Public Data and a Zero Budget** —
-> A. Harch el Korane, working paper, 2026-08-29. 12 pages, 4 figures,
-> 5 tables, 12 references.
+> **Legally Subjective: How Much Vote Predictability Survives a Strong
+> Ideological Baseline?** — A. Harch el Korane, working paper,
+> revision 2, 2026. 22 pages, 9 figures, 7 tables, 15 references.
 
 ---
 

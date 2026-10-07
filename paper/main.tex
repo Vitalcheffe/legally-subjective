@@ -41,7 +41,7 @@
 \usepackage[htt]{hyphenat}  % allow hyphenation in \texttt
 
 \hypersetup{
-    pdftitle={Legally Subjective: How Predictable Are U.S. Supreme Court Decisions from Public Data? Testing Statistical Baselines, Language Models, and Judge-Specific Personalization},
+    pdftitle={Legally Subjective: How Much Vote Predictability Survives a Strong Ideological Baseline?},
     pdfauthor={Amine Harch el Korane},
     pdfsubject={Computational legal prediction, judicial behavior, pre-registered baselines},
     pdfkeywords={Supreme Court, judicial prediction, machine learning, pre-registration, SCDB, CourtListener}
@@ -51,11 +51,8 @@
 
 % ================= title block (hand-set, no \maketitle) =================
 \begin{center}
-{\LARGE\bfseries Legally Subjective: How Predictable Are U.S. Supreme Court\\[3pt]
-Decisions from Public Data?\par}
-\vspace{6pt}
-{\large Testing Statistical Baselines, Language Models,\\[3pt]
-and Judge-Specific Personalization\par}
+{\LARGE\bfseries Legally Subjective: How Much Vote Predictability\\[3pt]
+Survives a Strong Ideological Baseline?\par}
 \vspace{14pt}
 {\normalsize Amine Harch el Korane\textsuperscript{1}\par}
 \vspace{2pt}
@@ -84,21 +81,22 @@ on fifty hash-frozen 5--4 decisions---zero-shot, persona
 past opinions), retrieval, and the re-fit ideological prior---with
 predictions frozen before any answer key existed and scored exactly
 once. Personalization does not detectably improve prediction of the
-Court's hardest cases: on the primary endpoint, case-direction accuracy, the
-persona scores 59.2\% against the zero-shot's 61.2\% (exact McNemar,
-$p=1.00$), and on these one-vote-margin decisions even the ideological
-prior collapses to a coin flip at case level (50.0\%), while at vote
-level it still dominates every language condition (75.9\% against
-50--60\%). Personalization does, however, change the model: it moves
+Court's hardest cases: on the primary endpoint, case-direction
+accuracy, the persona scores 59.18\% against the zero-shot's 61.22\%
+(exact McNemar, $p=1.00$). Even the ideological prior collapses to a
+coin flip at case level on these one-vote-margin decisions (50.0\%),
+while at vote level it still dominates every language condition
+(75.9\% against 50--60\%). Personalization does, however, change the model: it moves
 individual votes (nominally, $p=.047$, unadjusted) without improving
 case-direction prediction; every simulated justice votes more
 conservatively than the justice it imitates; the biographical prompt,
 not the fine-tuned adapter, does most of the moving; a pre-registered
 stylistic account of persona quality is falsified ($\rho=-0.72$); and
 personas misvote on the very training cases whose texts they absorbed.
-The persona learns the voice, not the vote: on this evidence, the
-predictable component of a close decision remains who the justice is,
-not how the justice writes. All code, frozen artifacts, and sealed
+Taken together, these results provide no evidence that modeling how
+an individual justice writes adds detectable predictive power for
+close case outcomes beyond the information captured by the
+ideological baseline. All code, frozen artifacts, and sealed
 predictions are public.
 
 \vspace{4pt}
