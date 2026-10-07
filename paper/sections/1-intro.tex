@@ -13,26 +13,39 @@ account of the Court---the attitudinal model~\citep{segal2002} ---
 holds that ideology, not legal doctrine, explains most of the variance
 in votes.
 
-This paper reports the design and the first results of \emph{Legally
-Subjective}, an independently conducted, zero-budget experiment that
-asks a narrower and, we argue, more honest version of the prediction
+This paper reports the completed experiment of \emph{Legally
+Subjective}, an independently conducted, zero-budget test of a
+narrower and, we argue, more honest version of the prediction
 question. Rather than asking how accurately a court's output can be
 retrofitted by a flexible learner with centuries of data, we ask two
 questions that can both fail loudly. First, is each justice's vote
-predictable from the public case file alone, on a fixed, modern window,
-against a pre-registered bar? Second---and this is the experiment's
-live wire---if a language model is fine-tuned on one justice's own
-past opinions, does it predict that justice's \emph{future} votes
-better than the same model without the persona? Both answers are
-publishable. If the persona helps, a \emph{justice-specific textual
-signal} exists: the written voice carries predictive information about
-future decisions that ideology alone does not encode. Whether that
-signal is personality, drafting style, subject-matter specialization,
-or something else entirely is a distinct question this design does not
+predictable from the public case file alone, on a fixed, modern
+window, against a pre-registered bar? Second---and this is the
+experiment's live wire---if a language model is fine-tuned on one
+justice's own past opinions, does it predict that justice's
+\emph{future} votes better than the same model without the persona?
+We built a stringent test of the second question. It did not improve
+prediction: on the sealed holdout of fifty hash-frozen 5--4
+decisions, scored once, the persona called one case right that the
+zero-shot missed and two cases wrong that the zero-shot called right
+(exact McNemar, $p=1.00$), and the rest of the experiment is the
+investigation of why. The two branches of the fork read differently
+now that it is resolved. Had the persona helped, a
+\emph{justice-specific textual signal} would have existed: the
+written voice would carry predictive information about future
+decisions that ideology alone does not encode (whether that signal
+would be personality, drafting style, subject-matter specialization,
+or something else entirely is a distinct question the design does not
 settle---persona improvement is evidence of a signal, not of its
-nature. If it does not, then whatever is predictable about a justice
-on this window is already captured by their ideological direction,
-and the remainder is either private deliberation or noise.
+nature). It did not help, and the null is sharper than a bare
+absence: personalization \emph{changed} the model
+measurably---it moved individual votes, and it made every simulated
+justice vote more conservatively than the justice it
+imitates---without improving prediction of the outcome by a single
+case. What is predictable about a close decision, at the resolution
+this design can detect, is \emph{who} the justice is; the written
+voice, through a persona pipeline at this scale, adds nothing that
+the ideological bit does not already carry.
 
 Three design commitments distinguish the project from prior work.
 First, everything is pre-registered before the models see the
@@ -51,7 +64,7 @@ of seeds) and it makes every result replicable by any researcher with
 a laptop, but a larger budget would not weaken the design---only widen
 the set of testable conditions.
 
-The contributions of this working paper are: (i) a frozen,
+The contributions of this paper are: (i) a frozen,
 provenance-complete corpus of 569 argued Supreme Court cases spanning
 OT2015 through OT2023, fusing CourtListener metadata with Supreme Court
 Database (SCDB) vote coding, with 98.6\% oral-argument coverage for
@@ -61,14 +74,30 @@ direction---sets a vote-level bar of 63.7\% on the held-out window;
 (iii) a trained challenger, a family of structured-feature models whose
 \emph{null result} is itself informative: nothing in the
 pre-decision metadata adds stable signal beyond who the justice is
-(Section~\ref{sec:protocol}); and (iv) the sealed, hash-frozen test
-protocol under which the remaining conditions (zero-shot, persona
-fine-tuning, retrieval) have since been judged
-(Sections~\ref{sec:protocol} and~\ref{sec:results}).
+(Section~\ref{sec:protocol}); (iv) the sealed, hash-frozen exam on
+fifty 5--4 decisions, executed exactly once under pre-registered
+conditions---zero-shot, persona, retrieval, and the re-fit ideological
+prior---whose primary outcome is a null: personalization does not
+improve case-direction prediction over the zero-shot (59.2\% against
+61.2\%, $p=1.00$), while the re-fit ideological prior itself collapses
+to a coin flip at case level on the same one-vote-margin decisions
+(Section~\ref{sec:results}); and (v) a pre-registered mechanistic
+decomposition of what personalization \emph{did} do: it displaces the
+simulated ideological dial, the biographical prompt rather than the
+fine-tuned adapter does the moving, a pre-registered stylistic account
+of persona quality is falsified ($\rho=-0.72$), and personas misvote
+on the very training cases whose texts they absorbed
+(Section~\ref{sec:results}).
 
 We emphasize what this paper does not claim. It does not claim that
 Supreme Court votes are unpredictable; two decades of literature and
-our own baselines say otherwise. And it does not
-treat the 63.7\% bar as trivial: as Section~\ref{sec:protocol} shows,
-three families of supervised models failed to clear it on the same
-rows, which is precisely why the bar is interesting.
+our own baselines say otherwise. It does not treat the 63.7\% bar as
+trivial: as Section~\ref{sec:protocol} shows, three families of
+supervised models failed to clear it on the same rows, which is
+precisely why the bar is interesting. And it does not claim that
+personalization is inert: the persona condition measurably changes
+vote-level behavior and the model's ideological posture---what it
+never becomes is better prediction of the Court's hardest cases. The
+displacement of the simulated dial is a property of the model and its
+training distribution, not a causal claim about the justices
+themselves.

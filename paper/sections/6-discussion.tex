@@ -26,51 +26,85 @@ modern, 5--4-heavy window, the honest point of comparison is
 closer to our setting, and the 63.7\% bar is what an
 ideology-only adversary achieves when unanimity is gone.
 
-\subsection{What the null makes the text conditions more
-interesting, not less}
+\subsection{The sealed exam delivered the designed outcome}
 
 Had a structured challenger cleared the bar, the persona experiment
 would have been partially redundant: some of the textual signal
-would already be recoverable from codes. The null result does the
-opposite---it makes the text conditions the natural next probe. But
-we state the inference carefully: the M3a failure shows that the
-\emph{tested} structured representation (issue area, lower-court
-disposition, term, argument duration, and their pairwise
-interactions) does not beat the ideological rule on this window. It
-does not show that all non-textual information is exhausted: party
-characteristics, counsel characteristics, finer-grained temporal
-features, institutional signals, or richer encodings of the case
-file could still carry residual signal that our codes and model
-families did not capture. What the null does establish is narrower
-and firmer: any future claim of improvement must now be measured
-against a known, pre-registered adversary, and the cheapest rich
-representation of the case that remains untested is its text. The
-persona condition (B) tests the strongest version of that probe ---
-that any residual textual signal is \emph{individual} and
-\emph{prospective} --- and the stylometry lineage~\citep{mosteller1964,juola2006} gives it a principled footing: style is known to be persistent and hard to
-fake, so a fine-tuned adapter is a reasonable instrument for
-measuring whether style and substance are entangled.
+would already be recoverable from codes. The M3a null did the
+opposite---it made the text conditions the critical path---and the
+seal has now been broken on them, exactly once, under the
+pre-registered protocol. The persona condition was the strongest
+version of that probe: any residual textual signal would have to be
+\emph{individual} and \emph{prospective}, and the stylometry
+lineage~\citep{mosteller1964,juola2006} gave the instrument a
+principled footing, since style is known to be persistent and hard
+to fake. The result is the outcome the protocol was built to
+deliver cleanly, not a failure state. On the primary
+endpoint---case-direction accuracy on the fifty hash-frozen 5--4
+decisions---the persona scores 59.2\% against the zero-shot's
+61.2\%, three discordant cases apart (exact McNemar, $p=1.00$); the
+point estimate sits two points on the wrong side of zero, and the
+interval admits no honest reading except no detectable gain. The
+retrieval condition fares worse (53.1\%). On the transparent
+window, the same comparison had shown a $+4.9$-point edge for the
+persona, not significant; on the sealed exam the sign flips.
+Case-level deltas of this magnitude are noise-dominated at these
+sample sizes---which is precisely why the seal, and the one-shot
+pre-registered test it protects, existed.
 
-\subsection{Calibrating expectations for the Final Test}
+The re-fit ideological prior sharpens the reading from the other
+side. On the same one-vote-margin decisions it collapses to a coin
+flip at case level (50.0\%), while at vote level it still dominates
+every language condition (75.9\% against 50--60\%). Close cases
+remove exactly the case-level margin that ideology exploits
+elsewhere, and none of the conditions---statistical rule or
+language model---does much beyond the always-conservative majority
+class. To our knowledge, this is the cleanest public evidence yet
+that judicial subjectivity, beyond ideology, is not extractable
+from the written record by a persona pipeline at this scale, under
+a sealed holdout with audited anti-memorization checks. We phrase
+the scope exactly: the claim is not that all textual signal is
+absent---richer models, other windows, or full-dossier encodings
+may yet find some---it is that the strongest individual-prospective
+probe, run under the strongest integrity constraints we could
+construct, found none.
 
-The sealed fifty are 5--4 decisions, which the folklore of court
-watching regards as the least predictable class; and the 63.7\% bar
-was computed on the full evaluation window, not on 5--4s specifically.
-The protocol therefore re-fits the ideological baseline on the
-sealed-excluded training window and evaluates it on the sealed
-population itself: the Final Test comparator is \emph{B4 on the
-5--4s}, not the general-window figure, and the report will carry
-both bars side by side (the pre-registered analysis addendum fixes
-this reading). Because the sealed population is deliberately harder
-than the window the bar was computed on, the two numbers may differ
-substantially, and comparing final conditions to the general-window
-bar directly would overstate their performance. Both facts cut
-against the persona condition clearing the bar
-on the holdout, and the honest prior is that the decisive test may return
-``no difference''. We stress that this is a designed outcome, not a
-failure state: a tight null on a sealed, pre-registered holdout
-with per-justice adapters and audited anti-memorization checks
-would be, to our knowledge, the cleanest public evidence yet that
-judicial subjectivity, beyond ideology, is not extractible from the
-written record---a claim that would stand regardless of how much compute
-a future replicant throws at it.
+\subsection{Why: the persona learns the voice, not the vote}
+
+A null invites the question the mechanistic half of the experiment
+was pre-registered to answer: what did personalization actually do
+to the model? Three probes converge on one answer. First, it moved
+votes without moving outcomes: thirty-seven discordant votes
+against the zero-shot on the sealed set, a nominal vote-level edge
+($p=.047$, secondary, unadjusted) that never converts into a single
+case-level gain. Second, it moved the model's ideological posture
+rather than its judgment: on the sealed exam every simulated
+justice votes more conservatively than the justice it imitates, and
+on the transparent window, where the arms decompose, the
+biographical prompt does most of the moving---it lifts the
+simulated liberal seats substantially toward their justices'
+records (Sotomayor $+0.39$) while barely moving the conservative
+ones---while the fine-tuned adapter's marginal contribution on top
+of the prompt never exceeds a tenth and is negative for its two
+pre-registered targets. Identity injected in the prompt is not
+behavior learned by the adapter. Third, the accounts that would
+have made persona quality legible fail on contact with the data:
+the pre-registered stylistic story---that the most distinctive pens
+yield the best personas---is falsified ($\rho=-0.72$, the sign
+opposite the prediction), with fidelity instead tracking each
+justice's alignment with the base model's conservative default; and
+the auto-coherence probe shows personas misvoting on the very
+training cases whose texts they absorbed, the relationship inverted
+for four of the seven adapters. The adapter has seen the justice's
+words; it did not learn the vote that produced them.
+
+The surface style transfers; the decision function does not. What
+personalization learned is the voice, and what prediction needed
+was the vote---and on this evidence the two are separable: a model
+can absorb a justice's prose without absorbing anything that
+predicts that justice's hardest calls. This is the sense in which
+the null is informative rather than empty. It separates two things
+the literature on judicial prediction and the literature on
+stylometry had reason to believe were entangled, and it locates the
+predictable component of a close decision in who the justice is,
+not in how the justice writes.

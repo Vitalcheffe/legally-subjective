@@ -1,32 +1,29 @@
 \section{Conclusion}\label{sec:conclusion}
 
-This working paper filed the first half of a pre-registered
-experiment on the predictability of Supreme Court votes. The
-frozen corpus exists, is hash-chained, and is public; the
-statistical baselines are committed, and the strongest of them ---
-one bit of revealed ideology per justice---sets a vote-level bar
-of 63.7\% on the held-out window; and a trained challenger,
-armed with everything the structured case file knows before the
-decision, failed to clear the bar with three model families and a
-clean ablation explaining why. The predictable part of a modern
-justice's vote, to the resolution that the tested metadata can
-see, is the
-justice.
+This paper filed both halves of a pre-registered experiment on the
+predictability of Supreme Court votes. The frozen corpus exists, is
+hash-chained, and is public; the strongest statistical baseline---one
+bit of revealed ideology per justice---set a vote-level bar of 63.7\%
+that three families of structured challengers failed to clear; and the
+sealed fifty were scored exactly once, by a zero-shot reader, a
+retrieval reader, and nine per-justice personas (seven QLoRA adapters
+and, by pre-inscription, two biographical-prompt-only seats). The
+predictable part of a modern justice's vote, to the resolution that
+the tested metadata can see, is the justice. The written record was
+the remaining candidate, and the strongest individual-prospective
+probe of it returned null: the persona did not improve prediction of
+the Court's hardest cases.
 
-The second half is where the project's real question lives. The
-same corpus---its 793 distinct opinion texts collected, normalized,
-and audited---
-will face the sealed fifty with a zero-shot reader, a retrieval
-reader, and nine per-justice persona adapters trained on each
-justice's own past words---each condition pre-registered, each
-adapter audited for memorization, and each result, positive or
-null, filed as a finding. The experiment was designed so that
-either answer will be worth reading: a persona that beats the
-zero-shot reader on unseen future cases would be, to our knowledge,
-the first
-sealed-holdout evidence that a justice-specific textual signal
-carries vote information; a persona that does not would be, to our
-knowledge, the cleanest
-evidence yet that, beyond ideology, the written record keeps its
-counsel. The bar is set, the seal is frozen, and the remaining
-variable is the text.
+What the persona did instead is now mapped. It moved individual votes
+without moving outcomes; it made every simulated justice vote more
+conservatively than the justice it imitates; the moving was done by
+the biographical prompt, not the fine-tuned adapter; and the
+pre-registered accounts of persona quality failed where they were
+testable and were falsified where they were decisive. The adapter
+absorbs the voice and withholds the vote. All code, frozen artifacts,
+and sealed predictions are public, so the finding is not an appeal to
+authority but an invitation: the design survives replication at
+larger scale unchanged, and any future claim that personalization
+improves judicial prediction now has a pre-registered null to beat.
+Beyond ideology, at the scale and under the constraints tested here,
+the written record keeps its counsel.

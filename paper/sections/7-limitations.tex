@@ -18,12 +18,13 @@ benches changed twice, 5--4 rates are high, and the ideological
 middle (Kennedy, then Roberts) moved. Consequences are concrete ---
 the training window contains no votes at all for Barrett and
 Jackson, so challengers receive no signal for them, and the B4
-comparison excludes them by the $n \ge 20$ rule. The Final Test
-report therefore separates \emph{known-justice forecasting} (justices
-with training history, where B4 and the persona are both defined)
-from \emph{new-justice forecasting} (Barrett, Jackson: B4 is
-undefined by construction, the persona is impossible, and coverage
-falls to the zero-shot and retrieval conditions). These are
+comparison excludes them by the $n \ge 20$ rule. The sealed-exam
+results therefore separate \emph{known-justice forecasting} (justices
+with training history, where the prior and the persona are both
+defined) from \emph{new-justice forecasting} (Barrett, Jackson: the
+prior is undefined by construction, the adapter is impossible, and
+their persona degenerates, by pre-inscription, to the biographical
+prompt alone). These are
 different questions---a model that cannot know a new justice is not
 the same failure as one that knows a justice and still misses---and
 aggregating across that boundary without labeling it would blur
@@ -39,23 +40,28 @@ selected by grouped cross-validation inside the training window and
 the three model families were fixed in advance, the transparent
 test was run once, on data we had already seen while computing
 baselines; the multiple comparisons across three challengers are
-not corrected. The sealed fifty exist precisely to absorb this
-residual degrees-of-freedom problem at the Final Test.
+not corrected. The sealed fifty existed precisely to absorb this
+residual degrees-of-freedom problem, and the primary outcome was
+scored under that seal exactly once.
 
-\paragraph{The text collection is complete but untested.}
-The opinion-text corpus (M1.5) is now complete: all 1{,}778 targeted
+\paragraph{The text conditions are now tested.}
+The opinion-text corpus (M1.5) is complete: all 1{,}778 targeted
 opinion texts were collected, normalized, and deduplicated to 793
 distinct texts (the remainder are documented textual duplicates
 across docket aliases), with a zero-leak audit of fourteen checks
-committed and re-executed on every push. Every textual condition
-nevertheless remains untested pending the free-tier GPU training of
-the persona adapters, and this paper's null result bounds only the
-\emph{structured} world. We regard the text as the live question,
-and we flag the risk we
-cannot exclude: the eventual persona adapters may overfit
-memorized opinion content rather than transferable style ---
-mitigations (min-$k$\% probes, cloze audits, temporal splits
-per justice) are pre-committed in the repository protocol.
+committed and re-executed on every push. The memorization risk we
+flagged before training was checked with the pre-committed audits
+after the adapters were trained: the min-20\% log-probability probe
+never flags an adapter (base-vs-adapter deltas stay below half a nat
+on all seven, against a one-nat flag), and verbatim cloze recall is
+zero for base and adapter alike on every sampled span. The
+auto-coherence probe (Section~\ref{sec:results}) adds the sharpest
+evidence from the opposite side: personas misvote on the very cases
+whose texts they absorbed, so whatever the adapters learned, it was
+not the votes. This paper's null now bounds the structured world and
+the tested textual probe---not all textual representations (richer
+models, full dossiers, other windows remain open), and not other
+modalities.
 
 \paragraph{One rater of the pipeline.}
 The corpus fusion, the docket matching, and the sealed selection

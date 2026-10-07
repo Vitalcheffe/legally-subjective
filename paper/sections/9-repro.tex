@@ -8,7 +8,8 @@ frozen corpus with recomputed hashes); the baselines are
 \texttt{scripts/m2\_baselines.py}; the M3a challengers, including
 the grouped cross-validation, the McNemar tests, and the ablation,
 are \texttt{scripts/m3a\_train.py}. The paper figures are produced
-by \texttt{scripts/paper\_figures.py}. All randomness is seeded and
+by \texttt{scripts/paper\_figures.py} and
+\texttt{scripts/paper\_figures\_d1bis.py}. All randomness is seeded and
 the seeds are printed in the outputs; re-running the M3a script
 reproduces the numbers of Table~\ref{tab:m3a} exactly.
 
@@ -26,10 +27,24 @@ and the coding caveats are documented in the repository's
 The opinion-text corpus (M1.5) is complete: 1{,}778 collected texts,
 normalized and deduplicated to 793 distinct documents with full
 provenance, committed with a fourteen-check zero-leak audit that the
-repository's continuous integration re-executes on every push. The
-remaining artifact under construction is the persona training itself
-(M3b), running on free-tier GPU sessions; its completion triggers the
-pre-committed
-text conditions---at which point this paper's structured null
-becomes the fixed background against which the persona question
-is finally asked.
+repository's continuous integration re-executes on every push.
+
+The GPU-dependent stages are frozen as executed artifacts rather
+than re-runnable scripts, and the freeze is the point: a sealed exam
+that can be re-taken is not sealed. The persona training (M3b) ran
+on free-tier GPU sessions under the pre-committed notebook
+(\texttt{notebooks/m3b\_qlora\_personas.ipynb}, machinery audited in
+\texttt{results/m3b\_*}), and its training report---including the
+anti-memorization audits cited in
+Section~\ref{sec:limitations}---is exported by the finalize session.
+The sealed exam (M4) was scored once: predictions were frozen and
+committed (\texttt{results/m4\_predictions.json}, commit 2aff6a0)
+before the answer key existed, and the scoring
+(\texttt{results/m4\_report.json}) is a deterministic function of
+those predictions and the frozen corpus. The mechanistic probes E1
+and E3 ran under a kernel frozen before execution (tag
+\texttt{a1-freeze}); their outputs are committed under
+\texttt{results/a1\_*.json}. Inter-run comparisons in this paper
+follow the pre-registered rule of quoting each experiment's internal
+numbers from its own single seeded run, never mixing runs in one
+computation.

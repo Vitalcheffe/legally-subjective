@@ -69,38 +69,39 @@ Project and code: \href{https://github.com/Vitalcheffe/legally-subjective}{githu
 \rule{0.28\linewidth}{0.6pt}
 \end{center}
 \noindent\textbf{Abstract.}
-Can a language model predict how a U.S. Supreme Court justice will vote
-from the public case file alone, without the verdict? And if the model is
-taught one justice's own writing --- a persona distilled from their past
-opinions --- does it improve on that justice's \emph{future} cases? We
-frame both outcomes as publishable results and report the first two
-milestones of a pre-registered experiment conducted entirely on public
-data at zero cost. We assemble a frozen, hash-chained corpus of 569
-argued cases (OT2015--OT2023, 13 justices, 4{,}569 coded
-justice$\times$case votes) by fusing CourtListener metadata with
-Supreme Court Database votes. Before any model is trained, statistical
-baselines fix the price of admission: predicting each justice's vote as
-their modal ideological direction from the training window achieves
-\textbf{63.7\%} accuracy (Wilson 95\% CI [61.3; 65.9]) at the vote
-level on the held-out window --- the bar. We then train
-structured-feature challengers (logistic regression, gradient boosting,
-and interaction models over issue area, lower-court disposition, term,
-and argument length, with 50 sealed 5--4 cases excluded from every
-split): none beats the bar (58.6--60.4\%; McNemar $p \le 0.047$). A
-feature ablation shows justice identity is the only stable signal
-($-8.6$ points without it). We are explicit about what this null does
-and does not establish: the \emph{tested} structured representation
-does not beat a per-justice ideological baseline under this temporal
-protocol --- it does not show that all non-textual information is
-exhausted, nor that the residual signal, if any, is textual. The
-remaining pre-registered conditions (zero-shot, persona fine-tuning,
-retrieval) probe the written record against a sealed holdout of fifty
-5--4 decisions, where the ideological baseline is re-fit and
-re-evaluated on that population itself as the like-for-like comparator.
+We ask how predictable U.S. Supreme Court decisions are from public
+information, and whether modeling individual justices improves that
+predictability. We assemble a frozen, hash-chained corpus of 569 argued
+cases (OT2015--OT2023, 13 justices, 4{,}569 coded votes) and fix the
+price of admission with pre-registered baselines: a per-justice
+ideological rule that reaches 63.7\% of votes on the held-out window,
+a bar that three families of structured-feature challengers fail to
+clear. The pre-registered test of the written record is a sealed exam
+on fifty hash-frozen 5--4 decisions---zero-shot, persona
+(biographical prompt plus a QLoRA adapter fine-tuned on each justice's
+past opinions), retrieval, and the re-fit ideological prior---with
+predictions frozen before any answer key existed and scored exactly
+once. Personalization does not improve prediction of the Court's
+hardest cases: on the primary endpoint, case-direction accuracy, the
+persona scores 59.2\% against the zero-shot's 61.2\% (exact McNemar,
+$p=1.00$), and on these one-vote-margin decisions even the ideological
+prior collapses to a coin flip at case level (50.0\%), while at vote
+level it still dominates every language condition (75.9\% against
+50--60\%). Personalization does, however, change the model: it moves
+individual votes (nominally, $p=.047$, unadjusted) without improving
+case-direction prediction; every simulated justice votes more
+conservatively than the justice it imitates; the biographical prompt,
+not the fine-tuned adapter, does most of the moving; a pre-registered
+stylistic account of persona quality is falsified ($\rho=-0.72$); and
+personas misvote on the very training cases whose texts they absorbed.
+The persona learns the voice, not the vote: the predictable component
+of a close decision remains who the justice is, not how the justice
+writes. All code, frozen artifacts, and sealed predictions are public.
 
 \vspace{4pt}
 \noindent\textbf{Keywords:} judicial prediction; Supreme Court;
-pre-registration; supervised learning; attitudinal model; open data.
+pre-registration; negative result; large language models;
+personalization; attitudinal model; open data.
 
 \begin{center}
 \rule{0.28\linewidth}{0.6pt}
