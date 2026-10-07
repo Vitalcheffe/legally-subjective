@@ -43,25 +43,74 @@ opinions; the open question---the one this experiment isolates ---
 is whether that stylistic footprint carries \emph{decision-relevant}
 information beyond the ideology bit, or merely rhetorical habits.
 
-\paragraph{Language models and efficient fine-tuning.}
-The tooling for the persona condition is recent. QLoRA
-\citep{dettmers2023} makes full-model fine-tuning tractable on free
-single-GPU tiers by quantizing the base model and training low-rank
-adapters, and open-weight families such as Llama~3
-\citep{llama3} provide a competent base. This is what converts the
-persona question from an institutional project into a zero-budget
-one: nine adapters, one per justice, trained on free-tier compute,
-each sealed alongside the data that produced it.
+\paragraph{Language models as forecasters of the Court.}
+A newer line replaces the regression with a prompt. \citet{stillwell2026}
+evaluate four frontier models as forecasters of Supreme Court
+decisions and conclude that much of the models' justice-level
+accuracy reflects the Court's ordinary ideological alignment rather
+than case-specific legal analysis---a conclusion our sealed exam
+reaches from the opposite direction, by fixing the ideological prior
+as the comparator: at the vote level the per-justice prior dominates
+every language condition (75.9\% against 50--60\%), and at the case
+level the persona adds nothing to the zero-shot. \citet{posner2025} run the mirror-image
+experiment, asking whether a model can replicate the decisions of
+human judges in a factorial experiment originally conducted on U.S.
+federal judges. What that line has not yet produced is the test this
+experiment runs: a sealed, pre-registered evaluation in which the
+model is conditioned on one decision-maker alone---biography and a
+fine-tuned adapter---and asked to predict that justice's own future
+votes against a like-for-like statistical prior. The slot is exactly
+the one our exam fills, and the null it returns---a persona that
+changes the model without improving its predictions---is the boundary
+condition the prompt-era claims must now clear.
+
+\paragraph{Simulated respondents and personas.}
+The persona condition also lands inside the debate on
+language-model-simulated people. \citet{argyle2023} show that
+biography-conditioned models can reproduce the survey-response
+distributions of specific human subpopulations---``silicon
+samples''; \citet{horton2023} proposes such agents as simulated
+\emph{homo silicus} for economic inquiry; \citet{dillion2023} ask
+whether models can replace human research participants altogether.
+Our null is a boundary condition on the optimistic reading, and we
+state its scope precisely. Silicon samples are validated against
+population distributions of stated attitudes; we test an individual
+expert against that expert's own future record, on the hardest
+decisions in the domain, under seal. At that resolution---biography
+plus fine-tuning on the person's own corpus---the simulated persona
+acquires surface posture (a displaced ideological dial, a
+recognizable style) but not the decision function (misvotes on its
+own training cases; the stylistic account of fidelity falsified).
+The two results are compatible: a model can proxy the marginals of a
+population's attitudes while carrying no individual decision signal
+at the one-vote margin.
+
+\paragraph{Tooling.}
+QLoRA \citep{dettmers2023} makes full-model fine-tuning tractable on
+free single-GPU tiers by quantizing the base model and training
+low-rank adapters, which is what converts the persona question from
+an institutional project into a zero-budget one. The base itself,
+Qwen2.5-3B-Instruct \citep{qwen25}, is deliberately small: the
+design asks whether personalization adds signal, not whether scale
+supplies it. Seven adapters were trained---one per justice with
+training-window opinions---plus two pre-inscribed prompt-only seats
+for the justices without any, each adapter sealed alongside the data
+that produced it.
 
 \paragraph{Positioning.}
 Against this background, the present project narrows the claim in
-three ways that we believe matter for honesty of the result. The
+four ways that we believe matter for honesty of the result. The
 window is short and modern (OT2015--OT2023, an era of narrow
 majorities), so historical unanimity cannot inflate accuracy. The
 evaluation is pre-registered and forward-holding: a sealed set of
 fifty 5--4 decisions, chosen deterministically before any model
-touched them, is the only arbiter of the final conditions. And the
-bar is fixed \emph{before} the challengers run, at the vote level,
-where the attitudinal bit is strongest---63.7\% on our window ---
-so that any reported improvement is an improvement over ideology
-itself, not over a straw man.
+touched them, was the only arbiter of the final conditions, and it
+was scored exactly once. The bar was fixed \emph{before} the
+challengers ran, at the vote level, where the attitudinal bit is
+strongest---63.7\% on our window---so that any reported improvement
+is an improvement over ideology itself, not over a straw man. And
+when the answer came back null, the protocol did not stop at the
+headline: the pre-registered probes that explain the null---the
+prompt-versus-adapter decomposition, the falsified stylistic
+account, and the training-case auto-coherence failure---are what
+make the null informative rather than empty.
