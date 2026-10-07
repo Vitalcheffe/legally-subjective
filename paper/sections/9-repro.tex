@@ -1,8 +1,9 @@
 \section{Reproducibility}\label{sec:repro}
 
-Every number in this paper regenerates from the public repository
+Every CPU-side number in this paper regenerates from the public repository
 \url{https://github.com/Vitalcheffe/legally-subjective} with three commands
-and no credentials. The corpus rebuild chain is
+and no credentials; the GPU-dependent stages are frozen as executed
+artifacts, as described at the end of this section. The corpus rebuild chain is
 \texttt{scripts/build\_corpus.py} (raw sources $\rightarrow$
 frozen corpus with recomputed hashes); the baselines are
 \texttt{scripts/m2\_baselines.py}; the M3a challengers, including

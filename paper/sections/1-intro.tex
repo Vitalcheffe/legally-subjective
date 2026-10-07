@@ -24,8 +24,8 @@ window, against a pre-registered bar? Second---and this is the
 experiment's live wire---if a language model is fine-tuned on one
 justice's own past opinions, does it predict that justice's
 \emph{future} votes better than the same model without the persona?
-We built a stringent test of the second question. It did not improve
-prediction: on the sealed holdout of fifty hash-frozen 5--4
+We built a stringent test of the second question. It did not
+detectably improve prediction: on the sealed holdout of fifty hash-frozen 5--4
 decisions, scored once, the persona called one case right that the
 zero-shot missed and two cases wrong that the zero-shot called right
 (exact McNemar, $p=1.00$), and the rest of the experiment is the
@@ -54,8 +54,9 @@ fifty-case test set are frozen in the repository, with the selection
 seed and the SHA-256 of the sealed list published in advance. There is
 no second holdout and no post hoc tuning. Second, the experiment is
 built to be audited by a stranger: the corpus is assembled from public
-sources with every raw file hash-chained, and every number in this
-paper regenerates from scripts in the repository. Third, the budget is
+sources with every raw file hash-chained; every CPU-side number in this
+paper regenerates from scripts in the repository, and the GPU-dependent
+stages are preserved as frozen, hash-verified artifacts. Third, the budget is
 zero by construction---public data, free API tiers, and free-tier
 compute. We present this strictly as a reproducibility and
 accessibility constraint, not as evidence of scientific quality: it
@@ -77,8 +78,8 @@ pre-decision metadata adds stable signal beyond who the justice is
 (Section~\ref{sec:protocol}); (iv) the sealed, hash-frozen exam on
 fifty 5--4 decisions, executed exactly once under pre-registered
 conditions---zero-shot, persona, retrieval, and the re-fit ideological
-prior---whose primary outcome is a null: personalization does not
-improve case-direction prediction over the zero-shot (59.2\% against
+prior---whose primary outcome is a null: personalization brings no
+detectable gain in case-direction prediction over the zero-shot (59.2\% against
 61.2\%, $p=1.00$), while the re-fit ideological prior itself collapses
 to a coin flip at case level on the same one-vote-margin decisions
 (Section~\ref{sec:results}); and (v) a pre-registered mechanistic

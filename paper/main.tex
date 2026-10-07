@@ -41,7 +41,7 @@
 \usepackage[htt]{hyphenat}  % allow hyphenation in \texttt
 
 \hypersetup{
-    pdftitle={Legally Subjective: How Much U.S. Supreme Court Vote Predictability Survives a Strong Ideological Baseline? A Pre-Registered, Zero-Budget Experiment on Public Data},
+    pdftitle={Legally Subjective: How Predictable Are U.S. Supreme Court Decisions from Public Data? Testing Statistical Baselines, Language Models, and Judge-Specific Personalization},
     pdfauthor={Amine Harch el Korane},
     pdfsubject={Computational legal prediction, judicial behavior, pre-registered baselines},
     pdfkeywords={Supreme Court, judicial prediction, machine learning, pre-registration, SCDB, CourtListener}
@@ -51,9 +51,11 @@
 
 % ================= title block (hand-set, no \maketitle) =================
 \begin{center}
-{\LARGE\bfseries Legally Subjective: How Much U.S. Supreme Court Vote\\[3pt]
-Predictability Survives a Strong Ideological Baseline?\\[3pt]
-A Pre-Registered, Zero-Budget Experiment on Public Data\par}
+{\LARGE\bfseries Legally Subjective: How Predictable Are U.S. Supreme Court\\[3pt]
+Decisions from Public Data?\par}
+\vspace{6pt}
+{\large Testing Statistical Baselines, Language Models,\\[3pt]
+and Judge-Specific Personalization\par}
 \vspace{14pt}
 {\normalsize Amine Harch el Korane\textsuperscript{1}\par}
 \vspace{2pt}
@@ -81,8 +83,8 @@ on fifty hash-frozen 5--4 decisions---zero-shot, persona
 (biographical prompt plus a QLoRA adapter fine-tuned on each justice's
 past opinions), retrieval, and the re-fit ideological prior---with
 predictions frozen before any answer key existed and scored exactly
-once. Personalization does not improve prediction of the Court's
-hardest cases: on the primary endpoint, case-direction accuracy, the
+once. Personalization does not detectably improve prediction of the
+Court's hardest cases: on the primary endpoint, case-direction accuracy, the
 persona scores 59.2\% against the zero-shot's 61.2\% (exact McNemar,
 $p=1.00$), and on these one-vote-margin decisions even the ideological
 prior collapses to a coin flip at case level (50.0\%), while at vote
@@ -94,9 +96,10 @@ conservatively than the justice it imitates; the biographical prompt,
 not the fine-tuned adapter, does most of the moving; a pre-registered
 stylistic account of persona quality is falsified ($\rho=-0.72$); and
 personas misvote on the very training cases whose texts they absorbed.
-The persona learns the voice, not the vote: the predictable component
-of a close decision remains who the justice is, not how the justice
-writes. All code, frozen artifacts, and sealed predictions are public.
+The persona learns the voice, not the vote: on this evidence, the
+predictable component of a close decision remains who the justice is,
+not how the justice writes. All code, frozen artifacts, and sealed
+predictions are public.
 
 \vspace{4pt}
 \noindent\textbf{Keywords:} judicial prediction; Supreme Court;

@@ -12,10 +12,13 @@ a random forest over 628 features and nearly two centuries of
 decisions (1816--2013), reporting 70.2\% accuracy at the case level
 and 71.9\% at the individual vote level, and concluding that the
 Court behaves in a way that is, in their words, remarkably consistent
-with a machine-learning account. Both efforts, however, evaluate
-\emph{in sample across history}: the models see several centuries ---
-including eras with much higher unanimity rates---and predict votes
-whose contemporaneous context is far removed from today's Court.
+with a machine-learning account. The two efforts stop short of the
+modern test in different ways: \citet{ruger2004}'s forecast was
+prospective, but for a single term, with its model fitted on earlier
+years; \citet{katz2017} evaluates \emph{in sample across history}---the
+model sees two centuries, including eras with much higher unanimity
+rates, and predicts votes whose contemporaneous context is far removed
+from today's Court.
 
 \paragraph{The attitudinal model.}
 Political science supplies the theoretical prior for why such models
@@ -48,11 +51,17 @@ A newer line replaces the regression with a prompt. \citet{stillwell2026}
 evaluate four frontier models as forecasters of Supreme Court
 decisions and conclude that much of the models' justice-level
 accuracy reflects the Court's ordinary ideological alignment rather
-than case-specific legal analysis---a conclusion our sealed exam
-reaches from the opposite direction, by fixing the ideological prior
-as the comparator: at the vote level the per-justice prior dominates
-every language condition (75.9\% against 50--60\%), and at the case
-level the persona adds nothing to the zero-shot. \citet{posner2025} run the mirror-image
+than case-specific legal analysis. Their result supplies context for
+ours, not confirmation of it: the designs ask different questions, and
+ours is the stricter one---conditioning a model on one justice alone
+(biography plus a fine-tuned adapter) and asking it to predict that
+justice's own sealed 5--4 votes against a like-for-like statistical
+prior, rather than forecasting the ordinary docket with a frontier
+model. Where the two designs overlap, they agree: at the vote level,
+the per-justice prior dominates every language condition (75.9\%
+against 50--60\%). Where ours stands alone, it returns the null at the
+center of this paper: at the case level, the persona adds no
+detectable gain to the zero-shot. \citet{posner2025} run the mirror-image
 experiment, asking whether a model can replicate the decisions of
 human judges in a factorial experiment originally conducted on U.S.
 federal judges. What that line has not yet produced is the test this
@@ -61,8 +70,9 @@ model is conditioned on one decision-maker alone---biography and a
 fine-tuned adapter---and asked to predict that justice's own future
 votes against a like-for-like statistical prior. The slot is exactly
 the one our exam fills, and the null it returns---a persona that
-changes the model without improving its predictions---is the boundary
-condition the prompt-era claims must now clear.
+changes the model without improving its predictions---is a boundary
+condition that prompt-era claims should now be tested against, not a
+ceiling they cannot pass.
 
 \paragraph{Simulated respondents and personas.}
 The persona condition also lands inside the debate on
