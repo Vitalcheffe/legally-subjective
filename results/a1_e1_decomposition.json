@@ -1,0 +1,499 @@
+{
+ "schema": "a1-e1/1",
+ "experiment": "E1 — décomposition causale du dial (prompt-swap, 3 bras N/P/A, fenêtre transparente)",
+ "label": "confirmatoire DANS son propre cadre (hypothèses pré-inscrites) — SANS retombée sur le test primaire M4",
+ "preregistration": "docs/15-ASYMETRIE-PHASE1-PREENREGISTREMENT.md §2 E1 — figé au tag a1-freeze avant exécution",
+ "pinned": {
+  "tag": "a1-freeze",
+  "head": "6d713e40b943fdf86abd81c30cc1b608365be25d",
+  "adapters_zip_sha256": "f46d07f757f2ec410e5f092ae09e1696bef6ef5af377b39b2d0154b5067a2a5b",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "started_utc": "2026-10-06T23:51:23Z",
+  "seed": 271828,
+  "versions": {
+   "python": "3.13.15",
+   "torch": "2.11.0+cu128",
+   "transformers": "4.57.6",
+   "peft": "0.20.0",
+   "gpu": "Tesla T4"
+  }
+ },
+ "window": {
+  "n_casefiles": 211,
+  "n_truth_direction": 205,
+  "sealed_leaks": 0,
+  "note": "205 = affaires avec vérité direction (phase T) ; la fenêtre complète du builder gelé = 211 casefiles, tous utilisés pour les mesures du dial."
+ },
+ "predictions_preregistrees_verbatim": {
+  "(i)": "le bras N présente un défaut conservateur pour tous les sièges",
+  "(ii)": "Δ(P−N) est positif pour les libéraux, faible pour les conservateurs",
+  "(iii)": "Δ(A−P) est négatif pour Kagan et Sotomayor (l'adaptateur efface le gain du prompt)"
+ },
+ "preinscribed_evaluation": {
+  "(i)_defaut_conservateur_N": {
+   "per_seat": {
+    "JGRoberts": 0.1137,
+    "CThomas": 0.1137,
+    "SAAlito": 0.1137,
+    "SSotomayor": 0.1137,
+    "EKagan": 0.1137,
+    "NMGorsuch": 0.1137,
+    "BMKavanaugh": 0.1137,
+    "ACBarrett": 0.1137,
+    "KBJackson": 0.1137
+   },
+   "confirmed": true
+  },
+  "(ii)_effet_prompt": {
+   "delta_P_minus_N": {
+    "JGRoberts": -0.0947,
+    "CThomas": -0.1042,
+    "SAAlito": -0.1042,
+    "SSotomayor": 0.3887,
+    "EKagan": -0.0616,
+    "NMGorsuch": -0.09,
+    "BMKavanaugh": 0.0,
+    "ACBarrett": -0.0663,
+    "KBJackson": 0.0617
+   },
+   "liberals": [
+    "SSotomayor",
+    "EKagan",
+    "KBJackson"
+   ],
+   "confirmed_liberals_positive": false,
+   "mean_delta_liberals": 0.1296,
+   "mean_delta_conservatives": -0.0766,
+   "confirmed_contrast": true
+  },
+  "(iii)_effet_adaptateur": {
+   "delta_A_minus_P": {
+    "BMKavanaugh": 0.0996,
+    "CThomas": 0.0095,
+    "EKagan": -0.0284,
+    "JGRoberts": 0.0284,
+    "NMGorsuch": -0.0237,
+    "SAAlito": 0.0047,
+    "SSotomayor": -0.0142
+   },
+   "targets": [
+    "EKagan",
+    "SSotomayor"
+   ],
+   "confirmed": true
+  }
+ },
+ "measures": {
+  "JGRoberts": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.019,
+    "mean_p_liberal": 0.2984
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.0474,
+    "mean_p_liberal": 0.3508
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": -0.0947,
+    "mean_p_liberal": -0.0741
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": 0.0284,
+    "mean_p_liberal": 0.0524
+   }
+  },
+  "CThomas": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.0095,
+    "mean_p_liberal": 0.215
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.019,
+    "mean_p_liberal": 0.2168
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": -0.1042,
+    "mean_p_liberal": -0.1575
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": 0.0095,
+    "mean_p_liberal": 0.0018
+   }
+  },
+  "SAAlito": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.0095,
+    "mean_p_liberal": 0.2407
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.0142,
+    "mean_p_liberal": 0.2667
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": -0.1042,
+    "mean_p_liberal": -0.1318
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": 0.0047,
+    "mean_p_liberal": 0.026
+   }
+  },
+  "SSotomayor": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.5024,
+    "mean_p_liberal": 0.5141
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.4882,
+    "mean_p_liberal": 0.5021
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": 0.3887,
+    "mean_p_liberal": 0.1416
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": -0.0142,
+    "mean_p_liberal": -0.012
+   }
+  },
+  "EKagan": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.0521,
+    "mean_p_liberal": 0.3181
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.0237,
+    "mean_p_liberal": 0.2861
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": -0.0616,
+    "mean_p_liberal": -0.0544
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": -0.0284,
+    "mean_p_liberal": -0.032
+   }
+  },
+  "NMGorsuch": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.0237,
+    "mean_p_liberal": 0.2425
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.0,
+    "mean_p_liberal": 0.2358
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": -0.09,
+    "mean_p_liberal": -0.13
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": -0.0237,
+    "mean_p_liberal": -0.0067
+   }
+  },
+  "BMKavanaugh": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3728
+   },
+   "A": {
+    "n": 211,
+    "rate_liberal": 0.2133,
+    "mean_p_liberal": 0.3961
+   },
+   "delta_P_minus_N": {
+    "rate_liberal": 0.0,
+    "mean_p_liberal": 0.0003
+   },
+   "delta_A_minus_P": {
+    "rate_liberal": 0.0996,
+    "mean_p_liberal": 0.0233
+   }
+  },
+  "ACBarrett": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.0474,
+    "mean_p_liberal": 0.3125
+   },
+   "A": null,
+   "delta_P_minus_N": {
+    "rate_liberal": -0.0663,
+    "mean_p_liberal": -0.06
+   }
+  },
+  "KBJackson": {
+   "N": {
+    "n": 211,
+    "rate_liberal": 0.1137,
+    "mean_p_liberal": 0.3725
+   },
+   "P": {
+    "n": 211,
+    "rate_liberal": 0.1754,
+    "mean_p_liberal": 0.4034
+   },
+   "A": null,
+   "delta_P_minus_N": {
+    "rate_liberal": 0.0617,
+    "mean_p_liberal": 0.0309
+   }
+  }
+ },
+ "supplements_non_preinscrits": {
+  "label": "exploratoire (non couvert par le pré-enregistrement)",
+  "accuracy_vote_par_juge_par_bras": {
+   "N": {
+    "ACBarrett": {
+     "k": 103,
+     "n": 193,
+     "accuracy": 0.5337
+    },
+    "BMKavanaugh": {
+     "k": 110,
+     "n": 204,
+     "accuracy": 0.5392
+    },
+    "CThomas": {
+     "k": 121,
+     "n": 202,
+     "accuracy": 0.599
+    },
+    "EKagan": {
+     "k": 67,
+     "n": 204,
+     "accuracy": 0.3284
+    },
+    "JGRoberts": {
+     "k": 111,
+     "n": 204,
+     "accuracy": 0.5441
+    },
+    "KBJackson": {
+     "k": 34,
+     "n": 100,
+     "accuracy": 0.34
+    },
+    "NMGorsuch": {
+     "k": 112,
+     "n": 202,
+     "accuracy": 0.5545
+    },
+    "SAAlito": {
+     "k": 125,
+     "n": 200,
+     "accuracy": 0.625
+    },
+    "SSotomayor": {
+     "k": 65,
+     "n": 204,
+     "accuracy": 0.3186
+    }
+   },
+   "P": {
+    "ACBarrett": {
+     "k": 108,
+     "n": 193,
+     "accuracy": 0.5596
+    },
+    "BMKavanaugh": {
+     "k": 114,
+     "n": 204,
+     "accuracy": 0.5588
+    },
+    "CThomas": {
+     "k": 130,
+     "n": 202,
+     "accuracy": 0.6436
+    },
+    "EKagan": {
+     "k": 68,
+     "n": 204,
+     "accuracy": 0.3333
+    },
+    "JGRoberts": {
+     "k": 119,
+     "n": 204,
+     "accuracy": 0.5833
+    },
+    "KBJackson": {
+     "k": 40,
+     "n": 100,
+     "accuracy": 0.4
+    },
+    "NMGorsuch": {
+     "k": 118,
+     "n": 202,
+     "accuracy": 0.5842
+    },
+    "SAAlito": {
+     "k": 138,
+     "n": 200,
+     "accuracy": 0.69
+    },
+    "SSotomayor": {
+     "k": 90,
+     "n": 204,
+     "accuracy": 0.4412
+    }
+   },
+   "A": {
+    "BMKavanaugh": {
+     "k": 109,
+     "n": 204,
+     "accuracy": 0.5343
+    },
+    "CThomas": {
+     "k": 128,
+     "n": 202,
+     "accuracy": 0.6337
+    },
+    "EKagan": {
+     "k": 70,
+     "n": 204,
+     "accuracy": 0.3431
+    },
+    "JGRoberts": {
+     "k": 121,
+     "n": 204,
+     "accuracy": 0.5931
+    },
+    "NMGorsuch": {
+     "k": 113,
+     "n": 202,
+     "accuracy": 0.5594
+    },
+    "SAAlito": {
+     "k": 135,
+     "n": 200,
+     "accuracy": 0.675
+    },
+    "SSotomayor": {
+     "k": 91,
+     "n": 204,
+     "accuracy": 0.4461
+    }
+   }
+  },
+  "regression_phase_T": {
+   "note": "arm A ≡ condition B phase T (7 sièges adaptés) ; arm P (Barrett/Jackson) ≡ condition B dégradée ; arm N ≡ condition A (vote répliqué). Scoring déterministe → égalité exacte attendue.",
+   "armA_vs_phaseT_B": {
+    "BMKavanaugh": {
+     "a1": 0.5343,
+     "phaseT": 0.5539,
+     "match": false
+    },
+    "CThomas": {
+     "a1": 0.6337,
+     "phaseT": 0.6337,
+     "match": true
+    },
+    "EKagan": {
+     "a1": 0.3431,
+     "phaseT": 0.3333,
+     "match": false
+    },
+    "JGRoberts": {
+     "a1": 0.5931,
+     "phaseT": 0.5931,
+     "match": true
+    },
+    "NMGorsuch": {
+     "a1": 0.5594,
+     "phaseT": 0.5594,
+     "match": true
+    },
+    "SAAlito": {
+     "a1": 0.675,
+     "phaseT": 0.675,
+     "match": true
+    },
+    "SSotomayor": {
+     "a1": 0.4461,
+     "phaseT": 0.4461,
+     "match": true
+    }
+   },
+   "armP_degraded_vs_phaseT_B": {
+    "ACBarrett": {
+     "a1": 0.5596,
+     "phaseT": 0.5648,
+     "match": false
+    },
+    "KBJackson": {
+     "a1": 0.4,
+     "phaseT": 0.44,
+     "match": false
+    }
+   },
+   "armN_vs_phaseT_A": {
+    "a1": 0.5441,
+    "phaseT": 0.5147,
+    "match": false
+   },
+   "all_match": false
+  },
+  "b4_regression": {
+   "vote": 0.6366,
+   "published": 0.6366
+  }
+ },
+ "timings": {
+  "n_queries": 3587,
+  "duration_s": 8495.9
+ }
+}

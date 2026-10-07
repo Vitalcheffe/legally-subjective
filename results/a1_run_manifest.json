@@ -1,0 +1,70 @@
+{
+ "experiment": "A1 — E1+E3 (D1-bis, plan pré-enregistré phase 1)",
+ "status": "OK",
+ "pinned": {
+  "tag": "a1-freeze",
+  "head": "6d713e40b943fdf86abd81c30cc1b608365be25d",
+  "adapters_zip_sha256": "f46d07f757f2ec410e5f092ae09e1696bef6ef5af377b39b2d0154b5067a2a5b",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "started_utc": "2026-10-06T23:51:23Z"
+ },
+ "versions": {
+  "python": "3.13.15",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.6",
+  "peft": "0.20.0",
+  "gpu": "Tesla T4"
+ },
+ "queries": {
+  "e1": 3587,
+  "e3": 421,
+  "total": 4008
+ },
+ "timings_s": {
+  "e1": 8495.9,
+  "e3": 1127.7,
+  "total": 9751.4
+ },
+ "outputs": {
+  "e1_decomposition": {
+   "file": "a1_e1_decomposition.json",
+   "sha256": "7b7280d1be6bea2ebc599ae8e57f43678c35f9fa556834189fdd0775f943ebf5",
+   "bytes": 9792
+  },
+  "e3_autocoherence": {
+   "file": "a1_e3_autocoherence.json",
+   "sha256": "2243a54267b10e93e2fc2c97e5de1b4337cfec6757b8be33a6d83d24a87fa0f7",
+   "bytes": 7924
+  },
+  "e1_predictions": {
+   "file": "a1_e1_predictions.json",
+   "sha256": "0789e97cc192430e31d4bc9d4ed66e265e985cc42740ae510913f129cb24dcae",
+   "bytes": 454694
+  },
+  "e3_predictions": {
+   "file": "a1_e3_predictions.json",
+   "sha256": "214e03039853bd2c4916a6bc287f54a0dfd14f894cc742344a98f3f0fc5bf60c",
+   "bytes": 82992
+  }
+ },
+ "smoke": {
+  "N": {
+   "vote": "conservative",
+   "p_liberal": 0.0675
+  },
+  "P_Kagan": {
+   "vote": "liberal",
+   "p_liberal": 0.867
+  },
+  "A_Kagan": {
+   "vote": "conservative",
+   "p_liberal": 0.363
+  },
+  "determinism_N": true
+ },
+ "labels": {
+  "E1": "confirmatoire dans son propre cadre",
+  "E3": "exploratoire"
+ },
+ "finished_utc": "2026-10-07T02:31:47Z"
+}

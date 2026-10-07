@@ -1,0 +1,356 @@
+{
+ "schema": "a1-e3/1",
+ "experiment": "E3 — auto-cohérence : le persona vote-t-il comme le juge sur SES propres affaires de train ?",
+ "label": "exploratoire",
+ "preregistration": "docs/15-ASYMETRIE-PHASE1-PREENREGISTREMENT.md §2 E3 — figé au tag a1-freeze avant exécution",
+ "pinned": {
+  "tag": "a1-freeze",
+  "head": "6d713e40b943fdf86abd81c30cc1b608365be25d",
+  "adapters_zip_sha256": "f46d07f757f2ec410e5f092ae09e1696bef6ef5af377b39b2d0154b5067a2a5b",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "started_utc": "2026-10-06T23:51:23Z",
+  "seed": 271828,
+  "versions": {
+   "python": "3.13.15",
+   "torch": "2.11.0+cu128",
+   "transformers": "4.57.6",
+   "peft": "0.20.0",
+   "gpu": "Tesla T4"
+  }
+ },
+ "note": "Le probe central (pré-enregistré) : affaires où le juge a réellement voté libéral EN SIGNANT une opinion lead dont le texte a servi à l'entraînement — si le persona vote conservateur là, l'échec est auto-probé.",
+ "per_judge": {
+  "BMKavanaugh": {
+   "n_dockets_queried": 18,
+   "n_with_truth": 16,
+   "accuracy_on_own_train_cases": 0.625,
+   "persona_liberal_rate_on_own_cases": 0.25,
+   "real_liberal_votes": 8,
+   "by_real_vote": {
+    "liberal": {
+     "n": 8,
+     "persona_liberal_rate": 0.375,
+     "accuracy": 0.375
+    },
+    "conservative": {
+     "n": 8,
+     "persona_liberal_rate": 0.125,
+     "accuracy": 0.875
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 9,
+     "persona_liberal_rate": 0.4444,
+     "accuracy": 0.6667
+    },
+    "dissent": {
+     "n": 1,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 1.0
+    },
+    "concurrence": {
+     "n": 6,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.5
+    },
+    "concurrence-dissent": {
+     "n": 0,
+     "persona_liberal_rate": null,
+     "accuracy": null
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 5,
+    "persona_liberal_rate": 0.6,
+    "accuracy": 0.6
+   }
+  },
+  "CThomas": {
+   "n_dockets_queried": 122,
+   "n_with_truth": 114,
+   "accuracy_on_own_train_cases": 0.614,
+   "persona_liberal_rate_on_own_cases": 0.0965,
+   "real_liberal_votes": 37,
+   "by_real_vote": {
+    "liberal": {
+     "n": 37,
+     "persona_liberal_rate": 0.0541,
+     "accuracy": 0.0541
+    },
+    "conservative": {
+     "n": 77,
+     "persona_liberal_rate": 0.1169,
+     "accuracy": 0.8831
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 31,
+     "persona_liberal_rate": 0.129,
+     "accuracy": 0.5161
+    },
+    "dissent": {
+     "n": 39,
+     "persona_liberal_rate": 0.1282,
+     "accuracy": 0.6667
+    },
+    "concurrence": {
+     "n": 41,
+     "persona_liberal_rate": 0.0488,
+     "accuracy": 0.6098
+    },
+    "concurrence-dissent": {
+     "n": 4,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.75
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 11,
+    "persona_liberal_rate": 0.0,
+    "accuracy": 0.0
+   }
+  },
+  "EKagan": {
+   "n_dockets_queried": 49,
+   "n_with_truth": 45,
+   "accuracy_on_own_train_cases": 0.4,
+   "persona_liberal_rate_on_own_cases": 0.1556,
+   "real_liberal_votes": 26,
+   "by_real_vote": {
+    "liberal": {
+     "n": 26,
+     "persona_liberal_rate": 0.1154,
+     "accuracy": 0.1154
+    },
+    "conservative": {
+     "n": 19,
+     "persona_liberal_rate": 0.2105,
+     "accuracy": 0.7895
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 35,
+     "persona_liberal_rate": 0.1714,
+     "accuracy": 0.4
+    },
+    "dissent": {
+     "n": 6,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.1667
+    },
+    "concurrence": {
+     "n": 4,
+     "persona_liberal_rate": 0.25,
+     "accuracy": 0.75
+    },
+    "concurrence-dissent": {
+     "n": 0,
+     "persona_liberal_rate": null,
+     "accuracy": null
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 21,
+    "persona_liberal_rate": 0.1429,
+    "accuracy": 0.1429
+   }
+  },
+  "JGRoberts": {
+   "n_dockets_queried": 41,
+   "n_with_truth": 40,
+   "accuracy_on_own_train_cases": 0.55,
+   "persona_liberal_rate_on_own_cases": 0.075,
+   "real_liberal_votes": 19,
+   "by_real_vote": {
+    "liberal": {
+     "n": 19,
+     "persona_liberal_rate": 0.1053,
+     "accuracy": 0.1053
+    },
+    "conservative": {
+     "n": 21,
+     "persona_liberal_rate": 0.0476,
+     "accuracy": 0.9524
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 28,
+     "persona_liberal_rate": 0.1071,
+     "accuracy": 0.5357
+    },
+    "dissent": {
+     "n": 9,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.6667
+    },
+    "concurrence": {
+     "n": 3,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.3333
+    },
+    "concurrence-dissent": {
+     "n": 1,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 1.0
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 14,
+    "persona_liberal_rate": 0.1429,
+    "accuracy": 0.1429
+   }
+  },
+  "NMGorsuch": {
+   "n_dockets_queried": 37,
+   "n_with_truth": 32,
+   "accuracy_on_own_train_cases": 0.5938,
+   "persona_liberal_rate_on_own_cases": 0.0938,
+   "real_liberal_votes": 12,
+   "by_real_vote": {
+    "liberal": {
+     "n": 12,
+     "persona_liberal_rate": 0.0833,
+     "accuracy": 0.0833
+    },
+    "conservative": {
+     "n": 20,
+     "persona_liberal_rate": 0.1,
+     "accuracy": 0.9
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 12,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.5
+    },
+    "dissent": {
+     "n": 14,
+     "persona_liberal_rate": 0.2143,
+     "accuracy": 0.7143
+    },
+    "concurrence": {
+     "n": 4,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.75
+    },
+    "concurrence-dissent": {
+     "n": 2,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.0
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 6,
+    "persona_liberal_rate": 0.0,
+    "accuracy": 0.0
+   }
+  },
+  "SAAlito": {
+   "n_dockets_queried": 74,
+   "n_with_truth": 70,
+   "accuracy_on_own_train_cases": 0.6429,
+   "persona_liberal_rate_on_own_cases": 0.1,
+   "real_liberal_votes": 24,
+   "by_real_vote": {
+    "liberal": {
+     "n": 24,
+     "persona_liberal_rate": 0.125,
+     "accuracy": 0.125
+    },
+    "conservative": {
+     "n": 46,
+     "persona_liberal_rate": 0.087,
+     "accuracy": 0.913
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 28,
+     "persona_liberal_rate": 0.1786,
+     "accuracy": 0.6786
+    },
+    "dissent": {
+     "n": 23,
+     "persona_liberal_rate": 0.087,
+     "accuracy": 0.7826
+    },
+    "concurrence": {
+     "n": 18,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 0.3889
+    },
+    "concurrence-dissent": {
+     "n": 3,
+     "persona_liberal_rate": 0.0,
+     "accuracy": 1.0
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 10,
+    "persona_liberal_rate": 0.3,
+    "accuracy": 0.3
+   }
+  },
+  "SSotomayor": {
+   "n_dockets_queried": 80,
+   "n_with_truth": 77,
+   "accuracy_on_own_train_cases": 0.4156,
+   "persona_liberal_rate_on_own_cases": 0.4805,
+   "real_liberal_votes": 46,
+   "by_real_vote": {
+    "liberal": {
+     "n": 46,
+     "persona_liberal_rate": 0.413,
+     "accuracy": 0.413
+    },
+    "conservative": {
+     "n": 31,
+     "persona_liberal_rate": 0.5806,
+     "accuracy": 0.4194
+    }
+   },
+   "by_authored_type": {
+    "lead": {
+     "n": 33,
+     "persona_liberal_rate": 0.5455,
+     "accuracy": 0.4242
+    },
+    "dissent": {
+     "n": 20,
+     "persona_liberal_rate": 0.5,
+     "accuracy": 0.55
+    },
+    "concurrence": {
+     "n": 22,
+     "persona_liberal_rate": 0.4091,
+     "accuracy": 0.2727
+    },
+    "concurrence-dissent": {
+     "n": 3,
+     "persona_liberal_rate": 0.3333,
+     "accuracy": 0.6667
+    }
+   },
+   "probe_real_liberal_and_lead_author": {
+    "n": 17,
+    "persona_liberal_rate": 0.4706,
+    "accuracy": 0.4706
+   }
+  }
+ },
+ "kagan_probe": {
+  "description": "EKagan, votes libéraux réels + opinion lead signée (texte vu à l'entraînement)",
+  "n": 21,
+  "persona_liberal_rate": 0.1429,
+  "accuracy": 0.1429
+ },
+ "timings": {
+  "n_queries": 421,
+  "duration_s": 1127.7
+ }
+}

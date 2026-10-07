@@ -1,0 +1,4641 @@
+{
+ "schema": "a1-e3-pred/1",
+ "predictions": [
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-1104",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-1625",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-1702",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-1705",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-204.",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-778",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17-9572",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "17–1272.",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "18-1432",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "18-260",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "18-280",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "18-431",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "19-177",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "19-635",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "No. 18-107",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "No. 18-5924",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "No. 18-6662",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "BMKavanaugh",
+   "docket": "Nos. 17–1717; 18–18",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "13-1339",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-1095",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-1132",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-1146",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-1280",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-1406",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-181",
+   "vote": "conservative",
+   "p_liberal": 0.0601,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-280",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-361",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-419",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-613",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-723",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-8349",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-857",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-916",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-940",
+   "vote": "conservative",
+   "p_liberal": 0.0601,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14-981",
+   "vote": "conservative",
+   "p_liberal": 0.0953,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–10154.",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–1375.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–1468; 14–1470; 14–1507.",
+   "vote": "conservative",
+   "p_liberal": 0.0851,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–614; 14–623.",
+   "vote": "conservative",
+   "p_liberal": 0.0695,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–6166.",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "14–9496.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-118",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-1204",
+   "vote": "conservative",
+   "p_liberal": 0.148,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-145",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-1485",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-233, 15-255",
+   "vote": "conservative",
+   "p_liberal": 0.0716,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-255",
+   "vote": "conservative",
+   "p_liberal": 0.0637,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-420",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15-649",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent",
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–1039; 15–1195.",
+   "vote": "conservative",
+   "p_liberal": 0.148,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–1111; 15–1112.",
+   "vote": "conservative",
+   "p_liberal": 0.1561,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–1251.",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–1256.",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–1262.",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–214.",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–274.",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–415.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–446.",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–457.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–458.",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–5040.",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–577.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–606.",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–6092.",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–6418.",
+   "vote": "conservative",
+   "p_liberal": 0.1561,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–680.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–7.",
+   "vote": "conservative",
+   "p_liberal": 0.0637,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–7250.",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–8049.",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "15–866.",
+   "vote": "conservative",
+   "p_liberal": 0.1561,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1027",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1094",
+   "vote": "liberal",
+   "p_liberal": 0.6654,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-111",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1140",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1144",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1276",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-1371",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-402",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-476",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-712",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-9493",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-961",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16-980",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–1011.",
+   "vote": "liberal",
+   "p_liberal": 0.8081,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–1362.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–240.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–327.",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–341.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "16–54.",
+   "vote": "conservative",
+   "p_liberal": 0.0695,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1026",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1077",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1091",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1299.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-130",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1471",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-1705",
+   "vote": "conservative",
+   "p_liberal": 0.148,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-21",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-387",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-646",
+   "vote": "conservative",
+   "p_liberal": 0.133,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-647",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-778",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-834",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-9572",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17-961",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17–1229.",
+   "vote": "conservative",
+   "p_liberal": 0.0716,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "17–773.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-1048",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-1334",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-1432",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-1501",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-1584; 18-1587",
+   "vote": "conservative",
+   "p_liberal": 0.1067,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-260",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-315.",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-389",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-485",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-565",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-877",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-935",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "18-966",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-161",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-177",
+   "vote": "conservative",
+   "p_liberal": 0.1403,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-267; 19-348",
+   "vote": "conservative",
+   "p_liberal": 0.0851,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-431; 19-454",
+   "vote": "conservative",
+   "p_liberal": 0.1009,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-465",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-635",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "19-715; 19-760",
+   "vote": "conservative",
+   "p_liberal": 0.0637,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 14–1373.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 14–1457.",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 14–462.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 15–1363.",
+   "vote": "conservative",
+   "p_liberal": 0.0804,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 15–537.",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 15–8544.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 16–307.",
+   "vote": "conservative",
+   "p_liberal": 0.0447,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 17-1174",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 17-290",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 18-328",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 18-556",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 18-5924",
+   "vote": "conservative",
+   "p_liberal": 0.133,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 18-882",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "CThomas",
+   "docket": "No. 19-67",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14-1096",
+   "vote": "liberal",
+   "p_liberal": 0.7773,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14-1132",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14-419",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14-8358",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14-857",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14–10154.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14–840; 14–841.",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "14–9496.",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15-108",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15-1439",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15-1509",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–1262.",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–1406.",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–1503; 15–1504.",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–290.",
+   "vote": "conservative",
+   "p_liberal": 0.2628,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–339.",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–375.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–497.",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "15–6092.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16-111",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16-1423",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16-1432",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16-258",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16-961",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "16–309.",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-1184",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-1201",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-130",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-1657",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-333",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-647",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-7505",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "17-949",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-1059",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-15",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-302",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-6135",
+   "vote": "liberal",
+   "p_liberal": 0.5927,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-6943",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-8369",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "18-877",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "19-431; 19-454",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "19-46",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "19-465",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 14–1373.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 15–827.",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 16–32.",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 16–74.",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 18-1165",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "EKagan",
+   "docket": "No. 18-556",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "13-1067",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-1146",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-1175",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-1209",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-1520",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-770",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-8349",
+   "vote": "conservative",
+   "p_liberal": 0.1968,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "14-857",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–1189.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–1251.",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–1391.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–214.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–290.",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–474.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–5040.",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–577.",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–797.",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–8049.",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "15–9260.",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16-1150",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16-1161",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16-1275",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16-402",
+   "vote": "liberal",
+   "p_liberal": 0.6792,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16-498",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16–1435.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "16–327.",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-1011",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-1498",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-155",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-333",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-387",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17-647",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17–312.",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "17–71.",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "18-302",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence",
+    "concurrence-dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "18-966",
+   "vote": "liberal",
+   "p_liberal": 0.7186,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "19-635",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "19-715; 19-760",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "No. 14–1513.",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "No. 15–827.",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "JGRoberts",
+   "docket": "No. 17-1174",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-1067",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-111",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-1432",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-285",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-402",
+   "vote": "liberal",
+   "p_liberal": 0.637,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-460",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-499",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-6855",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16-712",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "16–1011.",
+   "vote": "liberal",
+   "p_liberal": 0.852,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1091",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1104",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1184",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1268",
+   "vote": "conservative",
+   "p_liberal": 0.148,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1484",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1498",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1618",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-1657",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-204.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-387",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-419",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-6086",
+   "vote": "conservative",
+   "p_liberal": 0.1824,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17-646",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "17–340.",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-1171",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-1269",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-431",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-481",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-916",
+   "vote": "conservative",
+   "p_liberal": 0.1192,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "18-96",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "19-631",
+   "vote": "conservative",
+   "p_liberal": 0.2282,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 16–307.",
+   "vote": "conservative",
+   "p_liberal": 0.1919,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 17-1042",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 17-1174",
+   "vote": "conservative",
+   "p_liberal": 0.2942,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 18-107",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 18-1165",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "NMGorsuch",
+   "docket": "No. 18-1233",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "13-1339",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-361",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-613",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-8349",
+   "vote": "conservative",
+   "p_liberal": 0.1259,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-857",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-8913",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-940",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14-981",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14–1468; 14–1470; 14–1507.",
+   "vote": "conservative",
+   "p_liberal": 0.1403,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14–6166.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "14–9496.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15-1204",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–1194.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–1256.",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–1293.",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–274.",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–446.",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–5238.",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–606.",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–6092.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–628.",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "15–927.",
+   "vote": "conservative",
+   "p_liberal": 0.1645,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-1027",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-1094",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-402",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-424",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-476",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-499",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-6795",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-8255",
+   "vote": "conservative",
+   "p_liberal": 0.2878,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-961",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16-980",
+   "vote": "conservative",
+   "p_liberal": 0.2393,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–240.",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–254.",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–309.",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–369.",
+   "vote": "liberal",
+   "p_liberal": 0.7311,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–466.",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–5294.",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "16–605.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-1471",
+   "vote": "conservative",
+   "p_liberal": 0.2451,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-1498",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence",
+    "concurrence-dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-1672",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-459",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-586",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-646",
+   "vote": "conservative",
+   "p_liberal": 0.2121,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-834",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-9560",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17-9572",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "17–5716.",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-1023; 18-1028; 18-1038",
+   "vote": "conservative",
+   "p_liberal": 0.1733,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-1116",
+   "vote": "conservative",
+   "p_liberal": 0.2568,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-260",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-266",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-280",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": null,
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-302",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-457",
+   "vote": "conservative",
+   "p_liberal": 0.3346,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-6943",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-7739",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-935",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-96",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "18-966",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence",
+    "concurrence-dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-161",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-267; 19-348",
+   "vote": "conservative",
+   "p_liberal": 0.2018,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-431; 19-454",
+   "vote": "conservative",
+   "p_liberal": 0.1561,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-46",
+   "vote": "conservative",
+   "p_liberal": 0.2227,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-635",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "19-715; 19-760",
+   "vote": "conservative",
+   "p_liberal": 0.133,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 14–7505.",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 15–138.",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 15–827.",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 17-290",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 18-107",
+   "vote": "conservative",
+   "p_liberal": 0.2689,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 18-5924",
+   "vote": "conservative",
+   "p_liberal": 0.2814,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SAAlito",
+   "docket": "No. 18-882",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-1096",
+   "vote": "liberal",
+   "p_liberal": 0.6514,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-1382",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-1418",
+   "vote": "conservative",
+   "p_liberal": 0.2337,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-361",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-449",
+   "vote": "liberal",
+   "p_liberal": 0.7773,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-613",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14-8358",
+   "vote": "liberal",
+   "p_liberal": 0.7186,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14–1468; 14–1470; 14–1507.",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14–1538.",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "14–614; 14–623.",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15-145",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15-1509",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15-233, 15-255",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15-255",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–109.",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–1248.",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–1251.",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–1391.",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–1500.",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–458.",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–577.",
+   "vote": "liberal",
+   "p_liberal": 0.6654,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "15–777.",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-1027",
+   "vote": "liberal",
+   "p_liberal": 0.6514,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-1067",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-1215",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-1276",
+   "vote": "liberal",
+   "p_liberal": 0.5927,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-258",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": null,
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-299",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-498",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-499",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-534",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-6795",
+   "vote": "conservative",
+   "p_liberal": 0.3208,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-784",
+   "vote": "conservative",
+   "p_liberal": 0.3074,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-9493",
+   "vote": "conservative",
+   "p_liberal": 0.363,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16-980",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16–142.",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16–1435.",
+   "vote": "conservative",
+   "p_liberal": 0.5,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16–349.",
+   "vote": "liberal",
+   "p_liberal": 0.6792,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "16–466.",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1026",
+   "vote": "liberal",
+   "p_liberal": 0.6654,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1094",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1184",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-130",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": null,
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1307",
+   "vote": "liberal",
+   "p_liberal": 0.7186,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-155",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1594",
+   "vote": "liberal",
+   "p_liberal": 0.6514,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1606",
+   "vote": "liberal",
+   "p_liberal": 0.5156,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1657",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-1702",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-432",
+   "vote": "liberal",
+   "p_liberal": 0.6514,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-459",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-586",
+   "vote": "conservative",
+   "p_liberal": 0.4225,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2017
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "17-949",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1023; 18-1028; 18-1038",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1048",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1086",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1334",
+   "vote": "liberal",
+   "p_liberal": 0.637,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1501",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-1584; 18-1587",
+   "vote": "conservative",
+   "p_liberal": 0.4073,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-302",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence-dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-457",
+   "vote": "liberal",
+   "p_liberal": 0.7311,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-485",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-565",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "18-801",
+   "vote": "conservative",
+   "p_liberal": 0.4378,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "19-161",
+   "vote": "liberal",
+   "p_liberal": 0.7982,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "19-267; 19-348",
+   "vote": "conservative",
+   "p_liberal": 0.4844,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "19-631",
+   "vote": "conservative",
+   "p_liberal": 0.3923,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 14–1055.",
+   "vote": "liberal",
+   "p_liberal": 0.5775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 14–1373.",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 14–1457.",
+   "vote": "liberal",
+   "p_liberal": 0.6514,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 14–7505.",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2015
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 15–8544.",
+   "vote": "liberal",
+   "p_liberal": 0.5622,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 16–405.",
+   "vote": "liberal",
+   "p_liberal": 0.6654,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence",
+    "concurrence-dissent"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 16–529.",
+   "vote": "liberal",
+   "p_liberal": 0.6077,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "lead"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 16–74.",
+   "vote": "conservative",
+   "p_liberal": 0.4688,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2016
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 17-1174",
+   "vote": "liberal",
+   "p_liberal": 0.5312,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2018
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 18-1233",
+   "vote": "liberal",
+   "p_liberal": 0.5467,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 18-328",
+   "vote": "conservative",
+   "p_liberal": 0.4533,
+   "truth_vote": "conservative",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 18-556",
+   "vote": "conservative",
+   "p_liberal": 0.3775,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "dissent"
+   ],
+   "term": 2019
+  },
+  {
+   "seat": "SSotomayor",
+   "docket": "No. 18-5924",
+   "vote": "conservative",
+   "p_liberal": 0.3486,
+   "truth_vote": "liberal",
+   "types_authored": [
+    "concurrence"
+   ],
+   "term": 2019
+  }
+ ]
+}

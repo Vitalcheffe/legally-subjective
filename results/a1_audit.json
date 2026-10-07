@@ -1,0 +1,261 @@
+{
+ "schema": "a1-audit/1",
+ "n_checks": 28,
+ "n_pass": 26,
+ "verdict": "FAIL",
+ "checks": [
+  {
+   "check": "artefact présent : a1_e1_decomposition.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "artefact présent : a1_e3_autocoherence.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "artefact présent : a1_e1_predictions.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "artefact présent : a1_e3_predictions.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "artefact présent : a1_run_manifest.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "artefact présent : RUN_MANIFEST.json",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "manifeste science : status OK",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "manifeste runner : status OK",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "zip adaptateurs authentifié",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "gel au tag a1-freeze",
+   "status": "PASS",
+   "detail": "6d713e40b943"
+  },
+  {
+   "check": "fuites scellé : 0",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "comptes requêtes E1",
+   "status": "PASS",
+   "detail": "N=211 P=1899 A=1477"
+  },
+  {
+   "check": "bras N : 1 requête/affaire (seat=None)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "mesures E1 : rapport == recalcul depuis brutes",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "(i) recalcul : N < 0,5",
+   "status": "PASS",
+   "detail": "N=0.1137"
+  },
+  {
+   "check": "(ii) recalcul : libéraux Δ(P−N) > 0",
+   "status": "FAIL",
+   "detail": "{'SSotomayor': 0.3887, 'EKagan': -0.0616, 'KBJackson': 0.0617}"
+  },
+  {
+   "check": "(iii) recalcul : Δ(A−P) < 0 pour Kagan/Sotomayor",
+   "status": "PASS",
+   "detail": "{'EKagan': -0.0284, 'SSotomayor': -0.0142}"
+  },
+  {
+   "check": "régression phase T : all_match",
+   "status": "FAIL",
+   "detail": ""
+  },
+  {
+   "check": "régression B4 : 0.6366",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "compte requêtes E3",
+   "status": "PASS",
+   "detail": "421"
+  },
+  {
+   "check": "E3 BMKavanaugh : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 CThomas : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 EKagan : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 JGRoberts : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 NMGorsuch : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 SAAlito : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "E3 SSotomayor : rapport == recalcul",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "probe Kagan (lead+libéral) : rapport == recalcul",
+   "status": "PASS",
+   "detail": "n=21, taux=0.1429"
+  }
+ ],
+ "verdict_preinscrit_E1": {
+  "(i) défaut conservateur du bras N (tous sièges < 0,5)": true,
+  "(ii) Δ(P−N) > 0 pour les 3 libéraux": false,
+  "(ii) contraste libéraux > conservateurs": true,
+  "(iii) Δ(A−P) < 0 pour Kagan et Sotomayor": true
+ },
+ "mesures_recalculees": {
+  "rate_liberal_par_bras": {
+   "JGRoberts": {
+    "N": 0.1137,
+    "P": 0.019,
+    "A": 0.0474
+   },
+   "CThomas": {
+    "N": 0.1137,
+    "P": 0.0095,
+    "A": 0.019
+   },
+   "SAAlito": {
+    "N": 0.1137,
+    "P": 0.0095,
+    "A": 0.0142
+   },
+   "SSotomayor": {
+    "N": 0.1137,
+    "P": 0.5024,
+    "A": 0.4882
+   },
+   "EKagan": {
+    "N": 0.1137,
+    "P": 0.0521,
+    "A": 0.0237
+   },
+   "NMGorsuch": {
+    "N": 0.1137,
+    "P": 0.0237,
+    "A": 0.0
+   },
+   "BMKavanaugh": {
+    "N": 0.1137,
+    "P": 0.1137,
+    "A": 0.2133
+   },
+   "ACBarrett": {
+    "N": 0.1137,
+    "P": 0.0474,
+    "A": null
+   },
+   "KBJackson": {
+    "N": 0.1137,
+    "P": 0.1754,
+    "A": null
+   }
+  },
+  "delta_P_minus_N": {
+   "JGRoberts": -0.0947,
+   "CThomas": -0.1042,
+   "SAAlito": -0.1042,
+   "SSotomayor": 0.3887,
+   "EKagan": -0.0616,
+   "NMGorsuch": -0.09,
+   "BMKavanaugh": 0.0,
+   "ACBarrett": -0.0663,
+   "KBJackson": 0.0617
+  },
+  "delta_A_minus_P": {
+   "BMKavanaugh": 0.0996,
+   "CThomas": 0.0095,
+   "EKagan": -0.0284,
+   "JGRoberts": 0.0284,
+   "NMGorsuch": -0.0237,
+   "SAAlito": 0.0047,
+   "SSotomayor": -0.0142
+  }
+ },
+ "e3_recalcule": {
+  "BMKavanaugh": {
+   "n": 16,
+   "acc": 0.625
+  },
+  "CThomas": {
+   "n": 114,
+   "acc": 0.614
+  },
+  "EKagan": {
+   "n": 45,
+   "acc": 0.4
+  },
+  "JGRoberts": {
+   "n": 40,
+   "acc": 0.55
+  },
+  "NMGorsuch": {
+   "n": 32,
+   "acc": 0.5938
+  },
+  "SAAlito": {
+   "n": 70,
+   "acc": 0.6429
+  },
+  "SSotomayor": {
+   "n": 77,
+   "acc": 0.4156
+  }
+ },
+ "kagan_probe_recalcule": {
+  "n": 21,
+  "persona_liberal_rate": 0.1429
+ },
+ "labels": {
+  "E1": "confirmatoire dans son propre cadre",
+  "E3": "exploratoire"
+ }
+}
