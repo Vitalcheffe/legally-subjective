@@ -135,7 +135,7 @@ est documentée dans [`docs/05-REPRODUCTIBILITE.md`](docs/05-REPRODUCTIBILITE.md
 
 ```bibtex
 @software{harch_el_korane_2026_legally,
-  author = {Amine Harch el Korane},
+  author = {Amine Harch el Korane and Ghali El Alj},
   title = {Legally Subjective: Subjectivity, measured},
   year = {2026},
   url = {https://github.com/Vitalcheffe/legally-subjective},

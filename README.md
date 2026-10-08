@@ -285,7 +285,7 @@ the deep docs remain in French for now — the data and code are language-neutra
 
 ```bibtex
 @software{harch_el_korane_2026_legally,
-  author = {Amine Harch el Korane},
+  author = {Amine Harch el Korane and Ghali El Alj},
   title = {Legally Subjective: Subjectivity, measured},
   year = {2026},
   url = {https://github.com/Vitalcheffe/legally-subjective},
