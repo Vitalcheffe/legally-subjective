@@ -5,8 +5,9 @@
 > ideological baseline.
 
 Authors: **Amine Harch El Korane** (experiments, code, reproducibility) and
-**Ghali El Alj** (legal analysis, case-law reading). Both are students at a
-French lycée (high school).
+**Ghali El Alj** (legal analysis, case-law reading). Both are high-school
+students at the Lycée français international Louis-Massignon (Bouskoura,
+Morocco).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/hero.dark.svg">
