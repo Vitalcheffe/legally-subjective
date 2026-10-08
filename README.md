@@ -4,9 +4,9 @@
 > Court decisions are from public data, against a pre-registered
 > ideological baseline.
 
-Authors: **Amine Harch El Korane** (engineering, computational and
-machine-learning research, reproducibility) and **Ghali El Alj**
-(legal research, jurisprudence, doctrinal analysis).
+Authors: **Amine Harch El Korane** (experiments, code, reproducibility) and
+**Ghali El Alj** (legal analysis, case-law reading). Both are students at a
+French lycée (high school).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/hero.dark.svg">

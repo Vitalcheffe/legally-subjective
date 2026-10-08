@@ -84,7 +84,7 @@ Audio bulk ───────(SHA-256)──> filtre docket_id ────�
                                               data/processed/corpus_*_v1.jsonl.gz + stats_v1.json
 ```
 
-## Notes d'ingénierie (pour les curieux)
+## Notes techniques (pour les curieux)
 
 - **Fichiers bulk tronqués** : les `.csv.bz2` du 2026-06-30 sur S3 n'ont pas de
   marqueur de fin de flux bzip2. Le filtre segmenté détecte l'unité finale
