@@ -1,7 +1,12 @@
 # Legally Subjective
 
-> **Subjectivity, measured.** — Measuring the upper bound of predictability
-> in U.S. Supreme Court decisions, using public data and a zero-euro budget.
+> **Subjectivity, measured.** — Measuring how predictable U.S. Supreme
+> Court decisions are from public data, against a pre-registered
+> ideological baseline.
+
+Authors: **Amine Harch El Korane** (engineering, computational and
+machine-learning research, reproducibility) and **Ghali El Alj**
+(legal research, jurisprudence, doctrinal analysis).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/hero.dark.svg">

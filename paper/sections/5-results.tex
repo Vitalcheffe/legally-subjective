@@ -470,8 +470,9 @@ nothing ($\rho=+0.14$). The surface style transfers; the decision
 function does not: persona fidelity tracks the justice's alignment
 with the base model's conservative default, not the distinctiveness of
 the pen. Exploratory label (measures chosen after observing
-fidelities; the correlation predictions themselves were committed to
-the repository before execution).}
+fidelities; the correlation predictions themselves were inscribed in
+the freeze document before execution---with the provenance caveat
+stated in the text: plan and results share one commit).}
 \label{fig:e2}
 \end{figure}
 
@@ -499,10 +500,21 @@ on the transparent window, against $+0.14$ for training volume
 fidelity with the wrong sign.
 
 The label discipline here matters and we keep it explicit. $\rho
-=-0.72$ is the falsification of a pre-registered prediction, not a
-hypothesis invented after seeing the results: the correlation
-predictions were committed before execution, and the ranking
-prediction was committed in full. The distinctiveness \emph{measures}
+=-0.72$ is the falsification of a prediction inscribed in advance,
+not a hypothesis invented after seeing the results: both correlation
+predictions and the full expected ranking were written into the
+freeze document before the distinctiveness measures were computed,
+and both were falsified---which is itself evidence against post-hoc
+construction, since a prediction invented after the fact would
+predict the observed sign. We state the provenance precisely:
+the E2 predictions share a single freeze commit with the E2 results
+(a local, CPU-side computation), so the git record alone cannot
+establish their ordering; it rests on the authors' contemporaneous
+records. For the kernel-executed probes E1 and E3, the git record
+does establish the ordering: the plan was committed under the
+\texttt{a1-freeze} tag, the pinned head is cited by the running
+kernel's manifest, and the results were committed three hours later.
+The distinctiveness \emph{measures}
 were chosen after the fidelities had been observed, and for that
 reason the study carries an exploratory label on its instruments.
 One axis of Kagan's composite rests on a small sample (the

@@ -63,10 +63,34 @@ the tested textual probe---not all textual representations (richer
 models, full dossiers, other windows remain open), and not other
 modalities.
 
+\paragraph{Base-model pretraining contamination.}
+The zero-shot and retrieval conditions read a base model whose
+pretraining corpus is undisclosed and may contain reporting on the
+sealed cases themselves. Thirty of the fifty sealed decisions date
+from the training era (the \emph{interleaved} stratum), and their
+outcomes were public before the base model's cutoff; the twenty
+\emph{future} stratum decisions were decided largely after it. The
+stratified analysis of Section~\ref{sec:results} is the design's
+answer: on the interleaved stratum the zero-shot and persona
+conditions make identical case-direction calls on every case, and on
+the future stratum every condition, the re-fit ideological prior
+included, lands at or near one half. The primary comparison
+(persona versus zero-shot) conditions the same base model on the
+same possibly-contaminated inputs in both arms, so contamination
+cancels in the contrast even where it may inflate both arms
+equally---but the \emph{absolute} case-level accuracies of the
+language conditions on the interleaved stratum should not be read
+as uncontaminated forecasting skill, and we do not read them that
+way.
+
 \paragraph{One rater of the pipeline.}
 The corpus fusion, the docket matching, and the sealed selection
-were implemented and audited by a single independent researcher
-with scripts, hashes, and logs---not by an institutional team.
+were implemented and audited by the engineering author alone, with
+scripts, hashes, and logs---not by an institutional team; the
+legal-research side of the project (framing, doctrinal reading,
+jurisprudential interpretation) was carried by the second author
+and does not re-audit the code.
 The machinery is public and every claim regenerates from the
-repository, but the human audit trail is one person deep, and we
-count that as a limitation of confidence rather than of method.
+repository, but the code-level human audit trail is one person
+deep, and we count that as a limitation of confidence rather than
+of method.
