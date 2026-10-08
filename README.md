@@ -118,8 +118,12 @@ figures regenerate via `scripts/paper_figures.py` and
 `scripts/paper_figures_d1bis.py`):
 
 > **Legally Subjective: How Much Vote Predictability Survives a Strong
-> Ideological Baseline?** — A. Harch el Korane, working paper,
-> revision 2, 2026. 22 pages, 9 figures, 7 tables, 15 references.
+> Ideological Baseline?** — A. Harch el Korane and G. El Alj, working
+> paper, revision 2, 2026. 22 pages, 9 figures, 7 tables, 15 references.
+>
+> A two-page French summary of the project — `paper/resume-fr.pdf`, built
+> from `paper/resume-fr.tex` — is available for French-speaking teachers,
+> juries, and science-fair submissions.
 
 ---
 

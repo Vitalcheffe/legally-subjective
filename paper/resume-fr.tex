@@ -1,0 +1,193 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- typography (identique au rapport principal) ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage{microtype}
+
+% ---------- layout ----------
+\usepackage{geometry}
+\geometry{a4paper, top=2.6cm, bottom=2.6cm, left=2.6cm, right=2.6cm}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{needspace}
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+% ---------- hyperref (last) ----------
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor={black!70},
+    bookmarks=true,
+    unicode=true
+]{hyperref}
+\usepackage{xurl}
+
+\hypersetup{
+    pdftitle={Legally Subjective : resume francais du projet de recherche},
+    pdfauthor={Amine Harch El Korane, Ghali El Alj},
+    pdfsubject={Resume en francais du projet Legally Subjective},
+    pdfkeywords={Cour supreme, prediction, science des donnees, lycee, CGenial}
+}
+
+\begin{document}
+
+% ================= bloc de titre (composé à la main, pas de \maketitle) =================
+\begin{center}
+{\LARGE\bfseries Legally Subjective\par}
+\vspace{4pt}
+{\large Jusqu'où peut-on prédire les décisions de la Cour suprême\\
+des États-Unis à partir de données publiques ?\par}
+\vspace{10pt}
+{\normalsize Amine Harch El Korane\quad Ghali El Alj\par}
+\vspace{2pt}
+{\small Élèves de lycée (France) --- expériences, code et reproductibilité /
+analyse juridique et lecture doctrinale.\par}
+\vspace{2pt}
+{\small Code et données : \href{https://github.com/Vitalcheffe/legally-subjective}{github.com/Vitalcheffe/legally-subjective}\par}
+\vspace{4pt}
+{\small Résumé en français du rapport de recherche complet (en anglais, 22 pages)\par}
+\end{center}
+\vspace{4pt}
+
+\begin{center}
+\rule{0.28\linewidth}{0.6pt}
+\end{center}
+\vspace{6pt}
+
+\section*{La question, et pourquoi elle compte}
+
+La Cour suprême des États-Unis tranche les questions les plus divisives de la
+société américaine : avortement, port d'armes, discrimination, pouvoirs
+présidentiels. Ses neuf juges sont nommés à vie précisément pour que leur
+jugement ne soit \emph{pas} celui d'une machine : la subjectivité judiciaire
+est, en théorie, le dernier rempart contre l'automatisation de la justice.
+Nous nous sommes donc demandé jusqu'où cette subjectivité résiste à la
+mesure : peut-on prédire la décision d'une affaire, ou le vote individuel
+d'un juge, à partir d'informations publiques --- les votes passés, le texte
+du dossier, le style rédactionnel du juge ? Les deux issues possibles
+publient : si la prédiction marche, une part importante du jugement est
+statistique ; si elle échoue sur les cas difficiles, alors la part
+irréductible --- celle qui fait qu'un juge n'est pas un algorithme --- est
+réellement là. Notre réponse est chiffrée des deux côtés, et c'est ce qui
+fait la valeur du projet.
+
+\section*{Les données : un corpus public, gelé et vérifiable}
+
+Nous avons assemblé un corpus de \textbf{569 affaires plaidées}
+(sessions OT2015 à OT2023), couvrant \textbf{13 juges} et
+\textbf{4\,569 votes individuels codés}, à partir de deux sources publiques :
+la \emph{Supreme Court Database} (votes et décisions) et
+\emph{CourtListener} (textes des opinions). Le corpus a ensuite été
+\emph{gelé} : chaque fichier est accompagné de son empreinte
+cryptographique SHA-256, ce qui permet à quiconque de vérifier que les
+données utilisées dans les résultats sont exactement celles qui ont été
+publiées, et qu'aucune ligne n'a été modifiée après coup. L'intégralité du
+projet a été menée à budget strictement nul : données publiques, matériel
+de calcul standard et outils gratuits. Ce point n'est pas anecdotique : il
+démontre qu'une démarche scientifique complète est accessible à des élèves,
+sans laboratoire ni financement.
+
+\section*{La méthode : une barre difficile, puis une épreuve scellée}
+
+La démarche comporte deux temps. \emph{Premièrement}, fixer une barre
+honnête : avant de tester un modèle de langage, nous avons mesuré ce que
+donne une règle simple --- pour chaque juge, prédire systématiquement le
+côté (conservateur ou libéral) que ce juge favorise d'habitude. Cette règle
+idéologique atteint \textbf{63,7\,\% des votes individuels} sur la fenêtre
+d'évaluation (intervalle de confiance à 95\,\% : [61,3 ; 65,9]). Tout
+challenger doit battre ce score pour prétendre apporter quelque chose.
+\emph{Deuxièmement}, l'épreuve scellée : nous avons mis de côté 50 décisions
+serrées (résolues 5--4) mises sous scellés cryptographiques. Quatre
+conditions ont produit leurs prédictions \emph{avant} que la moindre réponse
+ne soit consultée, puis les prédictions elles-mêmes ont été hachées et
+publiées, et la correction n'a été exécutée qu'une seule fois :
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=4pt]
+  \item \textbf{A --- zéro-shot} : un modèle de langage lit le dossier et
+  prédit l'issue ;
+  \item \textbf{B --- persona} : le même modèle, auquel on a « appris » un
+  juge particulier, via un prompt biographique et un adaptateur affiné
+  (QLoRA) sur les opinions passées de ce juge ;
+  \item \textbf{C --- retrieval} : le dossier enrichi de précédents
+  judiciaires récupérés automatiquement ;
+  \item \textbf{D --- prior idéologique re-ajusté} : la règle simple,
+  recalibrée sur les données les plus récentes.
+\end{itemize}
+
+\section*{Les résultats clés}
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Condition & Décision de l'affaire & Vote individuel \\
+\midrule
+A --- zéro-shot & 61,22\,\% (30/49) & 56,23\,\% (203/361) \\
+B --- persona (QLoRA) & 59,18\,\% (29/49) & 59,83\,\% (216/361) \\
+C --- retrieval & 53,06\,\% (26/49) & 50,14\,\% (181/361) \\
+D --- prior idéologique & 50,00\,\% (24/48) & \textbf{75,91\,\%} (312/411) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Le message principal est un \emph{résultat négatif honnête} : sur les
+cinquante affaires les plus serrées, aucune condition de langage ne bat la
+barre idéologique, et la personnalisation ne détecte aucune amélioration
+(persona 59,18\,\% contre zéro-shot 61,22\,\% ; test exact de McNemar,
+$p=1{,}00$). Le prior idéologique, lui, s'effondre à pile-ou-face au
+niveau de l'affaire (50\,\%) tout en dominant toutes les conditions de
+langage au niveau du vote (75,9\,\%) : savoir \emph{qui} vote reste plus
+informatif que savoir \emph{comment} le juge écrit. Les découvertes
+secondaires sont tout aussi instructives : les neuf personae simulées
+votent toutes plus conservatrices que le juge qu'elles imitent ; le prompt
+biographique, et non l'adaptateur affiné, fait l'essentiel du
+déplacement des votes ; l'hypothèse stylistique pré-enregistrée sur la
+qualité des personae est contredite par les données (corrélation de
+Spearman $\rho=-0{,}72$) ; et les personae se trompent sur les affaires
+mêmes sur lesquelles elles ont été entraînées.
+
+\section*{Ce que nous en concluons --- et nos limites assumées}
+
+Une part mesurable de la décision judiciaire --- environ six votes sur dix
+--- est extractible de l'historique public d'un juge ; mais sur les
+affaires qui se jouent à une voix, cette statistique s'évanouit, et le
+style rédactionnel d'un juge n'ajoute rien de détectable. Nous affichons
+nos limites comme une composante du travail scientifique : avec 49 affaires
+appariées, seule une amélioration de l'ordre de quinze à vingt points
+aurait été détectable ; une partie des affaires scellées était potentiellement déjà
+connue du modèle de base (contamination du pré-entraînement), même si le
+contraste principal --- persona contre zéro-shot --- partage la même base
+et annule cette contamination en différence ; le pipeline informatique a
+été audité par un seul des deux auteurs ; et la chronologie fine de
+l'analyse stylistique ne peut pas être établie par les seuls horodatages
+git. Ces limites sont discutées une à une dans le rapport complet.
+
+\section*{Reproductibilité et accès}
+
+Tout est public et rejouable : code Python, corpus gelé, prédictions
+scellées, journaux et scripts d'audit sur le dépôt GitHub du projet. Un
+audit interne hostile a re-calculé chaque chiffre de ce résumé à partir
+des artefacts primaires, avec concordance à quatre décimales près. La
+science qui ne montre pas ses données n'est pas de la science ; nous avons
+donc construit le projet pour que chaque affirmation de cette page puisse
+être vérifiée, réfutée ou rejouée par un tiers, y compris avec les moyens
+d'un lycée.
+
+\begin{center}
+\rule{0.28\linewidth}{0.6pt}
+\end{center}
+\vspace{4pt}
+
+\begin{center}
+{\small \emph{Deux élèves de lycée, un protocole scientifique complet :
+question, données gelées, baselines pré-enregistrées, épreuve scellée,
+statistiques appariées, audit indépendant --- et un résultat négatif
+assumé.} \textbf{Legally Subjective}, github.com/Vitalcheffe/legally-subjective\par}
+\end{center}
+
+\end{document}
