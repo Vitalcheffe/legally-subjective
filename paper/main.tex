@@ -64,7 +64,8 @@ infrastructure. \textsuperscript{2}Legal analysis and doctrinal reading.\par}
 \vspace{2pt}
 {\small Project and code: \href{https://github.com/Vitalcheffe/legally-subjective}{github.com/Vitalcheffe/legally-subjective}\par}
 \vspace{4pt}
-{\small Working paper, revision 2 \textperiodcentered\ Corpus-Monde v1 (frozen 2026-08-28)\par}
+{\small Working paper, revision 3 \textperiodcentered\ Corpus-Monde v1 (frozen 2026-08-28)
+\textperiodcentered\ declarations added 2026-10-09\par}
 \end{center}
 \vspace{6pt}
 
@@ -124,6 +125,57 @@ personalization; attitudinal model; open data.
 \input{sections/8-ethics}
 \input{sections/9-repro}
 \input{sections/10-conclusion}
+
+% ================= declarations =================
+\vspace{6pt}
+\section*{Declarations}
+\noindent\textbf{Author contributions.}
+Both authors conceived the project and designed the protocol
+jointly. Amine Harch El Korane led the computational side:
+corpus engineering, baseline and challenger implementations,
+the persona pipeline, the sealed-exam machinery, and the
+reproducibility infrastructure. Ghali El Alj led the legal side:
+jurisprudential framing, doctrinal reading of the opinion
+corpus, legal interpretation of the results, and manuscript
+development. Both authors analyzed the results, drafted and
+revised the manuscript, and approved the final version.
+
+\medskip
+\noindent\textbf{Use of AI assistance.}
+This research was conducted with the help of large-language-model
+coding and writing assistants, used as instruments under the
+authors' direction and supervision. The authors specified the
+experimental design decisions, the acceptance criteria, and the
+analyses to run; the assistants produced draft code, draft text,
+and documentation that the authors reviewed, tested, corrected,
+and take full responsibility for. No reported number was accepted
+on an assistant's word: every figure regenerates from the
+committed scripts and frozen artifacts described in
+Section~\ref{sec:repro}, and the sealed-exam chain of
+Section~\ref{sec:protocol} ran under the authors' control with a
+lock that is independently verifiable from the public repository.
+We disclose this use in accordance with the ACM policy on
+authorship (which requires describing AI used to conduct
+research) and the policies of the journals and conferences to
+which this work may be submitted.
+
+\medskip
+\noindent\textbf{Funding.} None; the project ran on free-tier
+services and public data.
+
+\medskip
+\noindent\textbf{Competing interests.} The authors declare none.
+
+\medskip
+\noindent\textbf{Data and code availability.}
+All code, frozen artifacts, sealed predictions, and audit reports
+are public at
+\url{https://github.com/Vitalcheffe/legally-subjective}
+(release tags \texttt{a1-freeze}, \texttt{m4-freeze},
+\texttt{m4-exam}). The authors' institutional affiliation is
+stated for identification only and does not imply endorsement
+of the research by the school or any network to which it
+belongs.
 
 \bibliography{refs}
 
