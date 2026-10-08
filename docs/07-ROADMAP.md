@@ -236,7 +236,7 @@ bout en bout.
 ## Journal des versions
 
 - **LS-16 (2026-10-05) — re-vérification complète + standards + faisabilité locale** :
-  cahier des charges Point B intégralement re-contrôlé au commit d12b8c4.
+  cahier des charges Point B intégralement re-contrôlé au commit 694678b.
   Sonde d'impossibilité locale (`scripts/m3b_local_feasibility.py`) : aucune
   GPU, disque 1,42 Go < 6,4 Go, RAM 4,14 Go < 6,4 Go, extrapolation CPU
   mesurée ~37 jours — l'exécution réelle reste sur Colab (architecture

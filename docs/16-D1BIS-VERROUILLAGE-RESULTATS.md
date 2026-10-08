@@ -2,7 +2,7 @@
 
 **Document de verrouillage éditorial.** Établi le 2026-10-07, après
 exécution et publication des résultats (tag `a1-freeze` = commit
-`6d713e4`, résultats publiés au commit `68b1a45`, quels qu'ils soient).
+`9248bfc`, résultats publiés au commit `e418579`, quels qu'ils soient).
 Objet : figer ce que les résultats **établissent** et ce qu'ils
 **n'établissent pas**, avant la construction des figures et du papier.
 Aucune donnée n'est recalculée ; aucun artefact publié n'est modifié.

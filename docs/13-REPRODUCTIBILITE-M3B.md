@@ -125,7 +125,7 @@ les hashs ou re-exécute les tests :
 python scripts/repro_standards_check.py     # → results/repro_standards_check.{json,md}
 ```
 
-Dernier passage : **11/11 PASS** au commit `d12b8c4` (splits audités,
+Dernier passage : **11/11 PASS** au commit `694678b` (splits audités,
 11 fragments gelés, SEED=42 dans l'empreinte, env par session, temps
 par juge, commit+tag+bundle, données hachées déterministes, métriques
 pré-inscrites et testées, procédure d'un tiers idempotente, notebooks

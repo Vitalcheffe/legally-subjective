@@ -14,12 +14,12 @@ Style: matches scripts/paper_figures.py (grayscale ink + one signal red
 #e4002b, DejaVu Sans, vector PDF, English labels, no chartjunk).
 
 DATA PROVENANCE (all frozen, published artifacts):
-  - results/m4_report.json          phase S (sealed 50), commit 2aff6a0
-  - results/a1_e1_decomposition.json E1 arms N/P/A, commit 68b1a45 (tag
+  - results/m4_report.json          phase S (sealed 50), commit f6145a5
+  - results/a1_e1_decomposition.json E1 arms N/P/A, commit e418579 (tag
     a1-freeze lineage); artifact arm "A" (bio prompt + adapter) is
     displayed as "B" because it is byte-identical to M4 condition B;
     arm "N" is the condition-A scheme (neutral, vote replicated).
-  - results/a1_e3_autocoherence.json E3 probe, commit 68b1a45
+  - results/a1_e3_autocoherence.json E3 probe, commit e418579
   - docs/15-ASYMETRIE-PHASE1-PREENREGISTREMENT.md section 1.1 (phase-S
     per-seat dial, published) and section 3 (E2 table, frozen)
   - Actual liberal-vote rates on the transparent window (n = 211):

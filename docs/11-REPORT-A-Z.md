@@ -39,10 +39,10 @@ consequential being *"uncertainty becomes the brand"* (commit `d60c9ac`,
 executed, not appealed: every number since carries its interval, every
 claim carries its provenance, and every unwritten result is displayed as
 unwritten. The next day the project pivoted to the **Corpus-Monde**
-design (commit `e8adf70`): one frozen corpus of real Supreme Court
+design (commit `24cc53a`): one frozen corpus of real Supreme Court
 cases, statistical baselines first, models second. The front-end —
 **THE DRAW**, the roulette that had been the storefront of the earlier
-iteration — was restored from history in full (commit `8aced95`) and
+iteration — was restored from history in full (commit `aac0586`) and
 later "transfused": its colors, style, interactions and symbols kept at
 one hundred percent, while the data layer underneath was regenerated on
 the new corpus (see J). The report you are reading is itself part of the
@@ -72,7 +72,7 @@ artifact records which bytes it was computed from.
 The thirteen justices of the window each have a **FILED docket** —
 `LS-J-001` (Roberts) through `LS-J-013` (Breyer) — written against the
 **LS-1.0 "Subjectivity Fingerprint" standard** (restored from history in
-commit `b252192`, now in [`standards/LS-1.0.md`](../standards/LS-1.0.md)).
+commit `c1d94d0`, now in [`standards/LS-1.0.md`](../standards/LS-1.0.md)).
 Each docket measures real axes from public data: **disposition** (the
 share of a justice's votes that favored the party asking the court for
 relief, with Wilson 95% intervals), **temperament** (dissent rate — a
@@ -185,7 +185,7 @@ system-state page read from the data itself.
 
 The front-end has a biography. THE DRAW was born in the earlier
 iteration of the project, was lost when the workspace was rebuilt, was
-restored from git history in full (commit `8aced95` — colors, style,
+restored from git history in full (commit `aac0586` — colors, style,
 interactions, symbols, one hundred percent), and then underwent the
 **transfusion**: the old front kept, the old data replaced. On
 2026-08-28, `scripts/transfuse_v2.py` regenerated the entire data layer
@@ -195,7 +195,7 @@ baseline calls (leak-free), the sixty-pair agreement, the research
 state, the custody chain. The build was verified (569 case pages, 156
 compare pages, 13+13 dockets), the wheel was tested in the browser, the
 seals were replayed — and five organic commits landed on `main`
-(`d92ed50` data, `c8abccb` front, and their siblings), all signed by the
+(`9ee3548` data, `05f2f87` front, and their siblings), all signed by the
 owner. The site you can run today is that transfused front: old body,
 new blood, zero cosmetic change.
 
@@ -228,16 +228,16 @@ The milestone record, as filed:
 | 2026-08-27 | Audit LS-AUDIT-001 · twelve injunctions · sentence executed | done (`d60c9ac`) |
 | 2026-08-27 | LS-R-001 — the science: train the model for real | done (`e913215`) |
 | 2026-08-27 | THE DRAW — the roulette is the storefront | done (`a3f38a7`) |
-| 2026-08-28 | Pivot to Corpus-Monde SCOTUS — project skeleton | done (`e8adf70`) |
-| 2026-08-28 | M1 — collection chain (segmented bulk + search API) | done (`d31c0a6`) |
-| 2026-08-28 | **M1 — Corpus-Monde v1 frozen (569 cases)** | done (`9d628c6`) |
-| 2026-08-28 | M2 — statistical baselines, the bet to beat | done (`d5eed39`) |
-| 2026-08-28 | The static site — Subjectivity, measured | done (`6376d3d`) |
-| 2026-08-28 | Front restored in full from history | done (`8aced95`) |
-| 2026-08-28 | LS-1.0 standard restored from history | done (`b252192`) |
-| 2026-08-28 | M1.5 collector in quota mode (`--wait-on-429`) | done (`390cf62`) |
-| 2026-08-28 | **The transfusion — the site runs on Corpus-Monde v1** | done (`d92ed50`, `c8abccb`) |
-| 2026-08-28 | M1.5 proactive pacing (token physics measured) | done (`7ec7c9e`) |
+| 2026-08-28 | Pivot to Corpus-Monde SCOTUS — project skeleton | done (`24cc53a`) |
+| 2026-08-28 | M1 — collection chain (segmented bulk + search API) | done (`5591b0c`) |
+| 2026-08-28 | **M1 — Corpus-Monde v1 frozen (569 cases)** | done (`b90519b`) |
+| 2026-08-28 | M2 — statistical baselines, the bet to beat | done (`29d39f3`) |
+| 2026-08-28 | The static site — Subjectivity, measured | done (`157936f`) |
+| 2026-08-28 | Front restored in full from history | done (`aac0586`) |
+| 2026-08-28 | LS-1.0 standard restored from history | done (`c1d94d0`) |
+| 2026-08-28 | M1.5 collector in quota mode (`--wait-on-429`) | done (`15a1a20`) |
+| 2026-08-28 | **The transfusion — the site runs on Corpus-Monde v1** | done (`9ee3548`, `05f2f87`) |
+| 2026-08-28 | M1.5 proactive pacing (token physics measured) | done (`00829d1`) |
 | 2026-08-29 | LS-EXHIBIT-1.0 visual system + English README + this report | this filing |
 
 ## M — The Method
@@ -296,7 +296,7 @@ API token has measured physics: **5 requests per minute and roughly
 seconds). The collector therefore runs in *resumable drip passes*: each
 pass sleeps 75 seconds between requests — the proactive pace that
 maximizes throughput without ever tripping the hourly wall
-(commit `7ec7c9e`, "--pace 75"), and every fetched opinion is
+(commit `00829d1`, "--pace 75"), and every fetched opinion is
 checkpointed to `state.json` before the next request. The honest ETA at
 this physics is ~35 hours of dripping for the full set. The collection
 is designed to *complete* the corpus without changing its identity: the

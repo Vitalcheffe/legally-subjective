@@ -269,6 +269,7 @@ browser step. See [`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md).
 | [`docs/09-RESSOURCES.md`](docs/09-RESSOURCES.md) | Other public legal data sources (US, Europe, world) |
 | [`docs/10-VISUAL-GUIDE.md`](docs/10-VISUAL-GUIDE.md) | LS-EXHIBIT-1.0 — how the exhibits are made |
 | [`docs/11-REPORT-A-Z.md`](docs/11-REPORT-A-Z.md) | **The project, A to Z** — the full report |
+| [`docs/17-IDENTITY-NORMALIZATION.md`](docs/17-IDENTITY-NORMALIZATION.md) | Old→new commit hash map (2026-10-08 identity normalization — content bit-identical) |
 
 (Primary documentation is progressively migrating from French to English;
 the deep docs remain in French for now — the data and code are language-neutral.)

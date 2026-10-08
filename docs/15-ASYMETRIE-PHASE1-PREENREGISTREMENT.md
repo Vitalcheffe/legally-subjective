@@ -9,7 +9,7 @@ reste le chiffre publié — jamais recalculé pour de nouveaux claims).
 
 **Garde-fous respectés** :
 - La phase 0 n'utilise QUE (i) les prédictions M4 **publiées** (commit
-  `2aff6a0`), (ii) le rapport de phase T — fenêtre **transparente**
+  `f6145a5`), (ii) le rapport de phase T — fenêtre **transparente**
   OT2020+ répétée, scellées exclues —, (iii) les corpus d'entraînement
   publics (personas v3, pré-garde 2020-10). Aucune vérité terrain
   scellée n'est jointe à une analyse non couverte par la publication.
