@@ -325,20 +325,34 @@ def scenario_K():
 def scenario_X1():
     print("\n=== X1 · budget temps → arrêt PROPRE + sauvegarde du pas ===")
     base, drive, local = fresh()
-    rc, out, js = session(drive, local, budget_minutes=0.004)  # ~0,24 s
+    # 0,001 min = 60 ms. FakeRun n'a PAS de sleep : son rythme est le coût
+    # d'E/S des callbacks (manifestes, checkpoints). Avec 0,004 min ≈ la
+    # durée d'UN juge complet, un runner à disque rapide peut laisser ce
+    # juge TERMINER avant l'expiration — l'arrêt propre se produit alors au
+    # juge suivant (flake CI du 2026-10-08, run 37790012575). Deux garde-fous :
+    # (i) budget plus court pour expirer tôt ; (ii) le juge interrompu est
+    # identifié depuis la sortie du simulateur, sans supposer que c'est AA.
+    rc, out, js = session(drive, local, budget_minutes=0.001)
     check(rc == 0, "X1.rc0")
     check(js and js.get("budget_hit") is True, "X1.arrêt_par_budget")
+    stopped = next((j for j, v in sorted((js.get("judges") or {}).items())
+                    if isinstance(v, str) and v.startswith("budget-stop@")),
+                   None)
+    check(stopped is not None, "X1.juge_interrompu_identifié",
+          str(js.get("judges")))
+    if stopped is None:
+        return
     st = state_of(drive)
-    aa = st["judges"]["AA"]
-    check(aa["status"] == "training", "X1.AA_pas_finalisé")
-    check(aa["step"] >= 1 and aa["ckpt"] is not None,
-          "X1.dernier_pas_sauvegardé", str(aa))
+    jt = st["judges"][stopped]
+    check(jt["status"] == "training", "X1.interrompu_pas_finalisé")
+    check(jt["step"] >= 1 and jt["ckpt"] is not None,
+          "X1.dernier_pas_sauvegardé", str(jt))
     # le pas officiel correspond BIEN au pas d'arrêt (save à l'arrêt)
-    check(aa["step"] == aa["ckpt"]["step"], "X1.ckpt==pas_arrêt")
+    check(jt["step"] == jt["ckpt"]["step"], "X1.ckpt==pas_arrêt")
     check(not js.get("finalized"), "X1.pas_finalisée")
     # session suivante : reprend au pas d'arrêt exact
     rc2, out2, js2 = session(drive, local)
-    check(f"reprend au pas {aa['step']}" in out2, "X2.reprise_au_pas_exact")
+    check(f"reprend au pas {jt['step']}" in out2, "X2.reprise_au_pas_exact")
     check(js2 and js2.get("finalized"), "X1.termine_ensuite")
 
 
