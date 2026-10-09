@@ -1,0 +1,35 @@
+LEGALLY SUBJECTIVE — AUTHORS FILE
+==================================
+
+Manuscript title: Legally Subjective: How Much Vote Predictability Survives a Strong Ideological Baseline?
+
+AUTHOR 1 (corresponding author suggested)
+  Name        : Amine Harch El Korane
+  Role        : Experiments, code and reproducibility infrastructure
+  Affiliation : Lycée français international Louis-Massignon,
+                Bouskoura–Casablanca, Morocco
+  Status      : High-school student (Première)
+  Email       : [EMAIL RÉEL D'AMINE — À COMPLÉTER]
+  Phone       : [TÉLÉPHONE RÉEL — À COMPLÉTER]
+
+AUTHOR 2
+  Name        : Ghali El Alj
+  Role        : Legal analysis and doctrinal reading
+  Affiliation : Lycée français international Louis-Massignon,
+                Bouskoura–Casablanca, Morocco
+  Status      : High-school student (Première)
+  Email        : [EMAIL RÉEL DE GHALI — À COMPLÉTER]
+
+RULES
+- The two authors are co-authors with equal standing; never present
+  Ghali El Alj as "contributor", "advisor" or "acknowledged helper".
+- Both are high-school students conducting independent interdisciplinary
+  research; never describe them as engineers, lawyers, researchers,
+  professors, or university students.
+- The school affiliation is stated for identification only and does not
+  imply endorsement of the research by the school or any network.
+- No fields may be left as [BRACKETS] in an actual submission: replace
+  every placeholder with real contact data before any upload.
+
+Contact data intentionally left as placeholders: no email address,
+phone number, or postal address has been invented for this package.

@@ -1,0 +1,23 @@
+TROPHÉES NSI 2026-2027 — NOTE D'ÉLIGIBILITÉ (À VÉRIFIER AVANT TOUTE ACTION)
+=============================================================================
+Règlement officiel (vérifié le 2026-10-09) :
+  - Ouvert aux élèves de Première ou de Terminale.
+  - Équipe de 2 à 4 élèves du même établissement.
+  - TOUS les membres doivent suivre la spécialité NSI.
+  - Le projet doit être supervisé par le professeur de NSI.
+  - Le dépôt est réalisé par le professeur de NSI via la plateforme
+    officielle.
+
+AVANT TOUTE CHOSE — question à poser à l'administration du lycée :
+  « Amine et Ghali suivent-ils effectivement la spécialité NSI ? »
+
+  - Si OUI (les deux) : piste réelle. Faire porter le dépôt par le
+    professeur de NSI ; le dossier de projet et la démonstration
+    existent déjà (voir 09_COMPETITIONS/CGENIAL/).
+  - Si NON (l'un ou les deux) : INÉLIGIBLES. Ce n'est pas contournable
+    et ce n'est pas à contourner — passer au CGénial, qui n'a pas cette
+    condition.
+
+Rappel : CGénial n'exige PAS la spécialité NSI et accepte les projets
+déjà inscrits à un autre concours — la double piste est possible
+seulement si la condition NSI est réellement remplie.

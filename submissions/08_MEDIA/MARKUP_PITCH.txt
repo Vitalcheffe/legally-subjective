@@ -1,0 +1,61 @@
+================================================================
+THE MARKUP — FICHE DE PRÉPARATION (PAS LE FORMULAIRE DE TIPS)
+================================================================
+
+⚠️ LE MAUVAIS CANAL
+The Markup le dit explicitement (page Tips officielle, vérifiée le
+2026-10-09) : leur formulaire de tips est destiné aux informations et
+documentations permettant de mener une enquête — PAS aux story ideas,
+PAS aux pitches, PAS aux press releases. Ne balancez surtout pas le
+PDF dans tips@themarkup.org.
+
+----------------------------------------------------------------
+LA BONNE DÉMARCHE
+----------------------------------------------------------------
+  1. Chercher le journaliste correspondant au sujet : IA ·
+     algorithmes · technologie · gouvernement · tribunaux · décisions
+     automatisées.
+  2. Pitch direct (email), 250–500 mots, rédigé par vous.
+
+----------------------------------------------------------------
+ANGLE SUGGÉRÉ
+----------------------------------------------------------------
+  La reproductibilité comme histoire : une expérience pré-enregistrée,
+  scellée cryptographiquement (empreintes SHA-256 avant la clé de
+  correction), auditée contre les fuites, au résultat négatif assumé —
+  l'anti-hype d'un domaine (justice + IA) saturé de promesses. The
+  Markup valorise précisément la méthodologie publique et vérifiable :
+  le dépôt GitHub EST l'histoire.
+
+----------------------------------------------------------------
+FAITS VÉRIFIABLES (fiche commune aux trois pitchs)
+  - Corpus public gelé : 569 affaires plaidées, 4 569 votes codés
+    (Supreme Court Database + CourtListener), fenêtre OT2015–OT2023.
+  - Épreuve scellée : 50 décisions serrées (5-4) protégées par empreintes
+    cryptographiques (SHA-256), prédites À L'AVEUGLE par 4 conditions,
+    verrouillées avant l'existence de toute clé de correction.
+  - Conditions testées : zéro-shot · persona (prompt biographique +
+    adaptateur QLoRA appris sur les opinions passées de chaque juge) ·
+    retrieval · prior idéologique recalibré.
+  - Résultat principal : la personnalisation ne détecte AUCUNE
+    amélioration — 59,18 % contre 61,22 % de précision au niveau des
+    affaires (McNemar exact p = 1,00 ; divergence sur 3 affaires
+    seulement : 1 contre 2).
+  - Le point dur : 75,9 % des votes individuels restent prévisibles par
+    la seule règle idéologique — mais 50,0 % (pile ou face) au niveau
+    des affaires à une voix d'écart.
+  - Ce que la persona change quand même : des votes individuels bougent
+    (p = .047 non ajusté) ; chaque juge simulé vote plus conservateur que
+    le juge qu'il imite ; c'est le prompt biographique, pas l'adaptateur,
+    qui fait la majeure partie du mouvement ; l'hypothèse stylistique
+    pré-enregistrée est contredite (ρ = −0,72).
+  - Audit de fuite : entraînement des personas sur 477 lignes, 0 ligne
+    scellée, 0 hors-bornes ; audit en 14 points rejoué par CI à chaque push.
+  - Coût total : zéro euro — données publiques, sessions GPU gratuites.
+  - Dépôt public : github.com/Vitalcheffe/legally-subjective
+    (tags a1-freeze · m4-freeze · m4-exam).
+  - Manuscrit complet : 23 pages, révision 3, déclarations incluses.
+----------------------------------------------------------------
+
+PIÈCE D'APPUI
+  - download/submission/14_MEDIA_BRIEF_EN.pdf (3 pages, anglais).

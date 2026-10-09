@@ -1,0 +1,65 @@
+================================================================
+PROPUBLICA — FICHE DE PRÉPARATION (PAS UN « TIP »)
+================================================================
+
+⚠️ LE MAUVAIS CANAL
+Le tip system de ProPublica (page Contact officielle, vérifiée le
+2026-10-09) est destiné aux informations permettant une ENQUÊTE :
+preuves, situations d'abus de pouvoir, préjudices significatifs.
+Votre projet n'est pas un « tip ». N'utilisez pas ce canal générique,
+et n'y déposez pas le manuscrit.
+
+----------------------------------------------------------------
+LA BONNE DÉMARCHE
+----------------------------------------------------------------
+  1. La page officielle explique que les biographies des journalistes
+     donnent leurs coordonnées et moyens de contact.
+  2. Identifier le journaliste dont le beat couvre réellement :
+     algorithmes · tribunaux/justice · IA et décisions automatisées.
+  3. Lui adresser directement un pitch de 250 à 500 mots (rédigé par
+     vous — même discipline que pour MIT TR).
+
+----------------------------------------------------------------
+ANGLE SUGGÉRÉ
+----------------------------------------------------------------
+  « L'écart entre les promesses de prédiction algorithmique de la
+  justice et ce qu'une expérience scellée mesure réellement » :
+  deux lycéens ont construit le test propre que personne ne finance —
+  résultat négatif, pré-enregistré, reproductible, coût nul. Dans un
+  écosystème saturé de claims non vérifiés, le protocole lui-même
+  (scellés cryptographiques, audit de fuite, McNemar apparié) est
+  l'histoire.
+
+----------------------------------------------------------------
+FAITS VÉRIFIABLES (fiche commune aux trois pitchs)
+  - Corpus public gelé : 569 affaires plaidées, 4 569 votes codés
+    (Supreme Court Database + CourtListener), fenêtre OT2015–OT2023.
+  - Épreuve scellée : 50 décisions serrées (5-4) protégées par empreintes
+    cryptographiques (SHA-256), prédites À L'AVEUGLE par 4 conditions,
+    verrouillées avant l'existence de toute clé de correction.
+  - Conditions testées : zéro-shot · persona (prompt biographique +
+    adaptateur QLoRA appris sur les opinions passées de chaque juge) ·
+    retrieval · prior idéologique recalibré.
+  - Résultat principal : la personnalisation ne détecte AUCUNE
+    amélioration — 59,18 % contre 61,22 % de précision au niveau des
+    affaires (McNemar exact p = 1,00 ; divergence sur 3 affaires
+    seulement : 1 contre 2).
+  - Le point dur : 75,9 % des votes individuels restent prévisibles par
+    la seule règle idéologique — mais 50,0 % (pile ou face) au niveau
+    des affaires à une voix d'écart.
+  - Ce que la persona change quand même : des votes individuels bougent
+    (p = .047 non ajusté) ; chaque juge simulé vote plus conservateur que
+    le juge qu'il imite ; c'est le prompt biographique, pas l'adaptateur,
+    qui fait la majeure partie du mouvement ; l'hypothèse stylistique
+    pré-enregistrée est contredite (ρ = −0,72).
+  - Audit de fuite : entraînement des personas sur 477 lignes, 0 ligne
+    scellée, 0 hors-bornes ; audit en 14 points rejoué par CI à chaque push.
+  - Coût total : zéro euro — données publiques, sessions GPU gratuites.
+  - Dépôt public : github.com/Vitalcheffe/legally-subjective
+    (tags a1-freeze · m4-freeze · m4-exam).
+  - Manuscrit complet : 23 pages, révision 3, déclarations incluses.
+----------------------------------------------------------------
+
+PIÈCE D'APPUI
+  - download/submission/14_MEDIA_BRIEF_EN.pdf (3 pages, anglais,
+    produit C journalisme).

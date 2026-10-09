@@ -1,0 +1,88 @@
+================================================================
+MIT TECHNOLOGY REVIEW — FICHE DE PRÉPARATION DE PITCH
+(LE PITCH FINAL SE RÉDIGE VOUS-MÊMES — VOIR AVERTISSEMENT)
+================================================================
+
+⚠️ AVERTISSEMENT ABSOLU
+Le guide officiel de pitch de MIT Technology Review (vérifié le
+2026-10-09) indique qu'ils FILTRENT les pitches écrits par IA.
+Ce fichier n'est PAS un pitch : c'est une fiche de préparation
+(faits, angle, structure). Le texte que vous enverrez sera écrit
+par vous, dans vos mots, dans votre style. Utilisez cette fiche
+pour préparer votre réflexion, puis rédigez.
+
+----------------------------------------------------------------
+CONTACTS OFFICIELS
+----------------------------------------------------------------
+  News / analysis (~800–1000 mots) : pitch-news@technologyreview.com
+  Features / print (~2500–4000)    : pitch-print@technologyreview.com
+  → Piste recommandée pour vous : pitch-news@technologyreview.com
+
+----------------------------------------------------------------
+L'HISTOIRE (une phrase — le cœur du pitch)
+----------------------------------------------------------------
+  Deux lycéens construisent un test reproductible pour savoir si
+  personnaliser un LLM sur les écrits d'un juge permet réellement de
+  mieux prédire ses décisions — et obtiennent un résultat négatif
+  proprement mesuré.
+
+----------------------------------------------------------------
+FAITS VÉRIFIABLES (fiche commune aux trois pitchs)
+  - Corpus public gelé : 569 affaires plaidées, 4 569 votes codés
+    (Supreme Court Database + CourtListener), fenêtre OT2015–OT2023.
+  - Épreuve scellée : 50 décisions serrées (5-4) protégées par empreintes
+    cryptographiques (SHA-256), prédites À L'AVEUGLE par 4 conditions,
+    verrouillées avant l'existence de toute clé de correction.
+  - Conditions testées : zéro-shot · persona (prompt biographique +
+    adaptateur QLoRA appris sur les opinions passées de chaque juge) ·
+    retrieval · prior idéologique recalibré.
+  - Résultat principal : la personnalisation ne détecte AUCUNE
+    amélioration — 59,18 % contre 61,22 % de précision au niveau des
+    affaires (McNemar exact p = 1,00 ; divergence sur 3 affaires
+    seulement : 1 contre 2).
+  - Le point dur : 75,9 % des votes individuels restent prévisibles par
+    la seule règle idéologique — mais 50,0 % (pile ou face) au niveau
+    des affaires à une voix d'écart.
+  - Ce que la persona change quand même : des votes individuels bougent
+    (p = .047 non ajusté) ; chaque juge simulé vote plus conservateur que
+    le juge qu'il imite ; c'est le prompt biographique, pas l'adaptateur,
+    qui fait la majeure partie du mouvement ; l'hypothèse stylistique
+    pré-enregistrée est contredite (ρ = −0,72).
+  - Audit de fuite : entraînement des personas sur 477 lignes, 0 ligne
+    scellée, 0 hors-bornes ; audit en 14 points rejoué par CI à chaque push.
+  - Coût total : zéro euro — données publiques, sessions GPU gratuites.
+  - Dépôt public : github.com/Vitalcheffe/legally-subjective
+    (tags a1-freeze · m4-freeze · m4-exam).
+  - Manuscrit complet : 23 pages, révision 3, déclarations incluses.
+----------------------------------------------------------------
+
+STRUCTURE DEMANDÉE PAR LE GUIDE OFFICIEL
+----------------------------------------------------------------
+  1. L'histoire en une phrase (ci-dessus).
+  2. Pourquoi MAINTENANT : les claims de prédiction de décisions par IA
+     se multiplient dans la justice ; voici enfin une mesure scellée,
+     pas une promesse.
+  3. Pourquoi les lecteurs de MIT TR s'en soucient : la « personnalisation »
+     d'IA est vendue partout comme un gain ; ici elle est testée avec un
+     protocole pré-enregistré et n'ajoute rien de détectable là où ça
+     compte (les affaires serrées).
+  4. Pourquoi VOUS êtes bien placés : vous avez construit l'expérience
+     vous-mêmes, elle est publique, vérifiable bout en bout, à coût nul.
+  5. Ce que vous pouvez fournir : le manuscrit (23 p.), les chiffres,
+     une démonstration du dépôt GitHub, des entretiens.
+
+INTERDITS
+----------------------------------------------------------------
+  - Ne pas envoyer le PDF du manuscrit comme produit éditorial : c'est
+    une preuve de fond, pas l'article.
+  - Ne pas copier-coller ce squelette : à réécrire entièrement.
+  - Ne pas sur-promettre : la formulation exacte et honnête est
+    « no detectable improvement in this sealed test », pas
+    « AI cannot predict the Court ».
+
+PIÈCES D'APPUI DISPONIBLES (dans le dossier du projet)
+----------------------------------------------------------------
+  - download/submission/14_MEDIA_BRIEF_EN.pdf (3 pages — produit C
+    « journalisme », attachable à un pitch).
+  - download/submission/10_MEDIA_EN_Pitch_Strategy.pdf (stratégie
+    interne complète — ne pas envoyer tel quel).

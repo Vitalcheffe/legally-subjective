@@ -1,0 +1,32 @@
+DÉPÔT PUBLIC DE RÉPLICATION — LEGALLY SUBJECTIVE
+================================================
+URL : github.com/Vitalcheffe/legally-subjective
+Tags de version : a1-freeze · m4-freeze · m4-exam
+
+CE QUE LE DÉPÔT CONTIENT
+  - data/     : corpus gelé (569 affaires, 4 569 votes) + sources
+                brutes avec empreintes SHA-256 enregistrées au téléchargement
+  - scripts/  : toute la chaîne de recalcul (corpus, baselines,
+                challengers, figures) — tout est déterministe et
+                re-exécutable
+  - notebooks/: l'entraînement QLoRA des personas (pré-engagé)
+  - results/  : artefacts gelés, prédictions scellées
+                (results/m4_predictions.json), verrou
+                (results/m4_exam.lock), rapports d'audit
+  - docs/     : méthodologie, protocole, éthique, limites — en français
+
+COMMENT MONTRER LE PROJET EN 5 MINUTES (démonstration)
+  1. Ouvrir le README : la question et les résultats en une page.
+  2. Ouvrir results/m4_exam.lock : le verrou cryptographique de
+     l'épreuve scellée (head du dépôt + SHA-256 des prédictions,
+     posé AVANT toute correction).
+  3. Lancer scripts/m2_baselines.py : la règle idéologique recalcule
+     sous vos yeux.
+  4. Montrer le badge/rapport CI : l'audit anti-fuite en 14 points,
+     rejoué à chaque push.
+  5. Conclure par la figure principale du rapport (fig. 5).
+
+CE QUE ÇA PROUVE POUR UN JURY
+  Aucun chiffre du projet ne demande d'être cru : tout se re-calcul,
+  tout est public, tout est vérifiable — y compris l'échec de la
+  personnalisation (résultat négatif honnête, assumé, mesuré).
